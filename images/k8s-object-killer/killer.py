@@ -1,5 +1,6 @@
 from subprocess import check_output
 import hashlib
+import os
 
 k8s_namespace=os.environ['K8S_NAMESPACE']
 
