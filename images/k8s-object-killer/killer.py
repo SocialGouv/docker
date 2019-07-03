@@ -1,6 +1,8 @@
 from subprocess import check_output
 import hashlib
 
+k8s_namespace=os.environ['K8S_NAMESPACE']
+
 # This script compares the active remote branches and active k8s tags.
 # If a k8s tag doesn't match an active hashed remote branches name's, we delete all the k8s objects with this k8s tag.
 
@@ -17,14 +19,14 @@ def get_active_branches():
 def get_active_k8s_tags():
   active_k8s_tag_list = []
   raw_k8s_tag_list = check_output("kubectl get deployments -o go-template --template '{{range .items}}{{.metadata.labels.branch}}{{end}}'", shell=True)
-  for active_k8s_tag in raw_k8s_tag_list.decode('utf-8').replace('<no value>','').split('emjpm-'):
+  for active_k8s_tag in raw_k8s_tag_list.decode('utf-8').replace('<no value>','').split(k8s_namespace):
     active_k8s_tag_list.append(active_k8s_tag)
   return active_k8s_tag_list
 
 def delete_k8s_object(label):
   k8s_object_list = ["service", "ingress", "configmap", "deployments", "pod"]
   for k8s_object in k8s_object_list:
-    command_to_delete_k8s_object = ('kubectl delete '+ k8s_object +' --selector branch=emjpm-'+label)
+    command_to_delete_k8s_object = ('kubectl delete '+ k8s_object +' --selector branch='+ k8s_namespace +'-'+label)
     check_output(command_to_delete_k8s_object, shell=True)
 
 def get_k8s_tag_to_delete(active_k8s_tag_list, active_branch_list):
@@ -47,4 +49,4 @@ def get_k8s_tag_to_delete(active_k8s_tag_list, active_branch_list):
 if __name__ == '__main__':
   for k8s_tag_to_delete in get_k8s_tag_to_delete(get_active_k8s_tags(), get_active_branches()):
     delete_k8s_object(k8s_tag_to_delete)
-    print('k8s objects with label branch=emjpm-'+k8s_tag_to_delete+' have been deleted')
+    print('k8s objects with label branch='+ k8s_namespace +'-'+k8s_tag_to_delete+' have been deleted')
