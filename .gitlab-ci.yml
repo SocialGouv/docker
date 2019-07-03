@@ -6,6 +6,8 @@ variables:
   DOCKER_HOST: tcp://localhost:2375
   GIT_STRATEGY: fetch
 
+  DOCKER_VERSION: "18"
+
 #
 
 stages:
