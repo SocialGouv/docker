@@ -32,7 +32,6 @@ Test k8s-object-killer:
     - pip install --no-cache-dir --trusted-host pypi.python.org pipenv
   script:
     - pipenv sync --dev
-    - pipenv shell
     - pipenv run lint
     - pipenv run pretty-check
     - pipenv run type-check
