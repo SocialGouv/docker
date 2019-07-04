@@ -1,0 +1,49 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
+
+[dev-packages]
+black = "==19.3b0"
+pylint = "*"
+mypy = "*"
+flake8 = "*"
+autoflake = "*"
+
+[scripts]
+main = "python -m killer"
+lint = '''
+    bash -c " \
+        pylint --errors-only --jobs 0 killer && \
+        flake8 killer \
+    "
+'''
+pretty = '''
+    bash -c " \
+        autoflake \
+            --in-place --recursive \
+            --remove-all-unused-imports --remove-unused-variables \
+            killer && \
+        black killer && \
+        isort --recursive killer \
+    "
+'''
+pretty-check = '''
+    bash -c " \
+        black --check killer && \
+        isort --check-only --recursive killer \
+    "
+'''
+type-check = '''
+    bash -c " \
+        mypy \
+            --disallow-untyped-defs \
+            killer \
+    "
+'''
