@@ -5,7 +5,8 @@ from subprocess import check_output
 from urllib import request
 
 # This script compares the active remote branches and active k8s tags.
-# If a k8s tag doesn't match an active hashed remote branches name's, we delete all the k8s objects with this k8s tag.
+# If a k8s tag doesn't match an active hashed remote branches name's, we delete
+# all the k8s objects with this k8s tag.
 github_token = os.environ["GITHUB_TOKEN"]
 hash_size = int(os.environ["HASH_SIZE"])
 k8s_namespace = os.environ["K8S_NAMESPACE"]
@@ -13,8 +14,9 @@ project_path = os.environ["PROJECT_PATH"]
 
 github_api_url = os.environ["GITHUB_API_URL"] or "https://api.github.com"
 
+
 def get_active_branches():
-    url = "/repos/" + project_path + "/pulls".format(github_token)
+    url = "{0}/repos/{1}/pulls".format(github_api_url, project_path)
     req = request.Request(url, None, {"token": github_token})
     response = request.urlopen(req)
     active_branches = [
@@ -27,7 +29,8 @@ def get_active_branches():
 
 def get_active_k8s_tags():
     raw_k8s_tag_list = check_output(
-        "kubectl get pods -o go-template --template '{{range .items}}{{.metadata.labels.branch}}{{end}}'",
+        "kubectl get pods -o go-template --template "
+        + "'{{range .items}}{{.metadata.labels.branch}}{{end}}'",
         shell=True,
     ).decode("utf-8")
     k8s_tag_list = raw_k8s_tag_list.replace("<no value>", "").split(k8s_namespace + "-")
