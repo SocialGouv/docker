@@ -35,7 +35,6 @@ Test k8s-object-killer:
     - pipenv install --ignore-pipfile --system --deploy --dev
     - pipenv run lint
     - pipenv run pretty-check
-    - pipenv run type-check
 
 #
 #
