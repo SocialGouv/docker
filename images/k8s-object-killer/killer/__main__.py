@@ -12,7 +12,7 @@ hash_size = int(os.environ["HASH_SIZE"])
 k8s_namespace = os.environ["K8S_NAMESPACE"]
 project_path = os.environ["PROJECT_PATH"]
 
-github_api_url = os.getenv('GITHUB_API_URL', "https://api.github.com")
+github_api_url = os.getenv("GITHUB_API_URL", "https://api.github.com")
 
 
 def get_active_branches():
