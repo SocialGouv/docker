@@ -28,7 +28,7 @@ Test k8s-object-killer:
   <<: *code_quality_stage
   image: python:3.7
   before_script:
-    - cd images/k8s-object-killer/killer
+    - cd images/k8s-object-killer
     - pip install --no-cache-dir --trusted-host pypi.python.org pipenv
   script:
     # Kind of "pipenv sync --system --dev"
