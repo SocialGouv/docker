@@ -2,4 +2,4 @@
 
 /apps/create-kubeconfig.sh
 
-python3 -m /killer
+python3 /killer
