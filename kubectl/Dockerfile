@@ -31,13 +31,6 @@ RUN apt-get update \
 && apt-get -y install gettext-base \
 && apt-get -y install curl
 
-## Install Python 3
-RUN apt-get -y upgrade && apt-get install -y python3-pip
-
-## Install git
-RUN apt-get install -y git \
-&& apt-get clean \
-&& rm -rf /var/lib/apt/lists/*
 
 ## Install kubectl
 ADD https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
@@ -53,7 +46,6 @@ USER kubectl
 
 ## Copy kubeconfig template
 COPY ./.kube /.kube
-COPY ./kube-template /apps
 COPY ./scripts /apps
 
 WORKDIR /apps
