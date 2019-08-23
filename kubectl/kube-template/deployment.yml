@@ -1,0 +1,22 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ${APP_NAME}
+  labels:
+    app: ${APP_NAME}
+spec:
+  replicas: ${APP_POD_REPLICA_NUMBER}
+  selector:
+    matchLabels:
+      app: ${APP_NAME}
+  template:
+    metadata:
+      labels:
+        app: ${APP_NAME}
+    spec:
+      containers:
+      - image:  ${DOCKER_REGISTRY_URL}/${APP_IMAGE_NAME}:${APP_GIT_TAG}
+        name: ${APP_NAME}
+        ports:
+        - containerPort: ${APP_CONTAINER_PORT}
