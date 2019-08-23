@@ -1,73 +1,80 @@
----
-#
 variables:
-  # CI variables
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: tcp://localhost:2375
-  GIT_STRATEGY: fetch
+  KUBECTL_VERSION: "1.0"
+  GIT_DEPLOY_VERSION: "1.0"
+  GIT_TAG_RELEASE_VERSION: "1.0"
+  HELM_VERSION: "1.1"
+  CURL_VERSION: "1.0"
+  INFRA_ANSIBLE_CI_VERSION: "1.0"
 
-  DOCKER_VERSION: "18"
+.register_image_stage: &register_image_stage
+  image: docker:18
+  variables:
+    DOCKER_HOST: tcp://localhost:2375
+  services:
+  - docker:18-dind
+  before_script:
+  - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
 
-#
 
 stages:
-  - "Code Quality"
-  - "Registration"
+- "Build Docker Images & Push To Registry"
 
-#
-#
-#
-
-.code_quality_stage: &code_quality_stage
-  stage: "Code Quality"
-  dependencies: []
-
-#
-
-Test k8s-object-killer:
-  <<: *code_quality_stage
-  image: python:3.7
-  before_script:
-    - cd images/k8s-object-killer
-    - pip install --no-cache-dir --trusted-host pypi.python.org pipenv
+build_and_push_kube_docker_image:
+  stage: "Build Docker Images & Push To Registry"
+  <<: *register_image_stage
   script:
-    # Kind of "pipenv sync --system --dev"
-    - pipenv install --ignore-pipfile --system --deploy --dev
-    - pipenv run lint
-    - pipenv run pretty-check
+  - cd kubectl
+  - docker build -t "$CI_REGISTRY_IMAGE/kubectl:$KUBECTL_VERSION" .
+  - docker push "$CI_REGISTRY_IMAGE/kubectl:$KUBECTL_VERSION"
+  only:
+  - master
 
-#
-#
-#
-
-.register_stage: &register_stage
-  stage: "Registration"
-  dependencies: []
-  image: docker:$DOCKER_VERSION
-  services:
-    - docker:$DOCKER_VERSION-dind
-  before_script:
-    - echo "$CI_JOB_TOKEN" | docker login $CI_REGISTRY -u gitlab-ci-token --password-stdin
+build_and_push_infra_ansible_ci_docker_image:
+  stage: "Build Docker Images & Push To Registry"
+  <<: *register_image_stage
   script:
-    - >
-      if [[ -n "${CI_COMMIT_TAG}" ]]; then
-        export TAG=$(printf "${CI_COMMIT_TAG}" | sed "s/^v//")
-      else
-        export TAG=$CI_COMMIT_REF_SLUG
-      fi
-    #
-    - docker pull $IMAGE_NAME:$CI_COMMIT_BEFORE_SHA || true
-    - docker pull $IMAGE_NAME:$TAG || true
-    - echo "> docker build --cache-from $IMAGE_NAME:$CI_COMMIT_BEFORE_SHA --cache-from $IMAGE_NAME:$TAG -t $IMAGE_NAME:$CI_COMMIT_SHA $CONTEXT"
-    - docker build --cache-from $IMAGE_NAME:$CI_COMMIT_BEFORE_SHA --cache-from $IMAGE_NAME:$TAG -t $IMAGE_NAME:$CI_COMMIT_SHA $CONTEXT
-    - docker build --cache-from $IMAGE_NAME:$CI_COMMIT_BEFORE_SHA --cache-from $IMAGE_NAME:$TAG -t $IMAGE_NAME:$TAG $CONTEXT
-    - docker push $IMAGE_NAME:$CI_COMMIT_SHA
-    - docker push $IMAGE_NAME:$TAG
+  - cd infra-ansible-ci
+  - docker build -t "$CI_REGISTRY_IMAGE/infra-ansible-ci:$INFRA_ANSIBLE_CI_VERSION" .
+  - docker push "$CI_REGISTRY_IMAGE/infra-ansible-ci:$INFRA_ANSIBLE_CI_VERSION"
+  only:
+  - master
 
-#
+build_and_push_git_deploy_docker_image:
+  stage: "Build Docker Images & Push To Registry"
+  <<: *register_image_stage
+  script:
+  - cd git-deploy
+  - docker build -t "$CI_REGISTRY_IMAGE/git-deploy:$GIT_DEPLOY_VERSION" .
+  - docker push "$CI_REGISTRY_IMAGE/git-deploy:$GIT_DEPLOY_VERSION"
+  only:
+  - master
 
-Register k8s-object-killer image:
-  <<: *register_stage
-  variables:
-    CONTEXT: images/k8s-object-killer
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/k8s-object-killer
+build_and_push_helm_docker_image:
+  stage: "Build Docker Images & Push To Registry"
+  <<: *register_image_stage
+  script:
+  - cd helm
+  - docker build -t "$CI_REGISTRY_IMAGE/helm:$HELM_VERSION" .
+  - docker push "$CI_REGISTRY_IMAGE/helm:$HELM_VERSION"
+  only:
+  - master
+
+build_and_push_curl_docker_image:
+  stage: "Build Docker Images & Push To Registry"
+  <<: *register_image_stage
+  script:
+  - cd curl
+  - docker build -t "$CI_REGISTRY_IMAGE/curl:$CURL_VERSION" .
+  - docker push "$CI_REGISTRY_IMAGE/curl:$CURL_VERSION"
+  only:
+  - master
+
+build_and_push_git_tag_release_docker_image:
+  stage: "Build Docker Images & Push To Registry"
+  <<: *register_image_stage
+  script:
+  - cd git-tag-release
+  - docker build -t "$CI_REGISTRY_IMAGE/git-tag-release:$GIT_TAG_RELEASE_VERSION" .
+  - docker push "$CI_REGISTRY_IMAGE/git-tag-release:$GIT_TAG_RELEASE_VERSION"
+  only:
+  - master
