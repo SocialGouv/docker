@@ -2,7 +2,7 @@ variables:
   KUBECTL_VERSION: "1.0"
   GIT_DEPLOY_VERSION: "1.0"
   GIT_TAG_RELEASE_VERSION: "1.0"
-  HELM_VERSION: "1.1"
+  HELM_VERSION: "1.3"
   CURL_VERSION: "1.0"
   INFRA_ANSIBLE_CI_VERSION: "1.0"
 
@@ -27,7 +27,7 @@ build_and_push_kube_docker_image:
   - docker build -t "$CI_REGISTRY_IMAGE/kubectl:$KUBECTL_VERSION" .
   - docker push "$CI_REGISTRY_IMAGE/kubectl:$KUBECTL_VERSION"
   only:
-  - master
+  - boni-ci-image
 
 build_and_push_infra_ansible_ci_docker_image:
   stage: "Build Docker Images & Push To Registry"
@@ -37,7 +37,7 @@ build_and_push_infra_ansible_ci_docker_image:
   - docker build -t "$CI_REGISTRY_IMAGE/infra-ansible-ci:$INFRA_ANSIBLE_CI_VERSION" .
   - docker push "$CI_REGISTRY_IMAGE/infra-ansible-ci:$INFRA_ANSIBLE_CI_VERSION"
   only:
-  - master
+  - boni-ci-image
 
 build_and_push_git_deploy_docker_image:
   stage: "Build Docker Images & Push To Registry"
@@ -47,7 +47,7 @@ build_and_push_git_deploy_docker_image:
   - docker build -t "$CI_REGISTRY_IMAGE/git-deploy:$GIT_DEPLOY_VERSION" .
   - docker push "$CI_REGISTRY_IMAGE/git-deploy:$GIT_DEPLOY_VERSION"
   only:
-  - master
+  - boni-ci-image
 
 build_and_push_helm_docker_image:
   stage: "Build Docker Images & Push To Registry"
@@ -57,7 +57,7 @@ build_and_push_helm_docker_image:
   - docker build -t "$CI_REGISTRY_IMAGE/helm:$HELM_VERSION" .
   - docker push "$CI_REGISTRY_IMAGE/helm:$HELM_VERSION"
   only:
-  - master
+  - boni-ci-image
 
 build_and_push_curl_docker_image:
   stage: "Build Docker Images & Push To Registry"
@@ -67,7 +67,7 @@ build_and_push_curl_docker_image:
   - docker build -t "$CI_REGISTRY_IMAGE/curl:$CURL_VERSION" .
   - docker push "$CI_REGISTRY_IMAGE/curl:$CURL_VERSION"
   only:
-  - master
+  - boni-ci-image
 
 build_and_push_git_tag_release_docker_image:
   stage: "Build Docker Images & Push To Registry"
@@ -77,4 +77,4 @@ build_and_push_git_tag_release_docker_image:
   - docker build -t "$CI_REGISTRY_IMAGE/git-tag-release:$GIT_TAG_RELEASE_VERSION" .
   - docker push "$CI_REGISTRY_IMAGE/git-tag-release:$GIT_TAG_RELEASE_VERSION"
   only:
-  - master
+  - boni-ci-image

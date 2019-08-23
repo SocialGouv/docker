@@ -1,7 +1,7 @@
 FROM alpine/helm:2.14.3
 
-## Install envsubst
-RUN apk update && apk add --no-cache gettext-dev
+## Install envsubst & coreutils
+RUN apk update && apk add --no-cache gettext-dev coreutils
 
 ## Install kubectl
 ## Note: Latest version may be found on:
