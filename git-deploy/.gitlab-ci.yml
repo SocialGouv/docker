@@ -1,0 +1,18 @@
+
+
+Build socialgouv/docker/git-deploy:
+  stage: "Build"
+  extends: .base_register_stage
+  variables:
+    CONTEXT: git-deploy
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/git-deploy
+
+Test socialgouv/docker/git-deploy:
+  stage: "Test"
+  image: "${CI_REGISTRY_IMAGE}/git-deploy:${CI_COMMIT_SHA}"
+  script:
+    - create-deployment.sh
+    - extract-deploy-id.sh
+    - echo "GitHub deployment id '$(cat DEPLOY_ID)'"
+    #
+    - update-deployment.sh $(cat DEPLOY_ID) success
