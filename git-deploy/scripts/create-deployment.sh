@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu -o pipefail
 
+CI_COMMIT_TAG=${CI_COMMIT_TAG:=""}
+
 CACHE_RESPONSE=${CACHE_RESPONSE:="/tmp/deploy_payload.json"}
 COMMIT_TAG=${COMMIT_TAG:=$CI_COMMIT_TAG}
 PRODUCTION_ENVIRONMENT=${PRODUCTION_ENVIRONMENT:=false}
