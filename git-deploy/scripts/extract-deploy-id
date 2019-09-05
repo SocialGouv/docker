@@ -1,4 +1,5 @@
 #!/bin/sh
+set -eu -o pipefail
 
 CACHE_RESPONSE=${CACHE_RESPONSE:="/tmp/deploy_payload.json"}
 DEPLOY_ID_FILE=${DEPLOY_ID_FILE:="DEPLOY_ID"}
