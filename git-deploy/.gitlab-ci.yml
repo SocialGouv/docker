@@ -12,7 +12,7 @@ Test socialgouv/docker/git-deploy:
   image: "${CI_REGISTRY_IMAGE}/git-deploy:${CI_COMMIT_SHA}"
   script:
     #
-    - create-deployment
+    - sh +x create-deployment
     - cat /tmp/deploy_payload.json
     #
     - extract-deploy-id
