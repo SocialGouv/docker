@@ -5,9 +5,9 @@ include:
 #
 
 .base_register_stage:
-  image: docker:18
+  image: docker:${DOCKER_VERSION}
   services:
-    - docker:18-dind
+    - docker:${DOCKER_VERSION}-dind
   before_script:
     - echo "${CI_JOB_TOKEN}" | docker login ${CI_REGISTRY} -u gitlab-ci-token --password-stdin
   script:
@@ -29,7 +29,14 @@ include:
 #
 
 variables:
+  # CI variables
+  DOCKER_DRIVER: overlay2
+  DOCKER_HOST: tcp://localhost:2375
+  GIT_STRATEGY: fetch
+
+  # Globals
   DOCKER_VERSION: "18"
+
   KUBECTL_VERSION: "1.0"
   GIT_DEPLOY_VERSION: "1.0"
   GIT_TAG_RELEASE_VERSION: "1.0"
