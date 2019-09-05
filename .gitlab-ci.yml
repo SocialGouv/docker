@@ -39,7 +39,8 @@ stages:
 
 release:
   stage: "Release"
-  only: master
+  only:
+    - master
   when: manual
   before_script:
     - git checkout ${CI_COMMIT_REF_NAME}
