@@ -1,30 +1,5 @@
-
 include:
   - /git-deploy/.gitlab-ci.yml
-
-#
-
-.base_register_stage:
-  image: docker:${DOCKER_VERSION}
-  services:
-    - docker:${DOCKER_VERSION}-dind
-  before_script:
-    - echo "${CI_JOB_TOKEN}" | docker login ${CI_REGISTRY} -u gitlab-ci-token --password-stdin
-  script:
-    - >
-      if [[ -n "${CI_COMMIT_TAG}" ]]; then
-        export TAG=$(printf "${CI_COMMIT_TAG}" | sed "s/^v//")
-      else
-        export TAG=${CI_COMMIT_REF_SLUG}
-      fi
-    #
-    - docker pull ${IMAGE_NAME}:${CI_COMMIT_BEFORE_SHA} || true
-    - docker pull ${IMAGE_NAME}:${TAG} || true
-    - docker pull ${IMAGE_NAME}:master || true
-    - echo ">  docker build ${DOCKER_BUILD_ARGS} --cache-from ${IMAGE_NAME}:${CI_COMMIT_BEFORE_SHA} --cache-from ${IMAGE_NAME}:$TAG --cache-from ${IMAGE_NAME}:master -t ${IMAGE_NAME}:$CI_COMMIT_SHA -t ${IMAGE_NAME}:${TAG} ${CONTEXT}"
-    - docker build ${DOCKER_BUILD_ARGS} --cache-from ${IMAGE_NAME}:${CI_COMMIT_BEFORE_SHA} --cache-from ${IMAGE_NAME}:$TAG --cache-from ${IMAGE_NAME}:master -t ${IMAGE_NAME}:$CI_COMMIT_SHA -t ${IMAGE_NAME}:${TAG} ${CONTEXT}
-    - docker push ${IMAGE_NAME}:${CI_COMMIT_SHA}
-    - docker push ${IMAGE_NAME}:${TAG}
 
 #
 
@@ -51,57 +26,51 @@ variables:
   only:
     - master
   services:
-  - docker:18-dind
+    - docker:18-dind
   before_script:
-  - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
-
+    - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
 
 stages:
-- "Build Docker Images & Push To Registry"
-- "Build"
-- "Test"
-- "Release"
+  - "Build"
+  - "Test"
+  - "Release"
 
-build_and_push_kube_docker_image:
-  stage: "Build Docker Images & Push To Registry"
-  <<: *register_image_stage
+#
+
+release:
+  stage: "Release"
+  only: master
+  when: manual
+  before_script:
+    - git checkout ${CI_COMMIT_REF_NAME}
+    - git config user.name "Social Groovy Bot"
+    - git config user.email "45039513+SocialGroovyBot@users.noreply.github.com"
+    - git remote set-url origin https://${GITHUB_TOKEN}@github.com/${CI_PROJECT_PATH}.git
   script:
-  - cd kubectl
-  - docker build -t "$CI_REGISTRY_IMAGE/kubectl:$KUBECTL_VERSION" .
-  - docker push "$CI_REGISTRY_IMAGE/kubectl:$KUBECTL_VERSION"
+    - npx semantic-release
 
+#
 
-build_and_push_infra_ansible_ci_docker_image:
-  stage: "Build Docker Images & Push To Registry"
-  <<: *register_image_stage
+.base_register_to_gitlab_stage:
+  image: docker:${DOCKER_VERSION}
+  services:
+    - docker:${DOCKER_VERSION}-dind
+  before_script:
+    - echo "${CI_JOB_TOKEN}" | docker login ${CI_REGISTRY} -u gitlab-ci-token --password-stdin
   script:
-  - cd infra-ansible-ci
-  - docker build -t "$CI_REGISTRY_IMAGE/infra-ansible-ci:$INFRA_ANSIBLE_CI_VERSION" .
-  - docker push "$CI_REGISTRY_IMAGE/infra-ansible-ci:$INFRA_ANSIBLE_CI_VERSION"
+    - >
+      if [[ -n "${CI_COMMIT_TAG}" ]]; then
+        export TAG=$(printf "${CI_COMMIT_TAG}" | sed "s/^v//")
+      else
+        export TAG=${CI_COMMIT_REF_SLUG}
+      fi
+    #
+    - docker pull ${IMAGE_NAME}:${CI_COMMIT_BEFORE_SHA} || true
+    - docker pull ${IMAGE_NAME}:${TAG} || true
+    - docker pull ${IMAGE_NAME}:master || true
+    - echo ">  docker build ${DOCKER_BUILD_ARGS} --cache-from ${IMAGE_NAME}:${CI_COMMIT_BEFORE_SHA} --cache-from ${IMAGE_NAME}:$TAG --cache-from ${IMAGE_NAME}:master -t ${IMAGE_NAME}:$CI_COMMIT_SHA -t ${IMAGE_NAME}:${TAG} ${CONTEXT}"
+    - docker build ${DOCKER_BUILD_ARGS} --cache-from ${IMAGE_NAME}:${CI_COMMIT_BEFORE_SHA} --cache-from ${IMAGE_NAME}:$TAG --cache-from ${IMAGE_NAME}:master -t ${IMAGE_NAME}:$CI_COMMIT_SHA -t ${IMAGE_NAME}:${TAG} ${CONTEXT}
+    - docker push ${IMAGE_NAME}:${CI_COMMIT_SHA}
+    - docker push ${IMAGE_NAME}:${TAG}
 
-build_and_push_helm_docker_image:
-  stage: "Build Docker Images & Push To Registry"
-  <<: *register_image_stage
-  script:
-  - cd helm
-  - docker build -t "$CI_REGISTRY_IMAGE/helm:$HELM_VERSION" .
-  - docker push "$CI_REGISTRY_IMAGE/helm:$HELM_VERSION"
-
-
-build_and_push_curl_docker_image:
-  stage: "Build Docker Images & Push To Registry"
-  <<: *register_image_stage
-  script:
-  - cd curl
-  - docker build -t "$CI_REGISTRY_IMAGE/curl:$CURL_VERSION" .
-  - docker push "$CI_REGISTRY_IMAGE/curl:$CURL_VERSION"
-
-
-build_and_push_git_tag_release_docker_image:
-  stage: "Build Docker Images & Push To Registry"
-  <<: *register_image_stage
-  script:
-  - cd git-tag-release
-  - docker build -t "$CI_REGISTRY_IMAGE/git-tag-release:$GIT_TAG_RELEASE_VERSION" .
-  - docker push "$CI_REGISTRY_IMAGE/git-tag-release:$GIT_TAG_RELEASE_VERSION"
-
+#

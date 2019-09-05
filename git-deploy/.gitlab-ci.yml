@@ -2,7 +2,7 @@
 
 Build socialgouv/docker/git-deploy:
   stage: "Build"
-  extends: .base_register_stage
+  extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: git-deploy
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/git-deploy
