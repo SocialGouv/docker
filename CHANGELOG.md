@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/SocialGouv/docker/compare/v0.2.1...v0.2.2) (2019-09-05)
+
+
+### Bug Fixes
+
+* **publish:** explicit image name ([a736d53](https://github.com/SocialGouv/docker/commit/a736d53))
+
 ## [0.2.1](https://github.com/SocialGouv/docker/compare/v0.2.0...v0.2.1) (2019-09-05)
 
 
