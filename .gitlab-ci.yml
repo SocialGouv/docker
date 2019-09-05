@@ -37,8 +37,9 @@ stages:
 
 #
 
-release:
+Release:
   stage: "Release"
+  image: node:10-alpine
   only:
     - master
   when: manual
