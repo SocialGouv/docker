@@ -54,7 +54,7 @@ Release:
     - git remote set-url origin https://${GITHUB_TOKEN}@github.com/${CI_PROJECT_PATH}.git
   script:
     - yarn config set cache-folder $CI_PROJECT_DIR/.yarn
-    - yarn global add semantic-release @semantic-release/changelog
+    - yarn global add semantic-release @semantic-release/changelog @semantic-release/git
     - semantic-release
 
 #
