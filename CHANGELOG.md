@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/SocialGouv/docker/compare/v0.2.2...v0.2.3) (2019-09-05)
+
+
+### Bug Fixes
+
+* **publish:** explicit tag from local image ([9ea5ea3](https://github.com/SocialGouv/docker/commit/9ea5ea3))
+
 ## [0.2.2](https://github.com/SocialGouv/docker/compare/v0.2.1...v0.2.2) (2019-09-05)
 
 
