@@ -11,10 +11,11 @@ Test socialgouv/docker/git-deploy:
   stage: "Test"
   image: "${CI_REGISTRY_IMAGE}/git-deploy:${CI_COMMIT_SHA}"
   script:
-    - create-deployment.sh
+    #
+    - create-deployment
     - cat /tmp/deploy_payload.json
     #
-    - extract-deploy-id.sh
+    - extract-deploy-id
     - echo "GitHub deployment id '$(cat DEPLOY_ID)'"
     #
-    - update-deployment.sh $(cat DEPLOY_ID) success
+    - update-deployment $(cat DEPLOY_ID) success
