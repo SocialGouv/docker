@@ -19,3 +19,8 @@ Test socialgouv/docker/git-deploy:
     - echo "GitHub deployment id '$(cat DEPLOY_ID)'"
     #
     - update-deployment $(cat DEPLOY_ID) "" success
+
+Publish socialgouv/docker/git-deploy to Github Registry:
+  extends: .base_publish_to_github_stage
+  variables:
+    IMAGE_NAME: ${CI_PROJECT_PATH}/git-deploy
