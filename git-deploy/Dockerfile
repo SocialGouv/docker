@@ -5,4 +5,4 @@ RUN apk update
 RUN apk add --no-cache gettext-dev curl
 
 ## Copy git deployment scripts
-COPY ./scripts /bin
+COPY ./bin /bin
