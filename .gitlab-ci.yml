@@ -72,6 +72,7 @@ Release:
   script:
     - export TAG=$(printf "${CI_COMMIT_TAG}" | sed "s/^v//")
     - docker pull ${CI_REGISTRY}/${IMAGE_NAME}:${TAG}
+    - docker tag ${CI_REGISTRY}/${IMAGE_NAME}:${TAG} docker.pkg.github.com/${IMAGE_NAME}:${TAG}
     - docker push docker.pkg.github.com/${IMAGE_NAME}:${TAG}
 
 .base_register_to_gitlab_stage:
