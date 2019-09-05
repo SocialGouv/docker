@@ -4,8 +4,8 @@ set -eu -o pipefail
 #
 
 DEPLOY_ID="${1}"
-STATE="${2}"
-URL="${$3:=""}"
+URL="${2}"
+STATE="${3}"
 
 ENVIRONMENT=${ENVIRONMENT:="staging"}
 PROJECT_PATH=${PROJECT_PATH:=$CI_PROJECT_PATH}

@@ -18,4 +18,4 @@ Test socialgouv/docker/git-deploy:
     - extract-deploy-id
     - echo "GitHub deployment id '$(cat DEPLOY_ID)'"
     #
-    - update-deployment $(cat DEPLOY_ID) success
+    - update-deployment $(cat DEPLOY_ID) "" success
