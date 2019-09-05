@@ -5,9 +5,9 @@ include:
 #
 
 .base_register_stage:
-  image: docker:${DOCKER_VERSION}
+  image: docker:18
   services:
-    - docker:${DOCKER_VERSION}-dind
+    - docker:18-dind
   before_script:
     - echo "${CI_JOB_TOKEN}" | docker login ${CI_REGISTRY} -u gitlab-ci-token --password-stdin
   script:
