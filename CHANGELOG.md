@@ -1,3 +1,15 @@
+# [0.3.0](https://github.com/SocialGouv/docker/compare/v0.2.3...v0.3.0) (2019-09-06)
+
+
+### Bug Fixes
+
+* **publish:** allow publish to github registry to fail ([99bd3d7](https://github.com/SocialGouv/docker/commit/99bd3d7))
+
+
+### Features
+
+* **helm:** add to release process ([#7](https://github.com/SocialGouv/docker/issues/7)) ([5a4ee6f](https://github.com/SocialGouv/docker/commit/5a4ee6f))
+
 ## [0.2.3](https://github.com/SocialGouv/docker/compare/v0.2.2...v0.2.3) (2019-09-05)
 
 
