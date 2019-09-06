@@ -1,0 +1,21 @@
+
+
+Build socialgouv/docker/helm:
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: helm
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/helm
+
+Test socialgouv/docker/helm:
+  stage: "Test"
+  image: "${CI_REGISTRY_IMAGE}/helm:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - helm version
+    - kubectl version
+
+Publish socialgouv/docker/helm to Github Registry:
+  extends: .base_publish_to_github_stage
+  variables:
+    IMAGE_NAME: socialgouv/docker/helm
