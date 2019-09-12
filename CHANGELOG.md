@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/SocialGouv/docker/compare/v0.3.0...v0.4.0) (2019-09-12)
+
+
+### Features
+
+* **helm:** update kubectl version in the image ([96480a1](https://github.com/SocialGouv/docker/commit/96480a1))
+
 # [0.3.0](https://github.com/SocialGouv/docker/compare/v0.2.3...v0.3.0) (2019-09-06)
 
 
