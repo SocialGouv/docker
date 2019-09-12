@@ -3,10 +3,11 @@ FROM alpine/helm:2.14.3
 ## Install envsubst & coreutils
 RUN apk update && apk add --no-cache gettext-dev coreutils
 
+ENV K8S_LATEST_VERSION="v1.15.3"
 ## Install kubectl
 ## Note: Latest version may be found on:
 ## https://aur.archlinux.org/packages/kubectl-bin/
-ADD https://storage.googleapis.com/kubernetes-release/release/v1.6.4/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+ADD https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 
 ENV HOME=/config
 
