@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu -o pipefail
+
+kubectl get namespaces \
+  --no-headers \
+  -o custom-columns=":metadata.name,:metadata.annotations['git/branch']" \
+  | grep $NAMESPACES | sort  \
+  > /tmp/k8s_namespaces
+cat /tmp/k8s_namespaces
+
+while IFS="" read -r namespace_branch || [ -n "${namespace_branch}" ]
+do
+  namespace=$(echo $namespace_branch | cut -d" " -f1)
+  branch=$(echo $namespace_branch | cut -d" " -f2)
+
+  ([ -z ${branch} ] || [ "${branch}" = "<none>" ]) && continue
+
+  if [ -n $(git show-ref --verify --quiet refs/heads/${branch}) ]
+  then
+    kubectl delete namespaces $namespace
+  fi
+done < /tmp/k8s_namespaces
