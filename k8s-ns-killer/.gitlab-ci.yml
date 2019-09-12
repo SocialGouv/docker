@@ -20,7 +20,7 @@ Test socialgouv/docker/k8s-ns-killer:
     - kubectl create namespace ${K8S_NAMESPACE}
     - kubectl annotate namespace ${K8S_NAMESPACE} git/branch=foo
     #
-    - NAMESPACES=k8s-ns-killer-test- sh -x /bin/k8s-ns-killer
+    - sh -x /bin/k8s-ns-killer k8s-ns-killer-test-
 
 Publish socialgouv/docker/k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage

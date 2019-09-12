@@ -1,9 +1,18 @@
 #!/bin/sh
 set -eu -o pipefail
 
+NAMESPACES="${1}"
+
+if [[ -z ${NAMESPACES} ]] ; then
+  echo -e "$0 <the_namespaces_you_want_to_target>"
+  exit 128
+fi
+
+BRANCH_ANNOTATION=${BRANCH_ANNOTATION:="git/branch"}
+
 kubectl get namespaces \
   --no-headers \
-  -o custom-columns=":metadata.name,:metadata.annotations['git/branch']" \
+  -o custom-columns=":metadata.name,:metadata.annotations['${BRANCH_ANNOTATION}']" \
   | grep $NAMESPACES | sort  \
   > /tmp/k8s_namespaces
 cat /tmp/k8s_namespaces

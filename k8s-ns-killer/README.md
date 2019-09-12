@@ -22,11 +22,21 @@ Create Namespace:
 ## Launch
 
 ```sh
-$ NAMESPACES=foo-feature- sh -x ./bin/k8s-ns-killer
+$ ./bin/k8s-ns-killer foo-feature-
+# Or in debug mode
+$ sh -x ./bin/k8s-ns-killer foo-feature-
+```
+
+By default the script will target `git/branch` annotations on namespaces.  
+You can change it by setting `BRANCH_ANNOTATION`.
+
+```sh
+$ export BRANCH_ANNOTATION="my/git/branch"
+$ sh -x ./bin/k8s-ns-killer my-feature-
 ```
 
 ## With Docker image 
 
 ```sh
-$ docker run --rm -it -e NAMESPACES=lol k8s-ns-killer:<version>
+$ docker run --rm -it -e NAMESPACES=lol k8s-ns-killer:<version> foo-feature-
 ```
