@@ -38,5 +38,5 @@ $ sh -x ./bin/k8s-ns-killer my-feature-
 ## With Docker image 
 
 ```sh
-$ docker run --rm -it -e NAMESPACES=lol k8s-ns-killer:<version> foo-feature-
+$ docker run --rm k8s-ns-killer:<version> foo-feature-
 ```
