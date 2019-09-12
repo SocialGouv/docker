@@ -1,3 +1,11 @@
+# [0.5.0](https://github.com/SocialGouv/docker/compare/v0.4.0...v0.5.0) (2019-09-12)
+
+
+### Features
+
+* **k8s-ns-killer:** add k8s-ns-killer image ([#8](https://github.com/SocialGouv/docker/issues/8)) ([2dd3cbd](https://github.com/SocialGouv/docker/commit/2dd3cbd))
+* **k8s-ns-killer:** pass namespaces as script args ([9118b29](https://github.com/SocialGouv/docker/commit/9118b29))
+
 # [0.4.0](https://github.com/SocialGouv/docker/compare/v0.3.0...v0.4.0) (2019-09-12)
 
 
