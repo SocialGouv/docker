@@ -24,7 +24,7 @@ do
 
   ([ -z ${branch} ] || [ "${branch}" = "<none>" ]) && continue
 
-  if [ -n $(git show-ref --verify --quiet refs/heads/${branch}) ]
+  if ! git show-ref --verify --quiet refs/heads/${branch}
   then
     kubectl delete namespaces $namespace
   fi
