@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/SocialGouv/docker/compare/v0.5.0...v0.5.1) (2019-09-13)
+
+
+### Bug Fixes
+
+* **k8s-ns-killer:** correctly check if the branch exists before k… ([#10](https://github.com/SocialGouv/docker/issues/10)) ([2b67bb6](https://github.com/SocialGouv/docker/commit/2b67bb6))
+
 # [0.5.0](https://github.com/SocialGouv/docker/compare/v0.4.0...v0.5.0) (2019-09-12)
 
 
