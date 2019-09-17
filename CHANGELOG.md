@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/SocialGouv/docker/compare/v0.6.0...v0.7.0) (2019-09-17)
+
+
+### Features
+
+* **kubectl:** add to depoly process ([db4131c](https://github.com/SocialGouv/docker/commit/db4131c))
+
 # [0.6.0](https://github.com/SocialGouv/docker/compare/v0.5.2...v0.6.0) (2019-09-17)
 
 
