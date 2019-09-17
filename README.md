@@ -24,6 +24,11 @@ $ docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/<image>:<
 $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 ```
 
+<br>
+<br>
+<br>
+<br>
+
 ## Images
 
 | Project    | Image                                                                                      | Links                                                                                                                               |
@@ -32,3 +37,28 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 | **helm** | [`socialgouv/docker/helm`](./helm) | [![README](https://img.shields.io/badge/README--green.svg)](./charts/webapp/README.md) |
 | **k8s-ns-killer** | [`socialgouv/docker/k8s-ns-killer`](./k8s-ns-killer) | [![README](https://img.shields.io/badge/README--green.svg)](./charts/webapp/README.md) |
 | **kubectl** | [`socialgouv/docker/kubectl`](./kubectl) | [![README](https://img.shields.io/badge/README--green.svg)](./charts/webapp/README.md) |
+
+<br>
+<br>
+<br>
+<br>
+
+## Release policy
+
+### One click semantic release !
+
+[On a successful `master` branch pipeline click on trigger the `Release` job.](https://gitlab.factory.social.gouv.fr/SocialGouv/docker/pipelines)
+elines)
+
+### Manual
+
+We manly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our relese
+You need an [Github token](https://github.com/settings/tokens/new) to release.
+
+```sh
+$ export GITHUB_TOKEN=**********
+$ yarn global add semantic-release @semantic-release/changelog @semantic-release/git
+$ semantic-release
+```
+
+Our [semantic-release config](./.releaserc.yml) will do the heavy lifting ;)
