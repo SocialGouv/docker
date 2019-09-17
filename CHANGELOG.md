@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/SocialGouv/docker/compare/v0.5.2...v0.6.0) (2019-09-17)
+
+
+### Features
+
+* **kubectl:** update kubectl version to 1.15.3 ([5e8c071](https://github.com/SocialGouv/docker/commit/5e8c071))
+
 ## [0.5.2](https://github.com/SocialGouv/docker/compare/v0.5.1...v0.5.2) (2019-09-13)
 
 
