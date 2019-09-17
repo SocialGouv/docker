@@ -2,6 +2,7 @@ include:
   - /git-deploy/.gitlab-ci.yml
   - /helm/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
+  - /kubectl/.gitlab-ci.yml
 #
 
 variables:

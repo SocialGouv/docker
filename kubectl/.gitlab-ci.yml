@@ -1,0 +1,20 @@
+
+
+Build socialgouv/docker/kubectl:
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: kubectl
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kubectl
+
+Test socialgouv/docker/kubectl:
+  stage: "Test"
+  image: "${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - kubectl version
+
+Publish socialgouv/docker/kubectl to Github Registry:
+  extends: .base_publish_to_github_stage
+  variables:
+    IMAGE_NAME: socialgouv/docker/kubectl
