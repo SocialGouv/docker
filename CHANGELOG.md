@@ -1,3 +1,10 @@
+## [0.7.1](https://github.com/SocialGouv/docker/compare/v0.7.0...v0.7.1) (2019-09-18)
+
+
+### Bug Fixes
+
+* **k8s-ns-killer:** test branch on remotes/origin ([eb3520d](https://github.com/SocialGouv/docker/commit/eb3520d))
+
 # [0.7.0](https://github.com/SocialGouv/docker/compare/v0.6.0...v0.7.0) (2019-09-17)
 
 
