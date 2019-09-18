@@ -22,6 +22,8 @@ Create Namespace:
 ## Launch
 
 ```sh
+# ensure to have `refs/remotes/origin`s 
+$ git fetch origin
 $ ./bin/k8s-ns-killer foo-feature-
 # Or in debug mode
 $ sh -x ./bin/k8s-ns-killer foo-feature-
