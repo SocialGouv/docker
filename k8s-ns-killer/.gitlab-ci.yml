@@ -16,11 +16,17 @@ Test socialgouv/docker/k8s-ns-killer:
     - git --version
     - kubectl version
     #
-    - kubectl delete namespaces ${K8S_NAMESPACE} || true
-    - kubectl create namespace ${K8S_NAMESPACE}
-    - kubectl annotate namespace ${K8S_NAMESPACE} git/branch=foo
+    - kubectl delete namespaces ${K8S_NAMESPACE}-good || true
+    - kubectl create namespace ${K8S_NAMESPACE}-good
+    - kubectl annotate namespace ${K8S_NAMESPACE}-good git/branch=${CI_COMMIT_REF_NAME}
+    #
+    - kubectl delete namespaces ${K8S_NAMESPACE}-bad || true
+    - kubectl create namespace ${K8S_NAMESPACE}-bad
+    - kubectl annotate namespace ${K8S_NAMESPACE}-bad git/branch=foo
     #
     - sh -x /bin/k8s-ns-killer k8s-ns-killer-test-
+    #
+    - kubectl delete namespaces ${K8S_NAMESPACE}-good || true
 
 Publish socialgouv/docker/k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage
