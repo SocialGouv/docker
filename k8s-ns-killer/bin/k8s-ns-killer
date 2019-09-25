@@ -9,6 +9,7 @@ if [[ -z ${NAMESPACES} ]] ; then
 fi
 
 BRANCH_ANNOTATION=${BRANCH_ANNOTATION:="git/branch"}
+REPOSITORY=${REPOSITORY:=$(git remote get-url origin)}
 
 kubectl get namespaces \
   --no-headers \
@@ -23,7 +24,7 @@ do
   branch=$(echo $namespace_branch | cut -d" " -f2)
 
   ([ -z ${branch} ] || [ "${branch}" = "<none>" ]) && continue
+  git ls-remote --exit-code --heads ${REPOSITORY} ${branch} && continue
 
-  git show-ref --verify --quiet refs/remotes/origin/${branch} || \
-    kubectl delete namespaces $namespace
+  kubectl delete namespaces $namespace
 done < /tmp/k8s_namespaces
