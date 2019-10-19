@@ -1,4 +1,4 @@
-FROM alpine/helm:2.14.3
+FROM alpine/helm:2.15.0
 
 ## Install envsubst & coreutils
 RUN apk update && apk add --no-cache gettext-dev coreutils
