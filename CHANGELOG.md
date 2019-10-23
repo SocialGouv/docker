@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/SocialGouv/docker/compare/v0.7.2...v0.8.0) (2019-10-23)
+
+
+### Features
+
+* **helm:** update to kubctl 1.16.2 ([5c88253](https://github.com/SocialGouv/docker/commit/5c88253f7af6fc595b6a9f792f38bdb92df70abc))
+
 ## [0.7.2](https://github.com/SocialGouv/docker/compare/v0.7.1...v0.7.2) (2019-09-25)
 
 
