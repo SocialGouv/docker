@@ -1,18 +1,5 @@
-#
-
-.base_job: &base_job
-  only:
-    changes:
-      - git-deploy/**/*
-    refs:
-      - master
-      - tags
-
-#
-
 Build socialgouv/docker/git-deploy:
   stage: "Build"
-  <<: *base_job
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: git-deploy
@@ -20,7 +7,6 @@ Build socialgouv/docker/git-deploy:
 
 Test socialgouv/docker/git-deploy:
   stage: "Test"
-  <<: *base_job
   image: "${CI_REGISTRY_IMAGE}/git-deploy:${CI_COMMIT_SHA}"
   script:
     #

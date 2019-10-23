@@ -1,15 +1,3 @@
-#
-
-.base_job: &base_job
-  only:
-    changes:
-      - k8s-ns-killer/**/*
-    refs:
-      - master
-      - tags
-
-#
-
 Build socialgouv/docker/k8s-ns-killer:
   stage: "Build"
   extends: .base_register_to_gitlab_stage
