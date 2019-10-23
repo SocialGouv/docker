@@ -1,3 +1,11 @@
+## [0.8.1](https://github.com/SocialGouv/docker/compare/v0.8.0...v0.8.1) (2019-10-23)
+
+
+### Reverts
+
+* chore(deps): update alpine/helm docker tag to v2.15.0 ([#17](https://github.com/SocialGouv/docker/issues/17)) ([8459d2d](https://github.com/SocialGouv/docker/commit/8459d2d76b4975c864b483e0ec8044adf603f681))
+* ci(gitlab): run jobs based on modified files ([a9e51c7](https://github.com/SocialGouv/docker/commit/a9e51c74e94a8e1a4832fd7bda4f38eb04cf3274))
+
 # [0.8.0](https://github.com/SocialGouv/docker/compare/v0.7.2...v0.8.0) (2019-10-23)
 
 
