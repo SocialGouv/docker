@@ -4,7 +4,6 @@
   only:
     changes:
       - k8s-ns-killer/**/*
-  except:
     refs:
       - master
       - tags

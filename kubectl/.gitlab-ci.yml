@@ -4,7 +4,6 @@
   only:
     changes:
       - kubectl/**/*
-  except:
     refs:
       - master
       - tags

@@ -4,7 +4,6 @@
   only:
     changes:
       - helm/**/*
-  except:
     refs:
       - master
       - tags

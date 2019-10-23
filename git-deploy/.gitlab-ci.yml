@@ -4,7 +4,6 @@
   only:
     changes:
       - git-deploy/**/*
-  except:
     refs:
       - master
       - tags
