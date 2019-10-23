@@ -12,6 +12,8 @@ Test socialgouv/docker/helm:
   script:
     - helm version
     - kubectl version
+    #
+    - helm list
 
 Publish socialgouv/docker/helm to Github Registry:
   extends: .base_publish_to_github_stage
