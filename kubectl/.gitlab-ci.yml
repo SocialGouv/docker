@@ -1,7 +1,19 @@
+#
 
+.base_job: &base_job
+  only:
+    changes:
+      - kubectl/**/*
+  except:
+    refs:
+      - master
+      - tags
+
+#
 
 Build socialgouv/docker/kubectl:
   stage: "Build"
+  <<: *base_job
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: kubectl
@@ -9,6 +21,7 @@ Build socialgouv/docker/kubectl:
 
 Test socialgouv/docker/kubectl:
   stage: "Test"
+  <<: *base_job
   image: "${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}"
   environment: feature-dev
   script:
