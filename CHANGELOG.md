@@ -1,3 +1,10 @@
+## [0.9.1](https://github.com/SocialGouv/docker/compare/v0.9.0...v0.9.1) (2019-10-28)
+
+
+### Bug Fixes
+
+* **gitlab:** add missing curl gitlab config in man gitlab file ([f58d073](https://github.com/SocialGouv/docker/commit/f58d073fae706f29ae0896ae36ce27650efbf534))
+
 # [0.9.0](https://github.com/SocialGouv/docker/compare/v0.8.1...v0.9.0) (2019-10-28)
 
 
