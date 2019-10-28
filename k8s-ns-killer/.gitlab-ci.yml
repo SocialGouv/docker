@@ -7,6 +7,11 @@ Build socialgouv/docker/k8s-ns-killer:
 
 Test socialgouv/docker/k8s-ns-killer:
   stage: "Test"
+  # NOTE(douglasduteil): allow 2 retries (3 runs)
+  # The script my actually attend to remove namespaces on parallel runs
+  # 2 retries allow the script to ignore parallel remove conflicts like :
+  # `The system is ensuring all content is removed from this namespace`
+  retry: 2
   image: "${CI_REGISTRY_IMAGE}/k8s-ns-killer:${CI_COMMIT_SHA}"
   environment: feature-dev
   variables:
