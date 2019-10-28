@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/SocialGouv/docker/compare/v0.8.1...v0.9.0) (2019-10-28)
+
+
+### Features
+
+* **curl:** update curl image ([86caf1a](https://github.com/SocialGouv/docker/commit/86caf1aa9824a4671b18fd855ca17b9689ad7f3d))
+
 ## [0.8.1](https://github.com/SocialGouv/docker/compare/v0.8.0...v0.8.1) (2019-10-23)
 
 
