@@ -1,3 +1,10 @@
+## [0.11.1](https://github.com/SocialGouv/docker/compare/v0.11.0...v0.11.1) (2019-10-30)
+
+
+### Bug Fixes
+
+* **helm:** add missing helm dependencies ([a67ae2b](https://github.com/SocialGouv/docker/commit/a67ae2bcedab7e466eb73ff6debe43c50d6ceb4e))
+
 # [0.11.0](https://github.com/SocialGouv/docker/compare/v0.10.0...v0.11.0) (2019-10-30)
 
 
