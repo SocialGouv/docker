@@ -1,3 +1,10 @@
+# [0.11.0](https://github.com/SocialGouv/docker/compare/v0.10.0...v0.11.0) (2019-10-30)
+
+
+### Features
+
+* **helm:** allow sudo ([106f7d4](https://github.com/SocialGouv/docker/commit/106f7d4be86bdb63c4925d23e6f5c548d2867e5f))
+
 # [0.10.0](https://github.com/SocialGouv/docker/compare/v0.9.1...v0.10.0) (2019-10-30)
 
 
