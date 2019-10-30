@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/SocialGouv/docker/compare/v0.9.1...v0.10.0) (2019-10-30)
+
+
+### Features
+
+* **helm:** add su-exec ([fe736c5](https://github.com/SocialGouv/docker/commit/fe736c52347b9318569c71a8df8eeefcc1df10ff))
+
 ## [0.9.1](https://github.com/SocialGouv/docker/compare/v0.9.0...v0.9.1) (2019-10-28)
 
 
