@@ -1,5 +1,5 @@
 
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.10.0 AS kubectl-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.11.0 AS kubectl-image
 FROM alpine/helm:2.14.3
 
 ## Install envsubst & coreutils
