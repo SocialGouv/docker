@@ -1,23 +1,21 @@
+
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.9.1 AS kubectl-image
 FROM alpine/helm:2.14.3
 
 ## Install envsubst & coreutils
-RUN apk update && apk add --no-cache gettext-dev su-exec coreutils
-
-ENV K8S_LATEST_VERSION="v1.16.2"
-
-## Install kubectl
-## Note: Latest version may be found on:
-## https://aur.archlinux.org/packages/kubectl-bin/
-ADD https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+RUN apk update && apk add --no-cache gettext-dev sudo coreutils
 
 ENV HOME=/config
 
+COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
+
 RUN set -x && \
-    apk add --no-cache curl ca-certificates && \
-    chmod +x /usr/local/bin/kubectl && \
-    \
-    # Create non-root user (with a randomly chosen UID/GUI).
     adduser kubectl -Du 2342 -h /config && \
+    chgrp -R kubectl /usr/local; \
+    find /usr/local -type d | xargs chmod g+w; \
+    echo "kubectl ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kubectl; \
+    chmod 0440 /etc/sudoers.d/kubectl; \
+    # Create non-root user (with a randomly chosen UID/GUI).
     \
     # Basic check it works.
     kubectl version --client
