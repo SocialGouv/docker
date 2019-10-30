@@ -3,7 +3,13 @@ FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.10.0 AS 
 FROM alpine/helm:2.14.3
 
 ## Install envsubst & coreutils
-RUN apk update && apk add --no-cache gettext-dev sudo coreutils
+RUN apk add --update --no-cache \
+  bash \
+  coreutils \
+  curl \
+  gettext-dev \
+  git \
+  sudo
 
 ENV HOME=/config
 
