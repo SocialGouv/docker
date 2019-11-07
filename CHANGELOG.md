@@ -1,3 +1,10 @@
+## [0.11.2](https://github.com/SocialGouv/docker/compare/v0.11.1...v0.11.2) (2019-11-07)
+
+
+### Bug Fixes
+
+* **kubectl:** update bash ([cea4553](https://github.com/SocialGouv/docker/commit/cea4553391ca69f3e80a4b671804af7326776d1a))
+
 ## [0.11.1](https://github.com/SocialGouv/docker/compare/v0.11.0...v0.11.1) (2019-10-30)
 
 
