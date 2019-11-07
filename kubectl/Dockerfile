@@ -1,7 +1,12 @@
 FROM alpine:3.10
 
 ## Install envsubst & coreutils
-RUN apk add --update --no-cache gettext-dev coreutils
+RUN apk add --update --no-cache \
+  bash \
+  coreutils \
+  curl \
+  gettext-dev \
+  sudo
 
 ENV K8S_LATEST_VERSION="v1.16.2"
 ## Install kubectl
