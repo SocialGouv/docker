@@ -1,0 +1,18 @@
+Build socialgouv/docker/spa-nginx:
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: spa-nginx
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/spa-nginx
+
+Test socialgouv/docker/spa-nginx:
+  stage: "Test"
+  image: "${CI_REGISTRY_IMAGE}/spa-nginx:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - echo "todo..."
+
+Publish socialgouv/docker/spa-nginx to Github Registry:
+  extends: .base_publish_to_github_stage
+  variables:
+    IMAGE_NAME: socialgouv/docker/spa-nginx
