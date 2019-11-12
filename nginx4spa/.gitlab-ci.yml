@@ -21,18 +21,6 @@ Test socialgouv/docker/nginx4spa:
     - sed -i -e "s|80|${NGINX_PORT}|g" /etc/nginx/nginx.conf
     - /entrypoint.sh &
     - nginx -s stop || pkill nginx || true
-    #
-    - nginx
-    #
-    - apk --update add curl
-    - curl -s localhost:${NGINX_PORT}
-    - curl -s localhost:${NGINX_PORT} |
-        grep "nginx4spa/test/index.html with VERSION=x.y.z"
-    - curl -s localhost:${NGINX_PORT}/foo/bar/bar.js
-    - curl -s localhost:${NGINX_PORT}/foo/bar/bar.js |
-        grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
-    #
-    - nginx -s stop || pkill nginx || true
     - ps -a
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
