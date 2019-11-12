@@ -19,7 +19,7 @@ Test socialgouv/docker/nginx4spa:
   script:
     #
     # NOTE(douglasduteil): kill existing nginx demon
-    - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
+    # - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
     # NOTE(douglasduteil): ensure that nginx is serving the local test folder
     - ln -s ${CI_PROJECT_DIR}/nginx4spa/test /usr/share/nginx/html
     #
