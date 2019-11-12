@@ -20,7 +20,7 @@ Test socialgouv/docker/nginx4spa:
     - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
     - sed -i -e "s|80|${NGINX_PORT}|g" /etc/nginx/nginx.conf
     - /entrypoint.sh &
-    - nginx -s stop || true
+    - nginx -s stop || pkill nginx || true
     #
     - nginx
     #
@@ -32,7 +32,7 @@ Test socialgouv/docker/nginx4spa:
     - curl -s localhost:${NGINX_PORT}/foo/bar/bar.js |
         grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
-    - nginx -s stop || true
+    - nginx -s stop || pkill nginx || true
     - ps -a
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
