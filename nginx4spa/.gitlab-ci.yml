@@ -11,18 +11,21 @@ Test socialgouv/docker/nginx4spa:
   cache:
     key: ${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}
     paths:
-      - /var/cache/apk
+      - ${CI_PROJECT_DIR}/var/cache/apk
   variables:
     NGINX_PORT: 8888
     VERSION: x.y.z
     WWW_DIRECTORY: ${CI_PROJECT_DIR}/nginx4spa/test
   script:
-    - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
-    - sed -i -e "s|80|${NGINX_PORT}|g" /etc/nginx/nginx.conf
-    - /entrypoint.sh &
-    - nginx -s stop || pkill nginx || true
     #
-    - mkdir /var/run/nginx
+    # NOTE(douglasduteil): kill existing nginx demon
+    - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
+    # NOTE(douglasduteil): ensure that nginx is serving the local test folder
+    - ln -s ${CI_PROJECT_DIR}/nginx4spa/test /usr/share/nginx/html
+    #
+    - /envsub.sh
+    #
+    #
     - nginx
     #
     - apk --update add curl
@@ -33,10 +36,7 @@ Test socialgouv/docker/nginx4spa:
     - curl -s localhost:${NGINX_PORT}/foo/bar/bar.js |
         grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
-    - nginx -s stop || pkill nginx || true
-    - ps aux
-    - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
-    - ps aux
+    - nginx -s stop
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
