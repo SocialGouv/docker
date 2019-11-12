@@ -24,12 +24,12 @@ Test socialgouv/docker/nginx4spa:
     - rm -rf /usr/share/nginx/html
     - ln -s ${CI_PROJECT_DIR}/nginx4spa/test /usr/share/nginx/html
     #
+    - apk --update add curl openrc
+    #
     - /envsub.sh
     #
-    #
-    - nginx &
-    #
-    - apk --update add curl
+    - rc-update add nginx
+    - rc-service nginx start
     # - curl -s localhost
     # - curl -s localhost |
     #     grep "nginx4spa/test/index.html with VERSION=x.y.z"
@@ -38,8 +38,7 @@ Test socialgouv/docker/nginx4spa:
     #     grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
   after_script:
-    - nginx -s stop || true
-    - kill $(ps aux | grep '[n]ginx' | awk '{print $1}') || true
+    - rc-service nginx stop || true
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
