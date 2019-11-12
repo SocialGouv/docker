@@ -35,6 +35,7 @@ Test socialgouv/docker/nginx4spa:
     - curl -s localhost/foo/bar/bar.js |
         grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
+  after_script:
     - nginx -s stop
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
