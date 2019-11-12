@@ -1,13 +1,13 @@
-Build socialgouv/docker/spa-nginx:
+Build socialgouv/docker/nginx4spa:
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
-    CONTEXT: spa-nginx
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/spa-nginx
+    CONTEXT: nginx4spa
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx4spa
 
-Test socialgouv/docker/spa-nginx:
+Test socialgouv/docker/nginx4spa:
   stage: "Test"
-  image: "${CI_REGISTRY_IMAGE}/spa-nginx:${CI_COMMIT_SHA}"
+  image: "${CI_REGISTRY_IMAGE}/nginx4spa:${CI_COMMIT_SHA}"
   cache:
     key: ${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}
     paths:
@@ -21,7 +21,7 @@ Test socialgouv/docker/spa-nginx:
     - apk --update add curl
     - curl localhost:80
 
-Publish socialgouv/docker/spa-nginx to Github Registry:
+Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
   variables:
-    IMAGE_NAME: socialgouv/docker/spa-nginx
+    IMAGE_NAME: socialgouv/docker/nginx4spa
