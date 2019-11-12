@@ -38,7 +38,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 | **helm**          | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm:0.9.1`          | [![README](https://img.shields.io/badge/README--green.svg)](./helm/README.md)          |
 | **k8s-ns-killer** | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-ns-killer:0.9.1` | [![README](https://img.shields.io/badge/README--green.svg)](./k8s-ns-killer/README.md) |
 | **kubectl**       | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.9.1`       | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)       |
-| **spa-nginx**       | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/spa-nginx:0.9.1`       | [![README](https://img.shields.io/badge/README--green.svg)](./spa-nginx/README.md)       |
+| **nginx4spa**       | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:0.9.1`       | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)       |
 
 <br>
 <br>

@@ -1,0 +1,40 @@
+Build socialgouv/docker/nginx4spa:
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: nginx4spa
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx4spa
+
+Test socialgouv/docker/nginx4spa:
+  stage: "Test"
+  image: "${CI_REGISTRY_IMAGE}/nginx4spa:${CI_COMMIT_SHA}"
+  cache:
+    key: ${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}
+    paths:
+      - ${CI_PROJECT_DIR}/var/cache/apk
+  variables:
+    NGINX_PORT: 8888
+    VERSION: x.y.z
+    WWW_DIRECTORY: ${CI_PROJECT_DIR}/nginx4spa/test
+  script:
+    - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
+    - sed -i -e "s|80|${NGINX_PORT}|g" /etc/nginx/nginx.conf
+    - /entrypoint.sh &
+    - nginx -s stop || pkill nginx || true
+    #
+    - nginx
+    #
+    - apk --update add curl
+    - curl -s localhost:${NGINX_PORT}
+    - curl -s localhost:${NGINX_PORT} |
+        grep "nginx4spa/test/index.html with VERSION=x.y.z"
+    - curl -s localhost:${NGINX_PORT}/foo/bar/bar.js
+    - curl -s localhost:${NGINX_PORT}/foo/bar/bar.js |
+        grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
+    #
+    - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
+
+Publish socialgouv/docker/nginx4spa to Github Registry:
+  extends: .base_publish_to_github_stage
+  variables:
+    IMAGE_NAME: socialgouv/docker/nginx4spa
