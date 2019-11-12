@@ -8,9 +8,18 @@ Build socialgouv/docker/spa-nginx:
 Test socialgouv/docker/spa-nginx:
   stage: "Test"
   image: "${CI_REGISTRY_IMAGE}/spa-nginx:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  cache:
+    key: ${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}
+    paths:
+      - /etc/apk/cache
+  variables:
+    WWW_DIRECTORY: ${CI_PROJECT_DIR}/nginx4spa/test
   script:
-    - echo "todo..."
+    - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
+    - nginx -s reload
+    #
+    - apk --update add curl
+    - curl localhost:80
 
 Publish socialgouv/docker/spa-nginx to Github Registry:
   extends: .base_publish_to_github_stage

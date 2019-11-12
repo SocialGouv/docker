@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-ROOT_DIRECTORY="/usr/share/nginx/html"
+WWW_DIRECTORY=${WWW_DIRECTORY:="/usr/share/nginx/html"}
+GLOB=${GLOB:="*"}
 
 ##############################################################
 # Step 1 : replace default environment values in .html files #
@@ -12,8 +13,7 @@ printenv >> env-vars
 while IFS='=' read -r KEY VALUE
 do
   # replace default environment variables value
-  find $ROOT_DIRECTORY -type f -name \*.js -exec \
-    sed -i -e "s|%%$KEY%%|$VALUE|g" {} +
+  find ${WWW_DIRECTORY} -type f -exec sed -i -e "s|%%${KEY}%%|${VALUE}|g" {} \;
 done <env-vars
 
 rm env-vars
