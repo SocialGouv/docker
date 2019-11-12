@@ -21,6 +21,7 @@ Test socialgouv/docker/nginx4spa:
     # NOTE(douglasduteil): kill existing nginx demon
     # - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
     # NOTE(douglasduteil): ensure that nginx is serving the local test folder
+    - rm -rf /usr/share/nginx/html
     - ln -s ${CI_PROJECT_DIR}/nginx4spa/test /usr/share/nginx/html
     #
     - /envsub.sh
@@ -37,6 +38,7 @@ Test socialgouv/docker/nginx4spa:
     #     grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
   after_script:
+    - nginx -s stop || true
     - kill $(ps aux | grep '[n]ginx' | awk '{print $1}') || true
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
