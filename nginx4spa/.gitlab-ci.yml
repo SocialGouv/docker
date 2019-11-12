@@ -22,7 +22,8 @@ Test socialgouv/docker/nginx4spa:
     - nginx
     #
     - apk --update add curl
-    - curl localhost:80
+    - curl -s localhost:80 | grep "nginx4spa/test/index.html with VERSION=x.y.z"
+    - curl -s localhost:80/foo/bar/bar.js | grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
     - nginx -s stop || true
 

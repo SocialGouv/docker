@@ -1,1 +1,1 @@
-/* ./nginx4spa/test/foo/bar/bar.js with VERSION=%%VERSION%% */
+// nginx4spa/test/foo/bar/bar.js with VERSION=%%VERSION%%
