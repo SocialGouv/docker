@@ -16,7 +16,8 @@ Test socialgouv/docker/nginx4spa:
     WWW_DIRECTORY: ${CI_PROJECT_DIR}/nginx4spa/test
   script:
     - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
-    - /entrypoint.sh
+    - /entrypoint.sh &
+    - nginx -s stop || true
     #
     - nginx
     #
