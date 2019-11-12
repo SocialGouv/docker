@@ -34,9 +34,9 @@ Test socialgouv/docker/nginx4spa:
         grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
     #
     - nginx -s stop || pkill nginx || true
-    - ps -a
+    - ps aux
     - kill $(ps aux | grep '[n]ginx' | awk '{print $2}')
-    - ps -a
+    - ps aux
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
