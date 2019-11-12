@@ -13,6 +13,7 @@ Test socialgouv/docker/nginx4spa:
     paths:
       - /var/cache/apk
   variables:
+    VERSION: x.y.z
     WWW_DIRECTORY: ${CI_PROJECT_DIR}/nginx4spa/test
   script:
     - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
@@ -22,8 +23,8 @@ Test socialgouv/docker/nginx4spa:
     - nginx
     #
     - apk --update add curl
-    - curl -s localhost:80 | grep "nginx4spa/test/index.html with VERSION=x.y.z"
-    - curl -s localhost:80/foo/bar/bar.js | grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
+    - curl -s localhost:80 | grep "nginx4spa/test/index.html with VERSION=x.y.zgit"
+    - curl -s localhost:80/foo/bar/bar.js | grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.zgit"
     #
     - nginx -s stop || true
 
