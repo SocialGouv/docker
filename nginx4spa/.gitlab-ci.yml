@@ -35,7 +35,7 @@ Test socialgouv/docker/nginx4spa:
     #
     - nginx -s stop || pkill nginx || true
     - ps aux
-    - kill $(ps aux | grep '[n]ginx' | awk '{print $2}')
+    - kill $(ps aux | grep '[n]ginx' | awk '{print $1}')
     - ps aux
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
