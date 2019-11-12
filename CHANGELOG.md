@@ -1,3 +1,11 @@
+# [0.12.0](https://github.com/SocialGouv/docker/compare/v0.11.2...v0.12.0) (2019-11-12)
+
+
+### Features
+
+* **nginx4spa:** add spa nginx image ([#33](https://github.com/SocialGouv/docker/issues/33)) ([1bfd078](https://github.com/SocialGouv/docker/commit/1bfd078938823f924d7289653ce75a210de46cde))
+* **spa-nginx:** add spa nginx image ([#31](https://github.com/SocialGouv/docker/issues/31)) ([f642a9c](https://github.com/SocialGouv/docker/commit/f642a9c9ff3f8ad49385cddd4b61c5d1e4996cc2))
+
 ## [0.11.2](https://github.com/SocialGouv/docker/compare/v0.11.1...v0.11.2) (2019-11-07)
 
 
