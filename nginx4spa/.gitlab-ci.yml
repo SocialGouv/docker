@@ -27,7 +27,7 @@ Test socialgouv/docker/nginx4spa:
     - /envsub.sh
     #
     #
-    # - nginx
+    - nginx &
     #
     - apk --update add curl
     # - curl -s localhost
