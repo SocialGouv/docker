@@ -16,10 +16,13 @@ Test socialgouv/docker/nginx4spa:
     WWW_DIRECTORY: ${CI_PROJECT_DIR}/nginx4spa/test
   script:
     - sed -i -e "s|/usr/share/nginx/html|${WWW_DIRECTORY}|g" /etc/nginx/nginx.conf
-    - nginx -s reload
+    #
+    - nginx
     #
     - apk --update add curl
     - curl localhost:80
+    #
+    - nginx -s stop || true
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
