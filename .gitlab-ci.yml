@@ -4,7 +4,7 @@ include:
   - /helm/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
-  - /spa-nginx/.gitlab-ci.yml
+  - /nginx4spa/.gitlab-ci.yml
 
 #
 
