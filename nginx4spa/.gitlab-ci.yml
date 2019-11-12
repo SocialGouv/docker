@@ -29,8 +29,7 @@ Test socialgouv/docker/nginx4spa:
     - /envsub.sh
     #
     - rc-update add nginx
-    - rc-service nginx start
-    # - curl -s localhost
+    - curl -s localhost
     # - curl -s localhost |
     #     grep "nginx4spa/test/index.html with VERSION=x.y.z"
     # - curl -s localhost/foo/bar/bar.js
