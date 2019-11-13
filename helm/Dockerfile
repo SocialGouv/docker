@@ -1,6 +1,6 @@
 
 FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.12.0 AS kubectl-image
-FROM alpine/helm:2.14.3
+FROM alpine/helm:2.16.0
 
 ## Install envsubst & coreutils
 RUN apk add --update --no-cache \
