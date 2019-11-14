@@ -7,9 +7,9 @@ Build socialgouv/docker/nginx4spa:
 
 Test socialgouv/docker/nginx4spa:
   stage: "Test"
-  image: docker:19
+  image: docker:18
   services:
-    - docker:19-dind
+    - docker:18-dind
   script:
     - docker run
         --detach
