@@ -50,7 +50,6 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 ### One click semantic release !
 
 [On a successful `master` branch pipeline click on trigger the `Release` job.](https://gitlab.factory.social.gouv.fr/SocialGouv/docker/pipelines)
-elines)
 
 ### Manual
 
