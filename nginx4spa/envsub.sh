@@ -5,8 +5,8 @@
 ################################################################################
 
 #
-# As defualt, in every files in the "/usr/share/nginx/html" directory, this
-# script replace `%%KEY%%` by `VALUE` where `export KEY=VALUE` in the global env var.
+# As default, in every files in the "/usr/share/nginx/html" directory, this
+# script replaces `%%KEY%%` by `VALUE` where `export KEY=VALUE` in the global env var.
 #
 
 WWW_DIRECTORY=${WWW_DIRECTORY:="/usr/share/nginx/html"}

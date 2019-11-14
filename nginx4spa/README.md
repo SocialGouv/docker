@@ -1,3 +1,19 @@
-# KubeCtrl
+# NGINX for SPA
 
-> KubeCtrl image
+> Nginx image for single page application
+
+As default, in every files in the "/usr/share/nginx/html" directory, the [`envsub.sh`](./envsub.sh) script replaces `%%KEY%%` by `VALUE` where `export KEY=VALUE` in the global env var.
+So :
+
+```sh
+$ echo "VERSION=%%VERSION%%" > /www/version.txt
+$ docker run \
+    --env VERSION=x.y.z \
+    --name nginx4spa_test \
+    --publish 8888:80 \
+    --rm \
+    --volume /www:/usr/share/nginx/html \
+    registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:<version>
+$ curl localhost:8080/version.txt
+VERSION=x.y.z
+```
