@@ -21,12 +21,15 @@ Test socialgouv/docker/nginx4spa:
         ${CI_REGISTRY_IMAGE}/nginx4spa:${CI_COMMIT_SHA}
     #
     - apk --update add curl
-    - curl -s localhost
+    - curl localhost:80
+    - curl localhost
     - curl -s localhost |
         grep "nginx4spa/test/index.html with VERSION=x.y.z"
     - curl -s localhost/foo/bar/bar.js
     - curl -s localhost/foo/bar/bar.js |
         grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
+  after_script:
+    - docker stop nginx4spa_test || true
 
 Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
