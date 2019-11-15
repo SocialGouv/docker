@@ -36,3 +36,9 @@ Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
   variables:
     IMAGE_NAME: socialgouv/docker/nginx4spa
+
+Hadolint nginx4spa:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./nginx4spa/Dockerfile

@@ -17,3 +17,9 @@ Publish socialgouv/docker/kubectl to Github Registry:
   extends: .base_publish_to_github_stage
   variables:
     IMAGE_NAME: socialgouv/docker/kubectl
+
+Hadolint kubectl:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./kubectl/Dockerfile
