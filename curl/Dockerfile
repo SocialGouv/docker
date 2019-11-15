@@ -1,3 +1,3 @@
 FROM alpine:3.10
 
-RUN apk --no-cache --update add curl
+RUN apk --no-cache --update add curl=7.66.0-r0

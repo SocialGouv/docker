@@ -2,11 +2,13 @@ FROM alpine:3.10
 
 ## Install envsubst & coreutils
 RUN apk add --update --no-cache \
-  bash \
-  coreutils \
-  curl \
-  gettext-dev \
-  sudo
+  bash=5.0.0-r0 \
+  coreutils=8.31-r0 \
+  curl=7.66.0-r0 \
+  gettext-dev=0.19.8.1-r4  \
+  sudo=1.8.27-r0 \
+  ca-certificates=20190108-r0
+
 
 ENV K8S_LATEST_VERSION="v1.16.2"
 ## Install kubectl
@@ -17,7 +19,6 @@ ADD https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSI
 ENV HOME=/config
 
 RUN set -x && \
-    apk add --no-cache curl ca-certificates && \
     chmod +x /usr/local/bin/kubectl && \
     \
     # Create non-root user (with a randomly chosen UID/GUI).
