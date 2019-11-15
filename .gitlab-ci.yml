@@ -14,9 +14,6 @@ variables:
   DOCKER_HOST: tcp://localhost:2375
   GIT_STRATEGY: fetch
 
-  # Globals
-  DOCKER_VERSION: "18"
-
   KUBECTL_VERSION: "1.15"
   GIT_DEPLOY_VERSION: "1.0"
   GIT_TAG_RELEASE_VERSION: "1.0"
@@ -75,9 +72,9 @@ Release:
   allow_failure: true # We are in the waiting list of the beta version...
   only:
     - tags
-  image: docker:${DOCKER_VERSION}
+  image: docker:18
   services:
-    - docker:${DOCKER_VERSION}-dind
+    - docker:18-dind
   before_script:
     - echo "${GITHUB_REGISTRY_TOKEN}" | docker login docker.pkg.github.com -u SocialGroovyBot --password-stdin
   script:
@@ -87,9 +84,9 @@ Release:
     - docker push docker.pkg.github.com/${IMAGE_NAME}:${TAG}
 
 .base_register_to_gitlab_stage:
-  image: docker:${DOCKER_VERSION}
+  image: docker:18
   services:
-    - docker:${DOCKER_VERSION}-dind
+    - docker:18-dind
   before_script:
     - echo "${CI_JOB_TOKEN}" | docker login ${CI_REGISTRY} -u gitlab-ci-token --password-stdin
   script:
