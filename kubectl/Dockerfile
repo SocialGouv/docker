@@ -11,22 +11,25 @@ RUN apk add --update --no-cache \
 
 
 ENV K8S_LATEST_VERSION="v1.16.2"
+
 ## Install kubectl
 ## Note: Latest version may be found on:
 ## https://aur.archlinux.org/packages/kubectl-bin/
-ADD https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+RUN set -x && \
+    curl -sL https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl \
+      -o /usr/local/bin/kubectl
 
-ENV HOME=/config
+ENV HOME=/home/kubectl
 
 RUN set -x && \
     chmod +x /usr/local/bin/kubectl && \
     \
     # Create non-root user (with a randomly chosen UID/GUI).
-    adduser kubectl -Du 2342 -h /config && \
+    adduser kubectl -Du 2342 -h /home/kubectl && \
     \
     # Basic check it works.
     kubectl version --client
 
 USER kubectl
 
-ENTRYPOINT ["/usr/local/bin/kubectl"]
+ENTRYPOINT ["kubectl"]
