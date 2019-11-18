@@ -12,23 +12,23 @@ Test socialgouv/docker/nginx4spa:
     - docker:18-dind
   script:
     - docker run
-        --detach
-        --env VERSION=x.y.z
-        --name nginx4spa_test
-        --publish 8888:80
-        --rm
-        --volume ${CI_PROJECT_DIR}/nginx4spa/test:/usr/share/nginx/html
-        ${CI_REGISTRY_IMAGE}/nginx4spa:${CI_COMMIT_SHA}
+      --detach
+      --env VERSION=x.y.z
+      --name nginx4spa_test
+      --publish 8888:80
+      --rm
+      --volume ${CI_PROJECT_DIR}/nginx4spa/test:/usr/share/nginx/html
+      ${CI_REGISTRY_IMAGE}/nginx4spa:${CI_COMMIT_SHA}
     - docker ps
     - docker logs nginx4spa_test
     #
     - apk --update add curl
     - curl localhost:8888
     - curl -s localhost:8888 |
-        grep "nginx4spa/test/index.html with VERSION=x.y.z"
+      grep "nginx4spa/test/index.html with VERSION=x.y.z"
     - curl -s localhost:8888/foo/bar/bar.js
     - curl -s localhost:8888/foo/bar/bar.js |
-        grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
+      grep "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z"
   after_script:
     - docker stop nginx4spa_test || true
 
@@ -36,3 +36,9 @@ Publish socialgouv/docker/nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
   variables:
     IMAGE_NAME: socialgouv/docker/nginx4spa
+
+Hadolint nginx4spa:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./nginx4spa/Dockerfile

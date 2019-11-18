@@ -1,0 +1,5 @@
+Hadolint git-tag-release:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./git-tag-release/Dockerfile

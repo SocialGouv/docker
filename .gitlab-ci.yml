@@ -1,6 +1,7 @@
 include:
   - /curl/.gitlab-ci.yml
   - /git-deploy/.gitlab-ci.yml
+  - /git-tag-release/.gitlab-ci.yml
   - /helm/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
@@ -33,6 +34,7 @@ variables:
     - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
 
 stages:
+  - "Quality"
   - "Build"
   - "Test"
   - "Release"
