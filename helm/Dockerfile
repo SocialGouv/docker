@@ -4,7 +4,7 @@ FROM alpine/helm:2.14.3
 
 ## Install envsubst & coreutils
 RUN apk add --update --no-cache \
-  bash=5.0.11-r0 \
+  bash=5.0.0-r0 \
   coreutils=8.31-r0 \
   curl=7.67.0-r0 \
   gettext-dev=0.20.1-r1 \
