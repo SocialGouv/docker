@@ -24,5 +24,7 @@ Test curl:
 
 Publish curl to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build curl
   variables:
     IMAGE_NAME: socialgouv/docker/curl

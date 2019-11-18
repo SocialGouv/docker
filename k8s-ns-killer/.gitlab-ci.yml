@@ -45,5 +45,7 @@ Test k8s-ns-killer:
 
 Publish k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build k8s-ns-killer
   variables:
     IMAGE_NAME: socialgouv/docker/k8s-ns-killer

@@ -30,5 +30,7 @@ Test git-deploy:
 
 Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build git-deploy
   variables:
     IMAGE_NAME: socialgouv/docker/git-deploy

@@ -44,5 +44,7 @@ Test nginx4spa:
 
 Publish nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build nginx4spa
   variables:
     IMAGE_NAME: socialgouv/docker/nginx4spa

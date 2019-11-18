@@ -24,6 +24,8 @@ Test kubectl 1 2:
 
 Test kubectl 2 2:
   stage: "Test"
+  needs:
+    - Build kubectl
   image: docker:18
   services:
     - docker:18-dind
