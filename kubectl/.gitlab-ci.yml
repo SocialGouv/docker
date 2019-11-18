@@ -5,16 +5,44 @@ Build socialgouv/docker/kubectl:
     CONTEXT: kubectl
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kubectl
 
-Test socialgouv/docker/kubectl:
+Test socialgouv/docker/kubectl 1 2:
   stage: "Test"
+  needs:
+    - Build socialgouv/docker/kubectl
   image: "${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}"
   environment: feature-dev
   script:
     - kubectl version
     - kubectl cluster-info
 
+Test socialgouv/docker/kubectl 2 2:
+  stage: "Test"
+  image: docker:18
+  services:
+    - docker:18-dind
+  needs:
+    - Build socialgouv/docker/kubectl
+  script:
+    - docker run --rm ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA} version --client
+    #
+    # NOTE(douglasduteil): do not try to mount `/tmp` in dind...
+    # https://gitlab.com/gitlab-org/gitlab-foss/issues/41227
+    - mkdir -p ${CI_PROJECT_DIR}/init.d
+    - echo "export FOO=BAR" > ${CI_PROJECT_DIR}/init.d/foo.sh
+    #
+    - docker run
+        --entrypoint sh
+        --rm
+        --volume ${CI_PROJECT_DIR}/init.d:/home/kubectl/profile.d
+        ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}
+          -c "
+          source /home/kubectl/profile.d/foo.sh ;
+          echo FOO=\$FOO | grep FOO=BAR"
+
 Publish socialgouv/docker/kubectl to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build socialgouv/docker/kubectl
   variables:
     IMAGE_NAME: socialgouv/docker/kubectl
 
