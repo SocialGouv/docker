@@ -1,3 +1,16 @@
+# [0.13.0](https://github.com/SocialGouv/docker/compare/v0.12.0...v0.13.0) (2019-11-18)
+
+
+### Bug Fixes
+
+* **helm:** use bash=5.0.0-r0 ([0a6556a](https://github.com/SocialGouv/docker/commit/0a6556a256bbf9e3ac78bbd3e65bb4a4f1d68d51))
+* typofix ([#38](https://github.com/SocialGouv/docker/issues/38)) ([b66d4a2](https://github.com/SocialGouv/docker/commit/b66d4a2d895a85c1a5c5574f446574869cf80c52))
+
+
+### Features
+
+* add hadolint ([#40](https://github.com/SocialGouv/docker/issues/40)) ([7bc8b83](https://github.com/SocialGouv/docker/commit/7bc8b830604e39892c24d35c5a168704e5e0913c))
+
 # [0.12.0](https://github.com/SocialGouv/docker/compare/v0.11.2...v0.12.0) (2019-11-12)
 
 
