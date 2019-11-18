@@ -1,11 +1,21 @@
+Lint socialgouv/docker/curl:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./curl/Dockerfile
+
 Build socialgouv/docker/curl:
   stage: "Build"
   extends: .base_register_to_gitlab_stage
+  needs:
+    - Lint socialgouv/docker/curl
   variables:
     CONTEXT: curl
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/curl
 
 Test socialgouv/docker/curl:
+  needs:
+    - Build socialgouv/docker/curl
   stage: "Test"
   image: "${CI_REGISTRY_IMAGE}/curl:${CI_COMMIT_SHA}"
   script:
@@ -16,9 +26,3 @@ Publish socialgouv/docker/curl to Github Registry:
   extends: .base_publish_to_github_stage
   variables:
     IMAGE_NAME: socialgouv/docker/curl
-
-Hadolint curl:
-  stage: "Quality"
-  image: hadolint/hadolint:latest-debian
-  script:
-    - hadolint ./curl/Dockerfile
