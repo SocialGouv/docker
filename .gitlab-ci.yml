@@ -44,7 +44,7 @@ stages:
 
 Release:
   stage: "Release"
-  image: node:10.10
+  image: node:12
   only:
     - master
   when: manual
