@@ -1,12 +1,22 @@
-Build socialgouv/docker/helm:
+Lint helm:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./helm/Dockerfile
+
+Build helm:
   stage: "Build"
+  needs:
+    - Lint helm
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: helm
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/helm
 
-Test socialgouv/docker/helm:
+Test helm:
   stage: "Test"
+  needs:
+    - Build helm
   image: "${CI_REGISTRY_IMAGE}/helm:${CI_COMMIT_SHA}"
   environment: feature-dev
   script:
@@ -15,13 +25,9 @@ Test socialgouv/docker/helm:
     #
     - helm list
 
-Publish socialgouv/docker/helm to Github Registry:
+Publish helm to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build helm
   variables:
     IMAGE_NAME: socialgouv/docker/helm
-
-Hadolint helm:
-  stage: "Quality"
-  image: hadolint/hadolint:latest-debian
-  script:
-    - hadolint ./helm/Dockerfile

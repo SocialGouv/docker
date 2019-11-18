@@ -1,12 +1,22 @@
-Build socialgouv/docker/k8s-ns-killer:
+Lint k8s-ns-killer:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./k8s-ns-killer/Dockerfile
+
+Build k8s-ns-killer:
+  needs:
+    - Lint k8s-ns-killer
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: k8s-ns-killer
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-ns-killer
 
-Test socialgouv/docker/k8s-ns-killer:
+Test k8s-ns-killer:
   stage: "Test"
+  needs:
+    - Build k8s-ns-killer
   # NOTE(douglasduteil): allow 2 retries (3 runs)
   # The script my actually attend to remove namespaces on parallel runs
   # 2 retries allow the script to ignore parallel remove conflicts like :
@@ -33,13 +43,9 @@ Test socialgouv/docker/k8s-ns-killer:
     #
     - kubectl delete namespaces ${K8S_NAMESPACE}-good || true
 
-Publish socialgouv/docker/k8s-ns-killer to Github Registry:
+Publish k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build k8s-ns-killer
   variables:
     IMAGE_NAME: socialgouv/docker/k8s-ns-killer
-
-Hadolint k8s-ns-killer:
-  stage: "Quality"
-  image: hadolint/hadolint:latest-debian
-  script:
-    - hadolint ./k8s-ns-killer/Dockerfile

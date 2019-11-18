@@ -1,12 +1,22 @@
-Build socialgouv/docker/nginx4spa:
+Lint nginx4spa:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./nginx4spa/Dockerfile
+
+Build nginx4spa:
   stage: "Build"
+  needs:
+    - Lint nginx4spa
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: nginx4spa
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx4spa
 
-Test socialgouv/docker/nginx4spa:
+Test nginx4spa:
   stage: "Test"
+  needs:
+    - Build nginx4spa
   image: docker:18
   services:
     - docker:18-dind
@@ -32,13 +42,9 @@ Test socialgouv/docker/nginx4spa:
   after_script:
     - docker stop nginx4spa_test || true
 
-Publish socialgouv/docker/nginx4spa to Github Registry:
+Publish nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build nginx4spa
   variables:
     IMAGE_NAME: socialgouv/docker/nginx4spa
-
-Hadolint nginx4spa:
-  stage: "Quality"
-  image: hadolint/hadolint:latest-debian
-  script:
-    - hadolint ./nginx4spa/Dockerfile

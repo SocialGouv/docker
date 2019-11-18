@@ -1,12 +1,22 @@
-Build socialgouv/docker/git-deploy:
+Lint git-deploy:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./git-deploy/Dockerfile
+
+Build git-deploy:
   stage: "Build"
+  needs:
+    - Lint git-deploy
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: git-deploy
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/git-deploy
 
-Test socialgouv/docker/git-deploy:
+Test git-deploy:
   stage: "Test"
+  needs:
+    - Build git-deploy
   image: "${CI_REGISTRY_IMAGE}/git-deploy:${CI_COMMIT_SHA}"
   script:
     #
@@ -18,13 +28,9 @@ Test socialgouv/docker/git-deploy:
     #
     - update-deployment $(cat DEPLOY_ID) "" success
 
-Publish socialgouv/docker/git-deploy to Github Registry:
+Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
+  needs:
+    - Build git-deploy
   variables:
     IMAGE_NAME: socialgouv/docker/git-deploy
-
-Hadolint git-deploy:
-  stage: "Quality"
-  image: hadolint/hadolint:latest-debian
-  script:
-    - hadolint ./git-deploy/Dockerfile

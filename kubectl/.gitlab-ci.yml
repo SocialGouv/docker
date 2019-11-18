@@ -1,27 +1,36 @@
-Build socialgouv/docker/kubectl:
+Lint kubectl:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./kubectl/Dockerfile
+
+
+Build kubectl:
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: kubectl
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kubectl
 
-Test socialgouv/docker/kubectl 1 2:
+Test kubectl 1 2:
   stage: "Test"
   needs:
-    - Build socialgouv/docker/kubectl
+    - Build kubectl
   image: "${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}"
   environment: feature-dev
   script:
     - kubectl version
     - kubectl cluster-info
 
-Test socialgouv/docker/kubectl 2 2:
+Test kubectl 2 2:
   stage: "Test"
+  needs:
+    - Build kubectl
   image: docker:18
   services:
     - docker:18-dind
   needs:
-    - Build socialgouv/docker/kubectl
+    - Build kubectl
   script:
     - docker run --rm ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA} version --client
     #
@@ -39,15 +48,9 @@ Test socialgouv/docker/kubectl 2 2:
           source /home/kubectl/profile.d/foo.sh ;
           echo FOO=\$FOO | grep FOO=BAR"
 
-Publish socialgouv/docker/kubectl to Github Registry:
+Publish kubectl to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
-    - Build socialgouv/docker/kubectl
+    - Build kubectl
   variables:
     IMAGE_NAME: socialgouv/docker/kubectl
-
-Hadolint kubectl:
-  stage: "Quality"
-  image: hadolint/hadolint:latest-debian
-  script:
-    - hadolint ./kubectl/Dockerfile
