@@ -18,3 +18,5 @@ $ mkdir foo
 1. Add a `.gitlab-ci.yml` to specify the image tests  
    Ensure to add a test right from the start with in a local `.gitlab-ci.yml`.  
    You can follow the [`kubectl/.gitlab-ci.yml` as model](./kubectl/.gitlab-ci.yml).
+
+1. Include this local `.gitlab-ci.yml` in the includes of [the root `.gitlab-ci.yml`](./.gitlab-ci.yml).
