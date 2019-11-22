@@ -20,3 +20,22 @@ $ mkdir foo
    You can follow the [`kubectl/.gitlab-ci.yml` as model](./kubectl/.gitlab-ci.yml).
 
 1. Include this local `.gitlab-ci.yml` in the includes of [the root `.gitlab-ci.yml`](./.gitlab-ci.yml).
+
+## Release policy
+
+### One click semantic release !
+
+[On a successful `master` branch pipeline click on trigger the `Release` job.](https://gitlab.factory.social.gouv.fr/SocialGouv/docker/pipelines)
+
+### Manual
+
+We manly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our release
+You need an [Github token](https://github.com/settings/tokens/new) to release.
+
+```sh
+$ export GITHUB_TOKEN=**********
+$ yarn global add semantic-release @semantic-release/changelog @semantic-release/exec @semantic-release/git
+$ semantic-release
+```
+
+Our [semantic-release config](./.releaserc.yml) will do the heavy lifting ;)
