@@ -4,7 +4,6 @@ Lint infra-ansible-ci:
   script:
     - hadolint ./infra-ansible-ci/Dockerfile
 
-
 Build infra-ansible-ci:
   stage: "Build"
   extends: .base_register_to_gitlab_stage
@@ -12,7 +11,7 @@ Build infra-ansible-ci:
     CONTEXT: infra-ansible-ci
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/infra-ansible-ci
 
-Test infra-ansible-ci 1 2:
+Test infra-ansible-ci:
   stage: "Test"
   needs:
     - Build infra-ansible-ci
@@ -21,18 +20,7 @@ Test infra-ansible-ci 1 2:
   script:
     - ansible --version
     - terraform --version
-
-Test infra-ansible-ci 2 2:
-  stage: "Test"
-  needs:
-    - Build infra-ansible-ci
-  image: docker:18
-  services:
-    - docker:18-dind
-  script:
-    - docker run --entrypoint bash --rm
-      ${CI_REGISTRY_IMAGE}/infra-ansible-ci:${CI_COMMIT_SHA}
-      -c "ansible-inventory --graph"
+    - ansible-inventory --graph
 
 Publish infra-ansible-ci to Github Registry:
   extends: .base_publish_to_github_stage
