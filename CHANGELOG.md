@@ -1,3 +1,10 @@
+# [0.14.0](https://github.com/SocialGouv/docker/compare/v0.13.0...v0.14.0) (2019-11-25)
+
+
+### Features
+
+* **k8s-ns-killer:** update git to 2.24.0-r0 ([a02c364](https://github.com/SocialGouv/docker/commit/a02c3644668cd4c65ee881218b20cc19ba7f65f7))
+
 # [0.13.0](https://github.com/SocialGouv/docker/compare/v0.12.0...v0.13.0) (2019-11-18)
 
 
