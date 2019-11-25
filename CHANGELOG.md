@@ -1,3 +1,10 @@
+# [0.15.0](https://github.com/SocialGouv/docker/compare/v0.14.0...v0.15.0) (2019-11-25)
+
+
+### Features
+
+* **infra-ansible-ci:** add yq tools ([#46](https://github.com/SocialGouv/docker/issues/46)) ([9851727](https://github.com/SocialGouv/docker/commit/9851727779f21d8f8056ff0154fc7db203399d27))
+
 # [0.14.0](https://github.com/SocialGouv/docker/compare/v0.13.0...v0.14.0) (2019-11-25)
 
 
