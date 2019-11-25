@@ -29,8 +29,6 @@ Test kubectl 2 2:
   image: docker:18
   services:
     - docker:18-dind
-  needs:
-    - Build kubectl
   script:
     - docker run --rm ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA} version --client
     #

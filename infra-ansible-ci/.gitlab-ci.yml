@@ -1,0 +1,42 @@
+Lint infra-ansible-ci:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./infra-ansible-ci/Dockerfile
+
+
+Build infra-ansible-ci:
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: infra-ansible-ci
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/infra-ansible-ci
+
+Test infra-ansible-ci 1 2:
+  stage: "Test"
+  needs:
+    - Build infra-ansible-ci
+  image: "${CI_REGISTRY_IMAGE}/infra-ansible-ci:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - ansible --version
+    - terraform --version
+
+Test infra-ansible-ci 2 2:
+  stage: "Test"
+  needs:
+    - Build infra-ansible-ci
+  image: docker:18
+  services:
+    - docker:18-dind
+  script:
+    - docker run --entrypoint bash --rm
+      ${CI_REGISTRY_IMAGE}/infra-ansible-ci:${CI_COMMIT_SHA}
+      -c "ansible-inventory --graph"
+
+Publish infra-ansible-ci to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Build infra-ansible-ci
+  variables:
+    IMAGE_NAME: socialgouv/docker/infra-ansible-ci

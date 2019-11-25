@@ -6,6 +6,7 @@ include:
   - /k8s-ns-killer/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
+  - /infra-ansible-ci/.gitlab-ci.yml
 
 #
 
