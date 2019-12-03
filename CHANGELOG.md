@@ -1,3 +1,10 @@
+# [0.16.0](https://github.com/SocialGouv/docker/compare/v0.15.0...v0.16.0) (2019-12-03)
+
+
+### Features
+
+* **infra-ansible-ci:** add ansible[azure] to infra-ansible-ci ([#52](https://github.com/SocialGouv/docker/issues/52)) ([1fee81e](https://github.com/SocialGouv/docker/commit/1fee81ef172a5769e4aee3c1a1bfa48010537942))
+
 # [0.15.0](https://github.com/SocialGouv/docker/compare/v0.14.0...v0.15.0) (2019-11-25)
 
 
