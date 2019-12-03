@@ -14,7 +14,7 @@ RUN curl https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linu
     && terraform --version
 
 # install ansible
-RUN pip install ansible==2.8.1 ansible-lint==4.1.0 yamllint==1.16.0 yq==2.9.2
+RUN pip install 'ansible[azure]'==2.8.1 ansible-lint==4.1.0 yamllint==1.16.0 yq==2.9.2
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
