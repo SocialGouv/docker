@@ -5,7 +5,6 @@ Lint k8s-ns-killer:
     - hadolint ./k8s-ns-killer/Dockerfile
 
 Build k8s-ns-killer:
-  allow_failure: true
   needs:
     - Lint k8s-ns-killer
   stage: "Build"
@@ -15,7 +14,6 @@ Build k8s-ns-killer:
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-ns-killer
 
 Test k8s-ns-killer:
-  allow_failure: true
   stage: "Test"
   needs:
     - Lint k8s-ns-killer
@@ -47,7 +45,6 @@ Test k8s-ns-killer:
     - kubectl delete namespaces ${K8S_NAMESPACE}-good || true
 
 Publish k8s-ns-killer to Github Registry:
-  allow_failure: true
   extends: .base_publish_to_github_stage
   needs:
     - Lint k8s-ns-killer
