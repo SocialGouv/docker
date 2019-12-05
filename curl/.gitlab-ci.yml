@@ -15,6 +15,7 @@ Build curl:
 
 Test curl:
   needs:
+    - Lint curl
     - Build curl
   stage: "Test"
   image: "${CI_REGISTRY_IMAGE}/curl:${CI_COMMIT_SHA}"
@@ -25,6 +26,8 @@ Test curl:
 Publish curl to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
+    - Lint curl
     - Build curl
+    - Test curl
   variables:
     IMAGE_NAME: socialgouv/docker/curl

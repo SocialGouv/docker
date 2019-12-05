@@ -6,6 +6,8 @@ Lint infra-ansible-ci:
 
 Build infra-ansible-ci:
   stage: "Build"
+  needs:
+    - Lint infra-ansible-ci
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: infra-ansible-ci
@@ -14,6 +16,7 @@ Build infra-ansible-ci:
 Test infra-ansible-ci:
   stage: "Test"
   needs:
+    - Lint infra-ansible-ci
     - Build infra-ansible-ci
   image: "${CI_REGISTRY_IMAGE}/infra-ansible-ci:${CI_COMMIT_SHA}"
   environment: feature-dev
@@ -25,6 +28,8 @@ Test infra-ansible-ci:
 Publish infra-ansible-ci to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
+    - Lint infra-ansible-ci
     - Build infra-ansible-ci
+    - Test infra-ansible-ci
   variables:
     IMAGE_NAME: socialgouv/docker/infra-ansible-ci

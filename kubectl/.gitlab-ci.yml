@@ -7,6 +7,8 @@ Lint kubectl:
 
 Build kubectl:
   stage: "Build"
+  needs:
+    - Lint kubectl
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: kubectl
@@ -15,6 +17,7 @@ Build kubectl:
 Test kubectl 1 2:
   stage: "Test"
   needs:
+    - Lint kubectl
     - Build kubectl
   image: "${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}"
   environment: feature-dev
@@ -25,6 +28,7 @@ Test kubectl 1 2:
 Test kubectl 2 2:
   stage: "Test"
   needs:
+    - Lint kubectl
     - Build kubectl
   image: docker:18
   services:
@@ -49,6 +53,7 @@ Test kubectl 2 2:
 Publish kubectl to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
+    - Lint kubectl
     - Build kubectl
   variables:
     IMAGE_NAME: socialgouv/docker/kubectl

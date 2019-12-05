@@ -16,6 +16,7 @@ Build git-deploy:
 Test git-deploy:
   stage: "Test"
   needs:
+    - Lint git-deploy
     - Build git-deploy
   image: "${CI_REGISTRY_IMAGE}/git-deploy:${CI_COMMIT_SHA}"
   script:
@@ -31,6 +32,8 @@ Test git-deploy:
 Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
+    - Lint git-deploy
+    - Test git-deploy
     - Build git-deploy
   variables:
     IMAGE_NAME: socialgouv/docker/git-deploy

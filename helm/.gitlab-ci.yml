@@ -16,6 +16,7 @@ Build helm:
 Test helm:
   stage: "Test"
   needs:
+    - Lint helm
     - Build helm
   image: "${CI_REGISTRY_IMAGE}/helm:${CI_COMMIT_SHA}"
   environment: feature-dev
@@ -28,6 +29,8 @@ Test helm:
 Publish helm to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
+    - Lint helm
+    - Test helm
     - Build helm
   variables:
     IMAGE_NAME: socialgouv/docker/helm

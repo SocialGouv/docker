@@ -16,6 +16,7 @@ Build k8s-ns-killer:
 Test k8s-ns-killer:
   stage: "Test"
   needs:
+    - Lint k8s-ns-killer
     - Build k8s-ns-killer
   # NOTE(douglasduteil): allow 2 retries (3 runs)
   # The script my actually attend to remove namespaces on parallel runs
@@ -46,6 +47,8 @@ Test k8s-ns-killer:
 Publish k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
+    - Lint k8s-ns-killer
     - Build k8s-ns-killer
+    - Test k8s-ns-killer
   variables:
     IMAGE_NAME: socialgouv/docker/k8s-ns-killer

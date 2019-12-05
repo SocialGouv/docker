@@ -4,12 +4,12 @@ FROM alpine/helm:2.14.3
 
 ## Install envsubst & coreutils
 RUN apk add --update --no-cache \
-  bash=5.0.11-r1 \
-  coreutils=8.31-r0 \
-  curl=7.67.0-r0 \
-  gettext-dev=0.20.1-r1 \
-  git=2.24.0-r0 \
-  sudo=1.8.29-r0
+  bash=~5 \
+  coreutils=~8 \
+  curl=~7 \
+  gettext-dev=~0 \
+  git=~2 \
+  sudo=~1
 
 ENV HOME=/config
 
