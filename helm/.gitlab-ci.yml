@@ -5,6 +5,7 @@ Lint helm:
     - hadolint ./helm/Dockerfile
 
 Build helm:
+  allow_failure: true
   stage: "Build"
   needs:
     - Lint helm
@@ -14,6 +15,7 @@ Build helm:
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/helm
 
 Test helm:
+  allow_failure: true
   stage: "Test"
   needs:
     - Lint helm
@@ -27,6 +29,7 @@ Test helm:
     - helm list
 
 Publish helm to Github Registry:
+  allow_failure: true
   extends: .base_publish_to_github_stage
   needs:
     - Lint helm
