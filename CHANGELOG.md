@@ -1,3 +1,15 @@
+# [0.18.0](https://github.com/SocialGouv/docker/compare/v0.17.0...v0.18.0) (2019-12-05)
+
+
+### Features
+
+* **puppetteer:** add common puppetteer image ([#53](https://github.com/SocialGouv/docker/issues/53)) ([d953973](https://github.com/SocialGouv/docker/commit/d9539731e68ca63b02bc7389247fd58a74da0ff9))
+
+
+### Reverts
+
+* Revert "ci(gitlab): allow some job to fail due to missing image" ([38a57bb](https://github.com/SocialGouv/docker/commit/38a57bb758730322ced6199b2dc1e3ab077a438a))
+
 # [0.17.0](https://github.com/SocialGouv/docker/compare/v0.16.0...v0.17.0) (2019-12-05)
 
 
