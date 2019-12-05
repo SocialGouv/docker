@@ -1,3 +1,10 @@
+# [0.17.0](https://github.com/SocialGouv/docker/compare/v0.16.0...v0.17.0) (2019-12-05)
+
+
+### Features
+
+* use partial pin to master version glob ([#55](https://github.com/SocialGouv/docker/issues/55)) ([28e9317](https://github.com/SocialGouv/docker/commit/28e9317d0d538c33d8ff5aac4cada653d7afd9a0))
+
 # [0.16.0](https://github.com/SocialGouv/docker/compare/v0.15.0...v0.16.0) (2019-12-03)
 
 
