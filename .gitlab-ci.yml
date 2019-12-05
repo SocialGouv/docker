@@ -3,10 +3,11 @@ include:
   - /git-deploy/.gitlab-ci.yml
   - /git-tag-release/.gitlab-ci.yml
   - /helm/.gitlab-ci.yml
+  - /infra-ansible-ci/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
-  - /infra-ansible-ci/.gitlab-ci.yml
+  - /puppetteer/.gitlab-ci.yml
 
 #
 
