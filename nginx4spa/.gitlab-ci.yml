@@ -25,8 +25,9 @@ Test nginx4spa:
     - docker run
       --detach
       --env VERSION=x.y.z
+      --env PORT=90
       --name nginx4spa_test
-      --publish 8888:80
+      --publish 8888:90
       --rm
       --volume ${CI_PROJECT_DIR}/nginx4spa/test:/usr/share/nginx/html
       ${CI_REGISTRY_IMAGE}/nginx4spa:${CI_COMMIT_SHA}
