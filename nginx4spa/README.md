@@ -19,3 +19,6 @@ $ docker run \
 $ curl localhost:8888/version.txt
 VERSION=x.y.z
 ```
+
+Notes: 
+ - `PORT` is optional and default to `80`
