@@ -15,11 +15,17 @@ DELIMITER=${DELIMITER:="%%"}
 # Save env variable in file
 printenv > /tmp/env-vars
 
+# Add default nginx port
+echo "PORT=${PORT:="80"}" >> /tmp/env-vars
+
 while IFS='=' read -r KEY VALUE
 do
   # In every files in the dir, replace the environment variables value
   find ${WWW_DIRECTORY} -type f -exec \
     sed -i -e "s|${DELIMITER}${KEY}${DELIMITER}|${VALUE}|g" {} \;
+  # replace in nginx.conf too
+  sed -i -e "s|${DELIMITER}${KEY}${DELIMITER}|${VALUE}|g" /etc/nginx/nginx.conf
+
 done < /tmp/env-vars
 
 rm /tmp/env-vars
