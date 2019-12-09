@@ -29,7 +29,7 @@ $ mkdir foo
 
 ### Manual
 
-We manly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our release
+We mainly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our release
 You need an [Github token](https://github.com/settings/tokens/new) to release.
 
 ```sh
