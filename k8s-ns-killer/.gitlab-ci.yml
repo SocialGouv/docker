@@ -40,7 +40,10 @@ Test k8s-ns-killer:
     - kubectl create namespace ${K8S_NAMESPACE}-bad
     - kubectl annotate namespace ${K8S_NAMESPACE}-bad git/branch=foo
     #
-    - sh -x /bin/k8s-ns-killer k8s-ns-killer-test-
+    - sh -x /bin/k8s-ns-killer ${K8S_NAMESPACE}
+    #
+    # Should fail if ${K8S_NAMESPACE}-bad is still alive
+    - kubectl get namespace ${K8S_NAMESPACE}-bad && exit 1
     #
     - kubectl delete namespaces ${K8S_NAMESPACE}-good || true
 
