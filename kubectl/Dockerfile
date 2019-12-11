@@ -10,7 +10,7 @@ RUN apk add --update --no-cache \
   ca-certificates=~20190108
 
 
-ENV K8S_LATEST_VERSION="v1.16.2"
+ENV K8S_LATEST_VERSION="v1.17.0"
 
 ## Install kubectl
 ## Note: Latest version may be found on:
