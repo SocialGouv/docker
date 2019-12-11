@@ -1,0 +1,50 @@
+Lint k8s-cleaner:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./k8s-cleaner/Dockerfile
+
+Build k8s-cleaner:
+  needs:
+    - Lint k8s-cleaner
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: k8s-cleaner
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-cleaner
+
+Test k8s-cleaner:
+  stage: "Test"
+  needs:
+    - Lint k8s-cleaner
+    - Build k8s-cleaner
+  # NOTE(douglasduteil): allow 2 retries (3 runs)
+  # The script my actually attend to remove namespaces on parallel runs
+  # 2 retries allow the script to ignore parallel remove conflicts like :
+  # `The system is ensuring all content is removed from this namespace`
+  image: "${CI_REGISTRY_IMAGE}/k8s-cleaner:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  variables:
+    K8S_NAMESPACE: k8s-cleaner-test-${CI_JOB_ID}
+  script:
+    #
+    - git --version
+    - kubectl version
+    #
+    - kubectl delete namespaces ${K8S_NAMESPACE} || true
+    - kubectl create namespace ${K8S_NAMESPACE}
+    # - create k8s object named with printf "${CI_COMMIT_REF_SLUG}" | shasum | cut -c1-7 )
+    # - create k8s object named foo
+    #
+    - node /bin/k8s-cleaner --dry-run
+    #
+    # assert
+    #
+Publish k8s-cleaner to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint k8s-cleaner
+    - Build k8s-cleaner
+    - Test k8s-cleaner
+  variables:
+    IMAGE_NAME: socialgouv/docker/k8s-cleaner
