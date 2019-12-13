@@ -1,12 +1,17 @@
-Lint k8s-cleaner:
+Lint k8s-cleaner 1/2:
   stage: "Quality"
   image: hadolint/hadolint:latest-debian
   script:
     - hadolint ./k8s-cleaner/Dockerfile
+Lint k8s-cleaner 2/2:
+  image: node:12
+  script:
+    - npx prettier -c bin/*
 
 Build k8s-cleaner:
   needs:
-    - Lint k8s-cleaner
+    - Lint k8s-cleaner 1/2
+    - Lint k8s-cleaner 2/2
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
@@ -16,34 +21,46 @@ Build k8s-cleaner:
 Test k8s-cleaner:
   stage: "Test"
   needs:
-    - Lint k8s-cleaner
+    - Lint k8s-cleaner 1/2
+    - Lint k8s-cleaner 2/2
     - Build k8s-cleaner
-  # NOTE(douglasduteil): allow 2 retries (3 runs)
-  # The script my actually attend to remove namespaces on parallel runs
-  # 2 retries allow the script to ignore parallel remove conflicts like :
-  # `The system is ensuring all content is removed from this namespace`
+
   image: "${CI_REGISTRY_IMAGE}/k8s-cleaner:${CI_COMMIT_SHA}"
   environment: feature-dev
   variables:
     K8S_NAMESPACE: k8s-cleaner-test-${CI_JOB_ID}
+    GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
+    RANCHER_PROJECT_ID: c-kk8xm:p-2jgrf
+    BRANCH_HASH:
   script:
     #
     - git --version
     - kubectl version
+    - cat  |
     #
+    - export HASH_NAME=$( printf "${CI_COMMIT_REF_SLUG}" | sha1sum | cut -c1-${HASH_SIZE} )
+
     - kubectl delete namespaces ${K8S_NAMESPACE} || true
     - kubectl create namespace ${K8S_NAMESPACE}
-    # - create k8s object named with printf "${CI_COMMIT_REF_SLUG}" | shasum | cut -c1-7 )
-    # - create k8s object named foo
-    #
+    - kubectl annotate namespace ${K8S_NAMESPACE} field.cattle.io/projectId=${RANCHER_PROJECT_ID}
+    # Create a job not link to a branch
+    - kubectl apply -f https://k8s.io/examples/controllers/job.yaml -n ${K8S_NAMESPACE}
+    # launch
     - node /bin/k8s-cleaner --dry-run
+    # assert that there is no remaining job
+    - kubectl get jobs/pi && exit 1
+
     #
     # assert
     #
+  after_script:
+    - kubectl delete namespaces ${K8S_NAMESPACE}
+
 Publish k8s-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
-    - Lint k8s-cleaner
+    - Lint k8s-cleaner 1/2
+    - Lint k8s-cleaner 2/2
     - Build k8s-cleaner
     - Test k8s-cleaner
   variables:

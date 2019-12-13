@@ -3,7 +3,18 @@ const execSync = require("child_process").execSync;
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
-const k8sNamespace = process.env.K8S_NAMESPACE;
+const k8sNamespace = process.env.K8S_NAMESPACE || "";
+const gitRepository = process.env.GITHUB_REPOSITORY || "";
+const hashSize = process.env.HASH_SIZE || 7;
+
+if (!k8sNamespace) {
+  console.error("please provide a K8S_NAMESPACE env variable");
+  process.exit(-1);
+}
+if (!gitRepository || !gitRepository.startsWith("https")) {
+  console.error("please provide a GITHUB_REPOSITORY env variable");
+  process.exit(-1);
+}
 
 const objectTypes = [
   "pod",
@@ -12,14 +23,19 @@ const objectTypes = [
   "configmap",
   "statefulset",
   "deployment",
-  "job"
+  "job",
+  "cronjob"
 ];
 
 const listK8sCmd = `kubectl get ${objectTypes.join(
   ","
 )}  -n ${k8sNamespace} -o custom-columns=":metadata.name,:metadata.labels['git/branch']",:kind`;
 
-const listGithubBranchCmd = "git ls-remote --quiet --heads | cut -f2";
+const listGithubBranchCmd = `git ls-remote --quiet --heads ${gitRepository} | cut -f2`;
+
+function getHashBranchCmd(branchName) {
+  return `printf "${branchName}" | shasum | cut -c1-${hashSize}`;
+}
 
 function getDeleteObjectCmd(id, type) {
   if (!id || id.length === 0) {
@@ -63,17 +79,12 @@ function ciCommitRefSlug(str) {
 }
 
 function hashBranchName(branchName) {
-  return execSync(`printf "${branchName}" | sha1sum | cut -c1-7`)
+  return execSync(getHashBranchCmd(branchName))
     .toString()
     .trim();
 }
 
 function main() {
-  if (!k8sNamespace) {
-    console.error("please provide a K8S_NAMESPACE env variable");
-    process.exit(-1);
-  }
-
   const k8sObjectList = getk8sObject();
   const hashedBranchName = getGithubBranches().map(hashBranchName);
 
