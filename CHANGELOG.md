@@ -1,3 +1,12 @@
+# [0.19.0](https://github.com/SocialGouv/docker/compare/v0.18.0...v0.19.0) (2019-12-14)
+
+
+### Features
+
+* **kubectl:** update kubectl to 0.17.0 ([#62](https://github.com/SocialGouv/docker/issues/62)) ([107de13](https://github.com/SocialGouv/docker/commit/107de133f50a6d42977f1a43c5e517403618616e))
+* **nginx4spa:** configurable PORT ([#61](https://github.com/SocialGouv/docker/issues/61)) ([476fe97](https://github.com/SocialGouv/docker/commit/476fe97e5b56de81a1a3d8d031754e99938387f7))
+* **wait-for-postgres:** add wait-for-postgres image ([#65](https://github.com/SocialGouv/docker/issues/65)) ([66be586](https://github.com/SocialGouv/docker/commit/66be5864a53ccf162d6414af875881b2e4c3063d)), closes [#47](https://github.com/SocialGouv/docker/issues/47)
+
 # [0.18.0](https://github.com/SocialGouv/docker/compare/v0.17.0...v0.18.0) (2019-12-05)
 
 
