@@ -1,0 +1,69 @@
+Lint wait-for-postgres 1 2:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./wait-for-postgres/Dockerfile
+
+Lint wait-for-postgres 2 2:
+  stage: "Quality"
+  image: koalaman/shellcheck-alpine:v0.7.0
+  script:
+    - shellcheck ./wait-for-postgres/bin/wait-for-postgres
+
+Build wait-for-postgres:
+  stage: "Build"
+  needs:
+    - Lint wait-for-postgres 1 2
+    - Lint wait-for-postgres 2 2
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: wait-for-postgres
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/wait-for-postgres
+
+Test wait-for-postgres 1 2:
+  stage: "Test"
+  needs:
+    - Lint wait-for-postgres 1 2
+    - Lint wait-for-postgres 2 2
+    - Build wait-for-postgres
+  image: "${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}"
+  script:
+    - psql --version
+    - pg_isready --version
+
+Test wait-for-postgres 2 2:
+  stage: "Test"
+  needs:
+    - Lint wait-for-postgres 1 2
+    - Lint wait-for-postgres 2 2
+    - Build wait-for-postgres
+  image: "${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}"
+  image: docker:18
+  services:
+    - docker:18-dind
+    - postgres:10.11-alpine
+  script:
+    - docker pull ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
+    - docker run
+      --env PGHOST=localhost
+      --env PGPORT=5454
+      --env WAIT_FOR_INTERVAL=1s
+      --env WAIT_FOR_RETRIES=1
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA} &&
+      echo "No postgres should be found" && exit 1
+    - docker run
+      --env PGHOST=localhost
+      --env WAIT_FOR_INTERVAL=1s
+      --env WAIT_FOR_RETRIES=1
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
+
+Publish wait-for-postgres to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Build wait-for-postgres
+  variables:
+    IMAGE_NAME: socialgouv/docker/wait-for-postgres
