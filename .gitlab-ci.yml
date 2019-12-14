@@ -74,7 +74,6 @@ Release:
 
 .base_publish_to_github_stage:
   stage: "Publish"
-  allow_failure: true # We are in the waiting list of the beta version...
   only:
     - tags
   image: docker:18
