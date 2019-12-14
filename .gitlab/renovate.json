@@ -4,6 +4,6 @@
     ":automergeAll"
   ],
   "gitlabci": {
-    "fileMatch": ["\.gitlab-ci.yml$"]
+    "fileMatch": ["\\.gitlab-ci.yml$"]
   }
 }
