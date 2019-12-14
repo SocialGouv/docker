@@ -1,6 +1,6 @@
 Lint infra-ansible-ci:
   stage: "Quality"
-  image: hadolint/hadolint:v1.17.2
+  image: hadolint/hadolint:v1.17.2-debian
   script:
     - hadolint ./infra-ansible-ci/Dockerfile
 
