@@ -1,6 +1,6 @@
 Lint nginx4spa:
   stage: "Quality"
-  image: hadolint/hadolint:latest-debian
+  image: hadolint/hadolint:v1.17.2
   script:
     - hadolint ./nginx4spa/Dockerfile
 

@@ -1,6 +1,6 @@
 Lint helm:
   stage: "Quality"
-  image: hadolint/hadolint:latest-debian
+  image: hadolint/hadolint:v1.17.2
   script:
     - hadolint ./helm/Dockerfile
 

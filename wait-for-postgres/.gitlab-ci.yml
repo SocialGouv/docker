@@ -1,6 +1,6 @@
 Lint wait-for-postgres 1 2:
   stage: "Quality"
-  image: hadolint/hadolint:latest-debian
+  image: hadolint/hadolint:v1.17.2
   script:
     - hadolint ./wait-for-postgres/Dockerfile
 
