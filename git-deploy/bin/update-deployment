@@ -14,8 +14,8 @@ if [[ -n "${PRODUCTION+x}" ]]; then
   ENVIRONMENT=production
 fi
 
-if [[ -z ${DEPLOY_ID} ]] || ! [[ ${STATE} = "success" || ${STATE} = "failure" ]]; then
-  echo -e "$0 <github_deployment_id> <success|failure>"
+if [[ -z ${DEPLOY_ID} ]] || [[ -z ${URL} ]] || ! [[ ${STATE} = "success" || ${STATE} = "failure" ]]; then
+  echo -e "$0 <github_deployment_id> <url> <success|failure>"
   exit 128
 fi
 
