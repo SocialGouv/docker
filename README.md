@@ -33,6 +33,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 
 | Project                | Image                                                                                            | Links                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **azure-db**           | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:0.22.0`           | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)           |
 | **curl**               | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/curl:0.22.0`               | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)               |
 | **git-deploy**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/git-deploy:0.22.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)         |
 | **helm**               | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm:0.22.0`               | [![README](https://img.shields.io/badge/README--green.svg)](./helm/README.md)               |

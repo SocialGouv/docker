@@ -1,0 +1,52 @@
+#!/bin/bash
+set +x
+set -e
+
+#
+# create a new user and DB on a remote Azure Postgres server
+#
+# Some weirdness due to "@" characters in Azure connection strings and SSL config and extensions security
+#
+
+POSTGRES_USER=${POSTGRES_USER:-postgres}
+POSTGRES_PORT=${POSTGRES_PORT:-5432}
+POSTGRES_HOST=${POSTGRES_HOST:-127.0.0.1}
+
+# check mandatory environment variables
+MANDATORY_VARS="POSTGRES_PASSWORD NEW_DB_NAME NEW_USER NEW_PASSWORD"
+for VAR in $MANDATORY_VARS; do
+  if [[ -z "${!VAR}" ]]; then
+    echo "${VAR} environment variable is empty"
+    exit 1
+  fi
+done
+
+# arobase replacement
+PG_URL_ADMIN="postgresql://${POSTGRES_USER/@/%40}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/postgres"
+PG_URL_NEWDB="postgresql://${NEW_USER/@/%40}:${NEW_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${NEW_DB_NAME}"
+
+PGSSLMODE=require
+
+#  /o\ get base user name (without server) for SQL commands
+NEW_USER_BASE=${NEW_USER%%@*} || $NEW_USER
+
+echo "creating database ${NEW_DB_NAME} on ${POSTGRES_HOST}"
+psql -abe "$PG_URL_ADMIN" -c "CREATE DATABASE $NEW_DB_NAME;"
+
+echo "creating user ${NEW_USER_BASE} on ${POSTGRES_HOST}"
+psql -abe "$PG_URL_ADMIN" -c "
+    CREATE USER \"$NEW_USER_BASE\" WITH PASSWORD '$NEW_PASSWORD';
+    GRANT \"$NEW_USER_BASE\" to postgres;
+    GRANT azure_pg_admin to \"$NEW_USER_BASE\";
+    GRANT ALL PRIVILEGES ON DATABASE $NEW_DB_NAME TO \"$NEW_USER_BASE\";
+"
+
+# enable extensions (ex: hasura stuff)
+psql -abe "$PG_URL_NEWDB" -c "CREATE EXTENSION IF NOT EXISTS pgcrypto; CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";"
+
+# remove admins rights to the account
+psql -abe "$PG_URL_ADMIN" -c "REVOKE azure_pg_admin FROM \"$NEW_USER_BASE\";"
+
+echo "Done"
+
+
