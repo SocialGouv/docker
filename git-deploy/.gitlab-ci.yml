@@ -27,7 +27,7 @@ Test git-deploy:
     - extract-deploy-id
     - echo "GitHub deployment id '$(cat DEPLOY_ID)'"
     #
-    - update-deployment $(cat DEPLOY_ID) "" success
+    - update-deployment $(cat DEPLOY_ID) "https://github.com/SocialGouv/docker" success
 
 Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
