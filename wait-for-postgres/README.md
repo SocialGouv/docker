@@ -20,14 +20,12 @@ spec:
       initContainers:
         - name: wait-for-postgres
           image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:<version>
-          imagePullPolicy: Always
 
       # OR
 
       initContainers:
         - name: wait-for-postgres
           image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:<version>
-          imagePullPolicy: Always
           env:
             - name: PGHOST
               value: postgres-postgresql
