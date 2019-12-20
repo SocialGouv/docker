@@ -1,0 +1,33 @@
+#!/bin/bash
+set -x
+set -e
+
+#
+# delete a database and user on a remote Azure Postgres server
+#
+
+PGUSER=${PGUSER:-postgres}
+PGPORT=${PGPORT:-5432}
+PGHOST=${PGHOST:-127.0.0.1}
+
+# check mandatory environment variables
+MANDATORY_VARS="PGPASSWORD STORAGE_ACCOUNT_NAME STORAGE_ACCOUNT_KEY STORAGE_CONTAINER"
+for VAR in $MANDATORY_VARS; do
+  if [[ -z "${!VAR}" ]]; then
+    echo "${VAR} environment variable is empty"
+    exit 1
+  fi
+done
+
+FILENAME="backup-`date '+%Y_%m_%d_%H%M%S'`.gz"
+
+# dump all the things
+pg_dumpall | gzip > /tmp/$FILENAME
+
+# upload to aure blob
+az storage blob upload \
+  --account-key "$STORAGE_ACCOUNT_KEY" \
+  --account-name "$STORAGE_ACCOUNT_NAME" \
+  --container "$STORAGE_CONTAINER" \
+  --file "/tmp/$FILENAME" \
+  --name "$FILENAME"
