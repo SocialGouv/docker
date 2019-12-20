@@ -6,12 +6,12 @@ set -e
 # delete a database and user on a remote Azure Postgres server
 #
 
-POSTGRES_USER=${POSTGRES_USER:-postgres}
-POSTGRES_PORT=${POSTGRES_PORT:-5432}
-POSTGRES_HOST=${POSTGRES_HOST:-127.0.0.1}
+PGUSER=${PGUSER:-postgres}
+PGPORT=${PGPORT:-5432}
+PGHOST=${PGHOST:-127.0.0.1}
 
 # check mandatory environment variables
-MANDATORY_VARS="POSTGRES_PASSWORD DROP_DATABASE DROP_USER"
+MANDATORY_VARS="PGPASSWORD DROP_DATABASE DROP_USER"
 for VAR in $MANDATORY_VARS; do
   if [[ -z "${!VAR}" ]]; then
     echo "${VAR} environment variable is empty"
@@ -20,10 +20,10 @@ for VAR in $MANDATORY_VARS; do
 done
 
 # arobase replacement
-PG_URL_ADMIN="postgresql://${POSTGRES_USER/@/%40}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/postgres"
+PG_URL_ADMIN="postgresql://${PGUSER/@/%40}:${PGPASSWORD}@${PGHOST}:${PGPORT}/postgres"
 DROP_USER_BASE=${DROP_USER%%@*} || $DROP_USER
 
-echo "deleting user ${DROP_USER_BASE} and database ${DROP_DATABASE} on ${POSTGRES_HOST}"
+echo "deleting user ${DROP_USER_BASE} and database ${DROP_DATABASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "SELECT pg_terminate_backend (pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '${DROP_DATABASE}';"
 psql -abe "$PG_URL_ADMIN" -c "DROP DATABASE $DROP_DATABASE;"
 psql -abe "$PG_URL_ADMIN" -c "DROP USER $DROP_USER_BASE;"
