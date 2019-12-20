@@ -1,3 +1,16 @@
+# [0.20.0](https://github.com/SocialGouv/docker/compare/v0.19.0...v0.20.0) (2019-12-20)
+
+
+### Bug Fixes
+
+* **k8s-object-cleaner:** use /usr/bin/env shebang ([cec7151](https://github.com/SocialGouv/docker/commit/cec7151961539fdc874511ec208db25d00aa3e38))
+* **k8s-object-cleaner:** use sha1sum instead of shasum ([8db9485](https://github.com/SocialGouv/docker/commit/8db94852c4b6ad5a2d50c06f2752c977d3aff9f6))
+
+
+### Features
+
+* **k8s-object-cleaner:** add a k8s object cleaner ([#64](https://github.com/SocialGouv/docker/issues/64)) ([5be8a41](https://github.com/SocialGouv/docker/commit/5be8a410dc38a6935aef4b4e29f0872663221f06))
+
 # [0.19.0](https://github.com/SocialGouv/docker/compare/v0.18.0...v0.19.0) (2019-12-14)
 
 
