@@ -12,7 +12,7 @@ include:
   - /helm/.gitlab-ci.yml
   - /infra-ansible-ci/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
-  - /k8s-cleaner/.gitlab-ci.yml
+  - /k8s-object-cleaner/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
   - /puppetteer/.gitlab-ci.yml
