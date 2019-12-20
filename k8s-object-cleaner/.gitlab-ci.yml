@@ -38,10 +38,9 @@ Test k8s-object-cleaner:
     #
     - git --version
     - kubectl version
-    - cat  |
     #
     - export HASH_NAME=$( printf "${CI_COMMIT_REF_SLUG}" | sha1sum | cut -c1-${HASH_SIZE} )
-
+    #
     - kubectl delete namespaces ${K8S_NAMESPACE} || true
     - kubectl create namespace ${K8S_NAMESPACE}
     - kubectl annotate namespace ${K8S_NAMESPACE} field.cattle.io/projectId=${RANCHER_PROJECT_ID}
@@ -51,7 +50,6 @@ Test k8s-object-cleaner:
     - node /bin/k8s-object-cleaner
     # assert that there is no remaining job
     - kubectl get jobs/pi && exit 1
-
   after_script:
     - kubectl delete namespaces ${K8S_NAMESPACE}
 
