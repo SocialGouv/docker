@@ -11,7 +11,7 @@ Clean k8s objects:
   stage: Notify Finished Deployment
   dependencies: []
   allow_failure: true
-  image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-cleaner
+  image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-object-cleaner
   environment: fabrique-dev
   variables:
     GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
@@ -28,7 +28,7 @@ Clean k8s objects:
 ### Docker
 
 ```sh
-$ docker run --rm k8s-cleaner:<version> <namespace filter> --env K8S_NAMESPACE=ns --env GITHUB_REPOSITORY=https://github.com/SocialGouv/docker
+$ docker run --rm k8s-object-cleaner:<version> <namespace filter> --env K8S_NAMESPACE=ns --env GITHUB_REPOSITORY=https://github.com/SocialGouv/docker
 
 # Will check delete all remaining object linked to deleted branches in the namespace `ns`
 

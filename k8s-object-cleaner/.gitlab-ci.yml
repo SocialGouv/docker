@@ -1,34 +1,34 @@
-Lint k8s-cleaner 1/2:
+Lint k8s-object-cleaner 1/2:
   stage: "Quality"
   image: hadolint/hadolint:latest-debian
   script:
-    - hadolint ./k8s-cleaner/Dockerfile
-Lint k8s-cleaner 2/2:
+    - hadolint ./k8s-object-cleaner/Dockerfile
+Lint k8s-object-cleaner 2/2:
   image: node:12
   script:
     - npx prettier -c bin/*
 
-Build k8s-cleaner:
+Build k8s-object-cleaner:
   needs:
-    - Lint k8s-cleaner 1/2
-    - Lint k8s-cleaner 2/2
+    - Lint k8s-object-cleaner 1/2
+    - Lint k8s-object-cleaner 2/2
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
-    CONTEXT: k8s-cleaner
-    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-cleaner
+    CONTEXT: k8s-object-cleaner
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-object-cleaner
 
-Test k8s-cleaner:
+Test k8s-object-cleaner:
   stage: "Test"
   needs:
-    - Lint k8s-cleaner 1/2
-    - Lint k8s-cleaner 2/2
-    - Build k8s-cleaner
+    - Lint k8s-object-cleaner 1/2
+    - Lint k8s-object-cleaner 2/2
+    - Build k8s-object-cleaner
 
-  image: "${CI_REGISTRY_IMAGE}/k8s-cleaner:${CI_COMMIT_SHA}"
+  image: "${CI_REGISTRY_IMAGE}/k8s-object-cleaner:${CI_COMMIT_SHA}"
   environment: feature-dev
   variables:
-    K8S_NAMESPACE: k8s-cleaner-test-${CI_JOB_ID}
+    K8S_NAMESPACE: k8s-object-cleaner-test-${CI_JOB_ID}
     GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
     RANCHER_PROJECT_ID: c-kk8xm:p-2jgrf
     BRANCH_HASH:
@@ -46,19 +46,19 @@ Test k8s-cleaner:
     # Create a job not link to a branch
     - kubectl apply -f https://k8s.io/examples/controllers/job.yaml -n ${K8S_NAMESPACE}
     # launch
-    - node /bin/k8s-cleaner
+    - node /bin/k8s-object-cleaner
     # assert that there is no remaining job
     - kubectl get jobs/pi && exit 1
 
   after_script:
     - kubectl delete namespaces ${K8S_NAMESPACE}
 
-Publish k8s-cleaner to Github Registry:
+Publish k8s-object-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
-    - Lint k8s-cleaner 1/2
-    - Lint k8s-cleaner 2/2
-    - Build k8s-cleaner
-    - Test k8s-cleaner
+    - Lint k8s-object-cleaner 1/2
+    - Lint k8s-object-cleaner 2/2
+    - Build k8s-object-cleaner
+    - Test k8s-object-cleaner
   variables:
-    IMAGE_NAME: socialgouv/docker/k8s-cleaner
+    IMAGE_NAME: socialgouv/docker/k8s-object-cleaner
