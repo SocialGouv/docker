@@ -47,7 +47,7 @@ Test k8s-object-cleaner:
     # Create a job not link to a branch
     - kubectl apply -f https://k8s.io/examples/controllers/job.yaml -n ${K8S_NAMESPACE}
     # launch
-    - ./k8s-object-cleaner/bin/k8s-object-cleaner
+    - k8s-object-cleaner
     # assert that there is no remaining job
     - kubectl get jobs/pi && exit 1
   after_script:
