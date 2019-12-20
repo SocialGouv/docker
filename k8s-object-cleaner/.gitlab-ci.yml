@@ -44,12 +44,16 @@ Test k8s-object-cleaner:
     - kubectl delete namespaces ${K8S_NAMESPACE} || true
     - kubectl create namespace ${K8S_NAMESPACE}
     - kubectl annotate namespace ${K8S_NAMESPACE} field.cattle.io/projectId=${RANCHER_PROJECT_ID}
+    #
+    - kubectl config set-context --current --namespace=${K8S_NAMESPACE}
+    #
     # Create a job not link to a branch
-    - kubectl apply -f https://k8s.io/examples/controllers/job.yaml -n ${K8S_NAMESPACE}
-    # launch
+    - kubectl apply -f https://k8s.io/examples/controllers/job.yaml
+    #
     - k8s-object-cleaner
+    #
     # assert that there is no remaining job
-    - kubectl get jobs/pi && exit 1
+    - kubectl get jobs/pi && exit 1 || exit 0
   after_script:
     - kubectl delete namespaces ${K8S_NAMESPACE}
 
