@@ -10,7 +10,7 @@ The killer has 2 modes.
 
 ```sh
 $ k8s-ns-killer
-# An a lot of namespaces died...
+# And tones of namespaces fall...
 ```
 
 By default the script will target `git/branch` and `git/remote` annotations on namespaces.  
