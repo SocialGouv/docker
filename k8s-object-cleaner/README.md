@@ -18,9 +18,9 @@ Clean k8s objects:
     K8S_NAMESPACE: ${K8S_NAMESPACE}
   script:
     - git remote set-url origin https://github.com/${CI_PROJECT_PATH}.git
-    - node clean.k8s.js
+    - k8s-object-cleaner
     # Debug mode
-    # - node clean.k8s.js --dry-run
+    # - node /bin/k8s-object-cleaner --dry-run
   only:
     - master
 ```
@@ -39,7 +39,7 @@ $ docker run --rm k8s-object-cleaner:<version> <namespace filter> --env K8S_NAME
 ```sh
 # ensure to have nodejs and a configured kubectl
 # Using --dry-run to only print command
-$ K8S_NAMESPACE=ns GITHUB_REPOSITORY=https://github.com/SocialGouv/docker node ./bin/clean.k8s.js --dry-run
+$ K8S_NAMESPACE=ns GITHUB_REPOSITORY=https://github.com/SocialGouv/docker k8s-object-cleaner --dry-run
 # Or for real
-$ K8S_NAMESPACE=ns GITHUB_REPOSITORY=https://github.com/SocialGouv/docker node ./bin/clean.k8s.js --dry-run
+$ K8S_NAMESPACE=ns GITHUB_REPOSITORY=https://github.com/SocialGouv/docker k8s-object-cleaner --dry-run
 ```

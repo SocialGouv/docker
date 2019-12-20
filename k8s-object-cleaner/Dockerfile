@@ -12,4 +12,4 @@ USER kubectl
 
 COPY ./bin /bin
 
-ENTRYPOINT ["node", "/bin/clean.k8s"]
+ENTRYPOINT ["k8s-object-cleaner"]
