@@ -34,7 +34,7 @@ const listK8sCmd = `kubectl get ${objectTypes.join(
 const listGithubBranchCmd = `git ls-remote --quiet --heads ${gitRepository} | cut -f2`;
 
 function getHashBranchCmd(branchName) {
-  return `printf "${branchName}" | shasum | cut -c1-${hashSize}`;
+  return `printf "${branchName}" | sha1sum | cut -c1-${hashSize}`;
 }
 
 function getDeleteObjectCmd(id, type) {
