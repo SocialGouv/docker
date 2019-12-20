@@ -8,7 +8,7 @@ Lint k8s-object-cleaner 2 2:
   stage: "Quality"
   image: node:12
   script:
-    - npx prettier -c bin/*
+    - npx prettier -c ./k8s-object-cleaner/bin/*
 
 Build k8s-object-cleaner:
   needs:
