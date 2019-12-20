@@ -2,7 +2,28 @@
 
 > Remove K8S namespaces that have a `git/branch` annotation and an existing branch on the git repository.
 
-## Usage 
+The killer has 2 modes.
+- _"global"_ :gun: to remove any namespace in the cluster with `git/branch` and `git/remote` annotations
+- _"local"_ :gun: to remove grep matching namespaces with a `git/branch` annotation
+
+## Usage (global mode)
+
+```sh
+$ k8s-ns-killer
+# An a lot of namespaces died...
+```
+
+By default the script will target `git/branch` and `git/remote` annotations on namespaces.  
+You can change it by setting `BRANCH_ANNOTATION`.
+
+```sh
+$ export BRANCH_ANNOTATION="my/git/branch"
+$ export REMOTE_ANNOTATION="my/git/branch"
+#
+$ sh -x ./bin/k8s-ns-killer my-feature-
+```
+
+## Usage (local mode)
 
 ### Gitlab 
 
@@ -66,6 +87,15 @@ You can change it by setting `BRANCH_ANNOTATION`.
 $ export BRANCH_ANNOTATION="my/git/branch"
 $ sh -x ./bin/k8s-ns-killer my-feature-
 ```
+
+By default the script will use `git remote get-url origin` as repository.  
+You can change it by setting `REPOSITORY`.
+
+```sh
+$ export REPOSITORY="git@github.com:SocialGouv/docker.git"
+$ sh -x ./bin/k8s-ns-killer my-feature-
+```
+
 
 ## With Docker image 
 
