@@ -31,7 +31,7 @@ Test k8s-object-cleaner:
     K8S_NAMESPACE: k8s-object-cleaner-test-${CI_JOB_ID}
     GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
     RANCHER_PROJECT_ID: c-kk8xm:p-2jgrf
-    BRANCH_HASH:
+    BRANCH_HASH: 7
   script:
     #
     - git --version
