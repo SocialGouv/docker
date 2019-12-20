@@ -1,17 +1,19 @@
-Lint k8s-object-cleaner 1/2:
+Lint k8s-object-cleaner 1 2:
   stage: "Quality"
   image: hadolint/hadolint:latest-debian
   script:
     - hadolint ./k8s-object-cleaner/Dockerfile
-Lint k8s-object-cleaner 2/2:
+
+Lint k8s-object-cleaner 2 2:
+  stage: "Quality"
   image: node:12
   script:
     - npx prettier -c bin/*
 
 Build k8s-object-cleaner:
   needs:
-    - Lint k8s-object-cleaner 1/2
-    - Lint k8s-object-cleaner 2/2
+    - Lint k8s-object-cleaner 1 2
+    - Lint k8s-object-cleaner 2 2
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
@@ -21,8 +23,8 @@ Build k8s-object-cleaner:
 Test k8s-object-cleaner:
   stage: "Test"
   needs:
-    - Lint k8s-object-cleaner 1/2
-    - Lint k8s-object-cleaner 2/2
+    - Lint k8s-object-cleaner 1 2
+    - Lint k8s-object-cleaner 2 2
     - Build k8s-object-cleaner
 
   image: "${CI_REGISTRY_IMAGE}/k8s-object-cleaner:${CI_COMMIT_SHA}"
@@ -56,8 +58,8 @@ Test k8s-object-cleaner:
 Publish k8s-object-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
-    - Lint k8s-object-cleaner 1/2
-    - Lint k8s-object-cleaner 2/2
+    - Lint k8s-object-cleaner 1 2
+    - Lint k8s-object-cleaner 2 2
     - Build k8s-object-cleaner
     - Test k8s-object-cleaner
   variables:
