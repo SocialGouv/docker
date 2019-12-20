@@ -18,7 +18,7 @@ You can change it by setting `BRANCH_ANNOTATION`.
 
 ```sh
 $ export BRANCH_ANNOTATION="my/git/branch"
-$ export REMOTE_ANNOTATION="my/git/branch"
+$ export REMOTE_ANNOTATION="my/git/remote"
 #
 $ sh -x ./bin/k8s-ns-killer my-feature-
 ```
