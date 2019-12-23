@@ -1,0 +1,36 @@
+Lint azure-db:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.2-debian
+  script:
+    - hadolint ./azure-db/Dockerfile
+
+Build azure-db:
+  stage: "Build"
+  needs:
+    - Lint azure-db
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: azure-db
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
+
+Test azure-db:
+  stage: "Test"
+  needs:
+    - Lint azure-db
+    - Build azure-db
+  image: docker:18
+  services:
+    - docker:18-dind
+  script:
+    - echo "test create"
+    - echo "test backup"
+    - echo "test delete"
+
+Publish azure-db to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint azure-db
+    - Build azure-db
+    - Test azure-db
+  variables:
+    IMAGE_NAME: socialgouv/docker/azure-db
