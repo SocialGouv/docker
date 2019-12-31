@@ -7,7 +7,7 @@ RUN apk add --update --no-cache \
   curl=~7 \
   gettext-dev=~0 \
   sudo=~1 \
-  ca-certificates=~20190108
+  ca-certificates=~20191127
 
 
 ENV K8S_LATEST_VERSION="v1.17.0"
