@@ -1,3 +1,10 @@
+# [0.21.0](https://github.com/SocialGouv/docker/compare/v0.20.0...v0.21.0) (2019-12-31)
+
+
+### Features
+
+* **deps:** update alpine docker tag ([015cea2](https://github.com/SocialGouv/docker/commit/015cea2d2ba070330b3bf60c16458e8b85292ee4))
+
 # [0.20.0](https://github.com/SocialGouv/docker/compare/v0.19.0...v0.20.0) (2019-12-20)
 
 
