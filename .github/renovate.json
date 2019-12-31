@@ -5,5 +5,12 @@
   ],
   "gitlabci": {
     "fileMatch": ["\\.gitlab-ci.yml$"]
-  }
+  },
+  "packageRules": [
+    {
+      "depTypeList": ["final", "stage"],
+      "updateTypes": ["major", "minor"],
+      "semanticCommitType": "feat"
+    }
+  ]
 }
