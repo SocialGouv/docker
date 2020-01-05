@@ -41,6 +41,7 @@ Backup a database and store it to some Azure blob
 | PGPORT               | PG server port               | 5432                               |
 | PGUSER               | PG super user                | `postgres@servername`              |
 | PGPASSWORD           | PG super user password       |                                    |
+| PGDATABASE           | PG database to backup        | `postgres`                         |
 | STORAGE_ACCOUNT_NAME | Azure storage account name   | `backups`                          |
 | STORAGE_ACCOUNT_KEY  | Azure storage account key    |                                    |
 | STORAGE_CONTAINER    | Azure storage container name | `backups-app`                      |

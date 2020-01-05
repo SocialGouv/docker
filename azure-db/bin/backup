@@ -9,9 +9,10 @@ set -e
 PGUSER=${PGUSER:-postgres}
 PGPORT=${PGPORT:-5432}
 PGHOST=${PGHOST:-127.0.0.1}
+PGDATABASE=${PGDATABASE:-postgres}
 
 # check mandatory environment variables
-MANDATORY_VARS="PGPASSWORD STORAGE_ACCOUNT_NAME STORAGE_ACCOUNT_KEY STORAGE_CONTAINER"
+MANDATORY_VARS="PGPASSWORD PGDATABASE STORAGE_ACCOUNT_NAME STORAGE_ACCOUNT_KEY STORAGE_CONTAINER"
 for VAR in $MANDATORY_VARS; do
   if [[ -z "${!VAR}" ]]; then
     echo "${VAR} environment variable is empty"
@@ -19,10 +20,10 @@ for VAR in $MANDATORY_VARS; do
   fi
 done
 
-FILENAME="backup-`date '+%Y_%m_%d_%H%M%S'`.gz"
+FILENAME="backup-`date '+%Y_%m_%d_%H%M%S'`.dump.gz"
 
-# dump all the things
-pg_dumpall | gzip > /tmp/$FILENAME
+# dump database
+pg_dump --clean --if-exists --format=custom $PGDATABASE | gzip > /tmp/$FILENAME
 
 # upload to aure blob
 az storage blob upload \
