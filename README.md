@@ -57,7 +57,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 
 ### Manual
 
-We manly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our relese
+We mainly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our releases.
 You need an [Github token](https://github.com/settings/tokens/new) to release.
 
 ```sh
