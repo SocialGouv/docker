@@ -1,10 +1,10 @@
 include:
   - project: SocialGouv/gitlab-ci-yml
     file: /base_semantic_release_stage.yml
-    ref: v4.5.4
+    ref: v4.6.0
   - project: SocialGouv/gitlab-ci-yml
     file: /base_register_stage.yml
-    ref: v4.5.4
+    ref: v4.6.0
   #
   - /curl/.gitlab-ci.yml
   - /git-deploy/.gitlab-ci.yml
