@@ -1,0 +1,55 @@
+Lint postgres-with-jwt:
+  stage: "Quality"
+  image: koalaman/shellcheck-alpine:v0.7.0
+  script:
+    - shellcheck ./postgres-with-jwt/bin/postgres-with-jwt
+
+Build postgres-with-jwt:
+  stage: "Build"
+  needs:
+    - Lint postgres-with-jwt
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: postgres-with-jwt
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/postgres-with-jwt
+
+Test postgres-with-jwt:
+  stage: "Test"
+  needs:
+    - Build postgres-with-jwt
+  image: "${CI_REGISTRY_IMAGE}/postgres-with-jwt:${CI_COMMIT_SHA}"
+  variables:
+    POSTGRES_DB: test_db
+    POSTGRES_USER: test_db_user
+    POSTGRES_PASSWORD: test_db_password
+  script:
+    - |
+      HAS_DB_EXPECTED = "1"
+      HAS_DB = psql -U "${POSTGRES_USER}" -c "SELECT COUNT(datname) FROM pg_database WHERE datname = '${POSTGRES_DB}';"
+      "${HAS_DB}" != "${HAS_DB_EXPECTED}" \
+        && echo "Error: \"${POSTGRES_DB}\" database should exist." \
+        && echo "\"${HAS_DB}\" != \"${HAS_DB_EXPECTED}\"" \
+        && exit 1
+
+      psql -U "${POSTGRES_USER}" -c "CREATE EXTENSION \"pgjwt\" CASCADE;"
+
+      JWT_ENC_EXPECTED = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhIjoiYiJ9.4bY1xgFfpQn83Kv2pfGNZ2rT_o-RTf8TaNbQ8IqW9aQ"
+      JWT_ENC = psql -U "${POSTGRES_USER}" -tAX -c "SELECT sign('{\"a\":\"b\"}', 'c');"
+      "${JWT_ENC}" != "${JWT_ENC_EXPECTED}" \
+        && echo "Error: \"Resulting encoded JWT does not match the expected one." \
+        && echo "\"${JWT_ENC}\" != \"${JWT_ENC_EXPECTED}"\" \
+        && exit 1
+
+      JWT_DEC_EXPECTED = "{\"alg\":\"HS256\",\"typ\":\"JWT\"}|{\"a\":\"b\"}|t"
+      JWT_DEC = psql -U "${POSTGRES_USER}" -tAX -c "SELECT payload FROM verify('${JWT_ENC}');"
+      "${JWT_DEC}" != "${JWT_DEC_EXPECTED}" \
+        && echo "Error: \"Resulting decoded JWT does not match the expected one." \
+        && echo "\"${JWT_DEC}\" != \"${JWT_DEC_EXPECTED}\"" \
+        && exit 1
+
+Publish postgres-with-jwt to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Build postgres-with-jwt
+  variables:
+    IMAGE_NAME: socialgouv/docker/postgres-with-jwt
