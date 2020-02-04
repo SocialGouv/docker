@@ -1,0 +1,33 @@
+Lint pg-cleaner:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.3-debian
+  script:
+    - hadolint ./pg-cleaner/Dockerfile
+
+Build pg-cleaner:
+  stage: "Build"
+  needs:
+    - Lint pg-cleaner
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: pg-cleaner
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/pg-cleaner
+
+Test pg-cleaner:
+  stage: "Test"
+  needs:
+    - Lint pg-cleaner
+    - Build pg-cleaner
+  image: "${CI_REGISTRY_IMAGE}/pg-cleaner:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - python --version
+
+Publish pg-cleaner to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+  - Lint pg-cleaner
+  - Build pg-cleaner
+  - Test pg-cleaner
+  variables:
+    IMAGE_NAME: socialgouv/docker/pg-cleaner

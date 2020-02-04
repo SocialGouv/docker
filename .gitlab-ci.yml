@@ -6,6 +6,7 @@ include:
     file: /base_register_stage.yml
     ref: v5.0.0
   #
+  - /pg-cleaner/.gitlab-ci.yml
   - /curl/.gitlab-ci.yml
   - /git-deploy/.gitlab-ci.yml
   - /git-tag-release/.gitlab-ci.yml
