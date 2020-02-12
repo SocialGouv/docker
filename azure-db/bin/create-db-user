@@ -21,7 +21,7 @@ for VAR in $MANDATORY_VARS; do
   fi
 done
 
-# arobase replacement
+# full urls with arobase replacement
 PG_URL_ADMIN="postgresql://${PGUSER/@/%40}:${PGPASSWORD}@${PGHOST}:${PGPORT}/postgres"
 PG_URL_NEWDB="postgresql://${NEW_USER/@/%40}:${NEW_PASSWORD}@${PGHOST}:${PGPORT}/${NEW_DB_NAME}"
 
@@ -36,12 +36,18 @@ psql -abe "$PG_URL_ADMIN" -c "CREATE DATABASE $NEW_DB_NAME;"
 echo "creating user ${NEW_USER_BASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
     CREATE USER \"$NEW_USER_BASE\" WITH PASSWORD '$NEW_PASSWORD';
-    GRANT \"$NEW_USER_BASE\" to postgres;
+    GRANT \"$NEW_USER_BASE\" to \"${PGUSER%%@*}\";
     GRANT azure_pg_admin to \"$NEW_USER_BASE\";
     GRANT ALL PRIVILEGES ON DATABASE $NEW_DB_NAME TO \"$NEW_USER_BASE\";
+
+    GRANT USAGE ON SCHEMA public TO \"$NEW_USER_BASE\";
+    GRANT ALL ON ALL TABLES IN SCHEMA public TO \"$NEW_USER_BASE\";
+    GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO \"$NEW_USER_BASE\";
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO \"$NEW_USER_BASE\";
 "
 
 # enable extensions (ex: hasura stuff)
+# need azure_pg_admin role
 psql -abe "$PG_URL_NEWDB" -c "CREATE EXTENSION IF NOT EXISTS pgcrypto; CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\";"
 
 # remove admins rights to the account
