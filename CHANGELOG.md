@@ -1,3 +1,12 @@
+# [0.22.0](https://github.com/SocialGouv/docker/compare/v0.21.0...v0.22.0) (2020-02-12)
+
+
+### Features
+
+* **deps:** update alpine docker tag to v3.11.3 ([#93](https://github.com/SocialGouv/docker/issues/93)) ([91c129e](https://github.com/SocialGouv/docker/commit/91c129ebc13a2ee0e1338e424ded3a94517b877c))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.21.0 ([#88](https://github.com/SocialGouv/docker/issues/88)) ([4455261](https://github.com/SocialGouv/docker/commit/4455261241fac5e8a071364d67bffce607495d20))
+* **pg-cleaner:** add pg-cleaner image to delete postgres database not linked to branch ([#96](https://github.com/SocialGouv/docker/issues/96)) ([cff2716](https://github.com/SocialGouv/docker/commit/cff2716df9dbee45a8b0033417944848ff339b25))
+
 # [0.21.0](https://github.com/SocialGouv/docker/compare/v0.20.0...v0.21.0) (2019-12-31)
 
 
