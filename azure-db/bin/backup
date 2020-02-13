@@ -25,7 +25,7 @@ FILENAME="backup-`date '+%Y_%m_%d_%H%M%S'`.dump.gz"
 # dump database
 pg_dump --clean --if-exists --format=custom $PGDATABASE | gzip > /tmp/$FILENAME
 
-# upload to aure blob
+# upload to azure blob
 az storage blob upload \
   --account-key "$STORAGE_ACCOUNT_KEY" \
   --account-name "$STORAGE_ACCOUNT_NAME" \
