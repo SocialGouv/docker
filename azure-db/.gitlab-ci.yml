@@ -23,7 +23,7 @@ Test azure-db:
     - postgres:11-alpine
   script:
     - psql --version
-    - az --verion
+    - az --version
     #
     - which create-db-user
     - which drop-db-user
