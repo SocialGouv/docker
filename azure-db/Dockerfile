@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     python=~2 \
     python-dev=~2 \
     wget=~1 \
-	&& pip install "azure-cli>=2" \
+	&& pip install --no-cache-dir "azure-cli>=2" \
 	&& apk del python-dev build-base gcc wget py-pip libffi-dev openssl-dev
 
 COPY ./bin /bin
