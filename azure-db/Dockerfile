@@ -18,7 +18,9 @@ RUN set -ex \
     py-pip=~18 \
     python-dev=~2 \
     wget=~1 \
+  \
 	&& pip install --no-cache-dir "azure-cli>=2" \
+  \
 	&& apk del .pip-deps
 
 COPY ./bin /bin
