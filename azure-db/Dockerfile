@@ -19,9 +19,9 @@ RUN set -ex \
     python-dev=~2 \
     wget=~1 \
   \
-	&& pip install --no-cache-dir "azure-cli>=2" \
+  && pip install --no-cache-dir "azure-cli>=2" \
   \
-	&& apk del .pip-deps
+  && apk del .pip-deps
 
 COPY ./bin /bin
 
