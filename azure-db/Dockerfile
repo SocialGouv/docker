@@ -1,5 +1,6 @@
 ARG PG_IMAGE=postgres:11-alpine
 
+# hadolint ignore=DL3006
 FROM ${PG_IMAGE}
 
 RUN apk add --no-cache \
