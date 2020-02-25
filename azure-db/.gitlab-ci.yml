@@ -19,12 +19,15 @@ Test azure-db:
     - Lint azure-db
     - Build azure-db
   image: "${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}"
+  services:
+    - postgres:11-alpine
   script:
+    - psql --version
+    - az --verion
+    #
     - which create-db-user
     - which drop-db-user
     - which backup
-    - which az
-    - which psql
 
 Publish azure-db to Github Registry:
   extends: .base_publish_to_github_stage
