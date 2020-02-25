@@ -13,7 +13,7 @@ Build azure-db:
     CONTEXT: azure-db
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
 
-Test azure-db:
+Test azure-db 1:
   stage: "Test"
   needs:
     - Lint azure-db
@@ -34,6 +34,6 @@ Publish azure-db to Github Registry:
   needs:
     - Lint azure-db
     - Build azure-db
-    - Test azure-db
+    - Test azure-db 1
   variables:
     IMAGE_NAME: socialgouv/docker/azure-db
