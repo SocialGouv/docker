@@ -13,18 +13,18 @@ Build azure-db:
     CONTEXT: azure-db
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
 
-Test azure-db:
+Test azure-db 1:
   stage: "Test"
   needs:
     - Lint azure-db
     - Build azure-db
-  image: docker:18
-  services:
-    - docker:18-dind
+  image: "${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}"
   script:
-    - echo "test create"
-    - echo "test backup"
-    - echo "test delete"
+    - which create-db-user
+    - which drop-db-user
+    - which backup
+    - which az
+    - which psql
 
 Publish azure-db to Github Registry:
   extends: .base_publish_to_github_stage
