@@ -3,7 +3,7 @@ ARG PG_IMAGE=postgres:11-alpine
 # hadolint ignore=DL3006
 FROM ${PG_IMAGE}
 
-RUN apk add --no-cache \
+RUN apk add --no-cache --virtual .pip-deps \
     build-base=~0 \
     gcc=~9 \
     git=~2 \
@@ -15,7 +15,7 @@ RUN apk add --no-cache \
     python-dev=~2 \
     wget=~1 \
 	&& pip install --no-cache-dir "azure-cli>=2" \
-	&& apk del python-dev build-base gcc wget py-pip libffi-dev openssl-dev
+	&& apk del .pip-deps
 
 COPY ./bin /bin
 
