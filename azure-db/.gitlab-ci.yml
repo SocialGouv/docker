@@ -13,7 +13,7 @@ Build azure-db:
     CONTEXT: azure-db
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
 
-Test azure-db 1:
+Test azure-db:
   stage: "Test"
   needs:
     - Lint azure-db
