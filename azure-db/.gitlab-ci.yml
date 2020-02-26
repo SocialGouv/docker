@@ -31,7 +31,7 @@ Test azure-db 2:
   stage: "Test"
   services:
     - docker:18-dind
-    - postgres:11.5
+    - postgres:11.5-alpine
   needs:
     - Lint azure-db
     - Build azure-db
