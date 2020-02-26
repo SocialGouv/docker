@@ -38,7 +38,7 @@ Test azure-db 2:
   image: docker:18
   variables:
     # for PG service
-    POSTGRES_DB: custom_db
+    # POSTGRES_DB: custom_db
     POSTGRES_USER: custom_user
     POSTGRES_PASSWORD: custom_pass
     # For azure-db scripts
@@ -55,7 +55,6 @@ Test azure-db 2:
     # see https://docs.microsoft.com/en-us/azure/postgresql/howto-create-users
     # Below we fake Azure like postgres instance on the local service
     - docker run
-        --env PGDATABASE=${POSTGRES_DB}
         --env PGHOST=localhost
         --env PGPASSWORD=${POSTGRES_PASSWORD}
         --env PGUSER=${POSTGRES_USER}
@@ -69,7 +68,6 @@ Test azure-db 2:
         --env NEW_DB_NAME=${NEW_DB_NAME}
         --env NEW_PASSWORD=${NEW_PASSWORD}
         --env NEW_USER=${NEW_USER}
-        --env PGDATABASE=${POSTGRES_DB}
         --env PGHOST=localhost
         --env PGPASSWORD=${POSTGRES_PASSWORD}
         --env PGUSER=${POSTGRES_USER}
