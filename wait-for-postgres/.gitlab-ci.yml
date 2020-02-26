@@ -37,7 +37,6 @@ Test wait-for-postgres 2 2:
     - Lint wait-for-postgres 1 2
     - Lint wait-for-postgres 2 2
     - Build wait-for-postgres
-  image: "${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}"
   image: docker:18
   services:
     - docker:18-dind
