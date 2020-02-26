@@ -55,10 +55,10 @@ Test azure-db 2:
     # see https://docs.microsoft.com/en-us/azure/postgresql/howto-create-users
     # Below we fake Azure like postgres instance on the local service
     - docker run
+        --env PGDATABASE=${POSTGRES_DB}
         --env PGHOST=localhost
         --env PGPASSWORD=${POSTGRES_PASSWORD}
         --env PGUSER=${POSTGRES_USER}
-        --env PGDATABASE=${POSTGRES_DB}
         --network="host"
         --rm
         ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
@@ -66,12 +66,13 @@ Test azure-db 2:
     #
     - echo "create db and user on PG service"
     - docker run
-        --env PGHOST=localhost
-        --env PGPASSWORD=${PGPASSWORD}
-        --env PGUSER=${PGUSER}
         --env NEW_DB_NAME=${NEW_DB_NAME}
-        --env NEW_USER=${NEW_USER}
         --env NEW_PASSWORD=${NEW_PASSWORD}
+        --env NEW_USER=${NEW_USER}
+        --env PGDATABASE=${POSTGRES_DB}
+        --env PGHOST=localhost
+        --env PGPASSWORD=${POSTGRES_PASSWORD}
+        --env PGUSER=${POSTGRES_USER}
         --network="host"
         --rm
       ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
