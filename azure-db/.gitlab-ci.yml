@@ -59,6 +59,7 @@ Test azure-db 2:
     # Below we fake Azure like postgres instance on the local service
     - docker run
         --env PGHOST=localhost
+        --env PGPASSWORD=${PGPASSWORD}
         --env PGUSER=postgres
         --network="host"
         --rm
