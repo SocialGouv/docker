@@ -6,12 +6,13 @@ ENV HOME=/home/kubectl
 ## Install envsubst & coreutils
 RUN set -ex \
   \
-  && apk add --update --no-cache  \
+  && apk add --update --no-cache \
     bash=~5 \
+  \
+  && apk add --update --no-cache --virtual .curl-deps \
     coreutils=~8 \
     curl=~7 \
     gettext-dev=~0 \
-    sudo=~1 \
     ca-certificates=~20191127 \
   ## Install kubectl
   ## Note: Latest version may be found on:
@@ -19,6 +20,8 @@ RUN set -ex \
   \
   && curl -sL -o /usr/local/bin/kubectl \
     https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl \
+  \
+  && apk del .curl-deps \
   \
   && chmod +x /usr/local/bin/kubectl \
   \
