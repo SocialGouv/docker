@@ -63,7 +63,7 @@ Test azure-db 2:
         --network="host"
         --rm
         ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
-      psql -v ON_ERROR_STOP=1 -c CREATE ROLE azure_pg_admin SUPERUSER;
+      psql -v ON_ERROR_STOP=1 -c "CREATE ROLE azure_pg_admin SUPERUSER;"
     #
     - echo "create db and user on PG service"
     - docker run
