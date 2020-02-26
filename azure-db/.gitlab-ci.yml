@@ -58,6 +58,7 @@ Test azure-db 2:
         --env PGHOST=localhost
         --env PGPASSWORD=${POSTGRES_PASSWORD}
         --env PGUSER=${POSTGRES_USER}
+        --env PGDATABASE=${POSTGRES_DB}
         --network="host"
         --rm
         ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
