@@ -20,10 +20,10 @@ RUN set -ex \
   && curl -sL -o /usr/local/bin/kubectl \
     https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl \
   \
-  && chmod +x /usr/local/bin/kubectl 
+  && chmod +x /usr/local/bin/kubectl \
   \
   # Create non-root user (with a randomly chosen UID/GUI).
-  && adduser kubectl -Du 2342 -h /home/kubectl 
+  && adduser kubectl -Du 2342 -h /home/kubectl \
   \
   # Basic check it works.
   && kubectl version --client
