@@ -1,3 +1,15 @@
+# [0.23.0](https://github.com/SocialGouv/docker/compare/v0.22.0...v0.23.0) (2020-02-26)
+
+
+### Bug Fixes
+
+* **kubectl:** update kubectl to 0.17.3 ([#101](https://github.com/SocialGouv/docker/issues/101)) ([71d5510](https://github.com/SocialGouv/docker/commit/71d5510f5161294e2f2c73780d43a4255515b77a))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.22.0 ([#87](https://github.com/SocialGouv/docker/issues/87)) ([a1f932b](https://github.com/SocialGouv/docker/commit/a1f932b0f3f5929a79402e01268771e678d5273c))
+
 # [0.22.0](https://github.com/SocialGouv/docker/compare/v0.21.0...v0.22.0) (2020-02-12)
 
 
