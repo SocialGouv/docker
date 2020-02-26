@@ -60,22 +60,20 @@ Test azure-db 2:
     # this user
     - docker run
         --env PGHOST=localhost
-        --env PGPASSWORD=${PGPASSWORD}
-        --env PGUSER=${PGUSER}
+        --env PGUSER=postgres
         --network="host"
         --rm
         ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
       createuser azure_pg_admin
     - echo "create db and user on PG service"
     - docker run
-      --env PGHOST=localhost
-      --env PGPASSWORD=${PGPASSWORD}
-      --env PGUSER=${PGUSER}
-      --env NEW_DB_NAME=${NEW_DB_NAME}
-      --env NEW_USER=${NEW_USER}
-      --env NEW_PASSWORD=${NEW_PASSWORD}
-      --network="host"
-      --rm
+        --env PGHOST=localhost
+        --env PGUSER=postgres
+        --env NEW_DB_NAME=${NEW_DB_NAME}
+        --env NEW_USER=${NEW_USER}
+        --env NEW_PASSWORD=${NEW_PASSWORD}
+        --network="host"
+        --rm
       ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
     - echo "test db and user on PG"
     - psql -c "CREATE TABLE logs (value character varying(255));"
