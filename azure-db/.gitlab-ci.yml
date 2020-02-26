@@ -53,8 +53,8 @@ Test azure-db 2:
     DROP_USER: test_user_${CI_JOB_ID}
     DROP_DATABASE: test_db_${CI_JOB_ID}
   script:
-    - ping postgres -t 2
     - cat /etc/hosts
+    - env
     - echo "create db and user on PG service"
     - create-db-user
     - echo "test db and user on PG"
