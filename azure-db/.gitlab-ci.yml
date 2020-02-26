@@ -19,8 +19,6 @@ Test azure-db 1:
     - Lint azure-db
     - Build azure-db
   image: "${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}"
-  services:
-    - postgres:11-alpine
   script:
     - psql --version
     - az --version
@@ -43,7 +41,7 @@ Test azure-db 2:
     POSTGRES_USER: custom_user
     POSTGRES_PASSWORD: custom_pass
     # For psql
-    PGHOST: postgres
+    PGHOST: localhost
     PGPASSWORD: custom_pass
     PGUSER: custom_user
     # For azure-db scripts
