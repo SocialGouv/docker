@@ -41,9 +41,6 @@ Test azure-db 2:
     POSTGRES_DB: custom_db
     POSTGRES_USER: custom_user
     POSTGRES_PASSWORD: custom_pass
-    # For psql
-    PGPASSWORD: custom_pass
-    PGUSER: custom_user
     # For azure-db scripts
     NEW_DB_NAME: test_db_${CI_JOB_ID}
     NEW_USER: test_user_${CI_JOB_ID}
@@ -59,8 +56,8 @@ Test azure-db 2:
     # Below we fake Azure like postgres instance on the local service
     - docker run
         --env PGHOST=localhost
-        --env PGPASSWORD=${PGPASSWORD}
-        --env PGUSER=postgres
+        --env PGPASSWORD=${POSTGRES_PASSWORD}
+        --env PGUSER=${POSTGRES_USER}
         --network="host"
         --rm
         ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
