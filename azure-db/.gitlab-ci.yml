@@ -30,11 +30,12 @@ Test azure-db 1:
 Test azure-db 2:
   stage: "Test"
   services:
+    - docker:18-dind
     - postgres:11.5
   needs:
     - Lint azure-db
     - Build azure-db
-  image: "${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}"
+  image: docker:18
   variables:
     # for PG service
     POSTGRES_DB: custom_db
@@ -51,10 +52,18 @@ Test azure-db 2:
     DROP_USER: test_user_${CI_JOB_ID}
     DROP_DATABASE: test_db_${CI_JOB_ID}
   script:
-    - cat /etc/hosts
-    - env
+    - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
     - echo "create db and user on PG service"
-    - create-db-user
+    - docker run
+      --env PGHOST=${PGHOST}
+      --env PGPASSWORD=${PGPASSWORD}
+      --env PGUSER=${PGUSER}
+      --env NEW_DB_NAME=${NEW_DB_NAME}
+      --env NEW_USER=${NEW_USER}
+      --env NEW_PASSWORD=${NEW_PASSWORD}
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
     - echo "test db and user on PG"
     - psql -c "CREATE TABLE logs (value character varying(255));"
     - psql -c "INSERT INTO logs set value='hello';"
