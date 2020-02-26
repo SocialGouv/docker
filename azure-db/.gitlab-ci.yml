@@ -52,23 +52,26 @@ Test azure-db 2:
     DROP_DATABASE: test_db_${CI_JOB_ID}
   script:
     - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
-    # NOTE(douglasduteil): manually create an `azure_pg_admin` user
+    # NOTE(douglasduteil): manually create an `azure_pg_admin` role
     # As `azure-db` is made to run on Azure Database for PostgreSQL, the scripts
     # inside assume that an `azure_pg_admin` is present.
     # see https://docs.microsoft.com/en-us/azure/postgresql/howto-create-users
-    # Below we fake Azure like postgres instance on the local service by creating
-    # this user
+    # Below we fake Azure like postgres instance on the local service
     - docker run
         --env PGHOST=localhost
         --env PGUSER=postgres
         --network="host"
         --rm
         ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
-      createuser azure_pg_admin
+      psql -v ON_ERROR_STOP=1 <<-EOSQL
+        CREATE ROLE azure_pg_admin SUPERUSER;
+      EOSQL
+    #
     - echo "create db and user on PG service"
     - docker run
         --env PGHOST=localhost
-        --env PGUSER=postgres
+        --env PGPASSWORD=${PGPASSWORD}
+        --env PGUSER=${PGUSER}
         --env NEW_DB_NAME=${NEW_DB_NAME}
         --env NEW_USER=${NEW_USER}
         --env NEW_PASSWORD=${NEW_PASSWORD}
