@@ -6,7 +6,6 @@ include:
     file: /base_register_stage.yml
     ref: v7.3.0
   #
-  - /pg-cleaner/.gitlab-ci.yml
   - /azure-db/.gitlab-ci.yml
   - /curl/.gitlab-ci.yml
   - /git-deploy/.gitlab-ci.yml
@@ -17,6 +16,7 @@ include:
   - /k8s-object-cleaner/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
+  - /pg-cleaner/.gitlab-ci.yml
   - /puppetteer/.gitlab-ci.yml
   - /wait-for-postgres/.gitlab-ci.yml
 

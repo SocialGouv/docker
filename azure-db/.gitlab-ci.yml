@@ -42,7 +42,6 @@ Test azure-db 2:
     POSTGRES_USER: custom_user
     POSTGRES_PASSWORD: custom_pass
     # For psql
-    PGHOST: localhost
     PGPASSWORD: custom_pass
     PGUSER: custom_user
     # For azure-db scripts
@@ -55,7 +54,7 @@ Test azure-db 2:
     - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
     - echo "create db and user on PG service"
     - docker run
-      --env PGHOST=${PGHOST}
+      --env PGHOST=localhost
       --env PGPASSWORD=${PGPASSWORD}
       --env PGUSER=${PGUSER}
       --env NEW_DB_NAME=${NEW_DB_NAME}
