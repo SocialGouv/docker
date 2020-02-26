@@ -51,6 +51,13 @@ Test azure-db 2:
     DROP_USER: test_user_${CI_JOB_ID}
     DROP_DATABASE: test_db_${CI_JOB_ID}
   script:
+    # NOTE(douglasduteil): manually create an `azure_pg_admin` user
+    # As `azure-db` is made to run on Azure Database for PostgreSQL, the scripts
+    # inside assume that an `azure_pg_admin` is present.
+    # see https://docs.microsoft.com/en-us/azure/postgresql/howto-create-users
+    # Below we fake Azure like postgres instance on the local service by creating
+    # this user
+    - createuser azure_pg_admin
     - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
     - echo "create db and user on PG service"
     - docker run
