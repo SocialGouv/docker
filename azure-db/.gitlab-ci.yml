@@ -29,11 +29,44 @@ Test azure-db 1:
     - which drop-db-user
     - which backup
 
+Test azure-db 2:
+  stage: "Test"
+  services:
+    - postgres:11.5
+  needs:
+    - Lint azure-db
+    - Build azure-db
+  image: "${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}"
+  variables:
+    PGHOST: postgres
+    POSTGRES_DB: custom_db
+    POSTGRES_USER: custom_user
+    POSTGRES_PASSWORD: custom_pass
+    PGPASSWORD: custom_pass
+    PGUSER: custom_user
+    NEW_DB_NAME: test_db_${CI_JOB_ID}
+    NEW_USER: test_user_${CI_JOB_ID}
+    NEW_PASSWORD: test_pass_${CI_JOB_ID}
+    DROP_USER: test_user_${CI_JOB_ID}
+    DROP_DATABASE: test_db_${CI_JOB_ID}
+  script:
+    - echo "create db and user on PG service"
+    - create-db-user
+    - echo "test db and user on PG"
+    - psql -c "CREATE TABLE logs (value character varying(255));"
+    - psql -c "INSERT INTO logs set value='hello';"
+    - psql -c "SELECT * from logs;"
+    - echo "destroy db and user on PG service"
+    - drop-db-user
+    - echo "test db and user on PG"
+    - psql -c "CREATE TABLE logs2 (value character varying(255));"
+
 Publish azure-db to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
     - Lint azure-db
     - Build azure-db
     - Test azure-db 1
+    - Test azure-db 2
   variables:
     IMAGE_NAME: socialgouv/docker/azure-db
