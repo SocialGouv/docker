@@ -93,7 +93,7 @@ Test azure-db 2:
         --rm
       hasura/graphql-engine:v1.1.0
     - |-
-      retry=25;
+      retry=10;
       while
         ! wget -q --spider "localhost:8080/v1/version" &&
         [[ $(( retry-- )) -gt 0 ]];
