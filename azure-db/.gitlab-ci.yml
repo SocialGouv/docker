@@ -78,9 +78,9 @@ Test azure-db 2:
         [[ $(( retry-- )) -gt 0 ]];
       do echo "Waiting for Hasura ($retry)" ; sleep 1 ; done
     #
+    - wget -qO- localhost:8080/v1/version
     - docker ps
     - docker logs hasura_test
-    - wget -qO-localhost:8080/v1/version
     #
     - wget -qO- localhost:8080/healthz
     - wget -qO- localhost:8080/healthz | grep "OK"
