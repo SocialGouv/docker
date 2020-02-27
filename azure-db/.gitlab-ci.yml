@@ -64,8 +64,7 @@ Test azure-db 2:
     #
     - docker run
         --detach
-        --env HASURA_GRAPHQL_DATABASE_URL=
-          postgres://${NEW_USER}:${NEW_PASSWORD}@localhost:5432/${NEW_DB_NAME}
+        --env HASURA_GRAPHQL_DATABASE_URL=postgres://${NEW_USER}:${NEW_PASSWORD}@localhost:5432/${NEW_DB_NAME}
         --env HASURA_GRAPHQL_ADMIN_SECRET=secret
         --name hasura_test
         --network="host"
