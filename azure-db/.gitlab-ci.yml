@@ -38,7 +38,6 @@ Test azure-db 2:
   image: docker:18
   variables:
     # for PG service
-    # POSTGRES_DB: custom_db
     POSTGRES_USER: custom_user
     POSTGRES_PASSWORD: custom_pass
     # For azure-db scripts
@@ -49,22 +48,10 @@ Test azure-db 2:
     DROP_DATABASE: test_db_${CI_JOB_ID}
   script:
     - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
-    # NOTE(douglasduteil): manually create an `azure_pg_admin` role
-    # As `azure-db` is made to run on Azure Database for PostgreSQL, the scripts
-    # inside assume that an `azure_pg_admin` is present.
-    # see https://docs.microsoft.com/en-us/azure/postgresql/howto-create-users
-    # Below we fake Azure like postgres instance on the local service
-    - docker run
-        --env PGHOST=localhost
-        --env PGPASSWORD=${POSTGRES_PASSWORD}
-        --env PGUSER=${POSTGRES_USER}
-        --network="host"
-        --rm
-        ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
-      psql -v ON_ERROR_STOP=1 -c "CREATE ROLE azure_pg_admin SUPERUSER;"
     #
     - echo "create db and user on PG service"
     - docker run
+        --env NEW_DB_EXTENSIONS="pgcrypto"
         --env NEW_DB_NAME=${NEW_DB_NAME}
         --env NEW_PASSWORD=${NEW_PASSWORD}
         --env NEW_USER=${NEW_USER}
@@ -74,14 +61,25 @@ Test azure-db 2:
         --network="host"
         --rm
       ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
-    - echo "test db and user on PG"
-    - psql -c "CREATE TABLE logs (value character varying(255));"
-    - psql -c "INSERT INTO logs set value='hello';"
-    - psql -c "SELECT * from logs;"
-    - echo "destroy db and user on PG service"
-    - drop-db-user
-    - echo "test db and user on PG"
-    - psql -c "CREATE TABLE logs2 (value character varying(255));"
+    #
+    - docker run
+        --detach
+        --env HASURA_GRAPHQL_DATABASE_URL=
+          postgres://${NEW_USER}:${NEW_PASSWORD}@localhost:5432/${NEW_DB_NAME}
+        --env HASURA_GRAPHQL_ADMIN_SECRET=secret
+        --name hasura_test
+        --network="host"
+        --publish 8080:8080
+        --rm
+      hasura/graphql-engine:v1.1.0
+    - docker ps
+    - docker logs hasura_test
+    #
+    - wget -qO- localhost:8080/healthz
+    - wget -qO- localhost:8080/healthz | grep "OK"
+  after_script:
+    - docker logs hasura_test || true
+    - docker stop hasura_test || true
 
 Publish azure-db to Github Registry:
   extends: .base_publish_to_github_stage
