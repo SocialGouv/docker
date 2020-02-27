@@ -49,6 +49,8 @@ Test azure-db 2:
   script:
     - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
     #
+    #
+    #
     - echo "create db and user on PG service"
     - docker run
         --env NEW_DB_EXTENSIONS="pgcrypto"
@@ -61,6 +63,25 @@ Test azure-db 2:
         --network="host"
         --rm
       ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
+    #
+    - docker run
+        --env PGHOST=localhost
+        --env PGPASSWORD=${POSTGRES_PASSWORD}
+        --env PGUSER=${POSTGRES_USER}
+        --network="host"
+        --rm
+      postgres:11.5-alpine
+        psql -lqtA
+    - docker run
+        --env PGHOST=localhost
+        --env PGPASSWORD=${POSTGRES_PASSWORD}
+        --env PGUSER=${POSTGRES_USER}
+        --network="host"
+        --rm
+      postgres:11.5-alpine
+        psql ${NEW_DB_NAME} -qtA -c '\du'
+    #
+    # Test against Hasura
     #
     - docker run
         --detach
@@ -84,6 +105,28 @@ Test azure-db 2:
     #
     - wget -qO- localhost:8080/healthz
     - wget -qO- localhost:8080/healthz | grep "OK"
+    #
+    # Drop test
+    #
+    - echo "drop db and user on PG service"
+    - docker run
+        --env DROP_DATABASE=${NEW_DB_NAME}
+        --env DROP_USER=${NEW_USER}
+        --env PGHOST=localhost
+        --env PGPASSWORD=${POSTGRES_PASSWORD}
+        --env PGUSER=${POSTGRES_USER}
+        --network="host"
+        --rm
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} drop-db-user
+    #
+    - docker run
+        --env PGHOST=localhost
+        --env PGPASSWORD=${POSTGRES_PASSWORD}
+        --env PGUSER=${POSTGRES_USER}
+        --network="host"
+        --rm
+      postgres:11.5-alpine
+        psql -lqtA
   after_script:
     - docker logs hasura_test || true
     - docker stop hasura_test || true
