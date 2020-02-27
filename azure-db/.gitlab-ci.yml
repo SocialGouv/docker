@@ -106,6 +106,8 @@ Test azure-db 2:
     - wget -qO- localhost:8080/healthz
     - wget -qO- localhost:8080/healthz | grep "OK"
     #
+    - docker stop hasura_test
+    #
     # Drop test
     #
     - echo "drop db and user on PG service"
