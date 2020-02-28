@@ -29,13 +29,13 @@ variables:
   GIT_STRATEGY: fetch
 
 .register_image_stage: &register_image_stage
-  image: docker:18
+  image: docker:19
   variables:
     DOCKER_HOST: tcp://localhost:2375
   only:
     - master
   services:
-    - docker:18-dind
+    - docker:19-dind
   before_script:
     - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
 
@@ -59,9 +59,9 @@ Release:
   stage: "Publish"
   only:
     - tags
-  image: docker:18
+  image: docker:19
   services:
-    - docker:18-dind
+    - docker:19-dind
   script:
     - echo "${GITHUB_REGISTRY_TOKEN}" | docker login docker.pkg.github.com -u SocialGroovyBot --password-stdin
     - export TAG=$(printf "${CI_COMMIT_TAG}" | sed "s/^v//")

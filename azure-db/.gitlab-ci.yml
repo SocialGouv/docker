@@ -33,12 +33,12 @@ Test azure-db 2 2:
   # In cases when the postgres is not accessible it's safer to retry than waiting
   retry: 2
   services:
-    - docker:18-dind
+    - docker:19-dind
     - postgres:11.5-alpine
   needs:
     - Lint azure-db
     - Build azure-db
-  image: docker:18
+  image: docker:19
   variables:
     # for PG service
     POSTGRES_USER: custom_user
