@@ -141,7 +141,7 @@ Publish azure-db to Github Registry:
   needs:
     - Lint azure-db
     - Build azure-db
-    - Test azure-db 1
-    - Test azure-db 2
+    - Test azure-db 1 2
+    - Test azure-db 2 2
   variables:
     IMAGE_NAME: socialgouv/docker/azure-db
