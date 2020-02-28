@@ -1,3 +1,17 @@
+# [0.24.0](https://github.com/SocialGouv/docker/compare/v0.23.0...v0.24.0) (2020-02-28)
+
+
+### Bug Fixes
+
+* **infra-ansible-ci:** update infra image deps ([#105](https://github.com/SocialGouv/docker/issues/105)) ([a4fe803](https://github.com/SocialGouv/docker/commit/a4fe803482f289328db7c2b5e3c972e594612dcd))
+
+
+### Features
+
+* **azure-db:** add azure-db container ([#74](https://github.com/SocialGouv/docker/issues/74)) ([9d7082c](https://github.com/SocialGouv/docker/commit/9d7082c59e99f44c545e3003301a91138636b3b9))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.23.0 ([#104](https://github.com/SocialGouv/docker/issues/104)) ([f61eca4](https://github.com/SocialGouv/docker/commit/f61eca427977b18b8f82315998ddcfc0d0eff285))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.23.0 ([#99](https://github.com/SocialGouv/docker/issues/99)) ([c894886](https://github.com/SocialGouv/docker/commit/c8948869ddd4114580380826a41e1eedc05e2fa2))
+
 # [0.23.0](https://github.com/SocialGouv/docker/compare/v0.22.0...v0.23.0) (2020-02-26)
 
 
