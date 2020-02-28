@@ -13,7 +13,7 @@ Build azure-db:
     CONTEXT: azure-db
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
 
-Test azure-db 1:
+Test azure-db 1 2:
   stage: "Test"
   needs:
     - Lint azure-db
@@ -27,8 +27,11 @@ Test azure-db 1:
     - which drop-db-user
     - which backup
 
-Test azure-db 2:
+Test azure-db 2 2:
   stage: "Test"
+  # NOTE(douglasduteil): retry the whole job
+  # In cases when the postgres is not accessible it's safer to retry than waiting
+  retry: 2
   services:
     - docker:18-dind
     - postgres:11.5-alpine
