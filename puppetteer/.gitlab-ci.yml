@@ -1,6 +1,6 @@
 Lint puppetteer:
   stage: "Quality"
-  image: hadolint/hadolint:v1.17.3-debian
+  image: hadolint/hadolint:v1.17.5-debian
   script:
     - hadolint ./puppetteer/Dockerfile
 
