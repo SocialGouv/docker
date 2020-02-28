@@ -18,9 +18,9 @@ Test nginx4spa:
   needs:
     - Lint nginx4spa
     - Build nginx4spa
-  image: docker:18
+  image: docker:19
   services:
-    - docker:18-dind
+    - docker:19-dind
   script:
     - docker run
       --detach
