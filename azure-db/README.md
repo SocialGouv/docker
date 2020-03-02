@@ -19,6 +19,19 @@ Creates a new database and a new user on some Azure Postgres Server
 | NEW_PASSWORD      | new user password                |                                    |
 | NEW_DB_EXTENSIONS | extensions to ad to the database | `pgcrypto`                         |
 
+##### Example
+
+```sh
+docker run --rm \
+  -e PGHOST=server.pg.com \
+  -e PGUSER=xxx \
+  -e PGPASSWORD=xxx \
+  -e NEW_DB_NAME=xxx \
+  -e NEW_USER=xxx \
+  -e NEW_PASSWORD=xxx \
+  registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:0.24.0 create-db-user
+```
+
 #### `drop-db-user`
 
 Drop a database and a user on some Azure Postgres Server
