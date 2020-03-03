@@ -10,7 +10,7 @@ azure-graphrbac==0.61.1
 azure-keyvault==1.0.0a1
 azure-mgmt-authorization==0.60.0
 azure-mgmt-automation==0.1.1
-azure-mgmt-batch==5.0.1
+azure-mgmt-batch==7.0.0
 azure-mgmt-cdn==3.0.0
 azure-mgmt-compute==4.4.0
 azure-mgmt-containerinstance==1.5.0
