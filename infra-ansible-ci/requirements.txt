@@ -12,7 +12,7 @@ azure-mgmt-authorization==0.60.0
 azure-mgmt-automation==0.1.1
 azure-mgmt-batch==7.0.0
 azure-mgmt-cdn==3.0.0
-azure-mgmt-compute==4.4.0
+azure-mgmt-compute==11.0.0
 azure-mgmt-containerinstance==1.5.0
 azure-mgmt-containerregistry==2.8.0
 azure-mgmt-containerservice==4.4.0
