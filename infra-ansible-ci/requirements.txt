@@ -4,7 +4,7 @@ ansible-lint==4.2.0
 applicationinsights==0.11.9
 argcomplete==1.11.1
 azure-cli-core==2.0.35
-azure-cli-nspkg==3.0.2
+azure-cli-nspkg==3.0.4
 azure-common==1.1.11
 azure-graphrbac==0.40.0
 azure-keyvault==1.0.0a1
