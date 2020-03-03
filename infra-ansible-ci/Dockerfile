@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:3.8
 
 # install dependencies (gettext-base to install envsubst)
 RUN set -ex \
@@ -22,9 +22,10 @@ RUN set -ex \
   && mv terraform /usr/bin/ \
   && terraform --version
 
-# install ansible & linter
-RUN pip install 'ansible[azure]'==2.8.1 ansible-lint==4.1.0 yamllint==1.16.0 yq==2.9.2
+COPY requirements.txt /requirements.txt
 
+# install ansible & linter
+RUN pip install -r /requirements.txt
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # install azure CLI
@@ -38,6 +39,6 @@ RUN set -ex \
   \
   && apt-get update \
   \
-  && apt-get install -y azure-cli=2.0.76-1~stretch --no-install-recommends \
+  && apt-get install -y azure-cli=2.1.0-1~stretch --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
