@@ -19,7 +19,6 @@ Test infra-ansible-ci:
     - Lint infra-ansible-ci
     - Build infra-ansible-ci
   image: "${CI_REGISTRY_IMAGE}/infra-ansible-ci:${CI_COMMIT_SHA}"
-  environment: feature-dev
   script:
     - ansible --version
     - terraform --version
