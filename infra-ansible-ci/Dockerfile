@@ -1,5 +1,7 @@
 FROM python:3.8
 
+ENV TERRAFORM_VERSION="0.12.21"
+
 # install dependencies (gettext-base to install envsubst)
 RUN set -ex \
   \
@@ -16,10 +18,11 @@ RUN set -ex \
   && rm -rf /var/lib/apt/lists/*  \
   \
   # install terraform
-  && curl https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_386.zip -o terraform.zip \
+  && curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform.zip \
   && unzip terraform.zip \
   && rm -rf terraform.zip \
   && mv terraform /usr/bin/ \
+  # test terraform install
   && terraform --version
 
 COPY requirements.txt /requirements.txt
