@@ -14,9 +14,9 @@
     },
     {
       "paths": ["infra-ansible-ci/requirements.txt"],
-      "major": {
-        "groupName": "infra-ansible-ci : all major dependencies",
-        "groupSlug": "infra-ansible-ci-all-major"
+      "minor": {
+        "groupName": "infra-ansible-ci : all non-major dependencies",
+        "groupSlug": "infra-ansible-ci-all-minor-patch"
       }
     }
   ]
