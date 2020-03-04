@@ -27,18 +27,3 @@ COPY requirements.txt /requirements.txt
 # install ansible & linter
 RUN pip install -r /requirements.txt
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-# install azure CLI
-RUN set -ex \
-  \
-  && curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
-    gpg --dearmor | \
-    tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null \
-  && echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main" | \
-    tee /etc/apt/sources.list.d/azure-cli.list \
-  \
-  && apt-get update \
-  \
-  && apt-get install -y azure-cli=2.1.0-1~stretch --no-install-recommends \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*

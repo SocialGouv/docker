@@ -24,6 +24,7 @@ Test infra-ansible-ci:
     - ansible --version
     - terraform --version
     - ansible-inventory --graph
+    - az --version
 
 Publish infra-ansible-ci to Github Registry:
   extends: .base_publish_to_github_stage
