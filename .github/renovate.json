@@ -14,7 +14,8 @@
     },
     {
       "paths": ["infra-ansible-ci/requirements.txt"],
-      "groupName": "infra-ansible-ci requirements"
+      "groupName": "infra-ansible-ci requirements",
+      "extends": [":automergeDisabled"]
     }
   ]
 }
