@@ -15,11 +15,7 @@
     {
       "paths": ["infra-ansible-ci/requirements.txt"],
       "groupName": "infra-ansible-ci requirements",
-      "extends": [
-        ":automergeDisabled",
-        ":semanticCommitType(feat)"
-      ],
-      "semanticCommitType": "feat"
+      "extends": [":automergeDisabled"]
     }
   ]
 }
