@@ -1,3 +1,19 @@
+# [0.25.0](https://github.com/SocialGouv/docker/compare/v0.24.0...v0.25.0) (2020-03-06)
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.24.0 ([#106](https://github.com/SocialGouv/docker/issues/106)) ([0194c5a](https://github.com/SocialGouv/docker/commit/0194c5a1de0eea1759af2fbcb5cd5c78597e1100))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.24.0 ([#107](https://github.com/SocialGouv/docker/issues/107)) ([33d698d](https://github.com/SocialGouv/docker/commit/33d698ddc14caf1ec2eb579d275adeb6db52313d))
+
+
+### Reverts
+
+* Revert "Revert "chore(renovate): infra-ansible-ci requirements changes are features"" ([534da7c](https://github.com/SocialGouv/docker/commit/534da7c0980afe77008b930bc1469540ef80107f))
+* Revert "chore(renovate): infra-ansible-ci requirements changes are features" ([c37e107](https://github.com/SocialGouv/docker/commit/c37e10753857ee1e3f4bf093957167359316e518))
+* **infra-ansible-ci:** humanfriendly to 4.7 ([edb12a6](https://github.com/SocialGouv/docker/commit/edb12a67dcc8a6669bcb79bde00c49f67243ce60))
+* Revert "Update renovate.json" ([b93def0](https://github.com/SocialGouv/docker/commit/b93def03d78cf699eda355ab424fd92642d944f5))
+
 # [0.24.0](https://github.com/SocialGouv/docker/compare/v0.23.0...v0.24.0) (2020-02-28)
 
 
