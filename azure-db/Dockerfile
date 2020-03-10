@@ -1,6 +1,6 @@
 ARG PG_IMAGE=postgres:11-alpine
 
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.26.0 AS kubectl-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.27.0 AS kubectl-image
 
 # hadolint ignore=DL3006
 FROM ${PG_IMAGE}
