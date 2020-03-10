@@ -28,6 +28,7 @@ Test azure-db 1 3:
     - which create-db-user
     - which drop-db-user
     - which backup
+    - which export_from_k8s_secret
     #
     - kubectl version
     - kubectl cluster-info
