@@ -1,3 +1,15 @@
+# [0.28.0](https://github.com/SocialGouv/docker/compare/v0.27.0...v0.28.0) (2020-03-10)
+
+
+### Bug Fixes
+
+* **azure-db:** handle special chars ([#149](https://github.com/SocialGouv/docker/issues/149)) ([da1d8a6](https://github.com/SocialGouv/docker/commit/da1d8a6a5d78886c2fe0ec0f21c1dfa79e80e450))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.27.0 ([#147](https://github.com/SocialGouv/docker/issues/147)) ([625357e](https://github.com/SocialGouv/docker/commit/625357e021479a245882f90684f8c689c9379b54))
+
 # [0.27.0](https://github.com/SocialGouv/docker/compare/v0.26.0...v0.27.0) (2020-03-10)
 
 
