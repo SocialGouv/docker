@@ -1,3 +1,16 @@
+# [0.27.0](https://github.com/SocialGouv/docker/compare/v0.26.0...v0.27.0) (2020-03-10)
+
+
+### Bug Fixes
+
+* **azure-db:** make export_from_k8s_secret executable ([#145](https://github.com/SocialGouv/docker/issues/145)) ([2caf562](https://github.com/SocialGouv/docker/commit/2caf562fceac0224f7083adf28b216964f9dd0e6))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.26.0 ([#143](https://github.com/SocialGouv/docker/issues/143)) ([9256365](https://github.com/SocialGouv/docker/commit/92563650e651c98a8f650a6a9b64196da8fced55))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.26.0 ([#144](https://github.com/SocialGouv/docker/issues/144)) ([5c9b8e0](https://github.com/SocialGouv/docker/commit/5c9b8e088bdad46d662688b8ff8aca3c5abe3cbf))
+
 # [0.26.0](https://github.com/SocialGouv/docker/compare/v0.25.0...v0.26.0) (2020-03-09)
 
 
