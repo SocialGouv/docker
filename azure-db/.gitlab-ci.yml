@@ -40,7 +40,7 @@ Test azure-db 2 3:
   retry: 2
   services:
     - docker:19-dind
-    - postgres:11.5-alpine
+    - postgres:12.2-alpine
   needs:
     - Lint azure-db
     - Build azure-db
