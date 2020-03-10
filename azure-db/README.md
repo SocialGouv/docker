@@ -60,6 +60,21 @@ Backup a database and store it to some Azure blob
 | STORAGE_ACCOUNT_KEY  | Azure storage account key    |                                    |
 | STORAGE_CONTAINER    | Azure storage container name | `backups-app`                      |
 
+#### `export_from_k8s_secret`
+
+Convert json k8s secret to bash exports
+
+```bash
+# Use case
+$ kubectl get secret my-secret -n my-ns -o json | export_from_k8s_secret
+export XXX="value"
+
+$ cat <<EOF | export_from_k8s_secret                                     
+{ "data": { "FOO": "Zm9vIHZhbHVl" } }
+EOF
+export FOO="foo value"
+```  
+
 ## See Also
 
 - https://docs.microsoft.com/en-us/cli/azure/postgres
