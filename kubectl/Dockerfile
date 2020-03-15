@@ -1,6 +1,6 @@
 FROM alpine:3.11
 
-ENV K8S_LATEST_VERSION="v1.17.3"
+ENV K8S_LATEST_VERSION="v1.17.4"
 ENV HOME=/home/kubectl
 
 ## Install envsubst & coreutils
