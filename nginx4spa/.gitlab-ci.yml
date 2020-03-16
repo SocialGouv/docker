@@ -22,8 +22,7 @@ Test nginx4spa:
   services:
     - docker:19-dind
   script:
-    - apk add --no-cache git
-    - git clone -b 'v0.4.0' --single-branch --depth 1 https://github.com/sstephenson/bats /bin/bats
+    - apk add --no-cache bats git
     - git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/ztombol/bats-support /usr/lib/bats-support
     - git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/ztombol/bats-assert /usr/lib/bats-assert
     #
