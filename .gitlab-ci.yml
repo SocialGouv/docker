@@ -17,7 +17,7 @@ include:
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
   - /pg-cleaner/.gitlab-ci.yml
-  - /puppetteer/.gitlab-ci.yml
+  - /puppeteer/.gitlab-ci.yml
   - /wait-for-postgres/.gitlab-ci.yml
 
 #

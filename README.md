@@ -42,7 +42,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 | **k8s-object-cleaner** | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-object-cleaner:0.28.0` | [![README](https://img.shields.io/badge/README--green.svg)](./k8s-object-cleaner/README.md) |
 | **kubectl**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.28.0`            | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)            |
 | **nginx4spa**          | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:0.28.0`          | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)          |
-| **puppetteer**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppetteer:0.28.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./puppetteer/README.md)         |
+| **puppeteer**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:0.28.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)         |
 | **wait_for_postgres**  | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait_for_postgres:0.28.0`  | [![README](https://img.shields.io/badge/README--green.svg)](./wait_for_postgres/README.md)  |
 
 <br>
