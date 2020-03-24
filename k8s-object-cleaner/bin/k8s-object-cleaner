@@ -24,7 +24,7 @@ const objectTypes = [
   "statefulset",
   "deployment",
   "job",
-  "cronjob"
+  "cronjob",
 ];
 
 const listK8sCmd = `kubectl get ${objectTypes.join(
@@ -51,12 +51,12 @@ function getk8sObject() {
   const k8ObjectList = execSync(listK8sCmd).toString();
   return k8ObjectList
     .split("\n")
-    .map(line => {
+    .map((line) => {
       const [id, branchRaw, kind = ""] = line.split(/\s+/g);
       return {
         id,
         branch: branchRaw === "<none>" ? undefined : branchRaw,
-        kind: kind.toLowerCase()
+        kind: kind.toLowerCase(),
       };
     })
     .filter(({ id }) => Boolean(id));
@@ -66,8 +66,8 @@ function getGithubBranches() {
   const remoteBranches = execSync(listGithubBranchCmd).toString();
   return remoteBranches
     .split("\n")
-    .filter(branch => branch !== "master")
-    .map(branch => ciCommitRefSlug(branch.replace("refs/heads/", "")))
+    .filter((branch) => branch !== "master")
+    .map((branch) => ciCommitRefSlug(branch.replace("refs/heads/", "")))
     .filter(Boolean);
 }
 
@@ -79,9 +79,7 @@ function ciCommitRefSlug(str) {
 }
 
 function hashBranchName(branchName) {
-  return execSync(getHashBranchCmd(branchName))
-    .toString()
-    .trim();
+  return execSync(getHashBranchCmd(branchName)).toString().trim();
 }
 
 function main() {
@@ -95,7 +93,9 @@ function main() {
     if (/^v\d+-\d+-\d+$/.test(branch) || /-v\d+-\d+-\d+(-|$)/.test(id)) {
       return false;
     }
-    return !hashedBranchName.some(hash => new RegExp(`-${hash}(-|$)`).test(id));
+    return !hashedBranchName.some((hash) =>
+      new RegExp(`-${hash}(-|$)`).test(id)
+    );
   });
 
   /**
