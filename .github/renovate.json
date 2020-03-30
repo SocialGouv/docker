@@ -5,5 +5,21 @@
   ],
   "gitlabci": {
     "fileMatch": ["\\.gitlab-ci.yml$"]
-  }
+  },
+  "packageRules": [
+    {
+      "depTypeList": ["final", "stage"],
+      "updateTypes": ["major", "minor"],
+      "semanticCommitType": "feat"
+    },
+    {
+      "paths": ["infra-ansible-ci/requirements.txt"],
+      "groupName": "infra-ansible-ci requirements",
+      "extends": [
+        ":automergeDisabled",
+        ":semanticCommitType(feat)"
+      ],
+      "semanticCommitType": "feat"
+    }
+  ]
 }

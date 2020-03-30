@@ -1,0 +1,68 @@
+Lint k8s-object-cleaner 1 2:
+  stage: "Quality"
+  image: hadolint/hadolint:latest-debian
+  script:
+    - hadolint ./k8s-object-cleaner/Dockerfile
+
+Lint k8s-object-cleaner 2 2:
+  stage: "Quality"
+  image: node:13-alpine
+  script:
+    - npx prettier -c ./k8s-object-cleaner/bin/*
+
+Build k8s-object-cleaner:
+  needs:
+    - Lint k8s-object-cleaner 1 2
+    - Lint k8s-object-cleaner 2 2
+  stage: "Build"
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: k8s-object-cleaner
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-object-cleaner
+
+Test k8s-object-cleaner:
+  stage: "Test"
+  needs:
+    - Lint k8s-object-cleaner 1 2
+    - Lint k8s-object-cleaner 2 2
+    - Build k8s-object-cleaner
+
+  image: "${CI_REGISTRY_IMAGE}/k8s-object-cleaner:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  variables:
+    K8S_NAMESPACE: k8s-object-cleaner-test-${CI_JOB_ID}
+    GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
+    RANCHER_PROJECT_ID: c-kk8xm:p-2jgrf
+    BRANCH_HASH: 7
+  script:
+    #
+    - git --version
+    - kubectl version
+    #
+    - export HASH_NAME=$( printf "${CI_COMMIT_REF_SLUG}" | sha1sum | cut -c1-${HASH_SIZE} )
+    #
+    - kubectl delete namespaces ${K8S_NAMESPACE} || true
+    - kubectl create namespace ${K8S_NAMESPACE}
+    - kubectl annotate namespace ${K8S_NAMESPACE} field.cattle.io/projectId=${RANCHER_PROJECT_ID}
+    #
+    - kubectl config set-context --current --namespace=${K8S_NAMESPACE}
+    #
+    # Create a job not link to a branch
+    - kubectl apply -f https://k8s.io/examples/controllers/job.yaml
+    #
+    - k8s-object-cleaner
+    #
+    # assert that there is no remaining job
+    - kubectl get jobs/pi && exit 1 || exit 0
+  after_script:
+    - kubectl delete namespaces ${K8S_NAMESPACE}
+
+Publish k8s-object-cleaner to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint k8s-object-cleaner 1 2
+    - Lint k8s-object-cleaner 2 2
+    - Build k8s-object-cleaner
+    - Test k8s-object-cleaner
+  variables:
+    IMAGE_NAME: socialgouv/docker/k8s-object-cleaner

@@ -1,0 +1,32 @@
+Lint puppeteer:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.5-debian
+  script:
+    - hadolint ./puppeteer/Dockerfile
+
+Build puppeteer:
+  stage: "Build"
+  needs:
+    - Lint puppeteer
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: puppeteer
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/puppeteer
+
+Test puppeteer:
+  stage: "Test"
+  needs:
+    - Lint puppeteer
+    - Build puppeteer
+  image: "${CI_REGISTRY_IMAGE}/puppeteer:${CI_COMMIT_SHA}"
+  script:
+    - chromium-browser --version
+    - node --version
+    - yarn --version
+
+Publish puppeteer to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Build puppeteer
+  variables:
+    IMAGE_NAME: socialgouv/docker/puppeteer

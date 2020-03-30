@@ -1,6 +1,6 @@
 Lint kubectl:
   stage: "Quality"
-  image: hadolint/hadolint:v1.17.2-debian
+  image: hadolint/hadolint:v1.17.5-debian
   script:
     - hadolint ./kubectl/Dockerfile
 
@@ -30,9 +30,9 @@ Test kubectl 2 2:
   needs:
     - Lint kubectl
     - Build kubectl
-  image: docker:18
+  image: docker:19
   services:
-    - docker:18-dind
+    - docker:19-dind
   script:
     - docker run --rm ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA} version --client
     #

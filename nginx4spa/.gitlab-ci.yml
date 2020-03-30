@@ -1,6 +1,6 @@
 Lint nginx4spa:
   stage: "Quality"
-  image: hadolint/hadolint:v1.17.2-debian
+  image: hadolint/hadolint:v1.17.5-debian
   script:
     - hadolint ./nginx4spa/Dockerfile
 
@@ -18,9 +18,9 @@ Test nginx4spa:
   needs:
     - Lint nginx4spa
     - Build nginx4spa
-  image: docker:18
+  image: docker:19
   services:
-    - docker:18-dind
+    - docker:19-dind
   script:
     - docker run
       --detach

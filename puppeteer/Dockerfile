@@ -1,15 +1,15 @@
-FROM alpine:3.10.3
+FROM alpine:3.11.3
 
 # Installs latest Chromium (77) package.
 RUN apk add --no-cache --update \
-  chromium=~77 \
+  chromium=~79 \
   nss=~3 \
   freetype=~2 \
   freetype-dev=~2 \
   harfbuzz=~2 \
-  ca-certificates=~20190108 \
+  ca-certificates=~20191127 \
   ttf-freefont=~20120503 \
-  nodejs=~10 \
+  nodejs=~12 \
   yarn=~1
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.

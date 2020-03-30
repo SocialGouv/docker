@@ -25,7 +25,7 @@ $ sh -x ./bin/k8s-ns-killer my-feature-
 
 ## Usage (local mode)
 
-### Gitlab 
+### Gitlab
 
 ```yaml
 Delete useless k8s namespaces:
@@ -43,7 +43,7 @@ Delete useless k8s namespaces:
     - master
 ```
 
-### Docker 
+### Docker
 
 ```sh
 $ docker run --rm k8s-ns-killer:<version> <namespace filter>
@@ -53,7 +53,7 @@ $ docker run --rm k8s-ns-killer:<version> foo-feature-
 Will check all the namespace that match (grep) `foo-feature-`
 ```
 
-## Requirement 
+## Requirement
 
 Your namespaces must have an `git/branch` annotation with the branch name as value.
 
@@ -74,7 +74,7 @@ Create Namespace:
 ## Launch
 
 ```sh
-# ensure to have `refs/remotes/origin`s 
+# ensure to have `refs/remotes/origin`s
 $ git fetch origin
 $ ./bin/k8s-ns-killer foo-feature-
 # Or in debug mode

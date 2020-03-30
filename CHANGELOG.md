@@ -1,3 +1,122 @@
+# [0.29.0](https://github.com/SocialGouv/docker/compare/v0.28.0...v0.29.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **kubectl:** update kubectl tag to v1.17.4 ([#153](https://github.com/SocialGouv/docker/issues/153)) ([452717a](https://github.com/SocialGouv/docker/commit/452717ab52ebe42a51dbac52c09cd1d07eed52ea))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.28.0 ([#146](https://github.com/SocialGouv/docker/issues/146)) ([b86108d](https://github.com/SocialGouv/docker/commit/b86108d06e3cd1fcfcb6348b07cc2c6ba3c81b9d))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.28.0 ([#151](https://github.com/SocialGouv/docker/issues/151)) ([3a4ee96](https://github.com/SocialGouv/docker/commit/3a4ee96e35c70e9e231527fc781ef2d01435aa79))
+
+# [0.28.0](https://github.com/SocialGouv/docker/compare/v0.27.0...v0.28.0) (2020-03-10)
+
+
+### Bug Fixes
+
+* **azure-db:** handle special chars ([#149](https://github.com/SocialGouv/docker/issues/149)) ([da1d8a6](https://github.com/SocialGouv/docker/commit/da1d8a6a5d78886c2fe0ec0f21c1dfa79e80e450))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.27.0 ([#147](https://github.com/SocialGouv/docker/issues/147)) ([625357e](https://github.com/SocialGouv/docker/commit/625357e021479a245882f90684f8c689c9379b54))
+
+# [0.27.0](https://github.com/SocialGouv/docker/compare/v0.26.0...v0.27.0) (2020-03-10)
+
+
+### Bug Fixes
+
+* **azure-db:** make export_from_k8s_secret executable ([#145](https://github.com/SocialGouv/docker/issues/145)) ([2caf562](https://github.com/SocialGouv/docker/commit/2caf562fceac0224f7083adf28b216964f9dd0e6))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.26.0 ([#143](https://github.com/SocialGouv/docker/issues/143)) ([9256365](https://github.com/SocialGouv/docker/commit/92563650e651c98a8f650a6a9b64196da8fced55))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.26.0 ([#144](https://github.com/SocialGouv/docker/issues/144)) ([5c9b8e0](https://github.com/SocialGouv/docker/commit/5c9b8e088bdad46d662688b8ff8aca3c5abe3cbf))
+
+# [0.26.0](https://github.com/SocialGouv/docker/compare/v0.25.0...v0.26.0) (2020-03-09)
+
+
+### Features
+
+* **azure-db:** add export_from_k8s_secret function ([#141](https://github.com/SocialGouv/docker/issues/141)) ([7866079](https://github.com/SocialGouv/docker/commit/7866079de4f03b963e6b5420a165b957988abd1f))
+* **azure-db:** kubctl and jq to the azure-db image ([#142](https://github.com/SocialGouv/docker/issues/142)) ([a9c074b](https://github.com/SocialGouv/docker/commit/a9c074b1ffd44754e356766bdb1e7b5f1d0a42ea))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.25.0 ([#138](https://github.com/SocialGouv/docker/issues/138)) ([ceb8bec](https://github.com/SocialGouv/docker/commit/ceb8bece8ee479fd11d2d4259748e69a3b0d0153))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.25.0 ([#139](https://github.com/SocialGouv/docker/issues/139)) ([079602b](https://github.com/SocialGouv/docker/commit/079602b8aff939d404d93c7d85590f8ceafa572a))
+
+# [0.25.0](https://github.com/SocialGouv/docker/compare/v0.24.0...v0.25.0) (2020-03-06)
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.24.0 ([#106](https://github.com/SocialGouv/docker/issues/106)) ([0194c5a](https://github.com/SocialGouv/docker/commit/0194c5a1de0eea1759af2fbcb5cd5c78597e1100))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.24.0 ([#107](https://github.com/SocialGouv/docker/issues/107)) ([33d698d](https://github.com/SocialGouv/docker/commit/33d698ddc14caf1ec2eb579d275adeb6db52313d))
+
+
+### Reverts
+
+* Revert "Revert "chore(renovate): infra-ansible-ci requirements changes are features"" ([534da7c](https://github.com/SocialGouv/docker/commit/534da7c0980afe77008b930bc1469540ef80107f))
+* Revert "chore(renovate): infra-ansible-ci requirements changes are features" ([c37e107](https://github.com/SocialGouv/docker/commit/c37e10753857ee1e3f4bf093957167359316e518))
+* **infra-ansible-ci:** humanfriendly to 4.7 ([edb12a6](https://github.com/SocialGouv/docker/commit/edb12a67dcc8a6669bcb79bde00c49f67243ce60))
+* Revert "Update renovate.json" ([b93def0](https://github.com/SocialGouv/docker/commit/b93def03d78cf699eda355ab424fd92642d944f5))
+
+# [0.24.0](https://github.com/SocialGouv/docker/compare/v0.23.0...v0.24.0) (2020-02-28)
+
+
+### Bug Fixes
+
+* **infra-ansible-ci:** update infra image deps ([#105](https://github.com/SocialGouv/docker/issues/105)) ([a4fe803](https://github.com/SocialGouv/docker/commit/a4fe803482f289328db7c2b5e3c972e594612dcd))
+
+
+### Features
+
+* **azure-db:** add azure-db container ([#74](https://github.com/SocialGouv/docker/issues/74)) ([9d7082c](https://github.com/SocialGouv/docker/commit/9d7082c59e99f44c545e3003301a91138636b3b9))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.23.0 ([#104](https://github.com/SocialGouv/docker/issues/104)) ([f61eca4](https://github.com/SocialGouv/docker/commit/f61eca427977b18b8f82315998ddcfc0d0eff285))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.23.0 ([#99](https://github.com/SocialGouv/docker/issues/99)) ([c894886](https://github.com/SocialGouv/docker/commit/c8948869ddd4114580380826a41e1eedc05e2fa2))
+
+# [0.23.0](https://github.com/SocialGouv/docker/compare/v0.22.0...v0.23.0) (2020-02-26)
+
+
+### Bug Fixes
+
+* **kubectl:** update kubectl to 0.17.3 ([#101](https://github.com/SocialGouv/docker/issues/101)) ([71d5510](https://github.com/SocialGouv/docker/commit/71d5510f5161294e2f2c73780d43a4255515b77a))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.22.0 ([#87](https://github.com/SocialGouv/docker/issues/87)) ([a1f932b](https://github.com/SocialGouv/docker/commit/a1f932b0f3f5929a79402e01268771e678d5273c))
+
+# [0.22.0](https://github.com/SocialGouv/docker/compare/v0.21.0...v0.22.0) (2020-02-12)
+
+
+### Features
+
+* **deps:** update alpine docker tag to v3.11.3 ([#93](https://github.com/SocialGouv/docker/issues/93)) ([91c129e](https://github.com/SocialGouv/docker/commit/91c129ebc13a2ee0e1338e424ded3a94517b877c))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v0.21.0 ([#88](https://github.com/SocialGouv/docker/issues/88)) ([4455261](https://github.com/SocialGouv/docker/commit/4455261241fac5e8a071364d67bffce607495d20))
+* **pg-cleaner:** add pg-cleaner image to delete postgres database not linked to branch ([#96](https://github.com/SocialGouv/docker/issues/96)) ([cff2716](https://github.com/SocialGouv/docker/commit/cff2716df9dbee45a8b0033417944848ff339b25))
+
+# [0.21.0](https://github.com/SocialGouv/docker/compare/v0.20.0...v0.21.0) (2019-12-31)
+
+
+### Features
+
+* **deps:** update alpine docker tag ([015cea2](https://github.com/SocialGouv/docker/commit/015cea2d2ba070330b3bf60c16458e8b85292ee4))
+
+# [0.20.0](https://github.com/SocialGouv/docker/compare/v0.19.0...v0.20.0) (2019-12-20)
+
+
+### Bug Fixes
+
+* **k8s-object-cleaner:** use /usr/bin/env shebang ([cec7151](https://github.com/SocialGouv/docker/commit/cec7151961539fdc874511ec208db25d00aa3e38))
+* **k8s-object-cleaner:** use sha1sum instead of shasum ([8db9485](https://github.com/SocialGouv/docker/commit/8db94852c4b6ad5a2d50c06f2752c977d3aff9f6))
+
+
+### Features
+
+* **k8s-object-cleaner:** add a k8s object cleaner ([#64](https://github.com/SocialGouv/docker/issues/64)) ([5be8a41](https://github.com/SocialGouv/docker/commit/5be8a410dc38a6935aef4b4e29f0872663221f06))
+
 # [0.19.0](https://github.com/SocialGouv/docker/compare/v0.18.0...v0.19.0) (2019-12-14)
 
 
