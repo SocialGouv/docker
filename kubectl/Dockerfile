@@ -25,7 +25,12 @@ RUN set -ex \
   \
   && chmod +x /usr/local/bin/kubectl \
   \
+  # Create non-root user (with a randomly chosen UID/GUI).
+  && adduser kubectl -Du 2342 -h /home/kubectl \
+  \
   # Basic check it works.
   && kubectl version --client
+
+USER kubectl
 
 ENTRYPOINT ["kubectl"]
