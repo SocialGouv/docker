@@ -5,6 +5,7 @@ FROM alpine/helm:2.14.3
 ## Install envsubst & coreutils
 RUN apk add --update --no-cache \
   bash=~5 \
+  bats=~1 \
   coreutils=~8 \
   curl=~7 \
   gettext-dev=~0 \
@@ -26,7 +27,16 @@ RUN set -x && \
     # Create non-root user (with a randomly chosen UID/GUI).
     \
     # Basic check it works.
-    kubectl version --client
+    kubectl version --client; \
+    \
+    #
+    # Install extra bats dependencies
+    \
+    git clone -b 'v0.3.0' --single-branch --depth 1 \
+      https://github.com/ztombol/bats-support /usr/lib/bats-support; \
+    git clone -b 'v0.3.0' --single-branch --depth 1 \
+      https://github.com/ztombol/bats-assert /usr/lib/bats-assert;
+
 
 USER kubectl
 

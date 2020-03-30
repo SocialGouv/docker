@@ -21,6 +21,7 @@ Test helm:
   image: "${CI_REGISTRY_IMAGE}/helm:${CI_COMMIT_SHA}"
   environment: feature-dev
   script:
+    - bats --version
     - helm version
     - kubectl version
     #
