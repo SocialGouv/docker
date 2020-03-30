@@ -2,7 +2,28 @@
 
 > Remove K8S namespaces that have a `git/branch` annotation and an existing branch on the git repository.
 
-## Usage
+The killer has 2 modes.
+- _"global"_ :gun: to remove any namespace in the cluster with `git/branch` and `git/remote` annotations
+- _"local"_ :gun: to remove grep matching namespaces with a `git/branch` annotation
+
+## Usage (global mode)
+
+```sh
+$ k8s-ns-killer
+# And tones of namespaces fall...
+```
+
+By default the script will target `git/branch` and `git/remote` annotations on namespaces.  
+You can change it by setting `BRANCH_ANNOTATION`.
+
+```sh
+$ export BRANCH_ANNOTATION="my/git/branch"
+$ export REMOTE_ANNOTATION="my/git/remote"
+#
+$ sh -x ./bin/k8s-ns-killer my-feature-
+```
+
+## Usage (local mode)
 
 ### Gitlab
 
@@ -46,6 +67,7 @@ Create Namespace:
 
     - kubectl create namespace ${K8S_NAMESPACE}
     - kubectl annotate namespace ${K8S_NAMESPACE} field.cattle.io/projectId=${RANCHER_PROJECT_ID}
+    - kubectl annotate namespace ${K8S_NAMESPACE} git/remote=${REMOTE_URL}
     - kubectl annotate namespace ${K8S_NAMESPACE} git/branch=${CI_COMMIT_REF_NAME}
 ```
 
@@ -67,4 +89,14 @@ $ export BRANCH_ANNOTATION="my/git/branch"
 $ sh -x ./bin/k8s-ns-killer my-feature-
 ```
 
-## With Docker image
+By default the script will use `git remote get-url origin` as repository.  
+You can change it by setting `REPOSITORY`.
+
+```sh
+$ export REPOSITORY="git@github.com:SocialGouv/docker.git"
+$ sh -x ./bin/k8s-ns-killer my-feature-
+```
+
+
+## With Docker image 
+

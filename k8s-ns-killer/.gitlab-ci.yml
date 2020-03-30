@@ -1,12 +1,20 @@
-Lint k8s-ns-killer:
+Lint k8s-ns-killer 1 2:
   stage: "Quality"
   image: hadolint/hadolint:latest-debian
   script:
     - hadolint ./k8s-ns-killer/Dockerfile
 
+
+Lint k8s-ns-killer 2 2:
+  stage: "Quality"
+  image: koalaman/shellcheck-alpine:v0.7.0
+  script:
+    - shellcheck ./k8s-ns-killer/bin/k8s-ns-killer
+
 Build k8s-ns-killer:
   needs:
-    - Lint k8s-ns-killer
+    - Lint k8s-ns-killer 1 2
+    - Lint k8s-ns-killer 2 2
   stage: "Build"
   extends: .base_register_to_gitlab_stage
   variables:
@@ -16,7 +24,8 @@ Build k8s-ns-killer:
 Test k8s-ns-killer:
   stage: "Test"
   needs:
-    - Lint k8s-ns-killer
+    - Lint k8s-ns-killer 1 2
+    - Lint k8s-ns-killer 2 2
     - Build k8s-ns-killer
   # NOTE(douglasduteil): allow 2 retries (3 runs)
   # The script my actually attend to remove namespaces on parallel runs
@@ -50,7 +59,8 @@ Test k8s-ns-killer:
 Publish k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
-    - Lint k8s-ns-killer
+    - Lint k8s-ns-killer 1 2
+    - Lint k8s-ns-killer 2 2
     - Build k8s-ns-killer
     - Test k8s-ns-killer
   variables:
