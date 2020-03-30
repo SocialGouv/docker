@@ -1,3 +1,40 @@
+# [1.0.0](https://github.com/SocialGouv/docker/compare/v0.29.0...v1.0.0) (2020-03-30)
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/social… ([#159](https://github.com/SocialGouv/docker/issues/159)) ([5de5e3c](https://github.com/SocialGouv/docker/commit/5de5e3c92702075c9da1c4475010cc0bfedc0b22))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm docker tag to v0.29.0 ([#158](https://github.com/SocialGouv/docker/issues/158)) ([f284410](https://github.com/SocialGouv/docker/commit/f284410cfeee27c3391a39274a0197e9da46c4e3))
+* **helm:** add bats bin and libs ([#166](https://github.com/SocialGouv/docker/issues/166)) ([d01f1d8](https://github.com/SocialGouv/docker/commit/d01f1d8727a6627e1e782ac41700b86409e7fe16))
+
+
+* feat(kubectl)!: remove unneeded image bin (#103) ([003916e](https://github.com/SocialGouv/docker/commit/003916e73f442935064273af67c9e5376ae6d9a5)), closes [#103](https://github.com/SocialGouv/docker/issues/103)
+
+
+### Bug Fixes
+
+* **azure-db:** quote db name ([#163](https://github.com/SocialGouv/docker/issues/163)) ([4327008](https://github.com/SocialGouv/docker/commit/4327008586ac4575db64b15811a83fba33e4246a))
+
+
+### Code Refactoring
+
+* **k8s_ns_killer:** allow global killing ([#75](https://github.com/SocialGouv/docker/issues/75)) ([57209bb](https://github.com/SocialGouv/docker/commit/57209bb48a3a840d3d1deef5cc7611f1e8618b18))
+
+
+### BREAKING CHANGES
+
+* **kubectl**: remove unneeded image bin
+    - `sudo` in the image is a bad thing...
+* **k8s_ns_killer:** refactor(k8s_ns_killer): allow global killing if the `git/remote` annotation is set 
+    - running k8s_ns_killer without args will now trigger a global cluster namespace cleanup on namespaces that has a `git/remote` annotation.
+
+    ```sh
+    # Will kill globally
+    $ k8s-ns-killer
+    # Will "locally" kill only namespaces starting with `foo-feature-` 
+    $ k8s-ns-killer foo-feature-
+    ```
+
 # [0.29.0](https://github.com/SocialGouv/docker/compare/v0.28.0...v0.29.0) (2020-03-17)
 
 
