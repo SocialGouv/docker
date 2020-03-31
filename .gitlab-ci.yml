@@ -8,6 +8,7 @@ include:
   #
   - /azure-db/.gitlab-ci.yml
   - /curl/.gitlab-ci.yml
+  - /fluentd-modsecurity/.gitlab-ci.yml
   - /git-deploy/.gitlab-ci.yml
   - /git-tag-release/.gitlab-ci.yml
   - /helm/.gitlab-ci.yml
