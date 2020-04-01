@@ -1,0 +1,32 @@
+Lint fluentd-modsecurity:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.5-debian
+  script:
+    - hadolint ./fluentd-modsecurity/Dockerfile
+
+Build fluentd-modsecurity:
+  stage: "Build"
+  needs:
+    - Lint fluentd-modsecurity
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: fluentd-modsecurity
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/fluentd-modsecurity
+
+Test fluentd-modsecurity:
+  stage: "Test"
+  needs:
+    - Lint fluentd-modsecurity
+    - Build fluentd-modsecurity
+  image: "${CI_REGISTRY_IMAGE}/fluentd-modsecurity:${CI_COMMIT_SHA}"
+  script:
+    - fluentd --version
+    - fluent-gem list
+
+Publish fluentd-modsecurity to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint fluentd-modsecurity
+    - Build fluentd-modsecurity
+  variables:
+    IMAGE_NAME: socialgouv/docker/fluentd-modsecurity
