@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/SocialGouv/docker/compare/v1.0.0...v1.1.0) (2020-04-01)
+
+
+### Features
+
+* **fluentd-modsecurity:** add fluentd-modsecurity docker image ([#162](https://github.com/SocialGouv/docker/issues/162)) ([016d61e](https://github.com/SocialGouv/docker/commit/016d61e5692b8a7bb4ceb4b625891ceee4360ef0))
+
 # [1.0.0](https://github.com/SocialGouv/docker/compare/v0.29.0...v1.0.0) (2020-03-30)
 
 
