@@ -19,11 +19,9 @@ Test fluentd-modsecurity:
     - Lint helm
     - Build helm
   image: "${CI_REGISTRY_IMAGE}/fluentd-modsecurity:${CI_COMMIT_SHA}"
-  environment: feature-dev
   script:
     - fluentd --version
     - fluent-gem list
-
 
 Publish fluentd-modsecurity to Github Registry:
   extends: .base_publish_to_github_stage
