@@ -2,7 +2,8 @@ FROM fluent/fluentd:v1.9.3-debian-1.0
 
 USER root
 
-RUN apt-get update && \
+RUN set -ex && \
+  apt-get update && \
   apt-get install -y --no-install-recommends \
     make=4.2.1-1.2 \
     gcc=4:8.3.0-1 \
