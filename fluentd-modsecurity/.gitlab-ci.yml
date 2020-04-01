@@ -16,8 +16,8 @@ Build fluentd-modsecurity:
 Test fluentd-modsecurity:
   stage: "Test"
   needs:
-    - Lint helm
-    - Build helm
+    - Lint fluentd-modsecurity
+    - Build fluentd-modsecurity
   image: "${CI_REGISTRY_IMAGE}/fluentd-modsecurity:${CI_COMMIT_SHA}"
   script:
     - fluentd --version
