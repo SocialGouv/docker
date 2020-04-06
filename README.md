@@ -31,8 +31,8 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 
 ## Images
 
-| Project                  | Image                                                                                             | Links                                                                                       |
-| ----------------------   | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Project                  | Image                                                                                             | Links                                                                                      |
+| ----------------------   | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------|
 | **azure-db**             | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:1.1.0`            | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)           |
 | **curl**                 | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/curl:1.1.0`                | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)               |
 | **fluentd-modsecurity**  | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/fluentd-modsecurity:1.1.0` | [![README](https://img.shields.io/badge/README--green.svg)](./fluent-modsecurity/README.md) |
@@ -43,6 +43,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 | **k8s-object-cleaner**   | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-object-cleaner:1.1.0`  | [![README](https://img.shields.io/badge/README--green.svg)](./k8s-object-cleaner/README.md) |
 | **kubectl**              | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.1.0`             | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)            |
 | **nginx4spa**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:1.1.0`           | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)          |
+| **nginx-error-pages**    | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx-error-pages:1.1.0`   | [![README](https://img.shields.io/badge/README--green.svg)](./nginx-error-pages/README.md)  |
 | **pg-cleaner**           | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/pg-cleaner:1.1.0`          | [![README](https://img.shields.io/badge/README--green.svg)](./pg-cleaner/README.md)         |
 | **puppeteer**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:1.1.0`           | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)          |
 | **wait_for_postgres**    | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait_for_postgres:1.1.0`   | [![README](https://img.shields.io/badge/README--green.svg)](./wait_for_postgres/README.md)  |

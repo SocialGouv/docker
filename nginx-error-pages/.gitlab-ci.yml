@@ -1,0 +1,41 @@
+Lint nginx-error-pages:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.5-debian
+  script:
+    - hadolint ./nginx-error-pages/Dockerfile
+
+Build nginx-error-pages:
+  stage: "Build"
+  needs:
+    - Lint nginx-error-pages
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: nginx-error-pages
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx-error-pages
+
+Test nginx-error-pages:
+  stage: "Test"
+  needs:
+  - Lint nginx-error-pages
+  - Build nginx-error-pages
+  image: "${CI_REGISTRY_IMAGE}/nginx-error-pages:${CI_COMMIT_SHA}"
+  script:
+  - /bin/sh
+  - |
+    ERROR_PAGES="/www/404.html /www/4xx.html /www/500.html /www/5xx.html"
+    for FILE in $ERROR_PAGES; do
+      if [ -f "$FILE" ]; then
+        echo "$FILE exists"
+      else
+        echo "$FILE does not exist"
+        exit 1
+      fi
+    done
+
+Publish nginx-error-pages to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint nginx-error-pages
+    - Build nginx-error-pages
+  variables:
+    IMAGE_NAME: socialgouv/docker/nginx-error-pages
