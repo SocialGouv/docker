@@ -8,16 +8,16 @@
 
 Creates a new database and a new user on some Azure Postgres Server
 
-| Env               | Desc                             | Example                            |
-| ----------------- | -------------------------------- | ---------------------------------- |
-| PGHOST            | PG server host                   | `host.postgres.database.azure.com` |
-| PGPORT            | PG server port                   | 5432                               |
-| PGUSER            | PG super user                    | `postgres@servername`              |
-| PGPASSWORD        | PG super user password           |                                    |
-| NEW_DB_NAME       | new database name                |                                    |
-| NEW_USER          | new user name                    | `new-username@servername`          |
-| NEW_PASSWORD      | new user password                |                                    |
-| NEW_DB_EXTENSIONS | extensions to ad to the database | `pgcrypto`                         |
+| Env               | Desc                              | Example                            |
+| ----------------- | --------------------------------- | ---------------------------------- |
+| PGHOST            | PG server host                    | `host.postgres.database.azure.com` |
+| PGPORT            | PG server port                    | 5432                               |
+| PGUSER            | PG super user                     | `postgres@servername`              |
+| PGPASSWORD        | PG super user password            |                                    |
+| NEW_DB_NAME       | new database name                 |                                    |
+| NEW_USER          | new user name                     | `new-username@servername`          |
+| NEW_PASSWORD      | new user password                 |                                    |
+| NEW_DB_EXTENSIONS | extensions to add to the database | `pgcrypto`                         |
 
 ##### Example
 
@@ -29,6 +29,8 @@ docker run --rm \
   -e NEW_DB_NAME=xxx \
   -e NEW_USER=xxx \
   -e NEW_PASSWORD=xxx \
+  # optional
+  -e NEW_DB_EXTENSIONS=pgcrypto \
   registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:0.24.0 create-db-user
 ```
 
