@@ -1,6 +1,6 @@
-load '/usr/lib/bats-support/load.bash'
-load '/usr/lib/bats-assert/load.bash'
-load '/usr/lib/bats-file/load.bash'
+#
+
+load test_helper
 
 #
 

@@ -1,14 +1,23 @@
 #
 
+load '/usr/lib/bats-support/load.bash'
+load '/usr/lib/bats-assert/load.bash'
+load '/usr/lib/bats-file/load.bash'
+
 setup() {
-  # export TEST_DEPS_DIR=${TEST_DEPS_DIR:-"/usr/lib"}
+  if [[ "$BATS_TEST_NUMBER" -eq 1 ]]; then
+    setup_all || true
+  fi
 
-  # Load dependencies.
-  load '/usr/lib/bats-support/load.bash'
-  load '/usr/lib/bats-assert/load.bash'
-  load '/usr/lib/bats-file/load.bash'
+  # NODE(douglasduteil): manual bail mode
+  [ ! -f "${BATS_PARENT_TMPNAME}.skip" ] || skip "skip remaining tests"
+}
 
-  # load "${TEST_DEPS_DIR}/bats-support/load.bash"
-  # load "${TEST_DEPS_DIR}/bats-assert/load.bash"
-  # load "${TEST_DEPS_DIR}/bats-file/load.bash"
+teardown() {
+  if [[ "${#BATS_TEST_NAMES[@]}" -eq "$BATS_TEST_NUMBER" ]]; then
+    teardown_all || true
+  fi
+
+  # NODE(douglasduteil): manual bail mode
+  [ -n "$BATS_TEST_COMPLETED" ] || touch "${BATS_PARENT_TMPNAME}.skip"
 }
