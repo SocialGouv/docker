@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/SocialGouv/docker/compare/v1.2.0...v1.3.0) (2020-04-08)
+
+
+### Features
+
+* **bats:** add socialgouv/docker/bats image ([#170](https://github.com/SocialGouv/docker/issues/170)) ([2cdbfb8](https://github.com/SocialGouv/docker/commit/2cdbfb85e4b0253a447fc8e9ba721c9fd10ba8e7))
+
 # [1.2.0](https://github.com/SocialGouv/docker/compare/v1.1.0...v1.2.0) (2020-04-08)
 
 
