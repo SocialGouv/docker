@@ -10,7 +10,7 @@ RUN apk add --update --no-cache \
   curl=~7 \
   gettext-dev=~0 \
   git=~2 \
-  sudo=~1
+  parallel=~20191122
 
 ENV HOME=/config
 
