@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/SocialGouv/docker/compare/v1.1.0...v1.2.0) (2020-04-08)
+
+
+### Features
+
+* **helm:** add parallel ([a580e92](https://github.com/SocialGouv/docker/commit/a580e929e638fd1c3298b669d95b62310d3e50da))
+* **helm:** update parallel to ~20200222 ([8327bfa](https://github.com/SocialGouv/docker/commit/8327bfab7b1ed373bd95056c31aa3fdbe2c8fa0c))
+
 # [1.1.0](https://github.com/SocialGouv/docker/compare/v1.0.0...v1.1.0) (2020-04-01)
 
 
