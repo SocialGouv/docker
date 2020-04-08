@@ -10,7 +10,7 @@ RUN apk add --update --no-cache \
   curl=~7 \
   gettext-dev=~0 \
   git=~2 \
-  parallel=~20191122
+  parallel=~20200222
 
 ENV HOME=/config
 
