@@ -1,0 +1,36 @@
+Lint bats:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.5-debian
+  script:
+    - hadolint ./bats/Dockerfile
+
+Build bats:
+  stage: "Build"
+  needs:
+    - Lint bats
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: bats
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/bats
+
+Test bats:
+  stage: "Test"
+  needs:
+    - Lint bats
+    - Build bats
+  image: "${CI_REGISTRY_IMAGE}/bats:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - bats --version
+    - bats /opt/bats/test
+    - bats /usr/lib/bats-assert/test
+    - bats ./bats/test
+
+Publish bats to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint bats
+    - Build bats
+    - Test bats
+  variables:
+    IMAGE_NAME: socialgouv/docker/bats
