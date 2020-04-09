@@ -41,11 +41,11 @@ Test helm:
     #
     # Test that we can fetch the latest version
     #
-    - echo "https://github.com/SocialGouv/helm-charts/releases/tag/#${HELM_CHART_VERSION}"
+    - echo "https://github.com/SocialGouv/helm-charts/releases/tag/v${HELM_CHART_VERSION}"
     - helm just fetch "socialgouv/app#${HELM_CHART_VERSION}"
     - test -d ./.charts
     - test -d ./.charts/app
-    - test -d ./.charts/app/Chart.yaml
+    - test -f ./.charts/app/Chart.yaml
     - "grep 'version: ${HELM_CHART_VERSION}' ./.charts/app/Chart.yaml"
 
 Publish helm to Github Registry:
