@@ -13,7 +13,7 @@ COPY --from=bats-image /usr/lib/bats-support /usr/lib/bats-support
 COPY --from=bats-image /usr/lib/bats-file /usr/lib/bats-file
 
 ARG HELM_CHART_VERSION
-ENV HELM_CHART_VERSION
+ENV HELM_CHART_VERSION=${HELM_CHART_VERSION}
 
 RUN set -ex \
   #
