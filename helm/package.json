@@ -4,7 +4,7 @@
     "c": "github:socialgouv/helm-charts#v5.0.0",
     "f": "socialgouv/helm-charts#v5.0.0",
     "g": "gitlab:socialgouv/helm-charts#v5.0.0",
-    "k": "github:socialgouv/helm-charts#49b5aca",
+    "k": "github:socialgouv/helm-charts#90b4c6b",
     "l": "github:socialgouv/helm-charts.git#abcdef0",
     "m": "https://github.com/socialgouv/helm-charts.git#v1.0.0",
     "n": "git+https://github.com/socialgouv/helm-charts#v5.0.0"
