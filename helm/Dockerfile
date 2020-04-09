@@ -12,11 +12,17 @@ COPY --from=bats-image /usr/lib/bats-assert /usr/lib/bats-assert
 COPY --from=bats-image /usr/lib/bats-support /usr/lib/bats-support
 COPY --from=bats-image /usr/lib/bats-file /usr/lib/bats-file
 
-# ## Install envsubst & coreutils
-RUN apk add --update --no-cache \
-  bash=~5 \
-  bats=~1 \
-  coreutils=~8 \
-  ;
+ARG HELM_CHART_VERSION
+ENV HELM_CHART_VERSION
 
-RUN helm init --client-only
+RUN set -ex \
+  #
+  && apk add --update --no-cache \
+    bash=~5 \
+    bats=~1 \
+    coreutils=~8 \
+  #
+  && helm init --client-only \
+  && helm repo add socialgouv https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION} \
+  && wget -qO - https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz | tar -C $(helm home) -xzv \
+  ;

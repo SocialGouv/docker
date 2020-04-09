@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "foo": "github:owner/foo#v12.13.45",
-    "bar": "github:owner/bar#v67.89.10"
+    "@socialgouv/helm-charts": "github:SocialGouv/helm-charts#v5.0.0"
   }
 }
