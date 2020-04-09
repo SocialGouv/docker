@@ -1,0 +1,32 @@
+Lint azure-cli:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.5-debian
+  script:
+    - hadolint ./azure-cli/Dockerfile
+
+Build azure-cli:
+  stage: "Build"
+  needs:
+    - Lint azure-cli
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: azure-cli
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-cli
+
+Test azure-cli:
+  stage: "Test"
+  needs:
+    - Lint azure-cli
+    - Build azure-cli
+  image: "${CI_REGISTRY_IMAGE}/azure-cli:${CI_COMMIT_SHA}"
+  script:
+    - az version
+
+Publish azure-cli to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint azure-cli
+    - Test azure-cli
+    - Build azure-cli
+  variables:
+    IMAGE_NAME: socialgouv/docker/azure-cli
