@@ -21,6 +21,16 @@ $ mkdir foo
 
 1. Include this local `.gitlab-ci.yml` in the includes of [the root `.gitlab-ci.yml`](./.gitlab-ci.yml).
 
+## Test
+
+### Lint Dockerfiles
+
+```sh
+$ docker run --rm -i hadolint/hadolint < ./<image>/Dockerfile
+# example
+$ docker run --rm -i hadolint/hadolint < ./helm/Dockerfile
+```
+
 ## Release policy
 
 ### One click semantic release !

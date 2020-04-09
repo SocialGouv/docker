@@ -15,6 +15,7 @@ COPY --from=bats-image /usr/lib/bats-file /usr/lib/bats-file
 ARG HELM_CHART_VERSION
 ENV HELM_CHART_VERSION=${HELM_CHART_VERSION}
 
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 RUN set -ex \
   #
   && apk add --update --no-cache \
@@ -23,6 +24,8 @@ RUN set -ex \
     coreutils=~8 \
   #
   && helm init --client-only \
-  && helm repo add socialgouv https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION} \
-  && wget -qO - https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz | tar -C $(helm home) -xzv \
+  && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}" \
+  && wget -qO - \
+    "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz" \
+    | tar -C "$(helm home)" -xzv \
   ;
