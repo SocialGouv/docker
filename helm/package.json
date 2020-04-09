@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@socialgouv/helm-charts": "github:socialgouv/helm-charts#v5.0.0",
-    "c": "github:socialgouv/helm-charts#v5.0.0",
+    "c": "github:socialgouv/helm-charts#v6.0.0",
     "f": "socialgouv/helm-charts#v5.0.0",
     "g": "gitlab:socialgouv/helm-charts#v5.0.0",
     "k": "github:socialgouv/helm-charts#49b5aca",
