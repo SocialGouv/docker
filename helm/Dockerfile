@@ -5,7 +5,7 @@ FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats:1.3.0 AS bats
 
 #
 
-FROM alpine/helm:2.14.3
+FROM alpine/helm:3.1.2
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=bats-image /usr/lib/bats-assert /usr/lib/bats-assert
