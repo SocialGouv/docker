@@ -1,36 +1,8 @@
+FROM bitnami/kubectl:1.17.4 as kubectl-image
 FROM alpine:3.11
 
-ENV K8S_LATEST_VERSION="v1.17.4"
-ENV HOME=/home/kubectl
+COPY --from=kubectl-image /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
 
-## Install envsubst & coreutils
-RUN set -ex \
-  \
-  && apk add --update --no-cache \
-    bash=~5 \
-  \
-  && apk add --update --no-cache --virtual .curl-deps \
-    coreutils=~8 \
-    curl=~7 \
-    gettext-dev=~0 \
-    ca-certificates=~20191127 \
-  ## Install kubectl
-  ## Note: Latest version may be found on:
-  ## https://aur.archlinux.org/packages/kubectl-bin/
-  \
-  && curl -sL -o /usr/local/bin/kubectl \
-    https://storage.googleapis.com/kubernetes-release/release/${K8S_LATEST_VERSION}/bin/linux/amd64/kubectl \
-  \
-  && apk del .curl-deps \
-  \
-  && chmod +x /usr/local/bin/kubectl \
-  \
-  # Create non-root user (with a randomly chosen UID/GUI).
-  && adduser kubectl -Du 2342 -h /home/kubectl \
-  \
-  # Basic check it works.
-  && kubectl version --client
-
-USER kubectl
-
-ENTRYPOINT ["kubectl"]
+USER 1001
+ENTRYPOINT [ "kubectl" ]
+CMD [ "--help" ]
