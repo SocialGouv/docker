@@ -7,7 +7,7 @@ Lint k8s-ns-killer 1 2:
 
 Lint k8s-ns-killer 2 2:
   stage: "Quality"
-  image: koalaman/shellcheck-alpine:v0.7.0
+  image: koalaman/shellcheck-alpine:v0.7.1
   script:
     - shellcheck ./k8s-ns-killer/bin/k8s-ns-killer
 
