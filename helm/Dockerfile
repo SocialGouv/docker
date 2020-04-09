@@ -24,8 +24,8 @@ RUN set -ex \
     coreutils=~8 \
   #
   && helm init --client-only \
-  && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/${HELM_CHART_VERSION}" \
+  && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}" \
   && wget -qO - \
-    "https://github.com/SocialGouv/helm-charts/releases/download/${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz" \
+    "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz" \
     | tar -C "$(helm home)" -xzv \
   ;
