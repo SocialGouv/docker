@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "foo": "github:owner/foo#v12.13.45",
+    "bar": "github:owner/bar#v67.89.10"
+  }
+}
