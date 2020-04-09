@@ -1,0 +1,5 @@
+#
+
+- name: kubernetes
+  src: https://github.com/kubernetes/kubernetes
+  version: v1.17.4
