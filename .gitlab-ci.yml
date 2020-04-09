@@ -6,21 +6,21 @@ include:
     file: /base_register_stage.yml
     ref: v9.1.1
   #
-  - /azure-db/.gitlab-ci.yml
-  - /bats/.gitlab-ci.yml
-  - /curl/.gitlab-ci.yml
-  - /fluentd-modsecurity/.gitlab-ci.yml
-  - /git-deploy/.gitlab-ci.yml
-  - /git-tag-release/.gitlab-ci.yml
+  # - /azure-db/.gitlab-ci.yml
+  # - /bats/.gitlab-ci.yml
+  # - /curl/.gitlab-ci.yml
+  # - /fluentd-modsecurity/.gitlab-ci.yml
+  # - /git-deploy/.gitlab-ci.yml
+  # - /git-tag-release/.gitlab-ci.yml
   - /helm/.gitlab-ci.yml
-  - /infra-ansible-ci/.gitlab-ci.yml
-  - /k8s-ns-killer/.gitlab-ci.yml
-  - /k8s-object-cleaner/.gitlab-ci.yml
-  - /kubectl/.gitlab-ci.yml
-  - /nginx4spa/.gitlab-ci.yml
-  - /pg-cleaner/.gitlab-ci.yml
-  - /puppeteer/.gitlab-ci.yml
-  - /wait-for-postgres/.gitlab-ci.yml
+  # - /infra-ansible-ci/.gitlab-ci.yml
+  # - /k8s-ns-killer/.gitlab-ci.yml
+  # - /k8s-object-cleaner/.gitlab-ci.yml
+  # - /kubectl/.gitlab-ci.yml
+  # - /nginx4spa/.gitlab-ci.yml
+  # - /pg-cleaner/.gitlab-ci.yml
+  # - /puppeteer/.gitlab-ci.yml
+  # - /wait-for-postgres/.gitlab-ci.yml
 
 #
 
