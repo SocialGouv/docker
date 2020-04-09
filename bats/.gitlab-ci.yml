@@ -24,6 +24,8 @@ Test bats:
     - bats --version
     - bats /opt/bats/test
     - bats /usr/lib/bats-assert/test
+    # - bats /usr/lib/bats-file/test
+    - bats /usr/lib/bats-support/test
     - bats ./bats/test
 
 Publish bats to Github Registry:

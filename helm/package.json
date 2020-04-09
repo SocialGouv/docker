@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@socialgouv/helm-charts": "github:SocialGouv/helm-charts#v5.0.0"
+  }
+}

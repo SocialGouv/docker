@@ -1,43 +1,31 @@
+#
 
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.29.0 AS kubectl-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.3.0 AS kubectl-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats:1.3.0 AS bats-image
+
+#
+
 FROM alpine/helm:2.14.3
 
-## Install envsubst & coreutils
-RUN apk add --update --no-cache \
-  bash=~5 \
-  bats=~1 \
-  coreutils=~8 \
-  curl=~7 \
-  gettext-dev=~0 \
-  git=~2 \
-  parallel=~20200222
-
-ENV HOME=/config
-
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --from=bats-image /usr/lib/bats-assert /usr/lib/bats-assert
+COPY --from=bats-image /usr/lib/bats-support /usr/lib/bats-support
+COPY --from=bats-image /usr/lib/bats-file /usr/lib/bats-file
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+ARG HELM_CHART_VERSION
+ENV HELM_CHART_VERSION=${HELM_CHART_VERSION}
 
-RUN set -x && \
-    adduser kubectl -Du 2342 -h /config && \
-    chgrp -R kubectl /usr/local; \
-    find /usr/local -type d -exec chmod g+w {} \; && \
-    echo "kubectl ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kubectl; \
-    chmod 0440 /etc/sudoers.d/kubectl; \
-    # Create non-root user (with a randomly chosen UID/GUI).
-    \
-    # Basic check it works.
-    kubectl version --client; \
-    \
-    #
-    # Install extra bats dependencies
-    \
-    git clone -b 'v0.3.0' --single-branch --depth 1 \
-      https://github.com/ztombol/bats-support /usr/lib/bats-support; \
-    git clone -b 'v0.3.0' --single-branch --depth 1 \
-      https://github.com/ztombol/bats-assert /usr/lib/bats-assert;
-
-
-USER kubectl
-
-ENTRYPOINT ["/usr/local/bin/kubectl"]
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+RUN set -ex \
+  #
+  && apk add --update --no-cache \
+    bash=~5 \
+    bats=~1 \
+    coreutils=~8 \
+  #
+  && helm init --client-only \
+  && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}" \
+  && wget -qO - \
+    "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz" \
+    | tar -C "$(helm home)" -xzv \
+  ;
