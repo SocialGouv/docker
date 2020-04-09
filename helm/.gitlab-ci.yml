@@ -46,7 +46,7 @@ Test helm:
     - test -d ./.charts
     - test -d ./.charts/app
     - test -f ./.charts/app/Chart.yaml
-    - "grep 'version: ${HELM_CHART_VERSION}' ./.charts/app/Chart.yaml"
+    - "grep 'version: '${HELM_CHART_VERSION} ./.charts/app/Chart.yaml"
 
 Publish helm to Github Registry:
   extends: .base_publish_to_github_stage
