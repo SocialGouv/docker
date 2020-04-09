@@ -6,6 +6,7 @@ include:
     file: /base_register_stage.yml
     ref: v15.0.1
   #
+  - /azure-cli/.gitlab-ci.yml
   - /azure-db/.gitlab-ci.yml
   - /bats/.gitlab-ci.yml
   - /curl/.gitlab-ci.yml
