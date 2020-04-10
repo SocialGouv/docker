@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/SocialGouv/docker/compare/v1.3.0...v1.4.0) (2020-04-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @socialgouv/helm-charts to v6 ([#185](https://github.com/SocialGouv/docker/issues/185)) ([eb86827](https://github.com/SocialGouv/docker/commit/eb86827e07b09a92a352e838aa5e409283fd72c4))
+
+
+### Features
+
+* **deps:** update bitnami/kubectl docker tag to v1.18.1 ([#180](https://github.com/SocialGouv/docker/issues/180)) ([49173e7](https://github.com/SocialGouv/docker/commit/49173e7ce405890488b45bb7942a12f6f147cf05))
+* **deps:** update fluent/fluentd docker tag to v1.10.1 ([#172](https://github.com/SocialGouv/docker/issues/172)) ([06d6c43](https://github.com/SocialGouv/docker/commit/06d6c439980ccc62f7f15469787f6e1da4530160))
+
 # [1.3.0](https://github.com/SocialGouv/docker/compare/v1.2.0...v1.3.0) (2020-04-08)
 
 
