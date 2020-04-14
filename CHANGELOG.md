@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/SocialGouv/docker/compare/v1.4.1...v1.5.0) (2020-04-14)
+
+
+### Bug Fixes
+
+* **kubectl:** add up to date coreutils version ([#190](https://github.com/SocialGouv/docker/issues/190)) ([7915c99](https://github.com/SocialGouv/docker/commit/7915c99fbce456fcaa766f66325dabdf834d01ed))
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/social… ([#177](https://github.com/SocialGouv/docker/issues/177)) ([db9f645](https://github.com/SocialGouv/docker/commit/db9f64500ebb8774afb0a872dccbd14dbcb13866))
+
 ## [1.4.1](https://github.com/SocialGouv/docker/compare/v1.4.0...v1.4.1) (2020-04-14)
 
 
