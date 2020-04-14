@@ -26,6 +26,7 @@ Test kubectl 1 2:
     - kubectl cluster-info
     #
     - "[[ $(kubectl version) ]] && echo '[[ <test> ]] && <struff>' should be supported"
+    - envsubst --version
 
 Test kubectl 2 2:
   stage: "Test"

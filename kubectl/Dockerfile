@@ -5,6 +5,8 @@ RUN set -ex \
   \
   && apk add --update --no-cache \
     bash=~5 \
+    coreutils=~8 \
+    gettext=~0 \
   ;
 COPY --from=kubectl-image /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
 
