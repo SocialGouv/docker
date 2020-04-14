@@ -4,6 +4,7 @@ FROM alpine:3.11
 RUN set -ex \
   \
   && apk add --update --no-cache \
+    coreutils=~8 \
     bash=~5 \
   ;
 COPY --from=kubectl-image /opt/bitnami/kubectl/bin/kubectl /usr/local/bin/
