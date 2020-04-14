@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/SocialGouv/docker/compare/v1.4.0...v1.4.1) (2020-04-14)
+
+
+### Bug Fixes
+
+* **kubectl:** add up to date bash version ([#187](https://github.com/SocialGouv/docker/issues/187)) ([198c2e7](https://github.com/SocialGouv/docker/commit/198c2e70452b04929007e485cc8d3990f52ce099))
+
 # [1.4.0](https://github.com/SocialGouv/docker/compare/v1.3.0...v1.4.0) (2020-04-10)
 
 
