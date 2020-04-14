@@ -24,6 +24,8 @@ Test kubectl 1 2:
   script:
     - kubectl version
     - kubectl cluster-info
+    #
+    - [[ $(kubectl version) ]] && echo "'[[ <test> ]] && <struff>' should be supported"
 
 Test kubectl 2 2:
   stage: "Test"
