@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/SocialGouv/docker/compare/v1.6.1...v1.6.2) (2020-04-15)
+
+
+### Bug Fixes
+
+* **azure-db:** set time zone FR ([#193](https://github.com/SocialGouv/docker/issues/193)) ([ab06351](https://github.com/SocialGouv/docker/commit/ab063516f2701e975e1dfd34584fa36274b14228))
+
 ## [1.6.1](https://github.com/SocialGouv/docker/compare/v1.6.0...v1.6.1) (2020-04-15)
 
 
