@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/SocialGouv/docker/compare/v1.5.0...v1.6.0) (2020-04-15)
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v1.5.0 ([#191](https://github.com/SocialGouv/docker/issues/191)) ([5461a17](https://github.com/SocialGouv/docker/commit/5461a17121bda61c1c00da109838a3a3f9f54119))
+
 # [1.5.0](https://github.com/SocialGouv/docker/compare/v1.4.1...v1.5.0) (2020-04-14)
 
 
