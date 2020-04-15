@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/SocialGouv/docker/compare/v1.6.0...v1.6.1) (2020-04-15)
+
+
+### Bug Fixes
+
+* **helm:** add missing gettext dep ([f786aaa](https://github.com/SocialGouv/docker/commit/f786aaae0651f26321b976f5b307b77f9f93aa23))
+
 # [1.6.0](https://github.com/SocialGouv/docker/compare/v1.5.0...v1.6.0) (2020-04-15)
 
 
