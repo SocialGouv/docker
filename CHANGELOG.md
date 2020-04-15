@@ -1,3 +1,11 @@
+# [1.7.0](https://github.com/SocialGouv/docker/compare/v1.6.2...v1.7.0) (2020-04-15)
+
+
+### Features
+
+* **deps:** update fluent/fluentd docker tag to v1.10.2 ([#194](https://github.com/SocialGouv/docker/issues/194)) ([5a33f2b](https://github.com/SocialGouv/docker/commit/5a33f2bbc7a06efe28d7ce229c614e947a87e3d0))
+* **deps:** update socialgouv/docker/kubectl docker tag to v1.6.2 ([#192](https://github.com/SocialGouv/docker/issues/192)) ([46ee572](https://github.com/SocialGouv/docker/commit/46ee572c44b7fcbec85216aed8bf12da4d4e1c11))
+
 ## [1.6.2](https://github.com/SocialGouv/docker/compare/v1.6.1...v1.6.2) (2020-04-15)
 
 
