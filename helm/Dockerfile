@@ -22,6 +22,7 @@ RUN set -ex \
     bash=~5 \
     bats=~1 \
     coreutils=~8 \
+    gettext=~0 \
   #
   && helm init --client-only \
   && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}" \
