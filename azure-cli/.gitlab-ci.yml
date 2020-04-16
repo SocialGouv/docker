@@ -20,7 +20,7 @@ Test azure-cli:
     - Build azure-cli
   image: "${CI_REGISTRY_IMAGE}/azure-cli:${CI_COMMIT_SHA}"
   script:
-    - az version
+    - az --version
 
 Publish azure-cli to Github Registry:
   extends: .base_publish_to_github_stage
