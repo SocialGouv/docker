@@ -32,3 +32,5 @@ RUN set -x \
   #
   && az --version \
   ;
+
+ENTRYPOINT ["az"]
