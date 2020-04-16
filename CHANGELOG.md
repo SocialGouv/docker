@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/SocialGouv/docker/compare/v1.7.0...v1.8.0) (2020-04-16)
+
+
+### Features
+
+* **azure-cli:** add azure-cli image ([#175](https://github.com/SocialGouv/docker/issues/175)) ([ca6eb78](https://github.com/SocialGouv/docker/commit/ca6eb78120c30e9f4bd2e269323a8160710fc0ea))
+
 # [1.7.0](https://github.com/SocialGouv/docker/compare/v1.6.2...v1.7.0) (2020-04-15)
 
 
