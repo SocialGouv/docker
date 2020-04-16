@@ -1,6 +1,9 @@
 
 FROM debian:10.3-slim
 
+# renovate: datasource=pypi depName=azure-cli versioning=2.1.0
+ARG AZURE_CLI_VERSION=2.1.0
+
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
 RUN set -x \
@@ -16,7 +19,7 @@ RUN set -x \
   #
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-    azure-cli=2.3.1-1~buster \
+    azure-cli=${AZURE_CLI_VERSION}-1~buster \
   #
   && apt-get remove --purge -y \
     ca-certificates \
