@@ -1,7 +1,5 @@
 FROM python:3.8
 
-ENV TERRAFORM_VERSION="0.12.21"
-
 # install dependencies (gettext-base to install envsubst)
 RUN set -ex \
   \
@@ -18,11 +16,10 @@ RUN set -ex \
   && rm -rf /var/lib/apt/lists/*  \
   \
   # install terraform
-  && curl https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform.zip \
+  && curl https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_386.zip -o terraform.zip \
   && unzip terraform.zip \
   && rm -rf terraform.zip \
   && mv terraform /usr/bin/ \
-  # test terraform install
   && terraform --version
 
 COPY requirements.txt /requirements.txt
@@ -30,3 +27,18 @@ COPY requirements.txt /requirements.txt
 # install ansible & linter
 RUN pip install -r /requirements.txt
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# install azure CLI
+RUN set -ex \
+  \
+  && curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+    gpg --dearmor | \
+    tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null \
+  && echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stretch main" | \
+    tee /etc/apt/sources.list.d/azure-cli.list \
+  \
+  && apt-get update \
+  \
+  && apt-get install -y azure-cli=2.1.0-1~stretch --no-install-recommends \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
