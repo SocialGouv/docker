@@ -6,6 +6,7 @@ FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:e3c083a4
 FROM debian:10.3-slim
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --from=azure-cli-image /usr/bin/az /usr/bin/az
 COPY --from=azure-cli-image /opt/az /opt/az
 
 RUN set -ex \
