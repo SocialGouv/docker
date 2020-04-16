@@ -8,7 +8,6 @@ Build azure-db:
   stage: "Build"
   needs:
     - Lint azure-db
-    - Build kubectl
   extends: .base_register_to_gitlab_stage
   variables:
     CONTEXT: azure-db
