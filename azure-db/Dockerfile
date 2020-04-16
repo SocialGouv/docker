@@ -1,7 +1,7 @@
 #
 
 FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.29.0 AS kubectl-image
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:e3c083a4799b51eb273ca0a01075456b90eb5356 AS azure-cli-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:1.8.0 AS azure-cli-image
 
 FROM debian:10.3-slim
 
