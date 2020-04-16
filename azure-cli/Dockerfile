@@ -21,8 +21,6 @@ RUN set -x \
   && apt-get remove --purge -y \
     ca-certificates \
     curl \
-    apt-transport-https \
-    lsb-release \
     gnupg \
   && apt-get purge -y --auto-remove \
   &&  apt-get -y clean \
