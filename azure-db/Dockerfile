@@ -1,33 +1,26 @@
-ARG PG_IMAGE=postgres:11-alpine
+#
 
 FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:0.29.0 AS kubectl-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:e3c083a4799b51eb273ca0a01075456b90eb5356 AS azure-cli-image
 
-# hadolint ignore=DL3006
-FROM ${PG_IMAGE}
+FROM debian:10.3-slim
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --from=azure-cli-image /opt/az /opt/az
 
 RUN set -ex \
   \
-  && apk add --no-cache \
-    jq=~1 \
-    py-setuptools=~42 \
-    python=~2 \
-  \
-  && apk add --no-cache --virtual .pip-deps \
-    build-base=~0 \
-    gcc=~9 \
-    git=~2 \
-    libffi-dev=~3 \
-    openssl-dev=~1 \
-    py-pip=~18 \
-    python-dev=~2 \
-    wget=~1 \
-  \
-  && pip install --no-cache-dir "azure-cli>=2" \
-  \
-  && apk del .pip-deps
+  && apt-get update \
+  && apt-get install -y --no-install-recommends \
+    postgresql-client-11=11.7-0+deb10u1 \
+  #
+  && apt-get purge -y --auto-remove \
+  &&  apt-get -y clean \
+  &&  apt-get -y autoclean \
+  &&  apt-get -y autoremove \
+  &&  rm -rf \
+    /var/lib/apt/lists/* \
+    /var/cache/debconf/*-old \
+  ;
 
 COPY ./bin /bin
-
-
