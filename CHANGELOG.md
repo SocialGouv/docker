@@ -1,3 +1,17 @@
+# [1.9.0](https://github.com/SocialGouv/docker/compare/v1.8.0...v1.9.0) (2020-04-16)
+
+
+### Bug Fixes
+
+* **azure-db:** use fixed socialgouv/docker/azure-cli version ([d6bba9b](https://github.com/SocialGouv/docker/commit/d6bba9b01f18651f72360e854c2391639c684cc7))
+
+
+### Features
+
+* **deps:** update alpine docker tag to v3.11.5 ([#160](https://github.com/SocialGouv/docker/issues/160)) ([353c7a1](https://github.com/SocialGouv/docker/commit/353c7a1479a4952c9e77d7a0aae4b99d6a0ace0a))
+* **deps:** update python docker tag to v3.8.2 ([#72](https://github.com/SocialGouv/docker/issues/72)) ([41bcf3b](https://github.com/SocialGouv/docker/commit/41bcf3b9ce3b9bf83ff9cf52443e212f057e0253))
+* **deps:** update socialgouv/docker/kubectl docker tag to v1.8.0 ([#196](https://github.com/SocialGouv/docker/issues/196)) ([d263251](https://github.com/SocialGouv/docker/commit/d263251d0b35b26b887f1a5907a1b33c14f553fc))
+
 # [1.8.0](https://github.com/SocialGouv/docker/compare/v1.7.0...v1.8.0) (2020-04-16)
 
 
