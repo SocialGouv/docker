@@ -13,6 +13,7 @@ RUN set -ex \
   \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
+    jq=1.5+dfsg-2+b1 \
     postgresql-client-11=11.7-0+deb10u1 \
   #
   && apt-get purge -y --auto-remove \
