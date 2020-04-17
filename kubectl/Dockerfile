@@ -1,4 +1,4 @@
-FROM bitnami/kubectl:1.18.1 as kubectl-image
+FROM bitnami/kubectl:1.18.2 as kubectl-image
 FROM alpine:3.11
 
 RUN set -ex \
