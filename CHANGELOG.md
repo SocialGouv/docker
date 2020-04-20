@@ -1,3 +1,18 @@
+# [1.10.0](https://github.com/SocialGouv/docker/compare/v1.9.0...v1.10.0) (2020-04-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @socialgouv/helm-charts to v6.1.0 ([#204](https://github.com/SocialGouv/docker/issues/204)) ([7746eba](https://github.com/SocialGouv/docker/commit/7746eba0c984fc3167bb32f929fa4fcc12177153))
+
+
+### Features
+
+* **deps:** update bitnami/kubectl docker tag to v1.18.2 ([#201](https://github.com/SocialGouv/docker/issues/201)) ([e94f539](https://github.com/SocialGouv/docker/commit/e94f539cc51f3859db5a5354ea07d5c7a6120277))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli docker tag to v1.9.0 ([#199](https://github.com/SocialGouv/docker/issues/199)) ([1991431](https://github.com/SocialGouv/docker/commit/19914310f571bc741ec338b7b4b100f28705739c))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats docker tag to v1.9.0 ([#188](https://github.com/SocialGouv/docker/issues/188)) ([83a5195](https://github.com/SocialGouv/docker/commit/83a5195e7d6ad48d63fc3f7d8528213a922f20e2))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v1.9.0 ([#200](https://github.com/SocialGouv/docker/issues/200)) ([21d84cb](https://github.com/SocialGouv/docker/commit/21d84cbca5c1dc6834183bb63d0ad493f8200cf4))
+
 # [1.9.0](https://github.com/SocialGouv/docker/compare/v1.8.0...v1.9.0) (2020-04-16)
 
 
