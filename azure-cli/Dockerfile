@@ -1,8 +1,8 @@
 
 FROM debian:10.3-slim
 
-# renovate: datasource=pypi depName=azure-cli versioning=2.3.1
-ARG AZURE_CLI_VERSION=2.3.1
+# renovate: datasource=pypi depName=azure-cli versioning=2.4.0
+ARG AZURE_CLI_VERSION=2.4.0
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
