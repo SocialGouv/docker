@@ -1,4 +1,4 @@
-FROM python:3.8.0b1-alpine3.10
+FROM python:3.8.2-alpine3.10
 
 ## Install envsubst and curl
 RUN apk update
