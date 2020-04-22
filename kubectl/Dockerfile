@@ -3,7 +3,7 @@ FROM alpine:3.11
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
 ARG KUBECTL_VERSION=1.18.0
 
-# renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
+# renovate: datasource=go depName=sigs.k8s.io/kustomize/kustomize/v3
 ARG KUSTOMIZE_VERSION=3.5.2
 
 RUN set -ex \
