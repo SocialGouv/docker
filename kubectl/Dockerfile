@@ -1,7 +1,7 @@
 FROM alpine:3.11
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=1.18.0
+ARG KUBECTL_VERSION=v1.18.2
 
 # renovate: through `go.mod`
 ARG KUSTOMIZE_VERSION=3.5.2
@@ -14,7 +14,7 @@ RUN set -ex \
     gettext=~0 \
   #
   && wget -O /dev/shm/kubectl \
-    "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
+    "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
   && chmod +x /dev/shm/kubectl \
   && mv /dev/shm/kubectl /usr/local/bin/kubectl \
   #
