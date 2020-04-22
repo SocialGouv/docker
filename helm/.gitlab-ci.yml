@@ -36,6 +36,7 @@ Test helm:
     - bats --version
     - helm version
     - kubectl version
+    - kustomize version
     #
     - helm list
     #
