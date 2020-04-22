@@ -14,7 +14,7 @@ RUN set -ex \
     gettext=~0 \
   #
   && wget -O /dev/shm/kubectl \
-    "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
+    "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
   && chmod +x /dev/shm/kubectl \
   && mv /dev/shm/kubectl /usr/local/bin/kubectl \
   #
