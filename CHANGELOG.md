@@ -1,3 +1,12 @@
+# [1.12.0](https://github.com/SocialGouv/docker/compare/v1.11.0...v1.12.0) (2020-04-22)
+
+
+### Features
+
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli docker tag to v1.11.0 ([#213](https://github.com/SocialGouv/docker/issues/213)) ([bef7bc4](https://github.com/SocialGouv/docker/commit/bef7bc4b0b6f9179df6fa6286df52a043fb9b34c))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats docker tag to v1.11.0 ([#214](https://github.com/SocialGouv/docker/issues/214)) ([41990ac](https://github.com/SocialGouv/docker/commit/41990ac99152ef5a279bb764db129d6b2c1154ec))
+* **deps:** update socialgouv/docker/kubectl docker tag to v1.11.0 ([#215](https://github.com/SocialGouv/docker/issues/215)) ([470e0ec](https://github.com/SocialGouv/docker/commit/470e0ec0b28561e43f591a77a8f32a10ea3488cc))
+
 # [1.11.0](https://github.com/SocialGouv/docker/compare/v1.10.0...v1.11.0) (2020-04-22)
 
 
