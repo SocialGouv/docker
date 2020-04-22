@@ -27,7 +27,7 @@ RUN set -ex \
   ;
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
-COPY --from=kubectl-image /usr/local/bin/kustomize
+COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
 COPY --from=bats-image /usr/lib/bats-assert /usr/lib/bats-assert
 COPY --from=bats-image /usr/lib/bats-support /usr/lib/bats-support
 COPY --from=bats-image /usr/lib/bats-file /usr/lib/bats-file
