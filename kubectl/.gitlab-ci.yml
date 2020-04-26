@@ -1,6 +1,6 @@
 Lint kubectl:
   stage: "Quality"
-  image: hadolint/hadolint:v1.17.5-debian
+  image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./kubectl/Dockerfile
 
