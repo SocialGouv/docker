@@ -1,0 +1,40 @@
+Lint kosko:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.6-debian
+  script:
+    - hadolint ./kosko/Dockerfile
+
+
+Build kosko:
+  stage: "Build"
+  needs:
+    - Lint kosko
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: kosko
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kosko
+
+Test kosko:
+  stage: "Test"
+  needs:
+    - Lint kosko
+    - Build kosko
+  image: "${CI_REGISTRY_IMAGE}/kosko:${CI_COMMIT_SHA}"
+  environment: feature-dev
+  script:
+    - kubectl version
+    - kubectl cluster-info
+    - kustomize version
+    - kosko --version
+    #
+    # bash >=5 test
+    - "[[ $(kubectl version) ]] && echo '[[ <test> ]] && <struff>' should be supported"
+    - envsubst --version
+
+Publish kosko to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint kosko
+    - Build kosko
+  variables:
+    IMAGE_NAME: socialgouv/docker/kosko
