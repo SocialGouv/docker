@@ -1,3 +1,14 @@
+# [1.13.0](https://github.com/SocialGouv/docker/compare/v1.12.0...v1.13.0) (2020-05-05)
+
+
+### Features
+
+* **deps:** update alpine docker tag to v3.11.6 ([#219](https://github.com/SocialGouv/docker/issues/219)) ([d57327b](https://github.com/SocialGouv/docker/commit/d57327bba556b8a5aad789731011da54f61fce1f))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli docker tag to v1.12.0 ([#216](https://github.com/SocialGouv/docker/issues/216)) ([dcbbdd1](https://github.com/SocialGouv/docker/commit/dcbbdd1af85002ae0f2aeabe21fd49e2073d888f))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats docker tag to v1.12.0 ([#217](https://github.com/SocialGouv/docker/issues/217)) ([1e69044](https://github.com/SocialGouv/docker/commit/1e6904407c1b5b61ecb45fbf8766b9628a675c02))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl docker tag to v1.12.0 ([#218](https://github.com/SocialGouv/docker/issues/218)) ([e7b3cf7](https://github.com/SocialGouv/docker/commit/e7b3cf7a7acbc84ca4e44cb901343a4f2942e02b))
+* **kosko:** add kosko image ([#224](https://github.com/SocialGouv/docker/issues/224)) ([1c13cfe](https://github.com/SocialGouv/docker/commit/1c13cfec8c5f8a2e8b4e8d4705ed6e73632e744e))
+
 # [1.12.0](https://github.com/SocialGouv/docker/compare/v1.11.0...v1.12.0) (2020-04-22)
 
 
