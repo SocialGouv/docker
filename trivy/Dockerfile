@@ -3,7 +3,7 @@ FROM alpine:3.11
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
 ARG TRIVY_VERSION=v0.5.4
 
-SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN set -ex \
   #
