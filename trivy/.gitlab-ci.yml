@@ -1,0 +1,59 @@
+Lint trivy:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.6-debian
+  script:
+    - hadolint ./trivy/Dockerfile
+
+
+Build trivy:
+  stage: "Build"
+  needs:
+    - Lint trivy
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: trivy
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/trivy
+
+Test trivy:
+  stage: "Test"
+  needs:
+    - Lint trivy
+    - Build trivy
+  image: "${CI_REGISTRY_IMAGE}/trivy:${CI_COMMIT_SHA}"
+  variables:
+    GIT_STRATEGY: none
+    IMAGE: "${CI_REGISTRY_IMAGE}/trivy:${CI_COMMIT_SHA}"
+    TRIVY_ARGS: >-
+      --cache-dir .trivycache
+      --no-progress
+  environment: feature-dev
+  script:
+    - trivy --version
+    #
+    # Build report
+    - echo "trivy --debug --exit-code 0 --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${TRIVY_ARGS} ${IMAGE}"
+    - >-
+      trivy \
+        --debug \
+        --exit-code 0 \
+        --format template \
+        --output gl-container-scanning-report.json \
+        --template "@/tmp/contrib/gitlab.tpl" \
+        ${TRIVY_ARGS} \
+        ${IMAGE}
+    #
+    # Print report
+    - echo "trivy --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}"
+    - trivy --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}
+    #
+    # Fail on high and critical vulnerabilities
+    - echo "trivy --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}"
+    - trivy --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}
+
+Publish trivy to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint trivy
+    - Build trivy
+  variables:
+    IMAGE_NAME: socialgouv/docker/trivy
