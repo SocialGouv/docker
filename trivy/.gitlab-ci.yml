@@ -31,8 +31,16 @@ Test trivy:
     - trivy --version
     #
     # Build report
-    - echo "trivy -d --exit-code 0 --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${TRIVY_ARGS} ${IMAGE}"
-    - trivy -d --exit-code 0 --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${TRIVY_ARGS} ${IMAGE}
+    - echo "trivy --debug --exit-code 0 --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${TRIVY_ARGS} ${IMAGE}"
+    - >-
+      trivy \
+        --debug \
+        --exit-code 0 \
+        --format template \
+        --output gl-container-scanning-report.json \
+        --template "@/tmp/contrib/gitlab.tpl" \
+        ${TRIVY_ARGS} \
+        ${IMAGE}
     #
     # Print report
     - echo "trivy -d --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}"
