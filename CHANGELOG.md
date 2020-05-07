@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/SocialGouv/docker/compare/v1.13.0...v1.14.0) (2020-05-07)
+
+
+### Bug Fixes
+
+* **trivy:** renovate depName ([7acecd4](https://github.com/SocialGouv/docker/commit/7acecd4d4a8a98c8b7b321f5f0c6716fbf0d8b4f))
+
+
+### Features
+
+* **trivy:** add trivy image ([#228](https://github.com/SocialGouv/docker/issues/228)) ([5c6209e](https://github.com/SocialGouv/docker/commit/5c6209eb069f1e55bf38a044c67dbe9970f925ed))
+
 # [1.13.0](https://github.com/SocialGouv/docker/compare/v1.12.0...v1.13.0) (2020-05-05)
 
 
