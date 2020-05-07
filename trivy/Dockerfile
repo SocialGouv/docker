@@ -1,6 +1,6 @@
 FROM alpine:3.11
 
-# renovate: datasource=github-releases depName=kubernetes/kubernetes
+# renovate: datasource=github-releases depName=aquasecurity/trivy
 ARG TRIVY_VERSION=v0.5.4
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
