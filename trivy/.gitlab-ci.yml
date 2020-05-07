@@ -31,16 +31,16 @@ Test trivy:
     - trivy --version
     #
     # Build report
-    - echo "trivy -d --exit-code 0 ${TRIVY_ARGS} --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${IMAGE}"
-    - trivy -d --exit-code 0 ${TRIVY_ARGS} --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${IMAGE}
+    - echo "trivy -d --exit-code 0 --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${TRIVY_ARGS} ${IMAGE}"
+    - trivy -d --exit-code 0 --format template --template "@/tmp/contrib/gitlab.tpl" -o gl-container-scanning-report.json ${TRIVY_ARGS} ${IMAGE}
     #
     # Print report
-    - echo "trivy -d --exit-code 0 ${TRIVY_ARGS} ${IMAGE}"
-    - trivy -d --exit-code 0 ${TRIVY_ARGS} ${IMAGE}
+    - echo "trivy -d --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}"
+    - trivy -d --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}
     #
     # Fail on high and critical vulnerabilities
-    - echo "trivy -d --exit-code 1 ${TRIVY_ARGS} ${IMAGE}"
-    - trivy -d --exit-code 1 ${TRIVY_ARGS} ${IMAGE}
+    - echo "trivy -d --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}"
+    - trivy -d --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}
 
 Publish trivy to Github Registry:
   extends: .base_publish_to_github_stage
