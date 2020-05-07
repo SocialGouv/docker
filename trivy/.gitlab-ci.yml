@@ -43,11 +43,11 @@ Test trivy:
         ${IMAGE}
     #
     # Print report
-    - echo "trivy -d --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}"
+    - echo "trivy --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}"
     - trivy -d --exit-code 0 --severity HIGH ${TRIVY_ARGS} ${IMAGE}
     #
     # Fail on high and critical vulnerabilities
-    - echo "trivy -d --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}"
+    - echo "trivy --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}"
     - trivy -d --exit-code 1 --severity CRITICAL ${TRIVY_ARGS} ${IMAGE}
 
 Publish trivy to Github Registry:
