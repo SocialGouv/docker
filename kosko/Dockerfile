@@ -4,7 +4,7 @@ FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.12.0 AS 
 
 #
 
-FROM node:12-alpine
+FROM node:14-alpine
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
