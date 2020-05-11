@@ -3,8 +3,8 @@ FROM alpine:3.11
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
 ARG KUBECTL_VERSION=v1.18.2
 
-# renovate: through `go.mod`
-ARG KUSTOMIZE_VERSION=3.5.2
+# renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
+ARG KUSTOMIZE_VERSION=kustomize/v3.5.2
 
 RUN set -ex \
   #
@@ -19,7 +19,7 @@ RUN set -ex \
   && mv /dev/shm/kubectl /usr/local/bin/kubectl \
   #
   && wget -O /dev/shm/kustomize.tar \
-    "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv${KUSTOMIZE_VERSION}/kustomize_v${KUSTOMIZE_VERSION}_linux_amd64.tar.gz" \
+    "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F${KUSTOMIZE_VERSION#kustomize/}/kustomize_${KUSTOMIZE_VERSION#kustomize/}_linux_amd64.tar.gz" \
   && tar xvzf /dev/shm/kustomize.tar  \
   && mv /kustomize /usr/local/bin/kustomize \
   ;
