@@ -1,8 +1,8 @@
 FROM alpine:3.11.6
 
 # Installs latest Chromium (77) package.
-RUN apk add --no-cache --update \
-  chromium=~79 \
+RUN apk add --no-cache \
+  chromium=~81 \
   nss=~3 \
   freetype=~2 \
   freetype-dev=~2 \
