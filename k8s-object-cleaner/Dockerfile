@@ -1,4 +1,4 @@
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm:0.29.0
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/helm:1.15.0
 
 USER root
 
