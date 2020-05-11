@@ -13,6 +13,15 @@
       "semanticCommitType": "feat"
     },
     {
+      "datasources": [
+        "docker"
+      ],
+      "packagePatterns": [
+        "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
+      ],
+      "groupName": "self dependencies"
+    },
+    {
       "paths": ["infra-ansible-ci/requirements.txt"],
       "groupName": "infra-ansible-ci requirements",
       "extends": [
