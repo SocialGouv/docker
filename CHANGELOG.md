@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/SocialGouv/docker/compare/v1.14.0...v1.15.0) (2020-05-11)
+
+
+### Features
+
+* **puppeteer:** update chromium to v81 ([#221](https://github.com/SocialGouv/docker/issues/221)) ([d94f7dd](https://github.com/SocialGouv/docker/commit/d94f7dd8856593d51ae08f4ea3fe09d964866519))
+
 # [1.14.0](https://github.com/SocialGouv/docker/compare/v1.13.0...v1.14.0) (2020-05-07)
 
 
