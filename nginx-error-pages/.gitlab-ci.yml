@@ -12,11 +12,13 @@ Lint nginx-error-pages:
     - hadolint ./nginx-error-pages/Dockerfile
 
 Build nginx-error-pages:
-  extends: .change_rules
+  extends:
+    - .change_rules
+    - .base_register_to_gitlab_stage
   stage: "Build"
   needs:
     - Lint nginx-error-pages
-  extends: .base_register_to_gitlab_stage
+
   variables:
     CONTEXT: nginx-error-pages
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx-error-pages
