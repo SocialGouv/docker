@@ -45,9 +45,8 @@ Test nginx-error-pages:
     - docker ps
     - docker logs nginx-error-pages_test
     #
-    - docker exec nginx-error-pages_test cat /www/4xx.html | grep "maintenance"
-    - docker exec nginx-error-pages_test cat /www/5xx.html | grep "maintenance"
-    - docker exec nginx-error-pages_test cat /www/5xx.html | grep "pouet"
+    - docker exec nginx-error-pages_test cat /www/4xx.html | grep "Maintenance"
+    - docker exec nginx-error-pages_test cat /www/5xx.html | grep "Maintenance"
   after_script:
     - docker stop nginx-error-pages_test || true
 
