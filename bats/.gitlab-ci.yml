@@ -1,11 +1,11 @@
-.change_rules:
+.change_rules_bats:
   rules:
     - changes:
         - bats/*
 
 Lint bats:
   stage: "Quality"
-  extends: .change_rules
+  extends: .change_rules_bats
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./bats/Dockerfile
@@ -16,14 +16,14 @@ Build bats:
     - Lint bats
   extends:
     - .base_register_to_gitlab_stage
-    - .change_rules
+    - .change_rules_bats
   variables:
     CONTEXT: bats
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/bats
 
 Test bats:
   stage: "Test"
-  extends: .change_rules
+  extends: .change_rules_bats
   needs:
     - Lint bats
     - Build bats
