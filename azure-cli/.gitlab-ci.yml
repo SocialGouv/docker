@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - azure-cli/*
+
 Lint azure-cli:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./azure-cli/Dockerfile
@@ -8,13 +14,16 @@ Build azure-cli:
   stage: "Build"
   needs:
     - Lint azure-cli
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   variables:
     CONTEXT: azure-cli
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-cli
 
 Test azure-cli:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint azure-cli
     - Build azure-cli
@@ -22,6 +31,8 @@ Test azure-cli:
   script:
     - az --version
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish azure-cli to github registry config key may not be used with `rules`: only
 Publish azure-cli to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
