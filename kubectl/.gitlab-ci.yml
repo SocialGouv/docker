@@ -1,21 +1,29 @@
+.change_rules_kubectl:
+  rules:
+    - changes:
+        - kubectl/*
+
 Lint kubectl:
   stage: "Quality"
+  extends: .change_rules_kubectl
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./kubectl/Dockerfile
-
 
 Build kubectl:
   stage: "Build"
   needs:
     - Lint kubectl
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_kubectl
   variables:
     CONTEXT: kubectl
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kubectl
 
 Test kubectl 1 2:
   stage: "Test"
+  extends: .change_rules_kubectl
   needs:
     - Lint kubectl
     - Build kubectl
@@ -31,6 +39,7 @@ Test kubectl 1 2:
 
 Test kubectl 2 2:
   stage: "Test"
+  extends: .change_rules_kubectl
   needs:
     - Lint kubectl
     - Build kubectl
@@ -46,14 +55,16 @@ Test kubectl 2 2:
     - echo "export FOO=BAR" > ${CI_PROJECT_DIR}/init.d/foo.sh
     #
     - docker run
-        --entrypoint sh
-        --rm
-        --volume ${CI_PROJECT_DIR}/init.d:/home/kubectl/profile.d
-        ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}
-          -c "
-          source /home/kubectl/profile.d/foo.sh ;
-          echo FOO=\$FOO | grep FOO=BAR"
+      --entrypoint sh
+      --rm
+      --volume ${CI_PROJECT_DIR}/init.d:/home/kubectl/profile.d
+      ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}
+      -c "
+      source /home/kubectl/profile.d/foo.sh ;
+      echo FOO=\$FOO | grep FOO=BAR"
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish kubectl to github registry config key may not be used with `rules`: only
 Publish kubectl to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
