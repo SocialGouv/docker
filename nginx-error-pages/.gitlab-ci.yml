@@ -1,11 +1,17 @@
 Lint nginx-error-pages:
   stage: "Quality"
+  rules:
+    - changes:
+        - Dockerfile
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./nginx-error-pages/Dockerfile
 
 Build nginx-error-pages:
   stage: "Build"
+  rules:
+    - changes:
+        - Dockerfile
   needs:
     - Lint nginx-error-pages
   extends: .base_register_to_gitlab_stage
@@ -18,6 +24,9 @@ Build nginx-error-pages:
 
 Test nginx-error-pages:
   stage: "Test"
+  rules:
+    - changes:
+        - Dockerfile
   needs:
     - Lint nginx-error-pages
     - Build nginx-error-pages
