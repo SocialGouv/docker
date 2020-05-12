@@ -1,17 +1,19 @@
-Lint nginx-error-pages:
-  stage: "Quality"
+.change_rules:
   rules:
     - changes:
         - Dockerfile
+        - .gitlab-ci.yml
+
+Lint nginx-error-pages:
+  extends: .change_rules
+  stage: "Quality"
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./nginx-error-pages/Dockerfile
 
 Build nginx-error-pages:
+  extends: .change_rules
   stage: "Build"
-  rules:
-    - changes:
-        - Dockerfile
   needs:
     - Lint nginx-error-pages
   extends: .base_register_to_gitlab_stage
@@ -23,10 +25,8 @@ Build nginx-error-pages:
       --build-arg CUSTOM_ERROR_PAGE_5XX=https://raw.githubusercontent.com/SocialGouv/maintenance/master/index.html
 
 Test nginx-error-pages:
+  extends: .change_rules
   stage: "Test"
-  rules:
-    - changes:
-        - Dockerfile
   needs:
     - Lint nginx-error-pages
     - Build nginx-error-pages
@@ -51,7 +51,9 @@ Test nginx-error-pages:
     - docker stop nginx-error-pages_test || true
 
 Publish nginx-error-pages to Github Registry:
-  extends: .base_publish_to_github_stage
+  extends:
+    - .base_publish_to_github_stage
+    - .change_rules
   needs:
     - Lint nginx-error-pages
     - Build nginx-error-pages
