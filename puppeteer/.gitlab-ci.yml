@@ -1,5 +1,11 @@
+.change_rules_puppeteer:
+  rules:
+    - changes:
+        - puppeteer/*
+
 Lint puppeteer:
   stage: "Quality"
+  extends: .change_rules_puppeteer
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./puppeteer/Dockerfile
@@ -8,13 +14,16 @@ Build puppeteer:
   stage: "Build"
   needs:
     - Lint puppeteer
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_puppeteer
   variables:
     CONTEXT: puppeteer
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/puppeteer
 
 Test puppeteer:
   stage: "Test"
+  extends: .change_rules_puppeteer
   needs:
     - Lint puppeteer
     - Build puppeteer
@@ -24,6 +33,8 @@ Test puppeteer:
     - node --version
     - yarn --version
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish puppeteer to github registry config key may not be used with `rules`: only
 Publish puppeteer to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
