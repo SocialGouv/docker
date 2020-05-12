@@ -1,11 +1,11 @@
-.change_rules:
+.change_rules_helm:
   rules:
     - changes:
         - helm/*
 
 Lint helm:
   stage: "Quality"
-  extends: .change_rules
+  extends: .change_rules_helm
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./helm/Dockerfile
@@ -16,7 +16,7 @@ Build helm:
     - Lint helm
   extends:
     - .base_register_to_gitlab_stage
-    - .change_rules
+    - .change_rules_helm
   before_script:
     # NODE(douglasduteil): build from renovate maintaining package.json
     # To allow renovate to maintaining the socialgouv/docker/helm image
@@ -35,7 +35,7 @@ Build helm:
 
 Test helm:
   stage: "Test"
-  extends: .change_rules
+  extends: .change_rules_helm
   needs:
     - Lint helm
     - Build helm

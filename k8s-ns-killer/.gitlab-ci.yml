@@ -1,12 +1,18 @@
+.change_rules_k8s_ns_killer:
+  rules:
+    - changes:
+        - infra-ansible-ci/*
+
 Lint k8s-ns-killer 1 2:
   stage: "Quality"
+  extends: .change_rules_k8s_ns_killer
   image: hadolint/hadolint:latest-debian
   script:
     - hadolint ./k8s-ns-killer/Dockerfile
 
-
 Lint k8s-ns-killer 2 2:
   stage: "Quality"
+  extends: .change_rules_k8s_ns_killer
   image: koalaman/shellcheck-alpine:v0.7.1
   script:
     - shellcheck ./k8s-ns-killer/bin/k8s-ns-killer
@@ -16,13 +22,16 @@ Build k8s-ns-killer:
     - Lint k8s-ns-killer 1 2
     - Lint k8s-ns-killer 2 2
   stage: "Build"
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_k8s_ns_killer
   variables:
     CONTEXT: k8s-ns-killer
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-ns-killer
 
 Test k8s-ns-killer:
   stage: "Test"
+  extends: .change_rules_k8s_ns_killer
   needs:
     - Lint k8s-ns-killer 1 2
     - Lint k8s-ns-killer 2 2
@@ -56,6 +65,8 @@ Test k8s-ns-killer:
     #
     - kubectl delete namespaces ${K8S_NAMESPACE}-good || true
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish k8s-ns-killer to github registry config key may not be used with `rules`: only
 Publish k8s-ns-killer to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
