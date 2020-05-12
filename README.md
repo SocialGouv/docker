@@ -27,7 +27,6 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 <br>
 <br>
 <br>
-<br>
 
 ## Images
 
