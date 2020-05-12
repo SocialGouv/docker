@@ -1,10 +1,10 @@
-.change_rules:
+.change_rules_nginx_error_page:
   rules:
     - changes:
         - nginx-error-pages/*
 
 Lint nginx-error-pages:
-  extends: .change_rules
+  extends: .change_rules_nginx_error_page
   stage: "Quality"
   image: hadolint/hadolint:v1.17.6-debian
   script:
@@ -12,8 +12,8 @@ Lint nginx-error-pages:
 
 Build nginx-error-pages:
   extends:
-    - .change_rules
     - .base_register_to_gitlab_stage
+    - .change_rules_nginx_error_page
   stage: "Build"
   needs:
     - Lint nginx-error-pages
@@ -26,7 +26,7 @@ Build nginx-error-pages:
       --build-arg CUSTOM_ERROR_PAGE_5XX=https://raw.githubusercontent.com/SocialGouv/maintenance/master/index.html
 
 Test nginx-error-pages:
-  extends: .change_rules
+  extends: .change_rules_nginx_error_page
   stage: "Test"
   needs:
     - Lint nginx-error-pages
@@ -50,7 +50,7 @@ Test nginx-error-pages:
   after_script:
     - docker stop nginx-error-pages_test || true
 
-# todo: change_rules should be applied too, but incompatible with only?
+# todo: change_rules_nginx_error_page should be applied too, but incompatible with only?
 # error: jobs:publish nginx-error-pages to github registry config key may not be used with `rules`: only
 Publish nginx-error-pages to Github Registry:
   extends:
