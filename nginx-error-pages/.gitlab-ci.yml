@@ -15,3 +15,37 @@ Build nginx-error-pages:
     DOCKER_BUILD_ARGS: >-
       --build-arg CUSTOM_ERROR_PAGE_4XX=https://raw.githubusercontent.com/SocialGouv/maintenance/master/index.html
       --build-arg CUSTOM_ERROR_PAGE_5XX=https://raw.githubusercontent.com/SocialGouv/maintenance/master/index.html
+
+Test nginx-error-pages:
+  stage: "Test"
+  needs:
+    - Lint nginx-error-pages
+    - Build nginx-error-pages
+  image: docker:19
+  services:
+    - docker:19-dind
+  script:
+    - docker run
+      --detach
+      --env VERSION=x.y.z
+      --name nginx-error-pages_test
+      --publish 8080:8080
+      --rm
+      ${CI_REGISTRY_IMAGE}/nginx-error-pages:${CI_COMMIT_SHA}
+    - docker ps
+    - docker logs nginx-error-pages_test
+    #
+    - docker exec -ti nginx-error-pages_test cat /www/4xx.html | grep "maintenance"
+    - docker exec -ti nginx-error-pages_test cat /www/5xx.html | grep "maintenance"
+    - docker exec -ti nginx-error-pages_test cat /www/5xx.html | grep "pouet"
+  after_script:
+    - docker stop nginx-error-pages_test || true
+
+Publish nginx-error-pages to Github Registry:
+  extends: .base_publish_to_github_stage
+  needs:
+    - Lint nginx-error-pages
+    - Build nginx-error-pages
+    - Test nginx-error-pages
+  variables:
+    IMAGE_NAME: socialgouv/docker/nginx-error-pages
