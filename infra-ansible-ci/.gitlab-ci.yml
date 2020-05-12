@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - infra-ansible-ci/*
+
 Lint infra-ansible-ci:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./infra-ansible-ci/Dockerfile
@@ -8,13 +14,16 @@ Build infra-ansible-ci:
   stage: "Build"
   needs:
     - Lint infra-ansible-ci
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   variables:
     CONTEXT: infra-ansible-ci
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/infra-ansible-ci
 
 Test infra-ansible-ci:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint infra-ansible-ci
     - Build infra-ansible-ci
@@ -25,6 +34,8 @@ Test infra-ansible-ci:
     - terraform --version
     - ansible-inventory --graph
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish infra-ansible-ci to github registry config key may not be used with `rules`: only
 Publish infra-ansible-ci to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
