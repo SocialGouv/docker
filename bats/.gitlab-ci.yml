@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - bats/*
+
 Lint bats:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./bats/Dockerfile
@@ -8,13 +14,16 @@ Build bats:
   stage: "Build"
   needs:
     - Lint bats
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   variables:
     CONTEXT: bats
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/bats
 
 Test bats:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint bats
     - Build bats
@@ -28,6 +37,8 @@ Test bats:
     - bats /usr/lib/bats-support/test
     - bats ./bats/test
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish bats to github registry config key may not be used with `rules`: only
 Publish bats to Github Registry:
   extends: .base_publish_to_github_stage
   needs:

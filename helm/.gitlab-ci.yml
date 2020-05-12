@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - helm/*
+
 Lint helm:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./helm/Dockerfile
@@ -8,7 +14,9 @@ Build helm:
   stage: "Build"
   needs:
     - Lint helm
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   before_script:
     # NODE(douglasduteil): build from renovate maintaining package.json
     # To allow renovate to maintaining the socialgouv/docker/helm image
@@ -16,9 +24,9 @@ Build helm:
     # The script below allow will build the version present in that file.
     - apk add --no-cache jq
     - HELM_CHART_VERSION=$(
-        cat ./helm/package.json |
-        jq '.dependencies["@socialgouv/helm-charts"]' |
-        grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+'
+      cat ./helm/package.json |
+      jq '.dependencies["@socialgouv/helm-charts"]' |
+      grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+'
       )
     - DOCKER_BUILD_ARGS="--build-arg HELM_CHART_VERSION=${HELM_CHART_VERSION}"
   variables:
@@ -27,6 +35,7 @@ Build helm:
 
 Test helm:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint helm
     - Build helm
@@ -49,6 +58,8 @@ Test helm:
     - test -f ./.charts/app/Chart.yaml
     - "grep 'version: '${HELM_CHART_VERSION} ./.charts/app/Chart.yaml"
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish helm to github registry config key may not be used with `rules`: only
 Publish helm to Github Registry:
   extends: .base_publish_to_github_stage
   needs:

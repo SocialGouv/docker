@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - azure-db/*
+
 Lint azure-db:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./azure-db/Dockerfile
@@ -8,13 +14,16 @@ Build azure-db:
   stage: "Build"
   needs:
     - Lint azure-db
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   variables:
     CONTEXT: azure-db
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-db
 
 Test azure-db 1 3:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint azure-db
     - Build azure-db
@@ -35,6 +44,7 @@ Test azure-db 1 3:
 
 Test azure-db 2 3:
   stage: "Test"
+  extends: .change_rules
   # NOTE(douglasduteil): retry the whole job
   # In cases when the postgres is not accessible it's safer to retry than waiting
   retry: 2
@@ -62,44 +72,44 @@ Test azure-db 2 3:
     #
     - echo "create db and user on PG service"
     - docker run
-        --env NEW_DB_EXTENSIONS="pgcrypto"
-        --env NEW_DB_NAME=${NEW_DB_NAME}
-        --env NEW_PASSWORD=${NEW_PASSWORD}
-        --env NEW_USER=${NEW_USER}
-        --env PGHOST=localhost
-        --env PGPASSWORD=${POSTGRES_PASSWORD}
-        --env PGUSER=${POSTGRES_USER}
-        --network="host"
-        --rm
+      --env NEW_DB_EXTENSIONS="pgcrypto"
+      --env NEW_DB_NAME=${NEW_DB_NAME}
+      --env NEW_PASSWORD=${NEW_PASSWORD}
+      --env NEW_USER=${NEW_USER}
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
       ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
     #
     - docker run
-        --env PGHOST=localhost
-        --env PGPASSWORD=${POSTGRES_PASSWORD}
-        --env PGUSER=${POSTGRES_USER}
-        --network="host"
-        --rm
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
       postgres:11.5-alpine
-        psql -lqtA
+      psql -lqtA
     - docker run
-        --env PGHOST=localhost
-        --env PGPASSWORD=${POSTGRES_PASSWORD}
-        --env PGUSER=${POSTGRES_USER}
-        --network="host"
-        --rm
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
       postgres:11.5-alpine
-        psql ${NEW_DB_NAME} -qtA -c '\du'
+      psql ${NEW_DB_NAME} -qtA -c '\du'
     #
     # Test against Hasura
     #
     - docker run
-        --detach
-        --env HASURA_GRAPHQL_DATABASE_URL=postgres://${NEW_USER}:${NEW_PASSWORD}@localhost:5432/${NEW_DB_NAME}
-        --env HASURA_GRAPHQL_ADMIN_SECRET=secret
-        --name hasura_test
-        --network="host"
-        --publish 8080:8080
-        --rm
+      --detach
+      --env HASURA_GRAPHQL_DATABASE_URL=postgres://${NEW_USER}:${NEW_PASSWORD}@localhost:5432/${NEW_DB_NAME}
+      --env HASURA_GRAPHQL_ADMIN_SECRET=secret
+      --name hasura_test
+      --network="host"
+      --publish 8080:8080
+      --rm
       hasura/graphql-engine:v1.1.0
     - |-
       retry=10;
@@ -121,29 +131,30 @@ Test azure-db 2 3:
     #
     - echo "drop db and user on PG service"
     - docker run
-        --env DROP_DATABASE=${NEW_DB_NAME}
-        --env DROP_USER=${NEW_USER}
-        --env PGHOST=localhost
-        --env PGPASSWORD=${POSTGRES_PASSWORD}
-        --env PGUSER=${POSTGRES_USER}
-        --network="host"
-        --rm
+      --env DROP_DATABASE=${NEW_DB_NAME}
+      --env DROP_USER=${NEW_USER}
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
       ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} drop-db-user
     #
     - docker run
-        --env PGHOST=localhost
-        --env PGPASSWORD=${POSTGRES_PASSWORD}
-        --env PGUSER=${POSTGRES_USER}
-        --network="host"
-        --rm
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
       postgres:11.5-alpine
-        psql -lqtA
+      psql -lqtA
   after_script:
     - docker logs hasura_test || true
     - docker stop hasura_test || true
 
 Test azure-db 3 3:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint azure-db
     - Build azure-db
@@ -158,6 +169,8 @@ Test azure-db 3 3:
       ./urchin -v
     - ./urchin azure-db/test
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish azure-db to github registry config key may not be used with `rules`: only
 Publish azure-db to Github Registry:
   extends: .base_publish_to_github_stage
   needs:

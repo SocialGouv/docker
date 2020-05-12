@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - fluentd-modsecurity/*
+
 Lint fluentd-modsecurity:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./fluentd-modsecurity/Dockerfile
@@ -8,13 +14,16 @@ Build fluentd-modsecurity:
   stage: "Build"
   needs:
     - Lint fluentd-modsecurity
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   variables:
     CONTEXT: fluentd-modsecurity
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/fluentd-modsecurity
 
 Test fluentd-modsecurity:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint fluentd-modsecurity
     - Build fluentd-modsecurity
@@ -23,6 +32,8 @@ Test fluentd-modsecurity:
     - fluentd --version
     - fluent-gem list
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish fluentd-modsecurity to github registry config key may not be used with `rules`: only
 Publish fluentd-modsecurity to Github Registry:
   extends: .base_publish_to_github_stage
   needs:

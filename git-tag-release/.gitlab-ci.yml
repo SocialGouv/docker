@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - git-tag-release/*
+
 Lint git-tag-release:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./git-tag-release/Dockerfile

@@ -1,5 +1,11 @@
+.change_rules:
+  rules:
+    - changes:
+        - git-deploy/*
+
 Lint git-deploy:
   stage: "Quality"
+  extends: .change_rules
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./git-deploy/Dockerfile
@@ -8,13 +14,16 @@ Build git-deploy:
   stage: "Build"
   needs:
     - Lint git-deploy
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules
   variables:
     CONTEXT: git-deploy
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/git-deploy
 
 Test git-deploy:
   stage: "Test"
+  extends: .change_rules
   needs:
     - Lint git-deploy
     - Build git-deploy
@@ -29,6 +38,8 @@ Test git-deploy:
     #
     - update-deployment $(cat DEPLOY_ID) "https://github.com/SocialGouv/docker" success
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish git-deploy to github registry config key may not be used with `rules`: only
 Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
   needs:
