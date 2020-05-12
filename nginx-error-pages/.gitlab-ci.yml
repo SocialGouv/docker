@@ -52,10 +52,11 @@ Test nginx-error-pages:
   after_script:
     - docker stop nginx-error-pages_test || true
 
+# todo: change_rules should be applied too, but incompatible with only?
+# error: jobs:publish nginx-error-pages to github registry config key may not be used with `rules`: only
 Publish nginx-error-pages to Github Registry:
   extends:
     - .base_publish_to_github_stage
-    - .change_rules
   needs:
     - Lint nginx-error-pages
     - Build nginx-error-pages
