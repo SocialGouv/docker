@@ -1,8 +1,7 @@
 .change_rules:
   rules:
     - changes:
-        - ./nginx-error-pages/Dockerfile
-        - ./nginx-error-pages/.gitlab-ci.yml
+        - nginx-error-pages/*
 
 Lint nginx-error-pages:
   extends: .change_rules
