@@ -1,0 +1,17 @@
+Lint nginx-error-pages:
+  stage: "Quality"
+  image: hadolint/hadolint:v1.17.6-debian
+  script:
+    - hadolint ./nginx-error-pages/Dockerfile
+
+Build nginx-error-pages:
+  stage: "Build"
+  needs:
+    - Lint nginx-error-pages
+  extends: .base_register_to_gitlab_stage
+  variables:
+    CONTEXT: nginx-error-pages
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx-error-pages
+    DOCKER_BUILD_ARGS: >-
+      --build-arg CUSTOM_ERROR_PAGE_4XX=https://raw.githubusercontent.com/SocialGouv/maintenance/master/index.html
+      --build-arg CUSTOM_ERROR_PAGE_5XX=https://raw.githubusercontent.com/SocialGouv/maintenance/master/index.html

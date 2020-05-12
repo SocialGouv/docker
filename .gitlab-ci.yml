@@ -20,6 +20,7 @@ include:
   - /kosko/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
+  - /nginx-error-pages/.gitlab-ci.yml
   - /pg-cleaner/.gitlab-ci.yml
   - /puppeteer/.gitlab-ci.yml
   - /trivy/.gitlab-ci.yml
