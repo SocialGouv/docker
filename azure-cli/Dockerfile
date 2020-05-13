@@ -1,5 +1,5 @@
 
-FROM debian:10.3-slim
+FROM debian:10.4-slim
 
 # renovate: datasource=pypi depName=azure-cli versioning=2.5.1
 ARG AZURE_CLI_VERSION=2.5.1
