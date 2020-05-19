@@ -11,7 +11,8 @@ RUN apk add --no-cache \
   ttf-freefont=~20120503 \
   nodejs=~12 \
   yarn=~1
-
+  curl=~7
+  
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
