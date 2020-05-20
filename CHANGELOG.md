@@ -1,3 +1,23 @@
+# [1.16.0](https://github.com/SocialGouv/docker/compare/v1.15.0...v1.16.0) (2020-05-20)
+
+
+### Bug Fixes
+
+* **k8s-ns-killer:** do not remove ns linked to existing tags ([#256](https://github.com/SocialGouv/docker/issues/256)) ([04d035f](https://github.com/SocialGouv/docker/commit/04d035f5c60bcda4075d03a95ce46940abf37af8))
+* **k8s-ns-killer:** uses socialgouv/docker/kubectl:1.14.0 ([#240](https://github.com/SocialGouv/docker/issues/240)) ([df5e6ed](https://github.com/SocialGouv/docker/commit/df5e6edbe9199fa1ce8df0a24ae3559f60546f69))
+* **k8s-object-cleaner:** uses socialgouv/docker/kubectl:1.14.0 ([#242](https://github.com/SocialGouv/docker/issues/242)) ([92a9cb4](https://github.com/SocialGouv/docker/commit/92a9cb402f339f82bbd9e58fc31c3395fbd71074))
+
+
+### Features
+
+* **deps:** update debian docker tag to v10.4 ([#251](https://github.com/SocialGouv/docker/issues/251)) ([31b76c2](https://github.com/SocialGouv/docker/commit/31b76c2d0077ff5daa132d4f44a94e961ed58173))
+* **deps:** update fluent/fluentd docker tag to v1.10.3 ([#223](https://github.com/SocialGouv/docker/issues/223)) ([f4f25ad](https://github.com/SocialGouv/docker/commit/f4f25ad9a28cc50a30c4fde55ef59933eeb67920))
+* **deps:** update fluent/fluentd docker tag to v1.10.4 ([#245](https://github.com/SocialGouv/docker/issues/245)) ([5e1a5c0](https://github.com/SocialGouv/docker/commit/5e1a5c0f416fff1aac9d4ede8fd4714a8ae99b93))
+* **deps:** update nginx docker tag to v1.18 ([#220](https://github.com/SocialGouv/docker/issues/220)) ([1b82cfe](https://github.com/SocialGouv/docker/commit/1b82cfe0ee4b816ff45186e4abb34296a027f6e3))
+* **deps:** update python docker tag to v3.8.3 ([#253](https://github.com/SocialGouv/docker/issues/253)) ([f3844ef](https://github.com/SocialGouv/docker/commit/f3844ef3f8adc8ecb489133155a8315f107fcad1))
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.15.0 ([#238](https://github.com/SocialGouv/docker/issues/238)) ([87b3449](https://github.com/SocialGouv/docker/commit/87b3449a7dbf8ed303f012ca44191f27275e7b16))
+* **deps:** update socialgouv/docker/kubectl docker tag to v1.15.0 ([#227](https://github.com/SocialGouv/docker/issues/227)) ([d6131d8](https://github.com/SocialGouv/docker/commit/d6131d878b2688b9c6c354db8395147bfa1f6fa2))
+
 # [1.15.0](https://github.com/SocialGouv/docker/compare/v1.14.0...v1.15.0) (2020-05-11)
 
 
