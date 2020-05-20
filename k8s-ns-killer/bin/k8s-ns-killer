@@ -31,7 +31,7 @@ remove_namespace_branch_remote () {
 
   { [ -z "${remote}" ] || [ "${remote}" = "<none>" ]; } && return 0
   { [ -z "${branch}" ] || [ "${branch}" = "<none>" ]; } && return 0
-  git ls-remote --exit-code --heads "${remote}" "${branch}" > /dev/null && return 0
+  git ls-remote --exit-code --heads --tags "${remote}" "${branch}" > /dev/null && return 0
 
   echo ""
   echo "Removing namespace ${namespace} from"
