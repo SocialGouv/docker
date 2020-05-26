@@ -17,15 +17,12 @@ DBS=`psql -tc "SELECT datname FROM pg_database where datname like 'db_%';"`
 
 echo "$DBS" | while read database;
 do
-  echo "io $database";
   #git log
   HAS_COMMIT=`git cat-file -e ${database#"db_"}`
   if [ $? -eq 0 ];
   then
     # if related commit older than MAX_AGE, delete
     COMMIT_DATE=`git log -q --no-walk --format=%ct ${database#"db_"}|| exit 0`
-    echo "COMMIT_DATE1 $COMMIT_DATE"
-    echo "NOW $NOW"
     DIFF="$((NOW - COMMIT_DATE ))"
     if [ $DIFF -gt $MAX_AGE ];
     then
