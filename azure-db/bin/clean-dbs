@@ -13,7 +13,7 @@ function destroy_db {
 }
 
 # List available databases
-DBS=`psql "postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:5432/postgres?sslmode=require" -tc "SELECT datname FROM pg_database where datname like 'db_%';"`
+DBS=`psql -tc "SELECT datname FROM pg_database where datname like 'db_%';"`
 
 echo "$DBS" | while read database;
 do
