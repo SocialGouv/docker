@@ -8,7 +8,7 @@
   },
   "packageRules": [
     {
-      "datasources": ["github-releases"],
+      "datasources": ["docker", "github-releases"],
       "major": {
         "semanticCommitType": "feat"
       },
