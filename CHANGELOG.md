@@ -1,3 +1,15 @@
+## [1.17.1](https://github.com/SocialGouv/docker/compare/v1.17.0...v1.17.1) (2020-05-27)
+
+
+### Bug Fixes
+
+* **azure-db:** add git ([#262](https://github.com/SocialGouv/docker/issues/262)) ([899eb50](https://github.com/SocialGouv/docker/commit/899eb50118791990e21915fcafdc23bc83a7d043))
+
+
+### Reverts
+
+* **gitlab:** restore skip GitHub pull requests pipelines ([4a64d50](https://github.com/SocialGouv/docker/commit/4a64d507ac573271ce017162b67ba807ff27448c))
+
 # [1.17.0](https://github.com/SocialGouv/docker/compare/v1.16.0...v1.17.0) (2020-05-27)
 
 
