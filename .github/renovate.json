@@ -19,7 +19,8 @@
       "packagePatterns": [
         "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
       ],
-      "groupName": "socialgouv/docker self dependencies"
+      "groupName": "socialgouv/docker self dependencies",
+      "semanticCommitType": "chore"
     },
     {
       "paths": ["infra-ansible-ci/requirements.txt"],
