@@ -1,6 +1,6 @@
 .change_rules_curl:
   rules:
-    - &changes_curl:
+    - &changes_curl
       changes:
         - curl/*
 
