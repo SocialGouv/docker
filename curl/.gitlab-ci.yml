@@ -1,12 +1,21 @@
+.change_rules_curl:
+  rules:
+    - &changes_curl
+      changes:
+        - curl/*
+
 Lint curl:
   stage: "Quality"
+  extends: .change_rules_curl
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./curl/Dockerfile
 
 Build curl:
   stage: "Build"
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_curl
   needs:
     - Lint curl
   variables:
@@ -18,6 +27,7 @@ Test curl:
     - Lint curl
     - Build curl
   stage: "Test"
+  extends: .change_rules_curl
   image: "${CI_REGISTRY_IMAGE}/curl:${CI_COMMIT_SHA}"
   script:
     #
@@ -25,6 +35,9 @@ Test curl:
 
 Publish curl to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_curl
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint curl
     - Build curl

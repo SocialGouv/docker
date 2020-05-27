@@ -27,32 +27,11 @@ include:
 
 #
 
-workflow:
-  rules:
-    # Skip GitHub pull requests pipelines
-    - if: $CI_PIPELINE_SOURCE == 'external_pull_request_event'
-      when: never
-    # Otherwise include the job and set to run normally
-    - when: always
-
-#
-
 variables:
   # CI variables
   DOCKER_DRIVER: overlay2
   DOCKER_HOST: tcp://localhost:2375
   GIT_STRATEGY: fetch
-
-.register_image_stage: &register_image_stage
-  image: docker:19
-  variables:
-    DOCKER_HOST: tcp://localhost:2375
-  only:
-    - master
-  services:
-    - docker:19-dind
-  before_script:
-    - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
 
 stages:
   - "Quality"
@@ -72,12 +51,17 @@ Release:
 
 .base_publish_to_github_stage:
   stage: "Publish"
-  only:
-    - tags
   image: docker:19
   services:
     - docker:19-dind
+  rules:
+    - if: "$CI_COMMIT_TAG"
   script:
+    # NOTE(douglasduteil): only run on tags
+    # We should only publish tags on GitHub.
+    # This guard is a safty net in cases one override the above rules and forgot to extend it 
+    - "[[ -z ${CI_COMMIT_TAG} ]] && exit ${CI_JOB_SKIP_EXIT_CODE:-0}"
+
     - echo "${GITHUB_REGISTRY_TOKEN}" | docker login docker.pkg.github.com -u SocialGroovyBot --password-stdin
     - export TAG=$(printf "${CI_COMMIT_TAG}" | sed "s/^v//")
     - docker pull ${CI_REGISTRY}/${IMAGE_NAME}:${TAG}

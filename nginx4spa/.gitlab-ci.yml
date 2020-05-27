@@ -1,5 +1,12 @@
+.change_rules_nginx4pa:
+  rules:
+    - &changes_nginx4pa
+      changes:
+        - nginx4spa/*
+
 Lint nginx4spa:
   stage: "Quality"
+  extends: .change_rules_nginx4pa
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./nginx4spa/Dockerfile
@@ -8,13 +15,16 @@ Build nginx4spa:
   stage: "Build"
   needs:
     - Lint nginx4spa
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_nginx4pa
   variables:
     CONTEXT: nginx4spa
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/nginx4spa
 
 Test nginx4spa:
   stage: "Test"
+  extends: .change_rules_nginx4pa
   needs:
     - Lint nginx4spa
     - Build nginx4spa
@@ -46,6 +56,9 @@ Test nginx4spa:
 
 Publish nginx4spa to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_nginx4pa
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint nginx4spa
     - Build nginx4spa

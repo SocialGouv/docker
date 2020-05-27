@@ -1,5 +1,12 @@
+.change_rules_fluentd_modsecurity:
+  rules:
+    - &changes_fluentd_modsecurity
+      changes:
+        - fluentd-modsecurity/*
+
 Lint fluentd-modsecurity:
   stage: "Quality"
+  extends: .change_rules_fluentd_modsecurity
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./fluentd-modsecurity/Dockerfile
@@ -8,13 +15,16 @@ Build fluentd-modsecurity:
   stage: "Build"
   needs:
     - Lint fluentd-modsecurity
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_fluentd_modsecurity
   variables:
     CONTEXT: fluentd-modsecurity
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/fluentd-modsecurity
 
 Test fluentd-modsecurity:
   stage: "Test"
+  extends: .change_rules_fluentd_modsecurity
   needs:
     - Lint fluentd-modsecurity
     - Build fluentd-modsecurity
@@ -25,6 +35,9 @@ Test fluentd-modsecurity:
 
 Publish fluentd-modsecurity to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_fluentd_modsecurity
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint fluentd-modsecurity
     - Build fluentd-modsecurity

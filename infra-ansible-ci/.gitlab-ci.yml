@@ -1,5 +1,12 @@
+.change_rules_infra_ansible_ci:
+  rules:
+    - &change_infra_ansible_ci
+      changes:
+        - infra-ansible-ci/*
+
 Lint infra-ansible-ci:
   stage: "Quality"
+  extends: .change_rules_infra_ansible_ci
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./infra-ansible-ci/Dockerfile
@@ -8,13 +15,16 @@ Build infra-ansible-ci:
   stage: "Build"
   needs:
     - Lint infra-ansible-ci
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_infra_ansible_ci
   variables:
     CONTEXT: infra-ansible-ci
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/infra-ansible-ci
 
 Test infra-ansible-ci:
   stage: "Test"
+  extends: .change_rules_infra_ansible_ci
   needs:
     - Lint infra-ansible-ci
     - Build infra-ansible-ci
@@ -27,6 +37,9 @@ Test infra-ansible-ci:
 
 Publish infra-ansible-ci to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *change_infra_ansible_ci
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint infra-ansible-ci
     - Build infra-ansible-ci

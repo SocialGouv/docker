@@ -1,21 +1,30 @@
+.change_rules_trivy:
+  rules:
+    - &changes_trivy
+      changes:
+        - trivy/*
+
 Lint trivy:
   stage: "Quality"
+  extends: .change_rules_trivy
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./trivy/Dockerfile
-
 
 Build trivy:
   stage: "Build"
   needs:
     - Lint trivy
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_trivy
   variables:
     CONTEXT: trivy
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/trivy
 
 Test trivy:
   stage: "Test"
+  extends: .change_rules_trivy
   needs:
     - Lint trivy
     - Build trivy
@@ -52,6 +61,9 @@ Test trivy:
 
 Publish trivy to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_trivy
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint trivy
     - Build trivy

@@ -1,5 +1,12 @@
+.change_rules_azure_cli:
+  rules:
+    - &changes_azure_cli
+      changes:
+        - azure-cli/*
+
 Lint azure-cli:
   stage: "Quality"
+  extends: .change_rules_azure_cli
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./azure-cli/Dockerfile
@@ -8,13 +15,16 @@ Build azure-cli:
   stage: "Build"
   needs:
     - Lint azure-cli
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_azure_cli
   variables:
     CONTEXT: azure-cli
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/azure-cli
 
 Test azure-cli:
   stage: "Test"
+  extends: .change_rules_azure_cli
   needs:
     - Lint azure-cli
     - Build azure-cli
@@ -24,6 +34,9 @@ Test azure-cli:
 
 Publish azure-cli to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_azure_cli
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint azure-cli
     - Test azure-cli
