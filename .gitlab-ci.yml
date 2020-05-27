@@ -43,17 +43,6 @@ variables:
   DOCKER_HOST: tcp://localhost:2375
   GIT_STRATEGY: fetch
 
-.register_image_stage: &register_image_stage
-  image: docker:19
-  variables:
-    DOCKER_HOST: tcp://localhost:2375
-  only:
-    - master
-  services:
-    - docker:19-dind
-  before_script:
-    - docker login  $CI_REGISTRY -u gitlab-ci-token -p $CI_JOB_TOKEN
-
 stages:
   - "Quality"
   - "Build"
