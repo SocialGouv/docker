@@ -1,3 +1,16 @@
+# [1.17.0-alpha.1](https://github.com/SocialGouv/docker/compare/v1.16.0...v1.17.0-alpha.1) (2020-05-27)
+
+
+### Bug Fixes
+
+* **gitlab:** add rules.change ([#247](https://github.com/SocialGouv/docker/issues/247)) ([d26347b](https://github.com/SocialGouv/docker/commit/d26347b9436f9c8ce585c887b6f767ba0ab8e785))
+
+
+### Features
+
+* **deps:** update infra-ansible-ci requirements (major) ([#203](https://github.com/SocialGouv/docker/issues/203)) ([d04c795](https://github.com/SocialGouv/docker/commit/d04c7958785c05744e1407721e8cd919f108ac2e))
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.16.0 ([#257](https://github.com/SocialGouv/docker/issues/257)) ([a59451c](https://github.com/SocialGouv/docker/commit/a59451c68fd83079f8f560b17fb7e76f15100076))
+
 # [1.16.0](https://github.com/SocialGouv/docker/compare/v1.15.0...v1.16.0) (2020-05-20)
 
 
