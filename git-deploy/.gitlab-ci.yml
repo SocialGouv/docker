@@ -1,6 +1,7 @@
 .change_rules_git_deploy:
   rules:
-    - changes:
+    - &changes_git_deploy
+      changes:
         - git-deploy/*
 
 Lint git-deploy:
@@ -38,10 +39,11 @@ Test git-deploy:
     #
     - update-deployment $(cat DEPLOY_ID) "https://github.com/SocialGouv/docker" success
 
-# todo: change_rules should be applied too, but incompatible with only?
-# error: jobs:publish git-deploy to github registry config key may not be used with `rules`: only
 Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_git_deploy
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint git-deploy
     - Test git-deploy

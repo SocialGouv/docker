@@ -1,6 +1,7 @@
 .change_rules_puppeteer:
   rules:
-    - changes:
+    - &changes_puppeteer
+      changes:
         - puppeteer/*
 
 Lint puppeteer:
@@ -33,10 +34,11 @@ Test puppeteer:
     - node --version
     - yarn --version
 
-# todo: change_rules should be applied too, but incompatible with only?
-# error: jobs:publish puppeteer to github registry config key may not be used with `rules`: only
 Publish puppeteer to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_puppeteer
+      if: "$CI_COMMIT_TAG"
   needs:
     - Build puppeteer
   variables:

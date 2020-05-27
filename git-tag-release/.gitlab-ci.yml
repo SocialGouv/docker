@@ -1,6 +1,7 @@
 .change_rules_git_tag_release:
   rules:
-    - changes:
+    - &changes_git_tag_release
+      changes:
         - git-tag-release/*
 
 Lint git-tag-release:

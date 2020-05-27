@@ -1,6 +1,7 @@
 .change_rules_kosko:
   rules:
-    - changes:
+    - &changes_kosko
+      changes:
         - kosko/*
 
 Lint kosko:
@@ -39,10 +40,11 @@ Test kosko:
     - "[[ $(kubectl version) ]] && echo '[[ <test> ]] && <struff>' should be supported"
     - envsubst --version
 
-# todo: change_rules should be applied too, but incompatible with only?
-# error: jobs:publish kosko to github registry config key may not be used with `rules`: only
 Publish kosko to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_kosko
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint kosko
     - Build kosko

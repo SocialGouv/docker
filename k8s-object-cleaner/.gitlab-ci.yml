@@ -1,6 +1,7 @@
 .change_rules_k8s_object_killer:
   rules:
-    - changes:
+    - &changes_k8s_object_killer
+      changes:
         - k8s-object-cleaner/*
 
 Lint k8s-object-cleaner 1 2:
@@ -67,10 +68,11 @@ Test k8s-object-cleaner:
   after_script:
     - kubectl delete namespaces ${K8S_NAMESPACE}
 
-# todo: change_rules should be applied too, but incompatible with only?
-# error: jobs:publish k8s-object-cleaner to github registry config key may not be used with `rules`: only
 Publish k8s-object-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_k8s_object_killer
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint k8s-object-cleaner 1 2
     - Lint k8s-object-cleaner 2 2

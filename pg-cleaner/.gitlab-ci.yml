@@ -1,6 +1,7 @@
 .change_rules_pg_cleaner:
   rules:
-    - changes:
+    - &changes_pg_cleaner
+      changes:
         - pg-cleaner/*
 
 Lint pg-cleaner:
@@ -32,10 +33,11 @@ Test pg-cleaner:
   script:
     - python --version
 
-# todo: change_rules should be applied too, but incompatible with only?
-# error: jobs:publish pg-cleaner to github registry config key may not be used with `rules`: only
 Publish pg-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_pg_cleaner
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint pg-cleaner
     - Build pg-cleaner
