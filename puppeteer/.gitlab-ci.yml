@@ -1,5 +1,12 @@
+.change_rules_puppeteer:
+  rules:
+    - &changes_puppeteer
+      changes:
+        - puppeteer/*
+
 Lint puppeteer:
   stage: "Quality"
+  extends: .change_rules_puppeteer
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./puppeteer/Dockerfile
@@ -8,13 +15,16 @@ Build puppeteer:
   stage: "Build"
   needs:
     - Lint puppeteer
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_puppeteer
   variables:
     CONTEXT: puppeteer
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/puppeteer
 
 Test puppeteer:
   stage: "Test"
+  extends: .change_rules_puppeteer
   needs:
     - Lint puppeteer
     - Build puppeteer
@@ -26,6 +36,9 @@ Test puppeteer:
 
 Publish puppeteer to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_puppeteer
+      if: "$CI_COMMIT_TAG"
   needs:
     - Build puppeteer
   variables:

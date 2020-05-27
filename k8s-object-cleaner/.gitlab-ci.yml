@@ -1,11 +1,19 @@
+.change_rules_k8s_object_killer:
+  rules:
+    - &changes_k8s_object_killer
+      changes:
+        - k8s-object-cleaner/*
+
 Lint k8s-object-cleaner 1 2:
   stage: "Quality"
+  extends: .change_rules_k8s_object_killer
   image: hadolint/hadolint:latest-debian
   script:
     - hadolint ./k8s-object-cleaner/Dockerfile
 
 Lint k8s-object-cleaner 2 2:
   stage: "Quality"
+  extends: .change_rules_k8s_object_killer
   image: node:14-alpine
   script:
     - npx prettier -c ./k8s-object-cleaner/bin/*
@@ -15,13 +23,16 @@ Build k8s-object-cleaner:
     - Lint k8s-object-cleaner 1 2
     - Lint k8s-object-cleaner 2 2
   stage: "Build"
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_k8s_object_killer
   variables:
     CONTEXT: k8s-object-cleaner
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/k8s-object-cleaner
 
 Test k8s-object-cleaner:
   stage: "Test"
+  extends: .change_rules_k8s_object_killer
   needs:
     - Lint k8s-object-cleaner 1 2
     - Lint k8s-object-cleaner 2 2
@@ -59,6 +70,9 @@ Test k8s-object-cleaner:
 
 Publish k8s-object-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_k8s_object_killer
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint k8s-object-cleaner 1 2
     - Lint k8s-object-cleaner 2 2

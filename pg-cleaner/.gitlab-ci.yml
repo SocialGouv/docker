@@ -1,5 +1,12 @@
+.change_rules_pg_cleaner:
+  rules:
+    - &changes_pg_cleaner
+      changes:
+        - pg-cleaner/*
+
 Lint pg-cleaner:
   stage: "Quality"
+  extends: .change_rules_pg_cleaner
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./pg-cleaner/Dockerfile
@@ -8,13 +15,16 @@ Build pg-cleaner:
   stage: "Build"
   needs:
     - Lint pg-cleaner
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_pg_cleaner
   variables:
     CONTEXT: pg-cleaner
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/pg-cleaner
 
 Test pg-cleaner:
   stage: "Test"
+  extends: .change_rules_pg_cleaner
   needs:
     - Lint pg-cleaner
     - Build pg-cleaner
@@ -25,9 +35,12 @@ Test pg-cleaner:
 
 Publish pg-cleaner to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_pg_cleaner
+      if: "$CI_COMMIT_TAG"
   needs:
-  - Lint pg-cleaner
-  - Build pg-cleaner
-  - Test pg-cleaner
+    - Lint pg-cleaner
+    - Build pg-cleaner
+    - Test pg-cleaner
   variables:
     IMAGE_NAME: socialgouv/docker/pg-cleaner

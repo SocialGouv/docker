@@ -1,21 +1,30 @@
+.change_rules_kosko:
+  rules:
+    - &changes_kosko
+      changes:
+        - kosko/*
+
 Lint kosko:
   stage: "Quality"
+  extends: .change_rules_kosko
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./kosko/Dockerfile
-
 
 Build kosko:
   stage: "Build"
   needs:
     - Lint kosko
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_kosko
   variables:
     CONTEXT: kosko
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kosko
 
 Test kosko:
   stage: "Test"
+  extends: .change_rules_kosko
   needs:
     - Lint kosko
     - Build kosko
@@ -33,6 +42,9 @@ Test kosko:
 
 Publish kosko to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_kosko
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint kosko
     - Build kosko

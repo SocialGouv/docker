@@ -1,5 +1,12 @@
+.change_rules_git_deploy:
+  rules:
+    - &changes_git_deploy
+      changes:
+        - git-deploy/*
+
 Lint git-deploy:
   stage: "Quality"
+  extends: .change_rules_git_deploy
   image: hadolint/hadolint:v1.17.6-debian
   script:
     - hadolint ./git-deploy/Dockerfile
@@ -8,13 +15,16 @@ Build git-deploy:
   stage: "Build"
   needs:
     - Lint git-deploy
-  extends: .base_register_to_gitlab_stage
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_git_deploy
   variables:
     CONTEXT: git-deploy
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/git-deploy
 
 Test git-deploy:
   stage: "Test"
+  extends: .change_rules_git_deploy
   needs:
     - Lint git-deploy
     - Build git-deploy
@@ -31,6 +41,9 @@ Test git-deploy:
 
 Publish git-deploy to Github Registry:
   extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_git_deploy
+      if: "$CI_COMMIT_TAG"
   needs:
     - Lint git-deploy
     - Test git-deploy
