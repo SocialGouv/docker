@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# DBS with commits having more then MAX_AGE are destroyed (days)
+MAX_AGE=$((10*60*60*24))
+
+NOW=`date +%s`
+
+function destroy_db {
+  DB_NAME=$1
+  DB_USER=${DB_NAME/db_/user_}
+  echo "DESTROY ${DB_NAME} ${DB_USER}"
+  DROP_DATABASE=$DB_NAME DROP_USER=$DB_USER /bin/drop-db-user
+}
+
+# List available databases
+DBS=`psql -tc "SELECT datname FROM pg_database where datname like 'db_%';"`
+
+echo "$DBS" | while read database;
+do
+  #git log
+  HAS_COMMIT=`git cat-file -e ${database#"db_"}`
+  if [ $? -eq 0 ];
+  then
+    # if related commit older than MAX_AGE, delete
+    COMMIT_DATE=`git log -q --no-walk --format=%ct ${database#"db_"}|| exit 0`
+    DIFF="$((NOW - COMMIT_DATE ))"
+    if [ $DIFF -gt $MAX_AGE ];
+    then
+      #echo "DESTROY $database"
+      destroy_db $database
+    fi
+
+  else
+    # if related commit not found, delete the DB
+    destroy_db $database
+  fi
+
+  #date_in_days = echo $(( d1 - d2 ))
+done
+
+echo "end"
