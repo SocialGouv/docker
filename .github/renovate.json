@@ -15,7 +15,7 @@
       "minor": {
         "semanticCommitType": "feat"
       },
-      "path": {
+      "patch": {
         "semanticCommitType": "fix"
       }
     },
