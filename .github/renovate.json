@@ -9,8 +9,15 @@
   "packageRules": [
     {
       "depTypeList": ["final", "stage"],
-      "updateTypes": ["major", "minor"],
-      "semanticCommitType": "feat"
+      "major": {
+        "semanticCommitType": "feat"
+      },
+      "minor": {
+        "semanticCommitType": "feat"
+      },
+      "path": {
+        "semanticCommitType": "fix"
+      }
     },
     {
       "datasources": [
