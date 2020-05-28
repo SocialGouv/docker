@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/SocialGouv/docker/compare/v1.18.0...v1.19.0) (2020-05-28)
+
+
+### Features
+
+* **deps:** update hashicorp/terraform docker tag to v0.12.26 ([#267](https://github.com/SocialGouv/docker/issues/267)) ([ab864c0](https://github.com/SocialGouv/docker/commit/ab864c03f32133dd839e0adc1da97b66ba8418cc))
+
 # [1.18.0](https://github.com/SocialGouv/docker/compare/v1.17.1...v1.18.0) (2020-05-27)
 
 
