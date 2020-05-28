@@ -1,3 +1,15 @@
+# [1.21.0](https://github.com/SocialGouv/docker/compare/v1.20.0...v1.21.0) (2020-05-28)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.20.0 ([#272](https://github.com/SocialGouv/docker/issues/272)) ([3161e77](https://github.com/SocialGouv/docker/commit/3161e7710a7c197c864b113a93e96c12d5161238))
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-loganalytics to v0.6.0 ([#271](https://github.com/SocialGouv/docker/issues/271)) ([047f679](https://github.com/SocialGouv/docker/commit/047f67914dafcb7156000abd524712265dc6b469))
+
 # [1.20.0](https://github.com/SocialGouv/docker/compare/v1.19.0...v1.20.0) (2020-05-28)
 
 
