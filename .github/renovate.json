@@ -28,6 +28,9 @@
       ],
       "groupName": "socialgouv/docker self dependencies",
       "minor": {
+        "semanticCommitType": "fix"
+      },
+      "patch": {
         "semanticCommitType": "chore"
       }
     },
