@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/SocialGouv/docker/compare/v1.19.0...v1.20.0) (2020-05-28)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.19.0 ([#270](https://github.com/SocialGouv/docker/issues/270)) ([cd24715](https://github.com/SocialGouv/docker/commit/cd247158698b104d35a89823fb6a008183d567f3))
+
+
+### Features
+
+* **deps:** update infra-ansible-ci requirements ([#202](https://github.com/SocialGouv/docker/issues/202)) ([ad7e40b](https://github.com/SocialGouv/docker/commit/ad7e40bf3182a180ac5d1da0db42c7067b0317cf))
+
 # [1.19.0](https://github.com/SocialGouv/docker/compare/v1.18.0...v1.19.0) (2020-05-28)
 
 
