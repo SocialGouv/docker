@@ -1,4 +1,4 @@
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.21.13
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.21.14
 
 USER root
 
