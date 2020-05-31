@@ -1,3 +1,10 @@
+## [1.21.18](https://github.com/SocialGouv/docker/compare/v1.21.17...v1.21.18) (2020-05-31)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.21.17 ([#292](https://github.com/SocialGouv/docker/issues/292)) ([d85fefc](https://github.com/SocialGouv/docker/commit/d85fefc1209749e10bbe670c12d738a7e4653b68))
+
 ## [1.21.17](https://github.com/SocialGouv/docker/compare/v1.21.16...v1.21.17) (2020-05-31)
 
 
