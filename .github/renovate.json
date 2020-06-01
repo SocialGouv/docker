@@ -20,7 +20,8 @@
       },
       "patch": {
         "semanticCommitType": "fix"
-      }
+      },
+      "separateMinorPatch": true
     },
     {
       "datasources": [
@@ -35,7 +36,8 @@
       },
       "patch": {
         "semanticCommitType": "chore"
-      }
+      },
+      "separateMinorPatch": true
     },
     {
       "paths": ["infra-ansible-ci/requirements.txt"],
