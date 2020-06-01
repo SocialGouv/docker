@@ -9,6 +9,9 @@
   "packageRules": [
     {
       "datasources": ["docker", "github-releases"],
+      "excludePackagePatterns": [
+        "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
+      ],
       "major": {
         "semanticCommitType": "feat"
       },
