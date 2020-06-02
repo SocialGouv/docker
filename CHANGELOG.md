@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/SocialGouv/docker/compare/v1.21.23...v1.22.0) (2020-06-02)
+
+
+### Features
+
+* **deps:** update nginx docker tag to v1.19 ([#301](https://github.com/SocialGouv/docker/issues/301)) ([41763d0](https://github.com/SocialGouv/docker/commit/41763d04c6a1837555f386ec1d9ae93591e02940))
+
 ## [1.21.23](https://github.com/SocialGouv/docker/compare/v1.21.22...v1.21.23) (2020-06-01)
 
 
