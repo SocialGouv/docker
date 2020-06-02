@@ -8,7 +8,7 @@
   },
   "packageRules": [
     {
-      "datasources": ["docker", "github-releases"],
+      "datasources": ["docker", "github-releases", "pypi"],
       "excludePackagePatterns": [
         "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
       ],
