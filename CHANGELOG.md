@@ -1,3 +1,10 @@
+## [1.22.2](https://github.com/SocialGouv/docker/compare/v1.22.1...v1.22.2) (2020-06-03)
+
+
+### Bug Fixes
+
+* **deps:** update hadolint/hadolint docker tag to v1.17.7 ([#307](https://github.com/SocialGouv/docker/issues/307)) ([a9b0272](https://github.com/SocialGouv/docker/commit/a9b027225ed426041f4abf29a72bbcd173d77676))
+
 ## [1.22.1](https://github.com/SocialGouv/docker/compare/v1.22.0...v1.22.1) (2020-06-02)
 
 
