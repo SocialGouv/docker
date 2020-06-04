@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/SocialGouv/docker/compare/v1.22.2...v1.23.0) (2020-06-04)
+
+
+### Features
+
+* **deps:** update fluent/fluentd docker tag to v1.11.0 ([#308](https://github.com/SocialGouv/docker/issues/308)) ([f9ffce3](https://github.com/SocialGouv/docker/commit/f9ffce38d2108ca6f944757ee6025bb90f9b6d00))
+
 ## [1.22.2](https://github.com/SocialGouv/docker/compare/v1.22.1...v1.22.2) (2020-06-03)
 
 
