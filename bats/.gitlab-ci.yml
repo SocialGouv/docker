@@ -7,7 +7,7 @@
 Lint bats:
   stage: "Quality"
   extends: .change_rules_bats
-  image: hadolint/hadolint:v1.17.7-debian
+  image: hadolint/hadolint:v1.18.0-debian
   script:
     - hadolint ./bats/Dockerfile
 
