@@ -47,6 +47,10 @@
         ":semanticCommitType(feat)"
       ],
       "semanticCommitType": "feat"
+    },
+    {
+      "paths": ["\\.gitlab-ci.yml$"],
+      "semanticCommitType": "chore"
     }
   ],
   "regexManagers": [
