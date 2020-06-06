@@ -49,6 +49,7 @@
       "semanticCommitType": "feat"
     },
     {
+      "datasources": ["docker"],
       "paths": ["\\.gitlab-ci.yml$"],
       "semanticCommitType": "chore"
     }
