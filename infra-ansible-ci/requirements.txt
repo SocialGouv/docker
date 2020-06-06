@@ -1,4 +1,4 @@
-adal==1.2.3
+adal==1.2.4
 ansible==2.9.9
 ansible-lint==4.2.0
 applicationinsights==0.11.9
@@ -44,13 +44,13 @@ colorama==0.4.3
 cryptography==2.9.2
 humanfriendly~=8.2
 idna==2.9
-importlib-metadata==1.6.0
+importlib-metadata==1.6.1
 isodate==0.6.0
 Jinja2==2.11.2
 jmespath==0.10.0
 knack==0.7.1
 MarkupSafe==1.1.1
-msrest==0.6.14
+msrest==0.6.15
 msrestazure==0.6.3
 oauthlib==3.1.0
 packaging==20.4
