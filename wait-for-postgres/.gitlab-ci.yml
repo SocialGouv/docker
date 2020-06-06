@@ -14,7 +14,7 @@ Lint wait-for-postgres 1 2:
 Lint wait-for-postgres 2 2:
   stage: "Quality"
   extends: .change_rules_wait_for_postgres
-  image: koalaman/shellcheck-alpine:v0.7.1
+  image: koalaman/shellcheck-alpine:v0.7.0
   script:
     - shellcheck ./wait-for-postgres/bin/wait-for-postgres
 
