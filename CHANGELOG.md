@@ -1,3 +1,10 @@
+## [1.24.3](https://github.com/SocialGouv/docker/compare/v1.24.2...v1.24.3) (2020-06-06)
+
+
+### Bug Fixes
+
+* **deps:** update koalaman/shellcheck-alpine docker tag to v0.7.1 ([#317](https://github.com/SocialGouv/docker/issues/317)) ([5c88929](https://github.com/SocialGouv/docker/commit/5c889299cd47180e0c34ca08af4d8396c5677244))
+
 ## [1.24.2](https://github.com/SocialGouv/docker/compare/v1.24.1...v1.24.2) (2020-06-06)
 
 
