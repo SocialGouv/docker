@@ -9,6 +9,7 @@
   "packageRules": [
     {
       "datasources": ["docker", "github-releases", "pypi"],
+      "ignorePaths": ["\\.gitlab-ci.yml$"],
       "excludePackagePatterns": [
         "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
       ],
@@ -47,11 +48,6 @@
         ":semanticCommitType(feat)"
       ],
       "semanticCommitType": "feat"
-    },
-    {
-      "datasources": ["docker"],
-      "paths": ["\\.gitlab-ci.yml$"],
-      "semanticCommitType": "chore"
     }
   ],
   "regexManagers": [
