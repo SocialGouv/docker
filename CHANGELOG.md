@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/SocialGouv/docker/compare/v1.26.1...v1.27.0) (2020-06-07)
+
+
+### Features
+
+* **deps:** update infra-ansible-ci requirements ([#300](https://github.com/SocialGouv/docker/issues/300)) ([32f7238](https://github.com/SocialGouv/docker/commit/32f7238cb3b5484554f866f5185c1086d106cfda))
+
 ## [1.26.1](https://github.com/SocialGouv/docker/compare/v1.26.0...v1.26.1) (2020-06-07)
 
 
