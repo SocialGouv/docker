@@ -1,3 +1,10 @@
+## [1.27.2](https://github.com/SocialGouv/docker/compare/v1.27.1...v1.27.2) (2020-06-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency certifi to v2020.4.5.2 ([#324](https://github.com/SocialGouv/docker/issues/324)) ([44761ab](https://github.com/SocialGouv/docker/commit/44761abaff2d346df1855f21fb6caef9f52e3ec4))
+
 ## [1.27.1](https://github.com/SocialGouv/docker/compare/v1.27.0...v1.27.1) (2020-06-07)
 
 
