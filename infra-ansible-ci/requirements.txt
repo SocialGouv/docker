@@ -50,7 +50,7 @@ Jinja2==2.11.2
 jmespath==0.10.0
 knack==0.7.1
 MarkupSafe==1.1.1
-msrest==0.6.15
+msrest==0.6.16
 msrestazure==0.6.3
 oauthlib==3.1.0
 packaging==20.4
