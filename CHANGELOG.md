@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/SocialGouv/docker/compare/v1.27.2...v1.28.0) (2020-06-09)
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-containerservice to v9.1.0 ([#326](https://github.com/SocialGouv/docker/issues/326)) ([7d35622](https://github.com/SocialGouv/docker/commit/7d356226bbc8d83e838db61b87dc86c37665f933))
+
 ## [1.27.2](https://github.com/SocialGouv/docker/compare/v1.27.1...v1.27.2) (2020-06-07)
 
 
