@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/SocialGouv/docker/compare/v1.28.1...v1.29.0) (2020-06-09)
+
+
+### Features
+
+* **deps:** update dependency aquasecurity/trivy to v0.9.1 ([#306](https://github.com/SocialGouv/docker/issues/306)) ([33ef8f6](https://github.com/SocialGouv/docker/commit/33ef8f6686d191cf09a06dbf6c3aca2b086f38a7))
+
 ## [1.28.1](https://github.com/SocialGouv/docker/compare/v1.28.0...v1.28.1) (2020-06-09)
 
 
