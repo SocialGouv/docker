@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/SocialGouv/docker/compare/v1.29.1...v1.29.2) (2020-06-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency msrest to v0.6.16 ([#331](https://github.com/SocialGouv/docker/issues/331)) ([faaf881](https://github.com/SocialGouv/docker/commit/faaf881d33bd37da04da03de21614d4a91004b0d))
+
 ## [1.29.1](https://github.com/SocialGouv/docker/compare/v1.29.0...v1.29.1) (2020-06-09)
 
 
