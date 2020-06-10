@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/SocialGouv/docker/compare/v1.29.2...v1.30.0) (2020-06-10)
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-web to v0.47.0 ([#333](https://github.com/SocialGouv/docker/issues/333)) ([b7df8a6](https://github.com/SocialGouv/docker/commit/b7df8a687d617d4497ee68540946d5862e4497b2))
+
 ## [1.29.2](https://github.com/SocialGouv/docker/compare/v1.29.1...v1.29.2) (2020-06-09)
 
 
