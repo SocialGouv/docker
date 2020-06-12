@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/SocialGouv/docker/compare/v1.30.0...v1.30.1) (2020-06-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency azure-mgmt-hdinsight to v1.5.1 ([#335](https://github.com/SocialGouv/docker/issues/335)) ([0b4e65e](https://github.com/SocialGouv/docker/commit/0b4e65eaced11a95940e0d3f98e04040669404b4))
+
 # [1.30.0](https://github.com/SocialGouv/docker/compare/v1.29.2...v1.30.0) (2020-06-10)
 
 
