@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/SocialGouv/docker/compare/v1.30.2...v1.31.0) (2020-06-13)
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-cosmosdb to v0.15.0 ([#337](https://github.com/SocialGouv/docker/issues/337)) ([4f15701](https://github.com/SocialGouv/docker/commit/4f1570138d96221c4d523087334a6ba9fc6b54dc))
+
 ## [1.30.2](https://github.com/SocialGouv/docker/compare/v1.30.1...v1.30.2) (2020-06-12)
 
 
