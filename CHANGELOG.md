@@ -1,3 +1,10 @@
+## [1.32.2](https://github.com/SocialGouv/docker/compare/v1.32.1...v1.32.2) (2020-06-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @socialgouv/helm-charts to v6.2.0 ([#344](https://github.com/SocialGouv/docker/issues/344)) ([14eb90e](https://github.com/SocialGouv/docker/commit/14eb90e031f374d75e1a8d214721f5a63b698469))
+
 ## [1.32.1](https://github.com/SocialGouv/docker/compare/v1.32.0...v1.32.1) (2020-06-15)
 
 
