@@ -24,7 +24,7 @@ azure-mgmt-iothub==0.12.0
 azure-mgmt-keyvault==2.2.0
 azure-mgmt-loganalytics==0.6.0
 azure-mgmt-marketplaceordering==0.2.1
-azure-mgmt-monitor==0.9.0
+azure-mgmt-monitor==0.10.0
 azure-mgmt-network==10.2.0
 azure-mgmt-nspkg==3.0.2
 azure-mgmt-rdbms==2.2.0
