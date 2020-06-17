@@ -1,3 +1,10 @@
+# [1.33.0](https://github.com/SocialGouv/docker/compare/v1.32.2...v1.33.0) (2020-06-17)
+
+
+### Features
+
+* **deps:** update dependency requests to v2.24.0 ([#346](https://github.com/SocialGouv/docker/issues/346)) ([a7e0373](https://github.com/SocialGouv/docker/commit/a7e0373debbb0cdfa2c8c8c657bb809f478524bd))
+
 ## [1.32.2](https://github.com/SocialGouv/docker/compare/v1.32.1...v1.32.2) (2020-06-15)
 
 
