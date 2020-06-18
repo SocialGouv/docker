@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/SocialGouv/docker/compare/v1.33.2...v1.34.0) (2020-06-18)
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-storage to v11 ([#351](https://github.com/SocialGouv/docker/issues/351)) ([6c72ddc](https://github.com/SocialGouv/docker/commit/6c72ddc92fdb0bf13b45b22a986df7ba6b7b4150))
+
 ## [1.33.2](https://github.com/SocialGouv/docker/compare/v1.33.1...v1.33.2) (2020-06-18)
 
 
