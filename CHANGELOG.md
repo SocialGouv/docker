@@ -1,3 +1,10 @@
+## [1.33.2](https://github.com/SocialGouv/docker/compare/v1.33.1...v1.33.2) (2020-06-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kubernetes/kubernetes to v1.18.4 ([#348](https://github.com/SocialGouv/docker/issues/348)) ([6d9bf97](https://github.com/SocialGouv/docker/commit/6d9bf97356e92d760c0420d22134dd91ff118d4a))
+
 ## [1.33.1](https://github.com/SocialGouv/docker/compare/v1.33.0...v1.33.1) (2020-06-17)
 
 
