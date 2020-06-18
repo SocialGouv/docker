@@ -32,7 +32,7 @@ azure-mgmt-redis==6.0.0
 azure-mgmt-resource==10.0.0
 azure-mgmt-servicebus==0.6.0
 azure-mgmt-sql==0.18.0
-azure-mgmt-storage==10.0.0
+azure-mgmt-storage==11.0.0
 azure-mgmt-trafficmanager==0.51.0
 azure-mgmt-web==0.47.0
 azure-nspkg==3.0.2
