@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/SocialGouv/docker/compare/v1.34.2...v1.35.0) (2020-06-19)
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-compute to v12.1.0 ([#356](https://github.com/SocialGouv/docker/issues/356)) ([687c3cc](https://github.com/SocialGouv/docker/commit/687c3cc01afc3a4578eb413fcfec97bca9f50f37))
+
 ## [1.34.2](https://github.com/SocialGouv/docker/compare/v1.34.1...v1.34.2) (2020-06-19)
 
 
