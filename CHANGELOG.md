@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/SocialGouv/docker/compare/v1.35.1...v1.36.0) (2020-06-20)
+
+
+### Features
+
+* **deps:** update dependency certifi to v2020.6.20 ([#359](https://github.com/SocialGouv/docker/issues/359)) ([70930ee](https://github.com/SocialGouv/docker/commit/70930ee423106f68199d089b86fe0936ae397b90))
+
 ## [1.35.1](https://github.com/SocialGouv/docker/compare/v1.35.0...v1.35.1) (2020-06-19)
 
 
