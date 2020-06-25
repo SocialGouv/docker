@@ -1,3 +1,10 @@
+## [1.37.2](https://github.com/SocialGouv/docker/compare/v1.37.1...v1.37.2) (2020-06-25)
+
+
+### Bug Fixes
+
+* **deps:** update hashicorp/terraform docker tag to v0.12.27 ([#364](https://github.com/SocialGouv/docker/issues/364)) ([a7ba9e8](https://github.com/SocialGouv/docker/commit/a7ba9e8681502355e9b10f7dbc5bd0d57d814c47))
+
 ## [1.37.1](https://github.com/SocialGouv/docker/compare/v1.37.0...v1.37.1) (2020-06-23)
 
 
