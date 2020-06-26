@@ -1,6 +1,6 @@
 #
 
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.37.3 AS kubectl-image
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:1.37.4 AS kubectl-image
 
 #
 
