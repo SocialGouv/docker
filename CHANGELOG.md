@@ -1,3 +1,10 @@
+## [1.39.1](https://github.com/SocialGouv/docker/compare/v1.39.0...v1.39.1) (2020-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.39.0 ([#374](https://github.com/SocialGouv/docker/issues/374)) ([caeea8e](https://github.com/SocialGouv/docker/commit/caeea8e0633370d1efe8b589e77c8d8a70f1bce6))
+
 # [1.39.0](https://github.com/SocialGouv/docker/compare/v1.38.1...v1.39.0) (2020-06-28)
 
 
