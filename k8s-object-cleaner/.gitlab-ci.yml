@@ -1,5 +1,6 @@
 .change_rules_k8s_object_killer:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_k8s_object_killer
       changes:
         - k8s-object-cleaner/*

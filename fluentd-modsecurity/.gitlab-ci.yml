@@ -1,5 +1,6 @@
 .change_rules_fluentd_modsecurity:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_fluentd_modsecurity
       changes:
         - fluentd-modsecurity/*

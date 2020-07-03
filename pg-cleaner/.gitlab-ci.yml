@@ -1,5 +1,6 @@
 .change_rules_pg_cleaner:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_pg_cleaner
       changes:
         - pg-cleaner/*

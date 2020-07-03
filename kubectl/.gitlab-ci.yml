@@ -1,5 +1,6 @@
 .change_rules_kubectl:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_kubectl
       changes:
         - kubectl/*

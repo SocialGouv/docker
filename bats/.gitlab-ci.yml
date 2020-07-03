@@ -1,5 +1,6 @@
 .change_rules_bats:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_bats
       changes:
         - bats/*
