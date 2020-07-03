@@ -15,7 +15,7 @@ azure-mgmt-cdn==4.0.0
 azure-mgmt-compute==12.1.0
 azure-mgmt-containerinstance==1.5.0
 azure-mgmt-containerregistry==2.8.0
-azure-mgmt-containerservice==9.1.0
+azure-mgmt-containerservice==9.2.0
 azure-mgmt-cosmosdb==0.15.0
 azure-mgmt-devtestlabs==4.0.0
 azure-mgmt-dns==3.0.0
@@ -29,7 +29,7 @@ azure-mgmt-network==10.2.0
 azure-mgmt-nspkg==3.0.2
 azure-mgmt-rdbms==2.2.0
 azure-mgmt-redis==6.0.0
-azure-mgmt-resource==10.0.0
+azure-mgmt-resource==10.1.0
 azure-mgmt-servicebus==0.6.0
 azure-mgmt-sql==0.18.0
 azure-mgmt-storage==11.1.0
