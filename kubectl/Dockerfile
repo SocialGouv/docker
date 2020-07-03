@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.12
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
 ARG KUBECTL_VERSION=v1.18.5

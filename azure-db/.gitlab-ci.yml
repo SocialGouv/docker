@@ -159,7 +159,7 @@ Test azure-db 3 3:
   needs:
     - Lint azure-db
     - Build azure-db
-  image: alpine:3.11
+  image: alpine:3.12
   script:
     # NOTE(douglasduteil): add jq to the alpine container
     # Needed to run the /bin/export_from_k8s_secret tests
