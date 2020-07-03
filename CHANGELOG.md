@@ -1,3 +1,11 @@
+# [1.41.0](https://github.com/SocialGouv/docker/compare/v1.40.1...v1.41.0) (2020-07-03)
+
+
+### Features
+
+* **deps:** update alpine docker tag ([#281](https://github.com/SocialGouv/docker/issues/281)) ([1228683](https://github.com/SocialGouv/docker/commit/122868392c9eadc3c31ff738a64d0caa5776c184))
+* **deps:** update infra-ansible-ci requirements (major) ([#376](https://github.com/SocialGouv/docker/issues/376)) ([b58cb79](https://github.com/SocialGouv/docker/commit/b58cb79b4f46649946363226e74aa6d6dfc0c419))
+
 ## [1.40.1](https://github.com/SocialGouv/docker/compare/v1.40.0...v1.40.1) (2020-07-03)
 
 
