@@ -1,3 +1,10 @@
+## [1.41.1](https://github.com/SocialGouv/docker/compare/v1.41.0...v1.41.1) (2020-07-03)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker/bats docker tag to v1.40.1 ([#379](https://github.com/SocialGouv/docker/issues/379)) ([953394b](https://github.com/SocialGouv/docker/commit/953394bb89782b18eef582ea770d01d2f99c3e1c))
+
 # [1.41.0](https://github.com/SocialGouv/docker/compare/v1.40.1...v1.41.0) (2020-07-03)
 
 
