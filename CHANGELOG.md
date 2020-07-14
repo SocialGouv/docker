@@ -1,3 +1,10 @@
+# [1.44.0](https://github.com/SocialGouv/docker/compare/v1.43.2...v1.44.0) (2020-07-14)
+
+
+### Features
+
+* **deps:** update dependency azure-cli to v2.9.0 ([#394](https://github.com/SocialGouv/docker/issues/394)) ([db39e38](https://github.com/SocialGouv/docker/commit/db39e385c4f54dba798acc5f9806efde383a9c79))
+
 ## [1.43.2](https://github.com/SocialGouv/docker/compare/v1.43.1...v1.43.2) (2020-07-13)
 
 
