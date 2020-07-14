@@ -1,3 +1,15 @@
+# [1.45.0](https://github.com/SocialGouv/docker/compare/v1.44.0...v1.45.0) (2020-07-14)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.44.0 ([#396](https://github.com/SocialGouv/docker/issues/396)) ([bf8dad8](https://github.com/SocialGouv/docker/commit/bf8dad8f6179dcfc4a208dfad15082269825df49))
+
+
+### Features
+
+* **deps:** update dependency azure-cli-core to v2.9.0 ([#395](https://github.com/SocialGouv/docker/issues/395)) ([96d8f48](https://github.com/SocialGouv/docker/commit/96d8f486e59e3e0fbe517d586554159df40f23a5))
+
 # [1.44.0](https://github.com/SocialGouv/docker/compare/v1.43.2...v1.44.0) (2020-07-14)
 
 
