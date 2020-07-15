@@ -1,3 +1,11 @@
+## [1.47.1](https://github.com/SocialGouv/docker/compare/v1.47.0...v1.47.1) (2020-07-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kubernetes/kubernetes to v1.18.6 ([#402](https://github.com/SocialGouv/docker/issues/402)) ([8d6bbd3](https://github.com/SocialGouv/docker/commit/8d6bbd34a69cfde2bdddd100338587750f4bc44a))
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.47.0 ([#401](https://github.com/SocialGouv/docker/issues/401)) ([d81d41f](https://github.com/SocialGouv/docker/commit/d81d41f4eb023383701fb43077867f40cd7b6930))
+
 # [1.47.0](https://github.com/SocialGouv/docker/compare/v1.46.0...v1.47.0) (2020-07-15)
 
 
