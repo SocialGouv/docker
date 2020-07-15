@@ -1,3 +1,15 @@
+# [1.46.0](https://github.com/SocialGouv/docker/compare/v1.45.1...v1.46.0) (2020-07-15)
+
+
+### Bug Fixes
+
+* **deps:** update infra-ansible-ci requirements ([#368](https://github.com/SocialGouv/docker/issues/368)) ([e00b0d4](https://github.com/SocialGouv/docker/commit/e00b0d43ee204d2c422a190caf35d643c132d970))
+
+
+### Features
+
+* **deps:** update dependency yamllint to v1.24.0 ([#399](https://github.com/SocialGouv/docker/issues/399)) ([8c72303](https://github.com/SocialGouv/docker/commit/8c72303783319a9d2fd5271358a2ef0e33a5c9b9))
+
 ## [1.45.1](https://github.com/SocialGouv/docker/compare/v1.45.0...v1.45.1) (2020-07-14)
 
 
