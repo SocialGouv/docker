@@ -1,3 +1,10 @@
+# [1.47.0](https://github.com/SocialGouv/docker/compare/v1.46.0...v1.47.0) (2020-07-15)
+
+
+### Features
+
+* **deps:** update dependency azure-mgmt-monitor to v0.11.0 ([#400](https://github.com/SocialGouv/docker/issues/400)) ([c945ee0](https://github.com/SocialGouv/docker/commit/c945ee06c6ece083ac520ea389fead7038134a9f))
+
 # [1.46.0](https://github.com/SocialGouv/docker/compare/v1.45.1...v1.46.0) (2020-07-15)
 
 
