@@ -1,3 +1,15 @@
+# [1.48.0](https://github.com/SocialGouv/docker/compare/v1.47.1...v1.48.0) (2020-07-20)
+
+
+### Bug Fixes
+
+* **deps:** update infra-ansible-ci requirements ([#404](https://github.com/SocialGouv/docker/issues/404)) ([8683054](https://github.com/SocialGouv/docker/commit/8683054a0fcd4f7a77743ab3d7dcf1407c47d21e))
+
+
+### Features
+
+* **deps:** update dependency cryptography to v3 ([#407](https://github.com/SocialGouv/docker/issues/407)) ([7d38cfb](https://github.com/SocialGouv/docker/commit/7d38cfb639b14eecf5bb804f24b844d263573cc6))
+
 ## [1.47.1](https://github.com/SocialGouv/docker/compare/v1.47.0...v1.47.1) (2020-07-15)
 
 
