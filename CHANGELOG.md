@@ -1,3 +1,10 @@
+## [1.48.2](https://github.com/SocialGouv/docker/compare/v1.48.1...v1.48.2) (2020-07-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ansible to v2.9.11 ([#409](https://github.com/SocialGouv/docker/issues/409)) ([ad7c448](https://github.com/SocialGouv/docker/commit/ad7c44841781467e1f31db491bdbee7b1e16237a))
+
 ## [1.48.1](https://github.com/SocialGouv/docker/compare/v1.48.0...v1.48.1) (2020-07-21)
 
 
