@@ -1,3 +1,10 @@
+## [1.48.1](https://github.com/SocialGouv/docker/compare/v1.48.0...v1.48.1) (2020-07-21)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.48.0 ([#408](https://github.com/SocialGouv/docker/issues/408)) ([4cadf48](https://github.com/SocialGouv/docker/commit/4cadf4890c02cc20f28b5977f6d01c759ae40d19))
+
 # [1.48.0](https://github.com/SocialGouv/docker/compare/v1.47.1...v1.48.0) (2020-07-20)
 
 
