@@ -38,7 +38,7 @@ azure-mgmt-web==0.47.0
 azure-nspkg==3.0.2
 bcrypt==3.1.7
 certifi==2020.6.20
-cffi==1.14.0
+cffi==1.14.1
 chardet==3.0.4
 colorama==0.4.3
 cryptography==3.0
@@ -48,7 +48,7 @@ importlib-metadata==1.7.0
 isodate==0.6.0
 Jinja2==2.11.2
 jmespath==0.10.0
-knack==0.7.1
+knack==0.7.2
 MarkupSafe==1.1.1
 msrest==0.6.17
 msrestazure==0.6.4
