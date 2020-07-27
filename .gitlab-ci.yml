@@ -54,6 +54,7 @@ stages:
 
 Release:
   extends: .base_semantic_release_stage
+  when: null
   interruptible: true
   rules:
     - when: delayed
