@@ -30,7 +30,6 @@ Test bats:
     - Lint bats
     - Build bats
   image: "${CI_REGISTRY_IMAGE}/bats:${CI_COMMIT_SHA}"
-  environment: feature-dev2
   script:
     - bats --version
     - bats /opt/bats/test

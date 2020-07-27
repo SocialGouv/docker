@@ -36,7 +36,6 @@ Test trivy:
     TRIVY_ARGS: >-
       --cache-dir .trivycache
       --no-progress
-  environment: feature-dev2
   script:
     - trivy --version
     #
