@@ -55,6 +55,11 @@ stages:
 Release:
   extends: .base_semantic_release_stage
   when: null
+  interruptible: true
+  rules:
+    - when: delayed
+      start_in: 1 week
+      allow_failure: true
   variables:
     SEMANTIC_RELEASE_PLUGINS: "@semantic-release/changelog @semantic-release/exec @semantic-release/git"
 
@@ -70,7 +75,7 @@ Release:
   script:
     # NOTE(douglasduteil): only run on tags
     # We should only publish tags on GitHub.
-    # This guard is a safty net in cases one override the above rules and forgot to extend it 
+    # This guard is a safty net in cases one override the above rules and forgot to extend it
     - "[[ -z ${CI_COMMIT_TAG} ]] && exit ${CI_JOB_SKIP_EXIT_CODE:-0}"
 
     - echo "${GITHUB_REGISTRY_TOKEN}" | docker login docker.pkg.github.com -u SocialGroovyBot --password-stdin
