@@ -42,7 +42,7 @@ Test helm:
     - Lint helm
     - Build helm
   image: "${CI_REGISTRY_IMAGE}/helm:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  environment: feature-dev2
   script:
     - bats --version
     - helm version

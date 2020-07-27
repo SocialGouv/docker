@@ -30,7 +30,7 @@ Test pg-cleaner:
     - Lint pg-cleaner
     - Build pg-cleaner
   image: "${CI_REGISTRY_IMAGE}/pg-cleaner:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  environment: feature-dev2
   script:
     - python --version
 

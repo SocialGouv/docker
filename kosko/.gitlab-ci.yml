@@ -30,7 +30,7 @@ Test kosko:
     - Lint kosko
     - Build kosko
   image: "${CI_REGISTRY_IMAGE}/kosko:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  environment: feature-dev2
   script:
     - kubectl version
     - kubectl cluster-info

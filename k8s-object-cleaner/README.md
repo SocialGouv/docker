@@ -12,7 +12,7 @@ Clean k8s objects:
   dependencies: []
   allow_failure: true
   image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-object-cleaner
-  environment: fabrique-dev
+  environment: fabrique-dev2
   variables:
     GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
     K8S_NAMESPACE: ${K8S_NAMESPACE}

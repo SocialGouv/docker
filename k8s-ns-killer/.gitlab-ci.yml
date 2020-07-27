@@ -43,7 +43,7 @@ Test k8s-ns-killer:
   # `The system is ensuring all content is removed from this namespace`
   retry: 2
   image: "${CI_REGISTRY_IMAGE}/k8s-ns-killer:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  environment: feature-dev2
   variables:
     K8S_NAMESPACE: k8s-ns-killer-test-${CI_JOB_ID}
   script:

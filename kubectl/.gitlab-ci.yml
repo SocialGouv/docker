@@ -30,7 +30,7 @@ Test kubectl 1 2:
     - Lint kubectl
     - Build kubectl
   image: "${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  environment: feature-dev2
   script:
     - kubectl version
     - kubectl cluster-info

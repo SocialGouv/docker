@@ -40,7 +40,7 @@ Test k8s-object-cleaner:
     - Build k8s-object-cleaner
 
   image: "${CI_REGISTRY_IMAGE}/k8s-object-cleaner:${CI_COMMIT_SHA}"
-  environment: feature-dev
+  environment: feature-dev2
   variables:
     K8S_NAMESPACE: k8s-object-cleaner-test-${CI_JOB_ID}
     GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git

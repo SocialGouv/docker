@@ -3,6 +3,7 @@
 > Remove K8S namespaces that have a `git/branch` annotation and an existing branch on the git repository.
 
 The killer has 2 modes.
+
 - _"global"_ :gun: to remove any namespace in the cluster with `git/branch` and `git/remote` annotations
 - _"local"_ :gun: to remove grep matching namespaces with a `git/branch` annotation
 
@@ -33,7 +34,7 @@ Delete useless k8s namespaces:
   dependencies: []
   allow_failure: true
   image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/k8s-ns-killer:0.12.0
-  environment: fabrique-dev
+  environment: fabrique-dev2
   script:
     - git remote set-url origin https://github.com/${CI_PROJECT_PATH}.git
     - k8s-ns-killer foo-feature-
@@ -97,6 +98,4 @@ $ export REPOSITORY="git@github.com:SocialGouv/docker.git"
 $ sh -x ./bin/k8s-ns-killer my-feature-
 ```
 
-
-## With Docker image 
-
+## With Docker image
