@@ -3,6 +3,7 @@
     "github>SocialGouv/renovate-config",
     ":automergeAll"
   ],
+  "stabilityDays": 2,
   "prCreation": "not-pending",
   "gitlabci": {
     "fileMatch": ["\\.gitlab-ci.yml$"]
