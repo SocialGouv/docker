@@ -44,7 +44,6 @@ Test k8s-object-cleaner:
   variables:
     K8S_NAMESPACE: k8s-object-cleaner-test-${CI_JOB_ID}
     GITHUB_REPOSITORY: https://github.com/${CI_PROJECT_PATH}.git
-    RANCHER_PROJECT_ID: c-kk8xm:p-2jgrf
     BRANCH_HASH: 7
   script:
     #
@@ -55,7 +54,6 @@ Test k8s-object-cleaner:
     #
     - kubectl delete namespaces ${K8S_NAMESPACE} || true
     - kubectl create namespace ${K8S_NAMESPACE}
-    - kubectl annotate namespace ${K8S_NAMESPACE} field.cattle.io/projectId=${RANCHER_PROJECT_ID}
     #
     - kubectl config set-context --current --namespace=${K8S_NAMESPACE}
     #
