@@ -1,3 +1,26 @@
+# [1.50.0](https://github.com/SocialGouv/docker/compare/v1.49.0...v1.50.0) (2020-07-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency azure-cli to v2.9.1 ([#405](https://github.com/SocialGouv/docker/issues/405)) ([9155f64](https://github.com/SocialGouv/docker/commit/9155f646d45fea4d69d046b79a3d2c38fb9d5cc2))
+* **deps:** update dependency urllib3 to v1.25.10 ([#414](https://github.com/SocialGouv/docker/issues/414)) ([41fa347](https://github.com/SocialGouv/docker/commit/41fa34720edf4f6dce34da1aaf7840f72936d8a8))
+* **deps:** update hashicorp/terraform docker tag to v0.12.29 ([#415](https://github.com/SocialGouv/docker/issues/415)) ([fdda731](https://github.com/SocialGouv/docker/commit/fdda73193c304f5a7e85f478f42fead6fb21cd62))
+* **deps:** update infra-ansible-ci requirements ([#417](https://github.com/SocialGouv/docker/issues/417)) ([9c5a84f](https://github.com/SocialGouv/docker/commit/9c5a84fec073cce2c793b628cfba5fccabd4c443))
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.49.0 ([#412](https://github.com/SocialGouv/docker/issues/412)) ([afdf3f2](https://github.com/SocialGouv/docker/commit/afdf3f21c0bb253d2e073b12c13412e0b2c49538))
+* **wait-for-postgres:** remove pg_isready host wrapper ([#420](https://github.com/SocialGouv/docker/issues/420)) ([4ed2763](https://github.com/SocialGouv/docker/commit/4ed27634143c82eb74983309cd5470d797d527fd))
+
+
+### Features
+
+* **deps:** update bats/bats docker tag to v1.2.1 ([#413](https://github.com/SocialGouv/docker/issues/413)) ([dc1793c](https://github.com/SocialGouv/docker/commit/dc1793c8f106f9ac154082de40a7f4baef1d5e7b))
+* **deps:** update dependency azure-mgmt-cdn to v5 ([#416](https://github.com/SocialGouv/docker/issues/416)) ([c10c9b7](https://github.com/SocialGouv/docker/commit/c10c9b75ea0588936201ab14d0f7009a5c7cfa20))
+
+
+### Reverts
+
+* **gitlab:** instante relase again ([29ae3ec](https://github.com/SocialGouv/docker/commit/29ae3ec31eb178d3d846b6b3a122fa2d880adef2))
+
 # [1.49.0](https://github.com/SocialGouv/docker/compare/v1.48.2...v1.49.0) (2020-07-22)
 
 
