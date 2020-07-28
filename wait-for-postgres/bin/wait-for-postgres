@@ -2,22 +2,17 @@
 
 {
 
-is_postgres_ready() {
-  local hostname=${PGHOST:-/run/postgresql};
-  pg_isready --host="${hostname}"
-}
-
 wait_for_postgres() {
   local retry=${WAIT_FOR_RETRIES:-24}; # = (2min x 60s) / 5s
   local interval=${WAIT_FOR_INTERVAL:-5s}; # every 5s
   while
-    ! is_postgres_ready  > /dev/null 2> /dev/null &&
+    ! pg_isready > /dev/null 2> /dev/null &&
     [[ $(( retry-- )) -gt 0 ]];
   do
       echo "Waiting for Postgres to go Green ($(( retry )) left)" ;
       sleep "${interval}" ;
   done ;
-  is_postgres_ready
+  pg_isready
 }
 
 wait_for_postgres "$@"
