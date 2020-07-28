@@ -54,10 +54,7 @@ stages:
 
 Release:
   extends: .base_semantic_release_stage
-  when: delayed
-  start_in: 1 week
-  interruptible: true
-  allow_failure: true
+  when: null
   variables:
     SEMANTIC_RELEASE_PLUGINS: "@semantic-release/changelog @semantic-release/exec @semantic-release/git"
 
