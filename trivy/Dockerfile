@@ -1,7 +1,7 @@
 FROM alpine:3.12
 
 # renovate: datasource=github-releases depName=aquasecurity/trivy
-ARG TRIVY_VERSION=v0.10.1
+ARG TRIVY_VERSION=v0.10.2
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
