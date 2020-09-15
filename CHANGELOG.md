@@ -1,3 +1,11 @@
+## [1.54.2](https://github.com/SocialGouv/docker/compare/v1.54.1...v1.54.2) (2020-09-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency azure-cli to v2.11.1 ([#447](https://github.com/SocialGouv/docker/issues/447)) ([e813992](https://github.com/SocialGouv/docker/commit/e813992e7fda15e763f73ab36126360336cb6161))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats docker tag to v1.54.1 ([#456](https://github.com/SocialGouv/docker/issues/456)) ([39fec18](https://github.com/SocialGouv/docker/commit/39fec18c5bee2d8671c489119b36fc4cac11c4f7))
+
 ## [1.54.1](https://github.com/SocialGouv/docker/compare/v1.54.0...v1.54.1) (2020-09-12)
 
 
