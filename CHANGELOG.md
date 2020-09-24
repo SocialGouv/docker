@@ -1,3 +1,10 @@
+## [1.55.1](https://github.com/SocialGouv/docker/compare/v1.55.0...v1.55.1) (2020-09-24)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kubernetes/kubernetes to v1.19.2 ([#459](https://github.com/SocialGouv/docker/issues/459)) ([84100c3](https://github.com/SocialGouv/docker/commit/84100c3fdf15cea3266065b1374a41e4bbd5779b))
+
 # [1.55.0](https://github.com/SocialGouv/docker/compare/v1.54.2...v1.55.0) (2020-09-24)
 
 
