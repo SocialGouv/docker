@@ -1,3 +1,10 @@
+# [1.55.0](https://github.com/SocialGouv/docker/compare/v1.54.2...v1.55.0) (2020-09-24)
+
+
+### Features
+
+* **deps:** update dependency azure-cli to v2.12.0 ([#460](https://github.com/SocialGouv/docker/issues/460)) ([cafcacb](https://github.com/SocialGouv/docker/commit/cafcacb202aa85710d0b31f1811c7038b962c898))
+
 ## [1.54.2](https://github.com/SocialGouv/docker/compare/v1.54.1...v1.54.2) (2020-09-15)
 
 
