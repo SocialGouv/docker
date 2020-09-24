@@ -1,7 +1,7 @@
 FROM python:3.8
 
-# renovate: datasource=docker depName=hashicorp/terraform versioning=0.12.29
-ARG TERRAFORM_VERSION=0.12.29
+# renovate: datasource=docker depName=hashicorp/terraform versioning=0.13.3
+ARG TERRAFORM_VERSION=0.13.3
 
 # install dependencies (gettext-base to install envsubst)
 RUN set -ex \
