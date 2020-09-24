@@ -1,3 +1,18 @@
+# [1.56.0](https://github.com/SocialGouv/docker/compare/v1.55.1...v1.56.0) (2020-09-24)
+
+
+### Bug Fixes
+
+* **deps:** update fluent/fluentd docker tag to v1.11.2 ([#449](https://github.com/SocialGouv/docker/issues/449)) ([03b76ac](https://github.com/SocialGouv/docker/commit/03b76acc1fa3c4d8fa51695666cfde0fddd568b4))
+* **deps:** update infra-ansible-ci requirements ([#436](https://github.com/SocialGouv/docker/issues/436)) ([b246814](https://github.com/SocialGouv/docker/commit/b246814649c2c9e251d3904218c39d1582c7aa7b))
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.55.1 ([#461](https://github.com/SocialGouv/docker/issues/461)) ([af435dd](https://github.com/SocialGouv/docker/commit/af435dd9a417c0df7dec9f1fc6c833de06e7ded6))
+
+
+### Features
+
+* **deps:** update dependency aquasecurity/trivy to v0.11.0 ([#452](https://github.com/SocialGouv/docker/issues/452)) ([28dcedc](https://github.com/SocialGouv/docker/commit/28dcedcd8b105d2b358896daf5aba7d19dcb8f71))
+* **deps:** update hashicorp/terraform docker tag to v0.13.3 ([#451](https://github.com/SocialGouv/docker/issues/451)) ([38ea046](https://github.com/SocialGouv/docker/commit/38ea04641c5d29f3117950f0da96c427eadf2155))
+
 ## [1.55.1](https://github.com/SocialGouv/docker/compare/v1.55.0...v1.55.1) (2020-09-24)
 
 
