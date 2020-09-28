@@ -1,3 +1,15 @@
+# [1.57.0](https://github.com/SocialGouv/docker/compare/v1.56.0...v1.57.0) (2020-09-28)
+
+
+### Bug Fixes
+
+* **infra-ansible-ci:** update image apt dependencies ([#467](https://github.com/SocialGouv/docker/issues/467)) ([e6b64bb](https://github.com/SocialGouv/docker/commit/e6b64bb9f473144500adb6ab0cab97df38adad3e))
+
+
+### Features
+
+* **deps:** update infra-ansible-ci requirements ([#434](https://github.com/SocialGouv/docker/issues/434)) ([b1dd9a8](https://github.com/SocialGouv/docker/commit/b1dd9a89239273c15790bed72f620a82ebdfd721))
+
 # [1.56.0](https://github.com/SocialGouv/docker/compare/v1.55.1...v1.56.0) (2020-09-24)
 
 
