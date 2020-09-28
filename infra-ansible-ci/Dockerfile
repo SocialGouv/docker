@@ -8,7 +8,7 @@ RUN set -ex \
   \
   && apt-get update \
   && apt-get -y install \
-    apt-transport-https=1.8.2 \
+    apt-transport-https=1.8.2.1 \
     curl=7.64.0-4+deb10u1 \
     gettext-base=0.19.8.1-9 \
     gnupg=2.2.12-1+deb10u1 \
