@@ -1,4 +1,4 @@
-FROM postgres:10.11-alpine
+FROM postgres:13.0-alpine
 
 COPY ./bin /bin
 
