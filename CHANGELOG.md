@@ -1,3 +1,11 @@
+## [1.59.1](https://github.com/SocialGouv/docker/compare/v1.59.0...v1.59.1) (2020-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([#472](https://github.com/SocialGouv/docker/issues/472)) ([614add5](https://github.com/SocialGouv/docker/commit/614add53c6ec27768792e3171f5f55ae64723c57))
+* **deps:** update all dependencies docker tags ([#473](https://github.com/SocialGouv/docker/issues/473)) ([7c46392](https://github.com/SocialGouv/docker/commit/7c463923a1628ffe1417e20827db861dad4871d6))
+
 # [1.59.0](https://github.com/SocialGouv/docker/compare/v1.58.0...v1.59.0) (2020-10-07)
 
 
