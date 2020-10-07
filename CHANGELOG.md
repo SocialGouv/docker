@@ -1,3 +1,21 @@
+# [1.59.0](https://github.com/SocialGouv/docker/compare/v1.58.0...v1.59.0) (2020-10-07)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker self dependencies docker tags to v1.58.0 ([#469](https://github.com/SocialGouv/docker/issues/469)) ([e5a0400](https://github.com/SocialGouv/docker/commit/e5a0400e8508ef5a63657d2cbf8dc03992b8ecab))
+* **nginx4spa:** handle next.js static urls ([#474](https://github.com/SocialGouv/docker/issues/474)) ([c9df933](https://github.com/SocialGouv/docker/commit/c9df933f622d8d57ff45275200075537fbc46b4d))
+
+
+### Features
+
+* **deps:** update postgres docker tag to v13 ([#463](https://github.com/SocialGouv/docker/issues/463)) ([bc94b05](https://github.com/SocialGouv/docker/commit/bc94b05e3f71021f607ccac6d5b2f2b7808d89fd))
+
+
+### Reverts
+
+* Revert "feat(deps): update postgres docker tag to v13" (#475) ([cd5e2f8](https://github.com/SocialGouv/docker/commit/cd5e2f8765f35fa6a66b25033e2281443a4b1523)), closes [#475](https://github.com/SocialGouv/docker/issues/475)
+
 # [1.58.0](https://github.com/SocialGouv/docker/compare/v1.57.1...v1.58.0) (2020-09-28)
 
 
