@@ -1,3 +1,15 @@
+# [1.60.0](https://github.com/SocialGouv/docker/compare/v1.59.1...v1.60.0) (2020-10-08)
+
+
+### Bug Fixes
+
+* **nginx4spa:** fix $uri/ order ([#476](https://github.com/SocialGouv/docker/issues/476)) ([552abd5](https://github.com/SocialGouv/docker/commit/552abd5b2ea80e2c1637da16b3d0e23253113e7f))
+
+
+### Features
+
+* **deps:** update all non-major dependencies docker tags ([#471](https://github.com/SocialGouv/docker/issues/471)) ([5610891](https://github.com/SocialGouv/docker/commit/56108914019dc71b370dbb0f7962cc0cf0241c90))
+
 ## [1.59.1](https://github.com/SocialGouv/docker/compare/v1.59.0...v1.59.1) (2020-10-07)
 
 
