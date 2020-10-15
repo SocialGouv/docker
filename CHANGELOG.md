@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/SocialGouv/docker/compare/v1.60.0...v2.0.0) (2020-10-15)
+
+
+* feat(wait-for-postgres)!: use psql command (#477) ([a100476](https://github.com/SocialGouv/docker/commit/a10047647c77e9c2dae9c476fd4df620bf0e1410)), closes [#477](https://github.com/SocialGouv/docker/issues/477)
+
+
+### BREAKING CHANGES
+
+* wait-for-postgres will now fail if the user, password, database is not correct
+
 # [1.60.0](https://github.com/SocialGouv/docker/compare/v1.59.1...v1.60.0) (2020-10-08)
 
 
