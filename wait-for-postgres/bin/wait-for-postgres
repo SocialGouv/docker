@@ -6,13 +6,14 @@ wait_for_postgres() {
   local retry=${WAIT_FOR_RETRIES:-24}; # = (2min x 60s) / 5s
   local interval=${WAIT_FOR_INTERVAL:-5s}; # every 5s
   while
-    ! pg_isready > /dev/null 2> /dev/null &&
+    ! psql -c "SELECT VERSION();" > /dev/null 2> /dev/null &&
     [[ $(( retry-- )) -gt 0 ]];
   do
       echo "Waiting for Postgres to go Green ($(( retry )) left)" ;
       sleep "${interval}" ;
   done ;
-  pg_isready
+
+  psql -c "SELECT VERSION();"
 }
 
 wait_for_postgres "$@"
