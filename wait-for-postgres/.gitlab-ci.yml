@@ -76,6 +76,7 @@ Test wait-for-postgres 2 2:
       echo "No user foobar should be found" && exit 1
     - docker run
       --env PGHOST=localhost
+      --env PGUSER=postgres
       --env WAIT_FOR_INTERVAL=1s
       --env WAIT_FOR_RETRIES=1
       --network="host"
