@@ -13,12 +13,7 @@ wait_for_postgres() {
       sleep "${interval}" ;
   done ;
 
-  if [[ $retry -eq 0 ]]; then
-    echo "Not Ready";
-    exit 2
-  fi
-
-  echo "Ready";
+  psql -c "SELECT VERSION();"
 }
 
 wait_for_postgres "$@"
