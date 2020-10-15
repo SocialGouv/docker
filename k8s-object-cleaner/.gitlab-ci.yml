@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_k8s_object_killer
       changes:
-        - k8s-object-cleaner/*
+        - k8s-object-cleaner/**/*
 
 Lint k8s-object-cleaner 1 2:
   stage: "Quality"

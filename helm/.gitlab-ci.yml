@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_helm
       changes:
-        - helm/*
+        - helm/**/*
 
 Lint helm:
   stage: "Quality"

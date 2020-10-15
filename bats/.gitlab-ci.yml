@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_bats
       changes:
-        - bats/*
+        - bats/**/*
 
 Lint bats:
   stage: "Quality"

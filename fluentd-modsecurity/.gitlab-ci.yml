@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_fluentd_modsecurity
       changes:
-        - fluentd-modsecurity/*
+        - fluentd-modsecurity/**/*
 
 Lint fluentd-modsecurity:
   stage: "Quality"

@@ -2,7 +2,7 @@
   rules:
     - &change_infra_ansible_ci
       changes:
-        - infra-ansible-ci/*
+        - infra-ansible-ci/**/*
 
 Lint infra-ansible-ci:
   stage: "Quality"
