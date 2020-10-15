@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_wait_for_postgres
       changes:
-        - wait-for-postgres/*
+        - wait-for-postgres/**/*
 
 Lint wait-for-postgres 1 2:
   stage: "Quality"
