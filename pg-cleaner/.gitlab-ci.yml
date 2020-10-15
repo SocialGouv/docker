@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_pg_cleaner
       changes:
-        - pg-cleaner/*
+        - pg-cleaner/**/*
 
 Lint pg-cleaner:
   stage: "Quality"

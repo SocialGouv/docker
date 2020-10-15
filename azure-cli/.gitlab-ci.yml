@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_azure_cli
       changes:
-        - azure-cli/*
+        - azure-cli/**/*
 
 Lint azure-cli:
   stage: "Quality"

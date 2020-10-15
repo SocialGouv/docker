@@ -2,7 +2,7 @@
   rules:
     - &change_k8s_ns_killer
       changes:
-        - k8s-ns-killer/*
+        - k8s-ns-killer/**/*
 
 Lint k8s-ns-killer 1 2:
   stage: "Quality"

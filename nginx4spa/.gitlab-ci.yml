@@ -3,7 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_nginx4pa
       changes:
-        - nginx4spa/*
+        - nginx4spa/**/*
 
 Lint nginx4spa:
   stage: "Quality"
