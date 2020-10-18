@@ -8,7 +8,7 @@
 Lint kubectl:
   stage: "Quality"
   extends: .change_rules_kubectl
-  image: hadolint/hadolint:v1.18.0-debian
+  image: hadolint/hadolint:v1.18.1-debian
   script:
     - hadolint ./kubectl/Dockerfile
 
