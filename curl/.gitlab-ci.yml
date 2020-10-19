@@ -8,7 +8,7 @@
 Lint curl:
   stage: "Quality"
   extends: .change_rules_curl
-  image: hadolint/hadolint:v1.18.0-debian
+  image: hadolint/hadolint:v1.18.1-debian
   script:
     - hadolint ./curl/Dockerfile
 
