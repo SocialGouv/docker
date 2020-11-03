@@ -47,7 +47,7 @@ Drop a database and a user on some Azure Postgres Server
 | DROP_DATABASE | database to drop       |
 | DROP_USER     | user to drop           | `username@servername`              |
 
-#### `drop-dbs`
+#### `drop-autodevops-dbs`
 
 Drop all generated databases (`db_*` and `autodevops_*`)
 
