@@ -47,6 +47,17 @@ Drop a database and a user on some Azure Postgres Server
 | DROP_DATABASE | database to drop       |
 | DROP_USER     | user to drop           | `username@servername`              |
 
+#### `drop-dbs`
+
+Drop all generated databases (`db_*` and `autodevops_*`)
+
+| Env        | Desc                   | Example                            |
+| ---------- | ---------------------- | ---------------------------------- |
+| PGHOST     | PG server host         | `host.postgres.database.azure.com` |
+| PGPORT     | PG server port         | 5432                               |
+| PGUSER     | PG super user          | `postgres@servername`              |
+| PGPASSWORD | PG super user password |                                    |
+
 #### `backup`
 
 Backup a database and store it to some Azure blob
@@ -71,11 +82,11 @@ Convert json k8s secret to bash exports
 $ kubectl get secret my-secret -n my-ns -o json | export_from_k8s_secret
 export XXX="value"
 
-$ cat <<EOF | export_from_k8s_secret                                     
+$ cat <<EOF | export_from_k8s_secret
 { "data": { "FOO": "Zm9vIHZhbHVl" } }
 EOF
 export FOO="foo value"
-```  
+```
 
 ## See Also
 
