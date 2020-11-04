@@ -261,7 +261,8 @@ Test azure-db drop-autodevops-dbs 4:
     #
     # Check drops
     #
-    - ! docker run
+    - |
+      ! docker run
       --env PGHOST=localhost
       --env PGPASSWORD=${POSTGRES_PASSWORD}
       --env PGUSER=${POSTGRES_USER}
@@ -270,7 +271,8 @@ Test azure-db drop-autodevops-dbs 4:
       --rm
       postgres:11.5-alpine
       psql
-    - ! docker run
+    - |
+      ! docker run
       --env PGHOST=localhost
       --env PGPASSWORD=${POSTGRES_PASSWORD}
       --env PGUSER=${POSTGRES_USER}
