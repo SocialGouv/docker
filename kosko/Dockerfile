@@ -19,4 +19,6 @@ RUN set -ex \
   && yarn global add kosko@0.9.1 \
   #
   && kosko --version \
+  #
+  && wget -O- https://get-kapp.io/install-katacoda.sh | bash \
   ;
