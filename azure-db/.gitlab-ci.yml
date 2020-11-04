@@ -262,24 +262,24 @@ Test azure-db drop-autodevops-dbs 4:
     # Check drops
     #
     - |
-      ! docker run
-      --env PGHOST=localhost
-      --env PGPASSWORD=${POSTGRES_PASSWORD}
-      --env PGUSER=${POSTGRES_USER}
-      --env PGDATABASE=autodevops_1
-      --network="host"
-      --rm
-      postgres:11.5-alpine
+      ! docker run \
+      --env PGHOST=localhost \
+      --env PGPASSWORD=${POSTGRES_PASSWORD} \
+      --env PGUSER=${POSTGRES_USER} \
+      --env PGDATABASE=autodevops_1 \
+      --network="host" \
+      --rm \
+      postgres:11.5-alpine \
       psql
     - |
-      ! docker run
-      --env PGHOST=localhost
-      --env PGPASSWORD=${POSTGRES_PASSWORD}
-      --env PGUSER=${POSTGRES_USER}
-      --env PGDATABASE=autodevops_2
-      --network="host"
-      --rm
-      postgres:11.5-alpine
+      ! docker run \
+      --env PGHOST=localhost \
+      --env PGPASSWORD=${POSTGRES_PASSWORD} \
+      --env PGUSER=${POSTGRES_USER} \
+      --env PGDATABASE=autodevops_2 \
+      --network="host" \
+      --rm \
+      postgres:11.5-alpine \
       psql
 
 Publish azure-db to Github Registry:
