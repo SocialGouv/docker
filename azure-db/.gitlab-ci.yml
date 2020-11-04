@@ -171,6 +171,115 @@ Test azure-db 3 3:
       ./urchin -v
     - ./urchin azure-db/test
 
+Test azure-db drop-autodevops-dbs 4:
+  stage: "Test"
+  extends: .change_rules_azure_db
+  # NOTE(douglasduteil): retry the whole job
+  # In cases when the postgres is not accessible it's safer to retry than waiting
+  retry: 2
+  services:
+    - docker:19-dind
+    - postgres:11.5-alpine
+  needs:
+    - Lint azure-db
+    - Build azure-db
+  image: docker:19
+  variables:
+    # for PG service
+    POSTGRES_USER: custom_user
+    POSTGRES_PASSWORD: custom_pass
+  script:
+    - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
+    #
+    #
+    #
+    - echo "create a first db and user on PG service"
+    - docker run
+      --env NEW_DB_EXTENSIONS="pgcrypto"
+      --env NEW_DB_NAME=autodevops_1
+      --env NEW_PASSWORD=password_1
+      --env NEW_USER=user_1
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
+    #
+    #
+    #
+    - echo "create a second db and user on PG service"
+    - docker run
+      --env NEW_DB_EXTENSIONS="pgcrypto"
+      --env NEW_DB_NAME=autodevops_2
+      --env NEW_PASSWORD=password_2
+      --env NEW_USER=user_2
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
+    #
+    # ensure dbs are created
+    #
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      postgres:11.5-alpine
+      psql -lqtA
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      postgres:11.5-alpine
+      psql autodevops_1 -qtA -c '\du'
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      postgres:11.5-alpine
+      psql autodevops_2 -qtA -c '\du'
+    #
+    # Drop dbs
+    #
+    - echo "destroy dbs with drop-autodevops-dbs on PG service"
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} drop-dbs
+    #
+    # check drops
+    #
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --env PGDATABASE=autodevops_1
+      --network="host"
+      --rm
+      postgres:11.5-alpine
+      psql -lqtA
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --env PGDATABASE=autodevops_2
+      --network="host"
+      --rm
+      postgres:11.5-alpine
+      psql -lqtA
+
 Publish azure-db to Github Registry:
   extends: .base_publish_to_github_stage
   rules:
