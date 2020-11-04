@@ -257,7 +257,7 @@ Test azure-db drop-autodevops-dbs 4:
       --env PGUSER=${POSTGRES_USER}
       --network="host"
       --rm
-      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} drop-dbs
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} drop-autodevops-dbs
     #
     # check drops
     #
