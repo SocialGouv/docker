@@ -8,7 +8,7 @@
 Lint azure-cli:
   stage: "Quality"
   extends: .change_rules_azure_cli
-  image: hadolint/hadolint:v1.18.1-debian
+  image: hadolint/hadolint:v1.18.2-debian
   script:
     - hadolint ./azure-cli/Dockerfile
 
