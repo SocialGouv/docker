@@ -8,7 +8,7 @@
 Lint fluentd-modsecurity:
   stage: "Quality"
   extends: .change_rules_fluentd_modsecurity
-  image: hadolint/hadolint:v1.18.1-debian
+  image: hadolint/hadolint:v1.18.2-debian
   script:
     - hadolint ./fluentd-modsecurity/Dockerfile
 

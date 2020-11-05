@@ -8,7 +8,7 @@
 Lint git-deploy:
   stage: "Quality"
   extends: .change_rules_git_deploy
-  image: hadolint/hadolint:v1.18.1-debian
+  image: hadolint/hadolint:v1.18.2-debian
   script:
     - hadolint ./git-deploy/Dockerfile
 
