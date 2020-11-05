@@ -1,3 +1,15 @@
+# [2.1.0](https://github.com/SocialGouv/docker/compare/v2.0.1...v2.1.0) (2020-11-05)
+
+
+### Bug Fixes
+
+* **git-deploy:** typo in /bin/create-deployment ([#485](https://github.com/SocialGouv/docker/issues/485)) ([52c9d25](https://github.com/SocialGouv/docker/commit/52c9d2557060f0fb4343e16c308e027be60adc4a))
+
+
+### Features
+
+* **azure-db:** add drop-dbs command ([#483](https://github.com/SocialGouv/docker/issues/483)) ([4aa1fb8](https://github.com/SocialGouv/docker/commit/4aa1fb8280f25197de946776e9ea2408fbbb3e5b))
+
 ## [2.0.1](https://github.com/SocialGouv/docker/compare/v2.0.0...v2.0.1) (2020-10-30)
 
 
