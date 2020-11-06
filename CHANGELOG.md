@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/SocialGouv/docker/compare/v2.1.0...v2.2.0) (2020-11-06)
+
+
+### Bug Fixes
+
+* **azure-db:** quote extensions ([#486](https://github.com/SocialGouv/docker/issues/486)) ([26ee53b](https://github.com/SocialGouv/docker/commit/26ee53b2f466c1dbbe98a070a3ed50ae7a81abba))
+* **deps:** update all dependencies docker tags (patch) ([#481](https://github.com/SocialGouv/docker/issues/481)) ([3e53f08](https://github.com/SocialGouv/docker/commit/3e53f0857fad653f03e68bf2d222239ad6456d59))
+
+
+### Features
+
+* **puppeteer:** update chromium to v86 ([#487](https://github.com/SocialGouv/docker/issues/487)) ([efef0aa](https://github.com/SocialGouv/docker/commit/efef0aa40d12cb358f37bccd890deb780c8103d8))
+
 # [2.1.0](https://github.com/SocialGouv/docker/compare/v2.0.1...v2.1.0) (2020-11-05)
 
 
