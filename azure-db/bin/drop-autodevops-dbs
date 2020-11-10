@@ -22,14 +22,12 @@ done
 # arobase replacement
 PG_URL_ADMIN="postgresql://${PGUSER/@/%40}:${PGPASSWORD}@${PGHOST}:${PGPORT}/postgres"
 
-# prevent read-only server when full
-psql -abe "$PG_URL_ADMIN" -c "SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;"
-
 echo
 echo "drop all db_* and autodevops_* on ${PGHOST}"
 
 psql -abe "$PG_URL_ADMIN" < <( psql -abe "$PG_URL_ADMIN" -Atc "
   select '
+        SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
         SELECT pg_terminate_backend (pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '''||datname||''';
         drop database \"'||datname||'\";
         REVOKE ALL PRIVILEGES ON SCHEMA public FROM \"user_'||SPLIT_PART(datname, '_', 2)||'\";
