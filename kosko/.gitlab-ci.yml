@@ -36,6 +36,7 @@ Test kosko:
     - kubectl cluster-info
     - kustomize version
     - kosko --version
+    - kapp --version
     #
     # bash >=5 test
     - "[[ $(kubectl version) ]] && echo '[[ <test> ]] && <struff>' should be supported"

@@ -19,6 +19,14 @@ RUN set -ex \
   && yarn global add kosko@0.9.1 \
   #
   && kosko --version \
+  ;
+
+# renovate: datasource=github-releases depName=k14s/kapp
+ARG KAPP_VERSION=v0.30.0
+RUN set -ex \
   #
-  && wget -O- https://get-kapp.io/install-katacoda.sh | bash \
+  && wget -O /usr/local/bin/kapp \
+    "https://github.com/k14s/kapp/releases/download/${KAPP_VERSION}/kapp-linux-amd64" \
+  #
+  && kapp --version \
   ;
