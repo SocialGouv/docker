@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/SocialGouv/docker/compare/v2.2.0...v2.3.0) (2020-11-11)
+
+
+### Features
+
+* **kosko:** add kapp bin ([#484](https://github.com/SocialGouv/docker/issues/484)) ([22d8980](https://github.com/SocialGouv/docker/commit/22d89803f46253df03698fb04d88ba2f998dd617))
+
 # [2.2.0](https://github.com/SocialGouv/docker/compare/v2.1.0...v2.2.0) (2020-11-06)
 
 
