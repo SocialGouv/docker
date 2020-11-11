@@ -20,3 +20,14 @@ RUN set -ex \
   #
   && kosko --version \
   ;
+
+# renovate: datasource=github-releases depName=k14s/kapp
+ARG KAPP_VERSION=v0.30.0
+RUN set -ex \
+  #
+  && wget -O /usr/local/bin/kapp \
+    "https://github.com/k14s/kapp/releases/download/${KAPP_VERSION}/kapp-linux-amd64" \
+  && chmod +x /usr/local/bin/kapp \
+  #
+  && kapp --version \
+  ;
