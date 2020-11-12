@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/SocialGouv/docker/compare/v2.3.0...v2.3.1) (2020-11-12)
+
+
+### Bug Fixes
+
+* **azure-db:** ensure read-write is active for drop session ([#488](https://github.com/SocialGouv/docker/issues/488)) ([35832d6](https://github.com/SocialGouv/docker/commit/35832d6a1e60bc568cdca8f8d38eaf57527268a5))
+
 # [2.3.0](https://github.com/SocialGouv/docker/compare/v2.2.0...v2.3.0) (2020-11-11)
 
 
