@@ -1,11 +1,11 @@
 adal==1.2.5
-ansible==2.10.1
-ansible-lint==4.3.5
+ansible==2.10.3
+ansible-lint==4.3.7
 applicationinsights==0.11.9
 argcomplete==1.12.1
 azure-cli-core==2.12.1
 azure-cli-nspkg==3.0.4
-azure-common==1.1.25
+azure-common==1.1.26
 azure-graphrbac==0.61.1
 azure-keyvault==4.1.0
 azure-mgmt-authorization==0.61.0
@@ -41,7 +41,7 @@ certifi==2020.6.20
 cffi==1.14.3
 chardet==3.0.4
 colorama==0.4.4
-cryptography==3.2
+cryptography==3.2.1
 humanfriendly~=8.2
 idna==2.10
 importlib-metadata==2.0.0
@@ -55,7 +55,7 @@ msrestazure==0.6.4
 oauthlib==3.1.0
 packaging==20.4
 paramiko==2.7.2
-pathspec==0.8.0
+pathspec==0.8.1
 pycparser==2.20
 Pygments==2.7.2
 PyJWT==1.7.1
