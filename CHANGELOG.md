@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/SocialGouv/docker/compare/v2.3.1...v2.3.2) (2020-11-16)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies ([#489](https://github.com/SocialGouv/docker/issues/489)) ([44d0084](https://github.com/SocialGouv/docker/commit/44d00843e8165d463199f1b1a21c271a3b674586))
+
 ## [2.3.1](https://github.com/SocialGouv/docker/compare/v2.3.0...v2.3.1) (2020-11-12)
 
 
