@@ -65,10 +65,8 @@ Test wait-for-http 3:
   image:
     name: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
     entrypoint: ["/bin/sh"]
-  variables:
-    URL: http://free.fr
   script:
-    - /bin/wait-for-http
+    - /bin/wait-for-http http://free.fr
 
 Publish wait-for-http to Github Registry:
   extends: .base_publish_to_github_stage
