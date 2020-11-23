@@ -33,17 +33,30 @@ Test wait-for-http 1:
     name: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
     entrypoint: ["/bin/sh"]
   variables:
-    URL: http://invalid
     RETRIES: 5
   # expect wait to fail and a retry duration >= 25secs (5*5)
   script: |
     start=`date +%s`
-    ! /bin/wait-for-http
+    ! /bin/wait-for-http http://invalid
     end=`date +%s`
     runtime=$((end-start))
     [[ $runtime -gt 25 ]]
 
+# test CLI param usage
 Test wait-for-http 2:
+  needs:
+    - Lint wait-for-http
+    - Build wait-for-http
+  stage: "Test"
+  extends: .change_rules_wait_for_http
+  image:
+    name: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+    entrypoint: ["/bin/sh"]
+  script:
+    - /bin/wait-for-http http://free.fr
+
+# test URL env variable usage
+Test wait-for-http 3:
   needs:
     - Lint wait-for-http
     - Build wait-for-http
@@ -67,5 +80,6 @@ Publish wait-for-http to Github Registry:
     - Build wait-for-http
     - Test wait-for-http 1
     - Test wait-for-http 2
+    - Test wait-for-http 3
   variables:
     IMAGE_NAME: socialgouv/docker/wait-for-http
