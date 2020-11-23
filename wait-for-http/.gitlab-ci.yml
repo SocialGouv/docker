@@ -1,0 +1,35 @@
+.change_rules_wait_for_http:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - &changes_wait_for_http
+      changes:
+        - wait-for-http/**/*
+
+Lint wait-for-http:
+  stage: "Quality"
+  extends: .change_rules_wait_for_http
+  image: hadolint/hadolint:v1.18.2-debian
+  script:
+    - hadolint ./wait-for-http/Dockerfile
+
+Build wait-for-http:
+  stage: "Build"
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_wait_for_http
+  needs:
+    - Lint wait-for-http
+  variables:
+    CONTEXT: wait-for-http
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/wait-for-http
+
+Publish wait-for-http to Github Registry:
+  extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_wait_for_http
+      if: "$CI_COMMIT_TAG"
+  needs:
+    - Lint wait-for-http
+    - Build wait-for-http
+  variables:
+    IMAGE_NAME: socialgouv/docker/wait-for-http
