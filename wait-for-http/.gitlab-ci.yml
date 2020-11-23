@@ -29,12 +29,14 @@ Test wait-for-http 1:
     - Build wait-for-http
   stage: "Test"
   extends: .change_rules_wait_for_http
-  image: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+  image:
+    name: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+    entrypoint: ["/bin/sh"]
   variables:
     URL: http://invalid
     RETRIES: 5
   script: |
-    ! ./entrypoint
+    ! ./wait.sh
 
 Test wait-for-http 2:
   needs:
@@ -42,11 +44,13 @@ Test wait-for-http 2:
     - Build wait-for-http
   stage: "Test"
   extends: .change_rules_wait_for_http
-  image: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+  image:
+    name: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+    entrypoint: ["/bin/sh"]
   variables:
     URL: http://free.fr
   script:
-    - ./entrypoint
+    - ./wait.sh
 
 Publish wait-for-http to Github Registry:
   extends: .base_publish_to_github_stage

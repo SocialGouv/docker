@@ -1,8 +1,8 @@
 FROM curlimages/curl:7.73.0
 
-COPY entrypoint.sh .
+COPY wait.sh .
 
 ENV URL $URL
 ENV RETRIES $RETRIES
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./wait.sh"]
