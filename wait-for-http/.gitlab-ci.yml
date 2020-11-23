@@ -23,6 +23,31 @@ Build wait-for-http:
     CONTEXT: wait-for-http
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/wait-for-http
 
+Test wait-for-http 1:
+  needs:
+    - Lint wait-for-http
+    - Build wait-for-http
+  stage: "Test"
+  extends: .change_rules_wait_for_http
+  image: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+  variables:
+    URL: http://invalid
+    RETRIES: 5
+  script: |
+    ! ./entrypoint
+
+Test wait-for-http 2:
+  needs:
+    - Lint wait-for-http
+    - Build wait-for-http
+  stage: "Test"
+  extends: .change_rules_wait_for_http
+  image: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
+  variables:
+    URL: http://free.fr
+  script:
+    - ./entrypoint
+
 Publish wait-for-http to Github Registry:
   extends: .base_publish_to_github_stage
   rules:
@@ -31,5 +56,7 @@ Publish wait-for-http to Github Registry:
   needs:
     - Lint wait-for-http
     - Build wait-for-http
+    - Test wait-for-http 1
+    - Test wait-for-http 2
   variables:
     IMAGE_NAME: socialgouv/docker/wait-for-http

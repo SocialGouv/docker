@@ -30,8 +30,8 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 
 ## Images
 
-| Project                 | Image                                                                                             | Links                                                                                       |
-| ----------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Project                 | Image                                                                                            | Links                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
 | **azure-db**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:2.3.3`            | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)           |
 | **curl**                | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/curl:2.3.3`                | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)               |
 | **fluentd-modsecurity** | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/fluentd-modsecurity:2.3.3` | [![README](https://img.shields.io/badge/README--green.svg)](./fluent-modsecurity/README.md) |
@@ -47,6 +47,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 | **puppeteer**           | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:2.3.3`           | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)          |
 | **trivy**               | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/trivy:2.3.3`               | [![README](https://img.shields.io/badge/README--green.svg)](./trivy/README.md)              |
 | **wait-for-postgres**   | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:2.3.3`   | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md)  |
+| **wait-for-http**       | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-http:2.3.3`       | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)      |
 
 <br>
 <br>
