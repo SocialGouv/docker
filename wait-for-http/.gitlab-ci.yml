@@ -35,8 +35,13 @@ Test wait-for-http 1:
   variables:
     URL: http://invalid
     RETRIES: 5
+  # expect wait to fail and a retry duration >= 25secs (5*5)
   script: |
+    start=`date +%s`
     ! /wait.sh
+    end=`date +%s`
+    runtime=$((end-start))
+    [[ $runtime -gt 25 ]]
 
 Test wait-for-http 2:
   needs:
