@@ -1,9 +1,9 @@
 #!/bin/sh
 
-retry=${RETRIES:-120};
+retry=${WAIT_FOR_RETRIES:-120};
 
 # can use environment variable if 1st arg is not provided
-TARGET=${1:-$URL}
+TARGET=${1:-$WAIT_FOR_URL}
 
 if [[ ! "$TARGET" ]]; then
   echo "Invalid URL : $TARGET"
