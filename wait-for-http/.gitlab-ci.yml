@@ -36,7 +36,7 @@ Test wait-for-http 1:
     URL: http://invalid
     RETRIES: 5
   script: |
-    ! ./wait.sh
+    ! /wait.sh
 
 Test wait-for-http 2:
   needs:
@@ -50,7 +50,7 @@ Test wait-for-http 2:
   variables:
     URL: http://free.fr
   script:
-    - ./wait.sh
+    - /wait.sh
 
 Publish wait-for-http to Github Registry:
   extends: .base_publish_to_github_stage
