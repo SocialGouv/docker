@@ -1,9 +1,11 @@
 #!/bin/sh
 
 retry=${WAIT_FOR_RETRIES:-120};
+WAIT_FOR_INTERVAL=${WAIT_FOR_INTERVAL:-5s}
 
 # can use environment variable if 1st arg is not provided
 TARGET=${1:-$WAIT_FOR_URL}
+
 
 if [[ ! "$TARGET" ]]; then
   echo "Invalid URL : $TARGET"
@@ -13,7 +15,7 @@ fi
 
 while ! curl -sSfL $TARGET && [[ $(( retry-- )) -gt 0 ]];
 do
-  echo "Waiting for $TARGET... ($(( retry )))" ; sleep 5s ;
+  echo "Waiting for $TARGET... ($(( retry )))" ; sleep ${WAIT_FOR_INTERVAL} ;
 done ;
 [[ $(( retry )) -lt 1 ]] && exit 128;
 echo Ready;
