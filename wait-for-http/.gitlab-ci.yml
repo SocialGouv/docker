@@ -38,7 +38,7 @@ Test wait-for-http 1:
   # expect wait to fail and a retry duration >= 25secs (5*5)
   script: |
     start=`date +%s`
-    ! /wait.sh
+    ! /bin/wait-for-http
     end=`date +%s`
     runtime=$((end-start))
     [[ $runtime -gt 25 ]]
@@ -55,7 +55,7 @@ Test wait-for-http 2:
   variables:
     URL: http://free.fr
   script:
-    - /wait.sh
+    - /bin/wait-for-http
 
 Publish wait-for-http to Github Registry:
   extends: .base_publish_to_github_stage
