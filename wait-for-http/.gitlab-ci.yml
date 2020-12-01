@@ -34,13 +34,14 @@ Test wait-for-http 1:
     entrypoint: ["/bin/sh"]
   variables:
     WAIT_FOR_RETRIES: 1
-  # expect wait to fail and a retry duration >= 25secs (5*5)
+  
+  # expect wait to fail and a retry duration >= 5secs (1*5)
   script: |
     start=`date +%s`
-    ! /bin/wait-for-http http://invalid
+    /bin/wait-for-http http://invalid && echo "Should not fail" && exit 1 || true
     end=`date +%s`
     runtime=$((end-start))
-    [[ $runtime -gt 5 ]]
+    [[ $runtime -gt 5 ]] || echo "Should wait ~5 secs" && exit 1
 
 # test CLI param usage
 Test wait-for-http 2:
