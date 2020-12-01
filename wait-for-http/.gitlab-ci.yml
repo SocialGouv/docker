@@ -40,7 +40,7 @@ Test wait-for-http 1:
     ! /bin/wait-for-http http://invalid
     end=`date +%s`
     runtime=$((end-start))
-    [[ $runtime -gt 25 ]]
+    [[ $runtime -gt 5 ]]
 
 # test CLI param usage
 Test wait-for-http 2:
