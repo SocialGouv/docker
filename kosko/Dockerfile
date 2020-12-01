@@ -22,7 +22,7 @@ RUN set -ex \
   ;
 
 # renovate: datasource=github-releases depName=k14s/kapp
-ARG KAPP_VERSION=v0.30.0
+ARG KAPP_VERSION=v0.34.0
 RUN set -ex \
   #
   && wget -O /usr/local/bin/kapp \
