@@ -33,7 +33,7 @@ Test wait-for-http 1:
     name: "${CI_REGISTRY_IMAGE}/wait-for-http:${CI_COMMIT_SHA}"
     entrypoint: ["/bin/sh"]
   variables:
-    RETRIES: 5
+    WAIT_FOR_RETRIES: 1
   # expect wait to fail and a retry duration >= 25secs (5*5)
   script: |
     start=`date +%s`
