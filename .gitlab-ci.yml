@@ -24,6 +24,7 @@ include:
   - /puppeteer/.gitlab-ci.yml
   - /trivy/.gitlab-ci.yml
   - /wait-for-postgres/.gitlab-ci.yml
+  - /wait-for-http/.gitlab-ci.yml
 
 #
 
