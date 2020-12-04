@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/SocialGouv/docker/compare/v2.4.0...v2.5.0) (2020-12-04)
+
+
+### Features
+
+* **azure-db:** dont fail create-db when already exist ([#495](https://github.com/SocialGouv/docker/issues/495)) ([57e2541](https://github.com/SocialGouv/docker/commit/57e254135ab3324cb52ad51381309dc0c66b96fa))
+* **deps:** update all non-major dependencies docker tags (minor) ([#494](https://github.com/SocialGouv/docker/issues/494)) ([f553c0b](https://github.com/SocialGouv/docker/commit/f553c0b3e6c0cc93d133d24a73bb0662a251e3fc))
+* **wait-for-http:** add wait-for-http ([#491](https://github.com/SocialGouv/docker/issues/491)) ([b7d9ce5](https://github.com/SocialGouv/docker/commit/b7d9ce592dc6bfc9065aceaa3f22391c7a56e471))
+
 # [2.4.0](https://github.com/SocialGouv/docker/compare/v2.3.4...v2.4.0) (2020-12-01)
 
 
