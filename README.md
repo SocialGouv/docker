@@ -30,8 +30,8 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 
 ## Images
 
-| Project                 | Image                                                                                             | Links                                                                                       |
-| ----------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Project                 | Image                                                                                            | Links                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
 | **azure-db**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:4.0.0`            | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)           |
 | **curl**                | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/curl:4.0.0`                | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)               |
 | **fluentd-modsecurity** | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/fluentd-modsecurity:4.0.0` | [![README](https://img.shields.io/badge/README--green.svg)](./fluent-modsecurity/README.md) |
