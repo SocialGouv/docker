@@ -30,6 +30,13 @@ PGSSLMODE=require
 #  /o\ get base user name (without server) for SQL commands
 NEW_USER_BASE=${NEW_USER%%@*} || $NEW_USER
 
+
+# check if DB already exist
+if psql -abe "$PG_URL_ADMIN" -c "\c ${NEW_DB_NAME}"; then
+  echo "Database already exist, skip"
+  exit 0
+fi;
+
 echo "creating database ${NEW_DB_NAME} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "CREATE DATABASE \"$NEW_DB_NAME\";"
 
@@ -56,5 +63,4 @@ if [[ -n "${NEW_DB_EXTENSIONS}" ]]; then
 fi
 
 echo "Done"
-
 

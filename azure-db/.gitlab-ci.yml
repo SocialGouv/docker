@@ -129,6 +129,20 @@ Test azure-db 2 3:
     #
     - docker stop hasura_test
     #
+    - echo "Should do nothing if the db already exists"
+    - docker run
+      --env NEW_DB_EXTENSIONS="pgcrypto"
+      --env NEW_DB_NAME=${NEW_DB_NAME}
+      --env NEW_PASSWORD=${NEW_PASSWORD}
+      --env NEW_USER=${NEW_USER}
+      --env PGHOST=localhost
+      --env PGPASSWORD=${POSTGRES_PASSWORD}
+      --env PGUSER=${POSTGRES_USER}
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA} create-db-user
+    #
+    #
     # Drop test
     #
     - echo "drop db and user on PG service"
