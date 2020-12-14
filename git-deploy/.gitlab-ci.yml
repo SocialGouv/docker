@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_git_deploy
       changes:
+        - .gitlab-ci.yml
         - git-deploy/**/*
 
 Lint git-deploy:

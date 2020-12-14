@@ -2,6 +2,7 @@
   rules:
     - &change_infra_ansible_ci
       changes:
+        - .gitlab-ci.yml
         - infra-ansible-ci/**/*
 
 Lint infra-ansible-ci:

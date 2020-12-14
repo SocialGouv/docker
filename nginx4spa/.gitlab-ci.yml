@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_nginx4pa
       changes:
+        - .gitlab-ci.yml
         - nginx4spa/**/*
 
 Lint nginx4spa:

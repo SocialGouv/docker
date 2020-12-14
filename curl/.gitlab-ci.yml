@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_curl
       changes:
+        - .gitlab-ci.yml
         - curl/**/*
 
 Lint curl:

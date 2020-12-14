@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_fluentd_modsecurity
       changes:
+        - .gitlab-ci.yml
         - fluentd-modsecurity/**/*
 
 Lint fluentd-modsecurity:

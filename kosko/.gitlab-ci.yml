@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_kosko
       changes:
+        - .gitlab-ci.yml
         - kosko/**/*
 
 Lint kosko:

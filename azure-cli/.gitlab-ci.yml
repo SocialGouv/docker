@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_azure_cli
       changes:
+        - .gitlab-ci.yml
         - azure-cli/**/*
 
 Lint azure-cli:
