@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/SocialGouv/docker/compare/v2.6.0...v2.6.1) (2020-12-14)
+
+
+### Bug Fixes
+
+* **deps:** update alpine docker tag to v3.12.2 ([#497](https://github.com/SocialGouv/docker/issues/497)) ([5c457d5](https://github.com/SocialGouv/docker/commit/5c457d52a89847e101b42d745f5a0b1427f06b25))
+
 # [2.6.0](https://github.com/SocialGouv/docker/compare/v2.5.0...v2.6.0) (2020-12-14)
 
 
