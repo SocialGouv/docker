@@ -1,4 +1,4 @@
-FROM alpine:3.12.1
+FROM alpine:edge
 
 # Installs latest Chromium (77) package.
 RUN apk add --no-cache \
@@ -9,8 +9,14 @@ RUN apk add --no-cache \
   harfbuzz=~2 \
   ca-certificates=~20191127 \
   ttf-freefont=~20120503 \
-  nodejs=~12 \
-  yarn=~1
+  nodejs=~14 \
+  yarn=~1 \
+  npm=~14 \
+  curl=~7
+
+RUN apk add --no-cache mongodb-tools=~4
+
+RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/main/ postgresql=10.12-r0
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
@@ -22,4 +28,4 @@ RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
     && chown -R pptruser:pptruser /app
 
 # Run everything after as non-privileged user.
-# USER pptruser
+USER pptruser

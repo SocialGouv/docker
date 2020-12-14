@@ -1,4 +1,4 @@
-# Puppeteer 
+# Puppeteer
 
 > Puppeteer image for e2e tests. Made to run e2e test on gitlab.
 
@@ -7,7 +7,7 @@
 ```yaml
 E2E Test @optional/e2e.runner.puppeteer:
   stage: Code Quality
-  image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:<version>
+  image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer-mongo-pg:<version>
   variables:
     CODECEPT_BASEURL: "http://mywebsite.dev.factory.social.gouv.fr"
   artifacts:
