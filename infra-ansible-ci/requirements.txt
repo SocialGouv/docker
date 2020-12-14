@@ -1,5 +1,5 @@
 adal==1.2.5
-ansible==2.10.3
+ansible==2.10.4
 ansible-lint==4.3.7
 applicationinsights==0.11.9
 argcomplete==1.12.2
@@ -57,7 +57,7 @@ packaging==20.7
 paramiko==2.7.2
 pathspec==0.8.1
 pycparser==2.20
-Pygments==2.7.2
+Pygments==2.7.3
 PyJWT==1.7.1
 PyNaCl==1.4.0
 pyOpenSSL==19.1.0
