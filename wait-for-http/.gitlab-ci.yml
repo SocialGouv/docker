@@ -43,7 +43,7 @@ Test wait-for-http 1:
     ) || true
     end=`date +%s`
     runtime=$((end-start))
-    [[ $runtime -gt 5 ]] || ( 
+    [[ $runtime -ge 5 ]] || ( 
       echo "Should wait ~5 secs (actual $runtime)" && exit 1 
     ) 
 
