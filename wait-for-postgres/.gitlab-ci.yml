@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_wait_for_postgres
       changes:
+        - .gitlab-ci.yml
         - wait-for-postgres/**/*
 
 Lint wait-for-postgres 1 2:

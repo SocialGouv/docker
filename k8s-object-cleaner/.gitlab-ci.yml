@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_k8s_object_killer
       changes:
+        - .gitlab-ci.yml
         - k8s-object-cleaner/**/*
 
 Lint k8s-object-cleaner 1 2:

@@ -2,6 +2,7 @@
   rules:
     - &change_k8s_ns_killer
       changes:
+        - .gitlab-ci.yml
         - k8s-ns-killer/**/*
 
 Lint k8s-ns-killer 1 2:

@@ -3,6 +3,7 @@
     - if: '$CI_COMMIT_BRANCH == "master"'
     - &changes_helm
       changes:
+        - .gitlab-ci.yml
         - helm/**/*
 
 Lint helm:
