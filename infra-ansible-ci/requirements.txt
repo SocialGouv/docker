@@ -3,7 +3,7 @@ ansible==2.10.4
 ansible-lint==4.3.7
 applicationinsights==0.11.9
 argcomplete==1.12.2
-azure-cli-core==2.16.0
+azure-cli-core==2.17.0
 azure-cli-nspkg==3.0.4
 azure-common==1.1.26
 azure-graphrbac==0.61.1
@@ -19,7 +19,7 @@ azure-mgmt-containerservice==14.0.0
 azure-mgmt-cosmosdb==6.0.0
 azure-mgmt-devtestlabs==4.0.0
 azure-mgmt-dns==3.0.0
-azure-mgmt-hdinsight==2.0.0
+azure-mgmt-hdinsight==2.1.0
 azure-mgmt-iothub==0.12.0
 azure-mgmt-keyvault==8.0.0
 azure-mgmt-loganalytics==2.0.0
