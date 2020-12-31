@@ -51,9 +51,9 @@ Test wait-for-postgres 2 2:
     - Lint wait-for-postgres 1 2
     - Lint wait-for-postgres 2 2
     - Build wait-for-postgres
-  image: docker:19
+  image: docker:20
   services:
-    - docker:19-dind
+    - docker:20-dind
     - postgres:10.11-alpine
   script:
     - docker pull ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}

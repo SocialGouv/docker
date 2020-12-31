@@ -30,9 +30,9 @@ Test nginx4spa:
   needs:
     - Lint nginx4spa
     - Build nginx4spa
-  image: docker:19
+  image: docker:20
   services:
-    - docker:19-dind
+    - docker:20-dind
   script:
     - apk add --no-cache bats git ca-certificates wget
     - git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/ztombol/bats-support /usr/lib/bats-support

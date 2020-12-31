@@ -46,9 +46,9 @@ Test kubectl 2 2:
   needs:
     - Lint kubectl
     - Build kubectl
-  image: docker:19
+  image: docker:20
   services:
-    - docker:19-dind
+    - docker:20-dind
   script:
     - docker run --rm ${CI_REGISTRY_IMAGE}/kubectl:${CI_COMMIT_SHA} version --client
     #
