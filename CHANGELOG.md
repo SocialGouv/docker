@@ -1,3 +1,10 @@
+# [2.9.0](https://github.com/SocialGouv/docker/compare/v2.8.1...v2.9.0) (2021-01-01)
+
+
+### Features
+
+* **deps:** update all non-major dependencies ([#504](https://github.com/SocialGouv/docker/issues/504)) ([52c3646](https://github.com/SocialGouv/docker/commit/52c364644bcc3c4c1e6ed40d80311657f2e832dc))
+
 ## [2.8.1](https://github.com/SocialGouv/docker/compare/v2.8.0...v2.8.1) (2020-12-21)
 
 
