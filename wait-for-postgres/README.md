@@ -1,6 +1,17 @@
 # Wait for PostgreSQL
 
-> Wait for PostgreSQL to be ready in an image.
+> Wait for the given PostgreSQL database to be ready and accept connections
+
+## Usage
+
+### Environment variables
+
+| Key               | Value | Usage                                     |
+| ----------------- | ----- | ----------------------------------------- |
+| WAIT_FOR_RETRIES  | 120   | number of retries                         |
+| WAIT_FOR_INTERVAL | 5     | wait between retries (seconds)            |
+
+As this execute psql, [every psql environment variable](https://www.postgresql.org/docs/9.3/libpq-envars.html) is also accepted 
 
 ### Example in k8s
 
