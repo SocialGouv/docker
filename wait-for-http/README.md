@@ -12,4 +12,4 @@ $ docker run --rm registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-
 | ----------------- | ----- | ----------------------------------------- |
 | WAIT_FOR_RETRIES  | 120   | number of retries                         |
 | WAIT_FOR_INTERVAL | 5     | wait between retries (seconds)            |
-| WAIT_FOR_URL      |  $1   | Url to test, as env var or first argument |
+| WAIT_FOR_URL      |  $1   | url to test, as env var or first argument |
