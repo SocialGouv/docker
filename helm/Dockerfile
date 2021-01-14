@@ -19,7 +19,7 @@ RUN set -ex \
     coreutils=~8 \
     gettext=~0 \
   #
-  && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}"
+  && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}" \
   ;
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
