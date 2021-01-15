@@ -36,7 +36,7 @@ Test bats:
     - bats -p /opt/bats/test/fixtures/bats/passing.bats 
     - bats /opt/bats/test
     - bats /usr/lib/bats-assert/test
-    - bats /usr/lib/bats-file/test
+    # - bats /usr/lib/bats-file/test
     - bats /usr/lib/bats-support/test
     - bats ./bats/test
 
