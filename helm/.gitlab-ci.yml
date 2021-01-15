@@ -55,12 +55,12 @@ Test helm:
     # Test that we can fetch the latest version
     #
     - echo "https://github.com/SocialGouv/helm-charts/releases/tag/v${HELM_CHART_VERSION}"
-    - helm template app socialgouv/app --version "${HELM_CHART_VERSION}"
+    - helm template app socialgouv/app --version "${HELM_CHART_VERSION}" --output-dir manifests
     - ls -la
-    - test -d ./.charts
-    - test -d ./.charts/app
-    - test -f ./.charts/app/Chart.yaml
-    - "grep 'version: '${HELM_CHART_VERSION} ./.charts/app/Chart.yaml"
+    - test -d ./manifests
+    - ls -la manifests
+    - test -f ./manifests/app/templates/service.yaml
+    - "grep 'helm.sh/chart: '${HELM_CHART_VERSION} ./manifests/app/templates/service.yaml"
 
 Publish helm to Github Registry:
   extends: .base_publish_to_github_stage
