@@ -5,7 +5,7 @@ FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats:2.9.0 AS bats
 
 #
 
-FROM alpine/helm:2.14.3
+FROM alpine/helm:3.4.2
 
 ARG HELM_CHART_VERSION
 ENV HELM_CHART_VERSION=${HELM_CHART_VERSION}
@@ -19,11 +19,7 @@ RUN set -ex \
     coreutils=~8 \
     gettext=~0 \
   #
-  && helm init --client-only \
   && helm repo add socialgouv "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}" \
-  && wget -qO - \
-    "https://github.com/SocialGouv/helm-charts/releases/download/v${HELM_CHART_VERSION}/helm-just-linux-${HELM_CHART_VERSION}.tgz" \
-    | tar -C "$(helm home)" -xzv \
   ;
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
