@@ -33,13 +33,12 @@ Test bats:
   image: "${CI_REGISTRY_IMAGE}/bats:${CI_COMMIT_SHA}"
   script:
     - bats --version
-    - export TERM=xterm-256color
     - bats -p /opt/bats/test/fixtures/bats/passing.bats 
     - bats /opt/bats/test
-    # - bats /usr/lib/bats-assert/test
-    # - bats /usr/lib/bats-file/test
-    # - bats /usr/lib/bats-support/test
-    # - bats ./bats/test
+    - bats /usr/lib/bats-assert/test
+    - bats /usr/lib/bats-file/test
+    - bats /usr/lib/bats-support/test
+    - bats ./bats/test
 
 Publish bats to Github Registry:
   extends: .base_publish_to_github_stage
