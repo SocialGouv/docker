@@ -22,8 +22,4 @@ RUN set -x \
     # Clean
     #
     && apk del .bats-deps \
-    #
-    # Miscellaneous
-    # Align bats test outputs
-    && export TERM=xterm-256color \
     ;
