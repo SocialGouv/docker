@@ -34,6 +34,7 @@ Test bats:
   script:
     - bats --version
     - bats /opt/bats/test
+    - bats -p /opt/bats/test/fixtures/bats/passing.bats 
     # - bats /usr/lib/bats-assert/test
     # - bats /usr/lib/bats-file/test
     # - bats /usr/lib/bats-support/test
