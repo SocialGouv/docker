@@ -1,3 +1,26 @@
+# [3.0.0](https://github.com/SocialGouv/docker/compare/v2.9.0...v3.0.0) (2021-01-15)
+
+
+* feat(deps)!: update alpine/helm docker tag to v3 (#511) ([890d5d6](https://github.com/SocialGouv/docker/commit/890d5d61fb1198336248589798fba900503428a9)), closes [#511](https://github.com/SocialGouv/docker/issues/511)
+
+
+### Features
+
+* **deps:** update all non-major dependencies docker tags ([#505](https://github.com/SocialGouv/docker/issues/505)) ([c6fbb6c](https://github.com/SocialGouv/docker/commit/c6fbb6c85854e866c26873a648c0fc8884d88f34))
+* **deps:** update alpine/helm docker tag to v3 ([#511](https://github.com/SocialGouv/docker/issues/511)) ([1cd7395](https://github.com/SocialGouv/docker/commit/1cd7395c4363617ad035dc6533d47740550e8f5e))
+
+
+### Reverts
+
+* Revert "feat(deps): update alpine/helm docker tag to v3" (#512) ([181a58d](https://github.com/SocialGouv/docker/commit/181a58d759d4e0022468faa513cdf1a59acfd4a8)), closes [#512](https://github.com/SocialGouv/docker/issues/512)
+
+
+### BREAKING CHANGES
+
+* SocialGouv/docker/helm updated to helm v3
+
+We removed the [`helm just` plugin](https://github.com/SocialGouv/helm-charts/tree/v6.2.0/plugins/just) by default
+
 # [2.9.0](https://github.com/SocialGouv/docker/compare/v2.8.1...v2.9.0) (2021-01-01)
 
 
