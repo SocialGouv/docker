@@ -1,9 +1,9 @@
 adal==1.2.5
-ansible==2.10.4
+ansible==2.10.5
 ansible-lint==4.3.7
 applicationinsights==0.11.9
 argcomplete==1.12.2
-azure-cli-core==2.17.0
+azure-cli-core==2.17.1
 azure-cli-nspkg==3.0.4
 azure-common==1.1.26
 azure-graphrbac==0.61.1
@@ -57,7 +57,7 @@ packaging==20.8
 paramiko==2.7.2
 pathspec==0.8.1
 pycparser==2.20
-Pygments==2.7.3
+Pygments==2.7.4
 PyJWT==1.7.1
 PyNaCl==1.4.0
 pyOpenSSL==20.0.1
