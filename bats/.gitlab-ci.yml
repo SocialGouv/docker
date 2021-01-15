@@ -30,7 +30,7 @@ Test bats:
   needs:
     - Lint bats
     - Build bats
-  image: bats/bats:1.2.1
+  image: "${CI_REGISTRY_IMAGE}/bats:${CI_COMMIT_SHA}"
   script:
     - bats --version
     - bats -p /opt/bats/test/fixtures/bats/passing.bats 
