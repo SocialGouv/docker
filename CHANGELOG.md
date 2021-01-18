@@ -1,3 +1,16 @@
+# [4.0.0](https://github.com/SocialGouv/docker/compare/v3.1.0...v4.0.0) (2021-01-18)
+
+
+* feat(deps)!: update all non-major dependencies docker tags (minor) (#515) ([4a67043](https://github.com/SocialGouv/docker/commit/4a67043a908da42b8db06d50da9ea968e419af21)), closes [#515](https://github.com/SocialGouv/docker/issues/515)
+
+
+### BREAKING CHANGES
+
+* Alpine OS update 
+
+Co-authored-by: Renovate Bot <bot@renovateapp.com>
+Co-authored-by: Douglas Duteil <douglasduteil@gmail.com>
+
 # [3.1.0](https://github.com/SocialGouv/docker/compare/v3.0.0...v3.1.0) (2021-01-15)
 
 
