@@ -1,5 +1,5 @@
 # FROM alpine:edge
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:3.1.0
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:4.0.0
 
 USER root
 
