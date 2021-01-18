@@ -1,0 +1,46 @@
+.change_rules_puppeteer:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - &changes_puppeteer
+      changes:
+        - puppeteer-mongo-pg/**/*
+
+Lint puppeteer:
+  stage: "Quality"
+  extends: .change_rules_puppeteer
+  image: hadolint/hadolint:v1.19.0-debian
+  script:
+    - hadolint ./puppeteer-mongo-pg/Dockerfile
+
+Build puppeteer:
+  stage: "Build"
+  needs:
+    - Lint puppeteer
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_puppeteer
+  variables:
+    CONTEXT: puppeteer-mongo-pg
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/puppeteer-mongo-pg
+
+Test puppeteer:
+  stage: "Test"
+  extends: .change_rules_puppeteer
+  needs:
+    - Lint puppeteer
+    - Build puppeteer
+  image: "${CI_REGISTRY_IMAGE}/puppeteer-mongo-pg:${CI_COMMIT_SHA}"
+  script:
+    - chromium-browser --version
+    - node --version
+    - yarn --version
+
+Publish puppeteer to Github Registry:
+  extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_puppeteer
+      if: "$CI_COMMIT_TAG"
+  needs:
+    - Build puppeteer
+  variables:
+    IMAGE_NAME: socialgouv/docker/puppeteer-mongo-pg
