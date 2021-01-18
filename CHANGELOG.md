@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/SocialGouv/docker/compare/v4.1.0...v4.2.0) (2021-01-18)
+
+
+### Features
+
+* Puppeteer image with MongoDB and PG tools. ([#514](https://github.com/SocialGouv/docker/issues/514)) ([d3a9c38](https://github.com/SocialGouv/docker/commit/d3a9c384e991c7c45e845004162c193f98e4d7de)), closes [#495](https://github.com/SocialGouv/docker/issues/495) [#494](https://github.com/SocialGouv/docker/issues/494) [#491](https://github.com/SocialGouv/docker/issues/491)
+
 # [4.1.0](https://github.com/SocialGouv/docker/compare/v4.0.0...v4.1.0) (2021-01-18)
 
 
