@@ -9,7 +9,7 @@ RUN apk add --no-cache \
   harfbuzz=~2 \
   ca-certificates=~20191127 \
   ttf-freefont=~20120503 \
-  nodejs=~12 \
+  nodejs=~14 \
   yarn=~1
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
