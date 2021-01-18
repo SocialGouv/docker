@@ -1,6 +1,6 @@
 FROM alpine:3.13.0
 
-# Installs latest Chromium (77) package.
+# Installs latest Chromium (86) package.
 RUN apk add --no-cache \
   chromium=~86 \
   nss=~3 \
