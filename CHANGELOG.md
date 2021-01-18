@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/SocialGouv/docker/compare/v4.0.0...v4.1.0) (2021-01-18)
+
+
+### Features
+
+* **deps:** update node docker tag to v15 ([#516](https://github.com/SocialGouv/docker/issues/516)) ([af25e19](https://github.com/SocialGouv/docker/commit/af25e19ee8559534b61a38941fd16b2933d67370))
+
 # [4.0.0](https://github.com/SocialGouv/docker/compare/v3.1.0...v4.0.0) (2021-01-18)
 
 
