@@ -46,7 +46,6 @@ Test kaniko 1 2:
   script:
     #
     - kaniko
-      --cache=true
       --context dir:///${PWD}/kaniko
       --no-push
       --verbosity trace
