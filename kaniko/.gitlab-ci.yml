@@ -16,7 +16,7 @@ Lint kaniko:
 Build kaniko:
   stage: "Build"
   extends:
-    - .base_register_to_harbor_stage
+    - .base_register_to_gitlab_stage
     - .change_rules_kaniko
   needs:
     - Lint kaniko
