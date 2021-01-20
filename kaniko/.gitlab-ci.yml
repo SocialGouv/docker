@@ -46,9 +46,10 @@ Test kaniko 1 2:
   script:
     #
     - kaniko
-      --verbosity trace
       --cache=true
       --context dir:///${PWD}/kaniko
+      --no-push
+      --verbosity trace
 
 Publish kaniko to Github Registry:
   extends: .base_publish_to_github_stage
