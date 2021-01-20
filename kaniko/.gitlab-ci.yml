@@ -22,7 +22,7 @@ Build kaniko:
     - Lint kaniko
   variables:
     CONTEXT: kaniko
-    IMAGE_NAME: kaniko
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kaniko
 
 Test kaniko:
   needs:
