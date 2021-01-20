@@ -1,10 +1,10 @@
 include:
   - project: SocialGouv/gitlab-ci-yml
     file: /base_semantic_release_stage.yml
-    ref: v17.19.0
+    ref: v20.4.0
   - project: SocialGouv/gitlab-ci-yml
     file: /base_register_stage.yml
-    ref: v17.19.0
+    ref: v20.4.0
   #
   - /azure-cli/.gitlab-ci.yml
   - /azure-db/.gitlab-ci.yml
@@ -14,6 +14,7 @@ include:
   - /git-deploy/.gitlab-ci.yml
   - /git-tag-release/.gitlab-ci.yml
   - /helm/.gitlab-ci.yml
+  - /img/.gitlab-ci.yml
   - /infra-ansible-ci/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
   - /k8s-object-cleaner/.gitlab-ci.yml
@@ -21,11 +22,11 @@ include:
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
   - /pg-cleaner/.gitlab-ci.yml
-  - /puppeteer/.gitlab-ci.yml
   - /puppeteer-mongo-pg/.gitlab-ci.yml
+  - /puppeteer/.gitlab-ci.yml
   - /trivy/.gitlab-ci.yml
-  - /wait-for-postgres/.gitlab-ci.yml
   - /wait-for-http/.gitlab-ci.yml
+  - /wait-for-postgres/.gitlab-ci.yml
 
 #
 

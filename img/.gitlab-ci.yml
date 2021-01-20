@@ -1,0 +1,64 @@
+.change_rules_img:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - &changes_img
+      changes:
+        - .gitlab-ci.yml
+        - img/**/*
+
+Lint img:
+  stage: "Quality"
+  extends: .change_rules_img
+  image: hadolint/hadolint:v1.19.0-debian
+  script:
+    - hadolint ./img/Dockerfile
+
+Build img:
+  stage: "Build"
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_img
+  needs:
+    - Lint img
+  variables:
+    CONTEXT: img
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/img
+
+Test img 1 1:
+  needs:
+    - Lint img
+    - Build img
+  stage: "Test"
+  extends: .change_rules_img
+  image: "${CI_REGISTRY_IMAGE}/img:${CI_COMMIT_SHA}"
+  script:
+    #
+    - img version
+
+Test img 1 2:
+  needs:
+    - Lint img
+    - Build img
+  stage: "Test"
+  extends: .change_rules_img
+  image: "${CI_REGISTRY_IMAGE}/img:${CI_COMMIT_SHA}"
+  script:
+    #
+    - img
+      --context dir://${PWD}/img
+      --no-push
+      --snapshotMode=redo
+      --verbosity trace
+
+Publish img to Github Registry:
+  extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_img
+      if: "$CI_COMMIT_TAG"
+  needs:
+    - Lint img
+    - Build img
+    - Test img 1 1
+    - Test img 1 2
+  variables:
+    IMAGE_NAME: socialgouv/docker/img
