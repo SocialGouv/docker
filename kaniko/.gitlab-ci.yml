@@ -58,6 +58,7 @@ Publish kaniko to Github Registry:
   needs:
     - Lint kaniko
     - Build kaniko
-    - Test kaniko
+    - Test kaniko 1 1
+    - Test kaniko 1 2
   variables:
     IMAGE_NAME: socialgouv/docker/kaniko
