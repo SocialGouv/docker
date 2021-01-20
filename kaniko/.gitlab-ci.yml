@@ -24,7 +24,7 @@ Build kaniko:
     CONTEXT: kaniko
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kaniko
 
-Test kaniko:
+Test kaniko 1 1:
   needs:
     - Lint kaniko
     - Build kaniko
@@ -35,6 +35,20 @@ Test kaniko:
     #
     - kaniko version
     - executor version
+
+Test kaniko 1 2:
+  needs:
+    - Lint kaniko
+    - Build kaniko
+  stage: "Test"
+  extends: .change_rules_kaniko
+  image: "${CI_REGISTRY_IMAGE}/kaniko:${CI_COMMIT_SHA}"
+  script:
+    #
+    - kaniko
+      --verbosity trace
+      --cache=true
+      --context dir:///${PWD}/kaniko
 
 Publish kaniko to Github Registry:
   extends: .base_publish_to_github_stage
