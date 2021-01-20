@@ -34,6 +34,7 @@ Test kaniko:
   script:
     #
     - kaniko version
+    - executor version
 
 Publish kaniko to Github Registry:
   extends: .base_publish_to_github_stage
