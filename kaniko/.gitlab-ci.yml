@@ -1,0 +1,48 @@
+.change_rules_kaniko:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - &changes_kaniko
+      changes:
+        - .gitlab-ci.yml
+        - kaniko/**/*
+
+Lint kaniko:
+  stage: "Quality"
+  extends: .change_rules_kaniko
+  image: hadolint/hadolint:v1.19.0-debian
+  script:
+    - hadolint ./kaniko/Dockerfile
+
+Build kaniko:
+  stage: "Build"
+  extends:
+    - .base_register_to_harbor_stage
+    - .change_rules_kaniko
+  needs:
+    - Lint kaniko
+  variables:
+    CONTEXT: kaniko
+    IMAGE_NAME: kaniko
+
+Test kaniko:
+  needs:
+    - Lint kaniko
+    - Build kaniko
+  stage: "Test"
+  extends: .change_rules_kaniko
+  image: "${CI_REGISTRY_IMAGE}/kaniko:${CI_COMMIT_SHA}"
+  script:
+    #
+    - kaniko version
+
+Publish kaniko to Github Registry:
+  extends: .base_publish_to_github_stage
+  rules:
+    - <<: *changes_kaniko
+      if: "$CI_COMMIT_TAG"
+  needs:
+    - Lint kaniko
+    - Build kaniko
+    - Test kaniko
+  variables:
+    IMAGE_NAME: socialgouv/docker/kaniko

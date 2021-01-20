@@ -1,0 +1,8 @@
+{
+  "auths": {
+    "harbor.fabrique.social.gouv.fr": {
+      "username": "$HARBOR_USERNAME",
+      "password": "$HARBOR_PASSWORD"
+    }
+  }
+}

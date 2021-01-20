@@ -17,15 +17,16 @@ include:
   - /infra-ansible-ci/.gitlab-ci.yml
   - /k8s-ns-killer/.gitlab-ci.yml
   - /k8s-object-cleaner/.gitlab-ci.yml
+  - /kaniko/.gitlab-ci.yml
   - /kosko/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
   - /pg-cleaner/.gitlab-ci.yml
-  - /puppeteer/.gitlab-ci.yml
   - /puppeteer-mongo-pg/.gitlab-ci.yml
+  - /puppeteer/.gitlab-ci.yml
   - /trivy/.gitlab-ci.yml
-  - /wait-for-postgres/.gitlab-ci.yml
   - /wait-for-http/.gitlab-ci.yml
+  - /wait-for-postgres/.gitlab-ci.yml
 
 #
 
