@@ -8,7 +8,8 @@ RUN set -ex \
     bash=~5 \
   #
   ;
-COPY --from=kaniko-image /kaniko/executor /bin/kaniko
-COPY --from=kaniko-image /kaniko/executor /bin/executor
+
+COPY --from=kaniko-image /bin/executor /bin/executor
+COPY --from=kaniko-image /bin/kaniko /bin/kaniko
 COPY ./config.json /kaniko/.docker/config.json
 
