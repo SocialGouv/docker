@@ -46,8 +46,9 @@ Test kaniko 1 2:
   script:
     #
     - kaniko
-      --context dir:///${PWD}/kaniko
+      --context dir://${PWD}/kaniko
       --no-push
+      --snapshotMode=redo
       --verbosity trace
 
 Publish kaniko to Github Registry:
