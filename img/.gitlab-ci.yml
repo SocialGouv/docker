@@ -44,11 +44,7 @@ Test img 1 2:
   image: "${CI_REGISTRY_IMAGE}/img:${CI_COMMIT_SHA}"
   script:
     #
-    - img build
-      --context dir://${PWD}/img
-      --no-push
-      --snapshotMode=redo
-      --verbosity trace
+    - img build img
 
 Publish img to Github Registry:
   extends: .base_publish_to_github_stage
