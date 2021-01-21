@@ -44,7 +44,7 @@ Test img 1 2:
   image: "${CI_REGISTRY_IMAGE}/img:${CI_COMMIT_SHA}"
   script:
     #
-    - img build img
+    - img build -t ${CI_REGISTRY_IMAGE}/test/img img
 
 Publish img to Github Registry:
   extends: .base_publish_to_github_stage
