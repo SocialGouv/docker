@@ -27,6 +27,9 @@ Build bats:
 Test bats:
   stage: "Test"
   extends: .change_rules_bats
+  # NOTE(douglasduteil): retry the whole job
+  # In cases when the bats test fails due to heavy load, it's safer to retry agin
+  retry: 2
   needs:
     - Lint bats
     - Build bats
