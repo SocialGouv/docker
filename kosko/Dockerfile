@@ -19,7 +19,7 @@ RUN set -ex \
     coreutils=~8 \
     gettext=~0 \
   #
-  && yarn global add kosko${KOSKO_VERSION} \
+  && yarn global add kosko@${KOSKO_VERSION} \
   #
   && kosko --version \
   ;
