@@ -9,6 +9,9 @@ FROM node:15-alpine
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
 
+ARG KOSKO_VERSION
+ENV KOSKO_VERSION=${KOSKO_VERSION}
+
 RUN set -ex \
   #
   && apk add --update --no-cache \
@@ -16,7 +19,7 @@ RUN set -ex \
     coreutils=~8 \
     gettext=~0 \
   #
-  && yarn global add kosko@0.9.1 \
+  && yarn global add kosko@${KOSKO_VERSION} \
   #
   && kosko --version \
   ;
