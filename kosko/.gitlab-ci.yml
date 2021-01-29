@@ -20,6 +20,18 @@ Build kosko:
   extends:
     - .base_register_to_gitlab_stage
     - .change_rules_kosko
+  before_script:
+    # NOTE(douglasduteil): build from renovate maintaining package.json
+    # To allow renovate to maintaining the socialgouv/docker/kosko image
+    # we use a fake `package.json` that link to the repo we need to follow.
+    # The script below allow will build the version present in that file.
+    - apk add --no-cache jq
+    - KOSKO_VERSION=$(
+      cat ./kosko/package.json |
+      jq '.dependencies["kosko"]' |
+      grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+'
+      )
+    - DOCKER_BUILD_ARGS="--build-arg KOSKO_VERSION=${KOSKO_VERSION}"
   variables:
     CONTEXT: kosko
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/kosko

@@ -1,3 +1,24 @@
+## [4.3.1](https://github.com/SocialGouv/docker/compare/v4.3.0...v4.3.1) (2021-01-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kosko to v1 ([#525](https://github.com/SocialGouv/docker/issues/525)) ([7942d21](https://github.com/SocialGouv/docker/commit/7942d214e7051902a692f8b7ab2b134995536045))
+
+# [4.3.0](https://github.com/SocialGouv/docker/compare/v4.2.1...v4.3.0) (2021-01-29)
+
+
+### Features
+
+* **deps:** update all dependencies ([#519](https://github.com/SocialGouv/docker/issues/519)) ([2a72e29](https://github.com/SocialGouv/docker/commit/2a72e29a4725b6aa607766dc65f38685694020b4))
+
+## [4.2.1](https://github.com/SocialGouv/docker/compare/v4.2.0...v4.2.1) (2021-01-26)
+
+
+### Bug Fixes
+
+* **deps:** update hashicorp/terraform docker tag to v0.14.5 ([#520](https://github.com/SocialGouv/docker/issues/520)) ([bf1565b](https://github.com/SocialGouv/docker/commit/bf1565b5bd3a18b23823c48c99c6f81876497f32))
+
 # [4.2.0](https://github.com/SocialGouv/docker/compare/v4.1.0...v4.2.0) (2021-01-18)
 
 
