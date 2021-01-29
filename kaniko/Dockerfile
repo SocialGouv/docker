@@ -4,7 +4,7 @@ FROM alpine:3.13
 
 RUN apk add --update --no-cache bash=~5
 
-COPY --from=kaniko-image /bin/executor /bin/executor
-COPY --from=kaniko-image /bin/kaniko /bin/kaniko
+COPY --from=kaniko-image /kaniko/executor /bin/kaniko
+COPY --from=kaniko-image /kaniko/executor /bin/executor
 COPY ./config.json /kaniko/.docker/config.json
 
