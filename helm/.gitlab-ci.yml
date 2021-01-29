@@ -21,7 +21,7 @@ Build helm:
     - .base_register_to_gitlab_stage
     - .change_rules_helm
   before_script:
-    # NODE(douglasduteil): build from renovate maintaining package.json
+    # NOTE(douglasduteil): build from renovate maintaining package.json
     # To allow renovate to maintaining the socialgouv/docker/helm image
     # we use a fake `package.json` that link to the repo we need to follow.
     # The script below allow will build the version present in that file.
