@@ -1,0 +1,24 @@
+.change_rules_no_k8s:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+    - &change_rules_no_k8s
+      changes:
+        - .gitlab-ci.yml
+        - no-k8s/**/*
+
+Build no-k8s:
+  stage: "Build"
+  extends:
+    - .base_register_to_gitlab_stage
+    - .change_rules_no_k8s
+  variables:
+    CONTEXT: no-k8s
+    IMAGE_NAME: ${CI_REGISTRY_IMAGE}/no-k8s
+
+Publish no-k8s to Github Registry:
+  extends: .base_publish_to_github_stage
+  rules:
+    - <<: *change_rules_no_k8s
+      if: "$CI_COMMIT_TAG"
+  variables:
+    IMAGE_NAME: socialgouv/docker/no-k8s

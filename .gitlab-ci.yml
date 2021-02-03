@@ -18,6 +18,7 @@ include:
   - /k8s-ns-killer/.gitlab-ci.yml
   - /k8s-object-cleaner/.gitlab-ci.yml
   - /kosko/.gitlab-ci.yml
+  - /no-k8s/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /nginx4spa/.gitlab-ci.yml
   - /pg-cleaner/.gitlab-ci.yml
