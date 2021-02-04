@@ -14,6 +14,7 @@ Build no-k8s:
   variables:
     CONTEXT: no-k8s
     IMAGE_NAME: ${CI_REGISTRY_IMAGE}/no-k8s
+    DOCKER_BUILD_ARGS: "--shm-size 768M"
 
 Publish no-k8s to Github Registry:
   extends: .base_publish_to_github_stage
