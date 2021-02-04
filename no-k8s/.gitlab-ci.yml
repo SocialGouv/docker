@@ -6,6 +6,13 @@
         - .gitlab-ci.yml
         - no-k8s/**/*
 
+Lint no-k8s:
+  stage: "Quality"
+  extends: .change_rules_no_k8s
+  image: hadolint/hadolint:v1.19.0-debian
+  script:
+    - hadolint ./no-k8s/Dockerfile
+
 Build no-k8s:
   stage: "Build"
   extends:
