@@ -1,3 +1,10 @@
+## [4.4.1](https://github.com/SocialGouv/docker/compare/v4.4.0...v4.4.1) (2021-02-05)
+
+
+### Bug Fixes
+
+* upgrade kosko in nok8s image ([#527](https://github.com/SocialGouv/docker/issues/527)) ([9fe9c97](https://github.com/SocialGouv/docker/commit/9fe9c9713ff3a4a5b55e17062eb0521cb8718f73))
+
 # [4.4.0](https://github.com/SocialGouv/docker/compare/v4.3.1...v4.4.0) (2021-02-05)
 
 
