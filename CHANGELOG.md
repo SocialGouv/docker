@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/SocialGouv/docker/compare/v4.3.1...v4.4.0) (2021-02-05)
+
+
+### Features
+
+* Add no-k8s image. ([#526](https://github.com/SocialGouv/docker/issues/526)) ([2604188](https://github.com/SocialGouv/docker/commit/2604188994434b34644a032563e3934351b909cd))
+
 ## [4.3.1](https://github.com/SocialGouv/docker/compare/v4.3.0...v4.3.1) (2021-01-29)
 
 
