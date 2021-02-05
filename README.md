@@ -49,6 +49,7 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 | **trivy**               | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/trivy:4.3.1`               | [![README](https://img.shields.io/badge/README--green.svg)](./trivy/README.md)              |
 | **wait-for-postgres**   | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:4.3.1`   | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md)  |
 | **wait-for-http**       | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-http:4.3.1`       | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)      |
+| **no-k8s**              | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/no-k8s:4.3.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./no-k8s/README.md)             |
 
 <br>
 <br>
