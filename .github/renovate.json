@@ -65,6 +65,9 @@
       "extends": [
         ":semanticCommitType(feat)"
       ],
+      "excludePackagePatterns": [
+          "^socialgouv/k8s"
+        ],
       "semanticCommitType": "feat"
     }
   ],
