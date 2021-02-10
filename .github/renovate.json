@@ -38,6 +38,14 @@
       "separateMinorPatch": true
     },
     {
+      "paths": ["infra-ansible-ci/requirements.txt"],
+      "groupName": "infra-ansible-ci requirements",
+      "extends": [":semanticCommitType(feat)"],
+      "excludePackagePatterns": ["^socialgouv/k8s"],
+      "excludePackageNames": ["socialgouv/k8s"],
+      "semanticCommitType": "feat"
+    },
+    {
       "datasources": ["github-tags"],
       "groupName": "socialgouv/k8s - No k8s",
       "matchUpdateTypes": ["patch", "minor", "major"],
