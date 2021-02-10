@@ -44,22 +44,6 @@
       "excludePackagePatterns": ["^socialgouv/k8s"],
       "excludePackageNames": ["socialgouv/k8s"],
       "semanticCommitType": "feat"
-    },
-    {
-      "datasources": ["github-tags"],
-      "groupName": "socialgouv/k8s - No k8s",
-      "matchUpdateTypes": ["patch", "minor", "major"],
-      "matchPackageNames": ["socialgouv/k8s"],
-      "major": {
-        "semanticCommitType": "feat"
-      },
-      "minor": {
-        "semanticCommitType": "feat"
-      },
-      "patch": {
-        "semanticCommitType": "fix"
-      },
-      "separateMinorPatch": true
     }
   ],
   "regexManagers": [
