@@ -39,7 +39,9 @@
     },
     {
       "datasources": ["github-tags"],
-      "groupName": "socialgouv/k8s",
+      "groupName": "socialgouv/k8s - No k8s",
+      "matchUpdateTypes": ["patch", "minor", "major"],
+      "matchPackageNames": ["socialgouv/k8s"],
       "major": {
         "semanticCommitType": "feat"
       },
@@ -56,6 +58,7 @@
       "groupName": "infra-ansible-ci requirements",
       "extends": [":semanticCommitType(feat)"],
       "excludePackagePatterns": ["^socialgouv/k8s"],
+      "excludePackageNames": ["socialgouv/k8s"],
       "semanticCommitType": "feat"
     }
   ],
