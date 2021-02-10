@@ -52,14 +52,6 @@
         "semanticCommitType": "fix"
       },
       "separateMinorPatch": true
-    },
-    {
-      "paths": ["infra-ansible-ci/requirements.txt"],
-      "groupName": "infra-ansible-ci requirements",
-      "extends": [":semanticCommitType(feat)"],
-      "excludePackagePatterns": ["^socialgouv/k8s"],
-      "excludePackageNames": ["socialgouv/k8s"],
-      "semanticCommitType": "feat"
     }
   ],
   "regexManagers": [
