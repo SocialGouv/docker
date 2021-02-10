@@ -39,7 +39,7 @@
     },
     {
       "datasources": ["github-tags"],
-      "ignorePaths": ["\\.gitlab-ci.yml$"],
+      "groupName": "socialgouv/k8s",
       "major": {
         "semanticCommitType": "feat"
       },
