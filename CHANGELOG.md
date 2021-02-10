@@ -1,3 +1,10 @@
+## [4.5.3](https://github.com/SocialGouv/docker/compare/v4.5.2...v4.5.3) (2021-02-10)
+
+
+### Bug Fixes
+
+* **infra-ansible:** Update apt-transport-https. ([9ec815d](https://github.com/SocialGouv/docker/commit/9ec815dbc5238aeed0d17d107e1a142a0dbef169))
+
 ## [4.5.2](https://github.com/SocialGouv/docker/compare/v4.5.1...v4.5.2) (2021-02-10)
 
 
