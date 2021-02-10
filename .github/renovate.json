@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "github>SocialGouv/renovate-config:light",
-    ":automergeAll"
-  ],
+  "extends": ["github>SocialGouv/renovate-config:light", ":automergeAll"],
   "stabilityDays": 2,
   "prCreation": "not-pending",
   "gitlabci": {
@@ -13,8 +10,7 @@
       "datasources": ["docker", "github-releases", "pypi"],
       "ignorePaths": ["\\.gitlab-ci.yml$"],
       "excludePackagePatterns": [
-        "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/",
-        "^socialgouv/k8s"
+        "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
       ],
       "major": {
         "semanticCommitType": "feat"
@@ -28,9 +24,7 @@
       "separateMinorPatch": true
     },
     {
-      "datasources": [
-        "docker"
-      ],
+      "datasources": ["docker"],
       "packagePatterns": [
         "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
       ],
@@ -44,30 +38,24 @@
       "separateMinorPatch": true
     },
     {
-      "datasources": [
-        "github-releases"
-      ],
-      "packagePatterns": [
-        "^socialgouv/k8s"
-      ],
-      "groupName": "socialgouv k8s",
+      "datasources": ["github-tags"],
+      "ignorePaths": ["\\.gitlab-ci.yml$"],
+      "major": {
+        "semanticCommitType": "feat"
+      },
       "minor": {
-        "semanticCommitType": "fix"
+        "semanticCommitType": "feat"
       },
       "patch": {
-        "semanticCommitType": "chore"
+        "semanticCommitType": "fix"
       },
       "separateMinorPatch": true
     },
     {
       "paths": ["infra-ansible-ci/requirements.txt"],
       "groupName": "infra-ansible-ci requirements",
-      "extends": [
-        ":semanticCommitType(feat)"
-      ],
-      "excludePackagePatterns": [
-          "^socialgouv/k8s"
-        ],
+      "extends": [":semanticCommitType(feat)"],
+      "excludePackagePatterns": ["^socialgouv/k8s"],
       "semanticCommitType": "feat"
     }
   ],
