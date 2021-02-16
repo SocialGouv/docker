@@ -69,10 +69,10 @@ jobs:
 
       - name: Image digest
         run: |
-          echo ${{ steps.docker_build.outputs.digest }}
-          echo ${{ steps.docker_meta.outputs.version }}
-          echo ${{ steps.docker_meta.outputs.tags }}
-          echo ${{ steps.docker_meta.outputs.labels }}
+          echo "${{ steps.docker_build.outputs.digest }}"
+          echo "${{ steps.docker_meta.outputs.version }}"
+          echo "${{ steps.docker_meta.outputs.tags }}"
+          echo "${{ steps.docker_meta.outputs.labels }}"
 
   Test:
     needs: Build
