@@ -25,6 +25,8 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     needs: Lint
+    outputs:
+      digest: ${{ steps.docker_build.outputs.digest }}
     steps:
       - uses: actions/checkout@v1
 
@@ -69,11 +71,8 @@ jobs:
         run: echo ${{ steps.docker_build.outputs.digest }}
 
   Test:
-    runs-on: ubuntu-latest
     needs: Build
+    runs-on: ghcr.io/socialgouv/docker/curl@${{ needs.Build.outputs.digest }}
     steps:
-      - uses: addnab/docker-run-action@v2
-        with:
-          image: ghcr.io/socialgouv/docker/curl
-          run: |
-            curl --version
+      - run: |
+          curl --version
