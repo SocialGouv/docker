@@ -59,16 +59,19 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: ./curl
           builder: ${{ steps.buildx.outputs.name }}
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
+          context: ./curl
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+        run: echo ${{ steps.docker_meta.outputs.version }}
+        run: echo ${{ steps.docker_meta.outputs.tags }}
+        run: echo ${{ steps.docker_meta.outputs.labels }}
 
   Test:
     needs: Build
