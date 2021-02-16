@@ -100,7 +100,7 @@ jobs:
       -
         name: Load Docker image
         run: |
-          docker load --input /tmp/myimage.tar
+          docker load --input /tmp/image.tar
           docker image ls -a
       - uses: addnab/docker-run-action@v2
         with:
