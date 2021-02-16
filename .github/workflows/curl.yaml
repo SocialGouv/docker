@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: Lint
     outputs:
-      digest: ${{ steps.docker_build.outputs.digest }}
+      digest: ${{ steps.docker_meta.outputs.version }}
     steps:
       - uses: actions/checkout@v1
 
