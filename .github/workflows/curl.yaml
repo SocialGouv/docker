@@ -13,9 +13,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  hadolint:
-    name: runner / hadolint
+  Lint:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: brpaz/hadolint-action@v1.2.1
+        with:
+          dockerfile: ./curl/Dockerfile
+
+  Build:
+    runs-on: ubuntu-latest
+    needs: Lint
     steps:
       - uses: actions/checkout@v1
 
@@ -29,10 +38,6 @@ jobs:
             {{version}}
             {{major}}.{{minor}}
           tag-sha: true # add git short SHA as Docker tag
-
-      - uses: brpaz/hadolint-action@v1.2.0
-        with:
-          dockerfile: ./curl/Dockerfile
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -60,6 +65,10 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
+  Test:
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
       - uses: addnab/docker-run-action@v2
         with:
           image: ghcr.io/socialgouv/docker/curl
