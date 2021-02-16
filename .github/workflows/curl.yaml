@@ -78,8 +78,11 @@ jobs:
           echo "${{ steps.docker_meta.outputs.labels }}"
 
   Test:
+    runs-on: ubuntu-latest
     needs: Build
-    runs-on: ghcr.io/socialgouv/docker/curl@${{ needs.Build.outputs.digest }}
     steps:
-      - run: |
-          curl --version
+      - uses: addnab/docker-run-action@v2
+        with:
+          image: ghcr.io/socialgouv/docker/curl@${{ needs.Build.outputs.digest }}
+          run: |
+            curl --version
