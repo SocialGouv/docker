@@ -31,7 +31,7 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v1
         with:
           images: |
-            ghcr.io/socialgouv/docker/curl
+            docker.pkg.github.com/socialgouv/docker/curl
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
@@ -46,7 +46,7 @@ jobs:
       - name: Login to Registry
         uses: docker/login-action@v1
         with:
-          registry: ghcr.io
+          registry: docker.pkg.github.com
           username: ${{ secrets.SOCIALGROOVYBOT_NAME }}
           password: ${{ secrets.GHCR_REGISTRY_TOKEN }}
 
@@ -79,7 +79,7 @@ jobs:
 
   Test:
     needs: Build
-    runs-on: ghcr.io/socialgouv/docker/curl@${{ needs.Build.outputs.digest }}
+    runs-on: docker.pkg.github.com/socialgouv/docker/curl@${{ needs.Build.outputs.digest }}
     steps:
       - run: |
           curl --version
