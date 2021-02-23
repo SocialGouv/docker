@@ -89,5 +89,7 @@ jobs:
         with:
           bats-version: 1.2.1
 
+      - uses: actions/checkout@v1
+
       - run: bats test -t
         working-directory: nginx4spa
