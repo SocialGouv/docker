@@ -112,6 +112,16 @@ jobs:
     steps:
       - name: Pull image
         run: docker pull ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+      - name: Should work
+        run: |
+          docker run \
+          --env PGHOST=postgres \
+          --env PGUSER=postgres \
+          --env WAIT_FOR_INTERVAL=1s \
+          --env WAIT_FOR_RETRIES=1 \
+          --network="host" \
+          --rm \
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
       - name: Fails with wrong PGPORT
         run: |
           docker run \
@@ -138,13 +148,3 @@ jobs:
 
           echo "No user foobar should be found"
           exit 1
-      - name: Should work
-        run: |
-          docker run \
-          --env PGHOST=postgres \
-          --env PGUSER=postgres \
-          --env WAIT_FOR_INTERVAL=1s \
-          --env WAIT_FOR_RETRIES=1 \
-          --network="host" \
-          --rm \
-          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
