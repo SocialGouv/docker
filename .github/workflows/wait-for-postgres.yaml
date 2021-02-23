@@ -116,6 +116,7 @@ jobs:
         run: |
           docker run \
           --env PGHOST=localhost \
+          --env PGPASSWORD=postgres \
           --env PGUSER=postgres \
           --env WAIT_FOR_INTERVAL=1s \
           --env WAIT_FOR_RETRIES=1 \
@@ -126,6 +127,7 @@ jobs:
         run: |
           docker run \
           --env PGHOST=localhost \
+          --env PGPASSWORD=postgres \
           --env PGPORT=5454 \
           --env WAIT_FOR_INTERVAL=1s \
           --env WAIT_FOR_RETRIES=1 \
@@ -139,6 +141,7 @@ jobs:
         run: |
           docker run \
           --env PGHOST=localhost \
+          --env PGPASSWORD=postgres \
           --env PGUSER=foobar \
           --env WAIT_FOR_INTERVAL=1s \
           --env WAIT_FOR_RETRIES=1 \
