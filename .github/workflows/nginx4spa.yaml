@@ -84,10 +84,16 @@ jobs:
       CI_REGISTRY_IMAGE: docker://ghcr.io/socialgouv/docker/nginx4spa
       IMAGE_TAG: sha-${{ github.sha }}
     steps:
-      - name: Setup BATS
-        uses: mig4/setup-bats@v1
-        with:
-          bats-version: 1.2.1
+
+      - name: Install bats-core
+        run: |
+          git clone -b 'v1.2.1' --single-branch --depth 1 https://github.com/bats-core/bats-core.git /tmp/bats-core
+          sudo /tmp/bats-core/install.sh /usr/local
+
+      - name: Install bats extras
+        run: |
+          git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-assert.git libs/bats-assert
+          git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-support.git libs/bats-support
 
       - uses: actions/checkout@v1
 
