@@ -84,7 +84,6 @@ jobs:
       REGISTRY_IMAGE: ghcr.io/socialgouv/docker
       IMAGE_TAG: sha-${{ github.sha }}
     steps:
-
       - name: Install bats-core
         run: |
           git clone -b 'v1.2.1' --single-branch --depth 1 https://github.com/bats-core/bats-core.git /tmp/bats-core

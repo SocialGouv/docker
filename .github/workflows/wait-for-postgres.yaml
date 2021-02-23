@@ -112,42 +112,42 @@ jobs:
     steps:
       - name: Pull image
         run: docker pull ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+      - name: Fails with wrong PGPORT
+        run: |
+          docker run
+          --env PGHOST=postgres
+          --env PGPORT=5454
+          --env WAIT_FOR_INTERVAL=1s
+          --env WAIT_FOR_RETRIES=1
+          --network="host"
+          --rm
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+
+          echo "No postgres should be found"
+          exit 1
+      - name: Fails with wrong PGUSER
+        run: |
+          docker run
+          --env PGHOST=postgres
+          --env PGUSER=foobar
+          --env WAIT_FOR_INTERVAL=1s
+          --env WAIT_FOR_RETRIES=1
+          --network="host"
+          --rm
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+
+          echo "No postgres should be found"
+          exit 1
       - name: Should work
         run: |
           docker run
-            --env PGHOST=localhost
-            --env PGPORT=5454
-            --env WAIT_FOR_INTERVAL=1s
-            --env WAIT_FOR_RETRIES=1
-            --network="host"
-            --rm
-            ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
-
-          echo "No postgres should be found"
-          exit 1
-      - name: Fails
-        run: |
-          docker run
-            --env PGHOST=localhost
-            --env PGPORT=5454
-            --env WAIT_FOR_INTERVAL=1s
-            --env WAIT_FOR_RETRIES=1
-            --network="host"
-            --rm
-            ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
-
-          echo "No postgres should be found"
-          exit 1
-      - name: No postgres test
-        run: |
-          docker run
-            --env PGHOST=localhost
-            --env PGPORT=5454
-            --env WAIT_FOR_INTERVAL=1s
-            --env WAIT_FOR_RETRIES=1
-            --network="host"
-            --rm
-            ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+          --env PGHOST=postgres
+          --env PGUSER=postgres
+          --env WAIT_FOR_INTERVAL=1s
+          --env WAIT_FOR_RETRIES=1
+          --network="host"
+          --rm
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
 
           echo "No postgres should be found"
           exit 1
