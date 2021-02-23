@@ -9,7 +9,7 @@
 Lint trivy:
   stage: "Quality"
   extends: .change_rules_trivy
-  image: hadolint/hadolint:v1.19.0-debian
+  image: hadolint/hadolint:v1.22.1-debian
   script:
     - hadolint ./trivy/Dockerfile
 
