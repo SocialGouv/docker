@@ -8,11 +8,6 @@ on:
       - curl/**
   workflow_dispatch:
 
-defaults:
-  run:
-    shell: bash
-    working-directory: curl
-
 jobs:
   Lint:
     runs-on: ubuntu-latest
@@ -121,7 +116,6 @@ jobs:
       image: docker://ghcr.io/socialgouv/docker/curl:sha-${{ github.sha }}
     steps:
       - name: Version
-        working-directory: /
         run: |
           curl --version
 
