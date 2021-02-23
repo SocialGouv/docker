@@ -98,7 +98,7 @@ jobs:
 
       - run: bats test -t
         env:
-          CI_REGISTRY_IMAGE: ghcr.io/socialgouv/docker/nginx4spa
+          REGISTRY_IMAGE: ghcr.io/socialgouv/docker/nginx4spa
           IMAGE_TAG: sha-${{ github.sha }}
         working-directory: nginx4spa
 
