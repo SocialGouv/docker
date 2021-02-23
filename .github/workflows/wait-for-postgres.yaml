@@ -135,7 +135,8 @@ jobs:
           --env WAIT_FOR_RETRIES=1 \
           --network="host" \
           --rm \
-          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG} \
+          || exit 0
 
           echo "No postgres should be found"
           exit 1
@@ -149,7 +150,8 @@ jobs:
           --env WAIT_FOR_RETRIES=1 \
           --network="host" \
           --rm \
-          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG} \
+          || exit 0
 
           echo "No user foobar should be found"
           exit 1
