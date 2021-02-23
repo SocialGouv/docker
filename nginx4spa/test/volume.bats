@@ -8,7 +8,7 @@ setup() {
     --name nginx4spa_test \
     --publish 8888:80 \
     --rm \
-    --volume ${CWD}/test/fixtures:/usr/share/nginx/html \
+    --volume ${BATS_TEST_DIRNAME}/fixtures:/usr/share/nginx/html \
     ${REGISTRY_IMAGE}/nginx4spa:${IMAGE_TAG}
 }
 
