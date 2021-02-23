@@ -13,7 +13,7 @@ jobs:
     container:
       image: hadolint/hadolint:v1.19.0-alpine
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: nginx4spa
 
@@ -24,7 +24,7 @@ jobs:
     outputs:
       digest: ${{ steps.docker_meta.outputs.version }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Docker meta
         id: docker_meta
@@ -92,7 +92,7 @@ jobs:
           git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-assert.git /usr/lib/bats-assert
           git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-support.git /usr/lib/bats-support
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - run: bats test -t
         env:
