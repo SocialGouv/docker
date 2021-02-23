@@ -9,7 +9,6 @@ include:
   - /azure-cli/.gitlab-ci.yml
   - /azure-db/.gitlab-ci.yml
   - /bats/.gitlab-ci.yml
-  - /curl/.gitlab-ci.yml
   - /fluentd-modsecurity/.gitlab-ci.yml
   - /git-deploy/.gitlab-ci.yml
   - /git-tag-release/.gitlab-ci.yml
