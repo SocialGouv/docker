@@ -114,7 +114,7 @@ jobs:
     needs:
      - Build
     container:
-      image: docker://ghcr.io/socialgouv/docker/curl:${{ github.sha }}
+      image: docker://ghcr.io/socialgouv/docker/curl:sha-${{ github.sha }}
     steps:
       - run: |
           curl --version
