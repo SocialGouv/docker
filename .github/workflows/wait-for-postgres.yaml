@@ -33,7 +33,7 @@ jobs:
           images: |
             ghcr.io/socialgouv/docker/wait-for-postgres
           label-custom: |
-            org.opencontainers.image.title=NGINX for SPA
+            org.opencontainers.image.title=wait-for-postgres
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}

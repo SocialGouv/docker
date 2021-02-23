@@ -1,4 +1,4 @@
-name: CUrl
+name: curl
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
           images: |
             ghcr.io/socialgouv/docker/curl
           label-custom: |
-            org.opencontainers.image.title=CUrl
+            org.opencontainers.image.title=curl
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
