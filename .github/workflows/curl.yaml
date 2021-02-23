@@ -13,7 +13,7 @@ jobs:
     container:
       image: hadolint/hadolint:v1.19.0-alpine
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: curl
 
@@ -24,7 +24,7 @@ jobs:
     outputs:
       digest: ${{ steps.docker_meta.outputs.version }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Docker meta
         id: docker_meta
