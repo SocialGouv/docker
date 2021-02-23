@@ -80,6 +80,9 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - Build
+    env:
+      REGISTRY_IMAGE: ghcr.io/socialgouv/docker/nginx4spa
+      IMAGE_TAG: sha-${{ github.sha }}
     steps:
 
       - name: Install bats-core
@@ -93,13 +96,10 @@ jobs:
           sudo git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-support.git /usr/lib/bats-support
 
       - name: Pull image
-        run: docker pull ghcr.io/socialgouv/docker/nginx4spa:sha-${{ github.sha }}
+        run: docker pull ${REGISTRY_IMAGE}:${IMAGE_TAG}
       - uses: actions/checkout@v2
 
       - run: bats test -t
-        env:
-          REGISTRY_IMAGE: ghcr.io/socialgouv/docker/nginx4spa
-          IMAGE_TAG: sha-${{ github.sha }}
         working-directory: nginx4spa
 
       - run: docker stop nginx4spa_test || true
