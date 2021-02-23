@@ -115,9 +115,6 @@ jobs:
      - Build
     container:
       image: docker://ghcr.io/socialgouv/docker/curl:${{ github.sha }}
-      credentials:
-        username: ${{ secrets.SOCIALGROOVYBOT_NAME }}
-        password: ${{ secrets.GHCR_REGISTRY_TOKEN }}
     steps:
       - run: |
           curl --version
