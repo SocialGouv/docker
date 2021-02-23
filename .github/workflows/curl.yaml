@@ -100,7 +100,10 @@ jobs:
           echo "${{ steps.docker_push.outputs.digest }}"
   Test:
     runs-on: ubuntu-latest
-    needs: Build
+    needs:
+      - Build
+    using: 'docker'
+    image: './curl/Dockerfile'
     steps:
       -
         name: Set up Docker Buildx
