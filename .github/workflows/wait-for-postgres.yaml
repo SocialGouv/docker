@@ -106,10 +106,38 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
 
     steps:
       - name: Pull image
         run: docker pull ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+      - name: Should work
+        run: |
+          docker run
+            --env PGHOST=localhost
+            --env PGPORT=5454
+            --env WAIT_FOR_INTERVAL=1s
+            --env WAIT_FOR_RETRIES=1
+            --network="host"
+            --rm
+            ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+
+          echo "No postgres should be found"
+          exit 1
+      - name: Fails
+        run: |
+          docker run
+            --env PGHOST=localhost
+            --env PGPORT=5454
+            --env WAIT_FOR_INTERVAL=1s
+            --env WAIT_FOR_RETRIES=1
+            --network="host"
+            --rm
+            ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+
+          echo "No postgres should be found"
+          exit 1
       - name: No postgres test
         run: |
           docker run
