@@ -120,7 +120,9 @@ jobs:
     container:
       image: docker://ghcr.io/socialgouv/docker/curl:sha-${{ github.sha }}
     steps:
-      - run: |
+      - name: Version
+        working-directory: /
+        run: |
           curl --version
 
   test_artifact:
