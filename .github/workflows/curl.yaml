@@ -110,16 +110,19 @@ jobs:
   Test:
     if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
-    needs: Build
+    needs:
+     - Build
+    container:
+      image: docker://ghcr.io/socialgouv/docker/curl:${{ github.sha }}
     steps:
-      - uses: docker://ghcr.io/socialgouv/docker/curl:${{ github.sha }}
-        run: |
+      - run: |
           curl --version
 
   Test:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
-    needs: Build
+    needs:
+      - Build
     steps:
       -
         name: Set up Docker Buildx
