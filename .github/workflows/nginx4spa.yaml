@@ -93,12 +93,12 @@ jobs:
           sudo git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-support.git /usr/lib/bats-support
 
       - name: Pull image
-        run: docker pull docker://ghcr.io/socialgouv/docker/nginx4spa:sha-${{ github.sha }}
+        run: docker pull ghcr.io/socialgouv/docker/nginx4spa:sha-${{ github.sha }}
       - uses: actions/checkout@v2
 
       - run: bats test -t
         env:
-          CI_REGISTRY_IMAGE: docker://ghcr.io/socialgouv/docker/nginx4spa
+          CI_REGISTRY_IMAGE: ghcr.io/socialgouv/docker/nginx4spa
           IMAGE_TAG: sha-${{ github.sha }}
         working-directory: nginx4spa
 
