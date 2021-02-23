@@ -118,7 +118,8 @@ jobs:
       - run: |
           curl --version
 
-  Test (artifact):
+  test_artifact:
+    name: Test (artifact)
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     needs:
