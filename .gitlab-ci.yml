@@ -19,7 +19,6 @@ include:
   - /kosko/.gitlab-ci.yml
   - /no-k8s/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
-  - /nginx4spa/.gitlab-ci.yml
   - /pg-cleaner/.gitlab-ci.yml
   - /puppeteer/.gitlab-ci.yml
   - /puppeteer-mongo-pg/.gitlab-ci.yml
