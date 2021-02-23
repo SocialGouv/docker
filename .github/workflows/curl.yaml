@@ -11,12 +11,12 @@ on:
 jobs:
   Lint:
     runs-on: ubuntu-latest
+    container:
+      image: hadolint/hadolint:v1.19.0-alpine
     steps:
       - uses: actions/checkout@v1
-
-      - uses: brpaz/hadolint-action@v1.2.1
-        with:
-          dockerfile: ./curl/Dockerfile
+      - run: hadolint ./Dockerfile
+        working-directory: curl
 
   Build:
     runs-on: ubuntu-latest
