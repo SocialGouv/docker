@@ -107,13 +107,17 @@ jobs:
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
 
-  Test:
+  test:
+    name: Test
     if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
     needs:
      - Build
     container:
       image: docker://ghcr.io/socialgouv/docker/curl:${{ github.sha }}
+      credentials:
+        username: ${{ secrets.SOCIALGROOVYBOT_NAME }}
+        password: ${{ secrets.GHCR_REGISTRY_TOKEN }}
     steps:
       - run: |
           curl --version
