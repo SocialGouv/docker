@@ -8,6 +8,11 @@ on:
       - curl/**
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+    working-directory: curl
+
 jobs:
   Lint:
     runs-on: ubuntu-latest
