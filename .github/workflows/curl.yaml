@@ -63,6 +63,7 @@ jobs:
             ${{ runner.os }}-buildx-
 
       - name: Build
+        if: ${{ github.event_name == 'pull_request' }}
         id: docker_build
         uses: docker/build-push-action@v2
         with:
@@ -75,12 +76,14 @@ jobs:
           tags: socialgouv/docker/curl:${{ github.sha }}
 
       - name: Upload artifact
+        if: ${{ github.event_name == 'pull_request' }}
         uses: actions/upload-artifact@v2
         with:
           name: curl-image
           path: /tmp/image.tar
 
       - name: Image digest
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
           echo "${{ steps.docker_build.outputs.digest }}"
           echo "${{ steps.docker_meta.outputs.version }}"
@@ -103,7 +106,18 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+
   Test:
+    if: ${{ github.event_name != 'pull_request' }}
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+      - uses: docker://ghcr.io/socialgouv/docker/curl:${{ github.sha }}
+        run: |
+          curl --version
+
+  Test:
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     needs: Build
     steps:
