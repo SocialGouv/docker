@@ -146,7 +146,7 @@ jobs:
           docker run \
           --env PGHOST=localhost \
           --env PGPASSWORD=postgres \
-          --env PGUSER=postgres \
+          --env PGUSER=foobar \
           --env WAIT_FOR_INTERVAL=1s \
           --env WAIT_FOR_RETRIES=1 \
           --network="host" \
