@@ -136,7 +136,7 @@ jobs:
           --rm \
           ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
 
-          echo "No postgres should be found"
+          echo "No user foobar should be found"
           exit 1
       - name: Should work
         run: |
@@ -148,6 +148,3 @@ jobs:
           --network="host" \
           --rm \
           ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
-
-          echo "No postgres should be found"
-          exit 1
