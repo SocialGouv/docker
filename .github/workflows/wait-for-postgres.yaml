@@ -130,6 +130,7 @@ jobs:
           docker run \
           --env PGHOST=localhost \
           --env PGPASSWORD=postgres \
+          --env PGPORT=5454 \
           --env PGUSER=postgres \
           --env WAIT_FOR_INTERVAL=1s \
           --env WAIT_FOR_RETRIES=1 \
