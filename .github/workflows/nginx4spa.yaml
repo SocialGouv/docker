@@ -89,8 +89,8 @@ jobs:
 
       - name: Install bats extras
         run: |
-          git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-assert.git /usr/lib/bats-assert
-          git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-support.git /usr/lib/bats-support
+          sudo git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-assert.git /usr/lib/bats-assert
+          sudo git clone -b 'v0.3.0' --single-branch --depth 1 https://github.com/bats-core/bats-support.git /usr/lib/bats-support
 
       - uses: actions/checkout@v2
 
