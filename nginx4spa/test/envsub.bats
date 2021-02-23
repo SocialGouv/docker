@@ -3,7 +3,7 @@
 load __setup
 
 setup() {
-  cp -r $(pwd)/nginx4spa/test/fixtures/ $(pwd)/.tmp
+  cp -r ${BATS_TEST_DIRNAME}/fixtures/ ${BATS_TMPDIR}/.tmp
 
   docker run \
     --detach \
@@ -11,12 +11,12 @@ setup() {
     --name nginx4spa_test \
     --publish 8888:80 \
     --rm \
-    --volume $(pwd)/.tmp:/usr/share/nginx/html \
+    --volume ${BATS_TMPDIR}/.tmp:/usr/share/nginx/html \
     ${REGISTRY_IMAGE}/nginx4spa:${IMAGE_TAG}
 }
 
 teardown() {
-  rm -rf $(pwd)/.tmp
+  rm -rf ${BATS_TMPDIR}/.tmp
   docker stop nginx4spa_test
 }
 
