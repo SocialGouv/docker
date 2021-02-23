@@ -108,6 +108,8 @@ jobs:
           --health-retries 5
         env:
           POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
 
     steps:
       - name: Pull image
