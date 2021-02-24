@@ -1,3 +1,10 @@
+# [5.0.0-alpha.4](https://github.com/SocialGouv/docker/compare/v5.0.0-alpha.3...v5.0.0-alpha.4) (2021-02-24)
+
+
+### Bug Fixes
+
+* **github:** try to skip duplicated work (5) ([3927559](https://github.com/SocialGouv/docker/commit/39275591d457bd418a8647d102d73e44dca51d74))
+
 # [5.0.0-alpha.3](https://github.com/SocialGouv/docker/compare/v5.0.0-alpha.2...v5.0.0-alpha.3) (2021-02-24)
 
 
