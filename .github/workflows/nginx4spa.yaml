@@ -3,18 +3,16 @@ name: nginx4spa
 on:
   push:
     branches:
-      - '**'
+      - "**"
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 jobs:
   Lint:
     runs-on: ubuntu-latest
-
     outputs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
-
     container:
       image: hadolint/hadolint:v1.22.1-alpine
     steps:
@@ -30,9 +28,10 @@ jobs:
         with:
           concurrent_skipping: "same_content"
           paths: |
-            [".github/workflows/nginx4spa.yaml"]
-          #   - ".github/workflows/nginx4spa.yaml"
-          #   - "nginx4spa/**"
+            [
+              "nginx4spa/**",
+              ".github/workflows/nginx4spa.yaml"
+            ]
       - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: nginx4spa
