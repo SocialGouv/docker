@@ -1,3 +1,10 @@
+# [5.0.0-alpha.2](https://github.com/SocialGouv/docker/compare/v5.0.0-alpha.1...v5.0.0-alpha.2) (2021-02-24)
+
+
+### Bug Fixes
+
+* **github:** add release process (3) ([7ab64a6](https://github.com/SocialGouv/docker/commit/7ab64a6bb68e6dda6b1bf95c109de7c5a58c66eb))
+
 # [5.0.0-alpha.1](https://github.com/SocialGouv/docker/compare/v4.6.1...v5.0.0-alpha.1) (2021-02-24)
 
 
