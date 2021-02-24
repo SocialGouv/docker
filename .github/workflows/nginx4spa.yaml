@@ -5,6 +5,8 @@ on:
     paths:
       - .github/workflows/nginx4spa.yaml
       - nginx4spa/**
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:

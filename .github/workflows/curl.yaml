@@ -5,6 +5,8 @@ on:
     paths:
       - .github/workflows/curl.yaml
       - curl/**
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:

@@ -5,6 +5,8 @@ on:
     paths:
       - .github/workflows/wait-for-postgres.yaml
       - wait-for-postgres/**
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 jobs:
