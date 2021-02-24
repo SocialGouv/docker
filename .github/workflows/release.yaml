@@ -2,24 +2,26 @@ name: 🚀 Release
 on:
   push:
     branches:
-      - '+([0-9])?(.{+([0-9]),x}).x'
-      - 'master'
-      - 'next'
-      - 'next-major'
-      - 'beta'
-      - 'alpha'
+      - "+([0-9])?(.{+([0-9]),x}).x"
+      - "alpha"
+      - "beta"
+      - "master"
+      - "next-major"
+      - "next"
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - name: 🚀 Release
-      uses: cycjimmy/semantic-release-action@v2
-      with:
-        semantic_version: 17
-        extra_plugins: |
-          @semantic-release/changelog
-          @semantic-release/exec
-          @semantic-release/git
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  semantic-release:
+    name: "Semantic Release"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: 🚀 Release
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          semantic_version: 17
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/exec
+            @semantic-release/git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
