@@ -21,13 +21,16 @@ jobs:
       - id: skip_check
         if: |
           !contains(
-            'refs/tags,refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha',
+            'refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha',
             github.ref
           )
+          ||
+          !startsWith(github.event.ref, 'refs/tags/v')
         uses: fkirc/skip-duplicate-actions@v3.3.0
         with:
           concurrent_skipping: "same_content"
-          paths: "['.github/workflows/nginx4spa.yaml']"
+          paths: |
+            [".github/workflows/nginx4spa.yaml"]
           #   - ".github/workflows/nginx4spa.yaml"
           #   - "nginx4spa/**"
       - uses: actions/checkout@v2
