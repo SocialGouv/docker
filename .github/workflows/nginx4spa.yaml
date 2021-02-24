@@ -24,7 +24,7 @@ jobs:
             'refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha',
             github.ref
           )
-          ||
+          &&
           !startsWith(github.event.ref, 'refs/tags/v')
         uses: fkirc/skip-duplicate-actions@v3.3.0
         with:
