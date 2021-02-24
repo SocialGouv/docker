@@ -2,16 +2,8 @@ name: wait-for-postgres
 
 on:
   push:
-    paths:
-      - .github/workflows/wait-for-postgres.yaml
-      - wait-for-postgres/**
     branches:
-      - "+([0-9])?(.{+([0-9]),x}).x"
-      - "alpha"
-      - "beta"
-      - "master"
-      - "next-major"
-      - "next"
+      - '**'
     tags:
       - 'v*'
   workflow_dispatch:
@@ -19,9 +11,27 @@ on:
 jobs:
   Lint:
     runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
     container:
       image: hadolint/hadolint:v1.22.1-alpine
     steps:
+      - id: skip_check
+        if: |
+          !contains(
+            'refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha',
+            github.ref
+          )
+          &&
+          !startsWith(github.event.ref, 'refs/tags/v')
+        uses: fkirc/skip-duplicate-actions@v3.3.0
+        with:
+          concurrent_skipping: "same_content"
+          paths: |
+            [
+              "wait-for-postgres/**",
+              ".github/workflows/wait-for-postgres.yaml"
+            ]
       - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: wait-for-postgres
