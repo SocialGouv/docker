@@ -2,26 +2,31 @@ name: nginx4spa
 
 on:
   push:
-    paths:
-      - .github/workflows/nginx4spa.yaml
-      - nginx4spa/**
-    branches:
-      - "+([0-9])?(.{+([0-9]),x}).x"
-      - "alpha"
-      - "beta"
-      - "master"
-      - "next-major"
-      - "next"
-    tags:
-      - 'v*'
   workflow_dispatch:
 
 jobs:
   Lint:
     runs-on: ubuntu-latest
+
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+
     container:
       image: hadolint/hadolint:v1.22.1-alpine
     steps:
+      - id: skip_check
+        if: |
+          github.event_name == 'push' &&
+          (
+            github.ref == 'refs/heads/master' ||
+            github.ref == 'refs/heads/beta'
+          )
+        uses: fkirc/skip-duplicate-actions@v3.3.0
+        with:
+          concurrent_skipping: 'same_content'
+          paths:
+            - .github/workflows/nginx4spa.yaml
+            - nginx4spa/**
       - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: nginx4spa
@@ -30,6 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - Lint
+    if: ${{ needs.Lint.outputs.should_skip != 'true' }}
     outputs:
       digest: ${{ steps.docker_meta.outputs.version }}
     steps:
