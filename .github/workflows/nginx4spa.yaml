@@ -23,8 +23,8 @@ jobs:
           )
         uses: fkirc/skip-duplicate-actions@v3.3.0
         with:
-          concurrent_skipping: 'same_content'
-          # paths:
+          concurrent_skipping: "same_content"
+          paths: "['.github/workflows/nginx4spa.yaml']"
           #   - ".github/workflows/nginx4spa.yaml"
           #   - "nginx4spa/**"
       - uses: actions/checkout@v2
