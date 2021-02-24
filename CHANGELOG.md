@@ -1,3 +1,15 @@
+# [5.0.0-alpha.1](https://github.com/SocialGouv/docker/compare/v4.6.1...v5.0.0-alpha.1) (2021-02-24)
+
+
+* refactor!: change default ci and registry ([2da9707](https://github.com/SocialGouv/docker/commit/2da9707e94001c5b2c08779dc7b523293358ebe1))
+
+
+### BREAKING CHANGES
+
+* SocialGouv/docker image are now published on ghcr.io through GitHub Actions
+
+https://github.com/orgs/SocialGouv/packages?repo_name=docker
+
 ## [4.6.1](https://github.com/SocialGouv/docker/compare/v4.6.0...v4.6.1) (2021-02-23)
 
 
