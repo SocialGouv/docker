@@ -25,8 +25,8 @@ jobs:
         with:
           concurrent_skipping: 'same_content'
           paths:
-            - .github/workflows/nginx4spa.yaml
-            - nginx4spa/**
+            - ".github/workflows/nginx4spa.yaml"
+            - "nginx4spa/**"
       - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: nginx4spa
