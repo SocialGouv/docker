@@ -1,3 +1,10 @@
+# [5.0.0-alpha.6](https://github.com/SocialGouv/docker/compare/v5.0.0-alpha.5...v5.0.0-alpha.6) (2021-02-24)
+
+
+### Bug Fixes
+
+* **github:** should trigger on tags (2) ([fd73d1a](https://github.com/SocialGouv/docker/commit/fd73d1a86f7b80c5c98fbcdfeab1e03ac7d53056))
+
 # [5.0.0-alpha.5](https://github.com/SocialGouv/docker/compare/v5.0.0-alpha.4...v5.0.0-alpha.5) (2021-02-24)
 
 
