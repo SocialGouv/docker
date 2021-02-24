@@ -1,0 +1,158 @@
+name: wait-for-postgres
+
+on:
+  push:
+    paths:
+      - .github/workflows/wait-for-postgres.yaml
+      - wait-for-postgres/**
+  workflow_dispatch:
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    container:
+      image: hadolint/hadolint:v1.22.1-alpine
+    steps:
+      - uses: actions/checkout@v2
+      - run: hadolint ./Dockerfile
+        working-directory: wait-for-postgres
+
+  Build:
+    runs-on: ubuntu-latest
+    needs:
+      - Lint
+    outputs:
+      digest: ${{ steps.docker_meta.outputs.version }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Docker meta
+        id: docker_meta
+        uses: crazy-max/ghaction-docker-meta@v1
+        with:
+          images: |
+            ghcr.io/socialgouv/docker/wait-for-postgres
+          label-custom: |
+            org.opencontainers.image.title=wait-for-postgres
+          tag-semver: |
+            {{version}}
+            {{major}}.{{minor}}
+          tag-sha: true
+          tag-custom: sha-${{ github.sha }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        id: buildx
+
+      - name: Login to Registry
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.SOCIALGROOVYBOT_NAME }}
+          password: ${{ secrets.GHCR_REGISTRY_TOKEN }}
+
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Push
+        id: docker_push
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+          context: ./wait-for-postgres
+          labels: ${{ steps.docker_meta.outputs.labels }}
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+
+      - name: Image digest
+        run: |
+          echo "${{ steps.docker_push.outputs.digest }}"
+
+  Test_Version:
+    name: Test Version
+    runs-on: ubuntu-latest
+    needs:
+      - Build
+    container:
+      image: docker://ghcr.io/socialgouv/docker/wait-for-postgres:sha-${{ github.sha }}
+    steps:
+      - name: Version
+        run: |
+          psql --version
+          pg_isready --version
+
+  Test_PG:
+    name: Test Postgres
+    runs-on: ubuntu-latest
+    needs:
+      - Build
+    env:
+      REGISTRY_IMAGE: ghcr.io/socialgouv/docker
+      IMAGE_TAG: sha-${{ github.sha }}
+
+    services:
+      postgres:
+        image: postgres:11-alpine
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Pull image
+        run: docker pull ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+      - name: Should work
+        run: |
+          docker run \
+          --env PGHOST=localhost \
+          --env PGPASSWORD=postgres \
+          --env PGUSER=postgres \
+          --env WAIT_FOR_INTERVAL=1s \
+          --env WAIT_FOR_RETRIES=1 \
+          --network="host" \
+          --rm \
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG}
+      - name: Fails with wrong PGPORT
+        run: |
+          docker run \
+          --env PGHOST=localhost \
+          --env PGPASSWORD=postgres \
+          --env PGPORT=5454 \
+          --env PGUSER=postgres \
+          --env WAIT_FOR_INTERVAL=1s \
+          --env WAIT_FOR_RETRIES=1 \
+          --network="host" \
+          --rm \
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG} \
+          || exit 0
+
+          echo "No postgres should be found"
+          exit 1
+      - name: Fails with wrong PGUSER
+        run: |
+          docker run \
+          --env PGHOST=localhost \
+          --env PGPASSWORD=postgres \
+          --env PGUSER=foobar \
+          --env WAIT_FOR_INTERVAL=1s \
+          --env WAIT_FOR_RETRIES=1 \
+          --network="host" \
+          --rm \
+          ${REGISTRY_IMAGE}/wait-for-postgres:${IMAGE_TAG} \
+          || exit 0
+
+          echo "No user foobar should be found"
+          exit 1
