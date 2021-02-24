@@ -5,6 +5,13 @@ on:
     paths:
       - .github/workflows/nginx4spa.yaml
       - nginx4spa/**
+    branches:
+      - "+([0-9])?(.{+([0-9]),x}).x"
+      - "alpha"
+      - "beta"
+      - "master"
+      - "next-major"
+      - "next"
     tags:
       - 'v*'
   workflow_dispatch:
