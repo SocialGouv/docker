@@ -3,9 +3,9 @@ name: curl
 on:
   push:
     branches:
-      - '**'
+      - "**"
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 jobs:

@@ -3,9 +3,9 @@ name: wait-for-postgres
 on:
   push:
     branches:
-      - '**'
+      - "**"
     tags:
-      - 'v*'
+      - "v*"
   workflow_dispatch:
 
 jobs:
