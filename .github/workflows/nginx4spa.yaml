@@ -24,9 +24,9 @@ jobs:
         uses: fkirc/skip-duplicate-actions@v3.3.0
         with:
           concurrent_skipping: 'same_content'
-          paths:
-            - ".github/workflows/nginx4spa.yaml"
-            - "nginx4spa/**"
+          # paths:
+          #   - ".github/workflows/nginx4spa.yaml"
+          #   - "nginx4spa/**"
       - uses: actions/checkout@v2
       - run: hadolint ./Dockerfile
         working-directory: nginx4spa
