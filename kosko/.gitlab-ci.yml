@@ -9,7 +9,7 @@
 Lint kosko:
   stage: "Quality"
   extends: .change_rules_kosko
-  image: hadolint/hadolint:v1.19.0-debian
+  image: hadolint/hadolint:v1.22.1-debian
   script:
     - hadolint ./kosko/Dockerfile
 

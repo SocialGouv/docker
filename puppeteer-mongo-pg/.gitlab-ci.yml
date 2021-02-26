@@ -8,7 +8,7 @@
 Lint puppeteer:
   stage: "Quality"
   extends: .change_rules_puppeteer
-  image: hadolint/hadolint:v1.19.0-debian
+  image: hadolint/hadolint:v1.22.1-debian
   script:
     - hadolint ./puppeteer-mongo-pg/Dockerfile
 
