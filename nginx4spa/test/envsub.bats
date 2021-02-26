@@ -31,3 +31,9 @@ teardown() {
   assert_output "// nginx4spa/test/foo/bar/bar.js with VERSION=x.y.z" ]
   assert_success
 }
+
+@test "should not replace the VERSION with x.y.z in foo/bar/bar.png" {
+  run wget -qO - localhost:8888/foo/bar/bar.png
+  assert_output "// nginx4spa/test/foo/bar/bar.png with VERSION==%%VERSION%%" ]
+  assert_success
+}
