@@ -1,3 +1,31 @@
+## [4.7.1](https://github.com/SocialGouv/docker/compare/v4.7.0...v4.7.1) (2021-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update all dependencies docker tags ([#550](https://github.com/SocialGouv/docker/issues/550)) ([e92110c](https://github.com/SocialGouv/docker/commit/e92110c633bbfdccaac011f037eeaabe5b59a0dc))
+
+# [4.7.0](https://github.com/SocialGouv/docker/compare/v4.6.3...v4.7.0) (2021-03-01)
+
+
+### Features
+
+* **deps:** update curlimages/curl docker tag to v7.75.0 ([#552](https://github.com/SocialGouv/docker/issues/552)) ([4382417](https://github.com/SocialGouv/docker/commit/4382417e8f0832e56b85803f555af2b9eb8c68dd))
+
+## [4.6.3](https://github.com/SocialGouv/docker/compare/v4.6.2...v4.6.3) (2021-02-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency socialgouv/k8s to v1.3.1 ([#549](https://github.com/SocialGouv/docker/issues/549)) ([826198f](https://github.com/SocialGouv/docker/commit/826198f104b1d5d3945422bdfa7e708841bb304f))
+
+## [4.6.2](https://github.com/SocialGouv/docker/compare/v4.6.1...v4.6.2) (2021-02-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency socialgouv/k8s to v1.2.3 ([#546](https://github.com/SocialGouv/docker/issues/546)) ([151a3a1](https://github.com/SocialGouv/docker/commit/151a3a115723de8d5a8ccad0890668bcd5d9f616))
+
 ## [4.6.1](https://github.com/SocialGouv/docker/compare/v4.6.0...v4.6.1) (2021-02-23)
 
 
