@@ -28,7 +28,7 @@ RUN set -ex \
 COPY requirements.txt /requirements.txt
 
 # install ansible & linter
-RUN pip install -r /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # install azure CLI
