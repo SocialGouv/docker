@@ -1,3 +1,34 @@
+# [4.8.0](https://github.com/SocialGouv/docker/compare/v4.7.1...v4.8.0) (2021-03-10)
+
+
+### Bug Fixes
+
+* **azure-cli:** update ca-certificates ([#567](https://github.com/SocialGouv/docker/issues/567)) ([c35f73f](https://github.com/SocialGouv/docker/commit/c35f73fdd986494a1db3217457e2c4a147d732d6))
+* **deps:** update dependency kosko to v1.1.2 ([#561](https://github.com/SocialGouv/docker/issues/561)) ([e301509](https://github.com/SocialGouv/docker/commit/e301509cfe86881fcec9ed4048fe07da4a30acf6))
+* **deps:** update registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko docker tag to v4.7.1 ([#562](https://github.com/SocialGouv/docker/issues/562)) ([01f3fa9](https://github.com/SocialGouv/docker/commit/01f3fa99d880f8c739791db1d7c2f50a96954e9b))
+* **infra-ansible-ci:** also build on master ([#534](https://github.com/SocialGouv/docker/issues/534)) ([4b49c7d](https://github.com/SocialGouv/docker/commit/4b49c7d402bd515f2e5117c17d8298e877273e85))
+* **infra-ansible-ci:** lint hadolint DL3042 ([#556](https://github.com/SocialGouv/docker/issues/556)) ([1f237fa](https://github.com/SocialGouv/docker/commit/1f237fa620210bdae584db32f3a690dfe0680a30))
+* **infra-ansible-ci:** pip install --upgrade ([#576](https://github.com/SocialGouv/docker/issues/576)) ([0264326](https://github.com/SocialGouv/docker/commit/0264326588c25dd0286aabcac38f4b2afa83b40f))
+* **k8s-ns-killer:** update less ([#568](https://github.com/SocialGouv/docker/issues/568)) ([739e547](https://github.com/SocialGouv/docker/commit/739e5471bed5247716065b4f113a59c34fbde836))
+* **pg-cleaner:** fix hadolint DL3042 ([#555](https://github.com/SocialGouv/docker/issues/555)) ([1873f12](https://github.com/SocialGouv/docker/commit/1873f12ecddb44d0d9953ae4bf4d32af9110d809))
+
+
+### Features
+
+* **deps:** update all dependencies (patch) ([#554](https://github.com/SocialGouv/docker/issues/554)) ([6a2445f](https://github.com/SocialGouv/docker/commit/6a2445fc89797febbf216186dac5a7e4df5fb0cd))
+* **deps:** update debian docker tag to v10.8 ([#553](https://github.com/SocialGouv/docker/issues/553)) ([9fa3361](https://github.com/SocialGouv/docker/commit/9fa3361a59c0d3d44f0a1c16540e083049b68e37))
+* **deps:** update dependency azure-cli to v2.20.0 ([#570](https://github.com/SocialGouv/docker/issues/570)) ([4cd6b57](https://github.com/SocialGouv/docker/commit/4cd6b57dd2b2e33c12c12d1b99e6ac584be8428b))
+* **deps:** update hadolint/hadolint docker tag to v1.23.0 ([#566](https://github.com/SocialGouv/docker/issues/566)) ([acd6329](https://github.com/SocialGouv/docker/commit/acd6329e5a24186c566b57c642c1ac1490cbc3b8))
+* **deps:** update infra-ansible-ci requirements (major) ([#565](https://github.com/SocialGouv/docker/issues/565)) ([6586e04](https://github.com/SocialGouv/docker/commit/6586e045ef9d53507041213ca93b33e85800b898))
+* **deps:** update infra-ansible-ci requirements (minor) ([#558](https://github.com/SocialGouv/docker/issues/558)) ([7efd187](https://github.com/SocialGouv/docker/commit/7efd187d1d03059b0b800aba21e71258d98bd239))
+* **deps:** update postgres docker tag to v10.16 ([#559](https://github.com/SocialGouv/docker/issues/559)) ([7180bdf](https://github.com/SocialGouv/docker/commit/7180bdf67ac4e61b4aa94a32a5e3d8cd5a4506e9))
+* **deps:** update postgres docker tag to v11.11 ([#560](https://github.com/SocialGouv/docker/issues/560)) ([2cd40dd](https://github.com/SocialGouv/docker/commit/2cd40dd3c98c72a519d3a3088fe2032d090d47b3))
+
+
+### Performance Improvements
+
+* **nginx4spa:** restrict envsub files type ([#521](https://github.com/SocialGouv/docker/issues/521)) ([1e41998](https://github.com/SocialGouv/docker/commit/1e419982079e43118f3601ecf131f9b764b620d2))
+
 ## [4.7.1](https://github.com/SocialGouv/docker/compare/v4.7.0...v4.7.1) (2021-03-01)
 
 
