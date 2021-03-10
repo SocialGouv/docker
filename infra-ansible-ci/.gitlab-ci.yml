@@ -1,5 +1,6 @@
 .change_rules_infra_ansible_ci:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &change_infra_ansible_ci
       changes:
         - .gitlab-ci.yml
@@ -8,7 +9,7 @@
 Lint infra-ansible-ci:
   stage: "Quality"
   extends: .change_rules_infra_ansible_ci
-  image: hadolint/hadolint:v1.19.0-debian
+  image: hadolint/hadolint:v1.23.0-debian
   script:
     - hadolint ./infra-ansible-ci/Dockerfile
 

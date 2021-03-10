@@ -21,7 +21,7 @@ echo "PORT=${PORT:="80"}" >> /tmp/env-vars
 while IFS='=' read -r KEY VALUE
 do
   # In every files in the dir, replace the environment variables value
-  find ${WWW_DIRECTORY} -type f -exec \
+  find ${WWW_DIRECTORY} -type f -regex ".*\.\(conf\|txt\|html\|htm\|js\|css\)"  -exec \
     sed -i -e "s|${DELIMITER}${KEY}${DELIMITER}|${VALUE}|g" {} \;
   # replace in nginx.conf too
   sed -i -e "s|${DELIMITER}${KEY}${DELIMITER}|${VALUE}|g" /etc/nginx/nginx.conf

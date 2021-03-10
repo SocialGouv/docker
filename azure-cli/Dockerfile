@@ -1,8 +1,8 @@
 
-FROM debian:10.7-slim
+FROM debian:10.8-slim
 
-# renovate: datasource=pypi depName=azure-cli versioning=2.17.1
-ARG AZURE_CLI_VERSION=2.17.1
+# renovate: datasource=pypi depName=azure-cli versioning=2.20.0
+ARG AZURE_CLI_VERSION=2.20.0
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
@@ -10,7 +10,7 @@ RUN set -x \
   #
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-    ca-certificates=20190110 \
+    ca-certificates=20200601~deb10u2 \
     curl=7.64.0-4+deb10u1 \
     gnupg=2.2.12-1+deb10u1 \
   #

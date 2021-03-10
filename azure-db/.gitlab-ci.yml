@@ -9,7 +9,7 @@
 Lint azure-db:
   stage: "Quality"
   extends: .change_rules_azure_db
-  image: hadolint/hadolint:v1.19.0-debian
+  image: hadolint/hadolint:v1.23.0-debian
   script:
     - hadolint ./azure-db/Dockerfile
 
@@ -53,7 +53,7 @@ Test azure-db 2 3:
   retry: 2
   services:
     - docker:19-dind
-    - postgres:11.5-alpine
+    - postgres:11.11-alpine
   needs:
     - Lint azure-db
     - Build azure-db
@@ -194,7 +194,7 @@ Test azure-db drop-autodevops-dbs 4:
   retry: 2
   services:
     - docker:19-dind
-    - postgres:11.5-alpine
+    - postgres:11.11-alpine
   needs:
     - Lint azure-db
     - Build azure-db

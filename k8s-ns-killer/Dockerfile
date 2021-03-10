@@ -1,4 +1,4 @@
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:2.9.0
+FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:4.7.1
 
 USER root
 
@@ -6,7 +6,7 @@ RUN set -ex \
   #
   && apk add --update --no-cache \
     git=~2 \
-    less=~551 \
+    less=~563-r0 \
     openssh=~8 \
   ;
 
