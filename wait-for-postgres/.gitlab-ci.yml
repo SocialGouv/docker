@@ -55,34 +55,40 @@ Test wait-for-postgres 2 2:
   services:
     - docker:19-dind
     - postgres:11.11-alpine
+  variables:
+    POSTGRES_PASSWORD: postgres
   script:
     - docker pull ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
     - docker run
       --env PGHOST=localhost
-      --env PGPORT=5454
-      --env WAIT_FOR_INTERVAL=1s
-      --env WAIT_FOR_RETRIES=1
-      --network="host"
-      --rm
-      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA} &&
-      echo "No postgres should be found" && exit 1
-    - docker run
-      --env PGHOST=localhost
-      --env PGUSER=foobar
-      --env WAIT_FOR_INTERVAL=1s
-      --env WAIT_FOR_RETRIES=1
-      --network="host"
-      --rm
-      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA} &&
-      echo "No user foobar should be found" && exit 1
-    - docker run
-      --env PGHOST=localhost
+      --env PGPASSWORD=postgres
       --env PGUSER=postgres
       --env WAIT_FOR_INTERVAL=1s
       --env WAIT_FOR_RETRIES=1
       --network="host"
       --rm
       ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=postgres
+      --env PGPORT=5454
+      --env PGUSER=postgres
+      --env WAIT_FOR_INTERVAL=1s
+      --env WAIT_FOR_RETRIES=1
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA} && 
+      echo "No postgres should be found" && exit 1
+    - docker run
+      --env PGHOST=localhost
+      --env PGPASSWORD=postgres
+      --env PGUSER=foobar
+      --env WAIT_FOR_INTERVAL=1s
+      --env WAIT_FOR_RETRIES=1
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA} ||
+      echo "No user foobar should be found" && exit 1
 
 Publish wait-for-postgres to Github Registry:
   extends: .base_publish_to_github_stage
