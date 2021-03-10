@@ -1,5 +1,6 @@
 .change_rules_infra_ansible_ci:
   rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
     - &change_infra_ansible_ci
       changes:
         - .gitlab-ci.yml
