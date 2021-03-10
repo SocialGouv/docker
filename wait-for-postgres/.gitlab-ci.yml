@@ -59,15 +59,6 @@ Test wait-for-postgres 2 2:
     - docker pull ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
     - docker run
       --env PGHOST=localhost
-      --env PGUSER=postgres
-      --env WAIT_FOR_INTERVAL=1s
-      --env WAIT_FOR_RETRIES=1
-      --network="host"
-      --rm
-      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
-    - docker run
-      --env PGHOST=localhost
-      --env PGUSER=postgres
       --env PGPORT=5454
       --env WAIT_FOR_INTERVAL=1s
       --env WAIT_FOR_RETRIES=1
@@ -84,6 +75,14 @@ Test wait-for-postgres 2 2:
       --rm
       ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA} &&
       echo "No user foobar should be found" && exit 1
+    - docker run
+      --env PGHOST=localhost
+      --env PGUSER=postgres
+      --env WAIT_FOR_INTERVAL=1s
+      --env WAIT_FOR_RETRIES=1
+      --network="host"
+      --rm
+      ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
 
 Publish wait-for-postgres to Github Registry:
   extends: .base_publish_to_github_stage
