@@ -55,13 +55,10 @@ Test wait-for-postgres 2 2:
   services:
     - docker:19-dind
     - postgres:11.11-alpine
-  variables:
-    POSTGRES_PASSWORD: postgres
   script:
     - docker pull ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
     - docker run
       --env PGHOST=localhost
-      --env PGPASSWORD=postgres
       --env PGUSER=postgres
       --env WAIT_FOR_INTERVAL=1s
       --env WAIT_FOR_RETRIES=1
@@ -70,7 +67,6 @@ Test wait-for-postgres 2 2:
       ${CI_REGISTRY_IMAGE}/wait-for-postgres:${CI_COMMIT_SHA}
     - docker run
       --env PGHOST=localhost
-      --env PGPASSWORD=postgres
       --env PGUSER=postgres
       --env PGPORT=5454
       --env WAIT_FOR_INTERVAL=1s
@@ -81,7 +77,6 @@ Test wait-for-postgres 2 2:
       echo "No postgres should be found" && exit 1
     - docker run
       --env PGHOST=localhost
-      --env PGPASSWORD=postgres
       --env PGUSER=foobar
       --env WAIT_FOR_INTERVAL=1s
       --env WAIT_FOR_RETRIES=1
