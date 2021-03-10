@@ -6,7 +6,7 @@ RUN set -ex \
   #
   && apk add --update --no-cache \
     git=~2 \
-    less=~551 \
+    less=~563-r0 \
     openssh=~8 \
   ;
 
