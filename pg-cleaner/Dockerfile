@@ -7,7 +7,7 @@ RUN apk add --update --no-cache \
 
 ## Install python environment
 RUN apk add --update --no-cache --virtual .build-deps gcc=~~8 python-dev=~~2 musl-dev=~~1 postgresql-dev=~~11
-RUN pip install psycopg2==2.8.4
+RUN pip install psycopg2==2.8.4 --no-cache-dir
 
 ## Copy postgres cleaner script
 COPY ./bin /bin
