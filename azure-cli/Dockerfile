@@ -10,7 +10,7 @@ RUN set -x \
   #
   && apt-get update \
   && apt-get install -y --no-install-recommends \
-    ca-certificates=20190110 \
+    ca-certificates=20200601~deb10u2 \
     curl=7.64.0-4+deb10u1 \
     gnupg=2.2.12-1+deb10u1 \
   #
