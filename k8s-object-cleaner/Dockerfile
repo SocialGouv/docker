@@ -6,9 +6,9 @@ RUN set -ex \
   #
   && apk add --update --no-cache \
     git=~2 \
-    less=~551 \
+    less=~563 \
     openssh=~8 \
-    nodejs=~12 \
+    nodejs=~14 \
   ;
 
 USER 1001
