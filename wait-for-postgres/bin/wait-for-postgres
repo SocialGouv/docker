@@ -2,18 +2,44 @@
 
 {
 
-wait_for_postgres() {
-  local retry=${WAIT_FOR_RETRIES:-24}; # = (2min x 60s) / 5s
-  local interval=${WAIT_FOR_INTERVAL:-5s}; # every 5s
-  while
-    ! psql -c "SELECT VERSION();" > /dev/null 2> /dev/null &&
-    [[ $(( retry-- )) -gt 0 ]];
-  do
-      echo "Waiting for Postgres to go Green ($(( retry )) left)" ;
-      sleep "${interval}" ;
-  done ;
+retry=${WAIT_FOR_RETRIES:-24}; # = (2min x 60s) / 5s
+interval=${WAIT_FOR_INTERVAL:-5s}; # every 5s
 
+run_psql() {
   psql -c "SELECT VERSION();"
+}
+
+
+wait_for_postgres() {
+  output=$(run_psql)
+  if [[ $? -ne 0 ]];
+  then
+    if [[ $(( retry-- )) -gt 0 ]];
+    then
+      echo ""
+      echo "⏳ Waiting for Postgres to go Green ($(( retry )) left)" ;
+      echo ""
+      echo "$output"
+      echo ""
+      echo "PGHOST: $PGHOST"
+      echo "PGDATABASE: $PGDATABASE"
+      echo "PGUSER: $PGUSER"
+      echo ""
+      sleep "${interval}" ;
+      wait_for_postgres "$@"
+    else
+      echo ""
+      echo "😓 Cannot connect to the Postgres server" ;
+      echo ""
+      echo "PGHOST: $PGHOST"
+      echo "PGDATABASE: $PGDATABASE"
+      echo "PGUSER: $PGUSER"
+      echo ""
+      exit 2
+    fi
+  else
+    exit 0
+  fi;
 }
 
 wait_for_postgres "$@"
