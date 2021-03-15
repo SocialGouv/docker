@@ -14,6 +14,7 @@ include:
   - /helm/.gitlab-ci.yml
   - /k8s-object-cleaner/.gitlab-ci.yml
   - /kosko/.gitlab-ci.yml
+  - /nginx4spa/.gitlab-ci.yml
   - /no-k8s/.gitlab-ci.yml
   - /kubectl/.gitlab-ci.yml
   - /puppeteer/.gitlab-ci.yml
