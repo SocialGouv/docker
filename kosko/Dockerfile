@@ -14,10 +14,13 @@ ENV KOSKO_VERSION=${KOSKO_VERSION}
 
 RUN set -ex \
   #
+  && apk add --no-cache yq=~4 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+  #
   && apk add --update --no-cache \
     bash=~5 \
     coreutils=~8 \
     gettext=~0 \
+    jq=~1 \
   #
   && yarn global add kosko@${KOSKO_VERSION} \
   #
@@ -25,7 +28,7 @@ RUN set -ex \
   ;
 
 # renovate: datasource=github-releases depName=k14s/kapp
-ARG KAPP_VERSION=v0.35.0
+ARG KAPP_VERSION=v0.36.0
 RUN set -ex \
   #
   && wget -O /usr/local/bin/kapp \
