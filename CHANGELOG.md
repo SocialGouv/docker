@@ -1,3 +1,16 @@
+# [4.9.0](https://github.com/SocialGouv/docker/compare/v4.8.0...v4.9.0) (2021-03-15)
+
+
+### Bug Fixes
+
+* **wait-for-postgres:** better debug ([#577](https://github.com/SocialGouv/docker/issues/577)) ([7c487b8](https://github.com/SocialGouv/docker/commit/7c487b8494cb7db4ee390b359fec3de66024b8cb))
+
+
+### Features
+
+* **deps:** update dependency k14s/kapp to v0.36.0 ([#571](https://github.com/SocialGouv/docker/issues/571)) ([19f77a5](https://github.com/SocialGouv/docker/commit/19f77a5d3d5f5831ebb0b5663c72a0f32cc7875e))
+* **kosko:** add yq+jq ([#557](https://github.com/SocialGouv/docker/issues/557)) ([5ee9cb7](https://github.com/SocialGouv/docker/commit/5ee9cb72576eafc38de6f1f23da86191c63ab8ad))
+
 # [4.8.0](https://github.com/SocialGouv/docker/compare/v4.7.1...v4.8.0) (2021-03-10)
 
 
