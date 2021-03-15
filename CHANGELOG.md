@@ -1,3 +1,15 @@
+# [5.0.0](https://github.com/SocialGouv/docker/compare/v4.9.0...v5.0.0) (2021-03-15)
+
+
+* chore!: cleanup (#578) ([df0650c](https://github.com/SocialGouv/docker/commit/df0650cd2e07ddf0e22b209d0b169ab91cbb54a0)), closes [#578](https://github.com/SocialGouv/docker/issues/578)
+
+
+### BREAKING CHANGES
+
+* the `fluentd-modsecurity`, `infra-ansible-ci`, `k8s-ns-killer`, ` pg-cleaner` and `trivy` images are not maintained anymore
+
+Co-authored-by: Douglas Duteil <douglasduteil@gmail.com>
+
 # [4.9.0](https://github.com/SocialGouv/docker/compare/v4.8.0...v4.9.0) (2021-03-15)
 
 
