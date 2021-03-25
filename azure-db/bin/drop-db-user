@@ -26,18 +26,21 @@ DROP_USER_BASE=${DROP_USER%%@*} || $DROP_USER
 echo
 echo "disconnect activities on database ${DROP_DATABASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
+  SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
   SELECT pg_terminate_backend (pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '${DROP_DATABASE}';
 "
 
 echo
 echo "deleting database ${DROP_DATABASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
+  SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
   DROP DATABASE $DROP_DATABASE;
 "
 
 echo
 echo "deleting user ${DROP_USER_BASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
+  SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
   REVOKE ALL PRIVILEGES ON SCHEMA public FROM \"${DROP_USER_BASE}\";
   REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM \"${DROP_USER_BASE}\";
   REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM \"${DROP_USER_BASE}\";
