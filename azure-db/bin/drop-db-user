@@ -31,9 +31,9 @@ psql -abe "$PG_URL_ADMIN" -c "
   UPDATE pg_database SET datallowconn = false WHERE datname = '${DROP_DATABASE}';
 
   -- Disconnect users from database 
-  SELECT pg_terminate_backend(procpid)
+  SELECT pg_terminate_backend (pg_stat_activity.pid)
   FROM pg_stat_activity
-  WHERE datname = '${DROP_DATABASE}' and procpid <> pg_backend_pid();
+  WHERE pg_stat_activity.datname = '${DROP_DATABASE}';
 "
 
 echo
