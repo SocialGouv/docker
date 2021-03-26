@@ -54,7 +54,7 @@ jobs:
             ghcr.io/socialgouv/docker/bats
           label-custom: |
             org.opencontainers.image.title=bats
-            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/bats
+            org.opencontainers.image.documentation=${{ github.sha }}/bats
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
