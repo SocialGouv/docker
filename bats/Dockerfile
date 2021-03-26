@@ -15,7 +15,7 @@ RUN set -x \
   && git clone -b 'v2.0.0' --single-branch --depth 1 \
   https://github.com/bats-core/bats-assert /usr/lib/bats-assert \
   && git clone -b 'v0.3.0' --single-branch --depth 1 \
-  https://github.com/bats-core/bats-filee /usr/lib/bats-file \
+  https://github.com/bats-core/bats-file /usr/lib/bats-file \
   && git clone -b 'v0.3.0' --single-branch --depth 1 \
   https://github.com/bats-core/bats-support /usr/lib/bats-support \
   #
