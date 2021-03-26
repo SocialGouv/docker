@@ -54,6 +54,7 @@ jobs:
             ghcr.io/socialgouv/docker/bats
           label-custom: |
             org.opencontainers.image.title=bats
+            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/bats
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
@@ -102,13 +103,29 @@ jobs:
       - Build
     container:
       image: docker://ghcr.io/socialgouv/docker/bats:sha-${{ github.sha }}
+    # NOTE(douglasduteil): fix tput for tty issue work around
+    # see https://github.com/bats-core/bats-core/blob/v1.3.0/.github/workflows/tests.yml#L30-L31
+    env:
+      TERM: linux
     steps:
       - name: Version
         run: |
           bats --version
+      - name: Dummy test
+        run: |
           bats -p /opt/bats/test/fixtures/bats/passing.bats
+      - name: Internal
+        run: |
           bats /opt/bats/test
+      - name: Assert
+        run: |
           bats /usr/lib/bats-assert/test
+      - name: File
+        run: |
           bats /usr/lib/bats-file/test
+      - name: Support
+        run: |
           bats /usr/lib/bats-support/test
+      - name: Kitchen sink
+        run: |
           bats ./bats/test
