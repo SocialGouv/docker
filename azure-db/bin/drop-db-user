@@ -26,6 +26,8 @@ DROP_USER_BASE=${DROP_USER%%@*} || $DROP_USER
 echo
 echo "disconnect activities on database ${DROP_DATABASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
+  SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
+  
   -- Inspired by https://stackoverflow.com/questions/3185266/postgresql-temporarily-disable-connections
   -- Temporarily disable connections
   UPDATE pg_database SET datallowconn = false WHERE datname = '${DROP_DATABASE}';
@@ -39,12 +41,14 @@ psql -abe "$PG_URL_ADMIN" -c "
 echo
 echo "deleting database ${DROP_DATABASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
+  SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
   DROP DATABASE $DROP_DATABASE;
 "
 
 echo
 echo "deleting user ${DROP_USER_BASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
+  SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
   REVOKE ALL PRIVILEGES ON SCHEMA public FROM \"${DROP_USER_BASE}\";
   REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM \"${DROP_USER_BASE}\";
   REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM \"${DROP_USER_BASE}\";
