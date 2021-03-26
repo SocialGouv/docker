@@ -27,7 +27,15 @@ echo
 echo "disconnect activities on database ${DROP_DATABASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
   SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;
-  SELECT pg_terminate_backend (pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '${DROP_DATABASE}';
+  
+  -- Inspired by https://stackoverflow.com/questions/3185266/postgresql-temporarily-disable-connections
+  -- Temporarily disable connections
+  UPDATE pg_database SET datallowconn = false WHERE datname = '${DROP_DATABASE}';
+
+  -- Disconnect users from database 
+  SELECT pg_terminate_backend (pg_stat_activity.pid)
+  FROM pg_stat_activity
+  WHERE pg_stat_activity.datname = '${DROP_DATABASE}';
 "
 
 echo
