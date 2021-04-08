@@ -1,4 +1,4 @@
-# Contributing to SocialGouv/docker 
+# Contributing to SocialGouv/docker
 
 ## Create a new image
 
@@ -20,6 +20,16 @@ $ mkdir foo
    You can follow the [`kubectl/.gitlab-ci.yml` as model](./kubectl/.gitlab-ci.yml).
 
 1. Include this local `.gitlab-ci.yml` in the includes of [the root `.gitlab-ci.yml`](./.gitlab-ci.yml).
+
+## Git Hooks Setup
+
+```sh
+# Initial setup
+$ npx @husky/init
+
+# Install
+$ yarn install --no-lockfile
+```
 
 ## Test
 
