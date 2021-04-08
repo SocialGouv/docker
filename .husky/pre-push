@@ -9,7 +9,7 @@ staged_match () {
 
 dhall_freeze() {
   # Ensure to freeze all imports
-  local opts="${2:-"--inplace"}"
+  local opts="${2:-"--check"}"
   local file="${1}"
 
   # Ensure to have a cache folder for dhall
@@ -23,7 +23,7 @@ dhall_freeze() {
 
 dhall_lint() {
   # Ensure to freeze all imports
-  local opts="${2:-"--inplace"}"
+  local opts="${2:-"--check"}"
   local file="${1}"
 
   # Ensure to have a cache folder for dhall

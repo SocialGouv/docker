@@ -1,9 +1,0 @@
-{
-  "// NOTE(douglasduteil)": "This package is only here for husky git hooks system",
-  "devDependencies": {
-    "husky": "^6.0.0"
-  },
-  "scripts": {
-    "prepare": "husky install"
-  }
-}
