@@ -41,6 +41,16 @@ $ docker run --rm -i hadolint/hadolint < ./<image>/Dockerfile
 $ docker run --rm -i hadolint/hadolint < ./helm/Dockerfile
 ```
 
+## Generate GitLab Workflow
+
+### Lint Dockerfiles
+
+```sh
+$ rm -rf .cache && export XDG_CACHE_HOME="$(pwd)/.cache"
+$ dhall freeze --transitive azure-cli/.github/main.workflow.dhall --all
+$ dhall-to-yaml --file azure-cli/.github/main.workflow.dhall --output .github/workflows/azure-cli.main.workflow.yaml
+```
+
 ## Release policy
 
 ### One click semantic release !
