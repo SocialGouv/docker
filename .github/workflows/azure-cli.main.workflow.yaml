@@ -72,7 +72,7 @@ jobs:
       - run: dhall --version
       - run: dhall-to-json --version
       - run: dhall-to-yaml --version
-name: "azure-cli (main)"
+name: "azure-cli  (main)"
 on:
   push:
     branches:

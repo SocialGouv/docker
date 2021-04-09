@@ -3,4 +3,4 @@ let On =
 
 in  ./AssemblyLine.dhall sha256:cad1f85d969851f0ab2926abe8a1925b796bf6c4808cfe3fbbb84a3f865ee90d
   with on = On.match On.Event.ReleasesBranches "azure-cli/**"
-  with name = "azure-cli (main)"
+  with name = "azure-cli  (main)"
