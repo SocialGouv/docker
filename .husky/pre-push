@@ -31,24 +31,8 @@ dhall_lint() {
 
   echo "$ dhall lint ${opts} ${file}"
   dhall lint "${opts}" "${file}"
-
-  git add "${file}"
 }
 
-dhall_to_yaml() {
-  # Convert Dhall to Gitlab Action YAML
-  local file="${1}"
-
-  workflow=".github/workflows/${file%%/*}.$(basename ${file%.*}).yaml"
-
-  # Ensure to have a cache folder for dhall
-  mkdir -p .cache
-
-  echo "$ dhall-to-yaml --file ${file} --output ${workflow}"
-  dhall-to-yaml --file "${file}" --output "${workflow}"
-
-  git add "${workflow}"
-}
 
 #
 #
@@ -68,13 +52,11 @@ if staged_match "\.github\/dhall\/.*\.dhall$"; then
   do
     dhall_lint "${file}"
     dhall_freeze "${file}"
-    dhall_to_yaml "${file}"
   done
 else
   # Freeze and regenerate each changed file
   for file in $(staged_match "${workflow_files}"); do
     dhall_lint "${file}"
     dhall_freeze "${file}"
-    dhall_to_yaml "${file}"
   done
 fi
