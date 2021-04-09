@@ -1,7 +1,9 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
+set -x
 
 readonly STAGED_FILES=$(git diff --cached --name-only)
+
 
 staged_match () {
   echo "${STAGED_FILES}" | grep -E "${1}"
