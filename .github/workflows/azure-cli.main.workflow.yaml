@@ -11,10 +11,10 @@ jobs:
       - id: docker_meta
         uses: "crazy-max/ghaction-docker-meta@2e1a5c7fa42123697f82d479b551a1bbdb1bef88"
         with:
-          images: ghcr.io/socialgouv/docker/dhall
+          images: ghcr.io/socialgouv/docker/azure-cli
           labels: |
-            org.opencontainers.image.title=dhall
-            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/dhall
+            org.opencontainers.image.title=azure-cli
+            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/azure-cli
           tags: |
             type=sha
             type=raw,value=sha-${{ github.sha }}
@@ -36,7 +36,7 @@ jobs:
       - name: /tmp/.buildx-cache cache
         uses: "actions/cache@v2"
         with:
-          key: "${{ runner.os }}-buildx-${{ hashFiles('dhall/Dockerfile') }}"
+          key: "${{ runner.os }}-buildx-${{ hashFiles('azure-cli/Dockerfile') }}"
           path: /tmp/.buildx-cache
           restore-keys: |
             ${{ runner.os }}-buildx-
@@ -47,7 +47,7 @@ jobs:
           builder: "${{ steps.docker_buildx.outputs.name }}"
           cache-from: "type=local,src=/tmp/.buildx-cache"
           cache-to: "type=local,dest=/tmp/.buildx-cache"
-          context: "./dhall"
+          context: "./azure-cli"
           labels: "${{ steps.docker_meta.outputs.labels }}"
           push: 'true'
           tags: "${{ steps.docker_meta.outputs.tags }}"
@@ -61,18 +61,16 @@ jobs:
     steps:
       - uses: "actions/checkout@v2"
       - run: hadolint ./Dockerfile
-        working-directory: dhall
+        working-directory: azure-cli
   version_test:
-    container: "docker://ghcr.io/socialgouv/docker/dhall:sha-${{ github.sha }}"
+    container: "docker://ghcr.io/socialgouv/docker/azure-cli:sha-${{ github.sha }}"
     name: Test Version
     needs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - run: dhall --version
-      - run: dhall-to-json --version
-      - run: dhall-to-yaml --version
-name: "azure-cli  (main)"
+      - run: az --version
+name: "azure-cli (main)"
 on:
   push:
     branches:

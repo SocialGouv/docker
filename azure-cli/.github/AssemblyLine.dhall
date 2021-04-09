@@ -11,11 +11,7 @@ let version_test =
       InceptionJob
         { package = "azure-cli" }
         { name = "Test Version"
-        , steps =
-          [ GithubActions.Step::{ run = Some "azure-cli --version" }
-          , GithubActions.Step::{ run = Some "azure-cli-to-json --version" }
-          , GithubActions.Step::{ run = Some "azure-cli-to-yaml --version" }
-          ]
+        , steps = [ GithubActions.Step::{ run = Some "az --version" } ]
         }
 
 in  AssemblyLine.Worklflow { name = "azure-cli", jobs = toMap { version_test } }
