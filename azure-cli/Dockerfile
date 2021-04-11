@@ -2,7 +2,7 @@
 FROM debian:10.8-slim
 
 # renovate: datasource=repology depName=debian_stable/ca-certificates versioning=loose
-ARG CA_CERTIFICATES_VERSION=20200601
+ARG CA_CERTIFICATES_VERSION=20200601~deb10u2
 
 # renovate: datasource=repology depName=debian_stable/curl versioning=loose
 ARG CURL_VERSION=7.64.0-4+deb10u1
