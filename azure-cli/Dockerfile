@@ -5,7 +5,7 @@ FROM debian:10.8-slim
 ARG CA_CERTIFICATES_VERSION=20200601~deb10u2
 
 # renovate: datasource=repology depName=debian_stable/curl versioning=loose
-ARG CURL_VERSION=7.64.0-4+deb10u1
+ARG CURL_VERSION=7.64.0-4+deb10u2
 
 # renovate: datasource=repology depName=debian_stable/gnupg versioning=loose
 ARG GNUPG_VERSION=2.2.12-1+deb10u1
