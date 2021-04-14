@@ -47,6 +47,7 @@ jobs:
           builder: "${{ steps.docker_buildx.outputs.name }}"
           cache-from: "type=local,src=/tmp/.buildx-cache"
           cache-to: "type=local,dest=/tmp/.buildx-cache"
+          load: 'true'
           context: "./dhall"
           labels: "${{ steps.docker_meta.outputs.labels }}"
           push: 'true'
