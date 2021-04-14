@@ -50,7 +50,6 @@ jobs:
           load: 'true'
           context: "./dhall"
           labels: "${{ steps.docker_meta.outputs.labels }}"
-          push: 'true'
           tags: "${{ steps.docker_meta.outputs.tags }}"
       - name: Image digest
         run: |
