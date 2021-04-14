@@ -54,6 +54,24 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+      - name: Time Series Data
+        run: |
+            docker images --format "{{.Repository}} {{.Size}}" 
+            docker images --format "{{.Repository}} {{.Size}}" | \
+              grep socialgouv/docker/dhall | awk '{print $2}' | xargs -I {} curl \
+              --header "Authorization: Token ${SERIESCI_TOKEN}" \
+              --data "{
+                \"values\":[
+                  {
+                    \"line\":\"dhall image size\",
+                    \"value\":\"{}\"
+                  },
+                ],
+                \"sha\":\"${GITHUB_SHA}\"
+              }" \
+            https://seriesci.com/api/SocialGouv/docker/size/many
+        env:
+          SERIESCI_TOKEN: ${{ secrets.SOCIALGROOVYBOT_SERIESCI_TOKEN }}
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint
