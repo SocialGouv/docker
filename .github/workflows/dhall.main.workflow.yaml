@@ -54,9 +54,11 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+      - run: docker images 
+      - run: docker images --format "{{.Repository}} {{.Size}}" 
+      - run: docker images --format "{{.Repository}} {{.Size}}" | grep "socialgouv/docker/dhall"
       - name: Time Series Data
         run: |
-            docker images --format "{{.Repository}} {{.Size}}" 
             docker images --format "{{.Repository}} {{.Size}}" | \
               grep socialgouv/docker/dhall | awk '{print $2}' | xargs -I {} curl \
               --header "Authorization: Token ${SERIESCI_TOKEN}" \
