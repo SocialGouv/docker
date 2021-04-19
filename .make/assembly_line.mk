@@ -1,0 +1,38 @@
+#
+
+DHALL := env XDG_CACHE_HOME=$(CACHE_DIR) dhall
+
+ASSEMBLY_LINE_DIR := .github/dhall
+WORKFLOWS_TARGET_DIR := .github/workflows
+IGNORE_DIR := .git
+
+# WORKFLOW_SRC=$(wildcard "*/.github/*.workflow.dhall")
+PACKAGES_DIR := $(filter-out $(IGNORE_DIR), $(wildcard */))
+ASSEMBLY_LINE_SRC=$(call rwildcard,$(ASSEMBLY_LINE_DIR)/*,*.dhall)
+
+define freezed_path
+$(1:%.dhall=$(CACHE_MAKE_DIR)/%.dhall.freezed)
+endef
+
+ASSEMBLY_LINE_FREEZE := $(call freezed_path,${ASSEMBLY_LINE_SRC})
+
+
+#
+#
+#
+
+assembly_line: $(ASSEMBLY_LINE_FREEZE)
+
+#
+#
+#
+
+define make_assembly_targets
+$(call freezed_path,$(1)) : $(1) $(call freezed_path,$(call get_dependencies,$(1)))
+	$(DHALL) freeze --transitive $$<
+	$(DHALL) lint --transitive $$<
+	$@mkdir -p $$(shell dirname "$$@")
+	$(DHALL) hash --file $$< > $$@
+endef
+
+$(foreach file,$(WORKFLOW_SRC) $(ASSEMBLY_LINE_SRC),$(eval $(call make_assembly_targets,$(file))))
