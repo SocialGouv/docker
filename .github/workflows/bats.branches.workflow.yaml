@@ -83,7 +83,7 @@ jobs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - run: az --version
+      - run: bats --version
 name: "azure-cli (branch)"
 on:
   push:

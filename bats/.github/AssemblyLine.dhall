@@ -30,7 +30,7 @@ let version_test =
       InceptionJob
         { package = name }
         { name = "Test Version"
-        , steps = [ GithubActions.Step::{ run = Some "az --version" } ]
+        , steps = [ GithubActions.Step::{ run = Some "bats --version" } ]
         }
 
 in  AssemblyLine.Worklflow
