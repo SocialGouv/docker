@@ -19,7 +19,7 @@ include .make/clean.mk
 #
 #
 
-all: assembly_line workflow
+all: workflow assembly_line
 
 #
 #

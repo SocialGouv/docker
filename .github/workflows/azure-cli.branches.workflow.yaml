@@ -63,13 +63,13 @@ jobs:
       - run: hadolint ./Dockerfile
         working-directory: azure-cli
   version_test:
-    container: "docker://ghcr.io/socialgouv/docker/azure-cli:sha-${{ github.sha }}"
-    name: Test Version
+    name: Container structure test...
     needs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - run: az --version
+      - run: make test_structure
+        working-directory: azure-cli
 name: "azure-cli (branch)"
 on:
   push:

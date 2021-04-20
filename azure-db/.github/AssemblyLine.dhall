@@ -19,8 +19,6 @@ let version_test =
           , GithubActions.Step::{ run = Some "which drop-db-user" }
           , GithubActions.Step::{ run = Some "which backup" }
           , GithubActions.Step::{ run = Some "which export_from_k8s_secret" }
-          , GithubActions.Step::{ run = Some "kubectl version" }
-          , GithubActions.Step::{ run = Some "kubectl cluster-info" }
           ]
         }
 
