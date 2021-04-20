@@ -32,14 +32,9 @@ let integration_test =
       , services = Some
           ( toMap
               { postgres = GithubActions.Service::{
-                , image = "postgres:13"
+                , image = "postgres:13-alpine"
                 , options = Some
-                    ''
-                      --health-cmd pg_isready
-                      --health-interval 10s
-                      --health-timeout 5s
-                      --health-retries 5
-                    ''
+                    "--health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5"
                 , ports = Some [ "5432:5432" ]
                 }
               }
