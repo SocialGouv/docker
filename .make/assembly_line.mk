@@ -1,12 +1,9 @@
 #
 
-DHALL := env XDG_CACHE_HOME=$(CACHE_DIR) dhall
-
 ASSEMBLY_LINE_DIR := .github/dhall
 WORKFLOWS_TARGET_DIR := .github/workflows
 IGNORE_DIR := .git
 
-# WORKFLOW_SRC=$(wildcard "*/.github/*.workflow.dhall")
 PACKAGES_DIR := $(filter-out $(IGNORE_DIR), $(wildcard */))
 ASSEMBLY_LINE_SRC=$(call rwildcard,$(ASSEMBLY_LINE_DIR)/*,*.dhall)
 

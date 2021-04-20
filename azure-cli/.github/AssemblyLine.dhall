@@ -14,6 +14,4 @@ let version_test =
         , steps = [ GithubActions.Step::{ run = Some "az --version" } ]
         }
 
-let make_test = MakeTestJob { package = "azure-cli" }
-
 in  AssemblyLine.Worklflow { name = "azure-cli", jobs = toMap { version_test } }
