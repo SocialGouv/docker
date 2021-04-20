@@ -16,7 +16,7 @@ teardown_file() {
 }
 
 @test "Wait for postgres" {
-  run timeout 5s pg_isready -h localhost
+  run timeout 60s bash -c "until pg_isready -h ${PGHOST}; do sleep 1 ; done"
   assert_line 'localhost:5432 - accepting connections'
   assert_success
 }
