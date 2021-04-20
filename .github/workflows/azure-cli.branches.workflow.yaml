@@ -68,6 +68,7 @@ jobs:
       - Build
     runs-on: ubuntu-latest
     steps:
+      - uses: "actions/checkout@v2"
       - run: make test_structure
         working-directory: azure-cli
 name: "azure-cli (branch)"

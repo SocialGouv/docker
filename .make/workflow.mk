@@ -7,6 +7,7 @@ WORKFLOW_YAML := $(foreach file,$(WORKFLOW_SRC), $(call __workflow_src_to_dest,$
 #
 #
 
+.PHONY: workflow
 workflow: $(WORKFLOW_YAML)
 
 #

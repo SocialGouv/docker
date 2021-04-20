@@ -18,6 +18,7 @@ ASSEMBLY_LINE_FREEZE := $(call freezed_path,${ASSEMBLY_LINE_SRC})
 #
 #
 
+.PHONY: assembly_line
 assembly_line: $(ASSEMBLY_LINE_FREEZE)
 
 #

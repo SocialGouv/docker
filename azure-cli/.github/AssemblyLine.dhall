@@ -10,7 +10,8 @@ let version_test =
       , needs = Some [ "Build" ]
       , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
       , steps =
-        [ GithubActions.Step::{
+        [ GithubActions.steps.actions/checkout
+        , GithubActions.Step::{
           , run = Some "make test_structure"
           , working-directory = Some "azure-cli"
           }

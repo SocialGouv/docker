@@ -1,4 +1,10 @@
 #
+#
+#
+
+.PHONY: all
+all: workflow assembly_line
+
 
 #
 
@@ -14,12 +20,6 @@ include .make/workflow.mk
 
 include .make/clean.mk
 
-
-#
-#
-#
-
-all: workflow assembly_line
 
 #
 #
