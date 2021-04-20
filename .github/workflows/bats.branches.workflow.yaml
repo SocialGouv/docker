@@ -63,6 +63,9 @@ jobs:
     needs:
       - Build
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13
     steps:
       - uses: "actions/checkout@v2"
       - run: yarn --frozen-lockfile --prefer-offline

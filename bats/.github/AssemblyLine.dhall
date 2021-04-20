@@ -14,6 +14,10 @@ let integration_test =
       , name = Some "Integration test"
       , needs = Some [ "Build" ]
       , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
+      , services = Some
+          ( toMap
+              { postgres = GithubActions.Service::{ image = "postgres:13" } }
+          )
       , steps =
         [ GithubActions.steps.actions/checkout
         , GithubActions.Step::{
