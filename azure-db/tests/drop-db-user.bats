@@ -15,6 +15,12 @@ teardown_file() {
   docker-compose stop
 }
 
+@test "Wait for postgres" {
+  run timeout 5s pg_isready -h localhost
+  assert_line 'localhost:5432 - accepting connections'
+  assert_success
+}
+
 @test "Create autodevops_${ID} db and user_${ID}" {
   export NEW_DB_NAME="autodevops_${ID}"
   export NEW_PASSWORD="password_${ID}"
