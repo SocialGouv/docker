@@ -54,6 +54,16 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+  container_stucture_test:
+    container: gcr.io/gcp-runtimes/container-structure-test:v1.10.0
+    name: Container structure
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - run: "test --image docker://ghcr.io/socialgouv/docker/azure-cli:sha-${{ github.sha }} --config tests/config.yaml -v debug"
+        working-directory: azure-cli
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint
@@ -63,14 +73,13 @@ jobs:
       - run: hadolint ./Dockerfile
         working-directory: azure-cli
   version_test:
-    name: Container structure test...
+    container: "docker://ghcr.io/socialgouv/docker/azure-cli:sha-${{ github.sha }}"
+    name: Test Version
     needs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
-      - run: make test_structure
-        working-directory: azure-cli
+      - run: az --version
 name: "azure-cli (branch)"
 on:
   push:
