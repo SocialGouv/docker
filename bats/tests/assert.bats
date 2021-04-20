@@ -1,5 +1,5 @@
-load '/usr/lib/bats-support/load.bash'
-load '/usr/lib/bats-assert/load.bash'
+
+load '../../.bats/common.bats.bash'
 
 @test 'assert() <expression>: returns 0 if <expression> evaluates to TRUE' {
   run assert true

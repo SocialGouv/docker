@@ -2,7 +2,9 @@
 
 common::setup() {
   load "${BATS_ROOT}/../bats-support/load.bash"
+
   load "${BATS_ROOT}/../bats-assert/load.bash"
+  load "${BATS_ROOT}/../bats-file/load.bash"
 
   # NODE(douglasduteil): manual bail mode
   [ ! -f "${BATS_PARENT_TMPNAME}.skip" ] || skip "skip remaining tests"

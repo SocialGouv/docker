@@ -1,6 +1,6 @@
 #
 
-load test_helper
+load '../../.bats/common.bats.bash'
 
 #
 
@@ -15,6 +15,7 @@ get_fixtures_root() {
   assert_output "${BATS_TEST_DIRNAME}/fixtures/kitchen"
   assert_success
 }
+
 @test 'copy a fiture to a temp folder' {
   teardown() {
     temp_del "$TEST_TEMP_DIR"

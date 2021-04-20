@@ -6,6 +6,10 @@ bats-assert@bats-core/bats-assert#2.0.0:
   version "2.0.0"
   resolved "https://codeload.github.com/bats-core/bats-assert/tar.gz/d750c5a1b44bf6fc96726aea76f4621db5fd602f"
 
+bats-file@bats-core/bats-file#0.3.0:
+  version "0.2.0"
+  resolved "https://codeload.github.com/bats-core/bats-file/tar.gz/c128a1de53ba4a811835af410ce427f1049e2d7f"
+
 bats-support@bats-core/bats-support#0.3.0:
   version "0.3.0"
   resolved "https://codeload.github.com/bats-core/bats-support/tar.gz/24a72e14349690bcbf7c151b9d2d1cdd32d36eb1"

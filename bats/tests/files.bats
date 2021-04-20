@@ -1,5 +1,5 @@
-load '/usr/lib/bats-support/load.bash'
-load '/usr/lib/bats-file/load.bash'
+
+load '../../.bats/common.bats.bash'
 
 @test 'assert_file_exist() <file>: returns 0 if <file> exists' {
   local -r file="${BATS_TEST_DIRNAME}/files.bats"

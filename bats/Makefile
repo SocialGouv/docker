@@ -2,7 +2,7 @@
 
 COMPOSE_NAME = socialgouv_docker_bats
 DOCKER_COMPOSE = docker-compose -p $(COMPOSE_NAME)
-BATS_BIN = $$(yarn bin)/bats -v
+BATS_BIN = $$(yarn bin)/bats
 
 all: test build lint
 
