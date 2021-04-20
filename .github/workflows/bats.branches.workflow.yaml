@@ -11,10 +11,10 @@ jobs:
       - id: docker_meta
         uses: "crazy-max/ghaction-docker-meta@2e1a5c7fa42123697f82d479b551a1bbdb1bef88"
         with:
-          images: ghcr.io/socialgouv/docker/azure-db
+          images: ghcr.io/socialgouv/docker/bats
           labels: |
-            org.opencontainers.image.title=azure-db
-            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/azure-db
+            org.opencontainers.image.title=bats
+            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/bats
           tags: |
             type=sha
             type=raw,value=sha-${{ github.sha }}
@@ -36,7 +36,7 @@ jobs:
       - name: /tmp/.buildx-cache cache
         uses: "actions/cache@v2"
         with:
-          key: "${{ runner.os }}-buildx-${{ hashFiles('azure-db/Dockerfile') }}"
+          key: "${{ runner.os }}-buildx-${{ hashFiles('bats/Dockerfile') }}"
           path: /tmp/.buildx-cache
           restore-keys: |
             ${{ runner.os }}-buildx-
@@ -47,7 +47,7 @@ jobs:
           builder: "${{ steps.docker_buildx.outputs.name }}"
           cache-from: "type=local,src=/tmp/.buildx-cache"
           cache-to: "type=local,dest=/tmp/.buildx-cache"
-          context: "./azure-db"
+          context: "./bats"
           labels: "${{ steps.docker_meta.outputs.labels }}"
           push: 'true'
           tags: "${{ steps.docker_meta.outputs.tags }}"
@@ -57,7 +57,7 @@ jobs:
       - name: Container structure test
         uses: docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0
         with:
-          args: "test --pull --image ghcr.io/socialgouv/docker/azure-db@${{ steps.docker_push.outputs.digest }} --config azure-db/tests/container-structure-test.yml -v debug"
+          args: "test --pull --image ghcr.io/socialgouv/docker/bats@${{ steps.docker_push.outputs.digest }} --config bats/tests/container-structure-test.yml -v debug"
   integration_test:
     name: Integration test
     needs:
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: make e2e
-        working-directory: azure-db
+        working-directory: bats
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint
@@ -73,22 +73,16 @@ jobs:
     steps:
       - uses: "actions/checkout@v2"
       - run: hadolint ./Dockerfile
-        working-directory: azure-db
+        working-directory: bats
   version_test:
-    container: "docker://ghcr.io/socialgouv/docker/azure-db:sha-${{ github.sha }}"
+    container: "docker://ghcr.io/socialgouv/docker/bats:sha-${{ github.sha }}"
     name: Test Version
     needs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - run: psql --version
       - run: az --version
-      - run: jq --version
-      - run: which create-db-user
-      - run: which drop-db-user
-      - run: which backup
-      - run: which export_from_k8s_secret
-name: "azure-db (branch)"
+name: "azure-cli (branch)"
 on:
   push:
     branches-ignore:
@@ -99,4 +93,4 @@ on:
       - alpha
       - "+([0-9])?(.{+([0-9]),x}).x"
     paths:
-      - "azure-db/**"
+      - "azure-cli/**"

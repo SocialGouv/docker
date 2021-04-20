@@ -7,20 +7,7 @@ let InceptionJob =
 let GithubActions =
       https://raw.githubusercontent.com/regadas/github-actions-dhall/master/package.dhall sha256:fcb7d9f4a23103bd40219f4b92f7ac31d10566ff902d0cb731328d6d455b9ddb
 
-let version_test =
-      InceptionJob
-        { package = "azure-db" }
-        { name = "Test Version"
-        , steps =
-          [ GithubActions.Step::{ run = Some "psql --version" }
-          , GithubActions.Step::{ run = Some "az --version" }
-          , GithubActions.Step::{ run = Some "jq --version" }
-          , GithubActions.Step::{ run = Some "which create-db-user" }
-          , GithubActions.Step::{ run = Some "which drop-db-user" }
-          , GithubActions.Step::{ run = Some "which backup" }
-          , GithubActions.Step::{ run = Some "which export_from_k8s_secret" }
-          ]
-        }
+let name = "bats"
 
 let integration_test =
       GithubActions.Job::{
@@ -30,10 +17,17 @@ let integration_test =
       , steps =
         [ GithubActions.Step::{
           , run = Some "make e2e"
-          , working-directory = Some "azure-db"
+          , working-directory = Some "bats"
           }
         ]
       }
 
+let version_test =
+      InceptionJob
+        { package = name }
+        { name = "Test Version"
+        , steps = [ GithubActions.Step::{ run = Some "az --version" } ]
+        }
+
 in  AssemblyLine.Worklflow
-      { name = "azure-db", jobs = toMap { version_test, integration_test } }
+      { name, jobs = toMap { integration_test, version_test } }

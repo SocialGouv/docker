@@ -1,8 +1,8 @@
 #
 
-COMPOSE_NAME = socialgouv_docker_azure-cli
+COMPOSE_NAME = socialgouv_docker_bats
 DOCKER_COMPOSE = docker-compose -p $(COMPOSE_NAME)
-BATS_BIN = $$(yarn bin)/bats
+BATS_BIN = $$(yarn bin)/bats -v
 
 all: test build lint
 
@@ -12,7 +12,11 @@ lint:
 build: lint
 	$(DOCKER_COMPOSE) build
 
-test: build e2e
+test: build test_structure e2e
+
+test_structure:
+	$(DOCKER_COMPOSE) run --rm test
 
 e2e:
-	$(DOCKER_COMPOSE) run --rm test
+	$(BATS_BIN) tests/*.bats
+

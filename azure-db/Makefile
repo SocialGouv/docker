@@ -12,11 +12,11 @@ lint:
 build: lint
 	$(DOCKER_COMPOSE) build
 
-test: build test_structure test_bats
+test: build test_structure e2e
 
 test_structure:
 	$(DOCKER_COMPOSE) run --rm test
 
-test_bats:
+e2e:
 	$(BATS_BIN) tests/*.bats
 

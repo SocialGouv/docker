@@ -58,6 +58,14 @@ jobs:
         uses: docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0
         with:
           args: "test --pull --image ghcr.io/socialgouv/docker/azure-db@${{ steps.docker_push.outputs.digest }} --config azure-db/tests/container-structure-test.yml -v debug"
+  integration_test:
+    name: Integration test
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - run: make e2e
+        working-directory: azure-db
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint
