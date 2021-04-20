@@ -14,4 +14,17 @@ let version_test =
         , steps = [ GithubActions.Step::{ run = Some "az --version" } ]
         }
 
+let version_test =
+      GithubActions.Job::{
+      , name = Some "Container structure test"
+      , needs = Some [ "Build" ]
+      , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
+      , steps =
+        [ GithubActions.Step::{
+          , run = Some "make test_structure"
+          , working-directory = Some "azure-cli"
+          }
+        ]
+      }
+
 in  AssemblyLine.Worklflow { name = "azure-cli", jobs = toMap { version_test } }
