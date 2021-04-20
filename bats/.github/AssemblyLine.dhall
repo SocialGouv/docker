@@ -16,6 +16,9 @@ let integration_test =
       , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
       , steps =
         [ GithubActions.Step::{
+          , run = Some "yarn --frozen-lockfile --prefer-offline"
+          }
+        , GithubActions.Step::{
           , run = Some "make e2e"
           , working-directory = Some "bats"
           }
