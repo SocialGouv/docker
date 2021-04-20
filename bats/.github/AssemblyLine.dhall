@@ -16,7 +16,11 @@ let integration_test =
       , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
       , services = Some
           ( toMap
-              { postgres = GithubActions.Service::{ image = "postgres:13" } }
+              { postgres = GithubActions.Service::{
+                , image = "postgres:13"
+                , ports = Some [ "5432:5432" ]
+                }
+              }
           )
       , steps =
         [ GithubActions.steps.actions/checkout

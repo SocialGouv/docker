@@ -66,6 +66,8 @@ jobs:
     services:
       postgres:
         image: postgres:13
+        ports:
+          - "5432:5432"
     steps:
       - uses: "actions/checkout@v2"
       - run: yarn --frozen-lockfile --prefer-offline
