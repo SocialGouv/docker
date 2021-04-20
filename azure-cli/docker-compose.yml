@@ -20,7 +20,7 @@ services:
     command: >
       test
       --image socialgouv_docker_azure-cli_alpine
-      --config tests/config.yaml
+      --config tests/container-structure-test.yml
       -v debug
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

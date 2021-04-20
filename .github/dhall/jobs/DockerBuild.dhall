@@ -36,5 +36,16 @@ in  λ(package : Text) →
               echo "''${{ steps.docker_push.outputs.digest }}"
               ''
           }
+        , GithubActions.Step::{
+          , uses = Some
+              "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0"
+          , `with` = Some
+              ( toMap
+                  { args =
+                          "test --image ghcr.io/socialgouv/docker/${package}:sha-\${{ github.sha }}"
+                      ++  " --config ${package}/tests/container-structure-test.yml -v debug"
+                  }
+              )
+          }
         ]
       }
