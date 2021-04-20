@@ -25,6 +25,6 @@ all: assembly_line workflow
 #
 #
 
-#
-#
-#
+.PHONY: azure-cli
+azure-cli:
+	$(MAKE) -C $@

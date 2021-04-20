@@ -1,0 +1,64 @@
+services:
+  alpine:
+    build:
+      context: ./
+    deploy:
+      replicas: 0
+
+  #
+
+  lint:
+    image: hadolint/hadolint:v1.22.1-alpine
+    entrypoint: hadolint
+    command: Dockerfile
+    volumes:
+      - .:/home/socialgouv
+    working_dir: /home/socialgouv
+
+  postgres:
+    image: postgres:11-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 1s
+      timeout: 5s
+      retries: 5
+    ports:
+      - target: 5432
+        published: 5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+
+  test:
+    image: gcr.io/gcp-runtimes/container-structure-test:v1.10.0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      alpine:
+        condition: service_started
+    command: >
+      test
+      --config tests/config.yaml
+      --image socialgouv_docker_azure-db_alpine
+      -v debug
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/home/socialgouv
+    working_dir: /home/socialgouv
+
+  hasura:
+    image: hasura/graphql-engine:v1.1.0
+    healthcheck:
+      test: wget -q --spider http://localhost:8080/healthz
+      interval: 1s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - target: 8080
+        published: 8080
+    environment:
+      - HASURA_GRAPHQL_ENABLE_TELEMETRY=false
+      - HASURA_GRAPHQL_ADMIN_SECRET=secret
+      - HASURA_GRAPHQL_DATABASE_URL=${HASURA_GRAPHQL_DATABASE_URL}

@@ -1,0 +1,37 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "azure-cli version"
+    command: "az"
+    args: ["--version"]
+    expectedOutput: ["azure-cli\\s+\\d+\\.\\d+.*"]
+  - name: "psql version"
+    command: "psql"
+    args: ["--version"]
+    expectedOutput: ["\\d+\\.\\d+.*"]
+  - name: "jq version"
+    command: "jq"
+    args: ["--version"]
+    expectedOutput: ["\\d+\\.\\d+.*"]
+  - name: "create-db-user bin"
+    command: "which"
+    args: ["create-db-user"]
+    expectedOutput: ["/bin/create-db-user"]
+  - name: "drop-db-user bin"
+    command: "which"
+    args: ["drop-db-user"]
+    expectedOutput: ["/bin/drop-db-user"]
+  - name: "backup bin"
+    command: "which"
+    args: ["backup"]
+    expectedOutput: ["/bin/backup"]
+  - name: "export_from_k8s_secret bin"
+    command: "which"
+    args: ["export_from_k8s_secret"]
+    expectedOutput: ["/bin/export_from_k8s_secret"]
+  - name: "kubectl version"
+    command: "kubectl"
+    args: ["version", "--client=true"]
+    expectedOutput:
+      - Client Version
+      - GitVersion:"v\d+.\d+.\d+"

@@ -1,6 +1,6 @@
 #
 
-CPUS ?= $(shell sysctl -n hw.ncpu || echo 4)
+CPUS ?= 4
 MAKEFLAGS += --jobs=$(CPUS)
 
 #
