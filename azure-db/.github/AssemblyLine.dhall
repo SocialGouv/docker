@@ -48,6 +48,7 @@ let integration_test =
         , GithubActions.Step::{
           , run = Some "make e2e"
           , working-directory = Some name
+          , env = Some (toMap { PGHOST = "postgres" })
           }
         ]
       }

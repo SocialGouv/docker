@@ -3,7 +3,7 @@
 load '../../.bats/common.bats.bash'
 
 setup_file() {
-  export PGHOST="localhost"
+  export PGHOST=${PGHOST="localhost"}
   export PGPASSWORD="postgres"
   export PGUSER="postgres"
   export ID="${RANDOM}"
