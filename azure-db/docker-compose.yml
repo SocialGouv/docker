@@ -37,7 +37,7 @@ services:
         condition: service_started
     command: >
       test
-      --config tests/config.yaml
+      --config tests/container-structure-test.yml
       --image socialgouv_docker_azure-db_alpine
       -v debug
     volumes:
