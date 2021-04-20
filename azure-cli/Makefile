@@ -16,6 +16,7 @@ test: build test_structure e2e
 
 test_structure:
 	$(DOCKER_COMPOSE) run --rm test
+
 e2e:
 	$(BATS_BIN) tests/*.bats
 
