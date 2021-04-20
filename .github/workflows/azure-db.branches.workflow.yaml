@@ -57,7 +57,7 @@ jobs:
       - name: Container structure test
         uses: docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0
         with:
-          args: "test --pull --image ghcr.io/socialgouv/docker/azure-db:${{ steps.docker_push.outputs.digest }} --config azure-db/tests/container-structure-test.yml -v debug"
+          args: "test --pull --image ghcr.io/socialgouv/docker/azure-db@${{ steps.docker_push.outputs.digest }} --config azure-db/tests/container-structure-test.yml -v debug"
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint
