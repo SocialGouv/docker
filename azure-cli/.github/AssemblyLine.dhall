@@ -17,13 +17,13 @@ let container_stucture_test =
       , steps =
         [ GithubActions.steps.actions/checkout
         , GithubActions.Step::{
-          , working-directory = Some name
           , uses = Some
               "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0"
           , `with` = Some
               ( toMap
                   { args =
-                      "test --image docker://ghcr.io/socialgouv/docker/azure-cli:sha-\${{ github.sha }} --config tests/config.yaml -v debug"
+                          "test --image docker://ghcr.io/socialgouv/docker/azure-cli:sha-\${{ github.sha }}"
+                      ++  " --config ${name}/tests/config.yaml -v debug"
                   }
               )
           }
