@@ -45,7 +45,7 @@ in  λ(package : Text) →
                   { args =
                           "test"
                       ++  " --pull"
-                      ++  " --image ghcr.io/socialgouv/docker/${package}:sha-\${{ github.sha }}"
+                      ++  " --image ghcr.io/socialgouv/docker/${package}:\${{ steps.docker_push.outputs.digest }}"
                       ++  " --config ${package}/tests/container-structure-test.yml -v debug"
                   }
               )
