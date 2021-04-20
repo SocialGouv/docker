@@ -12,13 +12,14 @@ let container_stucture_test =
       , name = Some "Container structure"
       , needs = Some [ "Build" ]
       , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
-      , container = Some "gcr.io/gcp-runtimes/container-structure-test:v1.10.0"
       , steps =
         [ GithubActions.steps.actions/checkout
         , GithubActions.Step::{
           , run = Some
               "test --image docker://ghcr.io/socialgouv/docker/azure-cli:sha-\${{ github.sha }} --config tests/config.yaml -v debug"
           , working-directory = Some "azure-cli"
+          , uses = Some
+              "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0"
           }
         ]
       }
