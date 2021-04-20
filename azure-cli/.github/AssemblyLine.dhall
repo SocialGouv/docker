@@ -7,6 +7,8 @@ let InceptionJob =
 let GithubActions =
       https://raw.githubusercontent.com/regadas/github-actions-dhall/master/package.dhall sha256:fcb7d9f4a23103bd40219f4b92f7ac31d10566ff902d0cb731328d6d455b9ddb
 
+let name = "azure-cli"
+
 let container_stucture_test =
       GithubActions.Job::{
       , name = Some "Container structure"
@@ -15,23 +17,25 @@ let container_stucture_test =
       , steps =
         [ GithubActions.steps.actions/checkout
         , GithubActions.Step::{
-          , run = Some
-              "test --image docker://ghcr.io/socialgouv/docker/azure-cli:sha-\${{ github.sha }} --config tests/config.yaml -v debug"
-          , working-directory = Some "azure-cli"
+          , working-directory = Some name
           , uses = Some
               "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0"
+          , `with` = Some
+              ( toMap
+                  { args =
+                      "test --image docker://ghcr.io/socialgouv/docker/azure-cli:sha-\${{ github.sha }} --config tests/config.yaml -v debug"
+                  }
+              )
           }
         ]
       }
 
 let version_test =
       InceptionJob
-        { package = "azure-cli" }
+        { package = name }
         { name = "Test Version"
         , steps = [ GithubActions.Step::{ run = Some "az --version" } ]
         }
 
 in  AssemblyLine.Worklflow
-      { name = "azure-cli"
-      , jobs = toMap { container_stucture_test, version_test }
-      }
+      { name, jobs = toMap { container_stucture_test, version_test } }
