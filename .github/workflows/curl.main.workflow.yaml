@@ -63,7 +63,7 @@ jobs:
       - name: Container structure test
         uses: "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0@sha256:78c0abfdc3696ec9fb35840d62342cf28f65d890d56beceb2113638d59f2cce8"
         with:
-          args: "test   --config curl/tests/container-structure-test.yml -v debug --image ghcr.io/socialgouv/docker/curl@${{ steps.docker_push.outputs.digest }} --pull"
+          args: "test   --config curl/tests/container-structure-test.yml -v debug --image ghcr.io/socialgouv/docker/curl@${{ needs.Build.outputs.digest }} --pull"
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint

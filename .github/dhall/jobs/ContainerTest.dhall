@@ -14,7 +14,7 @@ let ContainerTest =
           [ SocailGouvSteps.container-structure-test.`v1.10.0`
               (     " "
                 ++  " --config ${args_0.package}/tests/container-structure-test.yml -v debug"
-                ++  " --image ghcr.io/socialgouv/docker/${args_0.package}@\${{ steps.docker_push.outputs.digest }}"
+                ++  " --image ghcr.io/socialgouv/docker/${args_0.package}@\${{ needs.Build.outputs.digest }}"
                 ++  " --pull"
               )
           ]
@@ -31,7 +31,7 @@ let __test__foo =
             [ SocailGouvSteps.container-structure-test.`v1.10.0`
                 (     " "
                   ++  " --config foo/tests/container-structure-test.yml -v debug"
-                  ++  " --image ghcr.io/socialgouv/docker/foo@\${{ steps.docker_push.outputs.digest }}"
+                  ++  " --image ghcr.io/socialgouv/docker/foo@\${{ needs.Build.outputs.digest }}"
                   ++  " --pull"
                 )
             ]

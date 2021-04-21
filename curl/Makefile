@@ -1,6 +1,6 @@
 #
 
-COMPOSE_NAME = socialgouv_docker_bats
+COMPOSE_NAME = socialgouv_docker_curl
 DOCKER_COMPOSE = docker-compose -p $(COMPOSE_NAME)
 BATS_BIN = $$(yarn bin)/bats
 
