@@ -5,7 +5,7 @@ let ContainerTestJob =
       ../jobs/ContainerTest.dhall sha256:bc34ac8b31da3add3f42e2db6d33bd4155c3c9e34c0e0d8bdec9ebec2aee2d34
 
 let DockerBuildJob =
-      ../jobs/DockerBuild.dhall sha256:8482bfbd94685ec84f1b4a14f58a19055f0d474f48e62710e61f254fdf8a092b
+      ../jobs/DockerBuild.dhall sha256:e3bf6f2874c4a12ef25d80fe852eefbced92d54ae602ff4ba1e69c579f483a97
 
 let HadolintJob =
       ../jobs/Hadolint.dhall sha256:ca8c9ba040b31d16e878791b5c9abcfbfb42386f55845043f54c24b4181e99f3

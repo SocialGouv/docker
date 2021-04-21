@@ -1,5 +1,5 @@
 let AssemblyLine =
-      ../../.github/dhall/workflows/AssemblyLine.dhall sha256:7bc3633d7dbced459f89fb9b780beb0202f576e10647dee1d4162992bda03017
+      ../../.github/dhall/workflows/AssemblyLine.dhall sha256:1b6d558800e840be4cc85348d5fed5fe3dd2c4cb7c1db9060655ea2124ab4de0
 
 let InceptionJob =
       ../../.github/dhall/jobs/Inception.dhall sha256:65a7d0afb9febb7af474404b75696831c58e9fe7008b8643fd82b543e37b5a21
