@@ -4,7 +4,7 @@ jobs:
     needs:
       - Lint
     outputs:
-      digest: "${{ steps.docker_meta.outputs.digest }}"
+      digest: "${{ steps.docker_push.outputs.digest }}"
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v2"

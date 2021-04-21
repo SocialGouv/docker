@@ -10,7 +10,7 @@ in  λ(package : Text) →
       , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
       , needs = Some [ "Lint" ]
       , outputs = Some
-          (toMap { digest = "\${{ steps.docker_meta.outputs.digest }}" })
+          (toMap { digest = "\${{ steps.docker_push.outputs.digest }}" })
       , steps =
         [ GithubActions.steps.actions/checkout
         ,   SocailGouvSteps.docker-meta { image_name = package }
