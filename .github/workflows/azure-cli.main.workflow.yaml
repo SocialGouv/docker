@@ -54,10 +54,16 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+  container_test:
+    name: Container Test
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
       - name: Container structure test
-        uses: docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0
+        uses: "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0@sha256:78c0abfdc3696ec9fb35840d62342cf28f65d890d56beceb2113638d59f2cce8"
         with:
-          args: "test --pull --image ghcr.io/socialgouv/docker/azure-cli@${{ steps.docker_push.outputs.digest }} --config azure-cli/tests/container-structure-test.yml -v debug"
+          args: "test   --config azure-cli/tests/container-structure-test.yml -v debug --image ghcr.io/socialgouv/docker/azure-cli@${{ steps.docker_push.outputs.digest }} --pull"
   lint:
     container: hadolint/hadolint:v1.22.1-alpine
     name: Lint

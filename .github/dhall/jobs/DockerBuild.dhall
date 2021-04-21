@@ -2,7 +2,7 @@ let GithubActions =
       https://raw.githubusercontent.com/regadas/github-actions-dhall/master/package.dhall sha256:fcb7d9f4a23103bd40219f4b92f7ac31d10566ff902d0cb731328d6d455b9ddb
 
 let SocailGouvSteps =
-      ../socialgouv/steps.dhall sha256:5dede8dddb03e722e277e3b9b644e7331fdaec83b86b791b50b2f6f2792b5b73
+      ../socialgouv/steps.dhall sha256:4428b6517f7b8677a4b93205111c25ae9c2010428677c1b198d5d690216f28e5
 
 in  λ(package : Text) →
       GithubActions.Job::{
@@ -35,20 +35,6 @@ in  λ(package : Text) →
               ''
               echo "''${{ steps.docker_push.outputs.digest }}"
               ''
-          }
-        , GithubActions.Step::{
-          , name = Some "Container structure test"
-          , uses = Some
-              "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0"
-          , `with` = Some
-              ( toMap
-                  { args =
-                          "test"
-                      ++  " --pull"
-                      ++  " --image ghcr.io/socialgouv/docker/${package}@\${{ steps.docker_push.outputs.digest }}"
-                      ++  " --config ${package}/tests/container-structure-test.yml -v debug"
-                  }
-              )
           }
         ]
       }
