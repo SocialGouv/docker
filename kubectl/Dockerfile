@@ -1,7 +1,7 @@
 FROM alpine:3.13
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=v1.20.5
+ARG KUBECTL_VERSION=v1.21.0
 
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize versioning=loose
 ARG KUSTOMIZE_VERSION=kustomize/v3.5.2
