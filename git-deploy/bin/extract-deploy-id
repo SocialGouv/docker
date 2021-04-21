@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 
 CACHE_RESPONSE=${CACHE_RESPONSE:="/tmp/deploy_payload.json"}
