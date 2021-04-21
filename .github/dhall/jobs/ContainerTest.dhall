@@ -11,7 +11,8 @@ let ContainerTest =
         , needs = Some [ "Build" ]
         , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
         , steps =
-          [ SocailGouvSteps.container-structure-test.`v1.10.0`
+          [ GithubActions.steps.actions/checkout
+          , SocailGouvSteps.container-structure-test.`v1.10.0`
               (     " "
                 ++  " --config ${args_0.package}/tests/container-structure-test.yml -v debug"
                 ++  " --image ghcr.io/socialgouv/docker/${args_0.package}@\${{ needs.Build.outputs.digest }}"
@@ -28,7 +29,8 @@ let __test__foo =
           , needs = Some [ "Build" ]
           , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
           , steps =
-            [ SocailGouvSteps.container-structure-test.`v1.10.0`
+            [ GithubActions.steps.actions/checkout
+            , SocailGouvSteps.container-structure-test.`v1.10.0`
                 (     " "
                   ++  " --config foo/tests/container-structure-test.yml -v debug"
                   ++  " --image ghcr.io/socialgouv/docker/foo@\${{ needs.Build.outputs.digest }}"

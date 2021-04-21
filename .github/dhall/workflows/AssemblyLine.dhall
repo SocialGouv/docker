@@ -2,7 +2,7 @@ let GithubActions =
       https://raw.githubusercontent.com/regadas/github-actions-dhall/master/package.dhall sha256:fcb7d9f4a23103bd40219f4b92f7ac31d10566ff902d0cb731328d6d455b9ddb
 
 let ContainerTestJob =
-      ../jobs/ContainerTest.dhall sha256:732eac3e5a7e3724d8cf7f74dcf49fd4ea00b472c36c3e0f6ab1cb77da3339f3
+      ../jobs/ContainerTest.dhall sha256:bc34ac8b31da3add3f42e2db6d33bd4155c3c9e34c0e0d8bdec9ebec2aee2d34
 
 let DockerBuildJob =
       ../jobs/DockerBuild.dhall sha256:8482bfbd94685ec84f1b4a14f58a19055f0d474f48e62710e61f254fdf8a092b
