@@ -1,0 +1,33 @@
+services:
+  alpine:
+    build:
+      context: ./
+    deploy:
+      replicas: 0
+
+  #
+
+  lint:
+    image: hadolint/hadolint:v1.22.1-alpine
+    entrypoint: hadolint
+    command: Dockerfile
+    volumes:
+      - .:/home/socialgouv
+    working_dir: /home/socialgouv
+
+  #
+
+  test:
+    image: gcr.io/gcp-runtimes/container-structure-test:v1.10.0
+    depends_on:
+      alpine:
+        condition: service_started
+    command: >
+      test
+      --config tests/container-structure-test.yml
+      --image socialgouv_docker_kosko_alpine
+      -v debug
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/home/socialgouv
+    working_dir: /home/socialgouv

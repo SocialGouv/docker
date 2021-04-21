@@ -7,17 +7,13 @@ let InceptionJob =
 let GithubActions =
       https://raw.githubusercontent.com/regadas/github-actions-dhall/master/package.dhall sha256:fcb7d9f4a23103bd40219f4b92f7ac31d10566ff902d0cb731328d6d455b9ddb
 
-let name = "dhall"
+let name = "kosko"
 
 let version_test =
       InceptionJob
         { package = name }
         { name = "Test Version"
-        , steps =
-          [ GithubActions.Step::{ run = Some "dhall --version" }
-          , GithubActions.Step::{ run = Some "dhall-to-json --version" }
-          , GithubActions.Step::{ run = Some "dhall-to-yaml --version" }
-          ]
+        , steps = [ GithubActions.Step::{ run = Some "kosko --version" } ]
         }
 
 in  AssemblyLine.Worklflow { name, jobs = toMap { version_test } }
