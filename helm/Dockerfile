@@ -5,7 +5,7 @@ FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats:4.9.0 AS bats
 
 #
 
-FROM alpine/helm:3.5.2
+FROM alpine/helm:3.5.4
 
 ARG HELM_CHART_VERSION
 ENV HELM_CHART_VERSION=${HELM_CHART_VERSION}
