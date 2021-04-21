@@ -34,4 +34,4 @@ commandTests:
     args: ["version", "--client=true"]
     expectedOutput:
       - Client Version
-      - GitVersion:"v\d+.\d+.\d+"
+      - GitVersion:"v\d+\.\d+\.\d+"

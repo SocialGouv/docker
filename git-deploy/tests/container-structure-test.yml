@@ -1,0 +1,19 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "curl version"
+    command: "curl"
+    args: ["--version"]
+    expectedOutput: ["curl\\s+\\d+\\.\\d+\\.\\d+"]
+  - name: "create-deployment bin"
+    command: "which"
+    args: ["create-deployment"]
+    expectedOutput: ["/bin/create-deployment"]
+  - name: "extract-deploy-id bin"
+    command: "which"
+    args: ["extract-deploy-id"]
+    expectedOutput: ["/bin/extract-deploy-id"]
+  - name: "update-deployment bin"
+    command: "which"
+    args: ["update-deployment"]
+    expectedOutput: ["/bin/update-deployment"]

@@ -22,6 +22,7 @@ fi
 
 if [[ -n "${PRODUCTION+x}" ]]; then
   ENVIRONMENT=production
+  TRANSIENT_ENVIRONMENT=false
   PRODUCTION_ENVIRONMENT=true
 fi
 
