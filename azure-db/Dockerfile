@@ -3,7 +3,7 @@
 FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:4.9.0 AS kubectl-image
 FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:4.9.0 AS azure-cli-image
 
-FROM debian:10.8-slim
+FROM debian:10.9-slim
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=azure-cli-image /usr/bin/az /usr/bin/az

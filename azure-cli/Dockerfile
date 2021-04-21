@@ -1,5 +1,5 @@
 
-FROM debian:10.8-slim
+FROM debian:10.9-slim
 
 # renovate: datasource=repology depName=debian_stable/ca-certificates versioning=loose
 ARG CA_CERTIFICATES_VERSION=20200601~deb10u2
