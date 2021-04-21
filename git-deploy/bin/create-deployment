@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu -o pipefail
+set -eu
 
 CI_COMMIT_TAG=${CI_COMMIT_TAG:=""}
 
@@ -22,7 +22,6 @@ fi
 
 if [[ -n "${PRODUCTION+x}" ]]; then
   ENVIRONMENT=production
-  TRANSIENT_ENVIRONMENT=false
   PRODUCTION_ENVIRONMENT=true
 fi
 
