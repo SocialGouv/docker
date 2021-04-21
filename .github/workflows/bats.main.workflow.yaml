@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: bats --version
-name: "azure-cli (main)"
+name: "bats (main)"
 on:
   push:
     branches:

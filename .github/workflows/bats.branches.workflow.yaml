@@ -84,7 +84,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: bats --version
-name: "azure-cli (branch)"
+name: "bats (branch)"
 on:
   push:
     branches-ignore:
@@ -95,4 +95,4 @@ on:
       - alpha
       - "+([0-9])?(.{+([0-9]),x}).x"
     paths:
-      - "azure-cli/**"
+      - "bats/**"
