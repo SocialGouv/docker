@@ -3,7 +3,7 @@ include:
     file: /base_semantic_release_stage.yml
     ref: v22.0.0
   - project: SocialGouv/gitlab-ci-yml
-    file: /base_register_stage.yml
+    file: /base_register_docker_stage.yml
     ref: v22.0.0
   #
   - /azure-cli/.gitlab-ci.yml
