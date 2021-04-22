@@ -9,7 +9,7 @@
 Lint nginx4spa:
   stage: "Quality"
   extends: .change_rules_nginx4pa
-  image: hadolint/hadolint:v1.23.0-debian
+  image: hadolint/hadolint:v2.3.0-debian
   script:
     - hadolint ./nginx4spa/Dockerfile
 
