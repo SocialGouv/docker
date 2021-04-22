@@ -10,8 +10,8 @@ ARG CURL_VERSION=7.64.0-4+deb10u2
 # renovate: datasource=repology depName=debian_stable/gnupg versioning=loose
 ARG GNUPG_VERSION=2.2.12-1+deb10u1
 
-# renovate: datasource=pypi depName=azure-cli versioning=2.20.0
-ARG AZURE_CLI_VERSION=2.20.0
+# renovate: datasource=pypi depName=azure-cli versioning=2.22.1
+ARG AZURE_CLI_VERSION=2.22.1
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
