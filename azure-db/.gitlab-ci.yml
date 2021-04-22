@@ -114,12 +114,7 @@ Test azure-db 2 3:
       --publish 8080:8080
       --rm
       hasura/graphql-engine:v1.1.0
-    - |-
-      retry=10;
-      while
-        ! wget -q --spider "localhost:8080/v1/version" &&
-        [[ $(( retry-- )) -gt 0 ]];
-      do echo "Waiting for Hasura ($retry)" ; sleep 1 ; done
+    - timeout 60s bash -c "until wget -q --spider "localhost:8080/v1/version"; do sleep 1 ; done"
     #
     - wget -qO- localhost:8080/v1/version
     - docker ps
