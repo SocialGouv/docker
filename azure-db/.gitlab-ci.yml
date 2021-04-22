@@ -69,6 +69,7 @@ Test azure-db 2 3:
     DROP_USER: test_user_${CI_JOB_ID}
     DROP_DATABASE: test_db_${CI_JOB_ID}
   script:
+    - apk add --update coreutils
     - docker pull ${CI_REGISTRY_IMAGE}/azure-db:${CI_COMMIT_SHA}
     #
     #
