@@ -1,3 +1,10 @@
+# [6.0.0-beta.3](https://github.com/SocialGouv/docker/compare/v6.0.0-beta.2...v6.0.0-beta.3) (2021-04-23)
+
+
+### Bug Fixes
+
+* **release:** ask github to build the self made refs ([2502b7a](https://github.com/SocialGouv/docker/commit/2502b7a691be947d67e62bc39ba31450f92ef06c))
+
 # [6.0.0-beta.2](https://github.com/SocialGouv/docker/compare/v6.0.0-beta.1...v6.0.0-beta.2) (2021-04-23)
 
 
