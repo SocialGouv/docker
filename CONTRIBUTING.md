@@ -1,5 +1,27 @@
 # Contributing to SocialGouv/docker
 
+## DevExp
+
+We use nodejs tools to help developing, testing the images.
+
+```sh
+# Install all with
+$ yarn
+```
+
+**NOTE**: You might need to manualy install `dhall` and `postgres-client` on your computeur for now...
+
+We use `Makefile` to orchestrator the whole monorepo.
+
+```sh
+$ make
+# Will deal with all the workflow
+
+$ cd <package>
+$ make
+# Will deal with one package build and tests
+```
+
 ## Create a new image
 
 1. Create a folder with the image name (example: foo)
@@ -17,31 +39,21 @@ $ mkdir foo
    You can follow the [`wait-for-postgres/Makefile` as model](./wait-for-postgres/Makefile).
 1. Add a `Makefile` to specify how to make the image  
    You can follow the [`wait-for-postgres/Makefile` as model](./wait-for-postgres/Makefile).
-1. Add a `docker-compose.yml` with a `.env` handle docker configurations
-   We name the service with the distro used as from for the image
-   You can follow the [`wait-for-postgres/docker-compose.yml` as model](./wait-for-postgres/docker-compose.yml) and[`wait-for-postgres/.env` as model](./wait-for-postgres/.env).
+1. Add a `docker-compose.yml` with a `.env` handle docker configurations  
+   We name the service with the distro used as from for the image  
+   You can follow the [`wait-for-postgres/docker-compose.yml` as model](./wait-for-postgres/docker-compose.yml) and[`wait-for-postgres/.env` as model](./wait-for-postgres/.env).  
    Note that there is an additional service `postgres` used for tests here
-1. Add [container structure test](https://github.com/GoogleContainerTools/container-structure-test/)
-   We ensure that the built image is well made :)
+1. Add [container structure test](https://github.com/GoogleContainerTools/container-structure-test/)  
+   We ensure that the built image is well made :)  
    You can follow the [`wait-for-postgres/tests/container-structure-test.yml` as model](./wait-for-postgres/tests/container-structure-test.yml)
-1. Add [bats](https://github.com/bats-core/bats-core) integration test
-   Additional config and binaries can be tested
-   You can follow the [`wait-for-postgres/docker-compose.yml` as model](./wait-for-postgres/docker-compose.yml) and[`wait-for-postgres/.env` as model](./wait-for-postgres/.env).
+1. Add [bats](https://github.com/bats-core/bats-core) integration test  
+   Additional config and binaries can be tested with bats files in the `tests` folder  
+   You can follow the [`wait-for-postgres/docker-compose.yml` as model](./wait-for-postgres/docker-compose.yml) and[`wait-for-postgres/.env` as model](./wait-for-postgres/.env).  
    Note that there is an additional service `postgres` used for tests here
-1. Add a `.github` to specify the image tests  
-   Ensure to add a test right from the start with in a local `.github`.  
+1. Add a `.github` folder with the dhall config to generate the workflow
+   Ensure to build your image on the main branches to be release friendly.  
+   Over branches can only focus on what you changed.  
    You can follow the [`wait-for-postgres/.github` as model](./wait-for-postgres/.github).
-1. Include this local `.gitlab-ci.yml` in the includes of [the root `.gitlab-ci.yml`](./.gitlab-ci.yml).
-
-## Git Hooks Setup
-
-```sh
-# Initial setup
-$ npx @husky/init
-
-# Install
-$ yarn install --no-lockfile
-```
 
 ## Test
 
