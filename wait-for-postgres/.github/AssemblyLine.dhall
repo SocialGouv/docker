@@ -30,8 +30,8 @@ let integration_test =
           , name = Some "Install Psql utility"
           , run = Some
               ''
-              apt-get update
-              apt-get install --yes --no-install-recommends postgresql-client
+              sudo apt-get update
+              sudo apt-get install --yes --no-install-recommends postgresql-client
               ''
           }
         , GithubActions.Step::{
