@@ -8,4 +8,6 @@ RUN git clone --depth 1 --branch ${K8S_VERSION} https://github.com/SocialGouv/k8
 
 WORKDIR /k8s/.k8s
 
-RUN yarn install --frozen-lockfile --production --cache-folder /dev/shm/yarn
+RUN --mount=type=bind,target=.,rw \
+  --mount=type=cache,target=/k8s/.k8s/node_modules \
+  yarn install --frozen-lockfile --production && yarn cache clean
