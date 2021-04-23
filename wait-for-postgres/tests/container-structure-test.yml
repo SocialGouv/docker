@@ -1,0 +1,11 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "psql version"
+    command: "psql"
+    args: ["--version"]
+    expectedOutput: ["psql \\(PostgreSQL\\) 11\\.\\d+"]
+  - name: "wait-for-postgres bin"
+    command: "which"
+    args: ["wait-for-postgres"]
+    expectedOutput: ["/bin/wait-for-postgres"]
