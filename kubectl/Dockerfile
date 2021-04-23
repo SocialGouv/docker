@@ -12,7 +12,7 @@ RUN set -ex \
     bash=~5 \
     coreutils=~8 \
     gettext=~0 \
-    jq \
+    jq=~1 \
   #
   && wget -O /dev/shm/kubectl \
     "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
