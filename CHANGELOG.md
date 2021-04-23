@@ -1,3 +1,10 @@
+# [6.0.0-beta.2](https://github.com/SocialGouv/docker/compare/v6.0.0-beta.1...v6.0.0-beta.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* **release:** force patch ([27ec2a1](https://github.com/SocialGouv/docker/commit/27ec2a1447fc2404f283fff45db3ae9b8fb243db))
+
 # [6.0.0-beta.1](https://github.com/SocialGouv/docker/compare/v5.1.0-beta.1...v6.0.0-beta.1) (2021-04-23)
 
 
