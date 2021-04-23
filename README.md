@@ -30,20 +30,21 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 
 ## Images
 
-| Project                | Image                                                                                           | Links                                                                                       |
-| ---------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **azure-db**           | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:5.0.1`           | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)           |
-| **curl**               | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/curl:5.0.1`               | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)               |
-| **dhall**              | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/dhall:5.0.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)              |
-| **git-deploy**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/git-deploy:5.0.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)         |
-| **kosko**              | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko:5.0.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)              |
-| **kubectl**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:5.0.1`            | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)            |
-| **nginx4spa**          | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:5.0.1`          | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)          |
-| **puppeteer**          | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:5.0.1`          | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)          |
-| **puppeteer-mongo-pg** | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer-mongo-pg:5.0.1` | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer-mongo-pg/README.md) |
-| **wait-for-postgres**  | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:5.0.1`  | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md)  |
-| **wait-for-http**      | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-http:5.0.1`      | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)      |
-| **no-k8s**             | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/no-k8s:5.0.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./no-k8s/README.md)             |
+| Project               | Image                                                                                          | Links                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **azure-cli**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:5.0.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./azure-cli/README.md)         |
+| **azure-db**          | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:5.0.1`          | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)          |
+| **curl**              | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/curl:5.0.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)              |
+| **bats**              | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/bats:5.0.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
+| **dhall**             | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/dhall:5.0.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
+| **git-deploy**        | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/git-deploy:5.0.1`        | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)        |
+| **kosko**             | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko:5.0.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)             |
+| **kubectl**           | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:5.0.1`           | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)           |
+| **nginx4spa**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:5.0.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
+| **no-k8s**            | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/no-k8s:5.0.1`            | [![README](https://img.shields.io/badge/README--green.svg)](./no-k8s/README.md)            |
+| **puppeteer**         | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/puppeteer:5.0.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)         |
+| **wait-for-http**     | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-http:5.0.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)     |
+| **wait-for-postgres** | `docker pull registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:5.0.1` | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md) |
 
 <br>
 <br>
@@ -51,12 +52,6 @@ $ docker pull docker.pkg.github.com/socialgouv/docker/<image>:<version>
 <br>
 
 ## Release policy
-
-### One click semantic release !
-
-[On a successful `master` branch pipeline click on trigger the `Release` job.](https://gitlab.factory.social.gouv.fr/SocialGouv/docker/pipelines)
-
-### Manual
 
 We mainly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our releases.
 You need an [Github token](https://github.com/settings/tokens/new) to release.
