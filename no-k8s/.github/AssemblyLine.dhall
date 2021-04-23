@@ -13,7 +13,12 @@ let version_test =
       InceptionJob
         { package = name }
         { name = "Test Version"
-        , steps = [ GithubActions.Step::{ run = Some "cat package.json" } ]
+        , steps =
+          [ GithubActions.Step::{
+            , run = Some "cat package.json"
+            , working-directory = Some "/k8s/.k8s"
+            }
+          ]
         }
 
 in  AssemblyLine.Worklflow { name, jobs = toMap { version_test } }

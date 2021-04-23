@@ -81,6 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: cat package.json
+        working-directory: /k8s/.k8s
 name: "no-k8s (main)"
 on:
   push:
