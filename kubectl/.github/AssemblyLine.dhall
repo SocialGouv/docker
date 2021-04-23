@@ -13,7 +13,8 @@ let version_test =
       InceptionJob
         { package = name }
         { name = "Test Version"
-        , steps = [ GithubActions.Step::{ run = Some "kubectl --version" } ]
+        , steps =
+          [ GithubActions.Step::{ run = Some "kubectl version --client=true" } ]
         }
 
 in  AssemblyLine.Worklflow { name, jobs = toMap { version_test } }
