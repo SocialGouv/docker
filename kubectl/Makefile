@@ -1,7 +1,6 @@
 #
 
-COMPOSE_NAME = socialgouv_docker_kubectl
-DOCKER_COMPOSE = COMPOSE_NAME=$(COMPOSE_NAME) docker-compose
+DOCKER_COMPOSE = docker-compose
 BATS_BIN = $$(yarn bin)/bats
 
 all: test build lint

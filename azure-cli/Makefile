@@ -1,7 +1,6 @@
 #
 
-COMPOSE_NAME = socialgouv_docker_azure-cli
-DOCKER_COMPOSE = docker-compose -p $(COMPOSE_NAME)
+DOCKER_COMPOSE = docker-compose
 BATS_BIN = $$(yarn bin)/bats
 
 all: test build lint

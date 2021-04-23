@@ -38,7 +38,7 @@ services:
     command: >
       test
       --config tests/container-structure-test.yml
-      --image socialgouv_docker_azure-db_alpine
+      --image ${COMPOSE_PROJECT_NAME}_alpine
       -v debug
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

@@ -19,7 +19,7 @@ services:
       - alpine
     command: >
       test
-      --image socialgouv_docker_azure-cli_alpine
+      --image ${COMPOSE_PROJECT_NAME}_alpine
       --config tests/container-structure-test.yml
       -v debug
     volumes:
