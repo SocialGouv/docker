@@ -36,10 +36,10 @@ jobs:
       - name: /tmp/.buildx-cache cache
         uses: "actions/cache@v2"
         with:
-          key: "${{ runner.os }}-buildx-${{ hashFiles('curl/Dockerfile') }}"
+          key: "${{ runner.os }}-curl-buildx-${{ hashFiles('curl/Dockerfile') }}"
           path: /tmp/.buildx-cache
           restore-keys: |
-            ${{ runner.os }}-buildx-
+            ${{ runner.os }}-curl-buildx-
       - id: docker_push
         name: Push
         uses: "docker/build-push-action@e1b7f96249f2e4c8e4ac1519b9608c0d48944a1f"

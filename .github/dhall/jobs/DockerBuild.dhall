@@ -19,7 +19,7 @@ in  λ(package : Text) →
         , SocailGouvSteps.docker-login
         , GithubActions.steps.actions/cache
             { path = "/tmp/.buildx-cache"
-            , key = "buildx"
+            , key = "${package}-buildx"
             , hashFiles = [ "${package}/Dockerfile" ]
             }
         ,   SocailGouvSteps.docker-build-push
