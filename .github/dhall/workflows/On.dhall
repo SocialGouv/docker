@@ -42,7 +42,12 @@ let handled_events =
       { FeatureBranches = λ(path : Text) → feature_branches path
       , ReleasesBranches =
           λ(_ : Text) →
-            On::{ push = Some Push::{ branches = Some releases_branches } }
+            On::{
+            , push = Some Push::{
+              , branches = Some releases_branches
+              , tags = Some [ "v*" ]
+              }
+            }
       }
 
 let match = λ(event : Event) → merge handled_events event
