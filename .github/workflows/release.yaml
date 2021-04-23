@@ -16,9 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Semantic Release
-        if: |
-          github.event_name == 'push' &&
-          github.repository == 'SocialGouv/docker'
         uses: cycjimmy/semantic-release-action@v2
         with:
           extra_plugins: |
