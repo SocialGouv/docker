@@ -27,6 +27,14 @@ let integration_test =
       , steps =
         [ GithubActions.steps.actions/checkout
         , GithubActions.Step::{
+          , name = Some "Install Psql utility"
+          , run = Some
+              ''
+              apt-get update
+              apt-get install --yes --no-install-recommends postgresql-client
+              ''
+          }
+        , GithubActions.Step::{
           , run = Some "yarn --frozen-lockfile --prefer-offline"
           }
         , GithubActions.Step::{
