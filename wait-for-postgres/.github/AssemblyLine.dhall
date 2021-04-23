@@ -31,7 +31,7 @@ let integration_test =
           , run = Some
               ''
               sudo apt-get update
-              sudo apt-get install --yes --no-install-recommends postgresql-client
+              sudo apt-get install --yes --no-install-recommends postgresql
               ''
           }
         , GithubActions.Step::{

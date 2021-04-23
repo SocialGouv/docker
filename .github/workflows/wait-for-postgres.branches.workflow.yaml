@@ -75,7 +75,7 @@ jobs:
       - name: Install Psql utility
         run: |
           sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends postgresql-client
+          sudo apt-get install --yes --no-install-recommends postgresql
       - run: yarn --frozen-lockfile --prefer-offline
       - run: make e2e
         working-directory: wait-for-postgres
