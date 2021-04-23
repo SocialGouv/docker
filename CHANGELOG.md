@@ -1,3 +1,39 @@
+# [6.0.0-beta.1](https://github.com/SocialGouv/docker/compare/v5.1.0-beta.1...v6.0.0-beta.1) (2021-04-23)
+
+
+* refactor!: use GitHub Registry and CI as default ([542176e](https://github.com/SocialGouv/docker/commit/542176e5c6470bf12d048dd6d6335c429132923e))
+
+
+### BREAKING CHANGES
+
+* the `registry.gitlab.factory.social.gouv.fr/socialgouv/docker/*` is deprecated.
+
+The image have to be pulled from `ghcr.io/socialgouv/docker/*`.
+See our public package page :
+https://github.com/orgs/SocialGouv/packages?tab=packages&ecosystem=container&q=docker/
+
+Publiched images :
+- [x] azure-cli
+- [x] azure-db
+- [x] bats
+- [x] curl
+- [x] dhall
+- [x] git-deploy
+- [x] kosko
+- [x] kubectl
+- [x] nginx4spa
+- [x] no-k8s
+- [x] puppeteer
+- [x] wait-for-http
+- [x] wait-for-postgres
+* We removed unused images
+
+Removed images :
+- [x] puppeteer-mongo-pg
+- [x] git-tag-release
+- [x] helm
+- [x] k8s-object-cleaner
+
 # [5.1.0-beta.1](https://github.com/SocialGouv/docker/compare/v5.0.1...v5.1.0-beta.1) (2021-04-23)
 
 
