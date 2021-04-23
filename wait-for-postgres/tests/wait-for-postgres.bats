@@ -35,25 +35,12 @@ teardown_file() {
   export PGHOST="unknow_host"
   run wait-for-postgres
 
-  assert_output - <<STDIN
-psql: error: could not translate host name "unknow_host" to address: Name or service not known
-
-⏳ Waiting for Postgres to go Green (0 left)
-
-
-
-PGHOST: unknow_host
-PGDATABASE: postgres
-PGUSER: postgres
-
-psql: error: could not translate host name "unknow_host" to address: Name or service not known
-
-😓 Cannot connect to the Postgres server
-
-PGHOST: unknow_host
-PGDATABASE: postgres
-PGUSER: postgres
-STDIN
+  assert_output --partial 'psql: error: could not translate host name "unknow_host" to address'
+  assert_output --partial "⏳ Waiting for Postgres to go Green (0 left)"
+  assert_output --partial "😓 Cannot connect to the Postgres server"
+  assert_output --partial "PGHOST: unknow_host"
+  assert_output --partial "PGDATABASE: postgres"
+  assert_output --partial "PGUSER: postgres"
   assert_failure 2
 }
 
