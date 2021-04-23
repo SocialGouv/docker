@@ -5,4 +5,4 @@ commandTests:
     command: "curl"
     args: ["--version"]
     expectedOutput:
-      - "curl \\d+.\\d+.\\d+"
+      - "curl 7.\\d+.\\d+"

@@ -1,0 +1,11 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "curl version"
+    command: "curl"
+    args: ["--version"]
+    expectedOutput: ["curl 7\\.\\d+.*"]
+  - name: "wait-for-http bin"
+    command: "which"
+    args: ["wait-for-http"]
+    expectedOutput: ["/bin/wait-for-http"]
