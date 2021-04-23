@@ -15,7 +15,11 @@ ARG AZURE_CLI_VERSION=2.22.1
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
-RUN set -x \
+RUN --mount=type=cache,target=/var/cache/apt \
+  --mount=type=cache,target=/var/lib/apt \
+  --mount=type=cache,target=/var/cache/debconf \
+  \
+  set -x \
   #
   && apt-get update \
   && apt-get install -y --no-install-recommends \
