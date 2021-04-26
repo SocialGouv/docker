@@ -6,12 +6,12 @@
 
 ### Environment variables
 
-| Key               | Value | Usage                                     |
-| ----------------- | ----- | ----------------------------------------- |
-| WAIT_FOR_RETRIES  | 120   | number of retries                         |
-| WAIT_FOR_INTERVAL | 5     | wait between retries (seconds)            |
+| Key               | Value | Usage                          |
+| ----------------- | ----- | ------------------------------ |
+| WAIT_FOR_RETRIES  | 120   | number of retries              |
+| WAIT_FOR_INTERVAL | 5     | wait between retries (seconds) |
 
-As this execute psql, [every psql environment variable](https://www.postgresql.org/docs/9.3/libpq-envars.html) is also accepted 
+As this execute psql, [every psql environment variable](https://www.postgresql.org/docs/9.3/libpq-envars.html) is also accepted
 
 ### Example in k8s
 
@@ -30,18 +30,18 @@ spec:
           image: knex_or_something
       initContainers:
         - name: wait-for-postgres
-          image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:<version>
+          image: ghcr.io/socialgouv/docker/wait-for-postgres
 
       # OR
 
       initContainers:
         - name: wait-for-postgres
-          image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/wait-for-postgres:<version>
+          image: ghcr.io/socialgouv/docker/wait-for-postgres
           env:
             - name: PGHOST
               value: postgres-postgresql
             - name: WAIT_FOR_INTERVAL
               value: 5s # test every 5s
             - name: WAIT_FOR_RETRIES
-              value: 24 # = (2min x 60s) / 5s 
+              value: 24 # = (2min x 60s) / 5s
 ```

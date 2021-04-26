@@ -7,5 +7,5 @@
 ### Docker
 
 ```sh
-$ docker run --rm registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-cli:<version> --version
+$ docker run --rm ghcr.io/socialgouv/docker/azure-cli --version
 ```

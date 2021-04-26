@@ -31,7 +31,7 @@ docker run --rm \
   -e NEW_PASSWORD=xxx \
   # optional
   -e NEW_DB_EXTENSIONS=pgcrypto \
-  registry.gitlab.factory.social.gouv.fr/socialgouv/docker/azure-db:0.24.0 create-db-user
+  ghcr.io/socialgouv/docker/azure-db:0.24.0 create-db-user
 ```
 
 #### `drop-db-user`

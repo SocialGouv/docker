@@ -7,15 +7,16 @@
 ### Docker
 
 ```sh
-$ docker run --rm registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko:<version> kosko --version
+$ docker run --rm ghcr.io/socialgouv/docker/kosko kosko --version
 ```
+
 ### Gitlab
 
 ```yaml
 Deploy:
   stage: Deploy
   dependencies: []
-  image: registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko:<version>
+  image: ghcr.io/socialgouv/docker/kosko
   script:
     - kosko generate --env prod | kubectl apply -f -
 ```

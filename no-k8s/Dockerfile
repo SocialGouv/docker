@@ -1,4 +1,4 @@
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko:5.0.1
+FROM ghcr.io/socialgouv/docker/kosko:5.0.1
 
 RUN apk add --update --no-cache git=~2
 
