@@ -1,8 +1,11 @@
 FROM alpine:3.13.5
 
-# Installs latest Chromium (86) package.
-RUN apk add --no-cache \
-  chromium=~86 \
+# renovate: datasource=repology depName=alpine_3_13/chromium versioning=loose
+ARG CHROMIUM_VERSION=86.0.4240.111
+
+RUN --mount=type=cache,target=/var/cache/apk \
+  apk add --no-cache \
+  chromium=~${CHROMIUM_VERSION} \
   nss=~3 \
   freetype=~2 \
   freetype-dev=~2 \
@@ -17,9 +20,9 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
 # Add user so we don't need --no-sandbox.
 RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
-    && mkdir -p /home/pptruser/Downloads /app \
-    && chown -R pptruser:pptruser /home/pptruser \
-    && chown -R pptruser:pptruser /app
+  && mkdir -p /home/pptruser/Downloads /app \
+  && chown -R pptruser:pptruser /home/pptruser \
+  && chown -R pptruser:pptruser /app
 
 # Run everything after as non-privileged user.
 USER pptruser

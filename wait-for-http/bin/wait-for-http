@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 retry=${WAIT_FOR_RETRIES:-120};
 WAIT_FOR_INTERVAL=${WAIT_FOR_INTERVAL:-5s}

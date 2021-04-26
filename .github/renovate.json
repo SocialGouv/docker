@@ -10,9 +10,7 @@
     {
       "datasources": ["docker", "github-releases", "pypi"],
       "ignorePaths": ["\\.gitlab-ci.yml$"],
-      "excludePackagePatterns": [
-        "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
-      ],
+      "excludePackagePatterns": ["^ghcr.io/socialgouv/docker/"],
       "major": {
         "semanticCommitType": "feat"
       },
@@ -26,9 +24,7 @@
     },
     {
       "datasources": ["docker"],
-      "packagePatterns": [
-        "^registry.gitlab.factory.social.gouv.fr/socialgouv/docker/"
-      ],
+      "packagePatterns": ["^ghcr.io/socialgouv/docker/"],
       "groupName": "socialgouv/docker self dependencies",
       "minor": {
         "semanticCommitType": "fix"

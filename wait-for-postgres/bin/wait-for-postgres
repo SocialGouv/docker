@@ -4,9 +4,10 @@
 
 retry=${WAIT_FOR_RETRIES:-24}; # = (2min x 60s) / 5s
 interval=${WAIT_FOR_INTERVAL:-5s}; # every 5s
+PGCONNECT_TIMEOUT=${PGCONNECT_TIMEOUT:-2}
 
 run_psql() {
-  psql -c "SELECT VERSION();"
+  psql --command "SELECT VERSION();"
 }
 
 

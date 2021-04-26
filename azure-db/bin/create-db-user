@@ -27,7 +27,7 @@ PG_URL_NEWDB="postgresql://${PGUSER/@/%40}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${N
 
 PGSSLMODE=require
 
-#  /o\ get base user name (without server) for SQL commands
+# /o\ get base user name (without server) for SQL commands
 NEW_USER_BASE=${NEW_USER%%@*} || $NEW_USER
 
 

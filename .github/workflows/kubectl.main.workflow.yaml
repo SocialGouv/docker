@@ -1,0 +1,95 @@
+jobs:
+  build:
+    name: Build
+    needs:
+      - Lint
+    outputs:
+      digest: "${{ steps.docker_push.outputs.digest }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - id: docker_meta
+        uses: "crazy-max/ghaction-docker-meta@2e1a5c7fa42123697f82d479b551a1bbdb1bef88"
+        with:
+          images: ghcr.io/socialgouv/docker/kubectl
+          labels: |
+            org.opencontainers.image.title=kubectl
+            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/kubectl
+          tags: |
+            type=sha
+            type=raw,value=sha-${{ github.sha }}
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+      - id: docker_buildx
+        name: Set up Docker Buildx
+        uses: "docker/setup-buildx-action@2a4b53665e15ce7d7049afb11ff1f70ff1610609"
+        with: {}
+      - if: "${{ github.event_name != 'pull_request' }}"
+        name: Login to ghcr.io/socialgouv Registry
+        uses: "docker/login-action@f3364599c6aa293cdc2b8391b1b56d0c30e45c8a"
+        with:
+          password: "${{ secrets.GHCR_REGISTRY_TOKEN }}"
+          registry: ghcr.io
+          username: "${{ secrets.SOCIALGROOVYBOT_NAME }}"
+      - name: /tmp/.buildx-cache cache
+        uses: "actions/cache@v2"
+        with:
+          key: "${{ runner.os }}-kubectl-buildx-${{ hashFiles('kubectl/Dockerfile') }}"
+          path: /tmp/.buildx-cache
+          restore-keys: |
+            ${{ runner.os }}-kubectl-buildx
+      - id: docker_push
+        name: Push
+        uses: "docker/build-push-action@e1b7f96249f2e4c8e4ac1519b9608c0d48944a1f"
+        with:
+          builder: "${{ steps.docker_buildx.outputs.name }}"
+          cache-from: "type=local,src=/tmp/.buildx-cache"
+          cache-to: "type=local,dest=/tmp/.buildx-cache"
+          context: "./kubectl"
+          labels: "${{ steps.docker_meta.outputs.labels }}"
+          push: 'true'
+          tags: "${{ steps.docker_meta.outputs.tags }}"
+      - name: Image digest
+        run: |
+          echo "${{ steps.docker_push.outputs.digest }}"
+  container_test:
+    name: Container Test
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - name: Container structure test
+        uses: "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0@sha256:78c0abfdc3696ec9fb35840d62342cf28f65d890d56beceb2113638d59f2cce8"
+        with:
+          args: "test   --config kubectl/tests/container-structure-test.yml -v debug --image ghcr.io/socialgouv/docker/kubectl@${{ needs.Build.outputs.digest }} --pull"
+  lint:
+    container: hadolint/hadolint:v1.22.1-alpine
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - run: hadolint ./Dockerfile
+        working-directory: kubectl
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/kubectl:sha-${{ github.sha }}"
+    name: Test Version
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - run: kubectl version --client=true
+name: "kubectl (main)"
+on:
+  push:
+    branches:
+      - master
+      - next
+      - next-major
+      - beta
+      - alpha
+      - "+([0-9])?(.{+([0-9]),x}).x"
+    tags:
+      - "v*"

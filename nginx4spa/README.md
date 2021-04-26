@@ -15,10 +15,11 @@ $ docker run \
     --publish 8888:4444 \
     --rm \
     --volume /www:/usr/share/nginx/html \
-    registry.gitlab.factory.social.gouv.fr/socialgouv/docker/nginx4spa:<version>
+    ghcr.io/socialgouv/docker/nginx4spa
 $ curl localhost:8888/version.txt
 VERSION=x.y.z
 ```
 
-Notes: 
- - `PORT` is optional and default to `80`
+Notes:
+
+- `PORT` is optional and default to `80`

@@ -1,4 +1,4 @@
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kosko:5.0.1
+FROM ghcr.io/socialgouv/docker/kosko:6.0.0-beta.3@sha256:5201a275a1006ae25da33494b1cc3c7181c4d2f8a48f3990563240d31610b706
 
 RUN apk add --update --no-cache git=~2
 
@@ -8,4 +8,5 @@ RUN git clone --depth 1 --branch ${K8S_VERSION} https://github.com/SocialGouv/k8
 
 WORKDIR /k8s/.k8s
 
-RUN yarn install --frozen-lockfile --production --cache-folder /dev/shm/yarn
+RUN --mount=type=cache,target=/k8s/.k8s/node_modules \
+  yarn install --frozen-lockfile --production && yarn cache clean

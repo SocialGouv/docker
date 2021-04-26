@@ -1,6 +1,6 @@
 #
 
-FROM registry.gitlab.factory.social.gouv.fr/socialgouv/docker/kubectl:5.0.1 AS kubectl-image
+FROM ghcr.io/socialgouv/docker/kubectl:6.0.0-beta.3@sha256:c8aa69bdfc4b82e5933045285621b7dd094289a6d430b0e17c364f01c0ce9293 AS kubectl-image
 
 #
 
@@ -17,10 +17,10 @@ RUN set -ex \
   && apk add --no-cache yq=~4 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   #
   && apk add --update --no-cache \
-    bash=~5 \
-    coreutils=~8 \
-    gettext=~0 \
-    jq=~1 \
+  bash=~5 \
+  coreutils=~8 \
+  gettext=~0 \
+  jq=~1 \
   #
   && yarn global add kosko@${KOSKO_VERSION} \
   #
@@ -32,7 +32,7 @@ ARG KAPP_VERSION=v0.36.0
 RUN set -ex \
   #
   && wget -O /usr/local/bin/kapp \
-    "https://github.com/k14s/kapp/releases/download/${KAPP_VERSION}/kapp-linux-amd64" \
+  "https://github.com/k14s/kapp/releases/download/${KAPP_VERSION}/kapp-linux-amd64" \
   && chmod +x /usr/local/bin/kapp \
   #
   && kapp --version \

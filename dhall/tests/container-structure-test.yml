@@ -1,0 +1,15 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "dhall version"
+    command: "dhall"
+    args: ["--version"]
+    expectedOutput: ["1.38.1"]
+  - name: "dhall-to-yaml version"
+    command: "dhall-to-yaml"
+    args: ["--version"]
+    expectedOutput: ["1.7.6"]
+  - name: "dhall-to-json version"
+    command: "dhall-to-json"
+    args: ["--version"]
+    excludedOutput: ["v1.9.0"]

@@ -1,3 +1,76 @@
+# [6.0.0-beta.3](https://github.com/SocialGouv/docker/compare/v6.0.0-beta.2...v6.0.0-beta.3) (2021-04-23)
+
+
+### Bug Fixes
+
+* **release:** ask github to build the self made refs ([2502b7a](https://github.com/SocialGouv/docker/commit/2502b7a691be947d67e62bc39ba31450f92ef06c))
+
+# [6.0.0-beta.2](https://github.com/SocialGouv/docker/compare/v6.0.0-beta.1...v6.0.0-beta.2) (2021-04-23)
+
+
+### Bug Fixes
+
+* **release:** force patch ([27ec2a1](https://github.com/SocialGouv/docker/commit/27ec2a1447fc2404f283fff45db3ae9b8fb243db))
+
+# [6.0.0-beta.1](https://github.com/SocialGouv/docker/compare/v5.1.0-beta.1...v6.0.0-beta.1) (2021-04-23)
+
+
+* refactor!: use GitHub Registry and CI as default ([542176e](https://github.com/SocialGouv/docker/commit/542176e5c6470bf12d048dd6d6335c429132923e))
+
+
+### BREAKING CHANGES
+
+* the `registry.gitlab.factory.social.gouv.fr/socialgouv/docker/*` is deprecated.
+
+The image have to be pulled from `ghcr.io/socialgouv/docker/*`.
+See our public package page :
+https://github.com/orgs/SocialGouv/packages?tab=packages&ecosystem=container&q=docker/
+
+Publiched images :
+- [x] azure-cli
+- [x] azure-db
+- [x] bats
+- [x] curl
+- [x] dhall
+- [x] git-deploy
+- [x] kosko
+- [x] kubectl
+- [x] nginx4spa
+- [x] no-k8s
+- [x] puppeteer
+- [x] wait-for-http
+- [x] wait-for-postgres
+* We removed unused images
+
+Removed images :
+- [x] puppeteer-mongo-pg
+- [x] git-tag-release
+- [x] helm
+- [x] k8s-object-cleaner
+
+# [5.1.0-beta.1](https://github.com/SocialGouv/docker/compare/v5.0.1...v5.1.0-beta.1) (2021-04-23)
+
+
+### Bug Fixes
+
+* **azure-db:** fix single drop ([#581](https://github.com/SocialGouv/docker/issues/581)) ([e04a2ca](https://github.com/SocialGouv/docker/commit/e04a2ca908080b04ebe61a9891a8869ccfdb4c43))
+* **deps:** update all dependencies docker tags ([#589](https://github.com/SocialGouv/docker/issues/589)) ([608a4ed](https://github.com/SocialGouv/docker/commit/608a4ed97b39df6bd60cc66233373beea94a607c))
+* **deps:** update dependency kubernetes/kubernetes to v1.20.5 ([#588](https://github.com/SocialGouv/docker/issues/588)) ([de9819a](https://github.com/SocialGouv/docker/commit/de9819a8060958a45c76cf234369509c64ba4310))
+* **git-deploy:** default github sh Illegal option ([2d92fa8](https://github.com/SocialGouv/docker/commit/2d92fa88fdc29525296b493e477b285de1ba99a8))
+* **git-deploy:** from sh to bash ([1ea67f9](https://github.com/SocialGouv/docker/commit/1ea67f902539f55b4929fee32d1033190072b6d1))
+
+
+### Features
+
+* **azure-db:** prevent foot in the door user reconnection ([#582](https://github.com/SocialGouv/docker/issues/582)) ([c5d7386](https://github.com/SocialGouv/docker/commit/c5d73865d9748974995ff435319785f6bf21b9f9))
+* **deps:** update curlimages/curl docker tag to v7.76.1 ([#584](https://github.com/SocialGouv/docker/issues/584)) ([8d8b1b6](https://github.com/SocialGouv/docker/commit/8d8b1b656f70bb85b65107e4bb6d53c0d4ab0512))
+* **deps:** update debian docker tag to v10.9 ([#585](https://github.com/SocialGouv/docker/issues/585)) ([ef93442](https://github.com/SocialGouv/docker/commit/ef93442fe6e79fb0a04eb683a09064532236ac9e))
+* **deps:** update dependency azure-cli to v2.22.1 ([#586](https://github.com/SocialGouv/docker/issues/586)) ([9363796](https://github.com/SocialGouv/docker/commit/9363796693d1308b97a373cdc3835878150cb7fb))
+* **deps:** update dependency kubernetes/kubernetes to v1.21.0 ([#593](https://github.com/SocialGouv/docker/issues/593)) ([863aa37](https://github.com/SocialGouv/docker/commit/863aa378b7419a71ea3a1276493e1608c3af407e))
+* **wait-for-http:** use bash instead of sh ([5274e55](https://github.com/SocialGouv/docker/commit/5274e554ad7e82f7a2137b78f3519194fba5c647))
+* remove useless images ([b9505af](https://github.com/SocialGouv/docker/commit/b9505af62fad200e9ca9808bdb0d742656d6fdaf))
+* **jq:** json cli helper ([#536](https://github.com/SocialGouv/docker/issues/536)) ([3149cb1](https://github.com/SocialGouv/docker/commit/3149cb1581db3a82a5dcb0af79885c8e51509442))
+
 ## [5.0.1](https://github.com/SocialGouv/docker/compare/v5.0.0...v5.0.1) (2021-03-15)
 
 

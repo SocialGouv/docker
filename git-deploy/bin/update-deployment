@@ -1,5 +1,5 @@
-#!/bin/sh
-set -eu -o pipefail
+#!/bin/bash
+set -eu
 
 #
 
@@ -21,7 +21,7 @@ fi
 
 #
 
-curl -0 \
+curl -0 -sS \
 "https://${GITHUB_TOKEN}@api.github.com/repos/${PROJECT_PATH}/deployments/${DEPLOY_ID}/statuses" \
 -H "Content-Type:application/json" \
 -H "Accept: application/vnd.github.flash-preview+json, application/vnd.github.ant-man-preview+json" \

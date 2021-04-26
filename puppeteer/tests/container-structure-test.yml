@@ -1,0 +1,7 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "chromium browser version"
+    command: "chromium-browser"
+    args: ["--version"]
+    expectedOutput: ["Chromium 86\\.\\d+\\.\\d+\\.\\d+"]
