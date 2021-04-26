@@ -1,6 +1,6 @@
 let On =
-      ../../.github/dhall/workflows/On.dhall sha256:d23719eb25b176ea1e5a7f7e0f722456716b5eee894c39f63ce849fccdf2dd95
+      ../../.github/dhall/workflows/On.dhall sha256:146002c5643e9f8353d93cab8d40a143a2100bc046ebe7f686c0012d117c77c2
 
-in  ./AssemblyLine.dhall sha256:e4f5322d03ca48403e1400dacfe8ab769bed16f2e70a87c68f387d60ea1bef3c
+in  ./AssemblyLine.dhall sha256:71fe98c8368e0e8a1acf9c3326366c14ee1891c95911c7abdc19a7b640b003f6
   with on = On.match On.Event.FeatureBranches "git-deploy/**"
   with name = "git-deploy (branch)"

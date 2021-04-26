@@ -39,7 +39,7 @@ jobs:
           key: "${{ runner.os }}-bats-buildx-${{ hashFiles('bats/Dockerfile') }}"
           path: /tmp/.buildx-cache
           restore-keys: |
-            ${{ runner.os }}-bats-buildx-
+            ${{ runner.os }}-bats-buildx
       - id: docker_push
         name: Push
         uses: "docker/build-push-action@e1b7f96249f2e4c8e4ac1519b9608c0d48944a1f"

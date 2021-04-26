@@ -1,11 +1,11 @@
 let AssemblyLine =
-      ../../.github/dhall/workflows/AssemblyLine.dhall sha256:105b04125d9b956816bed0d50854f5ca81f619535317f23c075f671e1e3bf4af
+      ../../.github/dhall/workflows/AssemblyLine.dhall sha256:7621a296acf54e40f5747f0ccfeecd7dc51406077b5fb79f68b894ace850f0fa
 
 let InceptionJob =
       ../../.github/dhall/jobs/Inception.dhall sha256:65a7d0afb9febb7af474404b75696831c58e9fe7008b8643fd82b543e37b5a21
 
 let GithubActions =
-      https://raw.githubusercontent.com/regadas/github-actions-dhall/master/package.dhall sha256:fcb7d9f4a23103bd40219f4b92f7ac31d10566ff902d0cb731328d6d455b9ddb
+      https://raw.githubusercontent.com/SocialGouv/.github/master/dhall/github-actions/package.dhall sha256:327d499ebf1ec63e5c3b0b0d5285b78a07be4ad1a941556eb35f67547004545f
 
 let name = "kosko"
 

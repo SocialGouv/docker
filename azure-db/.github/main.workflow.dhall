@@ -1,6 +1,6 @@
 let On =
-      ../../.github/dhall/workflows/On.dhall sha256:d23719eb25b176ea1e5a7f7e0f722456716b5eee894c39f63ce849fccdf2dd95
+      ../../.github/dhall/workflows/On.dhall sha256:146002c5643e9f8353d93cab8d40a143a2100bc046ebe7f686c0012d117c77c2
 
-in  ./AssemblyLine.dhall sha256:b507d88407c4f3efeea65f71b6d0e44ba559d7ddce72228f66b1a5981df97ac7
+in  ./AssemblyLine.dhall sha256:6c16322f1084637a3a382235c75eb09759efe8900ef3b6e2fe0871805a08f41d
   with on = On.match On.Event.ReleasesBranches "azure-db/**"
   with name = "azure-db (main)"

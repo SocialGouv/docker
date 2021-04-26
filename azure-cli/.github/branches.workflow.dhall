@@ -1,6 +1,6 @@
 let On =
-      ../../.github/dhall/workflows/On.dhall sha256:d23719eb25b176ea1e5a7f7e0f722456716b5eee894c39f63ce849fccdf2dd95
+      ../../.github/dhall/workflows/On.dhall sha256:146002c5643e9f8353d93cab8d40a143a2100bc046ebe7f686c0012d117c77c2
 
-in  ./AssemblyLine.dhall sha256:45b3f44d025337508200b07d99ba0e34c4919a5b2ad09f363567859dd3efc892
+in  ./AssemblyLine.dhall sha256:d0fa78a85433ea1e44fddfef70aa90fdec3cc5809323f690f6b1826828c22f46
   with on = On.match On.Event.FeatureBranches "azure-cli/**"
   with name = "azure-cli (branch)"
