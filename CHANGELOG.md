@@ -1,3 +1,58 @@
+# [6.0.0](https://github.com/SocialGouv/docker/compare/v5.1.0...v6.0.0) (2021-04-26)
+
+
+### Bug Fixes
+
+* **git-deploy:** default github sh Illegal option ([2d92fa8](https://github.com/SocialGouv/docker/commit/2d92fa88fdc29525296b493e477b285de1ba99a8))
+* **git-deploy:** from sh to bash ([1ea67f9](https://github.com/SocialGouv/docker/commit/1ea67f902539f55b4929fee32d1033190072b6d1))
+* **release:** ask github to build the self made refs ([2502b7a](https://github.com/SocialGouv/docker/commit/2502b7a691be947d67e62bc39ba31450f92ef06c))
+* **release:** force patch ([27ec2a1](https://github.com/SocialGouv/docker/commit/27ec2a1447fc2404f283fff45db3ae9b8fb243db))
+
+
+### Features
+
+* **wait-for-http:** use bash instead of sh ([5274e55](https://github.com/SocialGouv/docker/commit/5274e554ad7e82f7a2137b78f3519194fba5c647))
+* remove useless images ([b9505af](https://github.com/SocialGouv/docker/commit/b9505af62fad200e9ca9808bdb0d742656d6fdaf))
+
+
+### Reverts
+
+* Revert "chore(release): version 5.1.0" ([010ba6d](https://github.com/SocialGouv/docker/commit/010ba6d35228f87abfdf0502a21e9724a6cb0909))
+
+
+* refactor!: use GitHub Registry and CI as default ([542176e](https://github.com/SocialGouv/docker/commit/542176e5c6470bf12d048dd6d6335c429132923e))
+
+
+### BREAKING CHANGES
+
+* the `registry.gitlab.factory.social.gouv.fr/socialgouv/docker/*` is deprecated.
+
+The image have to be pulled from `ghcr.io/socialgouv/docker/*`.
+See our public package page :
+https://github.com/orgs/SocialGouv/packages?tab=packages&ecosystem=container&q=docker/
+
+Publiched images :
+- [x] azure-cli
+- [x] azure-db
+- [x] bats
+- [x] curl
+- [x] dhall
+- [x] git-deploy
+- [x] kosko
+- [x] kubectl
+- [x] nginx4spa
+- [x] no-k8s
+- [x] puppeteer
+- [x] wait-for-http
+- [x] wait-for-postgres
+* We removed unused images
+
+Removed images :
+- [x] puppeteer-mongo-pg
+- [x] git-tag-release
+- [x] helm
+- [x] k8s-object-cleaner
+
 # [6.0.0-beta.3](https://github.com/SocialGouv/docker/compare/v6.0.0-beta.2...v6.0.0-beta.3) (2021-04-23)
 
 
