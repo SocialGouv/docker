@@ -93,9 +93,9 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: "aquasecurity/trivy-action@b38389f8efef9798810fe0c5b5096ac198cffd54"
         with:
+          format: template
           image-ref: "ghcr.io/${github.repository}/bats:sha-${{ github.sha }}"
           output: trivy-results.sarif
-          severity: "CRITICAL,HIGH"
           template: "@/contrib/sarif.tpl"
       - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
         with:

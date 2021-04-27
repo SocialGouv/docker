@@ -16,10 +16,10 @@ let TrivyJob =
           [ GithubActions.steps.actions/checkout
           ,   trivy-action.`0.0.14`
                 trivy-action.Input::{
+                , format = Some "template"
                 , image-ref
-                , template = Some "@/contrib/sarif.tpl"
                 , output = Some "trivy-results.sarif"
-                , severity = Some "CRITICAL,HIGH"
+                , template = Some "@/contrib/sarif.tpl"
                 }
             ⫽ { name = Some "Run Trivy vulnerability scanner" }
           , upload-sarif.codeql-bundle-20210421
@@ -38,11 +38,11 @@ let __test__foo =
             [ GithubActions.steps.actions/checkout
             ,   trivy-action.`0.0.14`
                   trivy-action.Input::{
+                  , format = Some "template"
                   , image-ref =
                       "ghcr.io/\${{ github.repository }}/foo:sha-\${{ github.sha }}"
                   , template = Some "@/contrib/sarif.tpl"
                   , output = Some "trivy-results.sarif"
-                  , severity = Some "CRITICAL,HIGH"
                   }
               ⫽ { name = Some "Run Trivy vulnerability scanner" }
             , upload-sarif.codeql-bundle-20210421
