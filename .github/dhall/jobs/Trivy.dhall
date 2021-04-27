@@ -21,7 +21,7 @@ let TrivyJob =
                 , output = Some "trivy-results.sarif"
                 , severity = Some "CRITICAL,HIGH"
                 }
-            ⫽ { id = Some "Run Trivy vulnerability scanner" }
+            ⫽ { name = Some "Run Trivy vulnerability scanner" }
           , upload-sarif.codeql-bundle-20210421
               upload-sarif.Input::{ sarif_file = Some "trivy-results.sarif" }
           ]
@@ -44,7 +44,7 @@ let __test__foo =
                   , output = Some "trivy-results.sarif"
                   , severity = Some "CRITICAL,HIGH"
                   }
-              ⫽ { id = Some "Run Trivy vulnerability scanner" }
+              ⫽ { name = Some "Run Trivy vulnerability scanner" }
             , upload-sarif.codeql-bundle-20210421
                 upload-sarif.Input::{ sarif_file = Some "trivy-results.sarif" }
             ]

@@ -11,7 +11,7 @@ let HadolintJob =
       ../jobs/Hadolint.dhall sha256:ca8c9ba040b31d16e878791b5c9abcfbfb42386f55845043f54c24b4181e99f3
 
 let TrivyJob =
-      ../jobs/Trivy.dhall sha256:8796364ce395fedbc57013cb73a0cbc6244fd9fe5e636adc82fd6c6022c818bb
+      ../jobs/Trivy.dhall sha256:d9c3cd96966f48e8db55091e3408f4732a7f47cb26ac7a516bc21e3bbd92808c
 
 let Worklflow =
       λ ( args

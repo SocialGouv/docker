@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v2"
-      - id: Run Trivy vulnerability scanner
+      - name: Run Trivy vulnerability scanner
         uses: "aquasecurity/trivy-action@b38389f8efef9798810fe0c5b5096ac198cffd54"
         with:
           image-ref: "ghcr.io/${github.repository}/wait-for-http:sha-${{ github.sha }}"
