@@ -49,11 +49,24 @@ jobs:
           cache-to: "type=local,dest=/tmp/.buildx-cache"
           context: "./curl"
           labels: "${{ steps.docker_meta.outputs.labels }}"
-          push: 'true'
+          push: "true"
           tags: "${{ steps.docker_meta.outputs.tags }}"
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ghcr.io/socialgouv/docker/curl:sha-${{ github.sha }}@${{ needs.Build.outputs.digest }}
+          format: template
+          template: "@/contrib/sarif.tpl"
+          output: "trivy-results.sarif"
+          severity: "CRITICAL,HIGH"
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: "trivy-results.sarif"
   container_test:
     name: Container Test
     needs:
