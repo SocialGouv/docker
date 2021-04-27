@@ -80,6 +80,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v2"
+      - run: "docker pull ghcr.io/${{ github.repository }}/puppeteer:sha-${{ github.sha }}"
       - name: Run Trivy vulnerability scanner
         uses: "aquasecurity/trivy-action@b38389f8efef9798810fe0c5b5096ac198cffd54"
         with:

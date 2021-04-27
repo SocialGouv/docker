@@ -1,6 +1,6 @@
 let On =
       ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:ee9efa1f3ef630954db7e551f64c018f09c20f79b39d6d503b46558fe188912b
+in  ./AssemblyLine.dhall sha256:c9d6d97d9eb5048b362bc2b95cf0745180aa019cb81eb56749840b3beed3ef66
   with on = On.match On.Event.FeatureBranches "kubectl"
   with name = "kubectl (branch)"

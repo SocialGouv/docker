@@ -14,6 +14,7 @@ let TrivyJob =
         , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
         , steps =
           [ GithubActions.steps.actions/checkout
+          , GithubActions.Step::{ run = Some "docker pull ${image-ref}" }
           ,   trivy-action.`0.0.14`
                 trivy-action.Input::{
                 , format = Some "template"
@@ -36,6 +37,10 @@ let __test__foo =
           , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
           , steps =
             [ GithubActions.steps.actions/checkout
+            , GithubActions.Step::{
+              , run = Some
+                  "docker pull ghcr.io/\${{ github.repository }}/foo:sha-\${{ github.sha }}"
+              }
             ,   trivy-action.`0.0.14`
                   trivy-action.Input::{
                   , format = Some "template"
