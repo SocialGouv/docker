@@ -106,3 +106,4 @@ on:
       - "+([0-9])?(.{+([0-9]),x}).x"
     paths:
       - "curl/**"
+      - ".github/workflows/curl.branches.workflow.yaml"
