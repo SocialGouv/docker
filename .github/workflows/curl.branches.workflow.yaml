@@ -54,6 +54,12 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
+  security_scan:
+    name: vulnerability scanner
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
