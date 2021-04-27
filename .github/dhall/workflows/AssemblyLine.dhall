@@ -29,7 +29,7 @@ let Worklflow =
                 , container_test = ContainerTestJob { package = args.name }
                 , security_scan =
                     ( TrivyJob
-                        "ghcr.io/\${github.repository}/${args.name}:sha-\${{ github.sha }}"
+                        "ghcr.io/\${{ github.repository }}/${args.name}:sha-\${{ github.sha }}"
                     )
                   with needs = Some [ "Build" ]
                 }
