@@ -73,6 +73,23 @@ jobs:
       - uses: "actions/checkout@v2"
       - run: hadolint ./Dockerfile
         working-directory: dhall
+  security_scan:
+    name: Vulnerability Scanner
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v2"
+      - id: Run Trivy vulnerability scanner
+        uses: "aquasecurity/trivy-action@b38389f8efef9798810fe0c5b5096ac198cffd54"
+        with:
+          image-ref: "ghcr.io/${github.repository}/dhall:sha-${{ github.sha }}"
+          output: trivy-results.sarif
+          severity: "CRITICAL,HIGH"
+          template: "@/contrib/sarif.tpl"
+      - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
+        with:
+          sarif_file: trivy-results.sarif
   version_test:
     container: "docker://ghcr.io/socialgouv/docker/dhall:sha-${{ github.sha }}"
     name: Test Version

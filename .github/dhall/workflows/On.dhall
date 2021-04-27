@@ -33,7 +33,8 @@ let feature_branches =
         On::{
         , push = Some Push::{
           , branches-ignore = Some releases_branches
-          , paths = Some [ path ]
+          , paths = Some
+            [ "${path}/**", ".github/workflows/${path}.branches.workflow.yaml" ]
           }
         }
 

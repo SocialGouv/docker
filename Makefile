@@ -2,7 +2,8 @@
 #
 #
 
-.PHONY: all
+.SUFFIXES:
+.PHONY: Makefile all workflow assembly_line
 all: workflow assembly_line
 
 

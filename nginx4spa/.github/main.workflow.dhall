@@ -1,6 +1,6 @@
 let On =
-      ../../.github/dhall/workflows/On.dhall sha256:146002c5643e9f8353d93cab8d40a143a2100bc046ebe7f686c0012d117c77c2
+      ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:ef436ef740b4925fabc48d8a9fab26340e93ae882dcd850b860ee2d096ef7bc8
-  with on = On.match On.Event.ReleasesBranches "nginx4spa/**"
+in  ./AssemblyLine.dhall sha256:5b64155941bd37554df644871d9ba4cc47f6683d823d53cf1d9ce9daf4b483e9
+  with on = On.match On.Event.ReleasesBranches "nginx4spa"
   with name = "nginx4spa (main)"
