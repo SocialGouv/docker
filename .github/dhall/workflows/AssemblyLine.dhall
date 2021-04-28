@@ -10,8 +10,8 @@ let DockerBuildJob =
 let HadolintJob =
       ../jobs/Hadolint.dhall sha256:ca8c9ba040b31d16e878791b5c9abcfbfb42386f55845043f54c24b4181e99f3
 
-let TrivyJob =
-      ../jobs/Trivy.dhall sha256:cfec1aa9c7b818c241dd103383edf001d67fa3383a36185e24626cc5cc6a4318
+let Trivy =
+      ../jobs/Trivy.dhall sha256:31829f1a5be4d6596a5a7a12740b674e66631a3533b533c1b0cda880ba0cd814
 
 let Worklflow =
       λ ( args
@@ -28,8 +28,12 @@ let Worklflow =
                 , build = DockerBuildJob args.name
                 , container_test = ContainerTestJob { package = args.name }
                 , security_scan =
-                    ( TrivyJob
-                        "ghcr.io/socialgouv/docker/${args.name}:sha-\${{ github.sha }}"
+                    ( Trivy.job
+                        Trivy.Input::{
+                        , image-ref =
+                            "ghcr.io/socialgouv/docker/${args.name}:sha-\${{ github.sha }}"
+                        , scan-ref = Some args.name
+                        }
                     )
                   with needs = Some [ "Build" ]
                 }
