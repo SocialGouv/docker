@@ -88,11 +88,11 @@ jobs:
           image-ref: "ghcr.io/socialgouv/docker/azure-cli:sha-${{ github.sha }}"
           output: trivy-results.sarif
           template: "@/contrib/sarif.tpl"
-        working-directory: azure-cli
+      - name: Change hardcoded Dockerfile path
+        run: "sed -i 's/\"uri\": \"Dockerfile\"/\"uri\": \"azure-cli\\/Dockerfile\"/' trivy-results.sarif"
       - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
         with:
           sarif_file: trivy-results.sarif
-        working-directory: azure-cli
   version_test:
     container: "docker://ghcr.io/socialgouv/docker/azure-cli:sha-${{ github.sha }}"
     name: Test Version

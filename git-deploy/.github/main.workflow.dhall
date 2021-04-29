@@ -1,6 +1,6 @@
 let On =
       ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:3316e2ab8fe7bfdf7ed542b3f15f841a8311f908c8d025406dcfa7d4e8a81cf1
+in  ./AssemblyLine.dhall sha256:405c1f25a27400266b0f33794f478ef5f7b7274ad93b23d839bae1e996709fd5
   with on = On.match On.Event.ReleasesBranches "git-deploy"
   with name = "git-deploy (main)"

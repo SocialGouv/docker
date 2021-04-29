@@ -48,14 +48,19 @@ let Worklflow =
                           , output = Some "trivy-results.sarif"
                           , template = Some "@/contrib/sarif.tpl"
                           }
-                      ⫽ { name = Some "Run Trivy vulnerability scanner"
-                        , working-directory = Some args.name
+                      ⫽ { name = Some "Run Trivy vulnerability scanner" }
+                    , GithubActions.Step::{
+                      , name = Some "Change hardcoded Dockerfile path"
+                      , run = Some
+                          (     "sed -i"
+                            ++  " 's/\"uri\": \"Dockerfile\"/\"uri\": \"${args.name}\\/Dockerfile\"/'"
+                            ++  " trivy-results.sarif"
+                          )
+                      }
+                    , upload-sarif.codeql-bundle-20210421
+                        upload-sarif.Input::{
+                        , sarif_file = Some "trivy-results.sarif"
                         }
-                    ,   upload-sarif.codeql-bundle-20210421
-                          upload-sarif.Input::{
-                          , sarif_file = Some "trivy-results.sarif"
-                          }
-                      ⫽ { working-directory = Some args.name }
                     ]
                   }
                 }
