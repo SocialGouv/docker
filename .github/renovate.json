@@ -49,21 +49,5 @@
       },
       "separateMinorPatch": true
     }
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": ["Dockerfile$"],
-      "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG .*?_VERSION=\"(?<currentValue>.*)\"\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    },
-    {
-      "fileMatch": ["\\.dhall$"],
-      "matchStrings": [
-        "let {- renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>[^\\s]+)(?: lookupName=(?<lookupName>[^\\s]+))?(?: versioning=(?<versioning>[a-z-]+))? -}\\s.+?_VERSION\\s*=\\s*\"(?<currentValue>.+)\"\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
   ]
 }
