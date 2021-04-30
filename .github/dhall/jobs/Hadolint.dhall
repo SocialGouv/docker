@@ -3,7 +3,7 @@ let GithubActions =
 
 let {- renovate: datasource=docker depName=hadolint/hadolint -}
     HADOLINT_VERSION =
-      "v1.22.1-alpine"
+      "v1.22.1"
 
 let HadolintJob =
       λ(package : Text) →
