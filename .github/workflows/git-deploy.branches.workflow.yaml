@@ -76,7 +76,7 @@ jobs:
       - run: make e2e
         working-directory: git-deploy
   lint:
-    container: hadolint/hadolint:v1.22.1-alpine
+    container: hadolint/hadolint:v1.22.1
     name: Lint
     runs-on: ubuntu-latest
     steps:

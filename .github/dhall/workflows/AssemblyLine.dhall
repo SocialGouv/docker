@@ -14,7 +14,7 @@ let DockerBuildJob =
       ../jobs/DockerBuild.dhall sha256:c7fb5c22101c47af7907cabf6ed1ad872586f8082cf55880f7b3b0a3a7fd40e9
 
 let HadolintJob =
-      ../jobs/Hadolint.dhall sha256:ca8c9ba040b31d16e878791b5c9abcfbfb42386f55845043f54c24b4181e99f3
+      ../jobs/Hadolint.dhall sha256:90c4447491fd24c0761c76a285a771bbe2beacd5687668d8305d15b600e1318b
 
 let Worklflow =
       λ ( args
