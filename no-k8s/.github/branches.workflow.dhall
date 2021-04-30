@@ -1,6 +1,6 @@
 let On =
-      ../../.github/dhall/workflows/On.dhall sha256:146002c5643e9f8353d93cab8d40a143a2100bc046ebe7f686c0012d117c77c2
+      ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:0508ce2292f8634eba998782799118c0e20b0c603e519c068912d2a8a221bfdd
-  with on = On.match On.Event.FeatureBranches "no-k8s/**"
+in  ./AssemblyLine.dhall sha256:c75c62b32f6febfa248bbe8644700fa44467b4bfd49695a597442233b3798121
+  with on = On.match On.Event.FeatureBranches "no-k8s"
   with name = "no-k8s (branch)"

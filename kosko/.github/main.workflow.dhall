@@ -1,6 +1,6 @@
 let On =
-      ../../.github/dhall/workflows/On.dhall sha256:146002c5643e9f8353d93cab8d40a143a2100bc046ebe7f686c0012d117c77c2
+      ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:0821d264e9c562933c509eba27d06c9b66ded81bbfe7420702f9448badd3b0ac
-  with on = On.match On.Event.ReleasesBranches "kosko/**"
+in  ./AssemblyLine.dhall sha256:32d599c2b10ecca54f3118c30f309f465f3e68cbb2840d33cfd662ea1e26cc7e
+  with on = On.match On.Event.ReleasesBranches "kosko"
   with name = "kosko (main)"
