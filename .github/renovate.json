@@ -1,12 +1,10 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabled": true,
-  "extends": ["github>SocialGouv/renovate-config:light", ":automergeAll"],
+  "extends": ["github>SocialGouv/renovate-config", ":automergeAll"],
   "stabilityDays": 2,
   "prCreation": "not-pending",
   "ignorePresets": ["group:allNonMajor"],
-  "gitlabci": {
-    "fileMatch": ["\\.gitlab-ci.yml$"]
-  },
   "packageRules": [
     {
       "datasources": ["docker", "github-releases", "pypi"],
@@ -36,14 +34,6 @@
       "separateMinorPatch": true
     },
     {
-      "paths": ["infra-ansible-ci/requirements.txt"],
-      "groupName": "infra-ansible-ci requirements",
-      "extends": [":semanticCommitType(feat)"],
-      "excludePackagePatterns": ["^socialgouv/k8s"],
-      "excludePackageNames": ["socialgouv/k8s"],
-      "semanticCommitType": "feat"
-    },
-    {
       "datasources": ["github-tags"],
       "groupName": "socialgouv/k8s - No k8s",
       "matchUpdateTypes": ["patch", "minor", "major"],
@@ -65,6 +55,13 @@
       "fileMatch": ["Dockerfile$"],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG .*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    },
+    {
+      "fileMatch": ["\\.dhall$"],
+      "matchStrings": [
+        "let {- renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>[^\\s]+)(?: lookupName=(?<lookupName>[^\\s]+))?(?: versioning=(?<versioning>[a-z-]+))? -}\\s.+?_VERSION\\s*=\\s*(?<currentValue>.+)\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
