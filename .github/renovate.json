@@ -1,4 +1,5 @@
 {
+  "enabled": true,
   "extends": ["github>SocialGouv/renovate-config:light", ":automergeAll"],
   "stabilityDays": 2,
   "prCreation": "not-pending",
