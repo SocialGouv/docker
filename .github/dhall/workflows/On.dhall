@@ -54,4 +54,4 @@ let handled_events =
 
 let match = λ(event : Event) → merge handled_events event
 
-in  { Event, match }
+in  { Event, match, releases_branches }
