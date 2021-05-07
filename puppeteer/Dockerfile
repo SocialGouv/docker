@@ -1,7 +1,7 @@
 FROM alpine:3.13.5
 
 # renovate: datasource=repology depName=alpine_3_13/chromium versioning=loose
-ARG CHROMIUM_VERSION=86.0.4240.111
+ARG CHROMIUM_VERSION=86.0.4240.111-r0
 
 RUN --mount=type=cache,target=/var/cache/apk \
   apk add --no-cache \
