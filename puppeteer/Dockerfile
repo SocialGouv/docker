@@ -9,7 +9,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   harfbuzz=~2.7.4-r1 \
   ca-certificates=~20191127-r5 \
   ttf-freefont=~20120503-r1 \
-  nodejs=~14 \
+  nodejs=~14.16.1-r1 \
   yarn=~1
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
