@@ -36,7 +36,6 @@
     {
       "datasources": ["github-tags"],
       "groupName": "socialgouv/k8s - No k8s",
-      "matchUpdateTypes": ["patch", "minor", "major"],
       "matchPackageNames": ["socialgouv/k8s"],
       "major": {
         "semanticCommitType": "feat"
