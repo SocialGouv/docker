@@ -8,7 +8,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   freetype-dev=~2 \
   harfbuzz=~2 \
   ca-certificates=~20191127-r5 \
-  ttf-freefont=~20120503 \
+  ttf-freefont=~20120503-r1 \
   nodejs=~14 \
   yarn=~1
 
