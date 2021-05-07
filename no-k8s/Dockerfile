@@ -1,4 +1,4 @@
-FROM ghcr.io/socialgouv/docker/kosko:6
+FROM ghcr.io/socialgouv/docker/kosko:6.0
 
 RUN apk add --update --no-cache git=~2
 
