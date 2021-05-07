@@ -2,7 +2,7 @@ FROM alpine:3.13.5
 
 RUN --mount=type=cache,target=/var/cache/apk \
   apk add --no-cache \
-  chromium=~86.0.4240.111 \
+  chromium=~86.0.4240.111-r0 \
   nss=~3 \
   freetype=~2 \
   freetype-dev=~2 \
