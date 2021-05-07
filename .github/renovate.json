@@ -2,51 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabled": true,
   "extends": ["github>SocialGouv/renovate-config", ":automergeAll"],
-  "stabilityDays": 2,
-  "prCreation": "not-pending",
-  "ignorePresets": ["group:allNonMajor"],
-  "packageRules": [
-    {
-      "datasources": ["docker", "github-releases", "pypi"],
-      "ignorePaths": ["\\.gitlab-ci.yml$"],
-      "excludePackagePatterns": ["^ghcr.io/socialgouv/docker/"],
-      "major": {
-        "semanticCommitType": "feat"
-      },
-      "minor": {
-        "semanticCommitType": "feat"
-      },
-      "patch": {
-        "semanticCommitType": "fix"
-      },
-      "separateMinorPatch": true
-    },
-    {
-      "datasources": ["docker"],
-      "packagePatterns": ["^ghcr.io/socialgouv/docker/"],
-      "groupName": "socialgouv/docker self dependencies",
-      "minor": {
-        "semanticCommitType": "fix"
-      },
-      "patch": {
-        "semanticCommitType": "chore"
-      },
-      "separateMinorPatch": true
-    },
-    {
-      "datasources": ["github-tags"],
-      "groupName": "socialgouv/k8s - No k8s",
-      "matchPackageNames": ["socialgouv/k8s"],
-      "major": {
-        "semanticCommitType": "feat"
-      },
-      "minor": {
-        "semanticCommitType": "feat"
-      },
-      "patch": {
-        "semanticCommitType": "fix"
-      },
-      "separateMinorPatch": true
-    }
-  ]
+  "stabilityDays": 3
 }
