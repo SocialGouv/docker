@@ -1,3 +1,10 @@
+## [6.2.1](https://github.com/SocialGouv/docker/compare/v6.2.0...v6.2.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kosko to v1.1.5 ([#609](https://github.com/SocialGouv/docker/issues/609)) ([28c9dc4](https://github.com/SocialGouv/docker/commit/28c9dc4bf5d7dfb1c4447e4d69a7482a405b3054))
+
 # [6.2.0](https://github.com/SocialGouv/docker/compare/v6.1.0...v6.2.0) (2021-05-07)
 
 
