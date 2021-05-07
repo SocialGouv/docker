@@ -2,5 +2,20 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "enabled": true,
   "extends": ["github>SocialGouv/renovate-config", ":automergeAll"],
-  "stabilityDays": 3
+  "stabilityDays": 3,
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "excludePackagePatterns": ["^ghcr\\.io/socialgouv/docker/"],
+      "major": {
+        "semanticCommitType": "feat"
+      },
+      "minor": {
+        "semanticCommitType": "feat"
+      },
+      "patch": {
+        "semanticCommitType": "fix"
+      }
+    }
+  ]
 }
