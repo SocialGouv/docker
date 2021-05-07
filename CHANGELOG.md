@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/SocialGouv/docker/compare/v6.1.0...v6.2.0) (2021-05-07)
+
+
+### Features
+
+* use loose internal dependencies (2) ([96750dc](https://github.com/SocialGouv/docker/commit/96750dcc0ad01cf9c0a2b150ace63ec0102ac260))
+
 # [6.1.0](https://github.com/SocialGouv/docker/compare/v6.0.1...v6.1.0) (2021-05-07)
 
 
