@@ -5,7 +5,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   chromium=~86.0.4240.111-r0 \
   nss=~3 \
   freetype=~2.10.4-r1 \
-  freetype-dev=~2 \
+  freetype-dev=~2.10.4-r1 \
   harfbuzz=~2 \
   ca-certificates=~20191127-r5 \
   ttf-freefont=~20120503-r1 \
