@@ -6,7 +6,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   nss=~3 \
   freetype=~2.10.4-r1 \
   freetype-dev=~2.10.4-r1 \
-  harfbuzz=~2 \
+  harfbuzz=~2.7.4-r1 \
   ca-certificates=~20191127-r5 \
   ttf-freefont=~20120503-r1 \
   nodejs=~14 \
