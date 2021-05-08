@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/SocialGouv/docker/compare/v6.3.0...v6.4.0) (2021-05-08)
+
+
+### Features
+
+* **deps:** update nginx docker tag to v1.20 ([#616](https://github.com/SocialGouv/docker/issues/616)) ([0303d48](https://github.com/SocialGouv/docker/commit/0303d48c6178889d9500d6ed502701b53404791d))
+
 # [6.3.0](https://github.com/SocialGouv/docker/compare/v6.2.1...v6.3.0) (2021-05-08)
 
 
