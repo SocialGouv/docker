@@ -17,7 +17,7 @@ RUN set -ex \
   && apk add --no-cache yq=~4 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   #
   && apk add --update --no-cache \
-  bash=~5 \
+  bash=~5.1.0-r0 \
   coreutils=~8 \
   gettext=~0 \
   jq=~1 \

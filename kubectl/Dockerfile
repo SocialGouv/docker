@@ -9,7 +9,7 @@ ARG KUSTOMIZE_VERSION=kustomize/v3.5.2
 RUN set -ex \
   #
   && apk add --update --no-cache \
-    bash=~5 \
+    bash=~5.1.0-r0 \
     coreutils=~8 \
     gettext=~0 \
     jq=~1 \
