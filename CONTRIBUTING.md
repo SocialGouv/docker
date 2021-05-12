@@ -60,9 +60,9 @@ $ mkdir foo
 ### Lint Dockerfiles
 
 ```sh
-$ docker run --rm -i hadolint/hadolint < ./<image>/Dockerfile
+$ docker run --rm -i ghcr.io/hadolint/hadolint < ./<image>/Dockerfile
 # example
-$ docker run --rm -i hadolint/hadolint < ./helm/Dockerfile
+$ docker run --rm -i ghcr.io/hadolint/hadolint < ./helm/Dockerfile
 ```
 
 ## Generate GitLab Workflow
