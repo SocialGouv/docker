@@ -6,7 +6,7 @@ services:
   #
 
   lint:
-    image: hadolint/hadolint:v2.4.0-alpine
+    image: ghcr.io/hadolint/hadolint:2.4.0-alpine
     entrypoint: hadolint
     command: Dockerfile
     volumes:

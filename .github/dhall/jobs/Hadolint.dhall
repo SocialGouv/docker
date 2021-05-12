@@ -1,20 +1,21 @@
 let GithubActions =
       https://raw.githubusercontent.com/SocialGouv/.github/master/dhall/github-actions/package.dhall sha256:327d499ebf1ec63e5c3b0b0d5285b78a07be4ad1a941556eb35f67547004545f
 
-let {- renovate: datasource=docker depName=hadolint/hadolint -}
+let {- renovate: datasource=docker depName=ghcr.io/hadolint/hadolint -}
     HADOLINT_VERSION =
-      "v2.4.0"
+      "2.4.0@sha256:ed22c9de9b884383094edb8930696a256c4450335945c68153d8fc8fbb27bf03"
 
 let HadolintJob =
       λ(package : Text) →
         GithubActions.Job::{
         , name = Some "Lint"
         , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
-        , container = Some "hadolint/hadolint:${HADOLINT_VERSION}"
         , steps =
           [ GithubActions.steps.actions/checkout
           , GithubActions.Step::{
             , run = Some "hadolint ./Dockerfile"
+            , uses = Some
+                "docker://ghcr.io/hadolint/hadolint:${HADOLINT_VERSION}"
             , working-directory = Some package
             }
           ]
@@ -26,11 +27,12 @@ let __test__foo =
         ≡ GithubActions.Job::{
           , name = Some "Lint"
           , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
-          , container = Some "hadolint/hadolint:${HADOLINT_VERSION}"
           , steps =
             [ GithubActions.steps.actions/checkout
             , GithubActions.Step::{
               , run = Some "hadolint ./Dockerfile"
+              , uses = Some
+                  "docker://ghcr.io/hadolint/hadolint:${HADOLINT_VERSION}"
               , working-directory = Some "foo"
               }
             ]

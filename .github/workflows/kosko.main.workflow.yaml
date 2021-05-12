@@ -66,12 +66,12 @@ jobs:
         with:
           args: "test   --config kosko/tests/container-structure-test.yml -v debug --image ghcr.io/socialgouv/docker/kosko@${{ needs.Build.outputs.digest }} --pull"
   lint:
-    container: hadolint/hadolint:v2.4.0
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v2"
       - run: hadolint ./Dockerfile
+        uses: "docker://ghcr.io/hadolint/hadolint:2.4.0@sha256:ed22c9de9b884383094edb8930696a256c4450335945c68153d8fc8fbb27bf03"
         working-directory: kosko
   security_scan:
     name: Vulnerability Scanner
