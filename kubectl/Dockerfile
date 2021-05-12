@@ -18,12 +18,12 @@ RUN set -ex \
   # renovate: datasource=repology depName=alpine_3_13/jq versioning=loose
   jq=="1.6-r1" \
   #
-  && wget -O /dev/shm/kubectl \
+  && wget -q -O /dev/shm/kubectl \
   "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
   && chmod +x /dev/shm/kubectl \
   && mv /dev/shm/kubectl /usr/local/bin/kubectl \
   #
-  && wget -O /dev/shm/kustomize.tar \
+  && wget -q -O /dev/shm/kustomize.tar \
   "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2F${KUSTOMIZE_VERSION#kustomize/}/kustomize_${KUSTOMIZE_VERSION#kustomize/}_linux_amd64.tar.gz" \
   && tar xvzf /dev/shm/kustomize.tar  \
   && mv /kustomize /usr/local/bin/kustomize \
