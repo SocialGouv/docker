@@ -17,16 +17,5 @@
         "semanticCommitType": "fix"
       }
     }
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": ["(^|/|\\.)Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
-      "matchStrings": [
-        "(?<depName>[a-zA-Z0-9-]+)(=~|==)(?<currentValue>[a-zA-Z0-9-._]+)"
-      ],
-      "versioningTemplate": "loose",
-      "datasourceTemplate": "repology",
-      "lookupNameTemplate": "alpine_3_13/{{depName}}"
-    }
   ]
 }
