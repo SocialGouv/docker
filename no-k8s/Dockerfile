@@ -2,7 +2,7 @@ FROM ghcr.io/socialgouv/docker/kosko:6.7
 
 RUN apk add --update --no-cache \
   # renovate: datasource=repology depName=alpine_3_13/git versioning=loose
-  git=="2.24.4-r0"
+  git=="2.30.2-r0"
 
 # renovate: datasource=github-tags depName=socialgouv/k8s
 ARG K8S_VERSION=v1.3.2
