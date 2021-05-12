@@ -1,16 +1,25 @@
-FROM alpine:3.13.5
+FROM alpine:3.13
 
 RUN --mount=type=cache,target=/var/cache/apk \
   apk add --no-cache \
-  chromium=~86.0.4240.111-r0 \
-  nss=~3.63-r1 \
-  freetype=~2.10.4-r1 \
-  freetype-dev=~2.10.4-r1 \
-  harfbuzz=~2.7.4-r1 \
-  ca-certificates=~20191127-r5 \
-  ttf-freefont=~20120503-r1 \
-  nodejs=~14.16.1-r1 \
-  yarn=~1.22.10-r0
+  # renovate: datasource=repology depName=alpine_3_13/ca-certificates versioning=loose
+  ca-certificates=="20191127-r5" \
+  # renovate: datasource=repology depName=alpine_3_13/chromium versioning=loose
+  chromium=="86.0.4240.111-r0" \
+  # renovate: datasource=repology depName=alpine_3_13/freetype-dev versioning=loose
+  freetype-dev=="2.10.4-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/freetype versioning=loose
+  freetype=="2.10.4-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/harfbuzz versioning=loose
+  harfbuzz=="2.7.4-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/nodejs versioning=loose
+  nodejs=="14.16.1-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/nss versioning=loose
+  nss=="3.63-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/ttf-freefont versioning=loose
+  ttf-freefont=="20120503-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/yarn versioning=loose
+  yarn=="1.22.10-r0"
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
