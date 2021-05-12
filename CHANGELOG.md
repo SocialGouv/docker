@@ -1,3 +1,10 @@
+## [6.7.1](https://github.com/SocialGouv/docker/compare/v6.7.0...v6.7.1) (2021-05-12)
+
+
+### Bug Fixes
+
+* **no-k8s:** removo docker mount ([8db50f2](https://github.com/SocialGouv/docker/commit/8db50f274fcd9a78140a04da86a5baec33782ef7))
+
 # [6.7.0](https://github.com/SocialGouv/docker/compare/v6.6.0...v6.7.0) (2021-05-12)
 
 
