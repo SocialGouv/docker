@@ -6,7 +6,7 @@ services:
       replicas: 0
 
   lint:
-    image: hadolint/hadolint:v1.23.0-alpine
+    image: hadolint/hadolint:v2.4.0-alpine
     entrypoint: hadolint
     command: Dockerfile
     volumes:
