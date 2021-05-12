@@ -1,3 +1,10 @@
+## [6.8.1](https://github.com/SocialGouv/docker/compare/v6.8.0...v6.8.1) (2021-05-12)
+
+
+### Bug Fixes
+
+* **deps:** update socialgouv/docker images docker tags to v6.8 ([#652](https://github.com/SocialGouv/docker/issues/652)) ([4a9b80e](https://github.com/SocialGouv/docker/commit/4a9b80e431f2a3c7ba25969cba6506143a4f7a9c))
+
 # [6.8.0](https://github.com/SocialGouv/docker/compare/v6.7.1...v6.8.0) (2021-05-12)
 
 
