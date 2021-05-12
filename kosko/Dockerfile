@@ -19,7 +19,7 @@ RUN set -ex \
   && apk add --update --no-cache \
   bash=~5 \
   coreutils=~8 \
-  gettext=~0 \
+  gettext=~0.20.2-r2 \
   jq=~1 \
   #
   && yarn global add kosko@${KOSKO_VERSION} \
