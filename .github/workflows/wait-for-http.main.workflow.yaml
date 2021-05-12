@@ -76,7 +76,7 @@ jobs:
       - run: make e2e
         working-directory: wait-for-http
   lint:
-    container: hadolint/hadolint:v1.22.1
+    container: hadolint/hadolint:v1.23.0
     name: Lint
     runs-on: ubuntu-latest
     steps:
