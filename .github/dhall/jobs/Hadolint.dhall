@@ -15,8 +15,7 @@ let HadolintJob =
           , GithubActions.Step::{
             , uses = Some
                 "docker://ghcr.io/hadolint/hadolint:${HADOLINT_VERSION}"
-            , `with` = Some (toMap { args = "hadolint ./Dockerfile" })
-            , working-directory = Some package
+            , `with` = Some (toMap { args = "./${package}/Dockerfile" })
             }
           ]
         }
@@ -32,8 +31,7 @@ let __test__foo =
             , GithubActions.Step::{
               , uses = Some
                   "docker://ghcr.io/hadolint/hadolint:${HADOLINT_VERSION}"
-              , `with` = Some (toMap { args = "hadolint ./Dockerfile" })
-              , working-directory = Some "foo"
+              , `with` = Some (toMap { args = "./foo/Dockerfile" })
               }
             ]
           }

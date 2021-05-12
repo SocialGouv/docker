@@ -82,8 +82,7 @@ jobs:
       - uses: "actions/checkout@v2"
       - uses: "docker://ghcr.io/hadolint/hadolint:2.4.0@sha256:ed22c9de9b884383094edb8930696a256c4450335945c68153d8fc8fbb27bf03"
         with:
-          args: hadolint ./Dockerfile
-        working-directory: git-deploy
+          args: "./git-deploy/Dockerfile"
   security_scan:
     name: Vulnerability Scanner
     needs:
