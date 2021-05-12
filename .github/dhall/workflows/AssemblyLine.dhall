@@ -57,10 +57,11 @@ let Worklflow =
                             ++  " trivy-results.sarif"
                           )
                       }
-                    , upload-sarif.codeql-bundle-20210421
-                        upload-sarif.Input::{
-                        , sarif_file = Some "trivy-results.sarif"
-                        }
+                    ,   upload-sarif.codeql-bundle-20210421
+                          upload-sarif.Input::{
+                          , sarif_file = Some "trivy-results.sarif"
+                          }
+                      ⫽ { continue-on-error = Some True }
                     ]
                   }
                 }
