@@ -20,7 +20,7 @@ RUN set -ex \
   bash=~5 \
   coreutils=~8 \
   gettext=~0 \
-  jq=~1 \
+  jq=~1.6-r1 \
   #
   && yarn global add kosko@${KOSKO_VERSION} \
   #
