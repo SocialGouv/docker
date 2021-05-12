@@ -5,7 +5,7 @@
   "stabilityDays": 3,
   "packageRules": [
     {
-      "matchDatasources": ["docker", "github-tags"],
+      "matchDatasources": ["docker", "github-tags", "repology"],
       "excludePackagePatterns": ["^ghcr\\.io/socialgouv/docker/"],
       "major": {
         "semanticCommitType": "feat"
