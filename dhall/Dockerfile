@@ -33,10 +33,6 @@ RUN set -ex \
   #
   ;
 
-RUN dhall --version
-RUN dhall-to-json --version
-RUN dhall-to-yaml --version
-
 # No-root
 RUN adduser --home /home/socialgouv --disabled-password --gecos User socialgouv
 USER socialgouv
