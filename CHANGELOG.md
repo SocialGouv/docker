@@ -1,3 +1,10 @@
+## [6.4.1](https://github.com/SocialGouv/docker/compare/v6.4.0...v6.4.1) (2021-05-12)
+
+
+### Bug Fixes
+
+* **azure-db:** add quotes to NEW_DB_NAME ([#637](https://github.com/SocialGouv/docker/issues/637)) ([393c380](https://github.com/SocialGouv/docker/commit/393c380ab8512fd380f84cb922f89e46b0c8babd))
+
 # [6.4.0](https://github.com/SocialGouv/docker/compare/v6.3.0...v6.4.0) (2021-05-08)
 
 
