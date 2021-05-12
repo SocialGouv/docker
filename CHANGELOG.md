@@ -1,3 +1,16 @@
+# [6.5.0](https://github.com/SocialGouv/docker/compare/v6.4.1...v6.5.0) (2021-05-12)
+
+
+### Features
+
+* **deps:** update hadolint/hadolint docker tag to v1.23.0 ([#614](https://github.com/SocialGouv/docker/issues/614)) ([9c84026](https://github.com/SocialGouv/docker/commit/9c84026f5445ac7504985c85741db2bb4920a266))
+
+
+### Reverts
+
+* **deps:** update dependency jq to v1.6-r1 ([1578d97](https://github.com/SocialGouv/docker/commit/1578d972b16ef26edcdf3ec8237cea6d9750ccc9)), closes [SocialGouv/docker#632](https://github.com/SocialGouv/docker/issues/632)
+* **deps:** update dependency socialgouv/k8s to v1.4.0 ([1d6cfa0](https://github.com/SocialGouv/docker/commit/1d6cfa0c65b5c639d31bd7a74916bb44ec79d5aa))
+
 ## [6.4.1](https://github.com/SocialGouv/docker/compare/v6.4.0...v6.4.1) (2021-05-12)
 
 
