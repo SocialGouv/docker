@@ -8,7 +8,7 @@ RUN set -x \
     #
     # Install git to install extra
     #
-    && apk add --update --no-cache --virtual .bats-deps git=~2.30.2-r0 \
+    && apk add --update --no-cache --virtual .bats-deps git=~2 \
     #
     # Install extra bats dependencies
     #
