@@ -76,7 +76,7 @@ jobs:
       - run: make e2e
         working-directory: bats
   lint:
-    container: hadolint/hadolint:v1.23.0
+    container: hadolint/hadolint:v2.4.0
     name: Lint
     runs-on: ubuntu-latest
     steps:

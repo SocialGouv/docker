@@ -5,13 +5,13 @@ RUN set -x \
   # Install
   # - coreutils: For GNU mktemp since busybox mktemp doesn't support --tmpdir.
   && apk add --update --no-cache \
-  # renovate: datasource=repology depName=alpine_3_13/coreutils versioning=loose
+  # renovate: datasource=repology depName=alpine_3_11/coreutils versioning=loose
   coreutils=="8.31-r0" \
   #
   # Install git to install extra
   #
   && apk add --update --no-cache --virtual .bats-deps \
-  # renovate: datasource=repology depName=alpine_3_13/git versioning=loose
+  # renovate: datasource=repology depName=alpine_3_11/git versioning=loose
   git=="2.24.4-r0" \
   #
   # Install extra bats dependencies
