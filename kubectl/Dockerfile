@@ -10,7 +10,7 @@ RUN set -ex \
   #
   && apk add --update --no-cache \
     bash=~5 \
-    coreutils=~8 \
+    coreutils=~8.32-r2 \
     gettext=~0 \
     jq=~1 \
   #

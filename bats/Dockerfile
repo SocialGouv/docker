@@ -4,7 +4,7 @@ RUN set -x \
     #
     # Install
     # - coreutils: For GNU mktemp since busybox mktemp doesn't support --tmpdir.
-    && apk add --update --no-cache coreutils=~8 \
+    && apk add --update --no-cache coreutils=~8.32-r2 \
     #
     # Install git to install extra
     #
