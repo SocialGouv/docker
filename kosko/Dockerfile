@@ -4,7 +4,7 @@ FROM ghcr.io/socialgouv/docker/kubectl:6.0 AS kubectl-image
 
 #
 
-FROM node:15-alpine
+FROM node:14.16.1-alpine3.13
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
@@ -14,13 +14,17 @@ ENV KOSKO_VERSION=${KOSKO_VERSION}
 
 RUN set -ex \
   #
-  && apk add --no-cache yq=~4 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+  && apk add --update --no-cache \
+  # renovate: datasource=repology depName=alpine_3_13/yq versioning=loose
+  yq=="3.4.1-r0" \
   #
   && apk add --update --no-cache \
-  bash=~5 \
-  coreutils=~8 \
-  gettext=~0 \
-  jq=~1 \
+  # renovate: datasource=repology depName=alpine_3_13/bash versioning=loose
+  bash=="5.1.0-r0" \
+  # renovate: datasource=repology depName=alpine_3_13/coreutils versioning=loose
+  coreutils=="8.32-r2" \
+  # renovate: datasource=repology depName=alpine_3_13/gettext versioning=loose
+  gettext=="0.20.2-r2" \
   #
   && yarn global add kosko@${KOSKO_VERSION} \
   #
