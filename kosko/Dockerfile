@@ -4,7 +4,7 @@ FROM ghcr.io/socialgouv/docker/kubectl:6.8 AS kubectl-image
 
 #
 
-FROM node:14.16.1-alpine3.13
+FROM node:14.17.0-alpine3.13
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
