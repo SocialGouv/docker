@@ -1,3 +1,10 @@
+# [6.10.0](https://github.com/SocialGouv/docker/compare/v6.9.0...v6.10.0) (2021-05-15)
+
+
+### Features
+
+* **deps:** update node.js to v14.17.0 ([#653](https://github.com/SocialGouv/docker/issues/653)) ([d8e3f5a](https://github.com/SocialGouv/docker/commit/d8e3f5a69ebe2e0dc26a708fa099a75eca06f5db))
+
 # [6.9.0](https://github.com/SocialGouv/docker/compare/v6.8.1...v6.9.0) (2021-05-14)
 
 
