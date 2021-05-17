@@ -1,3 +1,10 @@
+## [6.10.2](https://github.com/SocialGouv/docker/compare/v6.10.1...v6.10.2) (2021-05-17)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/hadolint/hadolint docker tag to v2.4.1 ([#656](https://github.com/SocialGouv/docker/issues/656)) ([f190150](https://github.com/SocialGouv/docker/commit/f1901509a6af7e8463f6fafd2ec8e407a758386c))
+
 ## [6.10.1](https://github.com/SocialGouv/docker/compare/v6.10.0...v6.10.1) (2021-05-17)
 
 
