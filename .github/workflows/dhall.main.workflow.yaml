@@ -82,7 +82,11 @@ jobs:
       - uses: "actions/checkout@v2"
       - run: "docker pull ghcr.io/socialgouv/docker/dhall:sha-${{ github.sha }}"
       - name: Run Trivy vulnerability scanner
-        uses: "aquasecurity/trivy-action@b38389f8efef9798810fe0c5b5096ac198cffd54"
+        uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
+        with:
+          image-ref: "ghcr.io/socialgouv/docker/dhall:sha-${{ github.sha }}"
+      - name: Export Trivy Results as sarif
+        uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
         with:
           format: template
           image-ref: "ghcr.io/socialgouv/docker/dhall:sha-${{ github.sha }}"
@@ -90,8 +94,7 @@ jobs:
           template: "@/contrib/sarif.tpl"
       - name: Change hardcoded Dockerfile path
         run: "sed -i 's/\"uri\": \"Dockerfile\"/\"uri\": \"dhall\\/Dockerfile\"/' trivy-results.sarif"
-      - continue-on-error: true
-        uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
+      - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
         with:
           sarif_file: trivy-results.sarif
   version_test:
