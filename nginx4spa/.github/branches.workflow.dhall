@@ -1,6 +1,6 @@
 let On =
       ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:9db9ed3ee8fa0c703bcc70b9050f5e1aec785995c5c675744ccce448c6207197
+in  ./AssemblyLine.dhall sha256:2318eea713e67d516dc585901c5d71f2adc32ca82e855cc27c45ffc20bbd939f
   with on = On.match On.Event.FeatureBranches "nginx4spa"
   with name = "nginx4spa (branch)"
