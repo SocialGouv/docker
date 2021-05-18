@@ -1,4 +1,5 @@
 let GithubActions =
+    {- renovate: currentValue=master -}
       https://raw.githubusercontent.com/SocialGouv/.github/master/dhall/github-actions/package.dhall sha256:327d499ebf1ec63e5c3b0b0d5285b78a07be4ad1a941556eb35f67547004545f
 
 let Push =
