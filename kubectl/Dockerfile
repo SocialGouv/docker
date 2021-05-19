@@ -19,6 +19,10 @@ RUN set -ex \
   jq=="1.6-r1" \
   # renovate: datasource=repology depName=alpine_3_13/git versioning=loose
   git=="2.30.2-r0" \
+  # renovate: datasource=repology depName=alpine_3_13/nodejs versioning=loose
+  nodejs==14.16.1-r1 \
+  # renovate: datasource=repology depName=alpine_3_13/yarn versioning=loose
+  yarn==1.22.10-r0 \
   #
   && wget -q -O /dev/shm/kubectl \
   "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
