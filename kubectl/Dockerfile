@@ -17,6 +17,8 @@ RUN set -ex \
   gettext=="0.20.2-r2" \
   # renovate: datasource=repology depName=alpine_3_13/jq versioning=loose
   jq=="1.6-r1" \
+  # renovate: datasource=repology depName=alpine_3_13/git versioning=loose
+  git=="2.30.2-r0" \
   #
   && wget -q -O /dev/shm/kubectl \
   "https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
@@ -28,6 +30,24 @@ RUN set -ex \
   && tar xvzf /dev/shm/kustomize.tar  \
   && mv /kustomize /usr/local/bin/kustomize \
   ;
+
+RUN set -ex \
+  #
+  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+  # renovate: datasource=repology depName=alpine_edge/yq versioning=loose
+  yq=="4.6.3-r0";
+
+# renovate: datasource=github-releases depName=k14s/kapp
+ARG KAPP_VERSION=v0.36.0
+RUN set -ex \
+  #
+  && wget -q -O /usr/local/bin/kapp \
+  "https://github.com/k14s/kapp/releases/download/${KAPP_VERSION}/kapp-linux-amd64" \
+  && chmod +x /usr/local/bin/kapp \
+  #
+  && kapp --version \
+  ;
+
 
 USER 1001
 ENTRYPOINT [ "kubectl" ]
