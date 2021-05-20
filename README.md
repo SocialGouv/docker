@@ -28,14 +28,15 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 
 ## Images
 
-| Project               | Image                                                                  | Links                                                                                      |
-| --------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Project               | Image                                                            | Links                                                                                      |
+| --------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | **azure-cli**         | `docker pull ghcr.io/socialgouv/docker/azure-cli:6.11.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./azure-cli/README.md)         |
 | **azure-db**          | `docker pull ghcr.io/socialgouv/docker/azure-db:6.11.1`          | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)          |
 | **curl**              | `docker pull ghcr.io/socialgouv/docker/curl:6.11.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)              |
 | **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:6.11.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
 | **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:6.11.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
 | **git-deploy**        | `docker pull ghcr.io/socialgouv/docker/git-deploy:6.11.1`        | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)        |
+| **gitlab-deploy**     | `docker pull ghcr.io/socialgouv/docker/gitlab-deploy:6.11.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./gitlab-deploy/README.md)     |
 | **kosko**             | `docker pull ghcr.io/socialgouv/docker/kosko:6.11.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)             |
 | **kubectl**           | `docker pull ghcr.io/socialgouv/docker/kubectl:6.11.1`           | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)           |
 | **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:6.11.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
