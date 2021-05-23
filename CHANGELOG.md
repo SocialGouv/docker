@@ -1,3 +1,10 @@
+# [6.12.0](https://github.com/SocialGouv/docker/compare/v6.11.1...v6.12.0) (2021-05-23)
+
+
+### Features
+
+* **deps:** update dependency socialgouv/k8s to v1.6.0 ([#663](https://github.com/SocialGouv/docker/issues/663)) ([e41aee6](https://github.com/SocialGouv/docker/commit/e41aee65cdb3c40b2b3968eec5eab7667efb5706))
+
 ## [6.11.1](https://github.com/SocialGouv/docker/compare/v6.11.0...v6.11.1) (2021-05-19)
 
 
