@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   # renovate: datasource=repology depName=alpine_3_13/nodejs versioning=loose
   nodejs=="14.16.1-r1" \
   # renovate: datasource=repology depName=alpine_3_13/nss versioning=loose
-  nss=="3.63-r1" \
+  nss=="3.66-r0" \
   # renovate: datasource=repology depName=alpine_3_13/ttf-freefont versioning=loose
   ttf-freefont=="20120503-r1" \
   # renovate: datasource=repology depName=alpine_3_13/yarn versioning=loose
