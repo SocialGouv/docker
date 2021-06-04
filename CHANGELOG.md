@@ -1,3 +1,10 @@
+# [6.17.0](https://github.com/SocialGouv/docker/compare/v6.16.0...v6.17.0) (2021-06-04)
+
+
+### Features
+
+* **deps:** update dependency alpine_3_13/nss to v3.66-r0 ([#676](https://github.com/SocialGouv/docker/issues/676)) ([f2d9a6e](https://github.com/SocialGouv/docker/commit/f2d9a6e5532fdfddea24b07ad6967748b644a5ba))
+
 # [6.16.0](https://github.com/SocialGouv/docker/compare/v6.15.1...v6.16.0) (2021-05-27)
 
 
