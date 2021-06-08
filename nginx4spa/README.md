@@ -23,3 +23,14 @@ VERSION=x.y.z
 Notes:
 
 - `PORT` is optional and default to `80`
+
+To override default configuration, make a local copy of `nginx.conf` and add it to docker build:
+
+```dockerfile
+FROM ghcr.io/socialgouv/docker/nginx4spa:x.y.z
+
+COPY ./custom-nginx.conf /etc/nginx/nginx.conf
+COPY ./dist /usr/share/nginx/html
+```
+
+**Note**: follow security recommendations here: <https://socialgouv.github.io/support/#/securite>
