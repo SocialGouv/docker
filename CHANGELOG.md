@@ -1,3 +1,10 @@
+# [6.19.0](https://github.com/SocialGouv/docker/compare/v6.18.1...v6.19.0) (2021-06-09)
+
+
+### Features
+
+* add nginx security headers to default config ([#681](https://github.com/SocialGouv/docker/issues/681)) ([b9f3f09](https://github.com/SocialGouv/docker/commit/b9f3f0947484874460f9739d53ae06def1ece8f9))
+
 ## [6.18.1](https://github.com/SocialGouv/docker/compare/v6.18.0...v6.18.1) (2021-06-06)
 
 
