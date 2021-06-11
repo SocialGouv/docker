@@ -7,7 +7,7 @@ RUN apk add --no-cache --update \
   # renovate: datasource=repology depName=alpine_3_13/coreutils versioning=loose
   coreutils=="8.32-r2" \
   # renovate: datasource=repology depName=alpine_3_13/curl versioning=loose
-  curl=="7.77.0-r0" \
+  curl=="7.77.0-r1" \
   # renovate: datasource=repology depName=alpine_3_13/gettext versioning=loose
   gettext=="0.20.2-r2"
 
