@@ -1,7 +1,7 @@
 FROM alpine:3.13
 
 # renovate: datasource=github-releases depName=dhall-lang/dhall-haskell
-ARG DHALL_VERSION=1.39.0
+ARG DHALL_VERSION=1.38.1
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
