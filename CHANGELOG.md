@@ -1,3 +1,15 @@
+# [6.22.0](https://github.com/SocialGouv/docker/compare/v6.21.1...v6.22.0) (2021-06-14)
+
+
+### Features
+
+* **deps:** update ghcr.io/hadolint/hadolint docker tag to v2.5.0 ([#685](https://github.com/SocialGouv/docker/issues/685)) ([f072b93](https://github.com/SocialGouv/docker/commit/f072b930c7e5db61caea8991436adf73d4ef0169))
+
+
+### Reverts
+
+* **deps:** update dependency dhall-lang/dhall-haskell to v1.39.0 ([#689](https://github.com/SocialGouv/docker/issues/689)) ([d3d4fb8](https://github.com/SocialGouv/docker/commit/d3d4fb8af4f800b96dbbfec3ecf2fc6159568448))
+
 ## [6.21.1](https://github.com/SocialGouv/docker/compare/v6.21.0...v6.21.1) (2021-06-14)
 
 
