@@ -1,3 +1,10 @@
+# [6.23.0](https://github.com/SocialGouv/docker/compare/v6.22.0...v6.23.0) (2021-06-19)
+
+
+### Features
+
+* **deps:** update dependency debian_stable/postgresql-client-11 to v11.12-0+deb10u1 ([#694](https://github.com/SocialGouv/docker/issues/694)) ([5e7f3e1](https://github.com/SocialGouv/docker/commit/5e7f3e101e7544dfa511f78d0c23b7c0415dac77))
+
 # [6.22.0](https://github.com/SocialGouv/docker/compare/v6.21.1...v6.22.0) (2021-06-14)
 
 
