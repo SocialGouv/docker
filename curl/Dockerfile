@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 RUN apk --no-cache --update add \
   # renovate: datasource=repology depName=alpine_3_13/curl versioning=loose
