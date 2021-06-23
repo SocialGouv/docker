@@ -3,7 +3,7 @@
 FROM ghcr.io/socialgouv/docker/kubectl:6.23 AS kubectl-image
 FROM ghcr.io/socialgouv/docker/azure-cli:6.24 AS azure-cli-image
 
-FROM debian:10.9-slim
+FROM debian:10.10-slim
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=azure-cli-image /usr/bin/az /usr/bin/az
