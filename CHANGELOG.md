@@ -1,3 +1,10 @@
+# [6.25.0](https://github.com/SocialGouv/docker/compare/v6.24.0...v6.25.0) (2021-06-23)
+
+
+### Features
+
+* **deps:** update debian docker tag to v10.10 ([#697](https://github.com/SocialGouv/docker/issues/697)) ([e3f3ab5](https://github.com/SocialGouv/docker/commit/e3f3ab589c02057f9713ee6d1a881a78291d889a))
+
 # [6.24.0](https://github.com/SocialGouv/docker/compare/v6.23.2...v6.24.0) (2021-06-20)
 
 
