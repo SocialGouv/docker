@@ -44,7 +44,7 @@ services:
     working_dir: /home/socialgouv
 
   hasura:
-    image: hasura/graphql-engine:v2.0.0
+    image: hasura/graphql-engine:v2.0.1
     healthcheck:
       test: wget -q --spider http://localhost:8080/healthz
       interval: 1s
