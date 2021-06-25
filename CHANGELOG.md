@@ -1,3 +1,10 @@
+## [6.26.2](https://github.com/SocialGouv/docker/compare/v6.26.1...v6.26.2) (2021-06-25)
+
+
+### Bug Fixes
+
+* **wait-for-http:** fix entrypoint ([#702](https://github.com/SocialGouv/docker/issues/702)) ([f89ad2d](https://github.com/SocialGouv/docker/commit/f89ad2d57841b76058f89c83b391f4c309374804))
+
 ## [6.26.1](https://github.com/SocialGouv/docker/compare/v6.26.0...v6.26.1) (2021-06-24)
 
 
