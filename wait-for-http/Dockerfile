@@ -5,4 +5,4 @@ COPY ./bin /bin
 ENV URL $URL
 ENV RETRIES $RETRIES
 
-ENTRYPOINT ["/bin/wait-for-http"]
+ENTRYPOINT ["sh", "/bin/wait-for-http"]
