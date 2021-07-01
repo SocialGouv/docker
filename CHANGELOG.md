@@ -1,3 +1,15 @@
+## [6.26.3](https://github.com/SocialGouv/docker/compare/v6.26.2...v6.26.3) (2021-07-01)
+
+
+### Bug Fixes
+
+* **deps:** update python docker tag to v3.9.6 ([#703](https://github.com/SocialGouv/docker/issues/703)) ([f54fd98](https://github.com/SocialGouv/docker/commit/f54fd98aee76eb84141319992f46b888bed69dcb))
+
+
+### Reverts
+
+* **renovate:** force enable the 🤖 on this repo ([ee62b56](https://github.com/SocialGouv/docker/commit/ee62b5604a10e7d5f87644ac10bf7d0a0df28ec0))
+
 ## [6.26.2](https://github.com/SocialGouv/docker/compare/v6.26.1...v6.26.2) (2021-06-25)
 
 
