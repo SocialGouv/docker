@@ -4,6 +4,6 @@
     "bats-assert": "bats-core/bats-assert#2.0.0",
     "bats-file": "bats-core/bats-file#0.3.0",
     "bats-support": "bats-core/bats-support#0.3.0",
-    "husky": "^7.0.0"
+    "husky": "^7.0.1"
   }
 }
