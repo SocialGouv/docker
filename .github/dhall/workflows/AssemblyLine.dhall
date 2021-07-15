@@ -32,5 +32,9 @@ let Worklflow =
                 }
             # args.jobs
         }
+        with concurrency =
+          { group = "${args.name}-\${{ github.head_ref }}"
+          , cancel-in-progress = True
+          }
 
 in  { Worklflow }

@@ -1,6 +1,6 @@
 let On =
       ../../.github/dhall/workflows/On.dhall sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
-in  ./AssemblyLine.dhall sha256:abaec7d2374be8adda6f41f193d806cf6f088b78b8505e88767cc215b2c5b1e8
+in  ./AssemblyLine.dhall sha256:63b448a7c5593b18c709990fdd6780eb8c10be80a263e4547a7fd151d4947ba6
   with on = On.match On.Event.ReleasesBranches "puppeteer"
   with name = "puppeteer (main)"
