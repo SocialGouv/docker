@@ -5,7 +5,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   # renovate: datasource=repology depName=alpine_3_14/ca-certificates versioning=loose
   ca-certificates=="20191127-r5" \
   # renovate: datasource=repology depName=alpine_3_14/chromium versioning=loose
-  chromium=="91.0.4472.114-r0" \
+  chromium=="91.0.4472.164-r0" \
   # renovate: datasource=repology depName=alpine_3_14/freetype-dev versioning=loose
   freetype-dev=="2.10.4-r1" \
   # renovate: datasource=repology depName=alpine_3_14/freetype versioning=loose
