@@ -1,3 +1,10 @@
+# [6.28.0](https://github.com/SocialGouv/docker/compare/v6.27.1...v6.28.0) (2021-07-16)
+
+
+### Features
+
+* **deps:** update dependency alpine_3_14/gettext to v0.21-r0 ([#713](https://github.com/SocialGouv/docker/issues/713)) ([95b7532](https://github.com/SocialGouv/docker/commit/95b7532968c6d73508ef2bda395cd3d97f47d8b7))
+
 ## [6.27.1](https://github.com/SocialGouv/docker/compare/v6.27.0...v6.27.1) (2021-07-16)
 
 
