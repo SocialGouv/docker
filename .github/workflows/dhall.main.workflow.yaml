@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: "${{ github.head_ref }}-dhall"
+  group: "dhall-${{ github.ref }}"
 jobs:
   build:
     name: Build

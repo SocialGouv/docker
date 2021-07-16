@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:45ee1f06fb08d5771ec8c1878d43efa5b1ee4990b15cf8c22912ff4b5c6727f4
+      sha256:c1be848a467739d320234e021a27aab81c55da4f1397db52fbd914583bb3b448
   with on = On.match On.Event.FeatureBranches "kubectl"
   with name = "kubectl (branch)"

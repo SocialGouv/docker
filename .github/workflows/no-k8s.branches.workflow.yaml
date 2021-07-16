@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: "${{ github.head_ref }}-no-k8s"
+  group: "no-k8s-${{ github.ref }}"
 jobs:
   build:
     name: Build
