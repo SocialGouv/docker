@@ -9,13 +9,13 @@ ARG KUSTOMIZE_VERSION=kustomize/v3.5.2
 RUN set -ex \
   #
   && apk add --update --no-cache \
-  # renovate: datasource=repology depName=alpine_3_13/bash versioning=loose
+  # renovate: datasource=repology depName=alpine_3_14/bash versioning=loose
   bash=="5.1.0-r0" \
-  # renovate: datasource=repology depName=alpine_3_13/coreutils versioning=loose
+  # renovate: datasource=repology depName=alpine_3_14/coreutils versioning=loose
   coreutils=="8.32-r2" \
-  # renovate: datasource=repology depName=alpine_3_13/gettext versioning=loose
+  # renovate: datasource=repology depName=alpine_3_14/gettext versioning=loose
   gettext=="0.20.2-r2" \
-  # renovate: datasource=repology depName=alpine_3_13/jq versioning=loose
+  # renovate: datasource=repology depName=alpine_3_14/jq versioning=loose
   jq=="1.6-r1" \
   #
   && wget -q -O /dev/shm/kubectl \
