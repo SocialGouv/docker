@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:ee6446717e0f289401766dfd7444b9f4f8bf5c06441cf789c0aca77757deb8f5
+      sha256:e1c944380e3bc302e39185af11ce12031df0c8219ec0a0e0afbc8e2523092112
   with on = On.match On.Event.ReleasesBranches "wait-for-http"
   with name = "wait-for-http (main)"

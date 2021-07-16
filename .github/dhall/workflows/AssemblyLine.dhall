@@ -1,23 +1,23 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/master/dhall/github-actions/package.dhall
-        sha256:327d499ebf1ec63e5c3b0b0d5285b78a07be4ad1a941556eb35f67547004545f
+      https://raw.githubusercontent.com/SocialGouv/.github/9fe59f60d6a941dd76df40d67b3428fdf85865aa/dhall/github-actions/package.dhall
+        sha256:61e7d862f54e9514379feaadbc80a85b7bd870dad5e31e2e83d8b3dd9eda8e1b
 
 let ContainerTestJob =
       ../jobs/ContainerTest.dhall
-        sha256:bc34ac8b31da3add3f42e2db6d33bd4155c3c9e34c0e0d8bdec9ebec2aee2d34
+        sha256:400214d12eb103c2500b450f1b1b62345be43866b1d5551badb68199b3c4aea9
 
 let DockerBuildJob =
       ../jobs/DockerBuild.dhall
-        sha256:c7fb5c22101c47af7907cabf6ed1ad872586f8082cf55880f7b3b0a3a7fd40e9
+        sha256:4598776685311ced8e974f3842d13e25ba0942a2dd9d5ca5fea708f02b522369
 
 let HadolintJob =
       ../jobs/Hadolint.dhall
-        sha256:1d4f5d3df464f83d02f4a281a10a205731b08ee2d10c5fd23888cc4f9e9fa8be
+        sha256:832bac8e5ba7cb3fa31ba11de677a2b8c6b3b3a32129d087e776d5dd54317cbc
 
 let TrivyJob =
       ../jobs/Trivy.dhall
-        sha256:b3cd9619858c6342ad323abb905d84001c356a754dfbd0053927d711137c0958
+        sha256:52073382b4c4f32ada3c093400296802c2ad530276f8622164224105cb4879b2
 
 let Worklflow =
       λ ( args
@@ -28,6 +28,10 @@ let Worklflow =
         GithubActions.Workflow::{
         , name = args.name
         , on = GithubActions.On::{ push = Some GithubActions.Push::{=} }
+        , concurrency = Some GithubActions.Concurrency::{
+          , group = args.name
+          , cancel-in-progress = True
+          }
         , jobs =
               toMap
                 { lint = HadolintJob args.name
