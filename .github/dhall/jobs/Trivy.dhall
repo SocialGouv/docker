@@ -5,12 +5,12 @@ let GithubActions =
 
 let trivy-action =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/74a94f85afe089eb8e8e7c66dd19fb37f64afd38/dhall/steps/aquasecurity/trivy-action/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/9fe59f60d6a941dd76df40d67b3428fdf85865aa/dhall/steps/aquasecurity/trivy-action/package.dhall
         sha256:aeeb75c894a6a7c51d0c83574310e58db4d11698cbe9b5f443beb3043931474d
 
 let upload-sarif =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/74a94f85afe089eb8e8e7c66dd19fb37f64afd38/dhall/steps/github/codeql-action/upload-sarif/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/9fe59f60d6a941dd76df40d67b3428fdf85865aa/dhall/steps/github/codeql-action/upload-sarif/package.dhall
         sha256:e96a4a49e32c41420b99afd427f0549038b2b33d399ec1a66295e19e6cd9bf1a
 
 let job =
