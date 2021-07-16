@@ -15,7 +15,7 @@ jobs:
           mkdir -p .cache
           make
       - name: Clean up before commit
-        run: rm -rf .cache bin
+        run: rm -rf .cache bin share
       - env:
           GITHUB_TOKEN: "${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}"
         name: Commit changes
