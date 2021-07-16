@@ -1,3 +1,10 @@
+# [6.27.0](https://github.com/SocialGouv/docker/compare/v6.26.6...v6.27.0) (2021-07-16)
+
+
+### Features
+
+* **docker:** sed -i 's/alpine_3_13/alpine_3_14/g' */Dockerfile ([5050993](https://github.com/SocialGouv/docker/commit/5050993505a81ccf8d4156584536456adafcba30)), closes [#692](https://github.com/SocialGouv/docker/issues/692)
+
 ## [6.26.6](https://github.com/SocialGouv/docker/compare/v6.26.5...v6.26.6) (2021-07-15)
 
 
