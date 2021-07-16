@@ -9,7 +9,7 @@ RUN apk add --no-cache --update \
   # renovate: datasource=repology depName=alpine_3_14/curl versioning=loose
   curl=="7.77.0-r1" \
   # renovate: datasource=repology depName=alpine_3_14/gettext versioning=loose
-  gettext=="0.20.2-r2"
+  gettext=="0.21-r0"
 
 ## Copy git deployment scripts
 COPY ./bin /bin
