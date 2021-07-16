@@ -9,10 +9,21 @@ on:
       - alpha
       - "+([0-9])?(.{+([0-9]),x}).x"
 
+concurrency:
+  group: release
+  cancel-in-progress: true
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for other checks to succeed
+        uses: lewagon/wait-on-check-action@v0.2
+        with:
+          ref: ${{ github.ref }}
+          running-workflow-name: "release"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
       - name: Checkout
         uses: actions/checkout@v2
         with:
