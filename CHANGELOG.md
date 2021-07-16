@@ -1,3 +1,10 @@
+## [6.31.1](https://github.com/SocialGouv/docker/compare/v6.31.0...v6.31.1) (2021-07-16)
+
+
+### Bug Fixes
+
+* **release:** remove release concurency cancel ([9c92449](https://github.com/SocialGouv/docker/commit/9c92449c97d3fc1b240215fc2121c2289518d01a))
+
 # [6.31.0](https://github.com/SocialGouv/docker/compare/v6.30.0...v6.31.0) (2021-07-16)
 
 
