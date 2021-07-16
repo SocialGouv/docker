@@ -1,5 +1,8 @@
 schemaVersion: "2.0.0"
 
+metadataTest:
+  entrypoint: ["sh", "/bin/wait-for-http"]
+
 commandTests:
   - name: "curl version"
     command: "curl"

@@ -1,11 +1,11 @@
-FROM ghcr.io/socialgouv/docker/kosko:6.11
+FROM ghcr.io/socialgouv/docker/kosko:6.26
 
 RUN apk add --update --no-cache \
   # renovate: datasource=repology depName=alpine_3_13/git versioning=loose
   git=="2.30.2-r0"
 
 # renovate: datasource=github-tags depName=socialgouv/k8s
-ARG K8S_VERSION=v1.5.1
+ARG K8S_VERSION=v1.9.1
 RUN git clone --depth 1 --branch ${K8S_VERSION} https://github.com/SocialGouv/k8s /k8s
 
 WORKDIR /k8s/.k8s

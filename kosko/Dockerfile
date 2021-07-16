@@ -1,10 +1,10 @@
 #
 
-FROM ghcr.io/socialgouv/docker/kubectl:6.11 AS kubectl-image
+FROM ghcr.io/socialgouv/docker/kubectl:6.23 AS kubectl-image
 
 #
 
-FROM node:14.17.0-alpine3.13
+FROM node:14.17.3-alpine3.13
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
@@ -16,7 +16,7 @@ RUN set -ex \
   #
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   # renovate: datasource=repology depName=alpine_edge/yq versioning=loose
-  yq=="4.6.3-r0" \
+  yq=="4.6.3-r1" \
   #
   && apk add --update --no-cache \
   # renovate: datasource=repology depName=alpine_3_13/bash versioning=loose
@@ -32,7 +32,7 @@ RUN set -ex \
   ;
 
 # renovate: datasource=github-releases depName=k14s/kapp
-ARG KAPP_VERSION=v0.36.0
+ARG KAPP_VERSION=v0.37.0
 RUN set -ex \
   #
   && wget -q -O /usr/local/bin/kapp \

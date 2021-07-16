@@ -1,3 +1,202 @@
+## [6.26.6](https://github.com/SocialGouv/docker/compare/v6.26.5...v6.26.6) (2021-07-15)
+
+
+### Bug Fixes
+
+* **deps:** update hasura/graphql-engine docker tag to v2.0.2 ([#709](https://github.com/SocialGouv/docker/issues/709)) ([1446183](https://github.com/SocialGouv/docker/commit/14461837a05d8e42048ca91e7ba50a064e3e8ead))
+
+## [6.26.5](https://github.com/SocialGouv/docker/compare/v6.26.4...v6.26.5) (2021-07-07)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v14.17.3 ([#708](https://github.com/SocialGouv/docker/issues/708)) ([92a754d](https://github.com/SocialGouv/docker/commit/92a754d3052901814e21032bf28755f984174002))
+
+## [6.26.4](https://github.com/SocialGouv/docker/compare/v6.26.3...v6.26.4) (2021-07-07)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v14.17.2 ([#707](https://github.com/SocialGouv/docker/issues/707)) ([01df553](https://github.com/SocialGouv/docker/commit/01df55395362994dc09d38223e06d803758a2f73))
+
+## [6.26.3](https://github.com/SocialGouv/docker/compare/v6.26.2...v6.26.3) (2021-07-01)
+
+
+### Bug Fixes
+
+* **deps:** update python docker tag to v3.9.6 ([#703](https://github.com/SocialGouv/docker/issues/703)) ([f54fd98](https://github.com/SocialGouv/docker/commit/f54fd98aee76eb84141319992f46b888bed69dcb))
+
+
+### Reverts
+
+* **renovate:** force enable the 🤖 on this repo ([ee62b56](https://github.com/SocialGouv/docker/commit/ee62b5604a10e7d5f87644ac10bf7d0a0df28ec0))
+
+## [6.26.2](https://github.com/SocialGouv/docker/compare/v6.26.1...v6.26.2) (2021-06-25)
+
+
+### Bug Fixes
+
+* **wait-for-http:** fix entrypoint ([#702](https://github.com/SocialGouv/docker/issues/702)) ([f89ad2d](https://github.com/SocialGouv/docker/commit/f89ad2d57841b76058f89c83b391f4c309374804))
+
+## [6.26.1](https://github.com/SocialGouv/docker/compare/v6.26.0...v6.26.1) (2021-06-24)
+
+
+### Bug Fixes
+
+* **deps:** update hasura/graphql-engine docker tag to v2.0.1 ([#701](https://github.com/SocialGouv/docker/issues/701)) ([545f005](https://github.com/SocialGouv/docker/commit/545f00507e2e15d51f14b668a3a4ec521534c5f3))
+
+# [6.26.0](https://github.com/SocialGouv/docker/compare/v6.25.0...v6.26.0) (2021-06-23)
+
+
+### Features
+
+* **deps:** update hasura/graphql-engine docker tag to v2 ([#699](https://github.com/SocialGouv/docker/issues/699)) ([d874d7c](https://github.com/SocialGouv/docker/commit/d874d7c2d9bc19b7e4287e3b2b424592c5c5e7cd))
+
+# [6.25.0](https://github.com/SocialGouv/docker/compare/v6.24.0...v6.25.0) (2021-06-23)
+
+
+### Features
+
+* **deps:** update debian docker tag to v10.10 ([#697](https://github.com/SocialGouv/docker/issues/697)) ([e3f3ab5](https://github.com/SocialGouv/docker/commit/e3f3ab589c02057f9713ee6d1a881a78291d889a))
+
+# [6.24.0](https://github.com/SocialGouv/docker/compare/v6.23.2...v6.24.0) (2021-06-20)
+
+
+### Features
+
+* **deps:** update alpine docker tag to v3.14 ([#692](https://github.com/SocialGouv/docker/issues/692)) ([1f19da8](https://github.com/SocialGouv/docker/commit/1f19da884bc16ed5b46f271580a65880f72c5d33))
+
+## [6.23.2](https://github.com/SocialGouv/docker/compare/v6.23.1...v6.23.2) (2021-06-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kubernetes/kubernetes to v1.21.2 ([#693](https://github.com/SocialGouv/docker/issues/693)) ([f152f69](https://github.com/SocialGouv/docker/commit/f152f69eb88313f2d496f0e34cc625b4db1b9d94))
+
+## [6.23.1](https://github.com/SocialGouv/docker/compare/v6.23.0...v6.23.1) (2021-06-19)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v14.17.1 ([#691](https://github.com/SocialGouv/docker/issues/691)) ([6535d89](https://github.com/SocialGouv/docker/commit/6535d89d3a91b6dec2f876e6d148ee7804cf14c1))
+
+# [6.23.0](https://github.com/SocialGouv/docker/compare/v6.22.0...v6.23.0) (2021-06-19)
+
+
+### Features
+
+* **deps:** update dependency debian_stable/postgresql-client-11 to v11.12-0+deb10u1 ([#694](https://github.com/SocialGouv/docker/issues/694)) ([5e7f3e1](https://github.com/SocialGouv/docker/commit/5e7f3e101e7544dfa511f78d0c23b7c0415dac77))
+
+# [6.22.0](https://github.com/SocialGouv/docker/compare/v6.21.1...v6.22.0) (2021-06-14)
+
+
+### Features
+
+* **deps:** update ghcr.io/hadolint/hadolint docker tag to v2.5.0 ([#685](https://github.com/SocialGouv/docker/issues/685)) ([f072b93](https://github.com/SocialGouv/docker/commit/f072b930c7e5db61caea8991436adf73d4ef0169))
+
+
+### Reverts
+
+* **deps:** update dependency dhall-lang/dhall-haskell to v1.39.0 ([#689](https://github.com/SocialGouv/docker/issues/689)) ([d3d4fb8](https://github.com/SocialGouv/docker/commit/d3d4fb8af4f800b96dbbfec3ecf2fc6159568448))
+
+## [6.21.1](https://github.com/SocialGouv/docker/compare/v6.21.0...v6.21.1) (2021-06-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency socialgouv/k8s to v1.9.1 ([#688](https://github.com/SocialGouv/docker/issues/688)) ([5bfbd1d](https://github.com/SocialGouv/docker/commit/5bfbd1de8ec1749ff9a4e2cac8adbe9fac5f6094))
+
+# [6.21.0](https://github.com/SocialGouv/docker/compare/v6.20.1...v6.21.0) (2021-06-14)
+
+
+### Features
+
+* **deps:** update dependency socialgouv/k8s to v1.9.0 ([#686](https://github.com/SocialGouv/docker/issues/686)) ([4e5b288](https://github.com/SocialGouv/docker/commit/4e5b288f9867d4aaa94a05a1afdcc18faffe511c))
+
+## [6.20.1](https://github.com/SocialGouv/docker/compare/v6.20.0...v6.20.1) (2021-06-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_3_13/curl to v7.77.0-r1 ([#684](https://github.com/SocialGouv/docker/issues/684)) ([afb1056](https://github.com/SocialGouv/docker/commit/afb1056087c8a8731c123c3fb8212b4ac4d9c04d))
+
+# [6.20.0](https://github.com/SocialGouv/docker/compare/v6.19.0...v6.20.0) (2021-06-09)
+
+
+### Features
+
+* **deps:** update dependency dhall-lang/dhall-haskell to v1.39.0 ([#678](https://github.com/SocialGouv/docker/issues/678)) ([ac3e4cb](https://github.com/SocialGouv/docker/commit/ac3e4cb9ebc47119b6961ec564b5868658a83047))
+
+# [6.19.0](https://github.com/SocialGouv/docker/compare/v6.18.1...v6.19.0) (2021-06-09)
+
+
+### Features
+
+* add nginx security headers to default config ([#681](https://github.com/SocialGouv/docker/issues/681)) ([b9f3f09](https://github.com/SocialGouv/docker/commit/b9f3f0947484874460f9739d53ae06def1ece8f9))
+
+## [6.18.1](https://github.com/SocialGouv/docker/compare/v6.18.0...v6.18.1) (2021-06-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_edge/yq to v4.6.3-r1 ([#680](https://github.com/SocialGouv/docker/issues/680)) ([2f879e2](https://github.com/SocialGouv/docker/commit/2f879e2a097b2fbc0bf92f5015bc6545a0526b63))
+
+# [6.18.0](https://github.com/SocialGouv/docker/compare/v6.17.0...v6.18.0) (2021-06-04)
+
+
+### Features
+
+* **deps:** update dependency k14s/kapp to v0.37.0 ([#675](https://github.com/SocialGouv/docker/issues/675)) ([e22c299](https://github.com/SocialGouv/docker/commit/e22c299702d43f94432f2a714daee5166e18cd02))
+
+# [6.17.0](https://github.com/SocialGouv/docker/compare/v6.16.0...v6.17.0) (2021-06-04)
+
+
+### Features
+
+* **deps:** update dependency alpine_3_13/nss to v3.66-r0 ([#676](https://github.com/SocialGouv/docker/issues/676)) ([f2d9a6e](https://github.com/SocialGouv/docker/commit/f2d9a6e5532fdfddea24b07ad6967748b644a5ba))
+
+# [6.16.0](https://github.com/SocialGouv/docker/compare/v6.15.1...v6.16.0) (2021-05-27)
+
+
+### Features
+
+* **deps:** update dependency socialgouv/k8s to v1.8.0 ([#672](https://github.com/SocialGouv/docker/issues/672)) ([34476c0](https://github.com/SocialGouv/docker/commit/34476c00c6b86a2067acac5f2b329bc02f68aade))
+
+## [6.15.1](https://github.com/SocialGouv/docker/compare/v6.15.0...v6.15.1) (2021-05-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency socialgouv/k8s to v1.6.1 ([#670](https://github.com/SocialGouv/docker/issues/670)) ([683658a](https://github.com/SocialGouv/docker/commit/683658a32be9a2571aed1dd157891c239d14bdee))
+
+# [6.15.0](https://github.com/SocialGouv/docker/compare/v6.14.0...v6.15.0) (2021-05-27)
+
+
+### Features
+
+* **deps:** update dependency alpine_3_13/curl to v7.77.0-r0 ([#669](https://github.com/SocialGouv/docker/issues/669)) ([65fb06a](https://github.com/SocialGouv/docker/commit/65fb06a5082426571a177f38fc93eab9a89b4548))
+
+# [6.14.0](https://github.com/SocialGouv/docker/compare/v6.13.0...v6.14.0) (2021-05-26)
+
+
+### Features
+
+* **deps:** update curlimages/curl docker tag to v7.77.0 ([#667](https://github.com/SocialGouv/docker/issues/667)) ([fa35739](https://github.com/SocialGouv/docker/commit/fa35739ab250fd4bd433b2f908782572f7c389ca))
+
+# [6.13.0](https://github.com/SocialGouv/docker/compare/v6.12.0...v6.13.0) (2021-05-25)
+
+
+### Features
+
+* **deps:** update nginx docker tag to v1.21 ([#665](https://github.com/SocialGouv/docker/issues/665)) ([5f13390](https://github.com/SocialGouv/docker/commit/5f13390332f0c58309ab21ad6acb7599c91d8a96))
+
+# [6.12.0](https://github.com/SocialGouv/docker/compare/v6.11.1...v6.12.0) (2021-05-23)
+
+
+### Features
+
+* **deps:** update dependency socialgouv/k8s to v1.6.0 ([#663](https://github.com/SocialGouv/docker/issues/663)) ([e41aee6](https://github.com/SocialGouv/docker/commit/e41aee65cdb3c40b2b3968eec5eab7667efb5706))
+
 ## [6.11.1](https://github.com/SocialGouv/docker/compare/v6.11.0...v6.11.1) (2021-05-19)
 
 

@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 # renovate: datasource=github-releases depName=dhall-lang/dhall-haskell
 ARG DHALL_VERSION=1.38.1

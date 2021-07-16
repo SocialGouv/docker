@@ -4,14 +4,17 @@
 
 bats-assert@bats-core/bats-assert#2.0.0:
   version "2.0.0"
+  uid d750c5a1b44bf6fc96726aea76f4621db5fd602f
   resolved "https://codeload.github.com/bats-core/bats-assert/tar.gz/d750c5a1b44bf6fc96726aea76f4621db5fd602f"
 
 bats-file@bats-core/bats-file#0.3.0:
   version "0.2.0"
+  uid c128a1de53ba4a811835af410ce427f1049e2d7f
   resolved "https://codeload.github.com/bats-core/bats-file/tar.gz/c128a1de53ba4a811835af410ce427f1049e2d7f"
 
 bats-support@bats-core/bats-support#0.3.0:
   version "0.3.0"
+  uid "24a72e14349690bcbf7c151b9d2d1cdd32d36eb1"
   resolved "https://codeload.github.com/bats-core/bats-support/tar.gz/24a72e14349690bcbf7c151b9d2d1cdd32d36eb1"
 
 bats@^1.3.0:
@@ -19,7 +22,7 @@ bats@^1.3.0:
   resolved "https://registry.yarnpkg.com/bats/-/bats-1.3.0.tgz#e24d94c8ecfc8f64812044261d04088655273459"
   integrity sha512-bnBQXwB52JwkMXzUgZOvAUDm/xVCDtdeaT4eORWeGcTLC0JgIuTMczg6QYX+KpNlC4naadC+rqdyG6winvKzlQ==
 
-husky@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-6.0.0.tgz#810f11869adf51604c32ea577edbc377d7f9319e"
-  integrity sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==
+husky@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-7.0.1.tgz#579f4180b5da4520263e8713cc832942b48e1f1c"
+  integrity sha512-gceRaITVZ+cJH9sNHqx5tFwbzlLCVxtVZcusME8JYQ8Edy5mpGDOqD8QBCdMhpyo9a+JXddnujQ4rpY2Ff9SJA==

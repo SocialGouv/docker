@@ -1,9 +1,9 @@
 #
 
-FROM ghcr.io/socialgouv/docker/kubectl:6.11 AS kubectl-image
-FROM ghcr.io/socialgouv/docker/azure-cli:6.11 AS azure-cli-image
+FROM ghcr.io/socialgouv/docker/kubectl:6.23 AS kubectl-image
+FROM ghcr.io/socialgouv/docker/azure-cli:6.26 AS azure-cli-image
 
-FROM debian:10.9-slim
+FROM debian:10.10-slim
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=azure-cli-image /usr/bin/az /usr/bin/az
@@ -16,7 +16,7 @@ RUN set -ex \
   # renovate: datasource=repology depName=debian_stable/jq versioning=loose
   jq="1.5+dfsg-2+b1" \
   # renovate: datasource=repology depName=debian_stable/postgresql-client-11 versioning=loose
-  postgresql-client-11="11.11-0+deb10u1" \
+  postgresql-client-11="11.12-0+deb10u1" \
   # renovate: datasource=repology depName=debian_stable/git versioning=loose
   git="1:2.20.1-2+deb10u3" \
   #
