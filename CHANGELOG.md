@@ -1,3 +1,10 @@
+## [6.32.1](https://github.com/SocialGouv/docker/compare/v6.32.0...v6.32.1) (2021-07-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_3_14/chromium to v91.0.4472.164-r0 ([#722](https://github.com/SocialGouv/docker/issues/722)) ([cad4d74](https://github.com/SocialGouv/docker/commit/cad4d740fc53a9cd924d1de2c3653d4b503131ab))
+
 # [6.32.0](https://github.com/SocialGouv/docker/compare/v6.31.1...v6.32.0) (2021-07-16)
 
 
