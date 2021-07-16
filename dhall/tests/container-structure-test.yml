@@ -8,8 +8,8 @@ commandTests:
   - name: "dhall-to-yaml version"
     command: "dhall-to-yaml"
     args: ["--version"]
-    expectedOutput: ["1.7.6"]
+    expectedOutput: ["1.7.7"]
   - name: "dhall-to-json version"
     command: "dhall-to-json"
     args: ["--version"]
-    excludedOutput: ["v1.9.0"]
+    expectedOutput: ["1.7.7"]
