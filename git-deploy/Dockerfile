@@ -3,7 +3,7 @@ FROM python:3.9.6-alpine3.13
 ## Install envsubst and curl
 RUN apk add --no-cache --update \
   # renovate: datasource=repology depName=alpine_3_14/bash versioning=loose
-  bash=="5.1.0-r0" \
+  bash=="5.1.4-r0" \
   # renovate: datasource=repology depName=alpine_3_14/coreutils versioning=loose
   coreutils=="8.32-r2" \
   # renovate: datasource=repology depName=alpine_3_14/curl versioning=loose
