@@ -1,3 +1,13 @@
+# [6.30.0](https://github.com/SocialGouv/docker/compare/v6.29.1...v6.30.0) (2021-07-16)
+
+
+### Features
+
+* **deps:** update dependency alpine_3_14/chromium to v91 ([#717](https://github.com/SocialGouv/docker/issues/717)) ([93fbcb5](https://github.com/SocialGouv/docker/commit/93fbcb528b7718df358fb44fecf5efb63e0cee52))
+* **deps:** update dependency alpine_3_14/harfbuzz to v2.8.1-r0 ([#715](https://github.com/SocialGouv/docker/issues/715)) ([50fd2ee](https://github.com/SocialGouv/docker/commit/50fd2ee50052a06ae98d4e1c42f9742a3b4bf208))
+* **deps:** update dependency alpine_3_14/nodejs to v14.17.1-r0 ([#716](https://github.com/SocialGouv/docker/issues/716)) ([ef41c21](https://github.com/SocialGouv/docker/commit/ef41c219a69872e220955796386ba7520bcc40ff))
+* **kosko:** update to alpine 3.14 ([48695b4](https://github.com/SocialGouv/docker/commit/48695b4abc1ba2e06864d0fb4fb278f862561106))
+
 ## [6.29.1](https://github.com/SocialGouv/docker/compare/v6.29.0...v6.29.1) (2021-07-16)
 
 
