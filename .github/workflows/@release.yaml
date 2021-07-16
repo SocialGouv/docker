@@ -8,19 +8,6 @@ on:
       - beta
       - alpha
       - "+([0-9])?(.{+([0-9]),x}).x"
-  workflow_run:
-    workflows:
-      - "azure-cli (main)"
-      - "azure-db (main)"
-      - "bats (main)"
-      - "curl (main)"
-      - "dhall (main)"
-      - "kosko (main)"
-      - "kubectl (main)"
-      - "nginx4spa (main)"
-      - "puppeteer (main)"
-    types:
-      - completed
 
 concurrency:
   group: release
