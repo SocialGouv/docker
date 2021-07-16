@@ -14,7 +14,7 @@ RUN set -ex \
   # renovate: datasource=repology depName=alpine_3_14/coreutils versioning=loose
   coreutils=="8.32-r2" \
   # renovate: datasource=repology depName=alpine_3_14/gettext versioning=loose
-  gettext=="0.20.2-r2" \
+  gettext=="0.21-r0" \
   # renovate: datasource=repology depName=alpine_3_14/jq versioning=loose
   jq=="1.6-r1" \
   #
