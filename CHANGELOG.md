@@ -1,3 +1,11 @@
+# [6.32.0](https://github.com/SocialGouv/docker/compare/v6.31.1...v6.32.0) (2021-07-16)
+
+
+### Features
+
+* **deps:** update dependency alpine_3_14/git to v2.32.0-r0 ([#714](https://github.com/SocialGouv/docker/issues/714)) ([1f9b6bc](https://github.com/SocialGouv/docker/commit/1f9b6bc31fd7cb25384f609cf7960e0c63a10c86))
+* **deps:** update ghcr.io/hadolint/hadolint docker tag to v2.6.0 ([#705](https://github.com/SocialGouv/docker/issues/705)) ([5fb2155](https://github.com/SocialGouv/docker/commit/5fb215559b69a73ecfd2351062fa0e64ffc37eae))
+
 ## [6.31.1](https://github.com/SocialGouv/docker/compare/v6.31.0...v6.31.1) (2021-07-16)
 
 
