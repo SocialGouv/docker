@@ -4,7 +4,7 @@ commandTests:
   - name: "dhall version"
     command: "dhall"
     args: ["--version"]
-    expectedOutput: ["1.38.1"]
+    expectedOutput: ["1.39.0"]
   - name: "dhall-to-yaml version"
     command: "dhall-to-yaml"
     args: ["--version"]

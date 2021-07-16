@@ -26,7 +26,7 @@ let Worklflow =
           }
         ) →
         GithubActions.Workflow::{
-        , name = args.name
+        , name = "\${{ github.head_ref }}-${args.name}"
         , on = GithubActions.On::{ push = Some GithubActions.Push::{=} }
         , concurrency = Some GithubActions.Concurrency::{
           , group = args.name

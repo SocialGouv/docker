@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:f4e06f08d1d4efc389a0be86162668445c999a88cc1dd21b0e33c4dab540cbb8
+      sha256:1e2753b767f942c0705891e8d780730fd33b9ade2f10ab7fba363a599e962a06
   with on = On.match On.Event.ReleasesBranches "puppeteer"
   with name = "puppeteer (main)"
