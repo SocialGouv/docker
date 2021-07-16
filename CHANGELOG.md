@@ -1,3 +1,10 @@
+# [6.29.0](https://github.com/SocialGouv/docker/compare/v6.28.0...v6.29.0) (2021-07-16)
+
+
+### Features
+
+* **git-deploy:** update to alpine 3.14 ([a09a66b](https://github.com/SocialGouv/docker/commit/a09a66b806287e727b22b8317a8b068194eafe38))
+
 # [6.28.0](https://github.com/SocialGouv/docker/compare/v6.27.1...v6.28.0) (2021-07-16)
 
 
