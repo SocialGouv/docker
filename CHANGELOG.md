@@ -1,3 +1,10 @@
+## [6.29.1](https://github.com/SocialGouv/docker/compare/v6.29.0...v6.29.1) (2021-07-16)
+
+
+### Bug Fixes
+
+* update to internal image 6.28 ([e58c723](https://github.com/SocialGouv/docker/commit/e58c723dc5809a2f1d7ba97fe11ef92b1fbe3196))
+
 # [6.29.0](https://github.com/SocialGouv/docker/compare/v6.28.0...v6.29.0) (2021-07-16)
 
 
