@@ -11,7 +11,10 @@ jobs:
         with:
           version: "1.39.0"
       - name: Github Actions Dhall To Yaml
-        run: make
+        run: |
+          mkdir -d .cache
+          make
+          rm -rf .cache
       - env:
           GITHUB_TOKEN: "${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}"
         name: Commit changes
