@@ -11,7 +11,7 @@ RUN --mount=type=cache,target=/var/cache/apk \
   # renovate: datasource=repology depName=alpine_3_14/freetype versioning=loose
   freetype=="2.10.4-r1" \
   # renovate: datasource=repology depName=alpine_3_14/harfbuzz versioning=loose
-  harfbuzz=="2.7.4-r1" \
+  harfbuzz=="2.8.1-r0" \
   # renovate: datasource=repology depName=alpine_3_14/nodejs versioning=loose
   nodejs=="14.16.1-r1" \
   # renovate: datasource=repology depName=alpine_3_14/nss versioning=loose
