@@ -1,3 +1,10 @@
+## [6.27.1](https://github.com/SocialGouv/docker/compare/v6.27.0...v6.27.1) (2021-07-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_3_14/bash to v5.1.4-r0 ([#712](https://github.com/SocialGouv/docker/issues/712)) ([e4f0d11](https://github.com/SocialGouv/docker/commit/e4f0d115249ab594a0c2f59c8872b1a346245be8))
+
 # [6.27.0](https://github.com/SocialGouv/docker/compare/v6.26.6...v6.27.0) (2021-07-16)
 
 
