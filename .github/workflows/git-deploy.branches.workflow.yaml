@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: git-deploy
+  group: "${{ github.head_ref }}-git-deploy"
 jobs:
   build:
     name: Build

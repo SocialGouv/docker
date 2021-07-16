@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: azure-db
+  group: "${{ github.head_ref }}-azure-db"
 jobs:
   build:
     name: Build

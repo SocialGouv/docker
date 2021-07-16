@@ -26,10 +26,10 @@ let Worklflow =
           }
         ) →
         GithubActions.Workflow::{
-        , name = "\${{ github.head_ref }}-${args.name}"
+        , name = args.name
         , on = GithubActions.On::{ push = Some GithubActions.Push::{=} }
         , concurrency = Some GithubActions.Concurrency::{
-          , group = args.name
+          , group = "\${{ github.head_ref }}-${args.name}"
           , cancel-in-progress = True
           }
         , jobs =

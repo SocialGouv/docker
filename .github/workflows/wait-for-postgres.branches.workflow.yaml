@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: wait-for-postgres
+  group: "${{ github.head_ref }}-wait-for-postgres"
 jobs:
   build:
     name: Build

@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: wait-for-http
+  group: "${{ github.head_ref }}-wait-for-http"
 jobs:
   build:
     name: Build

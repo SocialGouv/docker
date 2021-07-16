@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: bats
+  group: "${{ github.head_ref }}-bats"
 jobs:
   build:
     name: Build

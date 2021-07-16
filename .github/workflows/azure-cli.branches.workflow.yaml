@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: azure-cli
+  group: "${{ github.head_ref }}-azure-cli"
 jobs:
   build:
     name: Build

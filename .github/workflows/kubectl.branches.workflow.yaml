@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: kubectl
+  group: "${{ github.head_ref }}-kubectl"
 jobs:
   build:
     name: Build

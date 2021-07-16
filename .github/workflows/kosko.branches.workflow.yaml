@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: kosko
+  group: "${{ github.head_ref }}-kosko"
 jobs:
   build:
     name: Build

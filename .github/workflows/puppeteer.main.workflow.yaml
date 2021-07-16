@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: puppeteer
+  group: "${{ github.head_ref }}-puppeteer"
 jobs:
   build:
     name: Build
