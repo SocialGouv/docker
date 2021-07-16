@@ -16,8 +16,9 @@ workflow: $(WORKFLOW_YAML)
 
 define make_github_workflow_freeze
 $(call freezed_path,$(1)) : $(1) $(call freezed_path,$(call get_dependencies,$(1)))
-	$(DHALL) freeze --all --inplace $$<
-	$(DHALL) lint --inplace $$<
+	$(DHALL) freeze --all $$<
+	$(DHALL) format $$<
+	$(DHALL) lint $$<
 	$@mkdir -p $$(shell dirname "$$@")
 	$(DHALL) hash --file $$< > $$@
 endef

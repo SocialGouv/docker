@@ -1,5 +1,5 @@
 jobs:
-  workflows-src-to-workflows:
+  make:
     name: Convert to workflows
     runs-on: ubuntu-latest
     steps:
@@ -9,16 +9,9 @@ jobs:
           token: "${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}"
       - uses: "dhall-lang/setup-dhall@35fa9f606036a9b7138bcbc4d519021fdda7bd5e"
         with:
-          version: '1.38.1'
+          version: "1.39.0"
       - name: Github Actions Dhall To Yaml
-        run: |
-          find .github/workflows-src -name '*.dhall' -type f -print0 |
-            sort -buz |
-            xargs -0 -i sh -xc '
-              dhall freeze --inplace {} &&
-              dhall lint --inplace {} &&
-              dhall-to-yaml --file {} --output .github/workflows/$(basename {} .dhall).yaml
-            '
+        run: make
       - env:
           GITHUB_TOKEN: "${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}"
         name: Commit changes
@@ -28,7 +21,7 @@ jobs:
           author_email: "${{ secrets.SOCIALGROOVYBOT_EMAIL }}"
           author_name: "${{ secrets.SOCIALGROOVYBOT_NAME }}"
           branch: "${{ steps.comment.outputs.branch }}"
-          message: "chore(:robot:): workflows-src to workflows"
+          message: "chore(:robot:): dhall update"
 name: "🤖 / Dhall Workflows"
 on:
   pull_request:
@@ -36,13 +29,13 @@ on:
       - master
       - main
     paths:
-      - ".github/workflows-src/**"
+      - "*/.github/**"
       - ".github/workflows/@workflows-src.yaml"
   push:
     branches:
       - master
       - main
     paths:
-      - ".github/workflows-src/**"
+      - "*/.github/**"
       - ".github/workflows/@workflows-src.yaml"
   workflow_dispatch: {}
