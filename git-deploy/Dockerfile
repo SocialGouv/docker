@@ -1,4 +1,4 @@
-FROM python:3.9.6-alpine3.13
+FROM python:3.9.6-alpine3.14
 
 ## Install envsubst and curl
 RUN apk add --no-cache --update \
