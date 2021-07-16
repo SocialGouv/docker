@@ -12,7 +12,7 @@ jobs:
           version: "1.39.0"
       - name: Github Actions Dhall To Yaml
         run: |
-          mkdir -d .cache
+          mkdir -p .cache
           make
       - name: Clean up before commit
         run: rm -rf .cache bin
