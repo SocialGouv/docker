@@ -1,6 +1,6 @@
 #
 
-FROM ghcr.io/socialgouv/docker/kubectl:6.32 AS kubectl-image
+FROM ghcr.io/socialgouv/docker/kubectl:6.33 AS kubectl-image
 
 #
 
