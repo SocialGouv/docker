@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
 ARG KUBECTL_VERSION=v1.21.1
@@ -39,7 +39,7 @@ RUN set -ex \
   #
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   # renovate: datasource=repology depName=alpine_edge/yq versioning=loose
-  yq=="4.6.3-r0";
+  yq=="yq-4.11.1-r0";
 
 # renovate: datasource=github-releases depName=k14s/kapp
 ARG KAPP_VERSION=v0.36.0
