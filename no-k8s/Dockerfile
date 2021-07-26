@@ -1,4 +1,4 @@
-FROM ghcr.io/socialgouv/docker/kosko:6.35
+FROM ghcr.io/socialgouv/docker/kosko:6.36
 
 RUN apk add --update --no-cache \
   # renovate: datasource=repology depName=alpine_3_14/git versioning=loose
