@@ -1,3 +1,10 @@
+## [6.35.1](https://github.com/SocialGouv/docker/compare/v6.35.0...v6.35.1) (2021-07-26)
+
+
+### Bug Fixes
+
+* **create-db:** handle "@" in passwords ([#741](https://github.com/SocialGouv/docker/issues/741)) ([27b2f3b](https://github.com/SocialGouv/docker/commit/27b2f3be36f6fc2d1ed6f31b3b22cd3955ca8c84))
+
 # [6.35.0](https://github.com/SocialGouv/docker/compare/v6.34.0...v6.35.0) (2021-07-25)
 
 

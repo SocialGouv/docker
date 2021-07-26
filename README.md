@@ -30,20 +30,20 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 
 | Project               | Image                                                                  | Links                                                                                      |
 | --------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **azure-cli**         | `docker pull ghcr.io/socialgouv/docker/azure-cli:6.35.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./azure-cli/README.md)         |
-| **azure-db**          | `docker pull ghcr.io/socialgouv/docker/azure-db:6.35.0`          | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)          |
-| **curl**              | `docker pull ghcr.io/socialgouv/docker/curl:6.35.0`              | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)              |
-| **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:6.35.0`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
-| **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:6.35.0`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
-| **ci-deploy**         | `docker pull ghcr.io/socialgouv/docker/ci-deploy:6.35.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./ci-deploy/README.md)     |
-| **git-deploy**        | `docker pull ghcr.io/socialgouv/docker/git-deploy:6.35.0`        | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)        |
-| **kosko**             | `docker pull ghcr.io/socialgouv/docker/kosko:6.35.0`             | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)             |
-| **kubectl**           | `docker pull ghcr.io/socialgouv/docker/kubectl:6.35.0`           | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)           |
-| **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:6.35.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
-| **no-k8s**            | `docker pull ghcr.io/socialgouv/docker/no-k8s:6.35.0`            | [![README](https://img.shields.io/badge/README--green.svg)](./no-k8s/README.md)            |
-| **puppeteer**         | `docker pull ghcr.io/socialgouv/docker/puppeteer:6.35.0`         | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)         |
-| **wait-for-http**     | `docker pull ghcr.io/socialgouv/docker/wait-for-http:6.35.0`     | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)     |
-| **wait-for-postgres** | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres:6.35.0` | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md) |
+| **azure-cli**         | `docker pull ghcr.io/socialgouv/docker/azure-cli:6.35.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./azure-cli/README.md)         |
+| **azure-db**          | `docker pull ghcr.io/socialgouv/docker/azure-db:6.35.1`          | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)          |
+| **curl**              | `docker pull ghcr.io/socialgouv/docker/curl:6.35.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)              |
+| **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:6.35.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
+| **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:6.35.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
+| **ci-deploy**         | `docker pull ghcr.io/socialgouv/docker/ci-deploy:6.35.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./ci-deploy/README.md)         |
+| **git-deploy**        | `docker pull ghcr.io/socialgouv/docker/git-deploy:6.35.1`        | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)        |
+| **kosko**             | `docker pull ghcr.io/socialgouv/docker/kosko:6.35.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)             |
+| **kubectl**           | `docker pull ghcr.io/socialgouv/docker/kubectl:6.35.1`           | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)           |
+| **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:6.35.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
+| **no-k8s**            | `docker pull ghcr.io/socialgouv/docker/no-k8s:6.35.1`            | [![README](https://img.shields.io/badge/README--green.svg)](./no-k8s/README.md)            |
+| **puppeteer**         | `docker pull ghcr.io/socialgouv/docker/puppeteer:6.35.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)         |
+| **wait-for-http**     | `docker pull ghcr.io/socialgouv/docker/wait-for-http:6.35.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)     |
+| **wait-for-postgres** | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres:6.35.1` | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md) |
 
 <br>
 <br>
