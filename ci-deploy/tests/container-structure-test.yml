@@ -11,14 +11,14 @@ commandTests:
     command: "yq"
     args: ["-V"]
     expectedOutput:
-      - yq version "4\.\d+\.\d+"
+      - yq version 4\.\d+\.\d+
   - name: "jq version"
     command: "jq"
     args: ["-V"]
     expectedOutput:
-      - jq-"1\.\d+"
+      - jq-
   - name: "git version"
     command: "git"
     args: ["--version"]
     expectedOutput:
-      - git version "2\.\d+\.\d+"
+      - git version 2\.\d+\.\d+
