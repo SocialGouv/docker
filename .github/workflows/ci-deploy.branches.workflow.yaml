@@ -1,3 +1,6 @@
+concurrency:
+  cancel-in-progress: true
+  group: "kubectl-${{ github.ref }}"
 jobs:
   build:
     name: Build
@@ -105,7 +108,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: kubectl version --client=true
-name: "kubectl (branch)"
+name: "ci-deploy (branch)"
 on:
   push:
     branches-ignore:
@@ -116,5 +119,5 @@ on:
       - alpha
       - "+([0-9])?(.{+([0-9]),x}).x"
     paths:
-      - "kubectl/**"
-      - ".github/workflows/kubectl.branches.workflow.yaml"
+      - "ci-deploy/**"
+      - ".github/workflows/ci-deploy.branches.workflow.yaml"

@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:c07d0d11fd87207422175f8eb2667ce31a63a1a977864806c33ecaf4abd3a2fc
+      sha256:c1be848a467739d320234e021a27aab81c55da4f1397db52fbd914583bb3b448
   with on = On.match On.Event.FeatureBranches "ci-deploy"
   with name = "ci-deploy (branch)"
