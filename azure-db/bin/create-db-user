@@ -22,8 +22,8 @@ for VAR in $MANDATORY_VARS; do
 done
 
 # full urls with arobase replacement
-PG_URL_ADMIN="postgresql://${PGUSER/@/%40}:${PGPASSWORD}@${PGHOST}:${PGPORT}/postgres"
-PG_URL_NEWDB="postgresql://${PGUSER/@/%40}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${NEW_DB_NAME}"
+PG_URL_ADMIN="postgresql://${PGUSER/@/%40}:${PGPASSWORD/@/%40}@${PGHOST}:${PGPORT}/postgres"
+PG_URL_NEWDB="postgresql://${PGUSER/@/%40}:${PGPASSWORD/@/%40}@${PGHOST}:${PGPORT}/${NEW_DB_NAME}"
 
 PGSSLMODE=require
 
