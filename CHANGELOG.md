@@ -1,3 +1,10 @@
+# [6.36.0](https://github.com/SocialGouv/docker/compare/v6.35.1...v6.36.0) (2021-07-26)
+
+
+### Features
+
+* ci-deploy image ([#740](https://github.com/SocialGouv/docker/issues/740)) ([bba4968](https://github.com/SocialGouv/docker/commit/bba4968a58b0891f6a95006bc2746fa00155250c))
+
 ## [6.35.1](https://github.com/SocialGouv/docker/compare/v6.35.0...v6.35.1) (2021-07-26)
 
 
