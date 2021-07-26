@@ -10,17 +10,17 @@ RUN set -ex \
   #
   && apk add --update --no-cache \
   # renovate: datasource=repology depName=alpine_3_13/bash versioning=loose
-  bash=="5.1.0-r0" \
+  bash=="5.1.4-r0" \
   # renovate: datasource=repology depName=alpine_3_13/coreutils versioning=loose
   coreutils=="8.32-r2" \
   # renovate: datasource=repology depName=alpine_3_13/gettext versioning=loose
-  gettext=="0.20.2-r2" \
+  gettext=="0.21-r0" \
   # renovate: datasource=repology depName=alpine_3_13/jq versioning=loose
   jq=="1.6-r1" \
   # renovate: datasource=repology depName=alpine_3_13/git versioning=loose
-  git=="2.30.2-r0" \
+  git=="2.32.0-r0" \
   # renovate: datasource=repology depName=alpine_3_13/nodejs versioning=loose
-  nodejs=="14.16.1-r1" \
+  nodejs=="14.17.1-r0" \
   # renovate: datasource=repology depName=alpine_3_13/yarn versioning=loose
   yarn=="1.22.10-r0" \
   #
