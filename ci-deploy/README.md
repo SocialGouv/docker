@@ -1,6 +1,6 @@
-# gitlab-deploy
+# ci-deploy
 
-> gitlab-deploy image
+> ci-deploy image
 
 Contains various utilities for CI needs :
 
