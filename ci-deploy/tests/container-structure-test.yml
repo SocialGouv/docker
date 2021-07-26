@@ -1,0 +1,29 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "kubectl version"
+    command: "kubectl"
+    args: ["version", "--client=true"]
+    expectedOutput:
+      - Client Version
+      - GitVersion:"v1\.\d+\.\d+"
+  - name: "yq version"
+    command: "yq"
+    args: ["-V"]
+    expectedOutput:
+      - yq \(https://github.com/mikefarah/yq/\) version 4\.\d+\.\d+
+  - name: "jq version"
+    command: "jq"
+    args: ["-V"]
+    expectedOutput:
+      - jq-
+  - name: "git version"
+    command: "git"
+    args: ["--version"]
+    expectedOutput:
+      - git version 2\.\d+\.\d+
+  - name: "kapp version"
+    command: "kapp"
+    args: ["--version"]
+    expectedOutput:
+      - kapp version 0\.\d+\.\d+

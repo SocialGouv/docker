@@ -4,9 +4,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+        if: github.event_name == 'push'
         uses: "actions/checkout@v2"
         with:
           token: "${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}"
+          ref: ${{ github.event.push.ref }}
+      - name: Checkout
+        if: github.event_name == 'pull_request'
+        uses: "actions/checkout@v2"
+        with:
+          token: "${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}"
+          ref: ${{ github.event.pull_request.head.ref }}
       - uses: "dhall-lang/setup-dhall@35fa9f606036a9b7138bcbc4d519021fdda7bd5e"
         with:
           version: "1.39.0"

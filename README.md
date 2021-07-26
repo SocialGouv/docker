@@ -35,6 +35,7 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 | **curl**              | `docker pull ghcr.io/socialgouv/docker/curl:6.35.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./curl/README.md)              |
 | **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:6.35.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
 | **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:6.35.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
+| **ci-deploy**         | `docker pull ghcr.io/socialgouv/docker/ci-deploy:6.35.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./ci-deploy/README.md)         |
 | **git-deploy**        | `docker pull ghcr.io/socialgouv/docker/git-deploy:6.35.1`        | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)        |
 | **kosko**             | `docker pull ghcr.io/socialgouv/docker/kosko:6.35.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)             |
 | **kubectl**           | `docker pull ghcr.io/socialgouv/docker/kubectl:6.35.1`           | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)           |
