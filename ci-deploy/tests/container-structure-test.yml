@@ -11,7 +11,7 @@ commandTests:
     command: "yq"
     args: ["-V"]
     expectedOutput:
-      - yq (mikefarah/yq) version 4\.\d+\.\d+
+      - "yq (mikefarah/yq) version 4\\.\\d+\\.\\d+"
   - name: "jq version"
     command: "jq"
     args: ["-V"]
