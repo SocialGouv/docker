@@ -4,5 +4,5 @@ let On =
 
 in  ./AssemblyLine.dhall
       sha256:c07d0d11fd87207422175f8eb2667ce31a63a1a977864806c33ecaf4abd3a2fc
-  with on = On.match On.Event.ReleasesBranches "kubectl"
-  with name = "kubectl (main)"
+  with on = On.match On.Event.ReleasesBranches "ci-deploy"
+  with name = "ci-deploy (main)"
