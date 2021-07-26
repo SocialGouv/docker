@@ -1,14 +1,14 @@
 let AssemblyLine =
       ../../.github/dhall/workflows/AssemblyLine.dhall
-        sha256:9861e6bc1123a9d0185088f33224d9905b314ca7f496763d489cba5944674ecc
+        sha256:4467c36e3286b8c7414de18ad4c65e193aa5a5148d43981e987ec749d8ecf708
 
 let InceptionJob =
       ../../.github/dhall/jobs/Inception.dhall
-        sha256:65a7d0afb9febb7af474404b75696831c58e9fe7008b8643fd82b543e37b5a21
+        sha256:037f4c6e58bcec39375d74afb5ded6db30caa1e372b399bf7f30da1d6c1cdc4f
 
 let GithubActions =
-      https://raw.githubusercontent.com/SocialGouv/.github/master/dhall/github-actions/package.dhall
-        sha256:327d499ebf1ec63e5c3b0b0d5285b78a07be4ad1a941556eb35f67547004545f
+      https://raw.githubusercontent.com/SocialGouv/.github/9fe59f60d6a941dd76df40d67b3428fdf85865aa/dhall/github-actions/package.dhall
+        sha256:61e7d862f54e9514379feaadbc80a85b7bd870dad5e31e2e83d8b3dd9eda8e1b
 
 let name = "nginx4spa"
 

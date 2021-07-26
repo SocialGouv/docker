@@ -1,10 +1,10 @@
 #
 
-FROM ghcr.io/socialgouv/docker/kubectl:6.23 AS kubectl-image
+FROM ghcr.io/socialgouv/docker/kubectl:6.35 AS kubectl-image
 
 #
 
-FROM node:14.17.3-alpine3.13
+FROM node:14.17.3-alpine3.14
 
 COPY --from=kubectl-image /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=kubectl-image /usr/local/bin/kustomize /usr/local/bin/kustomize
@@ -16,15 +16,15 @@ RUN set -ex \
   #
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   # renovate: datasource=repology depName=alpine_edge/yq versioning=loose
-  yq=="4.6.3-r1" \
+  yq=="4.11.1-r0" \
   #
   && apk add --update --no-cache \
-  # renovate: datasource=repology depName=alpine_3_13/bash versioning=loose
-  bash=="5.1.0-r0" \
-  # renovate: datasource=repology depName=alpine_3_13/coreutils versioning=loose
+  # renovate: datasource=repology depName=alpine_3_14/bash versioning=loose
+  bash=="5.1.4-r0" \
+  # renovate: datasource=repology depName=alpine_3_14/coreutils versioning=loose
   coreutils=="8.32-r2" \
-  # renovate: datasource=repology depName=alpine_3_13/gettext versioning=loose
-  gettext=="0.20.2-r2" \
+  # renovate: datasource=repology depName=alpine_3_14/gettext versioning=loose
+  gettext=="0.21-r0" \
   #
   && yarn global add kosko@${KOSKO_VERSION} \
   #

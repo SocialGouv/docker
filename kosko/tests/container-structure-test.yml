@@ -22,4 +22,4 @@ commandTests:
   - name: "envsubst version"
     command: "envsubst"
     args: ["--version"]
-    expectedOutput: ["envsubst \\(GNU gettext-runtime\\) 0\\.\\d+\\.\\d+"]
+    expectedOutput: ["envsubst \\(GNU gettext-runtime\\) 0\\.\\d+"]

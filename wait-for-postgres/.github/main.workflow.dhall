@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:641c44d1405580ac8662f3f86fd55134d11bb3a28b4a90b21c54b0f2dfc18e3f
+      sha256:ef3c633965a74f417ff37dd98cd4a7754a1f227424ec1245330425e2315055f8
   with on = On.match On.Event.ReleasesBranches "wait-for-postgres"
   with name = "wait-for-postgres (main)"

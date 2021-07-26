@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:ee6446717e0f289401766dfd7444b9f4f8bf5c06441cf789c0aca77757deb8f5
+      sha256:dcc730b2b906b50a99bbb531c05d00d3f2fdaf8f7ee97171074952452f3a560f
   with on = On.match On.Event.FeatureBranches "wait-for-http"
   with name = "wait-for-http (branch)"

@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:2318eea713e67d516dc585901c5d71f2adc32ca82e855cc27c45ffc20bbd939f
+      sha256:1e3917aad8833e63c7f4d5774806424cd5f662386890701eaf71c2b511d53acd
   with on = On.match On.Event.FeatureBranches "nginx4spa"
   with name = "nginx4spa (branch)"
