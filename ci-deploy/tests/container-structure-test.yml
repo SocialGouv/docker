@@ -11,7 +11,7 @@ commandTests:
     command: "yq"
     args: ["-V"]
     expectedOutput:
-      - yq \(mikefarah/yq\) version 4\.\d+\.\d+
+      - yq \(https://github.com/mikefarah/yq/\) version 4\.\d+\.\d+
   - name: "jq version"
     command: "jq"
     args: ["-V"]
@@ -22,3 +22,8 @@ commandTests:
     args: ["--version"]
     expectedOutput:
       - git version 2\.\d+\.\d+
+  - name: "kapp version"
+    command: "kapp"
+    args: ["--version"]
+    expectedOutput:
+      - kapp version 0\.\d+\.\d+

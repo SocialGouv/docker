@@ -48,8 +48,6 @@ RUN set -ex \
   && wget -q -O /usr/local/bin/kapp \
   "https://github.com/k14s/kapp/releases/download/${KAPP_VERSION}/kapp-linux-amd64" \
   && chmod +x /usr/local/bin/kapp \
-  #
-  && kapp --version \
   ;
 
 
