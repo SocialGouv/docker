@@ -1,3 +1,17 @@
+# [6.37.0](https://github.com/SocialGouv/docker/compare/v6.36.0...v6.37.0) (2021-07-28)
+
+
+### Bug Fixes
+
+* **bats:** update to alpine:3.12 ([#746](https://github.com/SocialGouv/docker/issues/746)) ([e1f6ce5](https://github.com/SocialGouv/docker/commit/e1f6ce542721a4d890864abc65fee77c859d8007))
+* **deps:** update dependency alpine_3_13/nodejs to v14.17.3-r0 ([#744](https://github.com/SocialGouv/docker/issues/744)) ([6e36ef8](https://github.com/SocialGouv/docker/commit/6e36ef83e6976d2b55a7044f7ed2d5b7571b944a))
+* **deps:** update dependency alpine_3_14/nodejs to v14.17.3-r0 ([#745](https://github.com/SocialGouv/docker/issues/745)) ([16b7ae8](https://github.com/SocialGouv/docker/commit/16b7ae89253fc0c2f91d59849a1a9ed6638f2984))
+
+
+### Features
+
+* **deps:** update bats/bats docker tag to v1.4.1 ([#736](https://github.com/SocialGouv/docker/issues/736)) ([fc5eea8](https://github.com/SocialGouv/docker/commit/fc5eea8d34d896c1b429e57bfed3a92a5a5a4a69))
+
 # [6.36.0](https://github.com/SocialGouv/docker/compare/v6.35.1...v6.36.0) (2021-07-26)
 
 
