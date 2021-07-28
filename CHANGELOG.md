@@ -1,3 +1,16 @@
+# [6.38.0](https://github.com/SocialGouv/docker/compare/v6.37.0...v6.38.0) (2021-07-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kubernetes/kubernetes to v1.21.3 ([#747](https://github.com/SocialGouv/docker/issues/747)) ([8c749d8](https://github.com/SocialGouv/docker/commit/8c749d86297ef5b7890149823f4e7daedf6501c5))
+
+
+### Features
+
+* **deps:** update dependency k14s/kapp to v0.37.0 ([#749](https://github.com/SocialGouv/docker/issues/749)) ([bf37b8c](https://github.com/SocialGouv/docker/commit/bf37b8c7dacf30c26b5533d00495c4e2ca670148))
+* **deps:** update ghcr.io/hadolint/hadolint docker tag to v2.6.0 ([#748](https://github.com/SocialGouv/docker/issues/748)) ([0952f7b](https://github.com/SocialGouv/docker/commit/0952f7be4fd859fbffecea5f6c3e3edf69156505))
+
 # [6.37.0](https://github.com/SocialGouv/docker/compare/v6.36.0...v6.37.0) (2021-07-28)
 
 
