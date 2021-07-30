@@ -1,3 +1,10 @@
+## [6.38.2](https://github.com/SocialGouv/docker/compare/v6.38.1...v6.38.2) (2021-07-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_3_14/nodejs to v14.17.4-r0 ([#755](https://github.com/SocialGouv/docker/issues/755)) ([a90bd6a](https://github.com/SocialGouv/docker/commit/a90bd6a8a56481c96115048320841fc42fe64dbd))
+
 ## [6.38.1](https://github.com/SocialGouv/docker/compare/v6.38.0...v6.38.1) (2021-07-29)
 
 
