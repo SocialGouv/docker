@@ -46,7 +46,7 @@ curl -0 -sS \
 -d @- << EOF
 {
   "auto_merge": false,
-  "description": "Deplying ${PROJECT_PATH}@${CI_COMMIT_SHORT_SHA} in ${ENVIRONMENT}",
+  "description": "Deploying ${PROJECT_PATH}@${CI_COMMIT_SHORT_SHA} in ${ENVIRONMENT}",
   "environment": "${ENVIRONMENT}",
   "ref": "${REF}",
   "required_contexts": [],
