@@ -1,0 +1,12 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "nginx version"
+    command: "nginx"
+    args: ["-version"]
+    expectedError: ["nginx version: nginx/1\\.\\d+\\.\\d+"]
+
+fileExistenceTests:
+  - name: "/entrypoint.sh"
+    path: "/entrypoint.sh"
+    shouldExist: true
