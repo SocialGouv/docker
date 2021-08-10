@@ -2,7 +2,22 @@
 
 > Nginx image for single page application
 
-As default, in every files in the "/usr/share/nginx/html" directory, the [`envsub.sh`](./envsub.sh) script replaces `%%KEY%%` by `VALUE` where `export KEY=VALUE` in the global env var.
+- Serve static files from `/usr/share/nginx/html`
+- Catch-all routing to `/index.html` for single-page-applications with client-side routing
+- envsubst `%%VARIABLE%%` static files at startup (ex: builds)
+- Add some security-related headers :
+
+```
+add_header X-Frame-Options "deny";
+add_header X-XSS-Protection "1; mode=block";
+add_header X-Content-Type-Options "nosniff";
+```
+
+> For regular nginx image, see [../nginx](../nginx)
+
+## Envsubst on startup
+
+As default, in every files in the `/usr/share/nginx/html` directory, the [`envsub.sh`](./envsub.sh) script replaces `%%KEY%%` by `VALUE` where `export KEY=VALUE` in the global env var.
 
 So :
 
