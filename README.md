@@ -39,6 +39,7 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 | **git-deploy**        | `docker pull ghcr.io/socialgouv/docker/git-deploy:6.38.5`        | [![README](https://img.shields.io/badge/README--green.svg)](./git-deploy/README.md)        |
 | **kosko**             | `docker pull ghcr.io/socialgouv/docker/kosko:6.38.5`             | [![README](https://img.shields.io/badge/README--green.svg)](./kosko/README.md)             |
 | **kubectl**           | `docker pull ghcr.io/socialgouv/docker/kubectl:6.38.5`           | [![README](https://img.shields.io/badge/README--green.svg)](./kubectl/README.md)           |
+| **nginx**             | `docker pull ghcr.io/socialgouv/docker/nginx:6.38.5`             | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)             |
 | **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:6.38.5`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
 | **no-k8s**            | `docker pull ghcr.io/socialgouv/docker/no-k8s:6.38.5`            | [![README](https://img.shields.io/badge/README--green.svg)](./no-k8s/README.md)            |
 | **puppeteer**         | `docker pull ghcr.io/socialgouv/docker/puppeteer:6.38.5`         | [![README](https://img.shields.io/badge/README--green.svg)](./puppeteer/README.md)         |
