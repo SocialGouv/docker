@@ -12,7 +12,7 @@ add_header X-XSS-Protection "1; mode=block";
 add_header X-Content-Type-Options "nosniff";
 ```
 
-> For single-page-applications nginx image, see [../nginx4spa](../nginx4spa)
+> For a single-page-applications nginx image, see [../nginx4spa](../nginx4spa)
 
 ## Envsubst on startup
 
