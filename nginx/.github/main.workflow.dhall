@@ -3,6 +3,6 @@ let On =
         sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
 
 in  ./AssemblyLine.dhall
-      sha256:1e3917aad8833e63c7f4d5774806424cd5f662386890701eaf71c2b511d53acd
+      sha256:afa14331ec2b547d15f6caafeb1c2d50ca8ed5ed85e04a56f7afa952922c30a1
   with on = On.match On.Event.ReleasesBranches "nginx"
   with name = "nginx (main)"
