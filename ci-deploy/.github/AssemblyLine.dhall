@@ -1,6 +1,6 @@
 let AssemblyLine =
       ../../.github/dhall/workflows/AssemblyLine.dhall
-        sha256:4467c36e3286b8c7414de18ad4c65e193aa5a5148d43981e987ec749d8ecf708
+        sha256:b8c02df5a80eb661d730fb3d878ad5550d18e9e946c5793038cf402dc78665ad
 
 let InceptionJob =
       ../../.github/dhall/jobs/Inception.dhall
@@ -8,7 +8,7 @@ let InceptionJob =
 
 let GithubActions =
       https://raw.githubusercontent.com/SocialGouv/.github/master/dhall/github-actions/package.dhall
-        sha256:61e7d862f54e9514379feaadbc80a85b7bd870dad5e31e2e83d8b3dd9eda8e1b
+        sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let name = "ci-deploy"
 

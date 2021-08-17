@@ -1,8 +1,8 @@
 let On =
       ../../.github/dhall/workflows/On.dhall
-        sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
+        sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:cd16a34ec5c7cd26964440489b16510fd4880bbaa721bb5bdde2ea2dcd151b99
+      sha256:7652c5681e03855a3df3fdab737e0cee421c61d30301a296dfa412d1d654dc61
   with on = On.match On.Event.ReleasesBranches "git-deploy"
   with name = "git-deploy (main)"

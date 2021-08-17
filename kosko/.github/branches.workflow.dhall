@@ -1,8 +1,8 @@
 let On =
       ../../.github/dhall/workflows/On.dhall
-        sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
+        sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:01356279413c99f12456597ff304890b399ae9c89ef020de2a168f6375d5a0d4
+      sha256:f5b667d87b37618f51a3e098e2bed278352e64bdeedb73888b8081c868183683
   with on = On.match On.Event.FeatureBranches "kosko"
   with name = "kosko (branch)"

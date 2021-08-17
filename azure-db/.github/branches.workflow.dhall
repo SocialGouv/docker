@@ -1,8 +1,8 @@
 let On =
       ../../.github/dhall/workflows/On.dhall
-        sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
+        sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:fe76221257e1d1cd3b9759ca5a3d44f95977efc0ccf6c3c83c428004e6ce2fe6
+      sha256:77e2e2685ae15492aeb1fdf59fe8ac3067e8f0c231b8158bc000824a79ca3426
   with on = On.match On.Event.FeatureBranches "azure-db"
   with name = "azure-db (branch)"

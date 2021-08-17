@@ -48,8 +48,8 @@ jobs:
         uses: "docker/build-push-action@e1b7f96249f2e4c8e4ac1519b9608c0d48944a1f"
         with:
           builder: "${{ steps.docker_buildx.outputs.name }}"
-          cache-from: "type=local,src=/tmp/.buildx-cache"
-          cache-to: "type=local,dest=/tmp/.buildx-cache"
+          cache-from: type=gha
+          cache-to: "type=gha,mode=max"
           context: "./no-k8s"
           labels: "${{ steps.docker_meta.outputs.labels }}"
           push: 'true'

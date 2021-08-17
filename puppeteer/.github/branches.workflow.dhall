@@ -1,8 +1,8 @@
 let On =
       ../../.github/dhall/workflows/On.dhall
-        sha256:301b261621031aa3430166cce91638e0cb5b8a0fe7c71fb2c8ceddabd82f170e
+        sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:5f4a722bb247929da93e514d49cd855f377cd050590b02b8cd5f180beb92460a
+      sha256:2f9b5e476d68410b6513884f9c89b96906453bde32e7198b61aef66b8a5cc0e0
   with on = On.match On.Event.FeatureBranches "puppeteer"
   with name = "puppeteer (branch)"
