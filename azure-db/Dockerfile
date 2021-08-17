@@ -18,7 +18,7 @@ RUN set -ex \
   # renovate: datasource=repology depName=debian_stable/postgresql-client-11 versioning=loose
   postgresql-client-11="11.12-0+deb10u1" \
   # renovate: datasource=repology depName=debian_stable/git versioning=loose
-  git="1:2.20.1-2+deb10u3" \
+  git="1:2.30.2-1" \
   #
   && apt-get purge -y --auto-remove \
   &&  apt-get -y clean \
