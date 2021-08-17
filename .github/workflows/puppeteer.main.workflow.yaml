@@ -36,13 +36,6 @@ jobs:
           password: "${{ secrets.GHCR_REGISTRY_TOKEN }}"
           registry: ghcr.io
           username: "${{ secrets.SOCIALGROOVYBOT_NAME }}"
-      - name: /tmp/.buildx-cache cache
-        uses: "actions/cache@v2"
-        with:
-          key: "${{ runner.os }}-puppeteer-buildx-${{ hashFiles('puppeteer/Dockerfile') }}"
-          path: /tmp/.buildx-cache
-          restore-keys: |
-            ${{ runner.os }}-puppeteer-buildx
       - id: docker_push
         name: Push
         uses: "docker/build-push-action@e1b7f96249f2e4c8e4ac1519b9608c0d48944a1f"

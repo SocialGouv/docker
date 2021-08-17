@@ -3,6 +3,6 @@ let On =
         sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:f5b667d87b37618f51a3e098e2bed278352e64bdeedb73888b8081c868183683
+      sha256:987e577713ff1904a1277540c8e2bb768614895c15f9443c1ee2bf1d128134dc
   with on = On.match On.Event.ReleasesBranches "kosko"
   with name = "kosko (main)"

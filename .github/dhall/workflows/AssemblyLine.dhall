@@ -9,7 +9,7 @@ let ContainerTestJob =
 
 let DockerBuildJob =
       ../jobs/DockerBuild.dhall
-        sha256:796c0963b155638f092bf4d0fd237814e66dee6771c5da2b01afaef170a86e4a
+        sha256:ad9fa52ee1c4d7bbe02d20b8d31351cde777360444c62d78fe81db3e81de28c3
 
 let HadolintJob =
       ../jobs/Hadolint.dhall

@@ -3,6 +3,6 @@ let On =
         sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:2f9b5e476d68410b6513884f9c89b96906453bde32e7198b61aef66b8a5cc0e0
+      sha256:b95e3b1d6527a3c86332f58a4c0a689d86f4497dcd97e77569668fb775defb02
   with on = On.match On.Event.FeatureBranches "puppeteer"
   with name = "puppeteer (branch)"

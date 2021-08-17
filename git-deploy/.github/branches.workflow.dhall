@@ -3,6 +3,6 @@ let On =
         sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:7652c5681e03855a3df3fdab737e0cee421c61d30301a296dfa412d1d654dc61
+      sha256:aa16b1fd15454c89c282e6a51ffc3dfb4f2c31bf3aca598b531fb523df9e7c0f
   with on = On.match On.Event.FeatureBranches "git-deploy"
   with name = "git-deploy (branch)"
