@@ -1,3 +1,10 @@
+# [6.40.0](https://github.com/SocialGouv/docker/compare/v6.39.1...v6.40.0) (2021-08-17)
+
+
+### Features
+
+* **nginx:** nginx image ([#765](https://github.com/SocialGouv/docker/issues/765)) ([3516776](https://github.com/SocialGouv/docker/commit/351677647cca56914350cf57d641ac2f605faef8))
+
 ## [6.39.1](https://github.com/SocialGouv/docker/compare/v6.39.0...v6.39.1) (2021-08-12)
 
 
