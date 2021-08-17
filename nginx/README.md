@@ -1,9 +1,8 @@
-# NGINX for SPA
+# NGINX
 
-> Nginx image for single page application
+> Nginx image for static web apps
 
 - Serve static files from `/usr/share/nginx/html`
-- Catch-all routing to `/index.html` for single-page-applications with client-side routing
 - envsubst `%%VARIABLE%%` static files at startup (ex: builds)
 - Add some security-related headers :
 
@@ -13,7 +12,7 @@ add_header X-XSS-Protection "1; mode=block";
 add_header X-Content-Type-Options "nosniff";
 ```
 
-> For regular nginx image, see [../nginx](../nginx)
+> For a single-page-applications nginx image, see [../nginx4spa](../nginx4spa)
 
 ## Envsubst on startup
 
@@ -26,11 +25,11 @@ $ echo "VERSION=%%VERSION%%" > /www/version.txt
 $ docker run \
     --env VERSION=x.y.z \
     --env PORT=4444 \
-    --name nginx4spa_test \
+    --name nginx_test \
     --publish 8888:4444 \
     --rm \
     --volume /www:/usr/share/nginx/html \
-    ghcr.io/socialgouv/docker/nginx4spa
+    ghcr.io/socialgouv/docker/nginx
 $ curl localhost:8888/version.txt
 VERSION=x.y.z
 ```
@@ -42,7 +41,7 @@ Notes:
 To override default configuration, make a local copy of `nginx.conf` and add it to docker build:
 
 ```dockerfile
-FROM ghcr.io/socialgouv/docker/nginx4spa:x.y.z
+FROM ghcr.io/socialgouv/docker/nginx:x.y.z
 
 COPY ./custom-nginx.conf /etc/nginx/nginx.conf
 COPY ./dist /usr/share/nginx/html
