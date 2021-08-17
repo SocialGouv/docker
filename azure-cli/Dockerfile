@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
   # renovate: datasource=repology depName=debian_stable/ca-certificates versioning=loose
-  ca-certificates="20200601~deb10u2" \
+  ca-certificates="20210119" \
   # renovate: datasource=repology depName=debian_stable/curl versioning=loose
   curl="7.74.0-1.3" \
   # renovate: datasource=repology depName=debian_stable/gnupg versioning=loose
