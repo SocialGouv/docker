@@ -21,14 +21,8 @@ in  λ(package : Text) →
           ⫽ { id = Some "docker_meta" }
         , SocailGouvSteps.docker-buildx ⫽ { id = Some "docker_buildx" }
         , SocailGouvSteps.docker-login
-        , GithubActions.steps.actions/cache
-            { path = "/tmp/.buildx-cache"
-            , key = "${package}-buildx"
-            , hashFiles = [ "${package}/Dockerfile" ]
-            }
         ,   SocailGouvSteps.docker-build-push
-              { cache_path = "/tmp/.buildx-cache"
-              , context = package
+              { context = package
               , docker_buildx_step_id = "docker_buildx"
               , docker_meta_step_id = "docker_meta"
               }
