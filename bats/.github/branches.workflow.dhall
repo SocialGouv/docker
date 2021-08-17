@@ -3,6 +3,6 @@ let On =
         sha256:d1cce9f45a9ccada3c6152cc684d23678d27bb58410c642b7396c13c3f7f99c9
 
 in  ./AssemblyLine.dhall
-      sha256:630fe9346bf1b8cfedb082c580a33e710557e10ade1a0cdeb0a2103027737dc2
+      sha256:3d4a0786b19863dc668db83cd06839f618cf557794818869d26ff51453761a33
   with on = On.match On.Event.FeatureBranches "bats"
   with name = "bats (branch)"

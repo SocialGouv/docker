@@ -6,7 +6,7 @@ let GithubActions =
 let SocailGouvSteps =
     {- renovate: currentValue=master -}
       https://raw.githubusercontent.com/SocialGouv/.github/0a77446eef818f9dd21f50a766cf28be2be24169/dhall/socialgouv/steps.dhall
-        sha256:e313adfeb0b8b6fb6510e0a7a3f1ee4edb41a7e296e5651b6cab56f1a84d17c0
+        sha256:342a7b500f7200bbaff48cf069d5b9f9d20c1a434cbe0c679c58b0a848c4b3f1
 
 in  λ(package : Text) →
       GithubActions.Job::{
