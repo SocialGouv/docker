@@ -1,3 +1,24 @@
+## [6.39.1](https://github.com/SocialGouv/docker/compare/v6.39.0...v6.39.1) (2021-08-12)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v14.17.5 ([#770](https://github.com/SocialGouv/docker/issues/770)) ([05a7cad](https://github.com/SocialGouv/docker/commit/05a7cadf7929504954875d63550649980f494c0a))
+
+# [6.39.0](https://github.com/SocialGouv/docker/compare/v6.38.6...v6.39.0) (2021-08-11)
+
+
+### Features
+
+* **deps:** update dependency kubernetes/kubernetes to v1.22.0 ([#762](https://github.com/SocialGouv/docker/issues/762)) ([cdf1f26](https://github.com/SocialGouv/docker/commit/cdf1f26cc6772735fcbb2e1b6fde96f1d65e4452))
+
+## [6.38.6](https://github.com/SocialGouv/docker/compare/v6.38.5...v6.38.6) (2021-08-11)
+
+
+### Bug Fixes
+
+* **deps:** update hasura/graphql-engine docker tag to v2.0.6 ([#766](https://github.com/SocialGouv/docker/issues/766)) ([ce22d9d](https://github.com/SocialGouv/docker/commit/ce22d9d3a96cca418f311288454eb3dbee7f9a72))
+
 ## [6.38.5](https://github.com/SocialGouv/docker/compare/v6.38.4...v6.38.5) (2021-08-05)
 
 
