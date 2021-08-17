@@ -1,3 +1,18 @@
+# [6.41.0](https://github.com/SocialGouv/docker/compare/v6.40.0...v6.41.0) (2021-08-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency debian_stable/gnupg to v2.2.27-2 ([#774](https://github.com/SocialGouv/docker/issues/774)) ([06c4abf](https://github.com/SocialGouv/docker/commit/06c4abfe075ccd81b067798629f607f8a1a7d442))
+* **deps:** update hasura/graphql-engine docker tag to v2.0.7 ([#780](https://github.com/SocialGouv/docker/issues/780)) ([2dd7782](https://github.com/SocialGouv/docker/commit/2dd778257f62907603e2eb929f5b9ddd0d1052f5))
+
+
+### Features
+
+* **deps:** update debian docker tag to v11 ([#778](https://github.com/SocialGouv/docker/issues/778)) ([8938548](https://github.com/SocialGouv/docker/commit/89385485a1b26dcc5b19e5b17e0570bc68a4dac9))
+* **deps:** update dependency debian_stable/curl to v7.74.0-1.3 ([#775](https://github.com/SocialGouv/docker/issues/775)) ([840e05d](https://github.com/SocialGouv/docker/commit/840e05d6078f4ce4b0c008c81fca05afa22a01e4))
+* **deps:** update dependency debian_stable/jq to v1.6-2.1 ([#776](https://github.com/SocialGouv/docker/issues/776)) ([b67ab64](https://github.com/SocialGouv/docker/commit/b67ab643d77d6f2e3ee8e85089834bc00890ce84))
+
 # [6.40.0](https://github.com/SocialGouv/docker/compare/v6.39.1...v6.40.0) (2021-08-17)
 
 
