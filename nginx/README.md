@@ -41,7 +41,7 @@ Notes:
 To override default configuration, make a local copy of `nginx.conf` and add it to docker build:
 
 ```dockerfile
-FROM ghcr.io/socialgouv/docker/nginx4:x.y.z
+FROM ghcr.io/socialgouv/docker/nginx:x.y.z
 
 COPY ./custom-nginx.conf /etc/nginx/nginx.conf
 COPY ./dist /usr/share/nginx/html
