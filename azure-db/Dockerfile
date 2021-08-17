@@ -14,7 +14,7 @@ RUN set -ex \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
   # renovate: datasource=repology depName=debian_stable/jq versioning=loose
-  jq="1.5+dfsg-2+b1" \
+  jq="1.6-2.1" \
   # renovate: datasource=repology depName=debian_stable/postgresql-client-11 versioning=loose
   postgresql-client-11="11.12-0+deb10u1" \
   # renovate: datasource=repology depName=debian_stable/git versioning=loose
