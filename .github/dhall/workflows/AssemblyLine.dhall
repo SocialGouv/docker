@@ -1,6 +1,6 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/ede0146d6bb74edfc2a51d5599541c1f5c0518f5/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/0a77446eef818f9dd21f50a766cf28be2be24169/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let ContainerTestJob =
@@ -9,7 +9,7 @@ let ContainerTestJob =
 
 let DockerBuildJob =
       ../jobs/DockerBuild.dhall
-        sha256:ad9fa52ee1c4d7bbe02d20b8d31351cde777360444c62d78fe81db3e81de28c3
+        sha256:31398149a20e78661ee58064a4859b3c33fc3b64e8e4c787a643a772069882d9
 
 let HadolintJob =
       ../jobs/Hadolint.dhall
