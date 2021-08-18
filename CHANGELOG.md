@@ -1,3 +1,16 @@
+# [6.42.0](https://github.com/SocialGouv/docker/compare/v6.41.0...v6.42.0) (2021-08-18)
+
+
+### Bug Fixes
+
+* **azure-cli:** use curl@7.74.0-1.3+b1 ([a1415d7](https://github.com/SocialGouv/docker/commit/a1415d7c78a1a5306c5f4e55854773c5edf9411b))
+* **deps:** update dependency debian_stable/git to v1:2.30.2-1 ([#773](https://github.com/SocialGouv/docker/issues/773)) ([c271b1d](https://github.com/SocialGouv/docker/commit/c271b1da2608d5ce2f77819bf2ec4594a97bc0ab))
+
+
+### Features
+
+* **deps:** update dependency debian_stable/ca-certificates to v20210119 ([#777](https://github.com/SocialGouv/docker/issues/777)) ([ecd81bb](https://github.com/SocialGouv/docker/commit/ecd81bbd84d55a1fae1a8c8129d9b47256761eee))
+
 # [6.41.0](https://github.com/SocialGouv/docker/compare/v6.40.0...v6.41.0) (2021-08-17)
 
 
