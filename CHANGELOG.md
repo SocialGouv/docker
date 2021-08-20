@@ -1,3 +1,10 @@
+## [6.43.1](https://github.com/SocialGouv/docker/compare/v6.43.0...v6.43.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_edge/yq to v4.11.2-r0 ([#793](https://github.com/SocialGouv/docker/issues/793)) ([5159783](https://github.com/SocialGouv/docker/commit/5159783dbcfa13baaa42b04fa396ed36559b40ae))
+
 # [6.43.0](https://github.com/SocialGouv/docker/compare/v6.42.0...v6.43.0) (2021-08-18)
 
 
