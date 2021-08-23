@@ -16,7 +16,7 @@ RUN set -ex \
   #
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   # renovate: datasource=repology depName=alpine_edge/yq versioning=loose
-  yq=="4.11.2-r0" \
+  yq=="4.12.0-r0" \
   #
   && apk add --update --no-cache \
   # renovate: datasource=repology depName=alpine_3_14/bash versioning=loose
