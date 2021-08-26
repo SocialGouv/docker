@@ -12,4 +12,4 @@ commandTests:
   - name: "dhall-to-json version"
     command: "dhall-to-json"
     args: ["--version"]
-    expectedOutput: ["1\.\\d+\\.\\d+"]
+    expectedOutput: ["1\\.\\d+\\.\\d+"]
