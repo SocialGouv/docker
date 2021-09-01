@@ -1,3 +1,10 @@
+## [6.47.5](https://github.com/SocialGouv/docker/compare/v6.47.4...v6.47.5) (2021-09-01)
+
+
+### Bug Fixes
+
+* **deps:** update python docker tag to v3.9.7 ([#819](https://github.com/SocialGouv/docker/issues/819)) ([d990112](https://github.com/SocialGouv/docker/commit/d990112be903d147ac516f07a7d508a4f2afb3d8))
+
 ## [6.47.4](https://github.com/SocialGouv/docker/compare/v6.47.3...v6.47.4) (2021-09-01)
 
 
