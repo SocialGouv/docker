@@ -20,7 +20,7 @@ RUN set -ex \
   # renovate: datasource=repology depName=alpine_3_14/git versioning=loose
   git=="2.32.0-r0" \
   # renovate: datasource=repology depName=alpine_3_14/nodejs versioning=loose
-  nodejs=="14.17.5-r0" \
+  nodejs=="14.17.6-r0" \
   # renovate: datasource=repology depName=alpine_3_14/yarn versioning=loose
   yarn=="1.22.10-r0" \
   #
