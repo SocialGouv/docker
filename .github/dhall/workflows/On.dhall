@@ -1,6 +1,6 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/a0870786b4b349bf5924707668c1cb379d9586b7/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/f5b1256313625ab837ce2f25f35b35e0efceaf44/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let releases_branches =
