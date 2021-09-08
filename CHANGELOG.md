@@ -1,3 +1,10 @@
+## [6.47.7](https://github.com/SocialGouv/docker/compare/v6.47.6...v6.47.7) (2021-09-08)
+
+
+### Bug Fixes
+
+* **azure-db:** dont update datallowconn ([#828](https://github.com/SocialGouv/docker/issues/828)) ([6d228da](https://github.com/SocialGouv/docker/commit/6d228da238059a7da4ecd2dc484668037a717238))
+
 ## [6.47.6](https://github.com/SocialGouv/docker/compare/v6.47.5...v6.47.6) (2021-09-07)
 
 
