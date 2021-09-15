@@ -1,6 +1,6 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/279e65a3ed39957ca3d6546c22c155dd63fbc142/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/33c5b254e88b86af5e1931eabce2c590f5af0763/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let ContainerTestJob =
