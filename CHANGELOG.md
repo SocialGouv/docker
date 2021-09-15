@@ -1,3 +1,10 @@
+## [6.48.1](https://github.com/SocialGouv/docker/compare/v6.48.0...v6.48.1) (2021-09-15)
+
+
+### Bug Fixes
+
+* **no-k8s:** add sed ([#838](https://github.com/SocialGouv/docker/issues/838)) ([a5597d3](https://github.com/SocialGouv/docker/commit/a5597d3cebde11e30638535fee1d5ae76aaf8d22))
+
 # [6.48.0](https://github.com/SocialGouv/docker/compare/v6.47.9...v6.48.0) (2021-09-15)
 
 
