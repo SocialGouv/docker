@@ -1,16 +1,16 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/e4e3515df870a51fab2db001a27b6d9f4d09e9d3/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/99ab4e7946350137caa8644b940161c3e67fcaf1/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let trivy-action =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/e4e3515df870a51fab2db001a27b6d9f4d09e9d3/dhall/steps/aquasecurity/trivy-action/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/99ab4e7946350137caa8644b940161c3e67fcaf1/dhall/steps/aquasecurity/trivy-action/package.dhall
         sha256:aeeb75c894a6a7c51d0c83574310e58db4d11698cbe9b5f443beb3043931474d
 
 let upload-sarif =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/e4e3515df870a51fab2db001a27b6d9f4d09e9d3/dhall/steps/github/codeql-action/upload-sarif/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/99ab4e7946350137caa8644b940161c3e67fcaf1/dhall/steps/github/codeql-action/upload-sarif/package.dhall
         sha256:e96a4a49e32c41420b99afd427f0549038b2b33d399ec1a66295e19e6cd9bf1a
 
 let job =
