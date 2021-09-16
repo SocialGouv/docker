@@ -42,7 +42,7 @@ RUN set -ex \
   yq=="4.13.0-r0";
 
 # renovate: datasource=github-releases depName=k14s/kapp
-ARG KAPP_VERSION=v0.39.0
+ARG KAPP_VERSION=v0.40.0
 RUN set -ex \
   #
   && wget -q -O /usr/local/bin/kapp \
