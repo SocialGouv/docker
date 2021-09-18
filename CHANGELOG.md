@@ -1,3 +1,10 @@
+# [6.50.0](https://github.com/SocialGouv/docker/compare/v6.49.0...v6.50.0) (2021-09-18)
+
+
+### Features
+
+* **deps:** update dependency k14s/kapp to v0.40.0 ([#837](https://github.com/SocialGouv/docker/issues/837)) ([466a495](https://github.com/SocialGouv/docker/commit/466a495d206a686a5a62aebe1b69e5456532a7a4))
+
 # [6.49.0](https://github.com/SocialGouv/docker/compare/v6.48.1...v6.49.0) (2021-09-16)
 
 
