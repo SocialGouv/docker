@@ -1,3 +1,10 @@
+# [6.51.0](https://github.com/SocialGouv/docker/compare/v6.50.1...v6.51.0) (2021-09-22)
+
+
+### Features
+
+* **deps:** update curlimages/curl docker tag to v7.79.1 ([#849](https://github.com/SocialGouv/docker/issues/849)) ([8e3ba76](https://github.com/SocialGouv/docker/commit/8e3ba76d5c6cdfca774927f25f9b462d99dbc230))
+
 ## [6.50.1](https://github.com/SocialGouv/docker/compare/v6.50.0...v6.50.1) (2021-09-19)
 
 
