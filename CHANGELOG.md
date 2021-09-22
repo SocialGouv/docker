@@ -1,3 +1,10 @@
+## [6.51.1](https://github.com/SocialGouv/docker/compare/v6.51.0...v6.51.1) (2021-09-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency alpine_3_14/curl to v7.79.1-r0 ([#852](https://github.com/SocialGouv/docker/issues/852)) ([371ba39](https://github.com/SocialGouv/docker/commit/371ba3932d6ffa34371c890244a5ceeeac05a9c4))
+
 # [6.51.0](https://github.com/SocialGouv/docker/compare/v6.50.1...v6.51.0) (2021-09-22)
 
 
