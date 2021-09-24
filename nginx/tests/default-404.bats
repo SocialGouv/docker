@@ -18,6 +18,5 @@ teardown_file() {
 @test "nginx: should return default SocialGouv 404 page (not a SPA)" {
   run wget --content-on-error --output-document - http://localhost:8888/pouet
   assert_output --partial "Page non trouvée"
-  assert_success
 }
 

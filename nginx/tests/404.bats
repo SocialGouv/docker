@@ -18,12 +18,10 @@ teardown_file() {
 @test "nginx: should return status 404 (not a SPA)" {
   run wget --server-response --quiet http://localhost:8888/pouet
   assert_output --partial "HTTP/1.1 404 Not Found"
-  assert_success
 }
 
 @test "nginx: should return custom 404 page (not a SPA)" {
   run wget --content-on-error --output-document - http://localhost:8888/pouet
   assert_output --partial "CUSTOM 404 PAGE"
-  assert_success
 }
 
