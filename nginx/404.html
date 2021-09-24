@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page non trouvée</title>
+    <script src="https://browser.sentry-cdn.com/5.15.5/bundle.min.js"></script>
+    <style>
+      /* CSS from https://codepen.io/cluzier/pen/BOZmMp */
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        background: #f7f7f7;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      }
+
+      .error-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        margin-top: -10vh;
+      }
+      .error-page h1 {
+        font-size: 20vh;
+        font-weight: bold;
+        position: relative;
+        padding: 0;
+        margin-bottom: 2vh;
+      }
+      .error-page h1:after {
+        content: attr(data-h1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: transparent;
+        /* webkit only for graceful degradation to IE */
+        background: -webkit-repeating-linear-gradient(
+          -45deg,
+          #71b7e6,
+          #69a6ce,
+          #b98acc,
+          #ee8176,
+          #b98acc,
+          #69a6ce,
+          #9b59b6
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 400%;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+        animation: animateTextBackground 10s ease-in-out infinite;
+      }
+      .error-page h1 + p {
+        margin-top: 1vh;
+        color: #606060;
+        font-size: 5vh;
+        font-weight: bold;
+        line-height: 10vh;
+        position: relative;
+      }
+      .error-page h1 + p:after {
+        content: attr(data-p);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: transparent;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+      }
+
+      .message {
+        color: #226087;
+        padding: 0 4em;
+      }
+
+      footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background: #efefef;
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        color: #666;
+      }
+
+      footer a {
+        color: #666;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .error-page h1 {
+          font-size: 3em !important;
+        }
+        .error-page h1 + p {
+          font-size: 2em;
+          line-height: 10vw;
+        }
+      }
+
+      @keyframes animateTextBackground {
+        0% {
+          background-position: 0 0;
+        }
+        25% {
+          background-position: 100% 0;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        75% {
+          background-position: 0 100%;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-page">
+      <div>
+        <h1 data-h1="404">404</h1>
+        <p data-p="Page non trouvée">Page non trouvée</p>
+        <p>&nbsp;</p>
+        <p class="message">
+          Nos équipes ont été notifiées et interviendront dans les meilleurs
+          délais.
+        </p>
+      </div>
+    </div>
+    <footer>
+      Fabrique numérique des Ministères Sociaux -
+      <a href="mailto:DSI-incubateur@sg.social.gouv.fr"
+        >DSI-incubateur@sg.social.gouv.fr</a
+      >
+    </footer>
+    <script>
+      (function () {
+        var hostname = document.location.hostname;
+        var dsn =
+          "https://7b80ba66958845f4b44790ffc7191638@sentry.fabrique.social.gouv.fr/28";
+
+        var FABRIQUE_DOMAIN = ".fabrique.social.gouv.fr";
+        var DEV_FABRIQUE_DOMAIN = ".dev.fabrique.social.gouv.fr";
+
+        var environment =
+          //
+          // The `//*.dev.fabrique.social.gouv.fr` case
+          (hostname.indexOf(DEV_FABRIQUE_DOMAIN) > 0 && DEV_FABRIQUE_DOMAIN) ||
+          //
+          // The `//*.fabrique.social.gouv.fr` case
+          (hostname.indexOf(FABRIQUE_DOMAIN) > 0 && FABRIQUE_DOMAIN) ||
+          //
+          // The `//fabrique.social.gouv.fr` case
+          (hostname === FABRIQUE_DOMAIN.slice(1) && FABRIQUE_DOMAIN) ||
+          //
+          // Other domains
+          hostname;
+
+        Sentry.init({
+          dsn: dsn,
+          environment: environment,
+        });
+
+        if (environment === FABRIQUE_DOMAIN) {
+          var project =
+            // The `//fabrique.social.gouv.fr` case
+            (hostname === FABRIQUE_DOMAIN.slice(1) && "www") ||
+            //
+            // The `//<project>.fabrique.social.gouv.fr` case
+            hostname.slice(0, hostname.indexOf(FABRIQUE_DOMAIN));
+          Sentry.setTag("project", project);
+        }
+
+        Sentry.captureException(new Error(hostname));
+      })();
+    </script>
+  </body>
+</html>
