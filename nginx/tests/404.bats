@@ -3,11 +3,16 @@
 load '../../.bats/common.bats.bash'
 
 setup_file() {
-  docker-compose up -d alpine
+  docker-compose run \
+    --detach \
+    --publish 8888:80 \
+    --rm \
+    --volume ${BATS_TEST_DIRNAME}/fixtures:/usr/share/nginx/html \
+    alpine
 }
 
 teardown_file() {
-  docker-compose stop
+  docker-compose rm -sf
 }
 
 @test "nginx: should return custom 404 (not a SPA)" {
