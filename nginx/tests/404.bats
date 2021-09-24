@@ -15,9 +15,13 @@ teardown_file() {
   docker-compose rm -sf
 }
 
-@test "nginx: should return custom 404 (not a SPA)" {
+@test "nginx: should status 404 (not a SPA)" {
   run wget --server-response --quiet http://localhost:8888/pouet
   assert_output --partial "HTTP/1.1 404 Not Found"
+}
+
+@test "nginx: should return custom 404 (not a SPA)" {
+  run wget --server-response --quiet http://localhost:8888/pouet
   assert_output --partial "CUSTOM 404 PAGE"
 }
 
