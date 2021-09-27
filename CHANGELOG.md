@@ -1,3 +1,17 @@
+# [6.52.0](https://github.com/SocialGouv/docker/compare/v6.51.1...v6.52.0) (2021-09-27)
+
+
+### Bug Fixes
+
+* handle next.js 404/index.html ([#855](https://github.com/SocialGouv/docker/issues/855)) ([b6caffd](https://github.com/SocialGouv/docker/commit/b6caffd67ec1e05e7c47e6a8bcc6431b51aec53b))
+* puppeteer test ([#857](https://github.com/SocialGouv/docker/issues/857)) ([4239e38](https://github.com/SocialGouv/docker/commit/4239e3854158402c45bfd74f13cde1b4f2917641))
+
+
+### Features
+
+* **deps:** update dependency alpine_3_14/chromium to v93 ([#848](https://github.com/SocialGouv/docker/issues/848)) ([ceba923](https://github.com/SocialGouv/docker/commit/ceba9237312627d5a8b74d2218173dc9f8436903))
+* **nginx:** enable custom 404.html ([#854](https://github.com/SocialGouv/docker/issues/854)) ([255235a](https://github.com/SocialGouv/docker/commit/255235a1dcad1087e08f1b962775ad4c4becf557))
+
 ## [6.51.1](https://github.com/SocialGouv/docker/compare/v6.51.0...v6.51.1) (2021-09-22)
 
 
