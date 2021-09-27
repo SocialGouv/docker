@@ -4,4 +4,4 @@ commandTests:
   - name: "chromium browser version"
     command: "chromium-browser"
     args: ["--version"]
-    expectedOutput: ["Chromium 91\\.\\d+\\.\\d+\\.\\d+"]
+    expectedOutput: ["Chromium 93\\.\\d+\\.\\d+\\.\\d+"]
