@@ -1,11 +1,11 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/caa63789f1a803d6a1d1e697f13e5f11b49f02ba/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/f9ebc5a6829cc4de595a452d14b7593ab1a159c3/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let SocailGouvSteps =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/caa63789f1a803d6a1d1e697f13e5f11b49f02ba/dhall/socialgouv/steps.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/f9ebc5a6829cc4de595a452d14b7593ab1a159c3/dhall/socialgouv/steps.dhall
         sha256:342a7b500f7200bbaff48cf069d5b9f9d20c1a434cbe0c679c58b0a848c4b3f1
 
 let ContainerTest =
