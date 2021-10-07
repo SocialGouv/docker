@@ -29,7 +29,7 @@ teardown_file() {
   export NEW_USER="user_${ID}"
   #
   run ./bin/create-db-user
-  assert_line --partial '\connect: FATAL:  database "autodevops_'${ID}'" does not exist'
+  assert_line --partial 'database "autodevops_'${ID}'" does not exist'
   assert_line --partial 'CREATE DATABASE "autodevops_'${ID}'"'
   assert_line --partial 'creating user user_'${ID}' on localhost'
   assert_line --partial 'CREATE USER "user_'${ID}'" WITH PASSWORD'" 'password_${ID}';"
