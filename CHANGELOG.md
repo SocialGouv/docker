@@ -1,3 +1,11 @@
+## [6.53.2](https://github.com/SocialGouv/docker/compare/v6.53.1...v6.53.2) (2021-10-07)
+
+
+### Bug Fixes
+
+* **azure-db:** fix test ([#869](https://github.com/SocialGouv/docker/issues/869)) ([6ac0148](https://github.com/SocialGouv/docker/commit/6ac0148538394298302b3cb701665958c6ad3332))
+* **nginx:** static next.js friendly fallback ([#868](https://github.com/SocialGouv/docker/issues/868)) ([329aa63](https://github.com/SocialGouv/docker/commit/329aa630b2bebb492f0c3dd04c96f58b33afc53b))
+
 ## [6.53.1](https://github.com/SocialGouv/docker/compare/v6.53.0...v6.53.1) (2021-10-01)
 
 
