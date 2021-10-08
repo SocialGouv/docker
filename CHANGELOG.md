@@ -1,3 +1,10 @@
+# [6.54.0](https://github.com/SocialGouv/docker/compare/v6.53.2...v6.54.0) (2021-10-08)
+
+
+### Features
+
+* **deps:** update python docker tag to v3.10.0 ([#867](https://github.com/SocialGouv/docker/issues/867)) ([dc4a69b](https://github.com/SocialGouv/docker/commit/dc4a69b14d49e6f23bce7fd2b79375bea3691cfe))
+
 ## [6.53.2](https://github.com/SocialGouv/docker/compare/v6.53.1...v6.53.2) (2021-10-07)
 
 
