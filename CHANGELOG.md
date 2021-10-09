@@ -1,3 +1,10 @@
+# [6.56.0](https://github.com/SocialGouv/docker/compare/v6.55.0...v6.56.0) (2021-10-09)
+
+
+### Features
+
+* **deps:** update dependency debian_stable/postgresql-13 to v13.4-0+deb11u1 ([#874](https://github.com/SocialGouv/docker/issues/874)) ([e2dbd81](https://github.com/SocialGouv/docker/commit/e2dbd812b2d22bae844e59b693dea30b3e67778a))
+
 # [6.55.0](https://github.com/SocialGouv/docker/compare/v6.54.0...v6.55.0) (2021-10-09)
 
 
