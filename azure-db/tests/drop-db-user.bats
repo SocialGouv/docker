@@ -38,6 +38,10 @@ teardown_file() {
   assert_line --partial 'SET SESSION CHARACTERISTICS AS TRANSACTION READ WRITE;'
   assert_line --partial 'SELECT pg_terminate_backend (pg_stat_activity.pid)'
   assert_line --partial 'deleting database autodevops_'${ID}' on localhost'
+  assert_line --partial 'deleting user user_'${ID}' on localhost'
+  assert_line 'DROP DATABASE'
+  assert_line 'DROP OWNED'
+  assert_line 'DROP ROLE'
   assert_success
 }
 
