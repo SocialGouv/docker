@@ -1,3 +1,10 @@
+## [6.56.1](https://github.com/SocialGouv/docker/compare/v6.56.0...v6.56.1) (2021-10-11)
+
+
+### Bug Fixes
+
+* **azure-db:** fix drop ([#877](https://github.com/SocialGouv/docker/issues/877)) ([7ffce9b](https://github.com/SocialGouv/docker/commit/7ffce9b345414657f6e74a8a80be54a93a83e5ba))
+
 # [6.56.0](https://github.com/SocialGouv/docker/compare/v6.55.0...v6.56.0) (2021-10-09)
 
 
