@@ -1,7 +1,7 @@
 #
 
-FROM ghcr.io/socialgouv/docker/kubectl:6.56 AS kubectl-image
-FROM ghcr.io/socialgouv/docker/azure-cli:6.56 AS azure-cli-image
+FROM ghcr.io/socialgouv/docker/kubectl:6.57 AS kubectl-image
+FROM ghcr.io/socialgouv/docker/azure-cli:6.57 AS azure-cli-image
 
 FROM debian:11.1-slim
 
