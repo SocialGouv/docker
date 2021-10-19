@@ -1,3 +1,10 @@
+## [6.58.2](https://github.com/SocialGouv/docker/compare/v6.58.1...v6.58.2) (2021-10-19)
+
+
+### Bug Fixes
+
+* **deps:** update hasura/graphql-engine docker tag to v2.0.10 ([#886](https://github.com/SocialGouv/docker/issues/886)) ([f177a39](https://github.com/SocialGouv/docker/commit/f177a390d23c9228616341f66556ee012f29dba6))
+
 ## [6.58.1](https://github.com/SocialGouv/docker/compare/v6.58.0...v6.58.1) (2021-10-13)
 
 
