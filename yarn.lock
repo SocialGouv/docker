@@ -17,10 +17,10 @@ bats-support@bats-core/bats-support#0.3.0:
   uid "24a72e14349690bcbf7c151b9d2d1cdd32d36eb1"
   resolved "https://codeload.github.com/bats-core/bats-support/tar.gz/24a72e14349690bcbf7c151b9d2d1cdd32d36eb1"
 
-bats@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/bats/-/bats-1.4.1.tgz#ef1eeee42835ecf971a55da2d5505e9f64ea73ca"
-  integrity sha512-sZgqfOHgPqtQSD84WKQiNU3a/44hQiiHGtA43gTUPeOdl5jYhnXSBNGCa8DGlKc8JpI/UUYcaPNf0Afg3OOibQ==
+bats@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/bats/-/bats-1.5.0.tgz#683f522e89df7d8fc99bf3631d35501f35445166"
+  integrity sha512-83YgQw24Yi2c1ctB0Vd7WCsACUMSWuEtOboxQZyFQYfiv9hDMW7nk7bdloqGLg3vK5pOODCBGBQjhvRmHKsJuA==
 
 husky@^7.0.4:
   version "7.0.4"
