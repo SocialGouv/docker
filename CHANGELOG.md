@@ -1,3 +1,10 @@
+# [6.59.0](https://github.com/SocialGouv/docker/compare/v6.58.3...v6.59.0) (2021-11-05)
+
+
+### Features
+
+* **deps:** update ghcr.io/hadolint/hadolint docker tag to v2.8.0 ([#893](https://github.com/SocialGouv/docker/issues/893)) ([38d6f60](https://github.com/SocialGouv/docker/commit/38d6f6021de41ff02a508e092ab3b7502a96e9e4))
+
 ## [6.58.3](https://github.com/SocialGouv/docker/compare/v6.58.2...v6.58.3) (2021-10-31)
 
 
