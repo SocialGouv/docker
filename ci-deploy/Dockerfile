@@ -39,7 +39,7 @@ RUN set -ex \
   #
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
   # renovate: datasource=repology depName=alpine_edge/yq versioning=loose
-  yq=="4.13.2-r0";
+  yq=="4.14.1-r0";
 
 # renovate: datasource=github-releases depName=k14s/kapp
 ARG KAPP_VERSION=v0.42.0
