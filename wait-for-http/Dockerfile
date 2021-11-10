@@ -1,4 +1,4 @@
-FROM curlimages/curl:7.79.1
+FROM curlimages/curl:7.80.0
 
 COPY ./bin /bin
 
