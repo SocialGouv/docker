@@ -1,3 +1,10 @@
+## [6.61.1](https://github.com/SocialGouv/docker/compare/v6.61.0...v6.61.1) (2021-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency kubernetes/kubernetes to v1.22.4 ([#902](https://github.com/SocialGouv/docker/issues/902)) ([65f84ee](https://github.com/SocialGouv/docker/commit/65f84ee907067a55da74c7270755f514a520529a))
+
 # [6.61.0](https://github.com/SocialGouv/docker/compare/v6.60.0...v6.61.0) (2021-11-10)
 
 
