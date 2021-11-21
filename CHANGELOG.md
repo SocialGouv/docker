@@ -1,3 +1,10 @@
+# [6.62.0](https://github.com/SocialGouv/docker/compare/v6.61.1...v6.62.0) (2021-11-21)
+
+
+### Features
+
+* **deps:** update gcr.io/gcp-runtimes/container-structure-test docker tag to v1.11.0 ([#899](https://github.com/SocialGouv/docker/issues/899)) ([62317e4](https://github.com/SocialGouv/docker/commit/62317e49e4aad5e51b32d0a4b5f0c06e7ede1be6))
+
 ## [6.61.1](https://github.com/SocialGouv/docker/compare/v6.61.0...v6.61.1) (2021-11-20)
 
 
