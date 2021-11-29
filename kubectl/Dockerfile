@@ -29,6 +29,8 @@ RUN set -ex \
   && mv /kustomize /usr/local/bin/kustomize \
   ;
 
+COPY ./bin /bin
+
 USER 1001
 ENTRYPOINT [ "kubectl" ]
 CMD [ "--help" ]
