@@ -1,6 +1,6 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/4a3658e32d9c9bd3c6c5cdbec569f1e5095c398e/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/2436914b5224519ed8cde0d6cfb511001932b42e/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let InceptionJob =

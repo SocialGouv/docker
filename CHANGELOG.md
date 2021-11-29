@@ -1,3 +1,10 @@
+# [6.63.0](https://github.com/SocialGouv/docker/compare/v6.62.0...v6.63.0) (2021-11-23)
+
+
+### Features
+
+* **create-db-secret:** ensure random and secured ([#910](https://github.com/SocialGouv/docker/issues/910)) ([f36a389](https://github.com/SocialGouv/docker/commit/f36a3895c427e03e39826817f4b23c0a7496d4c9))
+
 # [6.62.0](https://github.com/SocialGouv/docker/compare/v6.61.1...v6.62.0) (2021-11-21)
 
 
