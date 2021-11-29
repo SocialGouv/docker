@@ -1,3 +1,10 @@
+# [6.64.0](https://github.com/SocialGouv/docker/compare/v6.63.0...v6.64.0) (2021-11-29)
+
+
+### Features
+
+* **secret-gen:** replace missing node by openssl + k8s-wait-job ([#914](https://github.com/SocialGouv/docker/issues/914)) ([9e77bc9](https://github.com/SocialGouv/docker/commit/9e77bc9ea19087dd6a86a744a0da7453c1883a37))
+
 # [6.63.0](https://github.com/SocialGouv/docker/compare/v6.62.0...v6.63.0) (2021-11-23)
 
 
