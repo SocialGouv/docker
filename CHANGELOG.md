@@ -1,3 +1,10 @@
+## [6.64.1](https://github.com/SocialGouv/docker/compare/v6.64.0...v6.64.1) (2021-11-30)
+
+
+### Bug Fixes
+
+* **clean:** remove unused deprecated scripts ([#918](https://github.com/SocialGouv/docker/issues/918)) ([96e95af](https://github.com/SocialGouv/docker/commit/96e95af31e6524cb7a688b626a3ddc1d2fda1f7b))
+
 # [6.64.0](https://github.com/SocialGouv/docker/compare/v6.63.0...v6.64.0) (2021-11-29)
 
 
