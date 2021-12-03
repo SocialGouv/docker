@@ -1,3 +1,10 @@
+## [6.64.2](https://github.com/SocialGouv/docker/compare/v6.64.1...v6.64.2) (2021-12-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dhall-lang/dhall-haskell to v1.40.2 ([#916](https://github.com/SocialGouv/docker/issues/916)) ([7d87919](https://github.com/SocialGouv/docker/commit/7d87919b4c20b8e640121f63fdded1884eeaefaf))
+
 ## [6.64.1](https://github.com/SocialGouv/docker/compare/v6.64.0...v6.64.1) (2021-11-30)
 
 
