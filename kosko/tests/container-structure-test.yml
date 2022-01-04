@@ -4,7 +4,7 @@ commandTests:
   - name: "kosko version"
     command: "kosko"
     args: ["--version"]
-    expectedError: ["\d\\.\\d+\\.\\d+"]
+    expectedError: ["\\d\\.\\d+\\.\\d+"]
   - name: "kapp version"
     command: "kapp"
     args: ["--version"]
