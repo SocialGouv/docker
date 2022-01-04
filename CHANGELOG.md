@@ -1,3 +1,10 @@
+# [6.66.0](https://github.com/SocialGouv/docker/compare/v6.65.0...v6.66.0) (2022-01-04)
+
+
+### Features
+
+* **deps:** update alpine docker tag to v3.15 ([#903](https://github.com/SocialGouv/docker/issues/903)) ([39eef7c](https://github.com/SocialGouv/docker/commit/39eef7cc8e4de9b91f34848a9afb558cf74c17d8))
+
 # [6.65.0](https://github.com/SocialGouv/docker/compare/v6.64.2...v6.65.0) (2022-01-04)
 
 
