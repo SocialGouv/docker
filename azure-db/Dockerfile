@@ -14,9 +14,9 @@ RUN set -ex \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
   # renovate: datasource=repology depName=debian_stable/jq versioning=loose
-  jq="1.6-2.1" \
+  jq="1.6" \
   # renovate: datasource=repology depName=debian_stable/postgresql-13 versioning=loose
-  postgresql-13="13.4-0+deb11u1" \
+  postgresql-13="13" \
   # renovate: datasource=repology depName=debian_stable/git versioning=loose
   git="1:2.30.2-1" \
   #
