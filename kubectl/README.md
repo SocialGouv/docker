@@ -1,3 +1,0 @@
-# KubeCtrl
-
-> KubeCtrl image
