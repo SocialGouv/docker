@@ -18,7 +18,7 @@ commandTests:
     args: ["version", "--client=true"]
     expectedOutput:
       - Client Version
-      - GitVersion:"v1\.\d+\.\d+"
+      - GitVersion:"v\d\.\d+\.\d+"
   - name: "envsubst version"
     command: "envsubst"
     args: ["--version"]
