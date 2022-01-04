@@ -1,3 +1,17 @@
+# [6.65.0](https://github.com/SocialGouv/docker/compare/v6.64.2...v6.65.0) (2022-01-04)
+
+
+### Bug Fixes
+
+* maintenance ([#931](https://github.com/SocialGouv/docker/issues/931)) ([38fb662](https://github.com/SocialGouv/docker/commit/38fb662ebae1a875ae30059d1264d15cb2e0ce1e))
+* **nginx4spa:** use non-root user ([630cd5c](https://github.com/SocialGouv/docker/commit/630cd5c5bd3e2baba40cbd72186ecf511ee52d66))
+* **nginx:** set nginx user permissions ([#930](https://github.com/SocialGouv/docker/issues/930)) ([7643c98](https://github.com/SocialGouv/docker/commit/7643c9816be9c025294c59589f9bdfcbc3b34ca8))
+
+
+### Features
+
+* **deps:** update dependency k14s/kapp to v0.43.0 ([#924](https://github.com/SocialGouv/docker/issues/924)) ([82c019d](https://github.com/SocialGouv/docker/commit/82c019de95f9d5b8f321eefcb268c9e2771d5d40))
+
 ## [6.64.2](https://github.com/SocialGouv/docker/compare/v6.64.1...v6.64.2) (2021-12-03)
 
 
