@@ -1,3 +1,10 @@
+## [6.67.1](https://github.com/SocialGouv/docker/compare/v6.67.0...v6.67.1) (2022-01-10)
+
+
+### Bug Fixes
+
+* **pg-create:** decouple create and grant ([#936](https://github.com/SocialGouv/docker/issues/936)) ([9b6b185](https://github.com/SocialGouv/docker/commit/9b6b18584846d70c539033390eee89bf7c61c2dd))
+
 # [6.67.0](https://github.com/SocialGouv/docker/compare/v6.66.0...v6.67.0) (2022-01-05)
 
 
