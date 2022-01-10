@@ -1,6 +1,6 @@
 #!/bin/bash
 set +x
-set -e
+set +e
 
 #
 # create a new user and DB on a remote Azure Postgres server
@@ -44,6 +44,10 @@ echo "creating user ${NEW_USER_BASE} on ${PGHOST}"
 psql -abe "$PG_URL_ADMIN" -c "
   SET timezone TO 'Europe/Paris';
   CREATE USER \"$NEW_USER_BASE\" WITH PASSWORD '$NEW_PASSWORD';
+"
+
+echo "grant user ${NEW_USER_BASE} on ${PGHOST}"
+psql -abe "$PG_URL_ADMIN" -c "
   GRANT \"$NEW_USER_BASE\" to \"${PGUSER%%@*}\";
   GRANT ALL PRIVILEGES ON DATABASE \"$NEW_DB_NAME\" TO \"$NEW_USER_BASE\";
 
