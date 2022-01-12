@@ -1,3 +1,10 @@
+# [6.68.0](https://github.com/SocialGouv/docker/compare/v6.67.1...v6.68.0) (2022-01-12)
+
+
+### Features
+
+* **ensure-db:** first draft ([#938](https://github.com/SocialGouv/docker/issues/938)) ([e26b570](https://github.com/SocialGouv/docker/commit/e26b5707733136860518d8ac463bfff04b6456cf))
+
 ## [6.67.1](https://github.com/SocialGouv/docker/compare/v6.67.0...v6.67.1) (2022-01-10)
 
 
