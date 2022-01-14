@@ -1,11 +1,11 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/9a6ccf984b22816e2f3fc855395555c475741d4b/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/489eef037436462dacce13733f6fdcc22625bc80/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let SocailGouvSteps =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/9a6ccf984b22816e2f3fc855395555c475741d4b/dhall/socialgouv/steps.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/489eef037436462dacce13733f6fdcc22625bc80/dhall/socialgouv/steps.dhall
         sha256:342a7b500f7200bbaff48cf069d5b9f9d20c1a434cbe0c679c58b0a848c4b3f1
 
 in  λ(package : Text) →
