@@ -1,3 +1,10 @@
+# [6.69.0](https://github.com/SocialGouv/docker/compare/v6.68.0...v6.69.0) (2022-01-14)
+
+
+### Features
+
+* **ci-runner:** first draft ([#940](https://github.com/SocialGouv/docker/issues/940)) ([5a3cbb1](https://github.com/SocialGouv/docker/commit/5a3cbb1d7b5959367db2697430d0ee115eeea4a2))
+
 # [6.68.0](https://github.com/SocialGouv/docker/compare/v6.67.1...v6.68.0) (2022-01-12)
 
 
