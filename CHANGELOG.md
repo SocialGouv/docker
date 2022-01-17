@@ -1,3 +1,10 @@
+## [6.69.1](https://github.com/SocialGouv/docker/compare/v6.69.0...v6.69.1) (2022-01-17)
+
+
+### Bug Fixes
+
+* **clean:** remove ensure-db ([dbe9345](https://github.com/SocialGouv/docker/commit/dbe934574b305188097a3dd156442b8969a43694))
+
 # [6.69.0](https://github.com/SocialGouv/docker/compare/v6.68.0...v6.69.0) (2022-01-14)
 
 
