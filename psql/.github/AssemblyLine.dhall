@@ -19,7 +19,4 @@ let version_test =
         , steps = [ GithubActions.Step::{ run = Some "psql --version" } ]
         }
 
- 
-
-in  AssemblyLine.Worklflow
-      { name, jobs = toMap { version_test } }
+in  AssemblyLine.Worklflow { name, jobs = toMap { version_test } }
