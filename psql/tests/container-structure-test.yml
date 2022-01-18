@@ -4,8 +4,8 @@ commandTests:
   - name: "psql version"
     command: "psql"
     args: ["--version"]
-    expectedOutput: ["psql (PostgreSQL) \\d+\\.\\d+"]
+    expectedOutput: ["psql \\(PostgreSQL\\) \\d+\\.\\d+"]
   - name: "jq version"
     command: "jq"
     args: ["--version"]
-    expectedOutput: ["jq-master-v\\d+\\.\\d+\\..*"]
+    expectedOutput: ["jq-master-v.*"]

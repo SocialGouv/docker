@@ -36,6 +36,7 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 | **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:6.69.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
 | **nginx**             | `docker pull ghcr.io/socialgouv/docker/nginx:6.69.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)             |
 | **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:6.69.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
+| **psql**              | `docker pull ghcr.io/socialgouv/docker/psql:6.69.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./psql/README.md)              |
 | **wait-for-http**     | `docker pull ghcr.io/socialgouv/docker/wait-for-http:6.69.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)     |
 | **wait-for-postgres** | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres:6.69.1` | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md) |
 
