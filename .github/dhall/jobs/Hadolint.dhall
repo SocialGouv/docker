@@ -1,6 +1,6 @@
 let GithubActions =
     {- renovate: currentValue=master -}
-      https://raw.githubusercontent.com/SocialGouv/.github/3a0b6e840c48706f3279867a953051e47179c598/dhall/github-actions/package.dhall
+      https://raw.githubusercontent.com/SocialGouv/.github/da727fb4ff4a98aa30d3c0581edea86bd1f7bb47/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
 let {- renovate: datasource=docker depName=ghcr.io/hadolint/hadolint -}
