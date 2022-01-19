@@ -1,3 +1,10 @@
+# [6.70.0](https://github.com/SocialGouv/docker/compare/v6.69.1...v6.70.0) (2022-01-19)
+
+
+### Features
+
+* add psql image ([#943](https://github.com/SocialGouv/docker/issues/943)) ([c7a27c3](https://github.com/SocialGouv/docker/commit/c7a27c301c7de13fc8a98dfb3042ab5c275e8fc8))
+
 ## [6.69.1](https://github.com/SocialGouv/docker/compare/v6.69.0...v6.69.1) (2022-01-17)
 
 
