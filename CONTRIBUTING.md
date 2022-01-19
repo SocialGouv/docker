@@ -65,7 +65,7 @@ $ docker run --rm -i ghcr.io/hadolint/hadolint < ./<image>/Dockerfile
 $ docker run --rm -i ghcr.io/hadolint/hadolint < ./helm/Dockerfile
 ```
 
-## Generate GitLab Workflow
+## Generate GitHub Workflow
 
 ### Lint Dockerfiles
 
