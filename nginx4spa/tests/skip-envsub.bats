@@ -7,7 +7,7 @@ setup_file() {
 
   docker-compose run \
     --detach \
-    -e VERSION=x.y.z \
+    -e VERSION=a.b.c \
     -e SKIP_ENVSUBST=true \
     --publish 8889:80 \
     --rm \
