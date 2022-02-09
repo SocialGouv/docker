@@ -1,3 +1,10 @@
+## [6.70.1](https://github.com/SocialGouv/docker/compare/v6.70.0...v6.70.1) (2022-02-09)
+
+
+### Bug Fixes
+
+* **nginx:** allow skip envsubst ([#946](https://github.com/SocialGouv/docker/issues/946)) ([d4e43ea](https://github.com/SocialGouv/docker/commit/d4e43ea79880e6bb8679c693d38224df0473acad))
+
 # [6.70.0](https://github.com/SocialGouv/docker/compare/v6.69.1...v6.70.0) (2022-01-19)
 
 
