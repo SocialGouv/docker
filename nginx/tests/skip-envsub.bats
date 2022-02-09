@@ -3,7 +3,7 @@
 load '../../.bats/common.bats.bash'
 
 setup_file() {
-  cp -r ${BATS_TEST_DIRNAME}/fixtures-envsubst/ ${BATS_RUN_TMPDIR}/www
+  cp -r ${BATS_TEST_DIRNAME}/fixtures-envsubst/ ${BATS_RUN_TMPDIR}/www2
 
   docker-compose run \
     --detach \
@@ -11,7 +11,7 @@ setup_file() {
     -e SKIP_ENVSUBST=true \
     --publish 8888:80 \
     --rm \
-    --volume ${BATS_RUN_TMPDIR}/www:/usr/share/nginx/html \
+    --volume ${BATS_RUN_TMPDIR}/www2:/usr/share/nginx/html \
     alpine
 }
 
