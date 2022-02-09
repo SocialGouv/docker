@@ -19,13 +19,13 @@ teardown_file() {
   docker-compose rm -sf
 }
 
-@test "nginx: should NOT replace the VERSION with x.y.z in index.html" {
+@test "nginx4spa: should NOT replace the VERSION with x.y.z in index.html" {
   run wget -qO - localhost:8888
   assert_output "nginx/test/index.html with VERSION=%%VERSION%%"
   assert_success
 }
 
-@test "nginx: should NOT replace the VERSION with x.y.z in foo/bar/bar.js" {
+@test "nginx4spa: should NOT replace the VERSION with x.y.z in foo/bar/bar.js" {
   run wget -qO - localhost:8888/foo/bar/bar.js
   assert_output "// nginx/test/foo/bar/bar.js with VERSION=%%VERSION%%" ]
   assert_success
