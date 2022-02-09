@@ -18,6 +18,8 @@ add_header X-Content-Type-Options "nosniff";
 
 As default, in every files in the `/usr/share/nginx/html` directory, the [`envsub.sh`](./envsub.sh) script replaces `%%KEY%%` by `VALUE` where `export KEY=VALUE` in the global env var.
 
+You can disable this by setting the `SKIP_ENVSUBST` environment variable.
+
 So :
 
 ```sh
