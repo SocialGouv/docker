@@ -11,7 +11,7 @@ let SocailGouvSteps =
 in  λ(package : Text) →
       GithubActions.Job::{
       , name = Some "Build"
-      , runs-on = GithubActions.RunsOn.Type.ubuntu-latest
+      , runs-on = "self-hosted"
       , needs = Some [ "Lint" ]
       , outputs = Some
           (toMap { digest = "\${{ steps.docker_push.outputs.digest }}" })
