@@ -5,8 +5,8 @@ load '../../.bats/common.bats.bash'
 setup_file() {
   docker-compose run \
     --detach \
-    -e PORT=90 \
-    --publish 8888:90 \
+    -e PORT=9000 \
+    --publish 8888:9000 \
     --rm \
     alpine
 }

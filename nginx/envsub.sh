@@ -16,7 +16,7 @@ DELIMITER=${DELIMITER:="%%"}
 printenv > /tmp/env-vars
 
 # Add default nginx port
-echo "PORT=${PORT:="80"}" >> /tmp/env-vars
+echo "PORT=${PORT:="8080"}" >> /tmp/env-vars
 
 while IFS='=' read -r KEY VALUE
 do
