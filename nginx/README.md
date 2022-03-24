@@ -38,7 +38,7 @@ VERSION=x.y.z
 
 Notes:
 
-- `PORT` is optional and default to `80`
+- `PORT` is optional and default to `8080`
 
 To override default configuration, make a local copy of `nginx.conf` and add it to docker build:
 

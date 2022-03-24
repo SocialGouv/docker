@@ -1,10 +1,11 @@
-FROM nginx:1.21-alpine
+FROM nginxinc/nginx-unprivileged:1.21-alpine
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./entrypoint.sh /entrypoint.sh
 COPY ./envsub.sh /envsub.sh
 
 ## adjust permissions
+USER root
 RUN chown -R nginx:nginx /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/html && \
         chown -R nginx:nginx /var/cache/nginx && \
         chown -R nginx:nginx /var/log/nginx && \
@@ -12,5 +13,7 @@ RUN chown -R nginx:nginx /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/
 
 RUN touch /var/run/nginx.pid && \
         chown -R nginx:nginx /var/run/nginx.pid
-        
+
+USER $uid
+
 ENTRYPOINT ["/entrypoint.sh"]

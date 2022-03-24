@@ -3,7 +3,7 @@ services:
     build:
       context: .
     ports:
-      - target: 80
+      - target: 8080
         published: 8888
 
   #

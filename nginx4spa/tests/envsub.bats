@@ -8,7 +8,7 @@ setup_file() {
   docker-compose run \
     --detach \
     -e VERSION=x.y.z \
-    --publish 8888:80 \
+    --publish 8888:8080 \
     --rm \
     --volume ${BATS_RUN_TMPDIR}/www:/usr/share/nginx/html \
     alpine

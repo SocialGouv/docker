@@ -9,7 +9,7 @@ setup_file() {
     --detach \
     -e VERSION=x.y.z \
     -e SKIP_ENVSUBST=true \
-    --publish 8888:80 \
+    --publish 8888:8080 \
     --rm \
     --volume ${BATS_RUN_TMPDIR}/www2:/usr/share/nginx/html \
     alpine
