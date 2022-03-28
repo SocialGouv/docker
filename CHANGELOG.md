@@ -1,3 +1,20 @@
+# [7.0.0](https://github.com/SocialGouv/docker/compare/v6.70.1...v7.0.0) (2022-03-28)
+
+
+### Bug Fixes
+
+* deps ([#957](https://github.com/SocialGouv/docker/issues/957)) ([31e4150](https://github.com/SocialGouv/docker/commit/31e4150ba1a668edf2bf83b4986b70ba6d09bb6b))
+
+
+### Features
+
+* **nginx:** Use unpriviledged docker images ([#956](https://github.com/SocialGouv/docker/issues/956)) ([764247c](https://github.com/SocialGouv/docker/commit/764247c6acf7ea4abeef423e8119b890ea1a35b7))
+
+
+### BREAKING CHANGES
+
+* **nginx:** port needs to be changed in projects using these images
+
 ## [6.70.1](https://github.com/SocialGouv/docker/compare/v6.70.0...v6.70.1) (2022-02-09)
 
 
