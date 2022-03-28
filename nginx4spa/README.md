@@ -16,7 +16,7 @@ add_header X-Content-Type-Options "nosniff";
 
 Notes:
 
-- `PORT` is optional and default to `80`
+- `PORT` is set to `8080`.
 
 To override default configuration, make a local copy of `nginx.conf` and add it to docker build:
 
