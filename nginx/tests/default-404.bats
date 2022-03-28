@@ -5,7 +5,7 @@ load '../../.bats/common.bats.bash'
 setup_file() {
   docker-compose run \
     --detach \
-    --publish 8888:80 \
+    --publish 8888:8080 \
     --rm \
     --volume ${BATS_TEST_DIRNAME}/fixtures-simple:/usr/share/nginx/html \
     alpine
