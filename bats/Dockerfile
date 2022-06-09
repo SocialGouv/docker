@@ -27,3 +27,4 @@ RUN set -x \
   #
   && apk del .bats-deps \
   ;
+
