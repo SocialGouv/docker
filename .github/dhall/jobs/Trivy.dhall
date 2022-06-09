@@ -25,13 +25,13 @@ let job =
             , run = Some
                 "docker pull ghcr.io/socialgouv/docker/${package}:sha-\${{ github.sha }}"
             }
-          ,   trivy-action.`0.0.17`
+          ,   trivy-action.`0.3.0`
                 trivy-action.Input::{
                 , image-ref =
                     "ghcr.io/socialgouv/docker/${package}:sha-\${{ github.sha }}"
                 }
             ⫽ { name = Some "Run Trivy vulnerability scanner" }
-          ,   trivy-action.`0.0.17`
+          ,   trivy-action.`0.3.0`
                 trivy-action.Input::{
                 , format = Some "template"
                 , image-ref =
