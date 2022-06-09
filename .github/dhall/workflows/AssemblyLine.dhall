@@ -3,10 +3,6 @@ let GithubActions =
       https://raw.githubusercontent.com/SocialGouv/.github/ef781b66d137f31b8091ebf4afab8cebe95322bf/dhall/github-actions/package.dhall
         sha256:66b276bb67cca4cfcfd1027da45857cc8d53e75ea98433b15dade1e1e1ec22c8
 
-let ContainerTestJob =
-      ../jobs/ContainerTest.dhall
-        sha256:400214d12eb103c2500b450f1b1b62345be43866b1d5551badb68199b3c4aea9
-
 let DockerBuildJob =
       ../jobs/DockerBuild.dhall
         sha256:31398149a20e78661ee58064a4859b3c33fc3b64e8e4c787a643a772069882d9
@@ -36,7 +32,6 @@ let Worklflow =
               toMap
                 { lint = HadolintJob args.name
                 , build = DockerBuildJob args.name
-                , container_test = ContainerTestJob { package = args.name }
                 , security_scan = TrivyJob args.name
                 }
             # args.jobs
