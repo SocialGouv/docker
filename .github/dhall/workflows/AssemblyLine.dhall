@@ -36,7 +36,7 @@ let Worklflow =
               toMap
                 { lint = HadolintJob args.name
                 , build = DockerBuildJob args.name
-                , container_test = ContainerTestJob { package = args.name }
+{-                , container_test = ContainerTestJob { package = args.name } -}
                 , security_scan = TrivyJob args.name
                 }
             # args.jobs
