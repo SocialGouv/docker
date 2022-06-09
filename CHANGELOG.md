@@ -1,3 +1,13 @@
+## [7.0.1](https://github.com/SocialGouv/docker/compare/v7.0.0...v7.0.1) (2022-06-09)
+
+
+### Bug Fixes
+
+* **bats:** deps ([#960](https://github.com/SocialGouv/docker/issues/960)) ([2e1f97b](https://github.com/SocialGouv/docker/commit/2e1f97b1df633049a13918a6a08a8813b9f45248))
+* **dhall:** deactivate container_test ([#963](https://github.com/SocialGouv/docker/issues/963)) ([730dedc](https://github.com/SocialGouv/docker/commit/730dedc867620de68d50e069514e7b7ed7e657f9))
+* dummy commit to trigger images rebuild ([e3e254e](https://github.com/SocialGouv/docker/commit/e3e254e07334f4157e5b684affb33ad22b27be62))
+* rollback workflows-src ([ecdd620](https://github.com/SocialGouv/docker/commit/ecdd6202f9f41fc87acea0101f6c8a866406a946))
+
 # [7.0.0](https://github.com/SocialGouv/docker/compare/v6.70.1...v7.0.0) (2022-03-28)
 
 
