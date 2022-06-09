@@ -50,17 +50,6 @@ jobs:
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
-  container_test:
-    name: Container Test
-    needs:
-      - Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: "actions/checkout@v2"
-      - name: Container structure test
-        uses: "docker://gcr.io/gcp-runtimes/container-structure-test:v1.10.0@sha256:78c0abfdc3696ec9fb35840d62342cf28f65d890d56beceb2113638d59f2cce8"
-        with:
-          args: "test   --config dhall/tests/container-structure-test.yml -v debug --image ghcr.io/socialgouv/docker/dhall@${{ needs.Build.outputs.digest }} --pull"
   lint:
     name: Lint
     runs-on: ubuntu-latest
