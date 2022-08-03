@@ -17,7 +17,7 @@ RUN --mount=type=cache,target=/var/cache/apt \
   # renovate: datasource=repology depName=debian_stable/ca-certificates versioning=loose
   ca-certificates="20210119" \
   # renovate: datasource=repology depName=debian_stable/curl versioning=loose
-  curl="7.74.0-1.3+deb11u1" \
+  curl="7.74.0-1.3+deb11u2" \
   # renovate: datasource=repology depName=debian_stable/gnupg versioning=loose
   gnupg="2.2.27-2+deb11u2" \
   #
