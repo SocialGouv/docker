@@ -1,3 +1,18 @@
+# [7.1.0](https://github.com/SocialGouv/docker/compare/v7.0.1...v7.1.0) (2022-08-03)
+
+
+### Bug Fixes
+
+* charset explicit utf8 ([#969](https://github.com/SocialGouv/docker/issues/969)) ([ff400bd](https://github.com/SocialGouv/docker/commit/ff400bd30cd2b874acee166f6445397d6b0a7176))
+* upgrade faulty deps ([#970](https://github.com/SocialGouv/docker/issues/970)) ([49ffe03](https://github.com/SocialGouv/docker/commit/49ffe03f424d6bf91f4b20d3a143ff95602fe11b))
+
+
+### Features
+
+* **deps:** update dependency bats/bats to v1.7.0 ([#889](https://github.com/SocialGouv/docker/issues/889)) ([cf6cb73](https://github.com/SocialGouv/docker/commit/cf6cb73a5d7a8a0608d9fe427315dc14016f12c4))
+* **deps:** update dependency curlimages/curl to v7.83.1 ([#966](https://github.com/SocialGouv/docker/issues/966)) ([6a2b376](https://github.com/SocialGouv/docker/commit/6a2b3768eebe9a315f38ba3dacdb6e51869ea28c))
+* **deps:** update dependency dhall-lang/dhall-haskell to v1.41.1 ([#967](https://github.com/SocialGouv/docker/issues/967)) ([ccca30c](https://github.com/SocialGouv/docker/commit/ccca30c820adf36fa8e1d1bb3bd42adeb1607ced))
+
 ## [7.0.1](https://github.com/SocialGouv/docker/compare/v7.0.0...v7.0.1) (2022-06-09)
 
 
