@@ -1,5 +1,5 @@
 
-FROM debian:11.1-slim
+FROM debian:11.4-slim
 
 # renovate: datasource=pypi depName=azure-cli versioning=2.22.1
 ARG AZURE_CLI_VERSION=2.22.1
@@ -17,9 +17,9 @@ RUN --mount=type=cache,target=/var/cache/apt \
   # renovate: datasource=repology depName=debian_stable/ca-certificates versioning=loose
   ca-certificates="20210119" \
   # renovate: datasource=repology depName=debian_stable/curl versioning=loose
-  curl="7.74.0-1.3+deb11u1" \
+  curl="7.74.0-1.3+deb11u2" \
   # renovate: datasource=repology depName=debian_stable/gnupg versioning=loose
-  gnupg="2.2.27-2+deb11u1" \
+  gnupg="2.2.27-2+deb11u2" \
   #
   && curl -sL https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
   && echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ buster main" | tee /etc/apt/sources.list.d/azure-cli.list \
