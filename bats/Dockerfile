@@ -1,4 +1,4 @@
-FROM bats/bats:1.7.0
+FROM bats/bats:1.8.2
 
 RUN set -x \
   #
