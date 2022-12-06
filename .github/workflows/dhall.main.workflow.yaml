@@ -31,7 +31,7 @@ jobs:
         with: {}
       - if: "${{ github.event_name != 'pull_request' }}"
         name: Login to ghcr.io/socialgouv Registry
-        uses: "docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9"
+        uses: "docker/login-action@f75d088332b07a08afadf6ac53c74509b9453f12"
         with:
           password: "${{ secrets.GHCR_REGISTRY_TOKEN }}"
           registry: ghcr.io
