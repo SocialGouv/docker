@@ -20,7 +20,7 @@ jobs:
           running-workflow-name: "release"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}
       - name: Semantic Release
