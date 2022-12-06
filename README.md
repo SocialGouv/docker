@@ -55,4 +55,3 @@ $ semantic-release
 ```
 
 Our [semantic-release config](./.releaserc.yml) will do the heavy lifting ;)
-
