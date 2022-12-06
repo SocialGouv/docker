@@ -12,7 +12,7 @@ RUN set -x \
   #
   && apk add --update --no-cache --virtual .bats-deps \
   # renovate: datasource=repology depName=alpine_3_12/git versioning=loose
-  git=="2.34.4-r0" \
+  git=="2.34.5-r0" \
   #
   # Install extra bats dependencies
   #
