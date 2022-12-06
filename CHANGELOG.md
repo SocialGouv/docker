@@ -1,3 +1,10 @@
+# [7.2.0](https://github.com/SocialGouv/docker/compare/v7.1.1...v7.2.0) (2022-12-06)
+
+
+### Features
+
+* **deps:** update bats/bats docker tag to v1.8.2 ([#979](https://github.com/SocialGouv/docker/issues/979)) ([3b21f48](https://github.com/SocialGouv/docker/commit/3b21f48ee0d0dd9bda8c4029cb8649a876a1fc2a))
+
 ## [7.1.1](https://github.com/SocialGouv/docker/compare/v7.1.0...v7.1.1) (2022-12-06)
 
 
