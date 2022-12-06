@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: "actions/checkout@v2"
       - id: docker_meta
-        uses: "crazy-max/ghaction-docker-meta@f6efe56d565add159ad605568120f5b22712a870"
+        uses: "crazy-max/ghaction-docker-meta@314ddf6d4a82333bf1bc7630399df41bf68eba09"
         with:
           images: ghcr.io/socialgouv/docker/azure-cli
           labels: |
