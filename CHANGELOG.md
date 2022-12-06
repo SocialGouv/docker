@@ -1,3 +1,12 @@
+## [7.1.1](https://github.com/SocialGouv/docker/compare/v7.1.0...v7.1.1) (2022-12-06)
+
+
+### Bug Fixes
+
+* **nginx:** hide nginx version in folders ([#971](https://github.com/SocialGouv/docker/issues/971)) ([76ef24e](https://github.com/SocialGouv/docker/commit/76ef24e98b1dcc725920ca2cb07c100de6e4b037))
+* release ([7b36c09](https://github.com/SocialGouv/docker/commit/7b36c09f7617791981008ee0f183fbf2177fcacd))
+* **secu:** upgrade nginx image ([#972](https://github.com/SocialGouv/docker/issues/972)) ([5d9d5aa](https://github.com/SocialGouv/docker/commit/5d9d5aa6e91db827c13ee415499a90e56d5a16b8))
+
 # [7.1.0](https://github.com/SocialGouv/docker/compare/v7.0.1...v7.1.0) (2022-08-03)
 
 
