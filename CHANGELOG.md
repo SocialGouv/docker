@@ -1,3 +1,10 @@
+# [7.5.0](https://github.com/SocialGouv/docker/compare/v7.4.0...v7.5.0) (2023-04-13)
+
+
+### Features
+
+* **deps:** update debian docker tag to v11.6 ([#981](https://github.com/SocialGouv/docker/issues/981)) ([0631f73](https://github.com/SocialGouv/docker/commit/0631f73cc428aa210df4ded64498ef0548636b6f))
+
 # [7.4.0](https://github.com/SocialGouv/docker/compare/v7.3.1...v7.4.0) (2023-04-13)
 
 
