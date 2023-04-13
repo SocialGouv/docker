@@ -1,3 +1,11 @@
+## [7.3.1](https://github.com/SocialGouv/docker/compare/v7.3.0...v7.3.1) (2023-04-13)
+
+
+### Bug Fixes
+
+* try upgrade ([#992](https://github.com/SocialGouv/docker/issues/992)) ([b03a3b9](https://github.com/SocialGouv/docker/commit/b03a3b9da685ccb43037989018e7df2bd4bef0ac))
+* update deps ([#993](https://github.com/SocialGouv/docker/issues/993)) ([1823f05](https://github.com/SocialGouv/docker/commit/1823f05eab5482315c0d1e3ec5aa3980b086febf))
+
 # [7.3.0](https://github.com/SocialGouv/docker/compare/v7.2.0...v7.3.0) (2022-12-06)
 
 
