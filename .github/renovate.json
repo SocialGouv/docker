@@ -14,7 +14,8 @@
       },
       "patch": {
         "semanticCommitType": "fix"
-      }
+      },
+      "semanticCommitType": "fix"
     }
   ]
 }
