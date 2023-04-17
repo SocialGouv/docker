@@ -1,3 +1,10 @@
+## [7.5.1](https://github.com/SocialGouv/docker/compare/v7.5.0...v7.5.1) (2023-04-17)
+
+
+### Bug Fixes
+
+* **deps:** update github/codeql-action digest to 9a866ed ([#978](https://github.com/SocialGouv/docker/issues/978)) ([c635555](https://github.com/SocialGouv/docker/commit/c6355551903524f51c4b07816c2427e84d6737a4))
+
 # [7.5.0](https://github.com/SocialGouv/docker/compare/v7.4.0...v7.5.0) (2023-04-13)
 
 
