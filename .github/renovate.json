@@ -16,7 +16,7 @@
         "semanticCommitType": "fix"
       },
       "semanticCommitType": "fix",
-      "schedule": ["daily"]
+      "schedule": ["at any time"]
     }
   ]
 }
