@@ -17,7 +17,7 @@ services:
   #
 
   test:
-    image: gcr.io/gcp-runtimes/container-structure-test:v1.11.0
+    image: gcr.io/gcp-runtimes/container-structure-test:v1.15.0
     depends_on:
       - alpine
     command: >
