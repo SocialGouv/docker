@@ -15,7 +15,8 @@
       "patch": {
         "semanticCommitType": "fix"
       },
-      "semanticCommitType": "fix"
+      "semanticCommitType": "fix",
+      "schedule": ["daily"]
     }
   ]
 }
