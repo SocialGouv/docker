@@ -1,3 +1,10 @@
+## [7.5.2](https://github.com/SocialGouv/docker/compare/v7.5.1...v7.5.2) (2023-04-20)
+
+
+### Bug Fixes
+
+* **deps:** update nginxinc/nginx-unprivileged:1.23-alpine docker digest to ae94ea4 ([#1001](https://github.com/SocialGouv/docker/issues/1001)) ([a304e99](https://github.com/SocialGouv/docker/commit/a304e99f66e1b89af311b1c1e9807f5fade6fbf0))
+
 ## [7.5.1](https://github.com/SocialGouv/docker/compare/v7.5.0...v7.5.1) (2023-04-17)
 
 
