@@ -1,0 +1,17 @@
+services:
+  alpine:
+    build:
+      context: .
+    deploy:
+      replicas: 0
+
+  #
+
+  lint:
+    image: ghcr.io/hadolint/hadolint:v2.8.0-alpine
+    entrypoint: hadolint
+    command: Dockerfile
+    volumes:
+      - .:/home/socialgouv
+    working_dir: /home/socialgouv
+ 

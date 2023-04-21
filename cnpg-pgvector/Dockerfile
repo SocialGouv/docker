@@ -12,7 +12,7 @@ USER root
 
 WORKDIR /app
 
-RUN apt-get update &&apt-get install -y --no-install-recommends git
+RUN apt-get update && apt-get install -y --no-install-recommends git
 
 RUN git clone --depth 1 --branch $PGVECTOR_TAG https://github.com/pgvector/pgvector.git /tmp/pgvector
 
