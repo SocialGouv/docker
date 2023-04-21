@@ -1,4 +1,4 @@
-# hadolint ignore=DL3008
+# hadolint global ignore=DL3008,DL3003
 
 #
 # CNPG operand image with pgvector extension
