@@ -4,9 +4,10 @@
 #
 
 ARG PG_MAJOR=15
-ARG PGVECTOR_TAG=v0.4.1
 
 FROM ghcr.io/cloudnative-pg/postgresql:$PG_MAJOR as builder
+
+ARG PGVECTOR_TAG=v0.4.1
 
 USER root
 
