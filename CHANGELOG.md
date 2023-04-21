@@ -1,3 +1,10 @@
+# [7.6.0](https://github.com/SocialGouv/docker/compare/v7.5.2...v7.6.0) (2023-04-21)
+
+
+### Features
+
+* add cnpg-pgvector ([#1004](https://github.com/SocialGouv/docker/issues/1004)) ([a0b40d7](https://github.com/SocialGouv/docker/commit/a0b40d78cdc6c9ee2b4864066cedbbc62f77669c))
+
 ## [7.5.2](https://github.com/SocialGouv/docker/compare/v7.5.1...v7.5.2) (2023-04-20)
 
 
