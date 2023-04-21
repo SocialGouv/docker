@@ -20,10 +20,10 @@ let version_test =
           [ GithubActions.Step::{ run = Some "psql --version" }
           , GithubActions.Step::{ run = Some "which pg_dump" }
           , GithubActions.Step::{ run = Some "which pg_restore" }
-          , GithubActions.Step::{ run = Some "ls /usr/share/postgresql/15/extension/vector.control" }
+          , GithubActions.Step::{
+            , run = Some "ls /usr/share/postgresql/15/extension/vector.control"
+            }
           ]
         }
 
-
-in  AssemblyLine.Worklflow
-      { name, jobs = toMap {  version_test } }
+in  AssemblyLine.Worklflow { name, jobs = toMap { version_test } }
