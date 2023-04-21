@@ -1,3 +1,5 @@
+# hadolint ignore=DL3008
+
 #
 # CNPG operand image with pgvector extension
 # build with : `docker build . -f Dockerfile.cnpg-pgvector -t cnpg-pgvector`
@@ -10,24 +12,25 @@ FROM ghcr.io/cloudnative-pg/postgresql:$PG_MAJOR as builder
 
 USER root
 
-WORKDIR /app
+WORKDIR /tmp/pgvector
 
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
-RUN git clone --depth 1 --branch $PGVECTOR_TAG https://github.com/pgvector/pgvector.git /tmp/pgvector
+RUN git clone --depth 1 --branch $PGVECTOR_TAG https://github.com/pgvector/pgvector.git .
 
 RUN apt-get update && \
     apt-get install -y  --no-install-recommends build-essential postgresql-server-dev-$PG_MAJOR && \
-    cd /tmp/pgvector && \
     make clean && \
     make OPTFLAGS="" && \
     make install && \
     mkdir /usr/share/doc/pgvector && \
     cp LICENSE README.md /usr/share/doc/pgvector && \
-    rm -r /tmp/pgvector && \
     apt-get remove -y build-essential postgresql-server-dev-$PG_MAJOR && \
     apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    cd /tmp && rm -r /tmp/pgvector
+
+USER postgres
 
 FROM ghcr.io/cloudnative-pg/postgresql:$PG_MAJOR
 
