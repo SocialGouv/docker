@@ -26,11 +26,10 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 
 ## Images
 
-| Project               | Image                                                            | Links                                                                                      |
-| --------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **azure-cli**         | `docker pull ghcr.io/socialgouv/docker/azure-cli:7.5.2`         | [![README](https://img.shields.io/badge/README--green.svg)](./azure-cli/README.md)         |
-| **azure-db**          | `docker pull ghcr.io/socialgouv/docker/azure-db:7.5.2`          | [![README](https://img.shields.io/badge/README--green.svg)](./azure-db/README.md)          |
+| Project               | Image                                                           | Links                                                                                      |
+| --------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:7.5.2`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
+| **cnpg-pgvector**     | `docker pull ghcr.io/socialgouv/docker/cnpg-pgvector:7.5.2`     | [![README](https://img.shields.io/badge/README--green.svg)](./cnpg-pgvector/README.md)     |
 | **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:7.5.2`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
 | **nginx**             | `docker pull ghcr.io/socialgouv/docker/nginx:7.5.2`             | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)             |
 | **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:7.5.2`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
