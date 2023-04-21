@@ -1,4 +1,4 @@
-# hadolint global ignore=DL3008,DL3003
+# hadolint ignore=DL3008,DL3003
 
 #
 # CNPG operand image with pgvector extension
@@ -14,10 +14,12 @@ USER root
 
 WORKDIR /tmp/pgvector
 
+# hadolint ignore=DL3008,DL3003
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
 RUN git clone --depth 1 --branch $PGVECTOR_TAG https://github.com/pgvector/pgvector.git .
 
+# hadolint ignore=DL3008,DL3003
 RUN apt-get update && \
     apt-get install -y  --no-install-recommends build-essential postgresql-server-dev-$PG_MAJOR && \
     make clean && \
