@@ -1,4 +1,4 @@
-FROM ghcr.io/socialgouv/docker/nginx:7.5@sha256:9ed92683c2d35db2c48068ef5a27559081184d04912cc3d1610fd00832f28cb5
+FROM ghcr.io/socialgouv/docker/nginx:7.6@sha256:ec4973534d128a279cf71af0fe56dd36a18396664661d5292326f0ac68b9739c
 
 USER root
 
