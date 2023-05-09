@@ -1,3 +1,11 @@
+## [7.6.1](https://github.com/SocialGouv/docker/compare/v7.6.0...v7.6.1) (2023-05-09)
+
+
+### Bug Fixes
+
+* **bats:** upgrade deps ([#1007](https://github.com/SocialGouv/docker/issues/1007)) ([4ec4d17](https://github.com/SocialGouv/docker/commit/4ec4d17ba1a62e0c939aa73e42d7fe874e8b8922))
+* **nginx4spa:** use upstream nginx image ([#1006](https://github.com/SocialGouv/docker/issues/1006)) ([4949939](https://github.com/SocialGouv/docker/commit/494993940c8ef7098c82c72160d49b47a4398f55))
+
 # [7.6.0](https://github.com/SocialGouv/docker/compare/v7.5.2...v7.6.0) (2023-04-21)
 
 
