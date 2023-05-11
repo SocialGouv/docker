@@ -38,7 +38,7 @@ jobs:
           username: "${{ secrets.SOCIALGROOVYBOT_NAME }}"
       - id: docker_push
         name: Push
-        uses: "docker/build-push-action@1bc1040caef9e604eb543693ba89b5bf4fc80935"
+        uses: "docker/build-push-action@91df6b874e498451163feb47610c87c4a218c1ee"
         with:
           builder: "${{ steps.docker_buildx.outputs.name }}"
           cache-from: type=gha
