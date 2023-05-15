@@ -1,5 +1,5 @@
 {
-  "version": "7.6.2-alpha.7",
+  "version": "7.6.2-alpha.8",
   "name": "nginx4spa",
   "packageManager": "yarn@3.5.1",
   "private": true

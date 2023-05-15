@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.6.2-alpha.8 (2023-05-15)
+
+
+### Bug Fixes
+
+* wip ([9b46523](https://github.com/SocialGouv/docker/commit/9b465232f5141945142a6e713cfe048489810711))
+
+
+
+
+
 ## 7.6.2-alpha.7 (2023-05-15)
 
 
