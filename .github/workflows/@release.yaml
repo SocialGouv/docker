@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - master
-      - next
-      - next-major
       - beta
       - alpha
 
@@ -43,7 +41,15 @@ jobs:
           GIT_AUTHOR_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
           GIT_COMMITTER_EMAIL: ${{ secrets.SOCIALGROOVYBOT_EMAIL }}
           GIT_COMMITTER_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
-        run: yarn release
+        run: |
+          if [ "${{ github.base_ref }}" = "alpha" ] || [ "${{ github.base_ref }}" = "beta" ]; then
+            yarn lerna version --conventional-commits --conventional-prerelease --preid "${{ github.base_ref }}" --yes
+          else
+            yarn lerna version --conventional-commits --conventional-graduate --yes
+          fi
+
+          yarn lerna publish from-git --yes
+
 
       # - name: Push release
       #   shell: bash

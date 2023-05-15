@@ -16,9 +16,5 @@
     "wait-for-http",
     "wait-for-postgres"
   ],
-  "scripts": {
-    "release": "lerna version --yes",
-    "changed": "lerna changed --json"
-  },
   "packageManager": "yarn@3.5.1"
 }
