@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: "psql-${{ github.ref }}"
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
 jobs:
   build:
     name: Build
