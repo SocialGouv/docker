@@ -9,13 +9,11 @@ RUN set -x \
   coreutils=="9.0-r2" \
   #
   # Install git to install extra
-  #
   && apk add --update --no-cache --virtual .bats-deps \
   # renovate: datasource=repology depName=alpine_3_12/git versioning=loose
   git=="2.34.8-r0" \
   #
   # Install extra bats dependencies
-  #
   && git clone -q -b 'v0.3.0' --single-branch --depth 1 \
   https://github.com/ztombol/bats-assert /usr/lib/bats-assert \
   && git clone -q -b 'v0.2.0' --single-branch --depth 1 \
@@ -24,9 +22,5 @@ RUN set -x \
   https://github.com/ztombol/bats-support /usr/lib/bats-support \
   #
   # Clean
-  #
   && apk del .bats-deps \
   ;
-
-
-
