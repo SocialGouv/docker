@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.6.2-alpha.4 (2023-05-15)
+
+
+### Bug Fixes
+
+* wip ([e520c14](https://github.com/SocialGouv/docker/commit/e520c14d8b542147f38df6614f003e0a35e24830))
+
+
+
+
+
 ## 7.6.2-alpha.3 (2023-05-15)
 
 **Note:** Version bump only for package psql
