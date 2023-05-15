@@ -22,6 +22,11 @@ jobs:
         with:
           token: ${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'yarn'
+
       - name: Install dependencies
         run: yarn --immutable
 
@@ -42,8 +47,10 @@ jobs:
           GIT_COMMITTER_EMAIL: ${{ secrets.SOCIALGROOVYBOT_EMAIL }}
           GIT_COMMITTER_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
         run: |
-          if [ "${{ github.base_ref }}" = "alpha" ] || [ "${{ github.base_ref }}" = "beta" ]; then
-            yarn lerna version --conventional-commits --conventional-prerelease --preid "${{ github.base_ref }}" --yes
+          if [[ "$GITHUB_REF" == *"alpha"* ]]; then
+            yarn lerna version --conventional-commits --conventional-prerelease --preid alpha --yes
+          elif [[ "$GITHUB_REF" == *"beta"* ]]; then
+            yarn lerna version --conventional-commits --conventional-prerelease --preid beta --yes
           else
             yarn lerna version --conventional-commits --conventional-graduate --yes
           fi
