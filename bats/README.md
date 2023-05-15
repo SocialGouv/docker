@@ -43,4 +43,3 @@ $ docker run --rm ghcr.io/socialgouv/docker/bats /usr/lib/bats-file/test
 [bats-support]: https://github.com/ztombol/bats-support
 [bats-assert]: https://github.com/ztombol/bats-assert
 [bats-file]: https://github.com/ztombol/bats-file
-
