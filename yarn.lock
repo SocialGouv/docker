@@ -5044,9 +5044,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root-workspace-0b6124@workspace:.":
+"root@workspace:.":
   version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
+  resolution: "root@workspace:."
   dependencies:
     bats: ^1.5.0
     bats-assert: "bats-core/bats-assert#2.0.0"

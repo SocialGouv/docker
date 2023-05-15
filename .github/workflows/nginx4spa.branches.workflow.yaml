@@ -10,7 +10,7 @@ jobs:
       digest: "${{ steps.docker_push.outputs.digest }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v3"
       - id: docker_meta
         uses: "crazy-max/ghaction-docker-meta@f6efe56d565add159ad605568120f5b22712a870"
         with:
@@ -56,7 +56,7 @@ jobs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v3"
       - run: yarn --immutable
       - run: make e2e
         working-directory: nginx4spa
@@ -64,7 +64,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v3"
       - uses: "docker://ghcr.io/hadolint/hadolint:2.4.0@sha256:ed22c9de9b884383094edb8930696a256c4450335945c68153d8fc8fbb27bf03"
         with:
           args: hadolint ./nginx4spa/Dockerfile
@@ -74,7 +74,7 @@ jobs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v3"
       - run: "docker pull ghcr.io/socialgouv/docker/nginx4spa:sha-${{ github.sha }}"
       - name: Run Trivy vulnerability scanner
         uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
@@ -105,11 +105,8 @@ on:
   push:
     branches-ignore:
       - master
-      - next
-      - next-major
       - beta
       - alpha
-      - "+([0-9])?(.{+([0-9]),x}).x"
     paths:
       - "nginx4spa/**"
       - ".github/workflows/nginx4spa.branches.workflow.yaml"

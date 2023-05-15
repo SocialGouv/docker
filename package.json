@@ -1,4 +1,5 @@
 {
+  "name": "root",
   "devDependencies": {
     "bats": "^1.5.0",
     "bats-assert": "bats-core/bats-assert#2.0.0",
@@ -16,5 +17,6 @@
     "wait-for-http",
     "wait-for-postgres"
   ],
-  "packageManager": "yarn@3.5.1"
+  "packageManager": "yarn@3.5.1",
+  "private": true
 }

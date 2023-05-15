@@ -1,7 +1,7 @@
 #
 
 DOCKER_COMPOSE = docker-compose
-BATS_BIN = $$(yarn bin)/bats
+BATS_BIN = $(shell yarn workspace root bin bats)
 
 all: build lint
 
