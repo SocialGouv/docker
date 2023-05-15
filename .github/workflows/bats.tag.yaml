@@ -3,7 +3,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
 jobs:
   build:
-    uses: ./.github/workflows/@build.workflow.yaml
+    uses: ./.github/workflows/workflow.build.yaml
     with:
       name: bats
 
