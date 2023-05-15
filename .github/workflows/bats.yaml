@@ -25,3 +25,4 @@ on:
     paths:
       - "bats/**"
       - ".github/workflows/bats.yaml"
+      - ".github/workflows/bats.tag.yaml"
