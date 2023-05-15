@@ -17,5 +17,9 @@ jobs:
 name: "bats"
 on:
   push:
+    branches:
+      - master
+      - alpha
+      - beta
     tags:
       - bats@**
