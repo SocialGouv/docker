@@ -46,7 +46,9 @@ jobs:
           GIT_AUTHOR_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
           GIT_COMMITTER_EMAIL: ${{ secrets.SOCIALGROOVYBOT_EMAIL }}
           GIT_COMMITTER_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
+        shell: bash
         run: |
+          set -x
           if [[ "$GITHUB_REF" == *"alpha"* ]]; then
             yarn lerna version --conventional-commits --conventional-prerelease --preid alpha --yes
           elif [[ "$GITHUB_REF" == *"beta"* ]]; then
