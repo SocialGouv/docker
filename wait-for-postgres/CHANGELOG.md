@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.6.2-alpha.6 (2023-05-15)
+
+
+### Bug Fixes
+
+* wip ([1a20cfa](https://github.com/SocialGouv/docker/commit/1a20cfab512641823c2bd737113bbda75da5b5aa))
+
+
+
+
+
 ## 7.6.2-alpha.5 (2023-05-15)
 
 **Note:** Version bump only for package wait-for-postgres
