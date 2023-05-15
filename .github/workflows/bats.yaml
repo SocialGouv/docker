@@ -11,8 +11,6 @@ jobs:
     needs: [build]
     container: "docker://ghcr.io/socialgouv/docker/bats:sha-${{ github.sha }}"
     name: Test Version
-    needs:
-      - Build
     runs-on: ubuntu-latest
     steps:
       - run: bats --version
