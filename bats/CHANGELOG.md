@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.2-alpha.17](https://github.com/SocialGouv/docker/compare/bats@7.6.2-alpha.16...bats@7.6.2-alpha.17) (2023-05-15)
+
+
+### Bug Fixes
+
+* wip ([284ebe4](https://github.com/SocialGouv/docker/commit/284ebe442b8017a04ea0e7fa879b55c101a42dc4))
+* wip ([ee4602e](https://github.com/SocialGouv/docker/commit/ee4602eed35d96a15f55058abf5508c94ef78897))
+* wip ([dd7d9ef](https://github.com/SocialGouv/docker/commit/dd7d9efed0fb8125373c5bd6d967fbd6b35b9ac0))
+* wip ([6395de7](https://github.com/SocialGouv/docker/commit/6395de7de8efd698266ed31036d8c34bcf1ca040))
+
+
+
+
+
 ## 7.6.2-alpha.16 (2023-05-15)
 
 
