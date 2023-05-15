@@ -1,6 +1,6 @@
 concurrency:
   cancel-in-progress: true
-  group: "nginx-${{ github.ref }}"
+  group: "cnpg-pgvector-${{ github.ref }}"
 jobs:
   build:
     name: Build
@@ -14,17 +14,16 @@ jobs:
       - id: docker_meta
         uses: "crazy-max/ghaction-docker-meta@f6efe56d565add159ad605568120f5b22712a870"
         with:
-          images: ghcr.io/socialgouv/docker/nginx
+          images: ghcr.io/socialgouv/docker/cnpg-pgvector
           labels: |
-            org.opencontainers.image.title=nginx
-            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/nginx
+            org.opencontainers.image.title=cnpg-pgvector
+            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/cnpg-pgvector
           tags: |
             type=sha
             type=raw,value=sha-${{ github.sha }}
             type=ref,event=branch
             type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type=match,pattern=cnpg-pgvector@(.*)
       - id: docker_buildx
         name: Set up Docker Buildx
         uses: "docker/setup-buildx-action@abe5d8f79a1606a2d3e218847032f3f2b1726ab0"
@@ -43,23 +42,13 @@ jobs:
           builder: "${{ steps.docker_buildx.outputs.name }}"
           cache-from: type=gha
           cache-to: "type=gha,mode=max"
-          context: "./nginx"
+          context: "./cnpg-pgvector"
           labels: "${{ steps.docker_meta.outputs.labels }}"
           push: 'true'
           tags: "${{ steps.docker_meta.outputs.tags }}"
       - name: Image digest
         run: |
           echo "${{ steps.docker_push.outputs.digest }}"
-  integration_test:
-    name: Integration test
-    needs:
-      - Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: "actions/checkout@v3"
-      - run: yarn --immutable
-      - run: make e2e
-        working-directory: nginx
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -67,7 +56,7 @@ jobs:
       - uses: "actions/checkout@v3"
       - uses: "docker://ghcr.io/hadolint/hadolint:2.4.0@sha256:ed22c9de9b884383094edb8930696a256c4450335945c68153d8fc8fbb27bf03"
         with:
-          args: hadolint ./nginx/Dockerfile
+          args: hadolint ./cnpg-pgvector/Dockerfile
   security_scan:
     name: Vulnerability Scanner
     needs:
@@ -75,38 +64,37 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v3"
-      - run: "docker pull ghcr.io/socialgouv/docker/nginx:sha-${{ github.sha }}"
+      - run: "docker pull ghcr.io/socialgouv/docker/cnpg-pgvector:sha-${{ github.sha }}"
       - name: Run Trivy vulnerability scanner
         uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
         with:
-          image-ref: "ghcr.io/socialgouv/docker/nginx:sha-${{ github.sha }}"
+          image-ref: "ghcr.io/socialgouv/docker/cnpg-pgvector:sha-${{ github.sha }}"
       - name: Export Trivy Results as sarif
         uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
         with:
           format: template
-          image-ref: "ghcr.io/socialgouv/docker/nginx:sha-${{ github.sha }}"
+          image-ref: "ghcr.io/socialgouv/docker/cnpg-pgvector:sha-${{ github.sha }}"
           output: trivy-results.sarif
           template: "@/contrib/sarif.tpl"
       - name: Change hardcoded Dockerfile path
-        run: "sed -i 's/\"uri\": \"Dockerfile\"/\"uri\": \"nginx\\/Dockerfile\"/' trivy-results.sarif"
+        run: "sed -i 's/\"uri\": \"Dockerfile\"/\"uri\": \"cnpg-pgvector\\/Dockerfile\"/' trivy-results.sarif"
       - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
         with:
           sarif_file: trivy-results.sarif
   version_test:
-    container: "docker://ghcr.io/socialgouv/docker/nginx:sha-${{ github.sha }}"
-    name: Test Version
+    container: "docker://ghcr.io/socialgouv/docker/cnpg-pgvector:sha-${{ github.sha }}"
+    name: Test files
     needs:
       - Build
     runs-on: ubuntu-latest
     steps:
-      - run: nginx -version
-name: "nginx (branch)"
+      - run: psql --version
+      - run: which pg_dump
+      - run: which pg_restore
+      - run: ls /usr/share/postgresql/15/extension/vector.control
+name: "cnpg-pgvector (branch)"
 on:
   push:
-    branches-ignore:
-      - master
-      - beta
-      - alpha
     paths:
-      - "nginx/**"
-      - ".github/workflows/nginx.branches.workflow.yaml"
+      - "cnpg-pgvector/**"
+      - ".github/workflows/cnpg-pgvector.yaml"
