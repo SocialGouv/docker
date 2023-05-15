@@ -8,6 +8,9 @@
     "husky": "^8.0.0",
     "lerna": "^6.6.2"
   },
+  "scripts": {
+    "postversion": "./scripts/push-tags-one-by-one.sh"
+  },
   "workspaces": [
     "bats",
     "cnpg-pgvector",
