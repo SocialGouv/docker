@@ -103,6 +103,8 @@ jobs:
 name: "wait-for-postgres (branch)"
 on:
   push:
+    tags:
+      - wait-for-postgres@**
     paths:
       - "wait-for-postgres/**"
       - ".github/workflows/wait-for-postgres.yaml"

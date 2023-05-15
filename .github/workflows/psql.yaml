@@ -92,6 +92,8 @@ jobs:
 name: "psql (branch)"
 on:
   push:
+    tags:
+      - psql@**
     paths:
       - "psql/**"
       - ".github/workflows/psql.yaml"

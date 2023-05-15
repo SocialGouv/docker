@@ -102,6 +102,8 @@ jobs:
 name: "wait-for-http (branch)"
 on:
   push:
+    tags:
+      - wait-for-http@**
     paths:
       - "wait-for-http/**"
       - ".github/workflows/wait-for-http.yaml"

@@ -102,6 +102,8 @@ jobs:
 name: "nginx4spa (branch)"
 on:
   push:
+    tags:
+      - nginx4spa@**
     paths:
       - "nginx4spa/**"
       - ".github/workflows/nginx4spa.yaml"

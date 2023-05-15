@@ -102,6 +102,8 @@ jobs:
 name: "bats (branch)"
 on:
   push:
+    tags:
+      - bats@**
     paths:
       - "bats/**"
       - ".github/workflows/bats.yaml"
