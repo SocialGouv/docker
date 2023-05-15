@@ -28,13 +28,13 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 
 | Project               | Image                                                           | Links                                                                                      |
 | --------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:7.6.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
-| **cnpg-pgvector**     | `docker pull ghcr.io/socialgouv/docker/cnpg-pgvector:7.6.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./cnpg-pgvector/README.md)     |
-| **nginx**             | `docker pull ghcr.io/socialgouv/docker/nginx:7.6.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)             |
-| **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:7.6.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
-| **psql**              | `docker pull ghcr.io/socialgouv/docker/psql:7.6.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./psql/README.md)              |
-| **wait-for-http**     | `docker pull ghcr.io/socialgouv/docker/wait-for-http:7.6.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)     |
-| **wait-for-postgres** | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres:7.6.1` | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md) |
+| **bats**              | `docker pull ghcr.io/socialgouv/docker/bats`                    | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
+| **cnpg-pgvector**     | `docker pull ghcr.io/socialgouv/docker/cnpg-pgvector`           | [![README](https://img.shields.io/badge/README--green.svg)](./cnpg-pgvector/README.md)     |
+| **nginx**             | `docker pull ghcr.io/socialgouv/docker/nginx`                   | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)             |
+| **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa`               | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
+| **psql**              | `docker pull ghcr.io/socialgouv/docker/psql`                    | [![README](https://img.shields.io/badge/README--green.svg)](./psql/README.md)              |
+| **wait-for-http**     | `docker pull ghcr.io/socialgouv/docker/wait-for-http`           | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)     |
+| **wait-for-postgres** | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres`       | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md) |
 
 <br>
 <br>
