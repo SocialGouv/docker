@@ -99,11 +99,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: nginx -version
-name: "nginx4spa (branch)"
+name: "nginx4spa"
 on:
   push:
     branches:
       - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
     tags:
       - nginx4spa@**
     paths:

@@ -99,11 +99,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: bats --version
-name: "bats (branch)"
+name: "bats"
 on:
   push:
     branches:
       - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
     tags:
       - bats@**
     paths:

@@ -89,11 +89,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: psql --version
-name: "psql (branch)"
+name: "psql"
 on:
   push:
     branches:
       - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
     tags:
       - psql@**
     paths:

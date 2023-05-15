@@ -92,11 +92,14 @@ jobs:
       - run: which pg_dump
       - run: which pg_restore
       - run: ls /usr/share/postgresql/15/extension/vector.control
-name: "cnpg-pgvector (branch)"
+name: "cnpg-pgvector"
 on:
   push:
     branches:
       - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
     tags:
       - cnpg-pgvector@**
     paths:

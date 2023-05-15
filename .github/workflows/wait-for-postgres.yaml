@@ -100,11 +100,14 @@ jobs:
     steps:
       - run: psql --version
       - run: which wait-for-postgres
-name: "wait-for-postgres (branch)"
+name: "wait-for-postgres"
 on:
   push:
     branches:
       - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
     tags:
       - wait-for-postgres@**
     paths:

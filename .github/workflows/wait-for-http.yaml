@@ -99,11 +99,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: which wait-for-http
-name: "wait-for-http (branch)"
+name: "wait-for-http"
 on:
   push:
     branches:
       - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
     tags:
       - wait-for-http@**
     paths:
