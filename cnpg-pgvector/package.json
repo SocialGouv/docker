@@ -1,5 +1,5 @@
 {
-  "version": "7.6.2-alpha.13",
+  "version": "7.6.2-alpha.14",
   "name": "cnpg-pgvector",
   "packageManager": "yarn@3.5.1",
   "private": true
