@@ -1,0 +1,23 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
+    with:
+      name: psql
+
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/psql:sha-${{ github.sha }}"
+    name: Test Version
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: psql --version
+
+name: "psql"
+on:
+  push:
+    tags:
+      - "psql@**"
