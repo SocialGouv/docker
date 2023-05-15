@@ -1,5 +1,5 @@
 {
-  "version": "7.6.2-alpha.8",
+  "version": "7.6.2-alpha.9",
   "name": "bats",
   "packageManager": "yarn@3.5.1",
   "private": true
