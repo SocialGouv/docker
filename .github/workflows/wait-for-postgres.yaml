@@ -103,6 +103,8 @@ jobs:
 name: "wait-for-postgres (branch)"
 on:
   push:
+    branches:
+      - "**"
     tags:
       - wait-for-postgres@**
     paths:

@@ -102,6 +102,8 @@ jobs:
 name: "nginx (branch)"
 on:
   push:
+    branches:
+      - "**"
     tags:
       - nginx@**
     paths:

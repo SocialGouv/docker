@@ -102,6 +102,8 @@ jobs:
 name: "bats (branch)"
 on:
   push:
+    branches:
+      - "**"
     tags:
       - bats@**
     paths:

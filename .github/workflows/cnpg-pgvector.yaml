@@ -95,6 +95,8 @@ jobs:
 name: "cnpg-pgvector (branch)"
 on:
   push:
+    branches:
+      - "**"
     tags:
       - cnpg-pgvector@**
     paths:

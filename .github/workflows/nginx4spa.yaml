@@ -102,6 +102,8 @@ jobs:
 name: "nginx4spa (branch)"
 on:
   push:
+    branches:
+      - "**"
     tags:
       - nginx4spa@**
     paths:
