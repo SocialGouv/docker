@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="https://github.com/SocialGouv/docker/raw/master/.github/docker.gif" width="250"/>
   <p align="center">Docker</p>
-  <p align="center" style="font-size: 0.5em">Social Gouv Docker✨✨ 🐋</p>
+  <p align="center" style="font-size: 0.5em">SocialGouv Docker✨✨ 🐋</p>
 </h1>
 
 <p align="center">
@@ -30,7 +30,6 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 | --------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | **bats**              | `docker pull ghcr.io/socialgouv/docker/bats:7.6.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./bats/README.md)              |
 | **cnpg-pgvector**     | `docker pull ghcr.io/socialgouv/docker/cnpg-pgvector:7.6.1`     | [![README](https://img.shields.io/badge/README--green.svg)](./cnpg-pgvector/README.md)     |
-| **dhall**             | `docker pull ghcr.io/socialgouv/docker/dhall:7.6.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./dhall/README.md)             |
 | **nginx**             | `docker pull ghcr.io/socialgouv/docker/nginx:7.6.1`             | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)             |
 | **nginx4spa**         | `docker pull ghcr.io/socialgouv/docker/nginx4spa:7.6.1`         | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)         |
 | **psql**              | `docker pull ghcr.io/socialgouv/docker/psql:7.6.1`              | [![README](https://img.shields.io/badge/README--green.svg)](./psql/README.md)              |
@@ -44,13 +43,5 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 
 ## Release policy
 
-We mainly use [semantic-release](https://github.com/semantic-release/semantic-release) to generate our releases.
+We mainly use [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) to generate our releases.
 You need an [Github token](https://github.com/settings/tokens/new) to release.
-
-```sh
-$ export GITHUB_TOKEN=**********
-$ yarn global add semantic-release @semantic-release/changelog @semantic-release/git
-$ semantic-release
-```
-
-Our [semantic-release config](./.releaserc.yml) will do the heavy lifting ;)
