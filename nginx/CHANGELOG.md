@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 7.6.2-alpha.4 (2023-05-15)
+
+
+### Bug Fixes
+
+* wip ([d614a7a](https://github.com/SocialGouv/docker/commit/d614a7a3c19886fecebad3702891d92f50319616))
+
+
+
+
+
 ## 7.6.2-alpha.3 (2023-05-15)
 
 **Note:** Version bump only for package nginx
