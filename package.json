@@ -4,11 +4,22 @@
     "bats-assert": "bats-core/bats-assert#2.0.0",
     "bats-file": "bats-core/bats-file#0.3.0",
     "bats-support": "bats-core/bats-support#0.3.0",
-    "commit-and-tag-version": "^11.0.0",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "lerna": "^6.6.2"
   },
+  "workspaces": [
+    "bats",
+    "cnpg-pgvector",
+    "nginx",
+    "nginx4spa",
+    "psql",
+    "wait-for-http",
+    "wait-for-postgres"
+  ],
   "scripts": {
-    "release": "commit-and-tag-version"
+    "set-new-version:ci": "lerna version --yes",
+    "set-new-version": "lerna version",
+    "changed": "lerna changed --json"
   },
   "packageManager": "yarn@3.5.1"
 }
