@@ -19,11 +19,5 @@ jobs:
 name: "bats"
 on:
   push:
-    branches:
-      - "**"
-      - "!master"
-      - "!alpha"
-      - "!beta"
-    paths:
-      - "bats/**"
-      - ".github/workflows/bats.yaml"
+    tags:
+      - bats@**

@@ -1,0 +1,105 @@
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: false
+        type: string
+    secrets:
+      GHCR_REGISTRY_TOKEN:
+        required: true
+      SOCIALGROOVYBOT_NAME:
+        required: false
+
+jobs:
+  build:
+    name: Build
+    needs:
+      - Lint
+    outputs:
+      digest: "${{ steps.docker_push.outputs.digest }}"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v3"
+      - id: docker_meta
+        uses: "crazy-max/ghaction-docker-meta@v4"
+        with:
+          images: ghcr.io/socialgouv/docker/${{ inputs.name }}
+          labels: |
+            org.opencontainers.image.title=${{ inputs.name }}
+            org.opencontainers.image.documentation=https://github.com/SocialGouv/docker/tree/${{ github.sha }}/${{ inputs.name }}
+          tags: |
+            type=sha
+            type=raw,value=sha-${{ github.sha }}
+            type=ref,event=branch
+            type=ref,event=pr
+            type=match,pattern=${{ inputs.name }}@(.*),group=1
+      - id: docker_buildx
+        name: Set up Docker Buildx
+        uses: "docker/setup-buildx-action@v2"
+        with: {}
+      - if: "${{ github.event_name != 'pull_request' }}"
+        name: Login to ghcr.io/socialgouv Registry
+        uses: "docker/login-action@v2"
+        with:
+          password: "${{ secrets.GHCR_REGISTRY_TOKEN }}"
+          registry: ghcr.io
+          username: "${{ secrets.SOCIALGROOVYBOT_NAME }}"
+      - id: docker_push
+        name: Push
+        uses: "docker/build-push-action@v4"
+        with:
+          builder: "${{ steps.docker_buildx.outputs.name }}"
+          cache-from: type=gha
+          cache-to: "type=gha,mode=max"
+          context: "./${{ inputs.name }}"
+          labels: "${{ steps.docker_meta.outputs.labels }}"
+          push: 'true'
+          tags: "${{ steps.docker_meta.outputs.tags }}"
+      - name: Image digest
+        run: |
+          echo "${{ steps.docker_push.outputs.digest }}"
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v3"
+      - uses: "docker://ghcr.io/hadolint/hadolint:2.4.0@sha256:ed22c9de9b884383094edb8930696a256c4450335945c68153d8fc8fbb27bf03"
+        with:
+          args: hadolint ./${{ inputs.name }}/Dockerfile
+  security_scan:
+    name: Vulnerability Scanner
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v3"
+      - run: "docker pull ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}"
+      - name: Run Trivy vulnerability scanner
+        uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
+        with:
+          image-ref: "ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}"
+      - name: Export Trivy Results as sarif
+        uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
+        with:
+          format: template
+          image-ref: "ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}"
+          output: trivy-results.sarif
+          template: "@/contrib/sarif.tpl"
+      - name: Change hardcoded Dockerfile path
+        run: "sed -i 's/\"uri\": \"Dockerfile\"/\"uri\": \"${{ inputs.name }}\\/Dockerfile\"/' trivy-results.sarif"
+      - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
+        with:
+          sarif_file: trivy-results.sarif
+name: "psql"
+on:
+  push:
+    branches:
+      - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
+    tags:
+      - psql@**
+    paths:
+      - "psql/**"
+      - ".github/workflows/psql.yaml"
