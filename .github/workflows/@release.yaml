@@ -57,7 +57,7 @@ jobs:
             yarn lerna version --conventional-commits --conventional-graduate --yes
           fi
 
-          yarn lerna publish from-git --yes
+          yarn lerna publish from-git --include-merged-tags --yes
 
 
       # - name: Push release
