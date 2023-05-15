@@ -4,6 +4,7 @@ concurrency:
 jobs:
   build:
     uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
     with:
       name: bats
 
