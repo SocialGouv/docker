@@ -6,9 +6,9 @@
     "version": {
       "createRelease": "github",
       "conventionalCommits": true,
-      "allowBranch": ["master"],
+      "allowBranch": ["master","alpha","beta","next","next-major","next-minor","next-patch"],
       "ignoreChanges": ["**/*.md", "**/package.json"],
-      "message": "chore(release): Publish Images",
+      "message": "chore(release): Publish Images"
     }
   }
 }

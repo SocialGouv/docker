@@ -17,8 +17,7 @@
     "wait-for-postgres"
   ],
   "scripts": {
-    "set-new-version:ci": "lerna version --yes",
-    "set-new-version": "lerna version",
+    "release": "lerna version --yes",
     "changed": "lerna changed --json"
   },
   "packageManager": "yarn@3.5.1"
