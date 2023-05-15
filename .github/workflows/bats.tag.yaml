@@ -19,4 +19,4 @@ name: "bats"
 on:
   push:
     tags:
-      - "bats**"
+      - "bats@**"
