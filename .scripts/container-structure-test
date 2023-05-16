@@ -16,8 +16,8 @@ fi
 export PATH="$PATH:$PROJECT_CWD/.bin"
 
 if ! which container-structure-test; then
-  curl -L -o .bin/container-structure-test "https://storage.googleapis.com/container-structure-test/v${structureTestVersion}/${binFilename}"
-  chmod +x .bin/container-structure-test
+  curl -L -o $PROJECT_CWD/.bin/container-structure-test "https://storage.googleapis.com/container-structure-test/v${structureTestVersion}/${binFilename}"
+  chmod +x $PROJECT_CWD/.bin/container-structure-test
 fi
 
 

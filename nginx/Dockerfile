@@ -17,4 +17,3 @@ RUN touch /var/run/nginx.pid && \
 USER 101
 
 ENTRYPOINT ["/entrypoint.sh"]
-

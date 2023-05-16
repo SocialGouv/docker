@@ -1,8 +1,4 @@
-#
 # CNPG operand image with pgvector extension
-# build with : `docker build . -f Dockerfile.cnpg-pgvector -t cnpg-pgvector`
-#
-
 ARG PG_MAJOR=15
 
 FROM ghcr.io/cloudnative-pg/postgresql:$PG_MAJOR as builder
