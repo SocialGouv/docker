@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.2-alpha.22](https://github.com/SocialGouv/docker/compare/nginx4spa@7.6.2-alpha.21...nginx4spa@7.6.2-alpha.22) (2023-05-16)
+
+
+### Bug Fixes
+
+* clean test wget output ([857a18f](https://github.com/SocialGouv/docker/commit/857a18f98735dcb9249c3b5dcb228eff46e4e5bb))
+
+
+
+
+
 ## [7.6.2-alpha.21](https://github.com/SocialGouv/docker/compare/nginx4spa@7.6.2-alpha.20...nginx4spa@7.6.2-alpha.21) (2023-05-16)
 
 
