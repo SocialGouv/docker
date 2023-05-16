@@ -13,7 +13,7 @@ setup_file() {
 }
 
 teardown_file() {
-  docker rm -f ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx'}
+  docker rm -f socialgouv_docker_nginx
 }
 
 @test "nginx: should return 404 page for next.js exports (not a SPA)" {

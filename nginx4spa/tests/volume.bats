@@ -13,7 +13,7 @@ setup_file() {
 }
 
 teardown_file() {
-  docker rm -f ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx4spa'}
+  docker rm -f socialgouv_docker_nginx4spa
 }
 
 @test "nginx4spa: with --volume should return 'nginx'" {
