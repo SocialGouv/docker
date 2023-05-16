@@ -2,5 +2,9 @@
   "version": "7.6.2-alpha.16",
   "name": "git",
   "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t socialgouv_docker_git .",
+    "test": "echo no tests to run"
+  },
   "private": true
 }

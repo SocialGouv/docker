@@ -2,5 +2,9 @@
   "version": "7.6.2-alpha.17",
   "name": "psql",
   "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t socialgouv_docker_psql .",
+    "test": "$(yarn bin:bats) tests/*"
+  },
   "private": true
 }

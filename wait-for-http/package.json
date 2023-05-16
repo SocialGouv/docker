@@ -2,5 +2,9 @@
   "version": "7.6.2-alpha.17",
   "name": "wait-for-http",
   "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t socialgouv_docker_wait-for-http .",
+    "test": "$(yarn bin:bats) tests/*"
+  },
   "private": true
 }

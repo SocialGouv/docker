@@ -9,7 +9,10 @@
     "lerna": "^6.6.2"
   },
   "scripts": {
-    "postversion": "./scripts/push-tags-one-by-one.sh"
+    "postversion": "./scripts/push-tags-one-by-one.sh",
+    "bin:bats": "yarn bin bats",
+    "build": "yarn workspaces foreach run build",
+    "test": "yarn workspaces foreach run test"
   },
   "workspaces": [
     "bats",

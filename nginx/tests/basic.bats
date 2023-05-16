@@ -3,11 +3,11 @@
 load '../../.bats/common.bats.bash'
 
 setup_file() {
-  docker-compose up -d alpine
+  docker run --rm -d -p 8888:8080 --name socialgouv_docker_nginx socialgouv_docker_nginx
 }
 
 teardown_file() {
-  docker-compose stop
+  docker rm -f socialgouv_docker_nginx
 }
 
 @test "nginx: basic nginx should return 'Welcome to nginx!'" {

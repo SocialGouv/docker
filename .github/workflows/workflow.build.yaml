@@ -98,8 +98,5 @@ jobs:
     steps:
       - uses: "actions/checkout@v3"
       - run: yarn --immutable
-      - run: |
-          if [ -d tests ]; then
-            $(yarn workspace root bin bats) tests/*
-          fi
-        working-directory: ${{ inputs.name }}
+      - run: yarn workspace ${{ inputs.name }} build
+      - run: yarn workspace ${{ inputs.name }} test
