@@ -11,7 +11,7 @@ teardown_file() {
 }
 
 @test "nginx4spa: should return 200 and homepage on 404 (SPA client-side routing)" {
-  run wget --server-response --quiet http://localhost:8888/pouet
+  run wget --server-response --output-document - --quiet http://localhost:8888/pouet
   assert_output --partial "HTTP/1.1 200 OK"
   assert_success
 }
