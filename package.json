@@ -18,7 +18,9 @@
     "nginx4spa",
     "psql",
     "wait-for-http",
-    "wait-for-postgres"
+    "wait-for-postgres",
+    "datasette",
+    "git"
   ],
   "packageManager": "yarn@3.5.1",
   "private": true

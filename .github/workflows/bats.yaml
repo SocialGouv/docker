@@ -27,3 +27,4 @@ on:
       - "bats/**"
       - ".github/workflows/bats.yaml"
       - ".github/workflows/bats.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"

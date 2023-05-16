@@ -1,4 +1,4 @@
-FROM bats/bats:1.8.2
+FROM bats/bats:1.8.2@sha256:c3db40540a4942497a8c7ca1ea9fbbf2faf269381f2761380c29154edf5526c4
 
 RUN set -x \
   #

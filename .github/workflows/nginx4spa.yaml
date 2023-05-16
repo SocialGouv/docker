@@ -27,3 +27,4 @@ on:
       - "nginx4spa/**"
       - ".github/workflows/nginx4spa.yaml"
       - ".github/workflows/nginx4spa.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"

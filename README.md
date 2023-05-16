@@ -43,5 +43,5 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 
 ## Release policy
 
-We mainly use [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) to generate our releases.
-You need an [Github token](https://github.com/settings/tokens/new) to release.
+We use [lerna](https://lerna.js.org/) to generate our releases.
+You need an [Github token PAT](https://github.com/settings/tokens/new) to release.

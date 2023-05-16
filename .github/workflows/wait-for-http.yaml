@@ -27,3 +27,4 @@ on:
       - "wait-for-http/**"
       - ".github/workflows/wait-for-http.yaml"
       - ".github/workflows/wait-for-http.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"

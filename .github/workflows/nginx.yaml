@@ -27,6 +27,7 @@ on:
       - "nginx/**"
       - ".github/workflows/nginx.yaml"
       - ".github/workflows/nginx.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
 
 
 

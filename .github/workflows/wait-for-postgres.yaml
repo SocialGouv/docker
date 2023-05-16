@@ -29,4 +29,5 @@ on:
       - "wait-for-postgres/**"
       - ".github/workflows/wait-for-postgres.yaml"
       - ".github/workflows/wait-for-postgres.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
 

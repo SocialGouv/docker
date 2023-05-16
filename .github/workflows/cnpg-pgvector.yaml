@@ -30,4 +30,5 @@ on:
       - "cnpg-pgvector/**"
       - ".github/workflows/cnpg-pgvector.yaml"
       - ".github/workflows/cnpg-pgvector.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
 

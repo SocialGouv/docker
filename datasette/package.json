@@ -1,0 +1,6 @@
+{
+  "version": "7.6.2-alpha.16",
+  "name": "datasette",
+  "packageManager": "yarn@3.5.1",
+  "private": true
+}

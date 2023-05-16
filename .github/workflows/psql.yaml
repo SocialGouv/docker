@@ -28,3 +28,4 @@ on:
       - "psql/**"
       - ".github/workflows/psql.yaml"
       - ".github/workflows/psql.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"

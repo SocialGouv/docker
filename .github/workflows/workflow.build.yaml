@@ -90,3 +90,16 @@ jobs:
       - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
         with:
           sarif_file: trivy-results.sarif
+  integration_test:
+    name: Integration test
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: "actions/checkout@v3"
+      - run: yarn --immutable
+      - run: |
+          if [ -d tests ]; then
+            $(yarn workspace root bin bats) tests/*
+          fi
+        working-directory: ${{ inputs.name }}
