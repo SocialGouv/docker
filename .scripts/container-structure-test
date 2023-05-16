@@ -21,4 +21,4 @@ if ! which container-structure-test; then
 fi
 
 
-exec container-structure-test $@
+exec $PROJECT_CWD/.bin/container-structure-test $@
