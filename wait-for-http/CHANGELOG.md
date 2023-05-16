@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.2-alpha.18](https://github.com/SocialGouv/docker/compare/wait-for-http@7.6.2-alpha.17...wait-for-http@7.6.2-alpha.18) (2023-05-16)
+
+
+### Bug Fixes
+
+* wip ([ef35385](https://github.com/SocialGouv/docker/commit/ef353850d4aee1b37cb3035991967d3b6cfd2031))
+
+
+
+
+
 ## [7.6.2-alpha.17](https://github.com/SocialGouv/docker/compare/wait-for-http@7.6.2-alpha.16...wait-for-http@7.6.2-alpha.17) (2023-05-16)
 
 
