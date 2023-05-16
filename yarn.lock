@@ -1696,6 +1696,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"datasette@workspace:datasette":
+  version: 0.0.0-use.local
+  resolution: "datasette@workspace:datasette"
+  languageName: unknown
+  linkType: soft
+
 "dateformat@npm:^3.0.0":
   version: 3.0.3
   resolution: "dateformat@npm:3.0.3"
@@ -2357,6 +2363,12 @@ __metadata:
   checksum: 212a9b0343e9199998b6a532efe2014476a7a1283af393663ca49ac28d4768929aad16d3322e2685236065ee394dbc93e7aa63a48956531e984c56d8b5edb54d
   languageName: node
   linkType: hard
+
+"git@workspace:git":
+  version: 0.0.0-use.local
+  resolution: "git@workspace:git"
+  languageName: unknown
+  linkType: soft
 
 "gitconfiglocal@npm:^1.0.0":
   version: 1.0.0
