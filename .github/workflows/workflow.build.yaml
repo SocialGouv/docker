@@ -91,12 +91,27 @@ jobs:
         with:
           sarif_file: trivy-results.sarif
   integration_test:
-    name: Integration test
+    name: Tests
     needs:
       - Build
     runs-on: ubuntu-latest
     steps:
       - uses: "actions/checkout@v3"
       - run: yarn --immutable
-      - run: yarn workspace ${{ inputs.name }} build
+      # - run: yarn workspace ${{ inputs.name }} build
+      #   env:
+      #     SG_DOCKER_IMAGE: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
       - run: yarn workspace ${{ inputs.name }} test
+        env:
+          SG_DOCKER_IMAGE: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
+
+  # structure_test:
+  #   name: Structure test
+  #   needs:
+  #     - Build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: brpaz/structure-tests-action@v1
+  #       with:
+  #         image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
+  #         configFile: ${{ inputs.name }}/tests/container-structure-test.yml

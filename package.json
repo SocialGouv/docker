@@ -9,10 +9,14 @@
     "lerna": "^6.6.2"
   },
   "scripts": {
-    "postversion": "./scripts/push-tags-one-by-one.sh",
+    "postversion": "./.scripts/push-tags-one-by-one",
     "bin:bats": "yarn bin bats",
+    "bin:container-structure-test": "echo $PROJECT_CWD/.scripts/container-structure-test",
+    "container-structure-test": "$(yarn bin:container-structure-test)",
     "build": "yarn workspaces foreach run build",
-    "test": "yarn workspaces foreach run test"
+    "test": "yarn workspaces foreach run test",
+    "test:e2e": "yarn workspaces foreach run test:e2e",
+    "test:structure": "yarn workspaces foreach run test:structure"
   },
   "workspaces": [
     "bats",

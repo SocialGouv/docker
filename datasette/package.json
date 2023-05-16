@@ -3,7 +3,7 @@
   "name": "datasette",
   "packageManager": "yarn@3.5.1",
   "scripts": {
-    "build": "docker build -t socialgouv_docker_datasette .",
+    "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_datasette'} .",
     "test": "echo no tests to run"
   },
   "private": true

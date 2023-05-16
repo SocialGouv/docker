@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+export PROJECT_CWD=${PROJECT_CWD:-$PWD}
+
+structureTestVersion="1.11.0"
+if [ "$(uname)" == "Darwin" ]; then
+  binFilename="container-structure-test-darwin-amd64"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  binFilename="container-structure-test-linux-amd64"
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+  binFilename="container-structure-test-windows-amd64.exe"
+fi
+if [ ! -d ".bin" ]; then
+  mkdir -p .bin
+fi
+export PATH="$PATH:$PROJECT_CWD/.bin"
+
+if ! which container-structure-test; then
+  curl -L -o .bin/container-structure-test "https://storage.googleapis.com/container-structure-test/v${structureTestVersion}/${binFilename}"
+  chmod +x .bin/container-structure-test
+fi
+
+
+exec container-structure-test $@

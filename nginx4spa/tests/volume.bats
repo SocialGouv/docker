@@ -9,11 +9,11 @@ setup_file() {
     --rm \
     --volume ${BATS_TEST_DIRNAME}/fixtures:/usr/share/nginx/html \
     --name socialgouv_docker_nginx4spa \
-    socialgouv_docker_nginx4spa
+    ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx4spa'}
 }
 
 teardown_file() {
-  docker rm -f socialgouv_docker_nginx4spa
+  docker rm -f ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx4spa'}
 }
 
 @test "nginx4spa: with --volume should return 'nginx'" {

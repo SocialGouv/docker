@@ -3,8 +3,10 @@
   "name": "wait-for-http",
   "packageManager": "yarn@3.5.1",
   "scripts": {
-    "build": "docker build -t socialgouv_docker_wait-for-http .",
-    "test": "$(yarn bin:bats) tests/*"
+    "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_wait-for-http'} .",
+    "test": "yarn test:e2e && yarn test:structure",
+    "test:e2e": "$(yarn bin:bats) tests/*",
+    "test:structure": "$(yarn bin:container-structure-test) test --image ${SG_DOCKER_IMAGE:-'socialgouv_docker_wait-for-http'} --config tests/container-structure-test.yml -v debug"
   },
   "private": true
 }

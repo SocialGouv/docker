@@ -3,11 +3,11 @@
 load '../../.bats/common.bats.bash'
 
 setup_file() {
-  docker run --rm -d -p 8888:8080 --name socialgouv_docker_nginx socialgouv_docker_nginx
+  docker run --rm -d -p 8888:8080 --name socialgouv_docker_nginx ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx'}
 }
 
 teardown_file() {
-  docker rm -f socialgouv_docker_nginx
+  docker rm -f ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx'}
 }
 
 @test "nginx: basic nginx should return 'Welcome to nginx!'" {
