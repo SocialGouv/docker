@@ -1,5 +1,5 @@
 {
-  "version": "7.6.2-alpha.19",
+  "version": "7.6.2-alpha.20",
   "name": "nginx",
   "packageManager": "yarn@3.5.1",
   "scripts": {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.6.2-alpha.20](https://github.com/SocialGouv/docker/compare/nginx@7.6.2-alpha.19...nginx@7.6.2-alpha.20) (2023-05-16)
+
+
+### Bug Fixes
+
+* wip ([8881499](https://github.com/SocialGouv/docker/commit/8881499b6b828d368b7af3a74dcad4605cbd943f))
+
+
+
+
+
 ## [7.6.2-alpha.19](https://github.com/SocialGouv/docker/compare/nginx@7.6.2-alpha.18...nginx@7.6.2-alpha.19) (2023-05-16)
 
 
