@@ -10,8 +10,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
   binFilename="container-structure-test-windows-amd64.exe"
 fi
-if [ ! -d ".bin" ]; then
-  mkdir -p .bin
+if [ ! -d $PROJECT_CWD/.bin ]; then
+  mkdir -p $PROJECT_CWD/.bin
 fi
 export PATH="$PATH:$PROJECT_CWD/.bin"
 
