@@ -101,6 +101,7 @@ jobs:
       # - run: yarn workspace ${{ inputs.name }} build
       #   env:
       #     SG_DOCKER_IMAGE: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
+      - run: docker pull ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
       - run: yarn workspace ${{ inputs.name }} test
         env:
           SG_DOCKER_IMAGE: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
