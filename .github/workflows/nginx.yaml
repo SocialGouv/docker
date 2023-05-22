@@ -1,0 +1,33 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
+    with:
+      name: nginx
+
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/nginx:sha-${{ github.sha }}"
+    name: Test Version
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: nginx -version
+name: "nginx"
+on:
+  push:
+    branches:
+      - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
+    paths:
+      - "nginx/**"
+      - ".github/workflows/nginx.yaml"
+      - ".github/workflows/nginx.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
+
+
+

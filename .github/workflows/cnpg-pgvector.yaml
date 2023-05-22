@@ -1,0 +1,34 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
+    with:
+      name: cnpg-pgvector
+
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/cnpg-pgvector:sha-${{ github.sha }}"
+    name: Test files
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: psql --version
+      - run: which pg_dump
+      - run: which pg_restore
+      - run: ls /usr/share/postgresql/15/extension/vector.control
+name: "cnpg-pgvector"
+on:
+  push:
+    branches:
+      - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
+    paths:
+      - "cnpg-pgvector/**"
+      - ".github/workflows/cnpg-pgvector.yaml"
+      - ".github/workflows/cnpg-pgvector.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
+

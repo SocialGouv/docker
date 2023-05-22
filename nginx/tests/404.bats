@@ -3,20 +3,21 @@
 load '../../.bats/common.bats.bash'
 
 setup_file() {
-  docker-compose run \
+  docker run \
     --detach \
     --publish 8888:8080 \
     --rm \
     --volume ${BATS_TEST_DIRNAME}/fixtures:/usr/share/nginx/html \
-    alpine
+    --name socialgouv_docker_nginx \
+    ${SG_DOCKER_IMAGE:-'socialgouv_docker_nginx'}
 }
 
 teardown_file() {
-  docker-compose rm -sf
+  docker rm -f socialgouv_docker_nginx
 }
 
 @test "nginx: should return status 404 (not a SPA)" {
-  run wget --server-response --quiet http://localhost:8888/pouet
+  run wget --server-response --output-document - --quiet http://localhost:8888/pouet
   assert_output --partial "HTTP/1.1 404 Not Found"
 }
 

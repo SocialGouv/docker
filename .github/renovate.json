@@ -18,5 +18,8 @@
       "semanticCommitType": "fix",
       "schedule": ["at any time"]
     }
-  ]
+  ],
+  "docker": {
+    "pinDigests": true
+  }
 }

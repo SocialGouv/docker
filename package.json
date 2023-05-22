@@ -1,9 +1,34 @@
 {
+  "name": "root",
   "devDependencies": {
     "bats": "^1.5.0",
     "bats-assert": "bats-core/bats-assert#2.0.0",
     "bats-file": "bats-core/bats-file#0.3.0",
     "bats-support": "bats-core/bats-support#0.3.0",
-    "husky": "^8.0.0"
-  }
+    "husky": "^8.0.0",
+    "lerna": "^6.6.2"
+  },
+  "scripts": {
+    "postversion": "./.scripts/push-tags-one-by-one",
+    "bin:bats": "yarn bin bats",
+    "bin:container-structure-test": "echo $PROJECT_CWD/.scripts/container-structure-test",
+    "container-structure-test": "$(yarn bin:container-structure-test)",
+    "build": "yarn workspaces foreach run build",
+    "test": "yarn workspaces foreach run test",
+    "test:e2e": "yarn workspaces foreach run test:e2e",
+    "test:structure": "yarn workspaces foreach run test:structure"
+  },
+  "workspaces": [
+    "bats",
+    "cnpg-pgvector",
+    "nginx",
+    "nginx4spa",
+    "psql",
+    "wait-for-http",
+    "wait-for-postgres",
+    "datasette",
+    "git"
+  ],
+  "packageManager": "yarn@3.5.1",
+  "private": true
 }

@@ -1,0 +1,14 @@
+{
+  "useWorkspaces": true,
+  "version": "independent",
+  "npmClient": "yarn",
+  "command": {
+    "version": {
+      "createRelease": "github",
+      "conventionalCommits": true,
+      "allowBranch": ["master","alpha","beta"],
+      "ignoreChanges": ["**/*.md", "**/package.json"],
+      "message": "chore(release): Publish Images"
+    }
+  }
+}

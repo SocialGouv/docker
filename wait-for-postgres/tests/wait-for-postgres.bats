@@ -12,11 +12,11 @@ setup_file() {
   export WAIT_FOR_RETRIES="1"
   PATH="$( dirname "${BATS_TEST_FILENAME}" )/../bin:$PATH"
 
-  docker-compose up -d postgres
+  docker run --rm -p 5432:5432 -d -e POSTGRES_PASSWORD=postgres --name socialgouv_docker_wait-for-postgres_postgres postgres:11-alpine
 }
 
 teardown_file() {
-  docker-compose stop
+  docker rm -f socialgouv_docker_wait-for-postgres_postgres
 }
 
 @test "wait-for-postgres: ensure that a pg is ready" {

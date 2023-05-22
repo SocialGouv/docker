@@ -1,0 +1,12 @@
+{
+  "version": "7.6.2-alpha.20",
+  "name": "wait-for-postgres",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_wait-for-postgres'} .",
+    "test": "yarn test:e2e && yarn test:structure",
+    "test:e2e": "$(yarn bin:bats) tests/*",
+    "test:structure": "$(yarn bin:container-structure-test) test --image ${SG_DOCKER_IMAGE:-'socialgouv_docker_wait-for-postgres'} --config tests/container-structure-test.yml -v debug"
+  },
+  "private": true
+}

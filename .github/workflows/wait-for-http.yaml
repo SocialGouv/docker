@@ -1,0 +1,30 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
+    with:
+      name: wait-for-http
+
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/wait-for-http:sha-${{ github.sha }}"
+    name: Test Version
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: which wait-for-http
+
+on:
+  push:
+    branches:
+      - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
+    paths:
+      - "wait-for-http/**"
+      - ".github/workflows/wait-for-http.yaml"
+      - ".github/workflows/wait-for-http.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
