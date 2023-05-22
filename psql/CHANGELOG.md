@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.7.0 (2023-05-22)
+
+
+### Bug Fixes
+
+* **bats:** deps ([#960](https://github.com/SocialGouv/docker/issues/960)) ([2e1f97b](https://github.com/SocialGouv/docker/commit/2e1f97b1df633049a13918a6a08a8813b9f45248))
+* deps ([#957](https://github.com/SocialGouv/docker/issues/957)) ([31e4150](https://github.com/SocialGouv/docker/commit/31e4150ba1a668edf2bf83b4986b70ba6d09bb6b))
+* **dhall:** deactivate container_test ([#963](https://github.com/SocialGouv/docker/issues/963)) ([730dedc](https://github.com/SocialGouv/docker/commit/730dedc867620de68d50e069514e7b7ed7e657f9))
+* update deps ([#993](https://github.com/SocialGouv/docker/issues/993)) ([1823f05](https://github.com/SocialGouv/docker/commit/1823f05eab5482315c0d1e3ec5aa3980b086febf))
+* upgrade faulty deps ([#970](https://github.com/SocialGouv/docker/issues/970)) ([49ffe03](https://github.com/SocialGouv/docker/commit/49ffe03f424d6bf91f4b20d3a143ff95602fe11b))
+
+
+### Features
+
+* add psql image ([#943](https://github.com/SocialGouv/docker/issues/943)) ([c7a27c3](https://github.com/SocialGouv/docker/commit/c7a27c301c7de13fc8a98dfb3042ab5c275e8fc8))
+
+
+
+
+
 ## [7.6.2-alpha.19](https://github.com/SocialGouv/docker/compare/psql@7.6.2-alpha.18...psql@7.6.2-alpha.19) (2023-05-16)
 
 

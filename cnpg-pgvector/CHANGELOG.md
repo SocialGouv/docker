@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 7.7.0 (2023-05-22)
+
+
+### Features
+
+* add cnpg-pgvector ([#1004](https://github.com/SocialGouv/docker/issues/1004)) ([a0b40d7](https://github.com/SocialGouv/docker/commit/a0b40d78cdc6c9ee2b4864066cedbbc62f77669c))
+
+
+
+
+
 ## [7.6.2-alpha.18](https://github.com/SocialGouv/docker/compare/cnpg-pgvector@7.6.2-alpha.17...cnpg-pgvector@7.6.2-alpha.18) (2023-05-16)
 
 
