@@ -1,4 +1,4 @@
-FROM datasetteproject/datasette:0.64
+FROM datasetteproject/datasette:0.64@sha256:4136ff28b289b8c8c384c550cf552d1aca9096e5ae83e8c990090311c158b8b6
 
 RUN adduser script
 
