@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.0.2](https://github.com/SocialGouv/docker/compare/nginx4spa@8.0.1...nginx4spa@8.0.2) (2023-06-01)
+
+
+### Bug Fixes
+
+* **deps:** update nginxinc/nginx-unprivileged:1.23-alpine docker digest to 2db1d9e ([#1018](https://github.com/SocialGouv/docker/issues/1018)) ([0ac8831](https://github.com/SocialGouv/docker/commit/0ac88315d0111e374797213de242046c68390290))
+
+
+
+
+
 ## [8.0.1](https://github.com/SocialGouv/docker/compare/nginx4spa@8.0.0...nginx4spa@8.0.1) (2023-05-24)
 
 
