@@ -17,8 +17,7 @@ docker run \
     -e MATTERMOST_WEBHOOK_URL=prod \
     # optional JQ filter to include/exclude images (default all)
     -e IMAGES_JQ_FILTER=' | select(. | startswith("ghcr.io") | select(. | startswith("ghcr.io/yyy") | not)' \
-    ghcr.io/socialgouv/check-cluster-images:latest
+    ghcr.io/socialgouv/check-cluster-images:1.1.0
 ```
 
 There's a sample `CronJob` provided in [./cronjob.yaml](./cronjob.yaml)
- 

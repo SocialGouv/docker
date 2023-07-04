@@ -1,0 +1,50 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  labels:
+    app: sre
+  name: check-cluster-images
+  namespace: sre
+spec:
+  schedule: "0 0 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        metadata:
+          labels:
+            app: sre
+          name: check-cluster-images
+          namespace: sre
+        spec:
+          restartPolicy: Never
+          volumes:
+            - name: kubeconfig
+              secret:
+                secretName: kubeconfig
+                items:
+                  - key: KUBECONFIG
+                    path: KUBECONFIG
+          containers:
+            - name: image-checker
+              image: ghcr.io/socialgouv/docker/check-cluster-images:1.1.0
+              imagePullPolicy: Always
+              volumeMounts:
+                - mountPath: "/app/.kubeconfig"
+                  name: kubeconfig
+                  subPath: KUBECONFIG
+                  readOnly: true
+              env:
+                - name: KUBECONTEXT
+                  value: prod
+                - name: KUBECONFIG
+                  value: /app/.kubeconfig
+                - name: MATTERMOST_CHANNEL
+                  value: alertsdocker
+                - name: IMAGES_JQ_FILTER
+                  value: |
+                    | select(. | startswith("ghcr.io"))
+              envFrom:
+                - secretRef:
+                    name: mattermost-webhook
