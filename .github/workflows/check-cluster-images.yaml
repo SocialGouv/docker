@@ -7,7 +7,15 @@ jobs:
     secrets: inherit
     with:
       name: check-cluster-images
-
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/check-cluster-images:sha-${{ github.sha }}"
+    name: Test files
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: skopeo -v
+      - run: kubectl version --client
+      - run: jq --version
 name: "check-cluster-images"
 on:
   push:
