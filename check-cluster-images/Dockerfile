@@ -4,6 +4,6 @@ WORKDIR /app
 
 RUN apk update && apk add skopeo
 
-ADD script.sh .
+COPY script.sh .
 
 ENTRYPOINT ["/app/script.sh"]
