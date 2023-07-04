@@ -27,7 +27,8 @@
     "wait-for-http",
     "wait-for-postgres",
     "datasette",
-    "git"
+    "git",
+    "check-cluster-images"
   ],
   "packageManager": "yarn@3.5.1",
   "private": true
