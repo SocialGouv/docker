@@ -1,0 +1,23 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
+    with:
+      name: check-cluster-images
+
+name: "check-cluster-images"
+on:
+  push:
+    branches:
+      - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
+    paths:
+      - "check-cluster-images/**"
+      - ".github/workflows/check-cluster-images.yaml"
+      - ".github/workflows/check-cluster-images.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
