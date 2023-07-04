@@ -6,7 +6,7 @@ jobs:
     uses: ./.github/workflows/workflow.build.yaml
     secrets: inherit
     with:
-      name: cnpg-pgvector
+      name: check-cluster-images
 
 name: "check-cluster-images"
 on:
