@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "check-cluster-images",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_check-cluster-images'} .",
+    "test": "echo no tests to run"
+  },
+  "private": true
+}

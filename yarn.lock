@@ -1307,6 +1307,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"check-cluster-images@workspace:check-cluster-images":
+  version: 0.0.0-use.local
+  resolution: "check-cluster-images@workspace:check-cluster-images"
+  languageName: unknown
+  linkType: soft
+
 "chownr@npm:^2.0.0":
   version: 2.0.0
   resolution: "chownr@npm:2.0.0"
