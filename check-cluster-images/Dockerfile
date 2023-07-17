@@ -7,4 +7,6 @@ RUN apk update && apk add skopeo && rm -rf /var/cache/apk/*
 
 COPY script.sh .
 
+USER 405
+
 ENTRYPOINT ["/app/script.sh"]
