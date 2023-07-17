@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/SocialGouv/docker/compare/check-cluster-images@1.1.2...check-cluster-images@1.1.3) (2023-07-17)
+
+
+### Bug Fixes
+
+* **check-docker-images:** use custom user ([#1023](https://github.com/SocialGouv/docker/issues/1023)) ([b5dfd2e](https://github.com/SocialGouv/docker/commit/b5dfd2eb7872671250e78655c7f9b464934f6b3d))
+
+
+
+
+
 ## [1.1.2](https://github.com/SocialGouv/docker/compare/check-cluster-images@1.1.1...check-cluster-images@1.1.2) (2023-07-17)
 
 
