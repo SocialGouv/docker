@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/SocialGouv/docker/compare/check-cluster-images@1.1.1...check-cluster-images@1.1.2) (2023-07-17)
+
+
+### Bug Fixes
+
+* **check-cluster-images:** use unprivilegied user ([#1022](https://github.com/SocialGouv/docker/issues/1022)) ([aacde7e](https://github.com/SocialGouv/docker/commit/aacde7eff1975f135d0586e8a9fb13b4ef767c1d))
+
+
+
+
+
 ## [1.1.1](https://github.com/SocialGouv/docker/compare/check-cluster-images@1.1.0...check-cluster-images@1.1.1) (2023-07-04)
 
 **Note:** Version bump only for package check-cluster-images
