@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0](https://github.com/SocialGouv/docker/compare/nginx@8.0.2...nginx@8.1.0) (2023-07-18)
+
+
+### Features
+
+* **deps:** update nginxinc/nginx-unprivileged docker tag to v1.25 ([#1003](https://github.com/SocialGouv/docker/issues/1003)) ([bd78873](https://github.com/SocialGouv/docker/commit/bd78873165b32df049593755fa7516b0492b0045))
+
+
+
+
+
 ## [8.0.2](https://github.com/SocialGouv/docker/compare/nginx@8.0.1...nginx@8.0.2) (2023-06-01)
 
 
