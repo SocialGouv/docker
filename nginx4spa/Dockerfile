@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:1.23-alpine@sha256:2db1d9e89f0704592ba425d673b47204a9e5ec444d34a9babd77f764f1e2b086
+FROM nginxinc/nginx-unprivileged:1.25-alpine@sha256:6f24b96c5b696dcad162f086e49b458a431a7dda9b6de5f3462ad7443b5e0056
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./entrypoint.sh /entrypoint.sh
