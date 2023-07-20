@@ -87,7 +87,7 @@ jobs:
           template: "@/contrib/sarif.tpl"
       - name: Change hardcoded Dockerfile path
         run: "sed -i 's/\"uri\": \"Dockerfile\"/\"uri\": \"${{ inputs.name }}\\/Dockerfile\"/' trivy-results.sarif"
-      - uses: "github/codeql-action/upload-sarif@a3a8231e64d3db0e7da0f3b56b9521dcccdfe412"
+      - uses: "github/codeql-action/upload-sarif@ce84bed59466c6755ffcf84a426881bafbb162e1"
         with:
           sarif_file: trivy-results.sarif
   integration_test:
