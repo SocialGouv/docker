@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.1](https://github.com/SocialGouv/docker/compare/psql@7.7.0...psql@7.7.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* **deps:** update alpine:3.16 docker digest to 5fefcf0 ([#1025](https://github.com/SocialGouv/docker/issues/1025)) ([207d6b7](https://github.com/SocialGouv/docker/commit/207d6b7c5d3a3f75c71172819c9b86b4c73d00d1))
+
+
+
+
+
 # 7.7.0 (2023-05-22)
 
 
