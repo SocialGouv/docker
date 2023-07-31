@@ -28,7 +28,8 @@
     "wait-for-postgres",
     "datasette",
     "git",
-    "check-cluster-images"
+    "check-cluster-images",
+    "s3-client"
   ],
   "packageManager": "yarn@3.5.1",
   "private": true

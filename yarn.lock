@@ -5100,6 +5100,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"s3-client@workspace:s3-client":
+  version: 0.0.0-use.local
+  resolution: "s3-client@workspace:s3-client"
+  languageName: unknown
+  linkType: soft
+
 "safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
