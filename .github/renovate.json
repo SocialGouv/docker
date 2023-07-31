@@ -3,6 +3,7 @@
   "extends": ["github>SocialGouv/renovate-config"],
   "minimumReleaseAge": 3,
   "schedule": "every weekend",
+  "rebaseWhen": "conflicted",
   "packageRules": [
     {
       "matchDatasources": ["docker", "github-tags", "github-releases", "repology"],
