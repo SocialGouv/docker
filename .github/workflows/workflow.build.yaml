@@ -32,6 +32,7 @@ jobs:
             type=raw,value=sha-${{ github.sha }}
             type=ref,event=branch
             type=ref,event=pr
+            type=semver,pattern={{major}}
             type=match,pattern=${{ inputs.name }}@(.*),group=1
       - id: docker_buildx
         name: Set up Docker Buildx
