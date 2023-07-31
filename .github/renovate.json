@@ -1,7 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>SocialGouv/renovate-config"],
-  "stabilityDays": 3,
+  "minimumReleaseAge": 3,
+  "schedule": "every weekend",
   "packageRules": [
     {
       "matchDatasources": ["docker", "github-tags", "github-releases", "repology"],
