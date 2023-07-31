@@ -1,0 +1,11 @@
+{
+  "name": "s3-client",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_psql'} .",
+    "test": "yarn test:e2e && yarn test:structure",
+    "test:e2e": "$(yarn bin:bats) tests/*",
+    "test:structure": "$(yarn bin:container-structure-test) test --image ${SG_DOCKER_IMAGE:-'socialgouv_docker_psql'} --config tests/container-structure-test.yml -v debug"
+  },
+  "private": true
+}
