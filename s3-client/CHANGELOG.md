@@ -1,0 +1,13 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.0.1 (2023-07-31)
+
+
+### Bug Fixes
+
+* release ([5f7fd8f](https://github.com/SocialGouv/docker/commit/5f7fd8f82a27e453471d22b11437cfd1e011530a))
+* release ([0110ff2](https://github.com/SocialGouv/docker/commit/0110ff23870b4854aa97a44065a960fc08769a72))
+* s3-client image draft ([85c640a](https://github.com/SocialGouv/docker/commit/85c640aa498fc299c202cf558f66389a409d7fc8))
