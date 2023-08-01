@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/SocialGouv/docker/compare/s3-client@1.0.2...s3-client@1.0.3) (2023-08-01)
+
+
+### Bug Fixes
+
+* finish docker image with script ([e438ba7](https://github.com/SocialGouv/docker/commit/e438ba7059159d81d87284f4a11db6224243820c))
+
+
+
+
+
 ## [1.0.2](https://github.com/SocialGouv/docker/compare/s3-client@1.0.1...s3-client@1.0.2) (2023-07-31)
 
 **Note:** Version bump only for package s3-client
