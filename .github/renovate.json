@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>SocialGouv/renovate-config"],
-  "minimumReleaseAge": 3,
+  "minimumReleaseAge": "3 days",
   "schedule": "every weekend",
   "rebaseWhen": "conflicted",
   "packageRules": [
