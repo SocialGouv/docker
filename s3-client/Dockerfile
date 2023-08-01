@@ -18,3 +18,8 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
   ./aws/install
 
 USER 1001
+WORKDIR /home/ubuntu
+
+COPY dump-upload.sh .
+
+CMD ["./dump-upload.sh"]
