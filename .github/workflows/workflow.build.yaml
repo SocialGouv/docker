@@ -54,7 +54,7 @@ jobs:
           cache-to: "type=gha,mode=max"
           context: "./${{ inputs.name }}"
           labels: "${{ steps.docker_meta.outputs.labels }}"
-          push: 'true'
+          push: "true"
           tags: "${{ steps.docker_meta.outputs.tags }}"
       - name: Image digest
         run: |
@@ -107,13 +107,24 @@ jobs:
         env:
           SG_DOCKER_IMAGE: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
 
-  # structure_test:
-  #   name: Structure test
-  #   needs:
-  #     - Build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: brpaz/structure-tests-action@v1
-  #       with:
-  #         image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
-  #         configFile: ${{ inputs.name }}/tests/container-structure-test.yml
+  structure_test:
+    name: Structure test
+    needs:
+      - Build
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        id: check_structure_test
+        run: |
+          if [ -f "${{ inputs.name }}/tests/container-structure-test.yml"]; then
+            echo "test exist"
+            echo "result=true" >> $GITHUB_OUTPUT
+          else
+            echo "test does notexist"
+            echo "result=false" >> $GITHUB_OUTPUT
+          fi
+      - uses: brpaz/structure-tests-action@v1
+        if: steps.check_structure_test.outputs.result == 'true'
+        with:
+          image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
+          configFile: ${{ inputs.name }}/tests/container-structure-test.yml
