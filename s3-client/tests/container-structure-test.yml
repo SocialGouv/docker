@@ -9,3 +9,7 @@ commandTests:
     command: "aws"
     args: ["--version"]
     expectedOutput: ["aws-cli.*"]
+fileExistenceTests:
+  - name: "dump script"
+    path: "/home/ubuntu/dump-upload.sh"
+    isExecutableBy: "any"
