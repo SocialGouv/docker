@@ -54,7 +54,7 @@ jobs:
           cache-to: "type=gha,mode=max"
           context: "./${{ inputs.name }}"
           labels: "${{ steps.docker_meta.outputs.labels }}"
-          push: 'true'
+          push: "true"
           tags: "${{ steps.docker_meta.outputs.tags }}"
       - name: Image digest
         run: |
@@ -106,14 +106,3 @@ jobs:
       - run: yarn workspace ${{ inputs.name }} test
         env:
           SG_DOCKER_IMAGE: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
-
-  # structure_test:
-  #   name: Structure test
-  #   needs:
-  #     - Build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: brpaz/structure-tests-action@v1
-  #       with:
-  #         image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
-  #         configFile: ${{ inputs.name }}/tests/container-structure-test.yml
