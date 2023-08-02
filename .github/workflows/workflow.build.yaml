@@ -128,4 +128,4 @@ jobs:
         if: steps.check_structure_test.outputs.result == 'true'
         with:
           image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
-          configFile: ./${{ inputs.name }}/tests/container-structure-test.yml
+          config: ./${{ inputs.name }}/tests/container-structure-test.yml
