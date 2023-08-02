@@ -123,7 +123,7 @@ jobs:
             echo "test does notexist"
             echo "result=false" >> $GITHUB_OUTPUT
           fi
-      - uses: brpaz/structure-tests-action@v1
+      - uses: brpaz/structure-tests-action@v1.1.2
         if: steps.check_structure_test.outputs.result == 'true'
         with:
           image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
