@@ -117,11 +117,11 @@ jobs:
       - shell: bash
         id: check_structure_test
         run: |
-          if [ -f "./${{ inputs.name }}/tests/container-structure-test.yml"]; then
+          if [ -f "./${{ inputs.name }}/tests/container-structure-test.yml" ]; then
             echo "test exist"
             echo "result=true" >> $GITHUB_OUTPUT
           else
-            echo "test does notexist"
+            echo "test does not exist"
             echo "result=false" >> $GITHUB_OUTPUT
           fi
       - uses: brpaz/structure-tests-action@v1.1.2
