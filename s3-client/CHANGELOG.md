@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/SocialGouv/docker/compare/s3-client@1.0.4...s3-client@1.0.5) (2023-08-02)
+
+
+### Bug Fixes
+
+* **deps:** pin dependencies ([#1024](https://github.com/SocialGouv/docker/issues/1024)) ([ba5be96](https://github.com/SocialGouv/docker/commit/ba5be962e8a81720a662076ab96996e06eac42b9))
+
+
+
+
+
 ## [1.0.4](https://github.com/SocialGouv/docker/compare/s3-client@1.0.3...s3-client@1.0.4) (2023-08-02)
 
 
