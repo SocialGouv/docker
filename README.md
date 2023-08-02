@@ -33,6 +33,7 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 | **nginx**                | `docker pull ghcr.io/socialgouv/docker/nginx`                | [![README](https://img.shields.io/badge/README--green.svg)](./nginx/README.md)                |
 | **nginx4spa**            | `docker pull ghcr.io/socialgouv/docker/nginx4spa`            | [![README](https://img.shields.io/badge/README--green.svg)](./nginx4spa/README.md)            |
 | **psql**                 | `docker pull ghcr.io/socialgouv/docker/psql`                 | [![README](https://img.shields.io/badge/README--green.svg)](./psql/README.md)                 |
+| **s3-client**            | `docker pull ghcr.io/socialgouv/docker/s3-client`            | [![README](https://img.shields.io/badge/README--green.svg)](./s3-client/README.md)            |
 | **wait-for-http**        | `docker pull ghcr.io/socialgouv/docker/wait-for-http`        | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)        |
 | **wait-for-postgres**    | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres`    | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md)    |
 
