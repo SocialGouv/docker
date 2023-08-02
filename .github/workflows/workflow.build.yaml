@@ -124,7 +124,7 @@ jobs:
             echo "test does not exist"
             echo "result=false" >> $GITHUB_OUTPUT
           fi
-      - uses: brpaz/structure-tests-action@v1.1.2
+      - uses: plexsystems/container-structure-test-action@v0.1.0
         if: steps.check_structure_test.outputs.result == 'true'
         with:
           image: ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}
