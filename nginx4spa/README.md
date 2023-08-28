@@ -28,3 +28,27 @@ COPY ./dist /usr/share/nginx/html
 ```
 
 **Note**: follow security recommendations here: <https://socialgouv.github.io/support/#/securite>
+
+
+## kubernetes integration with zero-downtime
+
+```yaml
+spec:
+  containers:
+  - name: my-app
+    image: ghcr.io/socialgouv/docker/nginx
+    ports:
+    - containerPort: 8080
+    livenessProbe:
+      httpGet:
+        path: /live
+        port: 8080
+    readinessProbe:
+      httpGet:
+        path: /ready
+        port: 8080
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/pre-stop.sh"]
+```
