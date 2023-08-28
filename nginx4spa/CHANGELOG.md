@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0](https://github.com/SocialGouv/docker/compare/nginx4spa@8.1.1...nginx4spa@8.2.0) (2023-08-28)
+
+
+### Features
+
+* nginx kube zero-downtime wip ([#1039](https://github.com/SocialGouv/docker/issues/1039)) ([d231475](https://github.com/SocialGouv/docker/commit/d231475f45bf8f59b9be71904d4493c61202d388))
+
+
+
+
+
 ## [8.1.1](https://github.com/SocialGouv/docker/compare/nginx4spa@8.1.0...nginx4spa@8.1.1) (2023-08-02)
 
 
