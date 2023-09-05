@@ -7,7 +7,21 @@ RUN apt-get update && \
   ca-certificates \
   curl \
   unzip \
-  postgresql-client \
+  gnupg \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN  curl -fSsL https://www.postgresql.org/media/keys/ACCC4CF8.asc \
+  | gpg --dearmor \
+  | tee /usr/share/keyrings/postgresql.gpg > /dev/null
+
+RUN echo deb [arch=amd64,arm64,ppc64el signed-by=/usr/share/keyrings/postgresql.gpg] \
+  http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main \
+  | tee -a /etc/apt/sources.list.d/postgresql.list
+
+# hadolint ignore=DL3008
+RUN apt-get update && \
+  apt-get install -yq --no-install-recommends \
+  postgresql-client-15 \
   && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 1001 ubuntu && useradd -rm -d /home/ubuntu -s /bin/bash -g ubuntu -G sudo -u 1001 ubuntu
