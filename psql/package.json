@@ -1,7 +1,7 @@
 {
   "version": "7.7.1",
   "name": "psql",
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.3",
   "scripts": {
     "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_psql'} .",
     "test": "yarn test:e2e && yarn test:structure",

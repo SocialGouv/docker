@@ -1,7 +1,7 @@
 {
   "version": "7.6.3",
   "name": "datasette",
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.3",
   "scripts": {
     "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_datasette'} .",
     "test": "echo no tests to run"

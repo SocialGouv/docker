@@ -31,6 +31,6 @@
     "check-cluster-images",
     "s3-client"
   ],
-  "packageManager": "yarn@3.5.1",
+  "packageManager": "yarn@3.6.3",
   "private": true
 }
