@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/SocialGouv/docker/compare/s3-client@1.0.6...s3-client@1.1.0) (2023-09-05)
+
+
+### Features
+
+* **s3-client:** upgrade pg_dump to 15 ([#1040](https://github.com/SocialGouv/docker/issues/1040)) ([421b779](https://github.com/SocialGouv/docker/commit/421b779bc847f8dff663f76b8e44af1deb58f50b))
+
+
+
+
+
 ## [1.0.6](https://github.com/SocialGouv/docker/compare/s3-client@1.0.5...s3-client@1.0.6) (2023-08-03)
 
 
