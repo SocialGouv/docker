@@ -10,15 +10,17 @@ RUN apt-get update && \
   gnupg \
   && rm -rf /var/lib/apt/lists/*
 
+# hadolint ignore=DL3059,DL4006
 RUN  curl -fSsL https://www.postgresql.org/media/keys/ACCC4CF8.asc \
   | gpg --dearmor \
   | tee /usr/share/keyrings/postgresql.gpg > /dev/null
 
+# hadolint ignore=DL3059,DL4006
 RUN echo deb [arch=amd64,arm64,ppc64el signed-by=/usr/share/keyrings/postgresql.gpg] \
   http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main \
   | tee -a /etc/apt/sources.list.d/postgresql.list
 
-# hadolint ignore=DL3008
+# hadolint ignore=DL3008,DL3059
 RUN apt-get update && \
   apt-get install -yq --no-install-recommends \
   postgresql-client-15 \
