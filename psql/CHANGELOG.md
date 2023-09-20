@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.2](https://github.com/SocialGouv/docker/compare/psql@7.7.1...psql@7.7.2) (2023-09-20)
+
+
+### Bug Fixes
+
+* **psql:** user user postgres(70) ([ea9a3c0](https://github.com/SocialGouv/docker/commit/ea9a3c032b171ac2a5b70dea6d337a56e1cd3c0b))
+
+
+
+
+
 ## [7.7.1](https://github.com/SocialGouv/docker/compare/psql@7.7.0...psql@7.7.1) (2023-07-21)
 
 
