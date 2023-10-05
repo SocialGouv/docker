@@ -1059,12 +1059,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bats-file@bats-core/bats-file#0.3.0":
+"bats-file@bats-core/bats-file#v0.4.0":
   version: 0.2.0
-  resolution: "bats-file@https://github.com/bats-core/bats-file.git#commit=c128a1de53ba4a811835af410ce427f1049e2d7f"
+  resolution: "bats-file@https://github.com/bats-core/bats-file.git#commit=13ad5e2ffcc360281432db3d43a306f7b3667d60"
   peerDependencies:
     bats-support: "*"
-  checksum: 528ad405c9f0bd79df3d380b3ad47f7e656df300e768dfdbf99350857ba29c64d666f0ac9da95f185d661ae7ca7ff23749ed671d58848648c52f36ac9f29267d
+  checksum: 5095915f8fcb7807917c0b5de6a973d12a2ef9037064f82fb63745c0494c7b81420a5f0ce68dda95e7a53fb56f970964fedc248a7b4cdf85dad64a9f0666300f
   languageName: node
   linkType: hard
 
@@ -5068,7 +5068,7 @@ __metadata:
   dependencies:
     bats: ^1.5.0
     bats-assert: "bats-core/bats-assert#2.0.0"
-    bats-file: "bats-core/bats-file#0.3.0"
+    bats-file: "bats-core/bats-file#v0.4.0"
     bats-support: "bats-core/bats-support#0.3.0"
     husky: ^8.0.0
     lerna: ^6.6.2
