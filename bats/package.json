@@ -1,5 +1,5 @@
 {
-  "version": "7.7.0",
+  "version": "7.7.1",
   "name": "bats",
   "packageManager": "yarn@3.5.1",
   "scripts": {

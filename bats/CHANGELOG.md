@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.1](https://github.com/SocialGouv/docker/compare/bats@7.7.0...bats@7.7.1) (2023-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update bats/bats:1.8.2 docker digest to e83f0ac ([#1045](https://github.com/SocialGouv/docker/issues/1045)) ([1aab371](https://github.com/SocialGouv/docker/commit/1aab371620f18d0dd7d182dbeb5fc38dd07530be))
+
+
+
+
+
 # 7.7.0 (2023-05-22)
 
 
