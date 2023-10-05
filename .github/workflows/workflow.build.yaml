@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: "actions/checkout@v3"
       - id: docker_meta
-        uses: "crazy-max/ghaction-docker-meta@v4"
+        uses: "crazy-max/ghaction-docker-meta@v5"
         with:
           images: ghcr.io/socialgouv/docker/${{ inputs.name }}
           labels: |
