@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.3](https://github.com/SocialGouv/docker/compare/cnpg-pgvector@7.7.2...cnpg-pgvector@7.7.3) (2023-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update ghcr.io/cloudnative-pg/postgresql:15 docker digest to 6efd183 ([#1035](https://github.com/SocialGouv/docker/issues/1035)) ([7e13898](https://github.com/SocialGouv/docker/commit/7e13898ed02746d9ceafb0f539f921bcb60f88ed))
+
+
+
+
+
 ## [7.7.2](https://github.com/SocialGouv/docker/compare/cnpg-pgvector@7.7.1...cnpg-pgvector@7.7.2) (2023-08-02)
 
 

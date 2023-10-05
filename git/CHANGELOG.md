@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [7.7.0](https://github.com/SocialGouv/docker/compare/git@7.6.3...git@7.7.0) (2023-10-05)
+
+
+### Features
+
+* **deps:** update alpine/git docker tag to v2.40.1 ([#1026](https://github.com/SocialGouv/docker/issues/1026)) ([25d57ba](https://github.com/SocialGouv/docker/commit/25d57ba11e63b27bed0be739093a8b9a610de3c4))
+
+
+
+
+
 ## [7.6.3](https://github.com/SocialGouv/docker/compare/git@7.6.2...git@7.6.3) (2023-05-24)
 
 
