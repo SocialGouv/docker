@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:1.25-alpine@sha256:b7e3ed3f269c3cc87e04349a53183b4694fef3fa38666abe17a750432e846eb9
+FROM nginxinc/nginx-unprivileged:1.25-alpine@sha256:bddf6a61f1b8609652c60f77fbe011e0465547e58bd9c1e771a1662c94d87126
 
 COPY ./nginx.conf ./ready_response.conf /etc/nginx/
 COPY ./entrypoint.sh ./pre-stop.sh /
