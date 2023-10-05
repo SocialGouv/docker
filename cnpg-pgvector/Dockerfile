@@ -1,5 +1,5 @@
 # CNPG operand image with pgvector extension
-ARG PG_MAJOR=15@sha256:1fca17f761a0117edd10121ec20d10f41dcab5b1992bc5acc9f6d925ededc9dd
+ARG PG_MAJOR=15@sha256:6efd1836af0a31bee40e41d312f7752350dd7551a7d4e2e527444fa7d529a921
 
 FROM ghcr.io/cloudnative-pg/postgresql:$PG_MAJOR as builder
 
