@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/SocialGouv/docker/compare/s3-client@1.1.0...s3-client@1.1.1) (2023-10-06)
+
+
+### Bug Fixes
+
+* **deps:** update ubuntu:22.04 docker digest to 9b8dec3 ([#1047](https://github.com/SocialGouv/docker/issues/1047)) ([9fe81f9](https://github.com/SocialGouv/docker/commit/9fe81f94834c5ad1cdc4e1e28be3cd89e32ed2da))
+
+
+
+
+
 # [1.1.0](https://github.com/SocialGouv/docker/compare/s3-client@1.0.6...s3-client@1.1.0) (2023-09-05)
 
 
