@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/SocialGouv/docker/compare/s3-client@1.1.1...s3-client@1.2.0) (2023-10-13)
+
+
+### Features
+
+* **s3-client:** add option to rotate dumps ([#1052](https://github.com/SocialGouv/docker/issues/1052)) ([4c899e2](https://github.com/SocialGouv/docker/commit/4c899e2d4eff05052e343e6fb3b050a299fed60c))
+
+
+
+
+
 ## [1.1.1](https://github.com/SocialGouv/docker/compare/s3-client@1.1.0...s3-client@1.1.1) (2023-10-06)
 
 
