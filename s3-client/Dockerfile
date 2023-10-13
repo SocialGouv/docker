@@ -37,6 +37,8 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 USER 1001
 WORKDIR /home/ubuntu
 
+COPY entrypoint.sh .
 COPY dump-upload.sh .
+COPY rotate-dumps.sh .
 
-CMD ["./dump-upload.sh"]
+CMD ["./entrypoint.sh"]
