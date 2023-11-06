@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.1](https://github.com/SocialGouv/docker/compare/git@7.7.0...git@7.7.1) (2023-11-06)
+
+
+### Bug Fixes
+
+* **deps:** update alpine/git:v2.40.1 docker digest to 1134fdf ([#1053](https://github.com/SocialGouv/docker/issues/1053)) ([dcbfca5](https://github.com/SocialGouv/docker/commit/dcbfca532337c8000d13a65441f38417357a6ea9))
+
+
+
+
+
 # [7.7.0](https://github.com/SocialGouv/docker/compare/git@7.6.3...git@7.7.0) (2023-10-05)
 
 
