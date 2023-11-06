@@ -1,0 +1,30 @@
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
+jobs:
+  build:
+    uses: ./.github/workflows/workflow.build.yaml
+    secrets: inherit
+    with:
+      name: git
+
+  version_test:
+    container: "docker://ghcr.io/socialgouv/docker/git:sha-${{ github.sha }}"
+    name: Test files
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: git --version
+name: "git"
+on:
+  push:
+    branches:
+      - "**"
+      - "!master"
+      - "!alpha"
+      - "!beta"
+    paths:
+      - "git/**"
+      - ".github/workflows/git.yaml"
+      - ".github/workflows/git.tag.yaml"
+      - ".github/workflows/workflow.build.yaml"
