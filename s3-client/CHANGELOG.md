@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/SocialGouv/docker/compare/s3-client@1.2.0...s3-client@1.2.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* **s3-client:** abort on errors in pipes ([f8587ad](https://github.com/SocialGouv/docker/commit/f8587ad79bebe50831c38cc7d0ddbd13b6375af8))
+
+
+
+
+
 # [1.2.0](https://github.com/SocialGouv/docker/compare/s3-client@1.1.1...s3-client@1.2.0) (2023-10-13)
 
 
