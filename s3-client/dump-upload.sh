@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-set -ex
+set -ex -o pipefail
+
 
 pg_dump -v -Fc --no-owner --no-acl |
 	gzip |

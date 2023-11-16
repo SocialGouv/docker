@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -e -o pipefail
 
 aws s3 ls $DESTINATION_PATH/ | grep " DIR " -v | while read -r line;
   do
