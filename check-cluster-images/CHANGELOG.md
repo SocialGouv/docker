@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/SocialGouv/docker/compare/check-cluster-images@1.2.0...check-cluster-images@1.2.1) (2023-12-09)
+
+
+### Bug Fixes
+
+* **deps:** update alpine/k8s:1.28.2 docker digest to fc059f0 ([#1055](https://github.com/SocialGouv/docker/issues/1055)) ([37f3d61](https://github.com/SocialGouv/docker/commit/37f3d618e6955bffa72fa13aee6cb1d022994f9f))
+
+
+
+
+
 # [1.2.0](https://github.com/SocialGouv/docker/compare/check-cluster-images@1.1.4...check-cluster-images@1.2.0) (2023-10-05)
 
 

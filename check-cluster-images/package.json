@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "name": "check-cluster-images",
   "packageManager": "yarn@3.5.1",
   "scripts": {
