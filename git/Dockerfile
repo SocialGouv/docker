@@ -1,4 +1,4 @@
-FROM alpine/git:v2.40.1@sha256:1134fdfca49677f3c33445ede74cd64b55f524ad3cb215fa464492ad281eafc0
+FROM alpine/git:v2.40.1@sha256:9a2947ae3651a9db60411eabb254fab595ee7fbd37817020ff7e43f0f2c463e3
 
 RUN adduser -D script
 
