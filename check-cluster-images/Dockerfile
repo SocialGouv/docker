@@ -1,4 +1,4 @@
-FROM alpine/k8s:1.28.2@sha256:fc059f056ad003e28d19ff901b8e4dd5d8309064380dc31b61f309fc19d37c31
+FROM alpine/k8s:1.29.2@sha256:a51aa37f0a34ff827c7f2f9cb7f6fbb8f0e290fa625341be14c2fcc4b1880f60
 
 WORKDIR /app
 
