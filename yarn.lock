@@ -2490,6 +2490,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"greenmask@workspace:greenmask":
+  version: 0.0.0-use.local
+  resolution: "greenmask@workspace:greenmask"
+  languageName: unknown
+  linkType: soft
+
 "handlebars@npm:^4.7.7":
   version: 4.7.7
   resolution: "handlebars@npm:4.7.7"
