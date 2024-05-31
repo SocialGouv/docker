@@ -14,6 +14,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # install greenmask cli
+# hadolint ignore=DL3059,DL3047
 RUN wget https://github.com/GreenmaskIO/greenmask/releases/download/v0.1.14/greenmask-linux-amd64.tar.gz \
   && tar -xvf greenmask-linux-amd64.tar.gz \
   && mv greenmask /usr/local/bin/greenmask
