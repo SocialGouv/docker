@@ -9,14 +9,14 @@ jobs:
       name: greenmask
 
   version_test:
-    container: "docker://ghcr.io/socialgouv/docker/s3-client:sha-${{ github.sha }}"
+    container: "docker://ghcr.io/socialgouv/docker/greenmask:sha-${{ github.sha }}"
     name: Test Version
     needs: [build]
     runs-on: ubuntu-latest
     steps:
       - run: greenmask --version
 
-name: "s3-client"
+name: "greenmask"
 on:
   push:
     tags:

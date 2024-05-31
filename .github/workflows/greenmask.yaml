@@ -6,7 +6,7 @@ jobs:
     uses: ./.github/workflows/workflow.build.yaml
     secrets: inherit
     with:
-      name: s3-client
+      name: greenmask
 
   version_test:
     container: "docker://ghcr.io/socialgouv/docker/greenmask:sha-${{ github.sha }}"
@@ -16,7 +16,7 @@ jobs:
     steps:
       - run: greenmask --version
 
-name: "s3-client"
+name: "greenmask"
 on:
   push:
     branches:
