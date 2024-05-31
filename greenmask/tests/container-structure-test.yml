@@ -1,0 +1,15 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "greenmask --version"
+    command: "greenmask"
+    args: ["--version"]
+    expectedOutput: ["greenmask version v\\d+\\d+\\d+ .*"]
+  - name: "pg_dump --version"
+    command: "pg_dump"
+    args: ["--version"]
+    expectedOutput: ["psql \\(PostgreSQL\\) \\d+\\.\\d+"]
+  - name: "node --version"
+    command: "node"
+    args: ["--version"]
+    expectedOutput: ["v\\d+\\.\\d+\\.\\d+"]

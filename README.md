@@ -36,6 +36,7 @@ $ docker pull ghcr.io/socialgouv/docker/<image>
 | **s3-client**            | `docker pull ghcr.io/socialgouv/docker/s3-client`            | [![README](https://img.shields.io/badge/README--green.svg)](./s3-client/README.md)            |
 | **wait-for-http**        | `docker pull ghcr.io/socialgouv/docker/wait-for-http`        | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-http/README.md)        |
 | **wait-for-postgres**    | `docker pull ghcr.io/socialgouv/docker/wait-for-postgres`    | [![README](https://img.shields.io/badge/README--green.svg)](./wait-for-postgres/README.md)    |
+| **greenmask**            | `docker pull ghcr.io/socialgouv/docker/greenmask`            | [![README](https://img.shields.io/badge/README--green.svg)](./greenmask/README.md)            |
 
 <br>
 <br>

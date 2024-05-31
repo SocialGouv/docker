@@ -29,7 +29,8 @@
     "datasette",
     "git",
     "check-cluster-images",
-    "s3-client"
+    "s3-client",
+    "greenmask"
   ],
   "packageManager": "yarn@3.5.1",
   "private": true
