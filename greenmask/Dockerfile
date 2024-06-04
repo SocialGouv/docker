@@ -14,6 +14,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # install AWS CLI
+# hadolint ignore=DL3059,DL3047
 RUN wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
   && unzip awscli-exe-linux-x86_64.zip \
   && ./aws/install
