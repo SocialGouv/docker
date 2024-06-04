@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/SocialGouv/docker/compare/greenmask@1.1.1...greenmask@1.1.2) (2024-06-04)
+
+
+### Bug Fixes
+
+* add s3 lib to greenmask ([2725051](https://github.com/SocialGouv/docker/commit/2725051f820b580a6917c970613f7d644ac0b5b7))
+
+
+
+
+
 ## [1.1.1](https://github.com/SocialGouv/docker/compare/greenmask@1.1.0...greenmask@1.1.1) (2024-05-31)
 
 
