@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.4](https://github.com/SocialGouv/docker/compare/git@7.7.3...git@7.7.4) (2024-07-25)
+
+
+### Bug Fixes
+
+* lint ([5599940](https://github.com/SocialGouv/docker/commit/55999402b3dcfa48dc599d1aa36304dcb77cee8e))
+
+
+
+
+
 ## [7.7.3](https://github.com/SocialGouv/docker/compare/git@7.7.2...git@7.7.3) (2024-07-25)
 
 
