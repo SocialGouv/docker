@@ -1,6 +1,6 @@
 FROM ubuntu:24.04
 
-RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install --no-install-recommends -y git=1:2.43.0-1ubuntu7.1 && rm -rf /var/lib/apt/lists/*
 
 USER 1000
 WORKDIR /home/ubuntu
