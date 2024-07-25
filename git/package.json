@@ -1,5 +1,5 @@
 {
-  "version": "7.7.4",
+  "version": "7.7.5",
   "name": "git",
   "packageManager": "yarn@3.5.1",
   "scripts": {

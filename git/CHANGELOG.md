@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.5](https://github.com/SocialGouv/docker/compare/git@7.7.4...git@7.7.5) (2024-07-25)
+
+
+### Bug Fixes
+
+* ssh client ([59d5b10](https://github.com/SocialGouv/docker/commit/59d5b10f8d479349356b5c94dfdf9ae29bf3c946))
+
+
+
+
+
 ## [7.7.4](https://github.com/SocialGouv/docker/compare/git@7.7.3...git@7.7.4) (2024-07-25)
 
 
