@@ -1,7 +1,6 @@
-FROM alpine/git:v2.40.1@sha256:1134fdfca49677f3c33445ede74cd64b55f524ad3cb215fa464492ad281eafc0
+FROM ubuntu:24.04
 
-RUN adduser -D script
-
-WORKDIR /home/script
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
 USER 1000
+WORKDIR /home/ubuntu
