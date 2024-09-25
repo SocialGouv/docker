@@ -1,4 +1,4 @@
-FROM alpine:3.16@sha256:a8cbb8c69ee71561f4b69c066bad07f7e510caaa523da26fbfc606b10bd7934b
+FROM alpine:3.20@sha256:beefdbd8a1da6d2915566fde36db9db0b524eb737fc57cd1367effd16dc0d06d
 
 RUN apk --no-cache add bash=5.1.16-r2 postgresql14-client=14.9-r0 jq=1.6-r1
 
