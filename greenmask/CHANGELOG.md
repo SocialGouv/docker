@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/SocialGouv/docker/compare/greenmask@1.1.3...greenmask@1.1.4) (2024-09-26)
+
+
+### Bug Fixes
+
+* **greenmak:** try out beta version fixes ([3c1419e](https://github.com/SocialGouv/docker/commit/3c1419e87abfeac178587e2bc04481c5244f12f3))
+
+
+
+
+
 ## [1.1.3](https://github.com/SocialGouv/docker/compare/greenmask@1.1.2...greenmask@1.1.3) (2024-06-04)
 
 
