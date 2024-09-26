@@ -21,7 +21,7 @@ RUN wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
 
 # install greenmask cli
 # hadolint ignore=DL3059,DL3047
-RUN wget https://github.com/GreenmaskIO/greenmask/releases/download/v0.1.14/greenmask-linux-amd64.tar.gz \
+RUN wget https://github.com/GreenmaskIO/greenmask/releases/download/v0.2.0b2/greenmask-linux-amd64.tar.gz \
   && tar -xvf greenmask-linux-amd64.tar.gz \
   && mv greenmask /usr/local/bin/greenmask
 
