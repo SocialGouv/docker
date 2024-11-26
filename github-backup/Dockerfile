@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git openssh-cli
 RUN groupadd -g 1000 user && useradd -u 1000 -r -g user -m -d /home/user user
 
 USER 1000
+RUN ls
 
 # hadolint ignore=DL3013
 RUN pip install --no-cache-dir github-backup
