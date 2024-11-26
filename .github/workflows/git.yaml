@@ -25,6 +25,7 @@ on:
       - "!beta"
     paths:
       - "git/**"
+      - "!github-backup/**"
       - ".github/workflows/git.yaml"
       - ".github/workflows/git.tag.yaml"
       - ".github/workflows/workflow.build.yaml"
