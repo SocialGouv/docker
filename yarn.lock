@@ -2385,6 +2385,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"github-backup@workspace:github-backup":
+  version: 0.0.0-use.local
+  resolution: "github-backup@workspace:github-backup"
+  languageName: unknown
+  linkType: soft
+
 "glob-parent@npm:5.1.2, glob-parent@npm:^5.1.2":
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
