@@ -30,7 +30,8 @@
     "git",
     "check-cluster-images",
     "s3-client",
-    "greenmask"
+    "greenmask",
+    "github-backup"
   ],
   "packageManager": "yarn@3.5.1",
   "private": true
