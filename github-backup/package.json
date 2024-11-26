@@ -1,0 +1,10 @@
+{
+  "version": "7.7.5",
+  "name": "github-backup",
+  "packageManager": "yarn@3.5.1",
+  "scripts": {
+    "build": "docker build -t ${SG_DOCKER_IMAGE:-'socialgouv_docker_github_backup'} .",
+    "test": "echo no tests to run"
+  },
+  "private": true
+}
