@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.7.7](https://github.com/SocialGouv/docker/compare/github-backup@7.7.6...github-backup@7.7.7) (2024-11-26)
+
+
+### Bug Fixes
+
+* path ([ff97967](https://github.com/SocialGouv/docker/commit/ff97967082bc15503102ececb3e45a12c56de43d))
+
+
+
+
+
 ## 7.7.6 (2024-11-26)
 
 
