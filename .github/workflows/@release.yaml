@@ -1,4 +1,5 @@
 name: "Release"
+
 on:
   push:
     branches:
@@ -6,11 +7,21 @@ on:
       - beta
       - alpha
 
+permissions:
+  id-token: write  # Required for OIDC token generation
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      # - name: Wait for other checks to succeed
+      - name: Get GitHub App Token
+        id: token
+        uses: SocialGouv/token-bureau@main
+        with:
+          token-bureau-url: https://token-bureau.fabrique.social.gouv.fr
+          audience: socialgouv
+
+          # - name: Wait for other checks to succeed
       #   uses: lewagon/wait-on-check-action@v0.2
       #   with:
       #     ref: ${{ github.ref }}
@@ -20,7 +31,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}
+          token: ${{ steps.token.outputs.token }}
           fetch-depth: "0" # Pull all commits, required for lerna version
 
       - uses: actions/setup-node@v3
@@ -47,7 +58,7 @@ jobs:
           GIT_AUTHOR_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
           GIT_COMMITTER_EMAIL: ${{ secrets.SOCIALGROOVYBOT_EMAIL }}
           GIT_COMMITTER_NAME: ${{ secrets.SOCIALGROOVYBOT_NAME }}
-          GH_TOKEN: ${{ secrets.SOCIALGROOVYBOT_BOTO_PAT }}
+          GH_TOKEN: ${{ steps.token.outputs.token }}
         shell: bash
         run: |
           if [[ "$GITHUB_REF" == *"alpha"* ]]; then
