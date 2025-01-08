@@ -76,11 +76,11 @@ jobs:
       - uses: "actions/checkout@v3"
       - run: "docker pull ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}"
       - name: Run Trivy vulnerability scanner
-        uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
+        uses: "aquasecurity/trivy-action@a11da62073708815958ea6d84f5650c78a3ef85b"
         with:
           image-ref: "ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}"
       - name: Export Trivy Results as sarif
-        uses: "aquasecurity/trivy-action@dba83feec810c70bacbc4bead308ae1e466c572b"
+        uses: "aquasecurity/trivy-action@a11da62073708815958ea6d84f5650c78a3ef85b"
         with:
           format: template
           image-ref: "ghcr.io/socialgouv/docker/${{ inputs.name }}:sha-${{ github.sha }}"
