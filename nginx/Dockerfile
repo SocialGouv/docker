@@ -3,6 +3,7 @@ FROM nginxinc/nginx-unprivileged:1.25-alpine@sha256:1e29add3cbd3c5684200a9e2b1cc
 COPY ./nginx.conf ./ready_response.conf /etc/nginx/
 COPY ./entrypoint.sh ./pre-stop.sh /
 COPY ./404.html /usr/share/nginx/errors/
+COPY ./50x.html /usr/share/nginx/errors/
 
 ## adjust permissions
 USER root
