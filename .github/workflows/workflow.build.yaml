@@ -4,9 +4,6 @@ on:
       name:
         required: false
         type: string
-    secrets:
-      SOCIALGROOVYBOT_NAME:
-        required: false
 
 jobs:
   build:
@@ -40,9 +37,9 @@ jobs:
         name: Login to ghcr.io/socialgouv Registry
         uses: "docker/login-action@v3"
         with:
-          password: "${{ secrets.GITHUB_TOKEN }}"
           registry: ghcr.io
-          username: "github.actor"
+          username: "${{ github.actor }}"
+          password: "${{ secrets.GITHUB_TOKEN }}"
       - id: docker_push
         name: Push
         uses: "docker/build-push-action@v4"
