@@ -5,7 +5,7 @@ on:
         required: false
         type: string
     secrets:
-      GHCR_REGISTRY_TOKEN:
+      GITHUB_TOKEN:
         required: true
       SOCIALGROOVYBOT_NAME:
         required: false
@@ -40,9 +40,9 @@ jobs:
         with: {}
       - if: "${{ github.event_name != 'pull_request' }}"
         name: Login to ghcr.io/socialgouv Registry
-        uses: "docker/login-action@v2"
+        uses: "docker/login-action@v3"
         with:
-          password: "${{ secrets.GHCR_REGISTRY_TOKEN }}"
+          password: "${{ secrets.GITHUB_TOKEN }}"
           registry: ghcr.io
           username: "${{ secrets.SOCIALGROOVYBOT_NAME }}"
       - id: docker_push
