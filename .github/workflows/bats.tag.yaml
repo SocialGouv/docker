@@ -1,5 +1,4 @@
-permissions:
-  id-token: write  # Required for OIDC token generation
+
 
 concurrency:
   cancel-in-progress: true

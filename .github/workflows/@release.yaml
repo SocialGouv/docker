@@ -7,8 +7,7 @@ on:
       - beta
       - alpha
 
-permissions:
-  id-token: write  # Required for OIDC token generation
+
 
 jobs:
   release:
