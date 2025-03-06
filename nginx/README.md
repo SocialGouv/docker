@@ -51,3 +51,4 @@ spec:
         exec:
           command: ["/pre-stop.sh"]
 ```
+
