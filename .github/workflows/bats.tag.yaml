@@ -1,3 +1,6 @@
+permissions:
+  id-token: write  # Required for OIDC token generation
+
 concurrency:
   cancel-in-progress: true
   group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
