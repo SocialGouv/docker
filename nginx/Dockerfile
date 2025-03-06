@@ -7,13 +7,14 @@ COPY ./50x.html /usr/share/nginx/errors/
 
 USER root
 RUN chown -R nginx:nginx /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/html && \
-        chown -R nginx:nginx /var/cache/nginx && \
-        chown -R nginx:nginx /var/log/nginx && \
-        chown -R nginx:nginx /etc/nginx
+  chown -R nginx:nginx /var/cache/nginx && \
+  chown -R nginx:nginx /var/log/nginx && \
+  chown -R nginx:nginx /etc/nginx
 
 RUN touch /var/run/nginx.pid && \
-        chown -R nginx:nginx /var/run/nginx.pid
+  chown -R nginx:nginx /var/run/nginx.pid
 
 USER 101
 
 ENTRYPOINT ["/entrypoint.sh"]
+
