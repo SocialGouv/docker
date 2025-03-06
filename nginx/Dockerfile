@@ -5,7 +5,6 @@ COPY ./entrypoint.sh ./pre-stop.sh /
 COPY ./404.html /usr/share/nginx/errors/
 COPY ./50x.html /usr/share/nginx/errors/
 
-## adjust permissions
 USER root
 RUN chown -R nginx:nginx /usr/share/nginx/html && chmod -R 755 /usr/share/nginx/html && \
         chown -R nginx:nginx /var/cache/nginx && \
