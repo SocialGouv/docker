@@ -1,3 +1,5 @@
+permissions:
+  packages: write
 
 concurrency:
   cancel-in-progress: true
