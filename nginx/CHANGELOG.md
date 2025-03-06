@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.3.0](https://github.com/SocialGouv/docker/compare/nginx@8.2.3...nginx@8.3.0) (2025-03-06)
+
+
+### Features
+
+* add 50x error page ([ce8d014](https://github.com/SocialGouv/docker/commit/ce8d014df9b5971911cdd40071425764a1ca0e10))
+
+
+
+
+
 ## [8.2.3](https://github.com/SocialGouv/docker/compare/nginx@8.2.2...nginx@8.2.3) (2023-12-09)
 
 
