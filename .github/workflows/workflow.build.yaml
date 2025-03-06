@@ -5,8 +5,6 @@ on:
         required: false
         type: string
     secrets:
-      GITHUB_TOKEN:
-        required: true
       SOCIALGROOVYBOT_NAME:
         required: false
 
