@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.3.6](https://github.com/SocialGouv/docker/compare/nginx@8.3.5...nginx@8.3.6) (2025-03-10)
+
+
+### Bug Fixes
+
+* dummy commit ([09d3994](https://github.com/SocialGouv/docker/commit/09d39944d377d086f5b8073bee3eef43b3c93a40))
+
+
+
+
+
 ## [8.3.5](https://github.com/SocialGouv/docker/compare/nginx@8.3.4...nginx@8.3.5) (2025-03-06)
 
 
