@@ -1,7 +1,3 @@
-
-permissions:
-  packages: write
-
 concurrency:
   cancel-in-progress: true
   group: ${{ github.workflow }}-${{ github.event.ref }}-${{ github.event_name }}
