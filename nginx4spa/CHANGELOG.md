@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.4](https://github.com/SocialGouv/docker/compare/nginx4spa@8.2.3...nginx4spa@8.2.4) (2025-11-03)
+
+
+### Bug Fixes
+
+* **up:** nginx-unprivileged to 1.29 ([511c50f](https://github.com/SocialGouv/docker/commit/511c50f95198327068a63a8b4bb91ad2baabd94c))
+
+
+
+
+
 ## [8.2.3](https://github.com/SocialGouv/docker/compare/nginx4spa@8.2.2...nginx4spa@8.2.3) (2023-12-09)
 
 
