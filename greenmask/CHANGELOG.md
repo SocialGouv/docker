@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/SocialGouv/docker/compare/greenmask@1.1.4...greenmask@1.2.0) (2026-01-26)
+
+
+### Features
+
+* **greenmask:** enable corepack ([22dc3a0](https://github.com/SocialGouv/docker/commit/22dc3a0e1bb045a9a83e2dfa80e593abaf0783f8))
+
+
+
+
+
 ## [1.1.4](https://github.com/SocialGouv/docker/compare/greenmask@1.1.3...greenmask@1.1.4) (2024-09-26)
 
 
