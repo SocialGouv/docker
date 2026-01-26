@@ -34,3 +34,4 @@ RUN npm install -g corepack@latest \
   && corepack enable
  
 USER 1000
+
