@@ -25,5 +25,12 @@ RUN wget https://github.com/GreenmaskIO/greenmask/releases/download/v0.2.0b2/gre
   && tar -xvf greenmask-linux-amd64.tar.gz \
   && mv greenmask /usr/local/bin/greenmask
 
+# Enable Corepack so `pnpm` command is available (it will download the requested pnpm version on first use)
+# Avoid any interactive download prompt in non-interactive environments (CI, docker build/run)
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+# Node's bundled Corepack can be outdated and fail to verify current pnpm signatures.
+# Refreshing Corepack ensures the key set is up-to-date.
+RUN npm install -g corepack@latest \
+  && corepack enable
+ 
 USER 1000
-
