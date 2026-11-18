@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:1.29-alpine@sha256:fb089229c0b27470aef1384985c4f073c19f6e1529a9cfc9676cf7d9869a36f4
+FROM ghcr.io/nginx/nginx-unprivileged:1.30.7-alpine@sha256:0c53a1f2890c3526bfd201440f0fd3970e5b78f80630f58284aad0d34b5ec7bd
 
 COPY ./nginx.conf ./ready_response.conf /etc/nginx/
 COPY ./entrypoint.sh ./pre-stop.sh /
